@@ -1022,14 +1022,14 @@ release was successful.</echo>
 						type="glob"
 						from="jboss-as-${app.server.jboss.version}.Final/*"
 						to="jboss-${app.server.jboss.version}/*"
-					/>
+					/><!-- copies all of the files/dirs from under the zip file's *.Final directory to the new jboss directory -->
 				</unzip>
 
 				<zip
 					basedir="tools/servers/jboss/patches/JBPAPP-9353/classes"
 					destfile="${app.server.jboss.dir}/modules/org/jboss/as/server/main/jboss-as-server-${app.server.jboss.version}.Final.jar"
 					update="yes"
-				/>
+				/><!-- adds the classes from liferay-portal/tools/.../JBPAPP-9353/classes/ into the bundle's *.Final.jar -->
 
 				<echo file="${app.server.jboss.dir}/modules/ibm/jdk/main/module.xml"><![CDATA[<?xml version="1.0"?>
 
@@ -1057,6 +1057,7 @@ release was successful.</echo>
 						</dependencies>
 					</module>]]>
 				</echo>
+                <!-- Creates this file module.xml in the bundle, inserting the above content that is nested within "CDATA[" and "]]>" -->
 
 				<replace file="${app.server.jboss.dir}/modules/sun/jdk/main/module.xml">
 					<replacetoken><![CDATA[<paths>]]></replacetoken>
@@ -1071,11 +1072,13 @@ release was successful.</echo>
 						]]>
 					</replacevalue>
 				</replace>
+                <!-- Replaces the <paths> element contained in this module.xml file with the above <paths> element -->
 
 				<replace file="${app.server.jboss.dir}/standalone/configuration/standalone.xml">
 					<replacetoken><![CDATA[enable-welcome-root="true"]]></replacetoken>
 					<replacevalue><![CDATA[enable-welcome-root="false"]]></replacevalue>
 				</replace>
+                <!-- Sets enable-welcome-root="false" in standalone.xml -->
 
 				<replace file="${app.server.jboss.dir}/standalone/configuration/standalone.xml">
 					<replacetoken><![CDATA[</extensions>]]></replacetoken>
@@ -1089,11 +1092,13 @@ release was successful.</echo>
 						]]>
 					</replacevalue>
 				</replace>
+                <!-- Adds the <system-properties> after the <extension>...</extension> element in standalone.xml -->
 
 				<replace file="${app.server.jboss.dir}/standalone/configuration/standalone.xml">
 					<replacetoken><![CDATA[<deployment-scanner ]]></replacetoken>
 					<replacevalue><![CDATA[<deployment-scanner deployment-timeout="120" ]]></replacevalue>
 				</replace>
+                <!-- Adds attribute deployment-timeout="120" to the <deployment-scanner> element in standalone.xml -->
 
 				<replace file="${app.server.jboss.dir}/standalone/configuration/standalone.xml">
 					<replacetoken><![CDATA[<security-domains>]]></replacetoken>
@@ -1108,20 +1113,24 @@ release was successful.</echo>
 						]]>
 					</replacevalue>
 				</replace>
+                <!-- Adds the above <security-domain ...> element within the <security-domains> in standalone.xml -->
 
 				<replace file="${app.server.jboss.bin.dir}/standalone.conf">
 					<replacetoken><![CDATA[JAVA_OPTS="-Xms64m -Xmx512m -XX:MaxPermSize=256m ]]></replacetoken>
 					<replacevalue><![CDATA[JAVA_OPTS="]]></replacevalue>
 				</replace>
+                <!-- Removes the current Java memory arguments "-Xms64m -Xmx512m -XX:MaxPermSize=256m" in the standalone.conf to replace them with the ones in the next echo ...-->
 
 				<echo file="${app.server.jboss.bin.dir}/standalone.conf" append="true">
 					JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 				</echo>
+                <!-- Appends the standalone.conf with Java options that set the file encoding to UTF-8, turns on the IPv4Stack, sets the user's timezone, and increases the memory argument values for Java. -->
 
 				<replace file="${app.server.jboss.bin.dir}/standalone.conf.bat">
 					<replacetoken><![CDATA[set "JAVA_OPTS=-Xms64M ]]></replacetoken>
 					<replacevalue><![CDATA[rem set "JAVA_OPTS=-Xms64M ]]></replacevalue>
 				</replace>
+                <!-- Does the same thing for the Windows version of standalone.conf -->
 
 				<replace file="${app.server.jboss.bin.dir}/standalone.conf.bat">
 					<replacetoken><![CDATA[:JAVA_OPTS_SET]]></replacetoken>
@@ -1145,6 +1154,7 @@ release was successful.</echo>
 						]]>
 					</replacevalue>
 				</replace>
+                <!-- Sets the JSP configuration to be in development mode by adding the <configuration> element to the subsystem -->
 			</else>
 		</if>
 
