@@ -331,6 +331,7 @@ ${app.server.tomcat.dir}, then run "ant -buildfile build-dist.xml unzip-tomcat".
 									tofile="${app.server.lib.global.dir}/module.xml"
 								/>
 							</then>
+                            <!-- Adds the liferay-portal/tools/servers/jboss/modules/module.xml if it doesn't already exist -->
 						</if>
 
 						<delete>
@@ -339,6 +340,7 @@ ${app.server.tomcat.dir}, then run "ant -buildfile build-dist.xml unzip-tomcat".
 								includes="eclipselink.jar"
 							/>
 						</delete>
+                        <!-- Deletes eclipselink.jar from the app server -->
 					</else>
 				</if>
 			</then>
