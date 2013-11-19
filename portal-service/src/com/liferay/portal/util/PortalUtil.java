@@ -237,6 +237,19 @@ public class PortalUtil {
 		return getPortal().getAlternateLocales(request);
 	}
 
+	/**
+	 * Returns the alternate URL for a URL in the given locale. The
+	 * alternate URL lets search engines know that an equivalent page is available
+	 * for the given locale. For more information see
+	 * <a href="https://support.google.com/webmasters/answer/189077?hl=en">https://support.google.com/webmasters/answer/189077?hl=en</a>.
+	 *
+	 * @param  canonicalURL the canonical URL being requested. For more information see {@link #getCanonicalURL}).
+	 * @param  themeDisplay the theme display
+	 * @param  locale the locale of the alternate URL being generated
+	 * @param  layout the page being requested
+	 * @return the alternate URL for the requested canonical URL in the given
+	 *         locale
+	 */
 	public static String getAlternateURL(
 			String canonicalURL, ThemeDisplay themeDisplay, Locale locale,
 			Layout layout)
@@ -288,6 +301,21 @@ public class PortalUtil {
 		return getPortal().getBasicAuthUserId(request, companyId);
 	}
 
+	/**
+	 * Returns the canonical URL for the given URL. A canonical URL for the page is the
+	 * preferred version of a set of pages with highly similar (or identical)
+	 * content. This is used to inform search engines that several URLs
+	 * point to the same page using the tag <link rel="canonical" />. It is also
+	 * used to generate the URLs for the sitemaps, the URL that social bookmarks
+	 * publish (twitter, facebook links...), and the URLs in the emails sent.
+	 * For more information, see
+	 * <a href="https://support.google.com/webmasters/answer/139394?hl=en">https://support.google.com/webmasters/answer/139394?hl=en</a>.
+	 *
+	 * @param  completeURL the original URL being requested
+	 * @param  themeDisplay the theme display
+	 * @param  layout the page being requested
+	 * @return the canonical URL for the requested completeURL
+	 */
 	public static String getCanonicalURL(
 			String completeURL, ThemeDisplay themeDisplay, Layout layout)
 		throws PortalException, SystemException {
