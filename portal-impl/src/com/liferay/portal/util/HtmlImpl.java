@@ -58,6 +58,9 @@ public class HtmlImpl implements Html {
 
 	/**
 	 * Escapes the HTML text so that it is safe to use in an HTML context.
+	 * TODO Don't assume all input parameters (especially those named "text") are HTML.
+	 * Methods like this one can be used to convert regular text to HTML. Please check all parameters
+	 * for which you've specified that they are HTML and/or that you've described them as being HTML in the method descriptions. Thanks.
 	 *
 	 * @param  text the HTML text to escape
 	 * @return the escaped HTML text, or <code>null</code> if the text is
@@ -156,6 +159,10 @@ public class HtmlImpl implements Html {
 
 	/**
 	 * Escapes the input text as a hexadecimal value, based on the mode.
+	 * TODO Please mention type along with mode. Maybe say "... type (mode)."
+	 * TODO listing the link to each of the types would be helpful. The developer
+	 * should not need to know the value of each mode. They simply need to 
+	 * know how to specify each mode. I'd use the format {@link #ESCAPE_MODE_ATTRIBUTE}, and the like, for the various types.
 	 *
 	 * <p>
 	 * Note that <code>escape(html, 4)</code> (<code>ESCAPE_MODE_TEXT</code> =
@@ -232,6 +239,8 @@ public class HtmlImpl implements Html {
 
 	/**
 	 * Escapes the attribute value so that it is safe to use in an HTML context.
+	 * TODO HTML context? Are you sure? If not sure, please replace "HTML context"
+	 with "attribute value" and drop "HTML" from the attribute param's description.
 	 *
 	 * @param  attribute the HTML attribute to escape
 	 * @return the escaped attribute value, or <code>null</code> if the
@@ -256,6 +265,8 @@ public class HtmlImpl implements Html {
 
 	/**
 	 * Escapes the HREF attribute so that it is safe to use as a URL.
+	 * TODO I'm not certain of this. For example, why would we have both
+	 escapeURL and this method if they are the same.
 	 *
 	 * @param  href the HREF attribute to escape
 	 * @return the escaped HREF attribute, or <code>null</code> if the HREF
@@ -360,8 +371,9 @@ public class HtmlImpl implements Html {
 	}
 
 	/**
-	 * Extracts the raw text from the HTML input. The raw text has compressed
-	 * whitespace and no attributes, scripts, or styles.
+	 * Extracts the raw text from the HTML input, compressing its
+	 * whitespace and removing all attributes, scripts, and styles.
+	 TODO Please see how I've rephrased this, most importantly with respect to whitespace compression.
 	 *
 	 * <p>
 	 * For example, raw text returned by this method can be stored in a search
@@ -420,8 +432,9 @@ public class HtmlImpl implements Html {
 	}
 
 	/**
-	 * Replaces the Microsoft Word unicode characters with plain HTML entities
+	 * Replaces all Microsoft Word unicode characters with plain HTML entities
 	 * or characters.
+	 * TODO capitalize Unicode.
 	 *
 	 * @param  text the HTML text
 	 * @return the converted HTML text, or <code>null</code> if the text is
@@ -436,7 +449,11 @@ public class HtmlImpl implements Html {
 	 * Replaces all new lines or carriage returns with the <code><br /></code>
 	 * HTML tag.
 	 *
-	 * @param  text the HTML text
+	 * TODO You can't assume all text parameters are already HTML. Methods
+	 like this one can be used to convert regular text to HTML. Please check all parameters
+	 for which you've specified that they are HTML.
+	 *
+	 * @param  text the text
 	 * @return the converted HTML text, or <code>null</code> if the text is
 	 *         <code>null</code>
 	 */
@@ -535,6 +552,8 @@ public class HtmlImpl implements Html {
 
 	/**
 	 * Encodes the HTML text so that it's safe to use as an input field value.
+	 * TODO Please add "HTML" before "input field" as originally specified, since 
+	 this is specifically talking about HTML <input /> tags. Thanks.
 	 *
 	 * <p>
 	 * For example, the <code>&</code> character is replaced by
