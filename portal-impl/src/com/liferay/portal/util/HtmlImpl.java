@@ -31,6 +31,11 @@ import net.htmlparser.jericho.Source;
 import net.htmlparser.jericho.TextExtractor;
 
 /**
+ * Represents HTML content, providing the ability to escape, render, replace,
+ * and strip HTML text. This class uses XSS recommendations from <a
+ * href="http://www.owasp.org/index.php/Cross_Site_Scripting#How_to_Protect_Yourself">http://www.owasp.org/index.php/Cross_Site_Scripting#How_to_Protect_Yourself</a>
+ * when escaping HTML text.
+ *
  * @author Brian Wing Shun Chan
  * @author Clarence Shen
  * @author Harry Mark
@@ -51,6 +56,16 @@ public class HtmlImpl implements Html {
 
 	public static final int ESCAPE_MODE_URL = 5;
 
+	/**
+	 * Escapes the HTML text so that it is safe to use in an HTML context.
+	 * TODO Don't assume all input parameters (especially those named "text") are HTML.
+	 * Methods like this one can be used to convert regular text to HTML. Please check all parameters
+	 * for which you've specified that they are HTML and/or that you've described them as being HTML in the method descriptions. Thanks.
+	 *
+	 * @param  text the HTML text to escape
+	 * @return the escaped HTML text, or <code>null</code> if the text is
+	 *         <code>null</code>
+	 */
 	@Override
 	public String escape(String text) {
 		if (text == null) {
@@ -142,6 +157,24 @@ public class HtmlImpl implements Html {
 		return sb.toString();
 	}
 
+	/**
+	 * Escapes the input text as a hexadecimal value, based on the mode.
+	 * TODO Please mention type along with mode. Maybe say "... type (mode)."
+	 * TODO listing the link to each of the types would be helpful. The developer
+	 * should not need to know the value of each mode. They simply need to 
+	 * know how to specify each mode. I'd use the format {@link #ESCAPE_MODE_ATTRIBUTE}, and the like, for the various types.
+	 *
+	 * <p>
+	 * Note that <code>escape(html, 4)</code> (<code>ESCAPE_MODE_TEXT</code> =
+	 * 4) returns the same as <code>escape(html)</code>.
+	 * </p>
+	 *
+	 * @param  text the text to escape
+	 * @param  type the encoding type, which can be chosen from the
+	 *         <code>ESCAPE_MODE_*</code> constants in this class
+	 * @return the escaped hexadecimal value of the input text, based on the
+	 *         mode, or <code>null</code> if the text is <code>null</code>
+	 */
 	@Override
 	public String escape(String text, int type) {
 		if (text == null) {
@@ -204,16 +237,41 @@ public class HtmlImpl implements Html {
 		}
 	}
 
+	/**
+	 * Escapes the attribute value so that it is safe to use in an HTML context.
+	 * TODO HTML context? Are you sure? If not sure, please replace "HTML context"
+	 with "attribute value" and drop "HTML" from the attribute param's description.
+	 *
+	 * @param  attribute the HTML attribute to escape
+	 * @return the escaped attribute value, or <code>null</code> if the
+	 *         attribute value is <code>null</code>
+	 */
 	@Override
 	public String escapeAttribute(String attribute) {
 		return escape(attribute, ESCAPE_MODE_ATTRIBUTE);
 	}
 
+	/**
+	 * Escapes the CSS value so that it is safe to use in a CSS context.
+	 *
+	 * @param  css the CSS value to escape
+	 * @return the escaped CSS value, or <code>null</code> if the css value is
+	 *         <code>null</code>
+	 */
 	@Override
 	public String escapeCSS(String css) {
 		return escape(css, ESCAPE_MODE_CSS);
 	}
 
+	/**
+	 * Escapes the HREF attribute so that it is safe to use as a URL.
+	 * TODO I'm not certain of this. For example, why would we have both
+	 escapeURL and this method if they are the same.
+	 *
+	 * @param  href the HREF attribute to escape
+	 * @return the escaped HREF attribute, or <code>null</code> if the HREF
+	 *         attribute is <code>null</code>
+	 */
 	@Override
 	public String escapeHREF(String href) {
 		if (href == null) {
@@ -235,11 +293,26 @@ public class HtmlImpl implements Html {
 		return escapeAttribute(href);
 	}
 
+	/**
+	 * Escapes the JavaScript value so that it is safe to use in a JavaScript
+	 * context.
+	 *
+	 * @param  js the JavaScript value to escape
+	 * @return the escaped JavaScript value, or <code>null</code> if the
+	 *         JavaScript value is <code>null</code>
+	 */
 	@Override
 	public String escapeJS(String js) {
 		return escape(js, ESCAPE_MODE_JS);
 	}
 
+	/**
+	 * Escapes the URL value so that it is safe to use as a URL.
+	 *
+	 * @param  url the URL value to escape
+	 * @return the escaped URL value, or <code>null</code> if the URL value is
+	 *         <code>null</code>
+	 */
 	@Override
 	public String escapeURL(String url) {
 		return escape(url, ESCAPE_MODE_URL);
@@ -297,6 +370,20 @@ public class HtmlImpl implements Html {
 		return StringPool.QUOTE.concat(xPathAttribute).concat(StringPool.QUOTE);
 	}
 
+	/**
+	 * Extracts the raw text from the HTML input, compressing its
+	 * whitespace and removing all attributes, scripts, and styles.
+	 TODO Please see how I've rephrased this, most importantly with respect to whitespace compression.
+	 *
+	 * <p>
+	 * For example, raw text returned by this method can be stored in a search
+	 * index.
+	 * </p>
+	 *
+	 * @param  html the HTML text
+	 * @return the raw text from the HTML input, or <code>null</code> if the
+	 *         HTML input is <code>null</code>
+	 */
 	@Override
 	public String extractText(String html) {
 		if (html == null) {
@@ -315,6 +402,22 @@ public class HtmlImpl implements Html {
 		return StringUtil.replace(text, "&amp;", "&");
 	}
 
+	/**
+	 * Renders the HTML content into text. This provides a human readable
+	 * version of the content that is modeled on the way Mozilla Thunderbird and
+	 * other email clients provide an automatic conversion of HTML content to
+	 * text in their alternative MIME encoding of emails.
+	 *
+	 * <p>
+	 * Using the default settings, the output complies with the
+	 * <code>Text/Plain; Format=Flowed (DelSp=No)</code> protocol described in
+	 * <a href="http://tools.ietf.org/html/rfc3676">RFC-3676</a>.
+	 * </p>
+	 *
+	 * @param  html the HTML text
+	 * @return the rendered HTML text, or <code>null</code> if the HTML text is
+	 *         <code>null</code>
+	 */
 	@Override
 	public String render(String html) {
 		if (html == null) {
@@ -328,11 +431,32 @@ public class HtmlImpl implements Html {
 		return renderer.toString();
 	}
 
+	/**
+	 * Replaces all Microsoft Word unicode characters with plain HTML entities
+	 * or characters.
+	 * TODO capitalize Unicode.
+	 *
+	 * @param  text the HTML text
+	 * @return the converted HTML text, or <code>null</code> if the text is
+	 *         <code>null</code>
+	 */
 	@Override
 	public String replaceMsWordCharacters(String text) {
 		return StringUtil.replace(text, _MS_WORD_UNICODE, _MS_WORD_HTML);
 	}
 
+	/**
+	 * Replaces all new lines or carriage returns with the <code><br /></code>
+	 * HTML tag.
+	 *
+	 * TODO You can't assume all text parameters are already HTML. Methods
+	 like this one can be used to convert regular text to HTML. Please check all parameters
+	 for which you've specified that they are HTML.
+	 *
+	 * @param  text the text
+	 * @return the converted HTML text, or <code>null</code> if the text is
+	 *         <code>null</code>
+	 */
 	@Override
 	public String replaceNewLine(String text) {
 		if (text == null) {
@@ -342,11 +466,34 @@ public class HtmlImpl implements Html {
 		return text.replaceAll("\r?\n", "<br />");
 	}
 
+	/**
+	 * Strips all content delimited by the tag out of the HTML text.
+	 *
+	 * <p>
+	 * If the tag appears multiple times, all occurrences (including the tag)
+	 * are stripped. The tag may have attributes. In order for this method to
+	 * recognize the tag, it must consist of a separate opening and closing tag.
+	 * Self-closing tags remain in the result.
+	 * </p>
+	 *
+	 * @param  text the HTML text
+	 * @param  tag the tag used for delimiting, which should only be the tag's
+	 *         name (e.g. no &lt;)
+	 * @return the HTML text, without the stripped tag and its contents, or
+	 *         <code>null</code> if the text is <code>null</code>
+	 */
 	@Override
 	public String stripBetween(String text, String tag) {
 		return StringUtil.stripBetween(text, "<" + tag, "</" + tag + ">");
 	}
 
+	/**
+	 * Strips all XML comments out of the HTML text.
+	 *
+	 * @param  text the HTML text
+	 * @return the HTML text, without the stripped XML comments, or
+	 *         <code>null</code> if the text is <code>null</code>
+	 */
 	@Override
 	public String stripComments(String text) {
 		return StringUtil.stripBetween(text, "<!--", "-->");
@@ -403,6 +550,20 @@ public class HtmlImpl implements Html {
 		return sb.toString();
 	}
 
+	/**
+	 * Encodes the HTML text so that it's safe to use as an input field value.
+	 * TODO Please add "HTML" before "input field" as originally specified, since 
+	 this is specifically talking about HTML <input /> tags. Thanks.
+	 *
+	 * <p>
+	 * For example, the <code>&</code> character is replaced by
+	 * <code>&amp;amp;</code>.
+	 * </p>
+	 *
+	 * @param  text the HTML text
+	 * @return the encoded text that is safe to use as an input field value, or
+	 *         <code>null</code> if the text is <code>null</code>
+	 */
 	@Override
 	public String toInputSafe(String text) {
 		return StringUtil.replace(
