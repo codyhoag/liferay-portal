@@ -36,6 +36,7 @@ import com.liferay.portal.model.Group;
 import com.liferay.portal.model.Layout;
 import com.liferay.portal.model.LayoutConstants;
 import com.liferay.portal.model.LayoutFriendlyURL;
+import com.liferay.portal.model.LayoutPrototype;
 import com.liferay.portal.model.LayoutSet;
 import com.liferay.portal.model.LayoutType;
 import com.liferay.portal.model.LayoutTypePortlet;
@@ -58,7 +59,6 @@ import com.liferay.portal.util.WebKeys;
 import com.liferay.portlet.PortletURLImpl;
 
 import java.io.IOException;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -70,10 +70,14 @@ import javax.portlet.PortletException;
 import javax.portlet.PortletMode;
 import javax.portlet.PortletRequest;
 import javax.portlet.WindowState;
-
 import javax.servlet.http.HttpServletRequest;
 
 /**
+ * The UI name for a layout is "page". Thus a Layout represents a Page
+ * in the Portal. Layouts can be organized hierarchically and are 
+ * summarized in {@link LayoutSet}s. A single page is either part of the
+ * public or the private LayoutSet of a group (site)
+ * 
  * @author Brian Wing Shun Chan
  */
 public class LayoutImpl extends LayoutBaseImpl {
@@ -92,6 +96,15 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return validateFriendlyURL(friendlyURL, true);
 	}
 
+	/**
+	 * Checks if the given friendlyURL is considered valid - e.g.
+	 * length and certain syntactic restrictions are met.
+	 * @param friendlyURL the URL to be checked
+	 * @param checkMaxLength
+	 * @return error code, can be found as constants in 
+	 *         {@link LayoutFriendlyURLException}, -1 if URL validates correctly
+	 */
+	
 	public static int validateFriendlyURL(
 		String friendlyURL, boolean checkMaxLength) {
 
@@ -149,6 +162,9 @@ public class LayoutImpl extends LayoutBaseImpl {
 	public LayoutImpl() {
 	}
 
+	/**
+	 * Retrieve all layouts that are direct or indirect children of this Layout.
+	 */
 	@Override
 	public List<Layout> getAllChildren() throws SystemException {
 		List<Layout> layouts = new ArrayList<Layout>();
@@ -161,6 +177,11 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return layouts;
 	}
 
+	/** 
+	 * Retrieve the id of the toplevel layout, e.g. n-th parent of this layout, 
+	 * that does not have any parent itself
+	 * @return the id of the topmost parent layout of this layout
+	 */
 	@Override
 	public long getAncestorLayoutId() throws PortalException, SystemException {
 		long layoutId = 0;
@@ -182,6 +203,12 @@ public class LayoutImpl extends LayoutBaseImpl {
 
 		return layoutId;
 	}
+
+	/** 
+	 * Retrieve the plid of the toplevel layout, e.g. n-th parent of this layout, 
+	 * that does not have any parent itself
+	 * @return the plid of the topmost parent layout of this layout
+	 */
 
 	@Override
 	public long getAncestorPlid() throws PortalException, SystemException {
@@ -205,6 +232,11 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return plid;
 	}
 
+	/**
+	 * recursively retrieve the list of parents of this layout. Ordered as
+	 * direct parent layout first, most distant last
+	 */
+	
 	@Override
 	public List<Layout> getAncestors() throws PortalException, SystemException {
 		List<Layout> layouts = new ArrayList<Layout>();
@@ -222,12 +254,26 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return layouts;
 	}
 
+	/**
+	 * Retrieve all child layouts of this layout, independent of access 
+	 * permissions
+	 * 
+	 * @return the list of all child layouts
+	 */
+	
 	@Override
 	public List<Layout> getChildren() throws SystemException {
 		return LayoutLocalServiceUtil.getLayouts(
 			getGroupId(), isPrivateLayout(), getLayoutId());
 	}
 
+	/**
+	 * Retrieve all child layouts of this layout that the permission checker
+	 * gives access to.
+	 * 
+	 * @param permissionChecker user-specific context to check permissions
+	 * @return the child layouts that the given user has access to
+	 */
 	@Override
 	public List<Layout> getChildren(PermissionChecker permissionChecker)
 		throws PortalException, SystemException {
@@ -250,6 +296,13 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return layouts;
 	}
 
+	/**
+	 * Retrieve the color scheme that is configured for this layout or - if
+	 * unonfigured - of the layout set that contains this layout.
+	 * 
+	 * @return the color scheme to be used for this layout
+	 */
+	
 	@Override
 	public ColorScheme getColorScheme()
 		throws PortalException, SystemException {
@@ -264,6 +317,13 @@ public class LayoutImpl extends LayoutBaseImpl {
 		}
 	}
 
+	/**
+	 * Layouts and {@link LayoutSet}s can configure CSS that's applied in
+	 * addition to the theme's CSS. Retrieve this CSS text, either for this page
+	 * or for the whole Layoutset (if unconfigured for this layout)
+	 * 
+	 * @return the extra CSS to be used on this layout
+	 */
 	@Override
 	public String getCssText() throws PortalException, SystemException {
 		if (isInheritLookAndFeel()) {
@@ -299,6 +359,12 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return StringPool.BLANK;
 	}
 
+	/** 
+	 * retrieve this layout's friendly URL value for the given locale
+	 * 
+	 * @param locale the locale that the URL value should be retrieved for
+	 * @return the matching friendly URL value
+	 */
 	@Override
 	public String getFriendlyURL(Locale locale) {
 		Layout layout = this;
@@ -318,6 +384,9 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return friendlyURL;
 	}
 
+	/**
+	 * Retrieve the friendly URLs for all configured locales
+	 */
 	@Override
 	public Map<Locale, String> getFriendlyURLMap() throws SystemException {
 		Map<Locale, String> friendlyURLMap = new HashMap<Locale, String>();
@@ -343,11 +412,23 @@ public class LayoutImpl extends LayoutBaseImpl {
 			LocaleUtil.toLanguageId(LocaleUtil.getDefault()));
 	}
 
+	/**
+	 * Retrieve this layout's group. Think of group as the technical name 
+	 * for a Site.
+	 */
 	@Override
 	public Group getGroup() throws PortalException, SystemException {
 		return GroupLocalServiceUtil.getGroup(getGroupId());
 	}
 
+	/**
+	 * Retrieve the HTML title for the given locale. Returns the layout's name
+	 * if HTML title is unconfigured.
+	 * 
+	 * @param locale the locale that the HTML title should be retrieved for
+	 * @return the matching HTML title
+	 */
+	
 	@Override
 	public String getHTMLTitle(Locale locale) {
 		String localeLanguageId = LocaleUtil.toLanguageId(locale);
@@ -355,6 +436,14 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return getHTMLTitle(localeLanguageId);
 	}
 
+	/**
+	 * Retrieve the HTML title for the given locale id. Returns the layout's name
+	 * if HTML title is unconfigured.
+	 * 
+	 * @param localeLanguageId the locale that the HTML title should be retrieved for
+	 * @return the matching HTML title
+	 */
+	
 	@Override
 	public String getHTMLTitle(String localeLanguageId) {
 		String htmlTitle = getTitle(localeLanguageId);
@@ -366,6 +455,10 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return htmlTitle;
 	}
 
+	/**
+	 * Determine if this layout has a configured icon
+	 * @return true if an icon has been configured, false otherwise
+	 */
 	@Override
 	public boolean getIconImage() {
 		if (getIconImageId() > 0) {
@@ -375,6 +468,10 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return false;
 	}
 
+	/**
+	 * retrieve this layout's {@link LayoutSet}
+	 * @return this layout's LayoutSet
+	 */
 	@Override
 	public LayoutSet getLayoutSet() throws PortalException, SystemException {
 		if (_layoutSet == null) {
@@ -385,6 +482,10 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return _layoutSet;
 	}
 
+	/**
+	 * retrieve this layout's {@link LayoutType}
+	 * @return this layout's LayoutType
+	 */
 	@Override
 	public LayoutType getLayoutType() {
 		if (_layoutType == null) {
@@ -394,6 +495,11 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return _layoutType;
 	}
 
+	/**
+	 * if this layout links to another layout, retrieve the target layout. Null
+	 * otherwise
+	 * @return the target layout or null if not applicable
+	 */
 	@Override
 	public Layout getLinkedToLayout() throws SystemException {
 		long linkToLayoutId = GetterUtil.getLong(
@@ -407,6 +513,10 @@ public class LayoutImpl extends LayoutBaseImpl {
 			getGroupId(), isPrivateLayout(), linkToLayoutId);
 	}
 
+	/**
+	 * retrieve the parent's plid or 0 if current layout is already a toplevel layout
+	 * @return the parent layout's plid or 0 if this is a toplevel layout
+	 */
 	@Override
 	public long getParentPlid() throws PortalException, SystemException {
 		if (getParentLayoutId() == LayoutConstants.DEFAULT_PARENT_LAYOUT_ID) {
@@ -459,6 +569,11 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return PortalUtil.getLayoutTarget(this);
 	}
 
+	/**
+	 * retrieve this layout's theme. If not configured individually, this is the
+	 * layoutSet's theme.
+	 * @return the theme to be used on this layout
+	 */
 	@Override
 	public Theme getTheme() throws PortalException, SystemException {
 		if (isInheritLookAndFeel()) {
@@ -540,6 +655,9 @@ public class LayoutImpl extends LayoutBaseImpl {
 		}
 	}
 
+	/** 
+	 * Once upon a time there was a technology... 
+	 */
 	@Override
 	public Theme getWapTheme() throws PortalException, SystemException {
 		if (isInheritWapLookAndFeel()) {
@@ -551,6 +669,12 @@ public class LayoutImpl extends LayoutBaseImpl {
 		}
 	}
 
+	/**
+	 * determine if the given id describes one of the (hierarchical) parents of
+	 * this layout
+	 * @param layoutId the id that the parent list will be searched for
+	 * @return true if the given layoutId describes one of the layout's parents.
+	 */
 	@Override
 	public boolean hasAncestor(long layoutId)
 		throws PortalException, SystemException {
@@ -571,6 +695,11 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return false;
 	}
 
+	/**
+	 * Determine if this layout has child layouts
+	 * 
+	 * @return true if this layout has children, false otherwise
+	 */
 	@Override
 	public boolean hasChildren() throws SystemException {
 		return LayoutLocalServiceUtil.hasLayouts(
@@ -608,6 +737,13 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return false;
 	}
 
+	/**
+	 * Determine if this layout can be used as a content display page. A content
+	 * display page must have an AssetPublisher portlet that is configured as the
+	 * default AssetPublisher for this page.
+	 * 
+	 * @return true if an appropriately configured AssetPublisher is present on the layout
+	 */
 	@Override
 	public boolean isContentDisplayPage() {
 		UnicodeProperties typeSettingsProperties = getTypeSettingsProperties();
@@ -623,6 +759,12 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return false;
 	}
 
+	/**
+	 * determine if this is the first layout in its parent's list of childs
+	 * 
+	 * @return true if this is the first layout in the list of its parent's childs
+	 */
+	
 	@Override
 	public boolean isFirstChild() {
 		if (getPriority() == 0) {
@@ -632,6 +774,11 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return false;
 	}
 
+	/**
+	 * Determine if this is the first toplevel layout
+	 * 
+	 * @return true if this layout is the first toplevel page
+	 */
 	@Override
 	public boolean isFirstParent() {
 		if (isFirstChild() && isRootLayout()) {
@@ -646,6 +793,10 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return getIconImage();
 	}
 
+	/**
+	 * Determine if this layout utilizes its {@link LayoutSet}s look&feel 
+	 * options, e.g. theme, color scheme.
+	 */
 	@Override
 	public boolean isInheritLookAndFeel() {
 		if (Validator.isNull(getThemeId()) ||
@@ -657,6 +808,10 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return false;
 	}
 
+	/**
+	 * Once upon a time...
+	 */
+	
 	@Override
 	public boolean isInheritWapLookAndFeel() {
 		if (Validator.isNull(getWapThemeId()) ||
@@ -668,6 +823,14 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return false;
 	}
 
+	/**
+	 * Pages can be linked to PageTemplates ({@link LayoutPrototype}). 
+	 * Determine if this is the case for this layout.
+	 * 
+	 * @return true if this layout is built from a PageTemplate that still 
+	 *         maintains an active connection
+	 */
+	
 	@Override
 	public boolean isLayoutPrototypeLinkActive() {
 		if (isLayoutPrototypeLinkEnabled() &&
@@ -679,11 +842,21 @@ public class LayoutImpl extends LayoutBaseImpl {
 		return false;
 	}
 
+	/**
+	 * Determine if this layout is part of the public {@link LayoutSet}. Note that 
+	 * this does not give any information about the actual access permissions,
+	 * just about the default access options.
+	 */
 	@Override
 	public boolean isPublicLayout() {
 		return !isPrivateLayout();
 	}
 
+	/**
+	 * determine if this layout is a root layout, e.g. does not have any parent
+	 * 
+	 * @return true if this layout is a root layout, false otherwise
+	 */
 	@Override
 	public boolean isRootLayout() {
 		if (getParentLayoutId() == LayoutConstants.DEFAULT_PARENT_LAYOUT_ID) {
@@ -707,6 +880,10 @@ public class LayoutImpl extends LayoutBaseImpl {
 
 		return false;
 	}
+	
+	/**
+	 * @return true if this layout can hold embedded portlets
+	 */
 
 	@Override
 	public boolean isSupportsEmbeddedPortlets() {
