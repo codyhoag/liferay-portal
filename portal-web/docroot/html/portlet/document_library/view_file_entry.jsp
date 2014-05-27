@@ -193,7 +193,7 @@ DLActionsDisplayContext dlActionsDisplayContext = dlFileEntryActionsDisplayConte
 							}
 							%>
 
-							<img alt="<liferay-ui:message key="thumbnail" />" border="no" class="thumbnail" src="<%= thumbnailSrc %>" style="<%= DLUtil.getThumbnailStyle(true, 0) %>" />
+							<img alt="<liferay-ui:message key="thumbnail" />" class="thumbnail" src="<%= thumbnailSrc %>" style="<%= DLUtil.getThumbnailStyle(true, 0) %>" />
 						</span>
 
 						<span class="user-date">
@@ -628,7 +628,7 @@ DLActionsDisplayContext dlActionsDisplayContext = dlFileEntryActionsDisplayConte
 			var rowIds = A.all('input[name=<portlet:namespace />rowIds]');
 
 			rowIds.each(
-				function(item, index, collection) {
+				function(item, index) {
 					if (index >= 2) {
 						item.set('checked', false);
 					}
