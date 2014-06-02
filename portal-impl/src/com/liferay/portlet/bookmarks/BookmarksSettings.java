@@ -14,19 +14,143 @@
 
 package com.liferay.portlet.bookmarks;
 
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.settings.FallbackKeys;
 import com.liferay.portal.kernel.settings.LocalizedValuesMap;
+import com.liferay.portal.kernel.settings.ParameterMapSettings;
 import com.liferay.portal.kernel.settings.Settings;
+import com.liferay.portal.kernel.settings.SettingsFactory;
+import com.liferay.portal.kernel.settings.SettingsFactoryUtil;
 import com.liferay.portal.kernel.settings.TypedSettings;
 import com.liferay.portal.kernel.util.PropsKeys;
 import com.liferay.portlet.bookmarks.model.BookmarksFolderConstants;
+import com.liferay.portlet.bookmarks.util.BookmarksConstants;
+
+import java.util.Map;
 
 /**
  * @author Iván Zaera
  */
 public class BookmarksSettings {
 
-	public static FallbackKeys getFallbackKeys() {
+	public static BookmarksSettings getInstance(long groupId)
+		throws PortalException, SystemException {
+
+		Settings settings = SettingsFactoryUtil.getGroupServiceSettings(
+			groupId, BookmarksConstants.SERVICE_NAME);
+
+		return new BookmarksSettings(settings);
+	}
+
+	public static BookmarksSettings getInstance(
+			long groupId, Map<String, String[]> parameterMap)
+		throws PortalException, SystemException {
+
+		Settings settings = SettingsFactoryUtil.getGroupServiceSettings(
+			groupId, BookmarksConstants.SERVICE_NAME);
+
+		ParameterMapSettings parameterMapSettings = new ParameterMapSettings(
+			parameterMap, settings);
+
+		return new BookmarksSettings(parameterMapSettings);
+	}
+
+	public BookmarksSettings(Settings settings) {
+		_typedSettings = new TypedSettings(settings);
+	}
+
+	public LocalizedValuesMap getEmailEntryAddedBody() {
+		return _typedSettings.getLocalizedValuesMap("emailEntryAddedBody");
+	}
+
+	public String getEmailEntryAddedBodyXml() {
+		LocalizedValuesMap emailEntryAddedBody = getEmailEntryAddedBody();
+
+		return emailEntryAddedBody.getLocalizationXml();
+	}
+
+	public LocalizedValuesMap getEmailEntryAddedSubject() {
+		return _typedSettings.getLocalizedValuesMap("emailEntryAddedSubject");
+	}
+
+	public String getEmailEntryAddedSubjectXml() {
+		LocalizedValuesMap emailEntryAddedSubject = getEmailEntryAddedSubject();
+
+		return emailEntryAddedSubject.getLocalizationXml();
+	}
+
+	public LocalizedValuesMap getEmailEntryUpdatedBody() {
+		return _typedSettings.getLocalizedValuesMap("emailEntryUpdatedBody");
+	}
+
+	public String getEmailEntryUpdatedBodyXml() {
+		LocalizedValuesMap emailEntryUpdatedBody = getEmailEntryUpdatedBody();
+
+		return emailEntryUpdatedBody.getLocalizationXml();
+	}
+
+	public LocalizedValuesMap getEmailEntryUpdatedSubject() {
+		return _typedSettings.getLocalizedValuesMap("emailEntryUpdatedSubject");
+	}
+
+	public String getEmailEntryUpdatedSubjectXml() {
+		LocalizedValuesMap emailEntryUpdatedSubject =
+			getEmailEntryUpdatedSubject();
+
+		return emailEntryUpdatedSubject.getLocalizationXml();
+	}
+
+	public String getEmailFromAddress() {
+		return _typedSettings.getValue("emailFromAddress");
+	}
+
+	public String getEmailFromName() {
+		return _typedSettings.getValue("emailFromName");
+	}
+
+	public int getEntriesPerPage() {
+		return _typedSettings.getIntegerValue("entriesPerPage");
+	}
+
+	public String[] getEntryColumns() {
+		return _typedSettings.getValues("entryColumns");
+	}
+
+	public String[] getFolderColumns() {
+		return _typedSettings.getValues("folderColumns");
+	}
+
+	public int getFoldersPerPage() {
+		return _typedSettings.getIntegerValue("foldersPerPage");
+	}
+
+	public long getRootFolderId() {
+		return _typedSettings.getLongValue(
+			"rootFolderId", BookmarksFolderConstants.DEFAULT_PARENT_FOLDER_ID);
+	}
+
+	public boolean isEmailEntryAddedEnabled() {
+		return _typedSettings.getBooleanValue("emailEntryAddedEnabled");
+	}
+
+	public boolean isEmailEntryUpdatedEnabled() {
+		return _typedSettings.getBooleanValue("emailEntryUpdatedEnabled");
+	}
+
+	public boolean isEnableRelatedAssets() {
+		return _typedSettings.getBooleanValue("enableRelatedAssets");
+	}
+
+	public boolean isShowFoldersSearch() {
+		return _typedSettings.getBooleanValue("showFoldersSearch");
+	}
+
+	public boolean isShowSubfolders() {
+		return _typedSettings.getBooleanValue("showSubfolders");
+	}
+
+	private static FallbackKeys _getFallbackKeys() {
 		FallbackKeys fallbackKeys = new FallbackKeys();
 
 		fallbackKeys.add(
@@ -68,98 +192,14 @@ public class BookmarksSettings {
 		return fallbackKeys;
 	}
 
-	public BookmarksSettings(Settings settings) {
-		_typedSettings = new TypedSettings(settings);
-	}
+	static {
+		FallbackKeys fallbackKeys = _getFallbackKeys();
 
-	public LocalizedValuesMap getEmailEntryAddedBody() {
-		return _typedSettings.getLocalizedValuesMap("emailEntryAddedBody");
-	}
+		SettingsFactory settingsFactory =
+			SettingsFactoryUtil.getSettingsFactory();
 
-	public String getEmailEntryAddedBodyXml() {
-		LocalizedValuesMap emailEntryAddedBody = getEmailEntryAddedBody();
-
-		return emailEntryAddedBody.getLocalizationXml();
-	}
-
-	public boolean getEmailEntryAddedEnabled() {
-		return _typedSettings.getBooleanValue("emailEntryAddedEnabled");
-	}
-
-	public LocalizedValuesMap getEmailEntryAddedSubject() {
-		return _typedSettings.getLocalizedValuesMap("emailEntryAddedSubject");
-	}
-
-	public String getEmailEntryAddedSubjectXml() {
-		LocalizedValuesMap emailEntryAddedSubject = getEmailEntryAddedSubject();
-
-		return emailEntryAddedSubject.getLocalizationXml();
-	}
-
-	public LocalizedValuesMap getEmailEntryUpdatedBody() {
-		return _typedSettings.getLocalizedValuesMap("emailEntryUpdatedBody");
-	}
-
-	public String getEmailEntryUpdatedBodyXml() {
-		LocalizedValuesMap emailEntryUpdatedBody = getEmailEntryUpdatedBody();
-
-		return emailEntryUpdatedBody.getLocalizationXml();
-	}
-
-	public boolean getEmailEntryUpdatedEnabled() {
-		return _typedSettings.getBooleanValue("emailEntryUpdatedEnabled");
-	}
-
-	public LocalizedValuesMap getEmailEntryUpdatedSubject() {
-		return _typedSettings.getLocalizedValuesMap("emailEntryUpdatedSubject");
-	}
-
-	public String getEmailEntryUpdatedSubjectXml() {
-		LocalizedValuesMap emailEntryUpdatedSubject =
-			getEmailEntryUpdatedSubject();
-
-		return emailEntryUpdatedSubject.getLocalizationXml();
-	}
-
-	public String getEmailFromAddress() {
-		return _typedSettings.getValue("emailFromAddress");
-	}
-
-	public String getEmailFromName() {
-		return _typedSettings.getValue("emailFromName");
-	}
-
-	public boolean getEnableRelatedAssets() {
-		return _typedSettings.getBooleanValue("enableRelatedAssets");
-	}
-
-	public int getEntriesPerPage() {
-		return _typedSettings.getIntegerValue("entriesPerPage");
-	}
-
-	public String[] getEntryColumns() {
-		return _typedSettings.getValues("entryColumns");
-	}
-
-	public String[] getFolderColumns() {
-		return _typedSettings.getValues("folderColumns");
-	}
-
-	public int getFoldersPerPage() {
-		return _typedSettings.getIntegerValue("foldersPerPage");
-	}
-
-	public long getRootFolderId() {
-		return _typedSettings.getLongValue(
-			"rootFolderId", BookmarksFolderConstants.DEFAULT_PARENT_FOLDER_ID);
-	}
-
-	public boolean getShowFoldersSearch() {
-		return _typedSettings.getBooleanValue("showFoldersSearch");
-	}
-
-	public boolean getShowSubfolders() {
-		return _typedSettings.getBooleanValue("showSubfolders");
+		settingsFactory.registerFallbackKeys(
+			BookmarksConstants.SERVICE_NAME, fallbackKeys);
 	}
 
 	private TypedSettings _typedSettings;

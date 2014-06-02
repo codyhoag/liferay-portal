@@ -33,6 +33,7 @@ import com.liferay.portal.kernel.search.SearchException;
 import com.liferay.portal.kernel.search.Sort;
 import com.liferay.portal.kernel.systemevent.SystemEvent;
 import com.liferay.portal.kernel.util.CharPool;
+import com.liferay.portal.kernel.util.MapUtil;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.kernel.util.SetUtil;
 import com.liferay.portal.kernel.util.StringPool;
@@ -438,17 +439,17 @@ public class UserGroupLocalServiceImpl extends UserGroupLocalServiceBaseImpl {
 	public List<UserGroup> getGroupUserUserGroups(long groupId, long userId)
 		throws PortalException, SystemException {
 
-		List<Long> groupUserGroupIds = groupPersistence.getUserGroupPrimaryKeys(
+		long[] groupUserGroupIds = groupPersistence.getUserGroupPrimaryKeys(
 			groupId);
 
-		if (groupUserGroupIds.isEmpty()) {
+		if (groupUserGroupIds.length == 0) {
 			return Collections.emptyList();
 		}
 
-		List<Long> userUserGroupIds = userPersistence.getUserGroupPrimaryKeys(
+		long[] userUserGroupIds = userPersistence.getUserGroupPrimaryKeys(
 			userId);
 
-		if (userUserGroupIds.isEmpty()) {
+		if (userUserGroupIds.length == 0) {
 			return Collections.emptyList();
 		}
 
@@ -1165,7 +1166,7 @@ public class UserGroupLocalServiceImpl extends UserGroupLocalServiceBaseImpl {
 	}
 
 	protected boolean isUseCustomSQL(LinkedHashMap<String, Object> params) {
-		if (params.isEmpty()) {
+		if (MapUtil.isEmpty(params)) {
 			return false;
 		}
 

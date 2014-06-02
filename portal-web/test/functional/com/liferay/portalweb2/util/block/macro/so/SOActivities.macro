@@ -959,7 +959,7 @@
 
 		<var locator-key="USER_NAME" name="currentUser" path="Dockbar" />
 
-		<execute action="SOUserBar#click" locator-key1="DASHBOARD" />
+		<execute macro="SOUserBar#gotoDashboardPG" />
 
 		<var name="key_userName" value="${microblogsEntryRepostAuthorName}" />
 
@@ -1208,7 +1208,7 @@
 	</command>
 
 	<command name="viewSiteContentEdited">
-		<execute action="SOActivities#keyPress" locator-key1="ACTIVITIES_PORTLET_TITLE" value1="\40" />
+		<execute action="SOActivities#keyPress" locator-key1="ACTIVITIES_PORTLET_TITLE" value1="\32" />
 
 		<execute macro="SOActivities#viewBookmarksActivityEntry">
 			<var name="action" value="${bookmarkEditAction}" />

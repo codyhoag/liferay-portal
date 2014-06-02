@@ -17,7 +17,7 @@
 <%@ include file="/html/portlet/blogs/init.jsp" %>
 
 <%
-blogsSettings = BlogsUtil.getBlogsSettings(scopeGroupId, request);
+blogsSettings = BlogsSettings.getInstance(scopeGroupId, request.getParameterMap());
 %>
 
 <liferay-portlet:actionURL portletConfiguration="true" var="configurationActionURL">
@@ -81,7 +81,7 @@ blogsSettings = BlogsUtil.getBlogsSettings(scopeGroupId, request);
 			<liferay-ui:email-notification-settings
 				emailBody="<%= blogsSettings.getEmailEntryAddedBodyXml() %>"
 				emailDefinitionTerms="<%= emailDefinitionTerms %>"
-				emailEnabled="<%= blogsSettings.getEmailEntryAddedEnabled() %>"
+				emailEnabled="<%= blogsSettings.isEmailEntryAddedEnabled() %>"
 				emailParam="emailEntryAdded"
 				emailSubject="<%= blogsSettings.getEmailEntryAddedSubjectXml() %>"
 			/>
@@ -91,7 +91,7 @@ blogsSettings = BlogsUtil.getBlogsSettings(scopeGroupId, request);
 			<liferay-ui:email-notification-settings
 				emailBody="<%= blogsSettings.getEmailEntryUpdatedBodyXml() %>"
 				emailDefinitionTerms="<%= emailDefinitionTerms %>"
-					emailEnabled="<%= blogsSettings.getEmailEntryUpdatedEnabled() %>"
+					emailEnabled="<%= blogsSettings.isEmailEntryUpdatedEnabled() %>"
 				emailParam="emailEntryUpdated"
 				emailSubject="<%= blogsSettings.getEmailEntryUpdatedSubjectXml() %>"
 			/>

@@ -17,7 +17,7 @@
 <%@ include file="/html/portlet/wiki/init.jsp" %>
 
 <%
-wikiPortletInstanceSettings = WikiUtil.getWikiPortletInstanceSettings(layout, portletId, request);
+wikiPortletInstanceSettings = WikiPortletInstanceSettings.getInstance(layout, portletId, request.getParameterMap());
 
 wikiConfigurationDisplayContext = new WikiConfigurationDisplayContext(request, wikiPortletInstanceSettings);
 %>
@@ -55,7 +55,7 @@ wikiConfigurationDisplayContext = new WikiConfigurationDisplayContext(request, w
 				<liferay-ui:rss-settings
 					delta="<%= wikiPortletInstanceSettings.getRssDelta() %>"
 					displayStyle="<%= wikiPortletInstanceSettings.getRssDisplayStyle() %>"
-					enabled="<%= wikiPortletInstanceSettings.getEnableRSS() %>"
+					enabled="<%= wikiPortletInstanceSettings.isEnableRSS() %>"
 					feedType="<%= wikiPortletInstanceSettings.getRssFeedType() %>"
 				/>
 			</liferay-ui:section>

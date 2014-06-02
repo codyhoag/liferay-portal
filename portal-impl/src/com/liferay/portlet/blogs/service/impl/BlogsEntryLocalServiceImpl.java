@@ -1412,14 +1412,14 @@ public class BlogsEntryLocalServiceImpl extends BlogsEntryLocalServiceBaseImpl {
 			return;
 		}
 
-		BlogsSettings blogsSettings = BlogsUtil.getBlogsSettings(
+		BlogsSettings blogsSettings = BlogsSettings.getInstance(
 			entry.getGroupId());
 
 		if (serviceContext.isCommandAdd() &&
-			blogsSettings.getEmailEntryAddedEnabled()) {
+			blogsSettings.isEmailEntryAddedEnabled()) {
 		}
 		else if (serviceContext.isCommandUpdate() &&
-				 blogsSettings.getEmailEntryUpdatedEnabled()) {
+				 blogsSettings.isEmailEntryUpdatedEnabled()) {
 		}
 		else {
 			return;

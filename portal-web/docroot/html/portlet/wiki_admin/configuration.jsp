@@ -17,7 +17,7 @@
 <%@ include file="/html/portlet/wiki/init.jsp" %>
 
 <%
-wikiSettings = WikiUtil.getWikiSettings(themeDisplay.getSiteGroupId(), request);
+wikiSettings = WikiSettings.getInstance(themeDisplay.getSiteGroupId(), request.getParameterMap());
 %>
 
 <liferay-portlet:actionURL portletConfiguration="true" var="configurationActionURL">
@@ -85,7 +85,7 @@ wikiSettings = WikiUtil.getWikiSettings(themeDisplay.getSiteGroupId(), request);
 			<liferay-ui:email-notification-settings
 				emailBody="<%= wikiSettings.getEmailPageAddedBodyXml() %>"
 				emailDefinitionTerms="<%= definitionTerms %>"
-				emailEnabled="<%= wikiSettings.getEmailPageAddedEnabled() %>"
+				emailEnabled="<%= wikiSettings.isEmailPageAddedEnabled() %>"
 				emailParam="emailPageAdded"
 				emailSubject="<%= wikiSettings.getEmailPageAddedSubjectXml() %>"
 			/>
@@ -95,7 +95,7 @@ wikiSettings = WikiUtil.getWikiSettings(themeDisplay.getSiteGroupId(), request);
 			<liferay-ui:email-notification-settings
 				emailBody="<%= wikiSettings.getEmailPageUpdatedBodyXml() %>"
 				emailDefinitionTerms="<%= definitionTerms %>"
-				emailEnabled="<%= wikiSettings.getEmailPageUpdatedEnabled() %>"
+				emailEnabled="<%= wikiSettings.isEmailPageUpdatedEnabled() %>"
 				emailParam="emailPageUpdated"
 				emailSubject="<%= wikiSettings.getEmailPageUpdatedSubjectXml() %>"
 			/>

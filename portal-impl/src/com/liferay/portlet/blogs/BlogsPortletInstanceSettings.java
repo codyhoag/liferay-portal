@@ -14,11 +14,20 @@
 
 package com.liferay.portlet.blogs;
 
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.settings.FallbackKeys;
+import com.liferay.portal.kernel.settings.ParameterMapSettings;
 import com.liferay.portal.kernel.settings.Settings;
+import com.liferay.portal.kernel.settings.SettingsFactory;
+import com.liferay.portal.kernel.settings.SettingsFactoryUtil;
 import com.liferay.portal.kernel.settings.TypedSettings;
 import com.liferay.portal.kernel.util.PropsKeys;
+import com.liferay.portal.model.Layout;
 import com.liferay.portal.util.PortalUtil;
+import com.liferay.portal.util.PortletKeys;
+
+import java.util.Map;
 
 /**
  * @author Iván Zaera
@@ -27,7 +36,101 @@ public class BlogsPortletInstanceSettings {
 
 	public static final String[] MULTI_VALUED_KEYS = {};
 
-	public static FallbackKeys getFallbackKeys() {
+	public static BlogsPortletInstanceSettings getInstance(
+			Layout layout, String portletId)
+		throws PortalException, SystemException {
+
+		Settings settings = SettingsFactoryUtil.getPortletInstanceSettings(
+			layout, portletId);
+
+		return new BlogsPortletInstanceSettings(settings);
+	}
+
+	public static BlogsPortletInstanceSettings getInstance(
+			Layout layout, String portletId, Map<String, String[]> parameterMap)
+		throws PortalException, SystemException {
+
+		Settings settings = SettingsFactoryUtil.getPortletInstanceSettings(
+			layout, portletId);
+
+		return new BlogsPortletInstanceSettings(
+			new ParameterMapSettings(parameterMap, settings));
+	}
+
+	public BlogsPortletInstanceSettings(Settings settings) {
+		_typedSettings = new TypedSettings(settings);
+	}
+
+	public String getDisplayStyle() {
+		return _typedSettings.getValue("displayStyle");
+	}
+
+	public long getDisplayStyleGroupId(long defaultDisplayStyleGroupId) {
+		return _typedSettings.getLongValue(
+			"displayStyleGroupId", defaultDisplayStyleGroupId);
+	}
+
+	public int getPageDelta() {
+		return _typedSettings.getIntegerValue("pageDelta");
+	}
+
+	public int getRssDelta() {
+		return _typedSettings.getIntegerValue("rssDelta");
+	}
+
+	public String getRssDisplayStyle() {
+		return _typedSettings.getValue("rssDisplayStyle");
+	}
+
+	public String getRssFeedType() {
+		return _typedSettings.getValue("rssFeedType");
+	}
+
+	public String getSocialBookmarksDisplayPosition() {
+		return _typedSettings.getValue("socialBookmarksDisplayPosition");
+	}
+
+	public String getSocialBookmarksDisplayStyle() {
+		return _typedSettings.getValue("socialBookmarksDisplayStyle");
+	}
+
+	public String getSocialBookmarksTypes() {
+		return _typedSettings.getValue("socialBookmarksTypes");
+	}
+
+	public boolean isEnableCommentRatings() {
+		return _typedSettings.getBooleanValue("enableCommentRatings");
+	}
+
+	public boolean isEnableComments() {
+		return _typedSettings.getBooleanValue("enableComments");
+	}
+
+	public boolean isEnableFlags() {
+		return _typedSettings.getBooleanValue("enableFlags");
+	}
+
+	public boolean isEnableRatings() {
+		return _typedSettings.getBooleanValue("enableRatings");
+	}
+
+	public boolean isEnableRelatedAssets() {
+		return _typedSettings.getBooleanValue("enableRelatedAssets");
+	}
+
+	public boolean isEnableRSS() {
+		if (!PortalUtil.isRSSFeedsEnabled()) {
+			return false;
+		}
+
+		return _typedSettings.getBooleanValue("enableRss");
+	}
+
+	public boolean isEnableSocialBookmarks() {
+		return _typedSettings.getBooleanValue("enableSocialBookmarks");
+	}
+
+	private static FallbackKeys _getFallbackKeys() {
 		FallbackKeys fallbackKeys = new FallbackKeys();
 
 		fallbackKeys.add(
@@ -61,77 +164,15 @@ public class BlogsPortletInstanceSettings {
 		return fallbackKeys;
 	}
 
-	public BlogsPortletInstanceSettings(Settings settings) {
-		_typedSettings = new TypedSettings(settings);
-	}
+	static {
+		FallbackKeys fallbackKeys = _getFallbackKeys();
 
-	public String getDisplayStyle() {
-		return _typedSettings.getValue("displayStyle");
-	}
+		SettingsFactory settingsFactory =
+			SettingsFactoryUtil.getSettingsFactory();
 
-	public long getDisplayStyleGroupId(long defaultDisplayStyleGroupId) {
-		return _typedSettings.getLongValue(
-			"displayStyleGroupId", defaultDisplayStyleGroupId);
-	}
-
-	public boolean getEnableCommentRatings() {
-		return _typedSettings.getBooleanValue("enableCommentRatings");
-	}
-
-	public boolean getEnableComments() {
-		return _typedSettings.getBooleanValue("enableComments");
-	}
-
-	public boolean getEnableFlags() {
-		return _typedSettings.getBooleanValue("enableFlags");
-	}
-
-	public boolean getEnableRatings() {
-		return _typedSettings.getBooleanValue("enableRatings");
-	}
-
-	public boolean getEnableRelatedAssets() {
-		return _typedSettings.getBooleanValue("enableRelatedAssets");
-	}
-
-	public boolean getEnableRSS() {
-		if (!PortalUtil.isRSSFeedsEnabled()) {
-			return false;
-		}
-
-		return _typedSettings.getBooleanValue("enableRss");
-	}
-
-	public boolean getEnableSocialBookmarks() {
-		return _typedSettings.getBooleanValue("enableSocialBookmarks");
-	}
-
-	public int getPageDelta() {
-		return _typedSettings.getIntegerValue("pageDelta");
-	}
-
-	public int getRssDelta() {
-		return _typedSettings.getIntegerValue("rssDelta");
-	}
-
-	public String getRssDisplayStyle() {
-		return _typedSettings.getValue("rssDisplayStyle");
-	}
-
-	public String getRssFeedType() {
-		return _typedSettings.getValue("rssFeedType");
-	}
-
-	public String getSocialBookmarksDisplayPosition() {
-		return _typedSettings.getValue("socialBookmarksDisplayPosition");
-	}
-
-	public String getSocialBookmarksDisplayStyle() {
-		return _typedSettings.getValue("socialBookmarksDisplayStyle");
-	}
-
-	public String getSocialBookmarksTypes() {
-		return _typedSettings.getValue("socialBookmarksTypes");
+		settingsFactory.registerFallbackKeys(PortletKeys.BLOGS, fallbackKeys);
+		settingsFactory.registerFallbackKeys(
+			PortletKeys.BLOGS_ADMIN, fallbackKeys);
 	}
 
 	private TypedSettings _typedSettings;

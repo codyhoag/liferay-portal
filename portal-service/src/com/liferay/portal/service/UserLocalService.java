@@ -325,6 +325,17 @@ public interface UserLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
+	* Returns the groupIds of the groups associated with the user.
+	*
+	* @param userId the userId of the user
+	* @return long[] the groupIds of groups associated with the user
+	* @throws SystemException if a system exception occurred
+	*/
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public long[] getGroupPrimaryKeys(long userId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
 	* @throws SystemException if a system exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -436,6 +447,17 @@ public interface UserLocalService extends BaseLocalService,
 	*/
 	public void deleteOrganizationUsers(long organizationId,
 		java.util.List<com.liferay.portal.model.User> Users)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns the organizationIds of the organizations associated with the user.
+	*
+	* @param userId the userId of the user
+	* @return long[] the organizationIds of organizations associated with the user
+	* @throws SystemException if a system exception occurred
+	*/
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public long[] getOrganizationPrimaryKeys(long userId)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
@@ -555,6 +577,17 @@ public interface UserLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
+	* Returns the roleIds of the roles associated with the user.
+	*
+	* @param userId the userId of the user
+	* @return long[] the roleIds of roles associated with the user
+	* @throws SystemException if a system exception occurred
+	*/
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public long[] getRolePrimaryKeys(long userId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
 	* @throws SystemException if a system exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -665,6 +698,17 @@ public interface UserLocalService extends BaseLocalService,
 	*/
 	public void deleteTeamUsers(long teamId,
 		java.util.List<com.liferay.portal.model.User> Users)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns the teamIds of the teams associated with the user.
+	*
+	* @param userId the userId of the user
+	* @return long[] the teamIds of teams associated with the user
+	* @throws SystemException if a system exception occurred
+	*/
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public long[] getTeamPrimaryKeys(long userId)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
@@ -782,6 +826,17 @@ public interface UserLocalService extends BaseLocalService,
 	*/
 	public void deleteUserGroupUsers(long userGroupId,
 		java.util.List<com.liferay.portal.model.User> Users)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns the userGroupIds of the user groups associated with the user.
+	*
+	* @param userId the userId of the user
+	* @return long[] the userGroupIds of user groups associated with the user
+	* @throws SystemException if a system exception occurred
+	*/
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public long[] getUserGroupPrimaryKeys(long userId)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
@@ -1646,7 +1701,7 @@ public interface UserLocalService extends BaseLocalService,
 	* </p>
 	*
 	* @param userId the primary key of the user
-	* @param type the type of social relation. The possible types can be found
+	* @param socialRelationType the type of social relation. The possible types can be found
 	in {@link
 	com.liferay.portlet.social.model.SocialRelationConstants}.
 	* @param start the lower bound of the range of users
@@ -1657,10 +1712,13 @@ public interface UserLocalService extends BaseLocalService,
 	with the user
 	* @throws PortalException if a user with the primary key could not be found
 	* @throws SystemException if a system exception occurred
+	* @deprecated As of 7.0.0, replaced by {@link
+	#getSocialUsers(long, int, String, int, int, OrderByComparator)}
 	*/
+	@Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<com.liferay.portal.model.User> getSocialUsers(
-		long userId, int type, int start, int end,
+		long userId, int socialRelationType, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator obc)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
@@ -1687,10 +1745,21 @@ public interface UserLocalService extends BaseLocalService,
 	* @return the ordered range of users with a social relation with the user
 	* @throws PortalException if a user with the primary key could not be found
 	* @throws SystemException if a system exception occurred
+	* @deprecated As of 7.0.0, replaced by {@link
+	#getSocialUsers(long, int, boolean, int, int, OrderByComparator)}
 	*/
+	@Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<com.liferay.portal.model.User> getSocialUsers(
 		long userId, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator obc)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.liferay.portal.model.User> getSocialUsers(
+		long userId, int socialRelationType,
+		java.lang.String socialRelationTypeComparator, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator obc)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
@@ -1711,7 +1780,7 @@ public interface UserLocalService extends BaseLocalService,
 	*
 	* @param userId1 the primary key of the first user
 	* @param userId2 the primary key of the second user
-	* @param type the type of social relation. The possible types can be found
+	* @param socialRelationType the type of social relation. The possible types can be found
 	in {@link
 	com.liferay.portlet.social.model.SocialRelationConstants}.
 	* @param start the lower bound of the range of users
@@ -1725,7 +1794,7 @@ public interface UserLocalService extends BaseLocalService,
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<com.liferay.portal.model.User> getSocialUsers(
-		long userId1, long userId2, int type, int start, int end,
+		long userId1, long userId2, int socialRelationType, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator obc)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
@@ -1769,7 +1838,10 @@ public interface UserLocalService extends BaseLocalService,
 	* @return the number of users with a social relation with the user
 	* @throws PortalException if a user with the primary key could not be found
 	* @throws SystemException if a system exception occurred
+	* @deprecated As of 7.0.0, replaced by {@link
+	#getSocialUsersCount(long, int, String)}
 	*/
+	@Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public int getSocialUsersCount(long userId)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -1780,16 +1852,38 @@ public interface UserLocalService extends BaseLocalService,
 	* user.
 	*
 	* @param userId the primary key of the user
-	* @param type the type of social relation. The possible types can be found
+	* @param socialRelationType the type of social relation. The possible types can be found
 	in {@link
 	com.liferay.portlet.social.model.SocialRelationConstants}.
 	* @return the number of users with a social relation of the type with the
 	user
 	* @throws PortalException if a user with the primary key could not be found
 	* @throws SystemException if a system exception occurred
+	* @deprecated As of 7.0.0, replaced by {@link
+	#getSocialUsersCount(long, int, String)}
+	*/
+	@Deprecated
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public int getSocialUsersCount(long userId, int socialRelationType)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns the number of users with a social relation with the user.
+	*
+	* @param userId the primary key of the user
+	* @param socialRelationType the type of social relation. The possible types can be found
+	in {@link
+	com.liferay.portlet.social.model.SocialRelationConstants}.
+	* @param equalType the value of type of social relation equals <code>true
+	</code> or <code>false</code>
+	* @return the number of users with a social relation with the user
+	* @throws PortalException if a user with the primary key could not be found
+	* @throws SystemException if a system exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-	public int getSocialUsersCount(long userId, int type)
+	public int getSocialUsersCount(long userId, int socialRelationType,
+		java.lang.String socialRelationTypeComparator)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
 
@@ -1814,7 +1908,7 @@ public interface UserLocalService extends BaseLocalService,
 	*
 	* @param userId1 the primary key of the first user
 	* @param userId2 the primary key of the second user
-	* @param type the type of social relation. The possible types can be found
+	* @param socialRelationType the type of social relation. The possible types can be found
 	in {@link
 	com.liferay.portlet.social.model.SocialRelationConstants}.
 	* @return the number of users with a mutual social relation of the type
@@ -1823,7 +1917,8 @@ public interface UserLocalService extends BaseLocalService,
 	* @throws SystemException if a system exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-	public int getSocialUsersCount(long userId1, long userId2, int type)
+	public int getSocialUsersCount(long userId1, long userId2,
+		int socialRelationType)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
 

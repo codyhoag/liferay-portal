@@ -17,7 +17,7 @@
 <%@ include file="/html/portlet/blogs/init.jsp" %>
 
 <%
-blogsPortletInstanceSettings = BlogsUtil.getBlogsPortletInstanceSettings(layout, portletId, request);
+blogsPortletInstanceSettings = BlogsPortletInstanceSettings.getInstance(layout, portletId, request.getParameterMap());
 %>
 
 <liferay-portlet:actionURL portletConfiguration="true" var="configurationActionURL">
@@ -52,7 +52,7 @@ blogsPortletInstanceSettings = BlogsUtil.getBlogsPortletInstanceSettings(layout,
 				<liferay-ui:rss-settings
 					delta="<%= blogsPortletInstanceSettings.getRssDelta() %>"
 					displayStyle="<%= blogsPortletInstanceSettings.getRssDisplayStyle() %>"
-					enabled="<%= blogsPortletInstanceSettings.getEnableRSS() %>"
+					enabled="<%= blogsPortletInstanceSettings.isEnableRSS() %>"
 					feedType="<%= blogsPortletInstanceSettings.getRssFeedType() %>"
 				/>
 			</liferay-ui:section>

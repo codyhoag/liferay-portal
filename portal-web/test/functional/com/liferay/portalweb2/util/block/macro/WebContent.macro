@@ -240,6 +240,13 @@
 		<execute action="CPWebcontentAddwebcontent#assertClick" locator-key1="PUBLISH_BUTTON" value1="Publish" />
 
 		<execute action="CPWebcontentAddwebcontent#assertTextEquals" locator-key1="ERROR_MESSAGE_FIELD_REQUIRED" value1="This field is required." />
+
+		<if>
+			<isset var="webContentContent" />
+			<then>
+				<execute action="CPWebcontentAddwebcontent#assertTextEquals" locator-key1="CONTENT_FIELD" value1="${webContentContent}" />
+			</then>
+		</if>
 	</command>
 
 	<command name="addPGViaAP">
@@ -913,6 +920,16 @@
 		<execute action="CPWebcontent#assertClick" locator-key1="ENTRY_DESCRIPTIVE_TITLE" value1="${webContentTitle}" />
 	</command>
 
+	<command name="gotoEditCP">
+		<var name="key_webContentTitle" value="${webContentTitle}" />
+
+		<execute action="CPWebcontent#click" locator-key1="TOOLBAR_DISPLAY_STYLE_BUTTON" />
+		<execute action="CPWebcontent#assertClick" locator-key1="DISPLAY_STYLE_MENULIST_DESCRIPTIVE" value1="Descriptive" />
+		<execute action="CPWebcontent#assertTextEquals" locator-key1="ENTRY_DESCRIPTIVE_TITLE" value1="${webContentTitle}" />
+		<execute action="CPWebcontent#click" locator-key1="ENTRY_DESCRIPTIVE_MENULIST_ARROW" />
+		<execute action="CPWebcontent#assertClick" locator-key1="ENTRY_MENULIST_EDIT" value1="Edit" />
+	</command>
+
 	<command name="gotoViewSpecificVersionHistoryCP">
 		<var name="key_webContentTitle" value="${webContentTitle}" />
 
@@ -948,6 +965,12 @@
 
 		<execute action="CPWebcontentPreview#selectFrame" locator-key1="PREVIEW_IFRAME" />
 		<execute action="CPWebcontentPreview#assertTextEquals" locator-key1="BODY_FIELD" value1="Text: ${webContentText}" />
+	</command>
+
+	<command name="publishBasicCP">
+		<execute action="CPWebcontentEditwebcontent#assertClick" locator-key1="PUBLISH_BUTTON" value1="Publish" />
+
+		<execute action="CPWebcontent#assertTextEquals" locator-key1="SUCCESS_MESSAGE" value1="Your request completed successfully." />
 	</command>
 
 	<command name="publishCP">

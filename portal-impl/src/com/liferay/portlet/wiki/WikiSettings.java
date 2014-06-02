@@ -14,13 +14,22 @@
 
 package com.liferay.portlet.wiki;
 
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.settings.FallbackKeys;
 import com.liferay.portal.kernel.settings.LocalizedValuesMap;
+import com.liferay.portal.kernel.settings.ModifiableSettings;
+import com.liferay.portal.kernel.settings.ParameterMapSettings;
 import com.liferay.portal.kernel.settings.Settings;
+import com.liferay.portal.kernel.settings.SettingsFactory;
+import com.liferay.portal.kernel.settings.SettingsFactoryUtil;
 import com.liferay.portal.kernel.settings.TypedSettings;
 import com.liferay.portal.kernel.util.PropsKeys;
+import com.liferay.portlet.wiki.util.WikiConstants;
 
 import java.io.IOException;
+
+import java.util.Map;
 
 import javax.portlet.ValidatorException;
 
@@ -31,7 +40,98 @@ public class WikiSettings {
 
 	public static final String[] MULTI_VALUED_KEYS = {};
 
-	public static FallbackKeys getFallbackKeys() {
+	public static WikiSettings getInstance(long groupId)
+		throws PortalException, SystemException {
+
+		Settings settings = SettingsFactoryUtil.getGroupServiceSettings(
+			groupId, WikiConstants.SERVICE_NAME);
+
+		return new WikiSettings(settings);
+	}
+
+	public static WikiSettings getInstance(
+			long groupId, Map<String, String[]> parameterMap)
+		throws PortalException, SystemException {
+
+		Settings settings = SettingsFactoryUtil.getGroupServiceSettings(
+			groupId, WikiConstants.SERVICE_NAME);
+
+		return new WikiSettings(
+			new ParameterMapSettings(parameterMap, settings));
+	}
+
+	public WikiSettings(Settings settings) {
+		_typedSettings = new TypedSettings(settings);
+	}
+
+	public String getEmailFromAddress() {
+		return _typedSettings.getValue("emailFromAddress");
+	}
+
+	public String getEmailFromName() {
+		return _typedSettings.getValue("emailFromName");
+	}
+
+	public LocalizedValuesMap getEmailPageAddedBody() {
+		return _typedSettings.getLocalizedValuesMap("emailPageAddedBody");
+	}
+
+	public String getEmailPageAddedBodyXml() {
+		LocalizedValuesMap emailPageAddedBodyMap = getEmailPageAddedBody();
+
+		return emailPageAddedBodyMap.getLocalizationXml();
+	}
+
+	public LocalizedValuesMap getEmailPageAddedSubject() {
+		return _typedSettings.getLocalizedValuesMap("emailPageAddedSubject");
+	}
+
+	public String getEmailPageAddedSubjectXml() {
+		LocalizedValuesMap emailPageAddedSubjectMap =
+			getEmailPageAddedSubject();
+
+		return emailPageAddedSubjectMap.getLocalizationXml();
+	}
+
+	public LocalizedValuesMap getEmailPageUpdatedBody() {
+		return _typedSettings.getLocalizedValuesMap("emailPageUpdatedBody");
+	}
+
+	public String getEmailPageUpdatedBodyXml() {
+		LocalizedValuesMap emailPageUpdatedBodyMap = getEmailPageUpdatedBody();
+
+		return emailPageUpdatedBodyMap.getLocalizationXml();
+	}
+
+	public LocalizedValuesMap getEmailPageUpdatedSubject() {
+		return _typedSettings.getLocalizedValuesMap("emailPageUpdatedSubject");
+	}
+
+	public String getEmailPageUpdatedSubjectXml() {
+		LocalizedValuesMap emailPageUpdatedSubjectMap =
+			getEmailPageUpdatedSubject();
+
+		return emailPageUpdatedSubjectMap.getLocalizationXml();
+	}
+
+	public boolean isEmailPageAddedEnabled() {
+		return _typedSettings.getBooleanValue("emailPageAddedEnabled");
+	}
+
+	public boolean isEmailPageUpdatedEnabled() {
+		return _typedSettings.getBooleanValue("emailPageUpdatedEnabled");
+	}
+
+	public void store() throws IOException, ValidatorException {
+		Settings settings = _typedSettings.getWrappedSettings();
+
+		ModifiableSettings modifiableSettings =
+			settings.getModifiableSettings();
+
+		modifiableSettings.store();
+	}
+
+	private static FallbackKeys _getFallbackKeys() {
 		FallbackKeys fallbackKeys = new FallbackKeys();
 
 		fallbackKeys.add(
@@ -58,72 +158,14 @@ public class WikiSettings {
 		return fallbackKeys;
 	}
 
-	public WikiSettings(Settings settings) {
-		_typedSettings = new TypedSettings(settings);
-	}
+	static {
+		FallbackKeys fallbackKeys = _getFallbackKeys();
 
-	public String getEmailFromAddress() {
-		return _typedSettings.getValue("emailFromAddress");
-	}
+		SettingsFactory settingsFactory =
+			SettingsFactoryUtil.getSettingsFactory();
 
-	public String getEmailFromName() {
-		return _typedSettings.getValue("emailFromName");
-	}
-
-	public LocalizedValuesMap getEmailPageAddedBody() {
-		return _typedSettings.getLocalizedValuesMap("emailPageAddedBody");
-	}
-
-	public String getEmailPageAddedBodyXml() {
-		LocalizedValuesMap emailPageAddedBodyMap = getEmailPageAddedBody();
-
-		return emailPageAddedBodyMap.getLocalizationXml();
-	}
-
-	public boolean getEmailPageAddedEnabled() {
-		return _typedSettings.getBooleanValue("emailPageAddedEnabled");
-	}
-
-	public LocalizedValuesMap getEmailPageAddedSubject() {
-		return _typedSettings.getLocalizedValuesMap("emailPageAddedSubject");
-	}
-
-	public String getEmailPageAddedSubjectXml() {
-		LocalizedValuesMap emailPageAddedSubjectMap =
-			getEmailPageAddedSubject();
-
-		return emailPageAddedSubjectMap.getLocalizationXml();
-	}
-
-	public LocalizedValuesMap getEmailPageUpdatedBody() {
-		return _typedSettings.getLocalizedValuesMap("emailPageUpdatedBody");
-	}
-
-	public String getEmailPageUpdatedBodyXml() {
-		LocalizedValuesMap emailPageUpdatedBodyMap = getEmailPageUpdatedBody();
-
-		return emailPageUpdatedBodyMap.getLocalizationXml();
-	}
-
-	public boolean getEmailPageUpdatedEnabled() {
-		return _typedSettings.getBooleanValue("emailPageUpdatedEnabled");
-	}
-
-	public LocalizedValuesMap getEmailPageUpdatedSubject() {
-		return _typedSettings.getLocalizedValuesMap("emailPageUpdatedSubject");
-	}
-
-	public String getEmailPageUpdatedSubjectXml() {
-		LocalizedValuesMap emailPageUpdatedSubjectMap =
-			getEmailPageUpdatedSubject();
-
-		return emailPageUpdatedSubjectMap.getLocalizationXml();
-	}
-
-	public void store() throws IOException, ValidatorException {
-		Settings settings = _typedSettings.getWrappedSettings();
-
-		settings.store();
+		settingsFactory.registerFallbackKeys(
+			WikiConstants.SERVICE_NAME, fallbackKeys);
 	}
 
 	private TypedSettings _typedSettings;
