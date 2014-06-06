@@ -11,7 +11,7 @@
     <p><b>Liferay Class Javadoc Results</b></p>
     <table border="1" cellspacing="0" cellpadding="2">
 	<tr bgcolor="#CC9966">
-	    <th colspan="2"><b>Summary</b></th>
+	    <th colspan="2"><b>WCM Staging Summary</b></th>
 	</tr>
 	<tr bgcolor="#CCF3D0">
 	    <td>Classes checked</td>
@@ -27,7 +27,7 @@
 	</tr>
     </table>
     <hr align="left" width="95%" size="1"/>
-    <p>The following Liferay classes are missing a Javadoc class description:</p>
+    <p>The following Liferay WCM Staging classes are missing a Javadoc class description:</p>
     <p/>
 	<xsl:apply-templates/>
     </body>

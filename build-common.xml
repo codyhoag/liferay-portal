@@ -22,6 +22,8 @@
 	<property file="${project.dir}/build.${env.HOSTNAME}.properties" />
 	<property file="${project.dir}/build.properties" />
 
+	<property file="${project.dir}/portal-impl/src/com/liferay/portal/tools/dependencies/javadoc.properties" />
+
 	<property file="${project.dir}/release.${user.name}.properties" />
 	<property file="${project.dir}/release.${env.COMPUTERNAME}.properties" />
 	<property file="${project.dir}/release.${env.HOST}.properties" />
@@ -537,18 +539,99 @@ Please set the environment variable ANT_OPTS to the recommended value of
 	</macrodef>
 
 	<target name="checkstyle">
+		<mkdir dir="javadoc-collaboration" />
+		<mkdir dir="javadoc-ddl-ddm" />
+		<mkdir dir="javadoc-document-library" />
+		<mkdir dir="javadoc-search" />
+		<mkdir dir="javadoc-social" />
+		<mkdir dir="javadoc-wcm" />
+		<mkdir dir="javadoc-wcm-staging" />
+		<mkdir dir="javadoc-workflow" />
+		
 		<checkstyle config="checkstyle.xml"
 			failureProperty="checkstyle.failure"
 			failOnViolation="false">
 
-			<formatter type="xml" tofile="checkstyle_report.xml"/>
-			<fileset dir="portal-impl" includes="**/*.java"/>
-			<fileset dir="portal-service" includes="**/*.java"/>
+			<formatter type="xml" tofile="javadoc-collaboration/checkstyle_report.xml"/>
+			<fileset dir="portal-impl" includes="${javadoc.collaboration}"/>
+			<fileset dir="portal-service" includes="${javadoc.collaboration}"/>
 		</checkstyle>
+
+		<checkstyle config="checkstyle.xml"
+			failureProperty="checkstyle.failure"
+			failOnViolation="false">
+
+			<formatter type="xml" tofile="javadoc-ddl-ddm/checkstyle_report.xml"/>
+			<fileset dir="portal-impl" includes="${javadoc.ddl.ddm}"/>
+			<fileset dir="portal-service" includes="${javadoc.ddl.ddm}"/>
+		</checkstyle>
+		
+		<checkstyle config="checkstyle.xml"
+			failureProperty="checkstyle.failure"
+			failOnViolation="false">
+
+			<formatter type="xml" tofile="javadoc-document-library/checkstyle_report.xml"/>
+			<fileset dir="portal-impl" includes="${javadoc.document.library}"/>
+			<fileset dir="portal-service" includes="${javadoc.document.library}"/>
+		</checkstyle>
+		
+		<checkstyle config="checkstyle.xml"
+			failureProperty="checkstyle.failure"
+			failOnViolation="false">
+
+			<formatter type="xml" tofile="javadoc-search/checkstyle_report.xml"/>
+			<fileset dir="portal-impl" includes="${javadoc.search}"/>
+			<fileset dir="portal-service" includes="${javadoc.search}"/>
+		</checkstyle>
+		
+		<checkstyle config="checkstyle.xml"
+			failureProperty="checkstyle.failure"
+			failOnViolation="false">
+
+			<formatter type="xml" tofile="javadoc-social/checkstyle_report.xml"/>
+			<fileset dir="portal-impl" includes="${javadoc.social}"/>
+			<fileset dir="portal-service" includes="${javadoc.social}"/>
+		</checkstyle>
+
+		<checkstyle config="checkstyle.xml"
+			failureProperty="checkstyle.failure"
+			failOnViolation="false">
+			
+			<formatter type="xml" tofile="javadoc-wcm/checkstyle_report.xml"/>
+			<fileset dir="portal-impl" includes="${javadoc.wcm}"/>
+			<fileset dir="portal-service" includes="${javadoc.wcm}"/>
+		</checkstyle>
+		
+		<checkstyle config="checkstyle.xml"
+			failureProperty="checkstyle.failure"
+			failOnViolation="false">
+
+			<formatter type="xml" tofile="javadoc-wcm-staging/checkstyle_report.xml"/>
+			<fileset dir="portal-impl" includes="${javadoc.wcm.staging}"/>
+			<fileset dir="portal-service" includes="${javadoc.wcm.staging}"/>
+		</checkstyle>
+		
+		<checkstyle config="checkstyle.xml"
+			failureProperty="checkstyle.failure"
+			failOnViolation="false">
+
+			<formatter type="xml" tofile="javadoc-workflow/checkstyle_report.xml"/>
+			<fileset dir="portal-impl" includes="${javadoc.workflow}"/>
+			<fileset dir="portal-service" includes="${javadoc.workflow}"/>
+		</checkstyle>
+		
+		<antcall target="checkstyle-html" />
 	</target>
 	
 	<target name="checkstyle-html">
-		<xslt in="checkstyle_report.xml" out="checkstyle_report.html" style="checkstyle-custom.xsl" />
+		<xslt in="javadoc-collaboration/checkstyle_report.xml" out="javadoc-collaboration/checkstyle_report.html" style="checkstyle-collaboration.xsl" />
+		<xslt in="javadoc-ddl-ddm/checkstyle_report.xml" out="javadoc-ddl-ddm/checkstyle_report.html" style="checkstyle-ddl-ddm.xsl" />
+		<xslt in="javadoc-document-library/checkstyle_report.xml" out="javadoc-document-library/checkstyle_report.html" style="checkstyle-document-library.xsl" />
+		<xslt in="javadoc-search/checkstyle_report.xml" out="javadoc-search/checkstyle_report.html" style="checkstyle-search.xsl" />
+		<xslt in="javadoc-social/checkstyle_report.xml" out="javadoc-social/checkstyle_report.html" style="checkstyle-social.xsl" />
+		<xslt in="javadoc-wcm/checkstyle_report.xml" out="javadoc-wcm/checkstyle_report.html" style="checkstyle-wcm.xsl" />
+		<xslt in="javadoc-wcm-staging/checkstyle_report.xml" out="javadoc-wcm-staging/checkstyle_report.html" style="checkstyle-wcm-staging.xsl" />
+		<xslt in="javadoc-workflow/checkstyle_report.xml" out="javadoc-workflow/checkstyle_report.html" style="checkstyle-workflow.xsl" />
 	</target>
 
 	<target name="compile">
