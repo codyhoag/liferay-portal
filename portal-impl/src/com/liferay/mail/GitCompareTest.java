@@ -23,7 +23,7 @@ import org.kohsuke.github.GHCommit;
 import org.kohsuke.github.GHCommit.File;
 import org.kohsuke.github.GHCompare;
 import org.kohsuke.github.GHContent;
-import org.kohsuke.github.GHRef;
+//import org.kohsuke.github.GHRef;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GitHub;
 import org.kohsuke.github.PagedIterable;
@@ -35,8 +35,8 @@ public class GitCompareTest {
 	public static void main(String[] args) throws IOException {
 
 		String name = "codyhoag/liferay-docs";
-		String branch = "cdn-docs";
-		String contentPath = "use/deployment";
+		String branch = "github-testing-branch";
+		String contentPath = "develop/tutorials";
 
 		// Must have ~/.github file indicating login and password to do this.
 		// You can use Github.connectAnonymously() if you don't want to log in.
@@ -48,7 +48,7 @@ public class GitCompareTest {
 		//GHRef ref = repo.getRef("heads/" + branch);
 		//System.out.println("ref URL: " + ref.getUrl());
 
-		String olderId = "39597d9eacbc7d5b9ef22a32fefe452d07ffb109";
+		String olderId = "7d902e9efa6fb89b658095cfbebbfec35eba744d";
 		//String olderId = null;
 		String newerId = ghBranch.getSHA1();
 
@@ -56,6 +56,10 @@ public class GitCompareTest {
 
 			getAllMarkdownFiles(contentPath, repo);
 			getAllImageFiles(contentPath, repo);
+		}
+
+		else if (olderId == newerId) {
+			System.out.println("There are no added/modified files to import");
 		}
 
 		else {
@@ -78,56 +82,71 @@ public class GitCompareTest {
 			}
 
 			boolean imagePresent = false;
+
 			Set<String> fileSet = new HashSet<String>();
 
 			for (GHCommit.File file : allFiles) {
 
 				System.out.println(file.getStatus() + " " + file.getFileName());
 
-				if (file.getFileName().endsWith(".markdown") && !fileSet.contains(file.getFileName())) {
-					fileSet.add(file.getFileName());
-					getModifiedMarkdownFile(file, newerId, name);
+				if ((file.getFileName().endsWith(".markdown") || file.getFileName().endsWith(".md"))
+						&& !fileSet.contains(file.getFileName())) {
+					boolean fileExists = false;
+					generateModifiedMarkdownFile(file, newerId, name, fileExists);
+
+					if (fileExists) {
+						fileSet.add(file.getFileName());
+					}
+					else {
+						continue;
+					}
+
 				}
 
-				else if (file.getFileName().endsWith(".png")) {
+				else if (file.getFileName().endsWith(".png") || file.getFileName().endsWith(".jpg")) {
 					imagePresent = true;
 				}
 
-				else if (file.getFileName().endsWith(".png") || file.getFileName().endsWith(".markdown")) {
+				else if (file.getFileName().endsWith(".markdown") || file.getFileName().endsWith(".md")
+						|| file.getFileName().endsWith(".png") || file.getFileName().endsWith(".jpg")) {
 					System.out.println("File is a duplicate");
 				}
-				
+
 				else {
 					System.out.println("File is not in appropriate format");
 				}
-			}
-			
-			if (imagePresent) {
-				getAllImageFiles(contentPath, repo);
 			}
 
 			try {
 				System.out.println("Creating ../../test-dist/diffs.zip file");
 				(new java.io.File("../../test-dist")).mkdirs();
-				
+
 				FileOutputStream fileOutputStream = new FileOutputStream("../../test-dist/diffs.zip");
 				ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream);
-				//Set<String> markdownArticles = new HashSet<String>();
-//
+
 				for (String filePath : fileSet) {
-					String markdownArticlePath = "E:/test/" + filePath.substring(contentPath.length() + 1, filePath.length());
+					String markdownArticlePath = filePath.substring(contentPath.length() + 1, filePath.length());
 					System.out.println(markdownArticlePath);
-				
-				//String markdownFile = "E:/test/articles/06-configuring-for-high-availability/00-configuring-for-high-availability-intro.markdown";
-				
-				//markdownArticles.add("E:/test/" + filePath);
-//
+
 					addToZipFile(markdownArticlePath, zipOutputStream);
 
-				//for (String image : markdownImagesFinal) {
-				//	addToZipFile(image, zipOutputStream);
-				//}
-			}
+				}
+
+				if (imagePresent) {
+					getAllImageFiles(contentPath, repo);
+					java.io.File imagesFolder = new java.io.File("../../test/images");
+
+					for (java.io.File imageFile : imagesFolder.listFiles()) {
+						String imagePathString = imageFile.toString();
+						int x = imagePathString.indexOf("images");
+						int y = imagePathString.length();
+						String image = imagePathString.substring(x, y);
+
+						addToZipFile(image, zipOutputStream);
+
+					}		
+				}
+
 				zipOutputStream.close();
 				fileOutputStream.close();
 
@@ -138,13 +157,13 @@ public class GitCompareTest {
 			}
 		}
 	}
-	
+
 	protected static void addToZipFile(String modFile, ZipOutputStream zipOutputStream)
 			throws FileNotFoundException, IOException {
 
 		System.out.println("Adding " + modFile + " to zip file");
 
-		java.io.File file = new java.io.File(modFile);
+		java.io.File file = new java.io.File("E:/test/" + modFile);
 		FileInputStream fileInputStream = new FileInputStream(file);
 		ZipEntry zipEntry = new ZipEntry(modFile);
 		zipOutputStream.putNextEntry(zipEntry);
@@ -220,27 +239,29 @@ public class GitCompareTest {
 		}		
 	}
 
-	protected static void getModifiedMarkdownFile(GHCommit.File file, String mostRecentCommitId, String name)
-			throws IOException {
+	protected static void generateModifiedMarkdownFile(GHCommit.File file, String mostRecentCommitId, String name,
+			boolean fileExists) throws IOException {
 
 		String urlString = new URL(file.getRawUrl(), "").toString();
 		int a = urlString.indexOf(name) + name.length() + 5;
 		int b = urlString.indexOf("/", a);
 		urlString = urlString.replace(urlString.substring(a, b), mostRecentCommitId);
+
+		System.out.println("Most recent commit URL: " + urlString);
+
 		URL url = new URL(urlString);
 		urlString = urlString.substring(0, a);
 
 		int x = file.getFileName().indexOf("articles/");
 		int y = file.getFileName().length();
 		String fileString = file.getFileName().substring(x, y);
-		System.out.println("fileString: " + fileString);
 
-		java.io.File modifiedFile = new java.io.File("../../test/" + fileString);
-
-		try {
+		try {		
+			String text = IOUtils.toString(url.openStream());
+			fileExists = true;
+			java.io.File modifiedFile = new java.io.File("../../test/" + fileString);
 			modifiedFile.getParentFile().mkdirs();
 			modifiedFile.createNewFile();
-			String text = IOUtils.toString(url.openStream());
 			PrintWriter printOut = new PrintWriter(modifiedFile);
 			printOut.println(text);
 			printOut.close();
