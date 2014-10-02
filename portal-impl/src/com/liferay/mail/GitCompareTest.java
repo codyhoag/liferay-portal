@@ -2,16 +2,18 @@ package com.liferay.mail;
 
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 import javax.imageio.ImageIO;
 
@@ -34,7 +36,7 @@ public class GitCompareTest {
 
 		String name = "codyhoag/liferay-docs";
 		String branch = "cdn-docs";
-		String contentPath = "develop/learning-paths";
+		String contentPath = "use/deployment";
 
 		// Must have ~/.github file indicating login and password to do this.
 		// You can use Github.connectAnonymously() if you don't want to log in.
@@ -84,8 +86,6 @@ public class GitCompareTest {
 
 				if (file.getFileName().endsWith(".markdown") && !fileSet.contains(file.getFileName())) {
 					fileSet.add(file.getFileName());
-					System.out.println("fileSet: " + fileSet);
-
 					getModifiedMarkdownFile(file, newerId, name);
 				}
 
@@ -93,15 +93,70 @@ public class GitCompareTest {
 					imagePresent = true;
 				}
 
-				else {
+				else if (file.getFileName().endsWith(".png") || file.getFileName().endsWith(".markdown")) {
 					System.out.println("File is a duplicate");
+				}
+				
+				else {
+					System.out.println("File is not in appropriate format");
 				}
 			}
 			
 			if (imagePresent) {
 				getAllImageFiles(contentPath, repo);
 			}
+
+			try {
+				System.out.println("Creating ../../test-dist/diffs.zip file");
+				(new java.io.File("../../test-dist")).mkdirs();
+				
+				FileOutputStream fileOutputStream = new FileOutputStream("../../test-dist/diffs.zip");
+				ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream);
+				//Set<String> markdownArticles = new HashSet<String>();
+//
+				for (String filePath : fileSet) {
+					String markdownArticlePath = "E:/test/" + filePath.substring(contentPath.length() + 1, filePath.length());
+					System.out.println(markdownArticlePath);
+				
+				//String markdownFile = "E:/test/articles/06-configuring-for-high-availability/00-configuring-for-high-availability-intro.markdown";
+				
+				//markdownArticles.add("E:/test/" + filePath);
+//
+					addToZipFile(markdownArticlePath, zipOutputStream);
+
+				//for (String image : markdownImagesFinal) {
+				//	addToZipFile(image, zipOutputStream);
+				//}
+			}
+				zipOutputStream.close();
+				fileOutputStream.close();
+
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
+	}
+	
+	protected static void addToZipFile(String modFile, ZipOutputStream zipOutputStream)
+			throws FileNotFoundException, IOException {
+
+		System.out.println("Adding " + modFile + " to zip file");
+
+		java.io.File file = new java.io.File(modFile);
+		FileInputStream fileInputStream = new FileInputStream(file);
+		ZipEntry zipEntry = new ZipEntry(modFile);
+		zipOutputStream.putNextEntry(zipEntry);
+
+		byte[] bytes = new byte[1024];
+		int len;
+		while ((len = fileInputStream.read(bytes)) >= 0) {
+			zipOutputStream.write(bytes, 0, len);
+		}
+
+		zipOutputStream.closeEntry();
+		fileInputStream.close();
 	}
 
 	protected static void getAllImageFiles(String contentPath, GHRepository repo)
@@ -119,7 +174,7 @@ public class GitCompareTest {
 				BASE64Decoder decoder = new BASE64Decoder();  
 				byte[] byteArray = decoder.decodeBuffer(imageContent);					
 				BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(byteArray));
-				java.io.File file = new java.io.File("E:/test/" + imageFilePath);
+				java.io.File file = new java.io.File("../../test/" + imageFilePath);
 				file.getParentFile().mkdirs();
 				file.createNewFile();
 				ImageIO.write(bufferedImage, "png", file);
@@ -146,7 +201,7 @@ public class GitCompareTest {
 					String childText = childArticleContent.getContent();
 					String childPath = childArticleContent.getPath();
 					String filePath = childPath.substring(childPath.indexOf("articles/"), childPath.length());
-					java.io.File file = new java.io.File("E:/test/" + filePath);
+					java.io.File file = new java.io.File("../../test/" + filePath);
 
 					try {
 						file.getParentFile().mkdirs();
@@ -180,7 +235,7 @@ public class GitCompareTest {
 		String fileString = file.getFileName().substring(x, y);
 		System.out.println("fileString: " + fileString);
 
-		java.io.File modifiedFile = new java.io.File("E:/test/" + fileString);
+		java.io.File modifiedFile = new java.io.File("../../test/" + fileString);
 
 		try {
 			modifiedFile.getParentFile().mkdirs();
