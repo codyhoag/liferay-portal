@@ -23,7 +23,6 @@ import org.kohsuke.github.GHCommit;
 import org.kohsuke.github.GHCommit.File;
 import org.kohsuke.github.GHCompare;
 import org.kohsuke.github.GHContent;
-//import org.kohsuke.github.GHRef;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GitHub;
 import org.kohsuke.github.PagedIterable;
@@ -34,24 +33,32 @@ public class GitCompareTest {
 
 	public static void main(String[] args) throws IOException {
 
+		// These will be set by the user in the Git Configuration screen
 		String name = "codyhoag/liferay-docs";
 		String branch = "github-testing-branch";
 		String contentPath = "develop/tutorials";
 
-		// Must have ~/.github file indicating login and password to do this.
-		// You can use Github.connectAnonymously() if you don't want to log in.
-		GitHub github = GitHub.connect();
+		// You can create a ~/.github file indicating login and password if
+		// you'd like to sign in while connecting. If going this route, use
+		// the 'Github.connect()' method.
+		GitHub github = GitHub.connectAnonymously();
 		GHRepository repo = github.getRepository(name);
 		Map<String, GHBranch> branches = repo.getBranches();
 		GHBranch ghBranch = branches.get(branch);
 
-		//GHRef ref = repo.getRef("heads/" + branch);
-		//System.out.println("ref URL: " + ref.getUrl());
-
+		// The olderId represents the commit that will be stored in the KB portlet.
+		// By setting the newerId to the most recent commit on our specified branch,
+		// the getCompare method (used later) scans our specified branch for all
+		// commits that are new compared to the olderId.
 		String olderId = "7d902e9efa6fb89b658095cfbebbfec35eba744d";
 		//String olderId = null;
 		String newerId = ghBranch.getSHA1();
 
+		// This case is used for the first time importing to KB. Currently, this
+		// only grabs the MD files and images from your remote master branch. I
+		// have not found a way to download files from a specific branch. Worst
+		// case scenario, we can import from master on the first import, and rely
+		// on the 'compare' logic below to update.
 		if (olderId == null || olderId.isEmpty()) {
 
 			getAllMarkdownFiles(contentPath, repo);
@@ -88,7 +95,9 @@ public class GitCompareTest {
 			for (GHCommit.File file : allFiles) {
 
 				System.out.println(file.getStatus() + " " + file.getFileName());
-
+				
+				// Since there can be multiple versions of the same file extracted from the commits,
+				// I bypass generating the MD file if it has already been added to the 'fileSet'.
 				if ((file.getFileName().endsWith(".markdown") || file.getFileName().endsWith(".md"))
 						&& !fileSet.contains(file.getFileName())) {
 					boolean fileExists = false;
@@ -103,6 +112,10 @@ public class GitCompareTest {
 
 				}
 
+				// Currently, if an image is present, we're downloading all images in the 'images' dir.
+				// This can be easily changed to mimic what we used in the git compare ant tasks for
+				// liferay-docs, since we have the ability to download all files and images to a temp
+				// local directory.
 				else if (file.getFileName().endsWith(".png") || file.getFileName().endsWith(".jpg")) {
 					imagePresent = true;
 				}
@@ -117,6 +130,8 @@ public class GitCompareTest {
 				}
 			}
 
+			// Currently, I'm downloading files and creating the Zip in a local dir. This will
+			// change in the KB port by using the TempFileEntryUtil class, as specified by Sergio.
 			try {
 				System.out.println("Creating ../../test-dist/diffs.zip file");
 				(new java.io.File("../../test-dist")).mkdirs();
@@ -158,11 +173,21 @@ public class GitCompareTest {
 		}
 	}
 
+	/**
+	 * Adds the modified Markdown or image file to the zip output stream.
+	 *
+	 * @param  modFile the modified Markdown or image file
+	 * @param  zipOutputStream the zip output stream
+	 * @throws FileNotFoundException if the modified file could not be found
+	 * @throws IOException if an IO exception occurred
+	 */
 	protected static void addToZipFile(String modFile, ZipOutputStream zipOutputStream)
 			throws FileNotFoundException, IOException {
 
-		System.out.println("Adding " + modFile + " to zip file");
+		//System.out.println("Adding " + modFile + " to zip file");
 
+		// This file creation is hard-coded and will need to be edited if testing
+		// on local machine.
 		java.io.File file = new java.io.File("E:/test/" + modFile);
 		FileInputStream fileInputStream = new FileInputStream(file);
 		ZipEntry zipEntry = new ZipEntry(modFile);
@@ -178,6 +203,13 @@ public class GitCompareTest {
 		fileInputStream.close();
 	}
 
+	/**
+	 * Generates all the image files for the repository's content path.
+	 *
+	 * @param  contentPath the content path (e.g. develop/tutorials)
+	 * @param  repo the GitHub repository
+	 * @throws IOException if an IO exception occurred
+	 */
 	protected static void getAllImageFiles(String contentPath, GHRepository repo)
 			throws IOException {
 
@@ -205,6 +237,13 @@ public class GitCompareTest {
 		}
 	}
 
+	/**
+	 * Generates all the Markdown files for the repository's content path.
+	 *
+	 * @param  contentPath the content path (e.g. develop/tutorials)
+	 * @param  repo the GitHub repository
+	 * @throws IOException if an IO exception occurred
+	 */
 	protected static void getAllMarkdownFiles(String contentPath, GHRepository repo)
 			throws IOException {
 
@@ -239,15 +278,30 @@ public class GitCompareTest {
 		}		
 	}
 
+	/**
+	 * Generates the Markdown file that was extracted from a GitHub commit.
+	 *
+	 * @param  file the Markdown file to generate
+	 * @param  mostRecentCommitId the most recent commit on the repository's
+	 *         branch
+	 * @param  name the owner/repository name of the repository
+	 *         (e.g. codyhoag/liferay-docs)
+	 * @param  fileExists whether the added/modified file exists in the most
+	 *         recent commit
+	 * @throws IOException if the URL open stream could not be established due
+	 *         to a file not existing, or if an IO exception occurred
+	 */
 	protected static void generateModifiedMarkdownFile(GHCommit.File file, String mostRecentCommitId, String name,
 			boolean fileExists) throws IOException {
 
+		// To make sure we're generating the most recent version of the file,
+		// the URL we download from is edited to point to the most recent commit.
 		String urlString = new URL(file.getRawUrl(), "").toString();
 		int a = urlString.indexOf(name) + name.length() + 5;
 		int b = urlString.indexOf("/", a);
 		urlString = urlString.replace(urlString.substring(a, b), mostRecentCommitId);
 
-		System.out.println("Most recent commit URL: " + urlString);
+		//System.out.println("Most recent commit URL: " + urlString);
 
 		URL url = new URL(urlString);
 		urlString = urlString.substring(0, a);
@@ -256,7 +310,12 @@ public class GitCompareTest {
 		int y = file.getFileName().length();
 		String fileString = file.getFileName().substring(x, y);
 
-		try {		
+		try {
+			// If we're unable to set the string text, which is returned from the
+			// URL open stream, an IOException is thrown, and the fileExists var
+			// remains false. The non-existent case occurs when a file is renamed.
+			// Both the old file and new file are added to our fileSet, but we only
+			// want the existent, new file.
 			String text = IOUtils.toString(url.openStream());
 			fileExists = true;
 			java.io.File modifiedFile = new java.io.File("../../test/" + fileString);
@@ -273,4 +332,3 @@ public class GitCompareTest {
 		}
 	}
 }
-
