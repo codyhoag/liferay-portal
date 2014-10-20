@@ -1249,9 +1249,9 @@ public class JournalArticleLocalServiceImpl
 	 * Deletes the layout's association with the web content articles for the
 	 * group.
 	 *
-	 * @param  groupId the primary key of the web content article's group
-	 * @param  layoutUuid the unique string identifying the web content
-	 *         article's display page
+	 * @param groupId the primary key of the web content article's group
+	 * @param layoutUuid the unique string identifying the web content article's
+	 *        display page
 	 */
 	@Override
 	public void deleteLayoutArticleReferences(long groupId, String layoutUuid) {
@@ -1445,16 +1445,16 @@ public class JournalArticleLocalServiceImpl
 	}
 
 	/**
-	 * Returns the latest web content article matching the group, article ID, and
-	 * workflow status.
+	 * Returns the latest web content article matching the group, article ID,
+	 * and workflow status.
 	 *
 	 * @param  groupId the primary key of the web content article's group
 	 * @param  articleId the primary key of the web content article
 	 * @param  status the web content article's workflow status. For more
 	 *         information see {@link WorkflowConstants} for constants starting
 	 *         with the "STATUS_" prefix.
-	 * @return the latest matching web content article, or <code>null</code> if no
-	 *         matching web content article could be found
+	 * @return the latest matching web content article, or <code>null</code> if
+	 *         no matching web content article could be found
 	 */
 	@Override
 	public JournalArticle fetchLatestArticle(
@@ -3679,10 +3679,10 @@ public class JournalArticleLocalServiceImpl
 	}
 
 	/**
-	 * Returns a range of all the web content articles in a single folder matching
-	 * the parameters without using the indexer. It is preferable to use the
-	 * indexed version {@link #search(long, long, long, int, int, int)} instead of
-	 * this method wherever possible for performance reasons.
+	 * Returns a range of all the web content articles in a single folder
+	 * matching the parameters without using the indexer. It is preferable to
+	 * use the indexed version {@link #search(long, long, long, int, int, int)}
+	 * instead of this method wherever possible for performance reasons.
 	 *
 	 * <p>
 	 * Useful when paginating results. Returns a maximum of <code>end -
@@ -4139,9 +4139,10 @@ public class JournalArticleLocalServiceImpl
 	}
 
 	/**
-	 *Returns a range of all the web content articles matching the group, creator,
-	 * and status using the indexer. It is preferable to use this method instead of
-	 * the non-indexed version whenever possible for performance reasons.
+	 * Returns a range of all the web content articles matching the group,
+	 * creator, and status using the indexer. It is preferable to use this
+	 * method instead of the non-indexed version whenever possible for
+	 * performance reasons.
 	 *
 	 * <p>
 	 * Useful when paginating results. Returns a maximum of <code>end -
@@ -4404,13 +4405,13 @@ public class JournalArticleLocalServiceImpl
 	}
 
 	/**
-	 * Returns a {@link BaseModelSearchResult} containing the total number of hits
-	 * and an ordered range of all the web content articles matching the parameters
-	 * using the indexer, including a keywords parameter for matching an article's
-	 * ID, title, description, or content, a DDM structure key parameter, a DDM
-	 * template key parameter, and a finder hash map parameter. It is preferable to
-	 * use this method instead of the non-indexed version whenever possible for
-	 * performance reasons.
+	 * Returns a {@link BaseModelSearchResult} containing the total number of
+	 * hits and an ordered range of all the web content articles matching the
+	 * parameters using the indexer, including a keywords parameter for matching
+	 * an article's ID, title, description, or content, a DDM structure key
+	 * parameter, a DDM template key parameter, and a finder hash map parameter.
+	 * It is preferable to use this method instead of the non-indexed version
+	 * whenever possible for performance reasons.
 	 *
 	 * <p>
 	 * The <code>start</code> and <code>end</code> parameters only affect the
@@ -4450,9 +4451,9 @@ public class JournalArticleLocalServiceImpl
 	 *         return (not inclusive)
 	 * @param  sort the field, type, and direction by which to sort (optionally
 	 *         <code>null</code>)
-	 * @return a {@link BaseModelSearchResult} containing the total number of hits
-	 *         and an ordered range of all the matching web content articles
-	 *         ordered by <code>sort</code>
+	 * @return a {@link BaseModelSearchResult} containing the total number of
+	 *         hits and an ordered range of all the matching web content
+	 *         articles ordered by <code>sort</code>
 	 * @throws PortalException if a portal exception occurred
 	 */
 	@Override
@@ -4491,13 +4492,14 @@ public class JournalArticleLocalServiceImpl
 	}
 
 	/**
-	 * Returns a {@link BaseModelSearchResult} containing the total number of hits
-	 * and an ordered range of all the web content articles matching the parameters
-	 * using the indexer, including keyword parameters for article ID, title,
-	 * description, or content, a DDM structure key parameter, a DDM template key
-	 * parameter, an AND operator switch, and parameters for type, status, and a
-	 * finder hash map. It is preferable to use this method instead of the
-	 * non-indexed version whenever possible for performance reasons.
+	 * Returns a {@link BaseModelSearchResult} containing the total number of
+	 * hits and an ordered range of all the web content articles matching the
+	 * parameters using the indexer, including keyword parameters for article
+	 * ID, title, description, or content, a DDM structure key parameter, a DDM
+	 * template key parameter, an AND operator switch, and parameters for type,
+	 * status, and a finder hash map. It is preferable to use this method
+	 * instead of the non-indexed version whenever possible for performance
+	 * reasons.
 	 *
 	 * <p>
 	 * The <code>start</code> and <code>end</code> parameters only affect the
@@ -4550,9 +4552,9 @@ public class JournalArticleLocalServiceImpl
 	 *         return (not inclusive)
 	 * @param  sort the field, type, and direction by which to sort (optionally
 	 *         <code>null</code>)
-	 * @return a {@link BaseModelSearchResult} containing the total number of hits
-	 *         and an ordered range of all the matching web content articles
-	 *         ordered by <code>sort</code>
+	 * @return a {@link BaseModelSearchResult} containing the total number of
+	 *         hits and an ordered range of all the matching web content
+	 *         articles ordered by <code>sort</code>
 	 * @throws PortalException if a portal exception occurred
 	 */
 	@Override
@@ -4574,11 +4576,11 @@ public class JournalArticleLocalServiceImpl
 	}
 
 	/**
-	 * Returns a {@link BaseModelSearchResult} containing the total number of hits
-	 * and an ordered range of all the web content articles matching the parameters
-	 * using the indexer, including the web content article's creator ID and
-	 * status. It is preferable to use this method instead of the non-indexed
-	 * version whenever possible for performance reasons.
+	 * Returns a {@link BaseModelSearchResult} containing the total number of
+	 * hits and an ordered range of all the web content articles matching the
+	 * parameters using the indexer, including the web content article's creator
+	 * ID and status. It is preferable to use this method instead of the
+	 * non-indexed version whenever possible for performance reasons.
 	 *
 	 * <p>
 	 * The <code>start</code> and <code>end</code> parameters only affect the
@@ -4607,9 +4609,9 @@ public class JournalArticleLocalServiceImpl
 	 *         return
 	 * @param  end the upper bound of the range of web content articles to
 	 *         return (not inclusive)
-	 * @return a {@link BaseModelSearchResult} containing the total number of hits
-	 *         and an ordered range of all the matching web content articles
-	 *         ordered by <code>sort</code>
+	 * @return a {@link BaseModelSearchResult} containing the total number of
+	 *         hits and an ordered range of all the matching web content
+	 *         articles ordered by <code>sort</code>
 	 * @throws PortalException if a portal exception occurred
 	 */
 	@Override
@@ -5740,15 +5742,15 @@ public class JournalArticleLocalServiceImpl
 	 * Updates the web content articles matching the group, class name ID, and
 	 * DDM template key, replacing the DDM template key with a new one.
 	 *
-	 * @param  groupId the primary key of the web content article's group
-	 * @param  classNameId the primary key of the DDMStructure class if the web
-	 *         content article is related to a DDM structure, the primary key of
-	 *         the class name associated with the article, or {@link
-	 *         JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
-	 * @param  oldDDMTemplateKey the primary key of the web content article's
-	 *         old DDM template
-	 * @param  newDDMTemplateKey the primary key of the web content article's
-	 *         new DDM template
+	 * @param groupId the primary key of the web content article's group
+	 * @param classNameId the primary key of the DDMStructure class if the web
+	 *        content article is related to a DDM structure, the primary key of
+	 *        the class name associated with the article, or {@link
+	 *        JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
+	 * @param oldDDMTemplateKey the primary key of the web content article's old
+	 *        DDM template
+	 * @param newDDMTemplateKey the primary key of the web content article's new
+	 *        DDM template
 	 */
 	@Override
 	public void updateTemplateId(
