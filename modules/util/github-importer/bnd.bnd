@@ -1,0 +1,7 @@
+Bundle-Name: Liferay GitHub Importer
+Bundle-SymbolicName: com.liferay.github.importer
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.liferay.github.importer,\
+	com.liferay.github.importer.factory
+Private-Package: com.liferay.github.importer.internal.*
