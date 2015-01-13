@@ -81,7 +81,7 @@ public class LayoutSetServiceSoap {
 	link enabled
 	* @param layoutSetPrototypeUuid the uuid of the layout set prototype to
 	link with
-	* @throws PortalException if a portal exception occurred
+	* @throws RemoteException if a portal exception occurred
 	*/
 	public static void updateLayoutSetPrototypeLinkEnabled(long groupId,
 		boolean privateLayout, boolean layoutSetPrototypeLinkEnabled,

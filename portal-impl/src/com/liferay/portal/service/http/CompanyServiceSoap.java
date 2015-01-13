@@ -76,7 +76,7 @@ public class CompanyServiceSoap {
 	<code>0</code>)
 	* @param active whether the company is active
 	* @return the company
-	* @throws PortalException if the web domain, virtual host name, or mail
+	* @throws RemoteException if the web domain, virtual host name, or mail
 	domain was invalid or if the user was not a universal
 	administrator
 	*/
@@ -115,7 +115,7 @@ public class CompanyServiceSoap {
 	* Deletes the company's logo.
 	*
 	* @param companyId the primary key of the company
-	* @throws PortalException if the company with the primary key could not be
+	* @throws RemoteException if the company with the primary key could not be
 	found or if the company's logo could not be found or if the user
 	was not an administrator
 	*/
@@ -135,7 +135,7 @@ public class CompanyServiceSoap {
 	*
 	* @param companyId the primary key of the company
 	* @return Returns the company with the primary key
-	* @throws PortalException if a company with the primary key could not be
+	* @throws RemoteException if a company with the primary key could not be
 	found
 	*/
 	public static com.liferay.portal.model.CompanySoap getCompanyById(
@@ -157,7 +157,7 @@ public class CompanyServiceSoap {
 	*
 	* @param logoId the ID of the company's logo
 	* @return Returns the company with the logo
-	* @throws PortalException if the company with the logo could not be found
+	* @throws RemoteException if the company with the logo could not be found
 	*/
 	public static com.liferay.portal.model.CompanySoap getCompanyByLogoId(
 		long logoId) throws RemoteException {
@@ -178,7 +178,7 @@ public class CompanyServiceSoap {
 	*
 	* @param mx the company's mail domain
 	* @return Returns the company with the mail domain
-	* @throws PortalException if the company with the mail domain could not be
+	* @throws RemoteException if the company with the mail domain could not be
 	found
 	*/
 	public static com.liferay.portal.model.CompanySoap getCompanyByMx(
@@ -200,7 +200,7 @@ public class CompanyServiceSoap {
 	*
 	* @param virtualHost the company's virtual host name
 	* @return Returns the company with the virtual host name
-	* @throws PortalException if the company with the virtual host name could
+	* @throws RemoteException if the company with the virtual host name could
 	not be found or if the virtual host was not associated with a
 	company
 	*/
@@ -223,7 +223,7 @@ public class CompanyServiceSoap {
 	*
 	* @param webId the company's web domain
 	* @return Returns the company with the web domain
-	* @throws PortalException if the company with the web domain could not be
+	* @throws RemoteException if the company with the web domain could not be
 	found
 	*/
 	public static com.liferay.portal.model.CompanySoap getCompanyByWebId(
@@ -249,7 +249,7 @@ public class CompanyServiceSoap {
 	*
 	* @param companyId the primary key of the company
 	* @param keys the company's preferences keys to be remove
-	* @throws PortalException if the user was not an administrator
+	* @throws RemoteException if the user was not an administrator
 	*/
 	public static void removePreferences(long companyId, java.lang.String[] keys)
 		throws RemoteException {
@@ -273,7 +273,7 @@ public class CompanyServiceSoap {
 	<code>0</code>)
 	* @param active whether the company is active
 	* @return the company with the primary key
-	* @throws PortalException if a company with the primary key could not be
+	* @throws RemoteException if a company with the primary key could not be
 	found or if the new information was invalid or if the user was
 	not a universal administrator
 	*/
@@ -318,7 +318,7 @@ public class CompanyServiceSoap {
 	* @param type the company's account type (optionally <code>null</code>)
 	* @param size the company's account size (optionally <code>null</code>)
 	* @return the the company with the primary key
-	* @throws PortalException if a company with the primary key could not be
+	* @throws RemoteException if a company with the primary key could not be
 	found or if the new information was invalid or if the user was
 	not an administrator
 	*/
@@ -371,7 +371,7 @@ public class CompanyServiceSoap {
 	* @param size the company's account size (optionally
 	<code>null</code>)
 	* @return the the company with the primary key
-	* @throws PortalException if a company with the primary key could not
+	* @throws RemoteException if a company with the primary key could not
 	be found or if the new information was invalid or if the user
 	was not an administrator
 	* @deprecated As of 7.0.0, replaced by {@link #updateCompany(long, String,
@@ -406,7 +406,7 @@ public class CompanyServiceSoap {
 	* @param companyId the primary key of the company
 	* @param languageId the ID of the company's default user's language
 	* @param timeZoneId the ID of the company's default user's time zone
-	* @throws PortalException if the company's default user could not be found
+	* @throws RemoteException if the company's default user could not be found
 	or if the user was not an administrator
 	*/
 	public static void updateDisplay(long companyId,
@@ -428,7 +428,7 @@ public class CompanyServiceSoap {
 	* @param companyId the primary key of the company
 	* @param bytes the bytes of the company's logo image
 	* @return the company with the primary key
-	* @throws PortalException if the company's logo ID could not be found or if
+	* @throws RemoteException if the company's logo ID could not be found or if
 	the logo's image was corrupted or if the user was an
 	administrator
 	*/
@@ -464,7 +464,7 @@ public class CompanyServiceSoap {
 	to be verified via email
 	* @param siteLogo whether to to allow site administrators to use their own
 	logo instead of the enterprise logo
-	* @throws PortalException if the user was not an administrator
+	* @throws RemoteException if the user was not an administrator
 	*/
 	public static void updateSecurity(long companyId,
 		java.lang.String authType, boolean autoLogin, boolean sendPassword,
