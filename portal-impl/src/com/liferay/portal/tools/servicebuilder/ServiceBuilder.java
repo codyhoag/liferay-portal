@@ -1221,12 +1221,12 @@ public class ServiceBuilder {
 
 	public String getJavadocComment(JavaClass javaClass) {
 		return _formatComment(
-			javaClass.getComment(), javaClass.getTags(), StringPool.BLANK);
+			javaClass.getComment(), javaClass.getTags(), StringPool.BLANK, null);
 	}
 
-	public String getJavadocComment(JavaMethod javaMethod) {
+	public String getJavadocComment(JavaMethod javaMethod, String classType) {
 		return _formatComment(
-			javaMethod.getComment(), javaMethod.getTags(), StringPool.TAB);
+			javaMethod.getComment(), javaMethod.getTags(), StringPool.TAB, classType);
 	}
 
 	public String getListActualTypeArguments(Type type) {
@@ -3738,7 +3738,7 @@ public class ServiceBuilder {
 	}
 
 	private String _formatComment(
-		String comment, DocletTag[] tags, String indentation) {
+		String comment, DocletTag[] tags, String indentation, String classType) {
 
 		StringBundler sb = new StringBundler();
 
@@ -3766,7 +3766,19 @@ public class ServiceBuilder {
 			sb.append(" * @");
 			sb.append(tag.getName());
 			sb.append(" ");
-			sb.append(tag.getValue());
+
+			if (classType.equals("ServiceSoap") &&
+					tag.getValue().startsWith("PortalException")
+					) {
+
+				String remoteValue = tag.getValue().replaceFirst(
+						"PortalException", "RemoteException");
+
+				sb.append(remoteValue);
+			}
+			else {
+				sb.append(tag.getValue());
+			}
 			sb.append("\n");
 		}
 
