@@ -70,7 +70,7 @@ public class TrashEntryServiceSoap {
 	* permissions.
 	*
 	* @param groupId the primary key of the group
-	* @throws PortalException if a portal exception occurred
+	* @throws RemoteException if a portal exception occurred
 	*/
 	public static void deleteEntries(long groupId) throws RemoteException {
 		try {
@@ -87,7 +87,7 @@ public class TrashEntryServiceSoap {
 	* Deletes the trash entries with the primary keys.
 	*
 	* @param entryIds the primary keys of the trash entries
-	* @throws PortalException if a trash entry with the primary key could not
+	* @throws RemoteException if a trash entry with the primary key could not
 	be found or if the user did not have permission to delete any one
 	of the trash entries
 	*/
@@ -112,7 +112,7 @@ public class TrashEntryServiceSoap {
 	* </p>
 	*
 	* @param entryId the primary key of the trash entry
-	* @throws PortalException if a trash entry with the primary key could not
+	* @throws RemoteException if a trash entry with the primary key could not
 	be found or if the user did not have permission to delete the
 	trash entry
 	*/
@@ -138,7 +138,7 @@ public class TrashEntryServiceSoap {
 	*
 	* @param className the class name of the entity
 	* @param classPK the primary key of the entity
-	* @throws PortalException if a trash entry with the entity class name and
+	* @throws RemoteException if a trash entry with the entity class name and
 	primary key could not be found or if the user did not have
 	permission to delete the entry
 	*/
@@ -233,7 +233,7 @@ public class TrashEntryServiceSoap {
 	* @param destinationContainerModelId the primary key of the new location
 	* @param serviceContext the service context to be applied (optionally
 	<code>null</code>)
-	* @throws PortalException if a matching trash entry could not be found, if
+	* @throws RemoteException if a matching trash entry could not be found, if
 	the user did not have permission to move the trash entry to the
 	new location, if the user did not have permission to restore the
 	trash entry, if a duplicate trash entry exists at the new
@@ -301,7 +301,7 @@ public class TrashEntryServiceSoap {
 	* @param name a new name to give to the trash entry being restored
 	(optionally <code>null</code>)
 	* @return the restored trash entry
-	* @throws PortalException if a matching trash entry could not be found, if
+	* @throws RemoteException if a matching trash entry could not be found, if
 	the user did not have permission to overwrite an existing trash
 	entry, to rename the trash entry being restored, or to restore
 	the trash entry in general

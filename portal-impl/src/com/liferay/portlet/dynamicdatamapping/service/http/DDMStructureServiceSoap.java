@@ -115,7 +115,7 @@ public class DDMStructureServiceSoap {
 	UUID, creation date, modification date, guest permissions,
 	and group permissions for the structure.
 	* @return the structure
-	* @throws PortalException if a user with the primary key could not be
+	* @throws RemoteException if a user with the primary key could not be
 	found, if the user did not have permission to add the
 	structure, if the XSD was not well-formed, or if a portal
 	exception occurred
@@ -204,7 +204,7 @@ public class DDMStructureServiceSoap {
 	UUID, creation date, modification date, guest permissions,
 	and group permissions for the structure.
 	* @return the structure
-	* @throws PortalException if the user did not have permission to add
+	* @throws RemoteException if the user did not have permission to add
 	the structure, if the XSD is not well formed, or if a portal
 	exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link #addStructure(long, long,
@@ -299,7 +299,7 @@ public class DDMStructureServiceSoap {
 	Can set the UUID, creation date, modification date, guest
 	permissions, and group permissions for the structure.
 	* @return the structure
-	* @throws PortalException if a user with the primary key could not be
+	* @throws RemoteException if a user with the primary key could not be
 	found, if the user did not have permission to add the
 	structure, if the XSD was not well-formed, or if a portal
 	exception occurred
@@ -351,7 +351,7 @@ public class DDMStructureServiceSoap {
 	UUID, creation date, modification date, guest permissions, and
 	group permissions for the structure.
 	* @return the new structure
-	* @throws PortalException if the user did not have permission to add the
+	* @throws RemoteException if the user did not have permission to add the
 	structure or if a portal exception occurred
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructureSoap copyStructure(
@@ -407,7 +407,7 @@ public class DDMStructureServiceSoap {
 	* </p>
 	*
 	* @param structureId the primary key of the structure to be deleted
-	* @throws PortalException if the user did not have permission to delete the
+	* @throws RemoteException if the user did not have permission to delete the
 	structure or if a portal exception occurred
 	*/
 	public static void deleteStructure(long structureId)
@@ -432,7 +432,7 @@ public class DDMStructureServiceSoap {
 	* @param structureKey the unique string identifying the structure
 	* @return the matching structure, or <code>null</code> if a matching
 	structure could not be found
-	* @throws PortalException if the user did not have permission to view the
+	* @throws RemoteException if the user did not have permission to view the
 	structure or if a portal exception occurred
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructureSoap fetchStructure(
@@ -474,7 +474,7 @@ public class DDMStructureServiceSoap {
 	*
 	* @param structureId the primary key of the structure
 	* @return the structure with the ID
-	* @throws PortalException if the user did not have permission to view the
+	* @throws RemoteException if the user did not have permission to view the
 	structure or if a structure with the ID could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructureSoap getStructure(
@@ -501,7 +501,7 @@ public class DDMStructureServiceSoap {
 	related model
 	* @param structureKey the unique string identifying the structure
 	* @return the matching structure
-	* @throws PortalException if the user did not have permission to view the
+	* @throws RemoteException if the user did not have permission to view the
 	structure or if a matching structure could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructureSoap getStructure(
@@ -541,7 +541,7 @@ public class DDMStructureServiceSoap {
 	have sharing enabled) and include global scoped sites in the
 	search
 	* @return the matching structure
-	* @throws PortalException if the user did not have permission to view the
+	* @throws RemoteException if the user did not have permission to view the
 	structure or if a matching structure could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructureSoap getStructure(
@@ -860,7 +860,7 @@ public class DDMStructureServiceSoap {
 	* @param serviceContext the service context to be applied. Can set the
 	modification date.
 	* @return the updated structure
-	* @throws PortalException if the user did not have permission to update
+	* @throws RemoteException if the user did not have permission to update
 	the structure or if a portal exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link #updateStructure(long, long,
 	long, String, Map, Map, DDMForm, ServiceContext)}
@@ -936,7 +936,7 @@ public class DDMStructureServiceSoap {
 	* @param serviceContext the service context to be applied. Can set the
 	modification date.
 	* @return the updated structure
-	* @throws PortalException if the user did not have permission to update
+	* @throws RemoteException if the user did not have permission to update
 	the structure or if a portal exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link #updateStructure(long, long,
 	Map, Map, DDMForm, ServiceContext)}

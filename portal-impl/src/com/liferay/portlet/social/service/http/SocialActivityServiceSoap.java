@@ -83,7 +83,7 @@ public class SocialActivityServiceSoap {
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws RemoteException if a permission checker was not initialized
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySoap[] getActivities(
 		long classNameId, int start, int end) throws RemoteException {
@@ -121,7 +121,7 @@ public class SocialActivityServiceSoap {
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws RemoteException if a permission checker was not initialized
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySoap[] getActivities(
 		long mirrorActivityId, long classNameId, long classPK, int start,
@@ -161,7 +161,7 @@ public class SocialActivityServiceSoap {
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws RemoteException if a permission checker was not initialized
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySoap[] getActivities(
 		long mirrorActivityId, java.lang.String className, long classPK,
@@ -198,7 +198,7 @@ public class SocialActivityServiceSoap {
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws RemoteException if a permission checker was not initialized
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySoap[] getActivities(
 		java.lang.String className, int start, int end)
@@ -312,7 +312,7 @@ public class SocialActivityServiceSoap {
 	*
 	* @param activityId the primary key of the activity
 	* @return Returns the activity
-	* @throws PortalException if the activity could not be found
+	* @throws RemoteException if the activity could not be found
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySoap getActivity(
 		long activityId) throws RemoteException {
@@ -365,7 +365,7 @@ public class SocialActivityServiceSoap {
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws RemoteException if a permission checker was not initialized
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySoap[] getGroupActivities(
 		long groupId, int start, int end) throws RemoteException {
@@ -428,7 +428,7 @@ public class SocialActivityServiceSoap {
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws RemoteException if a permission checker was not initialized
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySoap[] getGroupUsersActivities(
 		long groupId, int start, int end) throws RemoteException {
@@ -476,7 +476,7 @@ public class SocialActivityServiceSoap {
 	*
 	* @param mirrorActivityId the primary key of the mirror activity
 	* @return Returns the mirror activity
-	* @throws PortalException if the mirror activity could not be found
+	* @throws RemoteException if the mirror activity could not be found
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySoap getMirrorActivity(
 		long mirrorActivityId) throws RemoteException {
@@ -510,7 +510,7 @@ public class SocialActivityServiceSoap {
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws RemoteException if a permission checker was not initialized
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySoap[] getOrganizationActivities(
 		long organizationId, int start, int end) throws RemoteException {
@@ -567,7 +567,7 @@ public class SocialActivityServiceSoap {
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws RemoteException if a permission checker was not initialized
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySoap[] getOrganizationUsersActivities(
 		long organizationId, int start, int end) throws RemoteException {
@@ -624,7 +624,7 @@ public class SocialActivityServiceSoap {
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws RemoteException if a permission checker was not initialized
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySoap[] getRelationActivities(
 		long userId, int start, int end) throws RemoteException {
@@ -662,7 +662,7 @@ public class SocialActivityServiceSoap {
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws RemoteException if a permission checker was not initialized
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySoap[] getRelationActivities(
 		long userId, int type, int start, int end) throws RemoteException {
@@ -742,7 +742,7 @@ public class SocialActivityServiceSoap {
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws RemoteException if a permission checker was not initialized
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySoap[] getUserActivities(
 		long userId, int start, int end) throws RemoteException {
@@ -797,7 +797,7 @@ public class SocialActivityServiceSoap {
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws RemoteException if a permission checker was not initialized
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySoap[] getUserGroupsActivities(
 		long userId, int start, int end) throws RemoteException {
@@ -854,7 +854,7 @@ public class SocialActivityServiceSoap {
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws RemoteException if a permission checker was not initialized
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySoap[] getUserGroupsAndOrganizationsActivities(
 		long userId, int start, int end) throws RemoteException {
@@ -911,7 +911,7 @@ public class SocialActivityServiceSoap {
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws RemoteException if a permission checker was not initialized
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySoap[] getUserOrganizationsActivities(
 		long userId, int start, int end) throws RemoteException {
