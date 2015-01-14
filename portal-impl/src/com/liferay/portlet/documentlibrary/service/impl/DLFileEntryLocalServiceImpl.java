@@ -2199,7 +2199,9 @@ public class DLFileEntryLocalServiceImpl
 
 	/**
 	 * @see com.liferay.portlet.dynamicdatalists.service.impl.DDLRecordLocalServiceImpl#isKeepRecordVersionLabel(
-	 *      DDLRecordVersion, DDLRecordVersion, ServiceContext)
+	 *      com.liferay.portlet.dynamicdatalists.model.DDLRecordVersion,
+	 *      com.liferay.portlet.dynamicdatalists.model.DDLRecordVersion,
+	 *      ServiceContext)
 	 */
 	protected boolean isKeepFileVersionLabel(
 			DLFileEntry dlFileEntry, DLFileVersion lastDLFileVersion,
