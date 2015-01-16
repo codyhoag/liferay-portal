@@ -97,7 +97,7 @@ public interface ${entity.name} extends
 
 	<#list methods as method>
 		<#if !method.isConstructor() && !method.isStatic() && method.isPublic()>
-			${serviceBuilder.getJavadocComment(method, "ExtendedModel")}
+			${serviceBuilder.getJavadocComment(method, "ExtendedModel", entity.name)}
 
 			<#assign parameters = method.parameters>
 
