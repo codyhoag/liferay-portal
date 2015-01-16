@@ -1219,14 +1219,14 @@ public class ServiceBuilder {
 		return idType;
 	}
 
-	public String getJavadocComment(JavaClass javaClass) {
+	public String getJavadocComment(JavaClass javaClass) throws IOException {
 		return _formatComment(
-			javaClass.getComment(), javaClass.getTags(), StringPool.BLANK, null);
+			javaClass.getComment(), javaClass.getTags(), null, StringPool.BLANK, null);
 	}
 
-	public String getJavadocComment(JavaMethod javaMethod, String classType) {
+	public String getJavadocComment(JavaMethod javaMethod, String classType, String entityName) throws IOException {
 		return _formatComment(
-			javaMethod.getComment(), javaMethod.getTags(), StringPool.TAB, classType);
+			javaMethod.getComment(), javaMethod.getTags(), entityName, StringPool.TAB, classType);
 	}
 
 	public String getListActualTypeArguments(Type type) {
@@ -3726,9 +3726,10 @@ public class ServiceBuilder {
 	private String _fixSpringXml(String content) {
 		return StringUtil.replace(content, ".service.spring.", ".service.");
 	}
-
+	
 	private String _formatComment(
-		String comment, DocletTag[] tags, String indentation, String classType) {
+		String comment, DocletTag[] tags, String entityName, String indentation,
+		String classType) throws IOException {
 
 		StringBundler sb = new StringBundler();
 
@@ -3738,6 +3739,27 @@ public class ServiceBuilder {
 
 		sb.append(indentation);
 		sb.append("/**\n");
+		
+		String path = _outputPath + "/service/impl/" + entityName;
+
+		JavaClass javaClass = null;
+
+		File file1 = new File(path + "LocalServiceImpl.java");
+		File file2 = new File(path + "ServiceImpl.java");
+
+		if (file1.exists()) {
+			javaClass = _getJavaClass(path + "LocalServiceImpl.java");
+		}
+		else if (file2.exists()) {
+			javaClass = _getJavaClass(path + "ServiceImpl.java");
+		}
+		else  {
+			javaClass = _getJavaClass(_outputPath + "/model/impl/" +
+		entityName + "Impl.java");
+		}
+
+			JavaSource javaSource = javaClass.getSource();
+			String[] imports = javaSource.getImports();
 
 		if (Validator.isNotNull(comment)) {
 			comment = comment.replaceAll("(?m)^", indentation + " * ");
@@ -3752,22 +3774,45 @@ public class ServiceBuilder {
 		}
 
 		for (DocletTag tag : tags) {
+			
+			String tagValue = tag.getValue();
+				
+				for (String fullImport : imports) {
+					String classImport = fullImport.substring(
+							fullImport.lastIndexOf(".") + 1);
+					
+					if (tagValue.contains(classImport)) {
+						int classImportIndex = tagValue.indexOf(classImport);
+
+						if (classImportIndex > 0) {
+							String begOfImport = tagValue.substring(
+									classImportIndex - 1, classImportIndex);
+
+							if (begOfImport.equals(" ") ||
+									begOfImport.equals("(")) {
+								tagValue = tagValue.replaceAll(
+										classImport, fullImport);
+							}
+						}
+					}
+				}
+			
 			sb.append(indentation);
 			sb.append(" * @");
 			sb.append(tag.getName());
 			sb.append(" ");
 
 			if (classType.equals("ServiceSoap") &&
-					tag.getValue().startsWith("PortalException")
+					tagValue.startsWith("PortalException")
 					) {
 
-				String remoteValue = tag.getValue().replaceFirst(
+				String remoteValue = tagValue.replaceFirst(
 						"PortalException", "RemoteException");
 
 				sb.append(remoteValue);
 			}
 			else {
-				sb.append(tag.getValue());
+				sb.append(tagValue);
 			}
 			sb.append("\n");
 		}
