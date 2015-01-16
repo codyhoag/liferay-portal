@@ -60,8 +60,8 @@ public class BlogsEntryLocalServiceUtil {
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #addEntry(long, String,
 	String, String, String, int, int, int, int, int, boolean,
-	boolean, String[], ImageSelector, ImageSelector,
-	ServiceContext)}
+	boolean, String[], com.liferay.portal.kernel.servlet.taglib.ui.ImageSelector, com.liferay.portal.kernel.servlet.taglib.ui.ImageSelector,
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.blogs.model.BlogsEntry addEntry(
@@ -392,7 +392,7 @@ public class BlogsEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getCompanyEntries(long,
-	Date, QueryDefinition)}
+	java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.blogs.model.BlogsEntry> getCompanyEntries(
@@ -404,7 +404,7 @@ public class BlogsEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getCompanyEntries(long,
-	Date, QueryDefinition)}
+	java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.blogs.model.BlogsEntry> getCompanyEntries(
@@ -426,7 +426,7 @@ public class BlogsEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getCompanyEntriesCount(long,
-	Date, QueryDefinition)}
+	java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static int getCompanyEntriesCount(long companyId,
@@ -466,8 +466,8 @@ public class BlogsEntryLocalServiceUtil {
 	}
 
 	/**
-	* @deprecated As of 6.2.0, replaced by {@link #getGroupEntries(long, Date,
-	QueryDefinition)}
+	* @deprecated As of 6.2.0, replaced by {@link #getGroupEntries(long, java.util.Date,
+	com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.blogs.model.BlogsEntry> getGroupEntries(
@@ -477,8 +477,8 @@ public class BlogsEntryLocalServiceUtil {
 	}
 
 	/**
-	* @deprecated As of 6.2.0, replaced by {@link #getGroupEntries(long, Date,
-	QueryDefinition)}
+	* @deprecated As of 6.2.0, replaced by {@link #getGroupEntries(long, java.util.Date,
+	com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.blogs.model.BlogsEntry> getGroupEntries(
@@ -498,7 +498,7 @@ public class BlogsEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupEntries(long,
-	QueryDefinition)}
+	com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.blogs.model.BlogsEntry> getGroupEntries(
@@ -508,7 +508,7 @@ public class BlogsEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupEntries(long,
-	QueryDefinition)}
+	com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.blogs.model.BlogsEntry> getGroupEntries(
@@ -526,7 +526,7 @@ public class BlogsEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupEntriesCount(long,
-	Date, QueryDefinition)}
+	java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static int getGroupEntriesCount(long groupId,
@@ -541,7 +541,7 @@ public class BlogsEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupEntriesCount(long,
-	QueryDefinition)}
+	com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static int getGroupEntriesCount(long groupId, int status) {
@@ -558,7 +558,7 @@ public class BlogsEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupUserEntries(long,
-	long, Date, QueryDefinition)}
+	long, java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.blogs.model.BlogsEntry> getGroupUserEntries(
@@ -571,7 +571,7 @@ public class BlogsEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupUserEntries(long,
-	long, Date, QueryDefinition)}
+	long, java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.blogs.model.BlogsEntry> getGroupUserEntries(
@@ -593,7 +593,7 @@ public class BlogsEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
-	#getGroupUserEntriesCount(long, long, Date, QueryDefinition)}
+	#getGroupUserEntriesCount(long, long, java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static int getGroupUserEntriesCount(long groupId, long userId,
@@ -613,7 +613,7 @@ public class BlogsEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupsEntries(long, long,
-	Date, QueryDefinition)}
+	java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.blogs.model.BlogsEntry> getGroupsEntries(
@@ -638,7 +638,7 @@ public class BlogsEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getOrganizationEntries(long,
-	Date, QueryDefinition)}
+	java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.blogs.model.BlogsEntry> getOrganizationEntries(
@@ -651,7 +651,7 @@ public class BlogsEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getOrganizationEntries(long,
-	Date, QueryDefinition)}
+	java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.blogs.model.BlogsEntry> getOrganizationEntries(
@@ -673,7 +673,7 @@ public class BlogsEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
-	#getOrganizationEntriesCount(long, Date, QueryDefinition)}
+	#getOrganizationEntriesCount(long, java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static int getOrganizationEntriesCount(long organizationId,
@@ -787,8 +787,8 @@ public class BlogsEntryLocalServiceUtil {
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #updateEntry(long, long,
 	String, String, String, String, int, int, int, int, int,
-	boolean, boolean, String[], ImageSelector, ImageSelector,
-	ServiceContext)}
+	boolean, boolean, String[], com.liferay.portal.kernel.servlet.taglib.ui.ImageSelector, com.liferay.portal.kernel.servlet.taglib.ui.ImageSelector,
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.blogs.model.BlogsEntry updateEntry(
@@ -839,7 +839,7 @@ public class BlogsEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #updateStatus(long, long,
-	int, ServiceContext, Map)}
+	int, com.liferay.portal.service.ServiceContext, java.util.Map)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.blogs.model.BlogsEntry updateStatus(

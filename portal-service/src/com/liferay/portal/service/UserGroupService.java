@@ -85,7 +85,7 @@ public interface UserGroupService extends BaseService {
 	* @throws PortalException if the user group's information was invalid
 	or if the user did not have permission to add the user group
 	* @deprecated As of 6.2.0, replaced by {@link #addUserGroup(String, String,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.UserGroup addUserGroup(
@@ -210,7 +210,7 @@ public interface UserGroupService extends BaseService {
 	found, if the new information was invalid, or if the user did
 	not have permission to update the user group information
 	* @deprecated As of 6.2.0, replaced by {@link #updateUserGroup(long,
-	String, String, ServiceContext)}
+	String, String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.UserGroup updateUserGroup(

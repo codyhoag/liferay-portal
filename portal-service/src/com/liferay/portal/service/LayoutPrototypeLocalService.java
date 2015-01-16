@@ -59,7 +59,7 @@ public interface LayoutPrototypeLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #addLayoutPrototype(long,
-	long, Map, String, boolean, ServiceContext)}
+	long, java.util.Map, String, boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.LayoutPrototype addLayoutPrototype(
@@ -70,7 +70,7 @@ public interface LayoutPrototypeLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #addLayoutPrototype(long,
-	long, Map, Map, boolean, ServiceContext)}
+	long, java.util.Map, java.util.Map, boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.LayoutPrototype addLayoutPrototype(
@@ -317,7 +317,7 @@ public interface LayoutPrototypeLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #updateLayoutPrototype(long,
-	Map, String, boolean, ServiceContext)}
+	java.util.Map, String, boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.LayoutPrototype updateLayoutPrototype(
@@ -328,7 +328,7 @@ public interface LayoutPrototypeLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #updateLayoutPrototype(long,
-	Map, Map, boolean, ServiceContext)}
+	java.util.Map, java.util.Map, boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.LayoutPrototype updateLayoutPrototype(

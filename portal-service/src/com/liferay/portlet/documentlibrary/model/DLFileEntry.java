@@ -84,19 +84,19 @@ public interface DLFileEntry extends DLFileEntryModel, PersistedModel, TreeModel
 	public java.lang.String getLuceneProperties();
 
 	/**
-	* @deprecated As of 6.2.0, replaced by {@link DLFileVersion#getUserId()}
+	* @deprecated As of 6.2.0, replaced by {@link com.liferay.portlet.documentlibrary.model.DLFileVersion#getUserId()}
 	*/
 	@java.lang.Deprecated()
 	public long getVersionUserId();
 
 	/**
-	* @deprecated As of 6.2.0, replaced by {@link DLFileVersion#getUserName()}
+	* @deprecated As of 6.2.0, replaced by {@link com.liferay.portlet.documentlibrary.model.DLFileVersion#getUserName()}
 	*/
 	@java.lang.Deprecated()
 	public java.lang.String getVersionUserName();
 
 	/**
-	* @deprecated As of 6.2.0, replaced by {@link DLFileVersion#getUserUuid()}
+	* @deprecated As of 6.2.0, replaced by {@link com.liferay.portlet.documentlibrary.model.DLFileVersion#getUserUuid()}
 	*/
 	@java.lang.Deprecated()
 	public java.lang.String getVersionUserUuid();

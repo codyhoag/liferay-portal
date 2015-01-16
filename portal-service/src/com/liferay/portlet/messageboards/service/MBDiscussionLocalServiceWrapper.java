@@ -35,7 +35,7 @@ public class MBDiscussionLocalServiceWrapper implements MBDiscussionLocalService
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #addDiscussion(long, long,
-	long, long, long, ServiceContext)}
+	long, long, long, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override

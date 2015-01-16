@@ -57,7 +57,7 @@ public class PasswordPolicyLocalServiceUtil {
 	boolean, String, String, boolean, boolean, long, boolean,
 	boolean, int, int, int, int, int, int, String, boolean, int,
 	boolean, long, long, int, boolean, int, long, long, long,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.PasswordPolicy addPasswordPolicy(
@@ -397,7 +397,7 @@ public class PasswordPolicyLocalServiceUtil {
 	String, String, boolean, boolean, long, boolean, boolean,
 	int, int, int, int, int, int, String, boolean, int, boolean,
 	long, long, int, boolean, int, long, long, long,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.PasswordPolicy updatePasswordPolicy(

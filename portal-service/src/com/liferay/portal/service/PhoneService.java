@@ -49,7 +49,7 @@ public interface PhoneService extends BaseService {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #addPhone(String, long,
-	String, String, int, boolean, ServiceContext)}
+	String, String, int, boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.Phone addPhone(java.lang.String className,

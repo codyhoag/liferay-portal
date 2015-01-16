@@ -88,7 +88,7 @@ public class WikiPageServiceWrapper implements WikiPageService,
 
 	/**
 	* @deprecated As of 7.0.0 replaced by {@link #addTempFileEntry(long,
-	String, String, InputStream, String)}
+	String, String, java.io.InputStream, String)}
 	*/
 	@Deprecated
 	@Override
@@ -350,7 +350,7 @@ public class WikiPageServiceWrapper implements WikiPageService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #renamePage(long, String,
-	String, ServiceContext)}
+	String, com.liferay.portal.service.ServiceContext)} *
 	*/
 	@Deprecated
 	@Override

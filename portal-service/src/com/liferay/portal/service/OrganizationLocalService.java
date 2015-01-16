@@ -132,7 +132,7 @@ public interface OrganizationLocalService extends BaseLocalService,
 	information was invalid
 	* @deprecated As of 6.2.0, replaced by {@link #addOrganization(long, long,
 	String, String, long, long, int, String, boolean,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.Organization addOrganization(long userId,
@@ -1250,7 +1250,7 @@ public interface OrganizationLocalService extends BaseLocalService,
 	information was invalid
 	* @deprecated As of 6.2.0, replaced by {@link #updateOrganization(long,
 	long, long, String, String, long, long, int, String, boolean,
-	byte[], boolean, ServiceContext)}
+	byte[], boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.Organization updateOrganization(
@@ -1319,7 +1319,7 @@ public interface OrganizationLocalService extends BaseLocalService,
 	information was invalid
 	* @deprecated As of 7.0.0, replaced by {@link #updateOrganization(long,
 	long, long, String, String, long, long, int, String, boolean,
-	byte[], boolean, ServiceContext)}
+	byte[], boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.Organization updateOrganization(

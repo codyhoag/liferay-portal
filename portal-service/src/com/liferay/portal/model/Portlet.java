@@ -97,7 +97,7 @@ public interface Portlet extends PortletModel, PersistedModel {
 	* Returns <code>true</code> if an action URL for this portlet should cause
 	* an auto redirect.
 	*
-	* @return <code>true</code> if an action URL for this portlet should cause
+	* @return <code>true</code> if an action java.net.URL for this portlet should cause
 	an auto redirect
 	*/
 	public boolean getActionURLRedirect();
@@ -353,21 +353,21 @@ public interface Portlet extends PortletModel, PersistedModel {
 	/**
 	* Returns the name of the friendly URL mapper class of the portlet.
 	*
-	* @return the name of the friendly URL mapper class of the portlet
+	* @return the name of the friendly java.net.URL mapper class of the portlet
 	*/
 	public java.lang.String getFriendlyURLMapperClass();
 
 	/**
 	* Returns the friendly URL mapper instance of the portlet.
 	*
-	* @return the friendly URL mapper instance of the portlet
+	* @return the friendly java.net.URL mapper instance of the portlet
 	*/
 	public com.liferay.portal.kernel.portlet.FriendlyURLMapper getFriendlyURLMapperInstance();
 
 	/**
 	* Returns the name of the friendly URL mapping of the portlet.
 	*
-	* @return the name of the friendly URL mapping of the portlet
+	* @return the name of the friendly java.net.URL mapping of the portlet
 	*/
 	public java.lang.String getFriendlyURLMapping();
 
@@ -375,7 +375,7 @@ public interface Portlet extends PortletModel, PersistedModel {
 	* Returns the class loader resource path to the friendly URL routes of the
 	* portlet.
 	*
-	* @return the class loader resource path to the friendly URL routes of the
+	* @return the class loader resource path to the friendly java.net.URL routes of the
 	portlet
 	*/
 	public java.lang.String getFriendlyURLRoutes();
@@ -663,7 +663,7 @@ public interface Portlet extends PortletModel, PersistedModel {
 	/**
 	* Returns the name of the portlet URL class of the portlet.
 	*
-	* @return the name of the portlet URL class of the portlet
+	* @return the name of the portlet java.net.URL class of the portlet
 	*/
 	public java.lang.String getPortletURLClass();
 
@@ -904,7 +904,7 @@ public interface Portlet extends PortletModel, PersistedModel {
 	* Configuration
 	*
 	* @return <code>true</code> if the portlet uses Social Interactions
-	Configuration
+	com.liferay.portal.kernel.configuration.Configuration
 	*/
 	public boolean getSocialInteractionsConfiguration();
 
@@ -1052,14 +1052,14 @@ public interface Portlet extends PortletModel, PersistedModel {
 	/**
 	* Returns the name of the URL encoder class of the portlet.
 	*
-	* @return the name of the URL encoder class of the portlet
+	* @return the name of the java.net.URL encoder class of the portlet
 	*/
 	public java.lang.String getURLEncoderClass();
 
 	/**
 	* Returns the URL encoder instance of the portlet.
 	*
-	* @return the URL encoder instance of the portlet
+	* @return the java.net.URL encoder instance of the portlet
 	*/
 	public com.liferay.portal.kernel.servlet.URLEncoder getURLEncoderInstance();
 
@@ -1247,7 +1247,7 @@ public interface Portlet extends PortletModel, PersistedModel {
 	* Returns <code>true</code> if an action URL for this portlet should cause
 	* an auto redirect.
 	*
-	* @return <code>true</code> if an action URL for this portlet should cause
+	* @return <code>true</code> if an action java.net.URL for this portlet should cause
 	an auto redirect
 	*/
 	public boolean isActionURLRedirect();
@@ -1434,7 +1434,7 @@ public interface Portlet extends PortletModel, PersistedModel {
 	* Configuration
 	*
 	* @return <code>true</code> if the portlet uses Social Interactions
-	Configuration
+	com.liferay.portal.kernel.configuration.Configuration
 	*/
 	public boolean isSocialInteractionsConfiguration();
 
@@ -2265,7 +2265,7 @@ public interface Portlet extends PortletModel, PersistedModel {
 	/**
 	* Sets the name of the URL encoder class of the portlet.
 	*
-	* @param urlEncoderClass the name of the URL encoder class of the portlet
+	* @param urlEncoderClass the name of the java.net.URL encoder class of the portlet
 	*/
 	public void setURLEncoderClass(java.lang.String urlEncoderClass);
 

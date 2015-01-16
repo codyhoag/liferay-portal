@@ -44,7 +44,7 @@ public class AddressServiceUtil {
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #addAddress(String, long,
 	String, String, String, String, String, long, long, int,
-	boolean, boolean, ServiceContext)}
+	boolean, boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.Address addAddress(

@@ -275,7 +275,7 @@ public class MBThreadLocalServiceWrapper implements MBThreadLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupThreads(long,
-	QueryDefinition)}
+	com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	@Override
@@ -294,7 +294,7 @@ public class MBThreadLocalServiceWrapper implements MBThreadLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupThreads(long, long,
-	QueryDefinition)}
+	com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	@Override
@@ -306,7 +306,7 @@ public class MBThreadLocalServiceWrapper implements MBThreadLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupThreads(long, long,
-	boolean, boolean, QueryDefinition)}
+	boolean, boolean, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	@Override
@@ -319,7 +319,7 @@ public class MBThreadLocalServiceWrapper implements MBThreadLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupThreads(long, long,
-	boolean, QueryDefinition)}
+	boolean, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	@Override
@@ -356,7 +356,7 @@ public class MBThreadLocalServiceWrapper implements MBThreadLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupThreadsCount(long,
-	QueryDefinition)}
+	com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	@Override
@@ -373,7 +373,7 @@ public class MBThreadLocalServiceWrapper implements MBThreadLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupThreadsCount(long,
-	long, QueryDefinition)}
+	long, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	@Override
@@ -384,7 +384,7 @@ public class MBThreadLocalServiceWrapper implements MBThreadLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupThreadsCount(long,
-	long, boolean, QueryDefinition)}
+	long, boolean, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	@Override
@@ -396,7 +396,7 @@ public class MBThreadLocalServiceWrapper implements MBThreadLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupThreadsCount(long,
-	long, boolean, boolean, QueryDefinition)}
+	long, boolean, boolean, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	@Override

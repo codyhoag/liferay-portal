@@ -45,7 +45,7 @@ public class AddressLocalServiceWrapper implements AddressLocalService,
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #addAddress(long, String,
 	long, String, String, String, String, String, long, long,
-	int, boolean, boolean, ServiceContext)}
+	int, boolean, boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override

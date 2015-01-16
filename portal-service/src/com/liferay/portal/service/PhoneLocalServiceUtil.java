@@ -54,7 +54,7 @@ public class PhoneLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #addPhone(long, String, long,
-	String, String, int, boolean, ServiceContext)}
+	String, String, int, boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.Phone addPhone(long userId,

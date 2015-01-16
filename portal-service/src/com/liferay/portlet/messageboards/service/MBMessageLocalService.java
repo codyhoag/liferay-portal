@@ -72,7 +72,7 @@ public interface MBMessageLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #addMessage(long, String,
-	long, long, String, String, ServiceContext)}
+	long, long, String, String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portlet.messageboards.model.MBMessage addMessage(
@@ -578,7 +578,7 @@ public interface MBMessageLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #updateStatus(long, long,
-	int, ServiceContext, Map)}
+	int, com.liferay.portal.service.ServiceContext, java.util.Map)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portlet.messageboards.model.MBMessage updateStatus(

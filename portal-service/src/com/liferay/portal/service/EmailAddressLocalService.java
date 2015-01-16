@@ -59,7 +59,7 @@ public interface EmailAddressLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #addEmailAddress(long,
-	String, long, String, int, boolean, ServiceContext)}
+	String, long, String, int, boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.EmailAddress addEmailAddress(long userId,

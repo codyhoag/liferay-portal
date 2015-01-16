@@ -120,7 +120,7 @@ public class UserGroupServiceSoap {
 	* @throws RemoteException if the user group's information was invalid
 	or if the user did not have permission to add the user group
 	* @deprecated As of 6.2.0, replaced by {@link #addUserGroup(String, String,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.UserGroupSoap addUserGroup(
@@ -311,7 +311,7 @@ public class UserGroupServiceSoap {
 	found, if the new information was invalid, or if the user did
 	not have permission to update the user group information
 	* @deprecated As of 6.2.0, replaced by {@link #updateUserGroup(long,
-	String, String, ServiceContext)}
+	String, String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.UserGroupSoap updateUserGroup(

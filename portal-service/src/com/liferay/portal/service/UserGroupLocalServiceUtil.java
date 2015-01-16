@@ -104,7 +104,7 @@ public class UserGroupLocalServiceUtil {
 	* @return the user group
 	* @throws PortalException if the user group's information was invalid
 	* @deprecated As of 6.2.0, replaced by {@link #addUserGroup(long, long,
-	String, String, ServiceContext)}
+	String, String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.UserGroup addUserGroup(long userId,
@@ -932,7 +932,7 @@ public class UserGroupLocalServiceUtil {
 	* @throws PortalException if a user group with the primary key could
 	not be found or if the new information was invalid
 	* @deprecated As of 6.2.0, replaced by {@link #updateUserGroup(long, long,
-	String, String, ServiceContext)}
+	String, String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.UserGroup updateUserGroup(

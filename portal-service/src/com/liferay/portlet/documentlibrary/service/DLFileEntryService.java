@@ -63,7 +63,7 @@ public interface DLFileEntryService extends BaseService {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #checkInFileEntry(long,
-	String, ServiceContext)}
+	String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public void checkInFileEntry(long fileEntryId, java.lang.String lockUuid)
@@ -80,7 +80,7 @@ public interface DLFileEntryService extends BaseService {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #checkOutFileEntry(long,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portlet.documentlibrary.model.DLFileEntry checkOutFileEntry(
@@ -89,7 +89,7 @@ public interface DLFileEntryService extends BaseService {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #checkOutFileEntry(long,
-	String, long, ServiceContext)}
+	String, long, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portlet.documentlibrary.model.DLFileEntry checkOutFileEntry(

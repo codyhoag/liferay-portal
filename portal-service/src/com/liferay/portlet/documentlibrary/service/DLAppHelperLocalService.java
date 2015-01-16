@@ -188,7 +188,7 @@ public interface DLAppHelperLocalService extends BaseLocalService {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	#restoreDependentsFromTrash(List)}
+	#restoreDependentsFromTrash(java.util.List)}
 	*/
 	@java.lang.Deprecated
 	public void restoreDependentsFromTrash(

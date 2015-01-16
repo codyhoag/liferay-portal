@@ -373,7 +373,7 @@ public class CompanyServiceWrapper implements CompanyService,
 	String, String, boolean, byte[], String, String, String,
 	String, String, String, String, String, String, String,
 	String, java.util.List, java.util.List, java.util.List,
-	java.util.List, UnicodeProperties)}
+	java.util.List, com.liferay.portal.kernel.util.UnicodeProperties)}
 	*/
 	@Deprecated
 	@Override

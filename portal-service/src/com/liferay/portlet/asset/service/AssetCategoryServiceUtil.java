@@ -140,7 +140,7 @@ public class AssetCategoryServiceUtil {
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
 	#getVocabularyCategoriesDisplay(long, String, long, int, int,
-	OrderByComparator)}
+	com.liferay.portal.kernel.util.OrderByComparator)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.kernel.json.JSONObject getJSONVocabularyCategories(
@@ -156,7 +156,7 @@ public class AssetCategoryServiceUtil {
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
 	#getVocabularyCategoriesDisplay(long, int, int,
-	OrderByComparator)}
+	com.liferay.portal.kernel.util.OrderByComparator)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.kernel.json.JSONObject getJSONVocabularyCategories(
@@ -249,7 +249,7 @@ public class AssetCategoryServiceUtil {
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
 	#getVocabularyRootCategories(long, long, int, int,
-	OrderByComparator)}
+	com.liferay.portal.kernel.util.OrderByComparator)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.asset.model.AssetCategory> getVocabularyRootCategories(

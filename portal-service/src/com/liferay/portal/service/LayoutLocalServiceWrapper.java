@@ -165,8 +165,8 @@ public class LayoutLocalServiceWrapper implements LayoutLocalService,
 	not be found, if layout values were invalid, or if a portal
 	exception occurred
 	* @deprecated As of 6.2.0, replaced by {@link #addLayout(long, long,
-	boolean, long, Map, Map, Map, Map, Map, String, String,
-	boolean, Map, ServiceContext)}
+	boolean, long, java.util.Map, java.util.Map, java.util.Map, java.util.Map, java.util.Map, String, String,
+	boolean, java.util.Map, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override
@@ -520,7 +520,7 @@ public class LayoutLocalServiceWrapper implements LayoutLocalService,
 	com.liferay.portal.kernel.lar.PortletDataHandlerKeys}.
 	* @param startDate the export's start date
 	* @param endDate the export's end date
-	* @return the layouts as a File
+	* @return the layouts as a java.io.File
 	* @throws PortalException if a group or any layout with the primary key
 	could not be found, or if some other portal exception occurred
 	*/
@@ -565,7 +565,7 @@ public class LayoutLocalServiceWrapper implements LayoutLocalService,
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
 	#exportLayoutsAsFileInBackground(long, String, long, boolean,
-	long[], Map, Date, Date)}
+	long[], java.util.Map, java.util.Date, java.util.Date)}
 	*/
 	@Deprecated
 	@Override
@@ -1554,8 +1554,8 @@ public class LayoutLocalServiceWrapper implements LayoutLocalService,
 	found, if the layout parameters were invalid, or if a portal
 	exception occurred
 	* @deprecated As of 6.2.0, replaced by {@link #updateLayout(long, boolean,
-	long, long, Map, Map, Map, Map, Map, String, boolean, Map,
-	boolean, byte[], ServiceContext)}
+	long, long, java.util.Map, java.util.Map, java.util.Map, java.util.Map, java.util.Map, String, boolean, java.util.Map,
+	boolean, byte[], com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override

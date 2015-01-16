@@ -35,7 +35,7 @@ public class BlogsEntryServiceWrapper implements BlogsEntryService,
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #addEntry(String, String,
 	String, String, int, int, int, int, int, boolean, boolean,
-	String[], ImageSelector, ImageSelector, ServiceContext)}
+	String[], com.liferay.portal.kernel.servlet.taglib.ui.ImageSelector, com.liferay.portal.kernel.servlet.taglib.ui.ImageSelector, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override
@@ -239,8 +239,8 @@ public class BlogsEntryServiceWrapper implements BlogsEntryService,
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #updateEntry(long, String,
 	String, String, String, int, int, int, int, int, boolean,
-	boolean, String[], ImageSelector, ImageSelector,
-	ServiceContext)}
+	boolean, String[], com.liferay.portal.kernel.servlet.taglib.ui.ImageSelector, com.liferay.portal.kernel.servlet.taglib.ui.ImageSelector,
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override

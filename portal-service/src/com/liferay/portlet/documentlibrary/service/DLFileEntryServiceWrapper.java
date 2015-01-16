@@ -56,7 +56,7 @@ public class DLFileEntryServiceWrapper implements DLFileEntryService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #checkInFileEntry(long,
-	String, ServiceContext)}
+	String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override
@@ -84,7 +84,7 @@ public class DLFileEntryServiceWrapper implements DLFileEntryService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #checkOutFileEntry(long,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override
@@ -96,7 +96,7 @@ public class DLFileEntryServiceWrapper implements DLFileEntryService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #checkOutFileEntry(long,
-	String, long, ServiceContext)}
+	String, long, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override

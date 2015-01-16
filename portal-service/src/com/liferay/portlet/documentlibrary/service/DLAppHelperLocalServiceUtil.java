@@ -233,7 +233,7 @@ public class DLAppHelperLocalServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	#restoreDependentsFromTrash(List)}
+	#restoreDependentsFromTrash(java.util.List)}
 	*/
 	@Deprecated
 	public static void restoreDependentsFromTrash(

@@ -120,7 +120,7 @@ public class DDMStructureServiceSoap {
 	structure, if the XSD was not well-formed, or if a portal
 	exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link #addStructure(long, long,
-	long, Map, Map, DDMForm, ServiceContext)}
+	long, java.util.Map, java.util.Map, com.liferay.portlet.dynamicdatamapping.model.DDMForm, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructureSoap addStructure(
@@ -208,8 +208,8 @@ public class DDMStructureServiceSoap {
 	the structure, if the XSD is not well formed, or if a portal
 	exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link #addStructure(long, long,
-	long, String, Map, Map, DDMForm, String, int,
-	ServiceContext)}
+	long, String, java.util.Map, java.util.Map, com.liferay.portlet.dynamicdatamapping.model.DDMForm, String, int,
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructureSoap addStructure(
@@ -304,8 +304,8 @@ public class DDMStructureServiceSoap {
 	structure, if the XSD was not well-formed, or if a portal
 	exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link #addStructure(long, long,
-	String, long, String, Map, Map, DDMForm, String, int,
-	ServiceContext)}
+	String, long, String, java.util.Map, java.util.Map, com.liferay.portlet.dynamicdatamapping.model.DDMForm, String, int,
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructureSoap addStructure(
@@ -863,7 +863,7 @@ public class DDMStructureServiceSoap {
 	* @throws RemoteException if the user did not have permission to update
 	the structure or if a portal exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link #updateStructure(long, long,
-	long, String, Map, Map, DDMForm, ServiceContext)}
+	long, String, java.util.Map, java.util.Map, com.liferay.portlet.dynamicdatamapping.model.DDMForm, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructureSoap updateStructure(
@@ -939,7 +939,7 @@ public class DDMStructureServiceSoap {
 	* @throws RemoteException if the user did not have permission to update
 	the structure or if a portal exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link #updateStructure(long, long,
-	Map, Map, DDMForm, ServiceContext)}
+	java.util.Map, java.util.Map, com.liferay.portlet.dynamicdatamapping.model.DDMForm, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructureSoap updateStructure(

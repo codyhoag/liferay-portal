@@ -73,7 +73,7 @@ public class MBMessageLocalServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #addMessage(long, String,
-	long, long, String, String, ServiceContext)}
+	long, long, String, String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.messageboards.model.MBMessage addMessage(
@@ -747,7 +747,7 @@ public class MBMessageLocalServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #updateStatus(long, long,
-	int, ServiceContext, Map)}
+	int, com.liferay.portal.service.ServiceContext, java.util.Map)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.messageboards.model.MBMessage updateStatus(

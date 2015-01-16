@@ -148,7 +148,7 @@ public class AssetCategoryServiceWrapper implements AssetCategoryService,
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
 	#getVocabularyCategoriesDisplay(long, String, long, int, int,
-	OrderByComparator)}
+	com.liferay.portal.kernel.util.OrderByComparator)}
 	*/
 	@Deprecated
 	@Override
@@ -164,7 +164,7 @@ public class AssetCategoryServiceWrapper implements AssetCategoryService,
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
 	#getVocabularyCategoriesDisplay(long, int, int,
-	OrderByComparator)}
+	com.liferay.portal.kernel.util.OrderByComparator)}
 	*/
 	@Deprecated
 	@Override
@@ -262,7 +262,7 @@ public class AssetCategoryServiceWrapper implements AssetCategoryService,
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
 	#getVocabularyRootCategories(long, long, int, int,
-	OrderByComparator)}
+	com.liferay.portal.kernel.util.OrderByComparator)}
 	*/
 	@Deprecated
 	@Override

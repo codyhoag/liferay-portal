@@ -75,7 +75,7 @@ public interface DLFileEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #checkInFileEntry(long, long,
-	String, ServiceContext)}
+	String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public void checkInFileEntry(long userId, long fileEntryId,
@@ -94,7 +94,7 @@ public interface DLFileEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #checkOutFileEntry(long,
-	long, ServiceContext)}
+	long, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portlet.documentlibrary.model.DLFileEntry checkOutFileEntry(
@@ -103,7 +103,7 @@ public interface DLFileEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #checkOutFileEntry(long,
-	long, String, long, ServiceContext)}
+	long, String, long, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portlet.documentlibrary.model.DLFileEntry checkOutFileEntry(

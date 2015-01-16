@@ -65,8 +65,8 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #addEntry(long, String,
 	String, String, String, int, int, int, int, int, boolean,
-	boolean, String[], ImageSelector, ImageSelector,
-	ServiceContext)}
+	boolean, String[], com.liferay.portal.kernel.servlet.taglib.ui.ImageSelector, com.liferay.portal.kernel.servlet.taglib.ui.ImageSelector,
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portlet.blogs.model.BlogsEntry addEntry(long userId,
@@ -335,7 +335,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getCompanyEntries(long,
-	Date, QueryDefinition)}
+	java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -345,7 +345,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getCompanyEntries(long,
-	Date, QueryDefinition)}
+	java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -361,7 +361,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getCompanyEntriesCount(long,
-	Date, QueryDefinition)}
+	java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -392,8 +392,8 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 		com.liferay.portal.kernel.dao.orm.QueryDefinition<com.liferay.portlet.blogs.model.BlogsEntry> queryDefinition);
 
 	/**
-	* @deprecated As of 6.2.0, replaced by {@link #getGroupEntries(long, Date,
-	QueryDefinition)}
+	* @deprecated As of 6.2.0, replaced by {@link #getGroupEntries(long, java.util.Date,
+	com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -401,8 +401,8 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 		long groupId, java.util.Date displayDate, int status, int start, int end);
 
 	/**
-	* @deprecated As of 6.2.0, replaced by {@link #getGroupEntries(long, Date,
-	QueryDefinition)}
+	* @deprecated As of 6.2.0, replaced by {@link #getGroupEntries(long, java.util.Date,
+	com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -418,7 +418,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupEntries(long,
-	QueryDefinition)}
+	com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -427,7 +427,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupEntries(long,
-	QueryDefinition)}
+	com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -441,7 +441,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupEntriesCount(long,
-	Date, QueryDefinition)}
+	java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -454,7 +454,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupEntriesCount(long,
-	QueryDefinition)}
+	com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -467,7 +467,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupUserEntries(long,
-	long, Date, QueryDefinition)}
+	long, java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -477,7 +477,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupUserEntries(long,
-	long, Date, QueryDefinition)}
+	long, java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -493,7 +493,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
-	#getGroupUserEntriesCount(long, long, Date, QueryDefinition)}
+	#getGroupUserEntriesCount(long, long, java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -507,7 +507,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupsEntries(long, long,
-	Date, QueryDefinition)}
+	java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -525,7 +525,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getOrganizationEntries(long,
-	Date, QueryDefinition)}
+	java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -535,7 +535,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getOrganizationEntries(long,
-	Date, QueryDefinition)}
+	java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -551,7 +551,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
-	#getOrganizationEntriesCount(long, Date, QueryDefinition)}
+	#getOrganizationEntriesCount(long, java.util.Date, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -645,8 +645,8 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #updateEntry(long, long,
 	String, String, String, String, int, int, int, int, int,
-	boolean, boolean, String[], ImageSelector, ImageSelector,
-	ServiceContext)}
+	boolean, boolean, String[], com.liferay.portal.kernel.servlet.taglib.ui.ImageSelector, com.liferay.portal.kernel.servlet.taglib.ui.ImageSelector,
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portlet.blogs.model.BlogsEntry updateEntry(long userId,
@@ -679,7 +679,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #updateStatus(long, long,
-	int, ServiceContext, Map)}
+	int, com.liferay.portal.service.ServiceContext, java.util.Map)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portlet.blogs.model.BlogsEntry updateStatus(

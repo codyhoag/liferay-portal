@@ -145,7 +145,7 @@ public class ExpandoValueLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.1.0, replaced by {@link #addValue(long, String,
-	String, String, long, Date[])}
+	String, String, long, java.util.Date[])}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.expando.model.ExpandoValue addValue(
@@ -262,7 +262,7 @@ public class ExpandoValueLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.1.0, replaced by {@link #addValue(long, String,
-	String, String, long, Date[])}
+	String, String, long, java.util.Date[])}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.expando.model.ExpandoValue addValue(
@@ -953,7 +953,7 @@ public class ExpandoValueLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.1.0, replaced by {@link #getData(long, String,
-	String, String, long, Date[])}
+	String, String, long, java.util.Date[])}
 	*/
 	@Deprecated
 	public static java.util.Date[] getData(java.lang.String className,
@@ -981,7 +981,7 @@ public class ExpandoValueLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.1.0, replaced by {@link #getData(long, String,
-	String, String, long, Date[])}
+	String, String, long, java.util.Date[])}
 	*/
 	@Deprecated
 	public static java.util.Date getData(java.lang.String className,

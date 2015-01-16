@@ -32,8 +32,8 @@ public class LayoutPrototypeServiceWrapper implements LayoutPrototypeService,
 	}
 
 	/**
-	* @deprecated As of 6.2.0, replaced by {@link #addLayoutPrototype(Map,
-	String, boolean, ServiceContext)}
+	* @deprecated As of 6.2.0, replaced by {@link #addLayoutPrototype(java.util.Map,
+	String, boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override
@@ -46,8 +46,8 @@ public class LayoutPrototypeServiceWrapper implements LayoutPrototypeService,
 	}
 
 	/**
-	* @deprecated As of 7.0.0, replaced by {@link #addLayoutPrototype(Map, Map,
-	boolean, ServiceContext)}
+	* @deprecated As of 7.0.0, replaced by {@link #addLayoutPrototype(java.util.Map, java.util.Map,
+	boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override
@@ -113,7 +113,7 @@ public class LayoutPrototypeServiceWrapper implements LayoutPrototypeService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #updateLayoutPrototype(long,
-	Map, String, boolean, ServiceContext)}
+	java.util.Map, String, boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override
@@ -128,7 +128,7 @@ public class LayoutPrototypeServiceWrapper implements LayoutPrototypeService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #updateLayoutPrototype(long,
-	Map, Map, boolean, ServiceContext)}
+	java.util.Map, java.util.Map, boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override

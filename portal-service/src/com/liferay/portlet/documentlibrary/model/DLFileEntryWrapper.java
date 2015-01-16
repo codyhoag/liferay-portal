@@ -746,7 +746,7 @@ public class DLFileEntryWrapper implements DLFileEntry,
 	}
 
 	/**
-	* @deprecated As of 6.2.0, replaced by {@link DLFileVersion#getUserId()}
+	* @deprecated As of 6.2.0, replaced by {@link com.liferay.portlet.documentlibrary.model.DLFileVersion#getUserId()}
 	*/
 	@Deprecated
 	@Override
@@ -755,7 +755,7 @@ public class DLFileEntryWrapper implements DLFileEntry,
 	}
 
 	/**
-	* @deprecated As of 6.2.0, replaced by {@link DLFileVersion#getUserName()}
+	* @deprecated As of 6.2.0, replaced by {@link com.liferay.portlet.documentlibrary.model.DLFileVersion#getUserName()}
 	*/
 	@Deprecated
 	@Override
@@ -764,7 +764,7 @@ public class DLFileEntryWrapper implements DLFileEntry,
 	}
 
 	/**
-	* @deprecated As of 6.2.0, replaced by {@link DLFileVersion#getUserUuid()}
+	* @deprecated As of 6.2.0, replaced by {@link com.liferay.portlet.documentlibrary.model.DLFileVersion#getUserUuid()}
 	*/
 	@Deprecated
 	@Override

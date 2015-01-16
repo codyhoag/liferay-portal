@@ -63,7 +63,7 @@ public class GroupLocalServiceUtil {
 	* @param description the group's description (optionally
 	<code>null</code>)
 	* @param type the group's type. For more information see {@link
-	GroupConstants}.
+	com.liferay.portal.model.GroupConstants}.
 	* @param friendlyURL the group's friendlyURL (optionally
 	<code>null</code>)
 	* @param site whether the group is to be associated with a main site
@@ -77,8 +77,8 @@ public class GroupLocalServiceUtil {
 	found, or if a valid friendly URL could not be created for
 	the group
 	* @deprecated As of 6.2.0, replaced by {@link #addGroup(long, long, String,
-	long, long, Map, Map, int, boolean, int, String, boolean,
-	boolean, ServiceContext)}
+	long, long, java.util.Map, java.util.Map, int, boolean, int, String, boolean,
+	boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.Group addGroup(long userId,
@@ -102,7 +102,7 @@ public class GroupLocalServiceUtil {
 	* @param description the group's description (optionally
 	<code>null</code>)
 	* @param type the group's type. For more information see {@link
-	GroupConstants}.
+	com.liferay.portal.model.GroupConstants}.
 	* @param friendlyURL the group's friendlyURL
 	* @param site whether the group is to be associated with a main site
 	* @param active whether the group is active
@@ -115,8 +115,8 @@ public class GroupLocalServiceUtil {
 	found, or if a valid friendly URL could not be created for
 	the group
 	* @deprecated As of 6.2.0, replaced by {@link #addGroup(long, long, String,
-	long, long, Map, Map, int, boolean, int, String, boolean,
-	boolean, ServiceContext)}
+	long, long, java.util.Map, java.util.Map, int, boolean, int, String, boolean,
+	boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.Group addGroup(long userId,
@@ -142,11 +142,11 @@ public class GroupLocalServiceUtil {
 	* @param description the group's description (optionally
 	<code>null</code>)
 	* @param type the group's type. For more information see {@link
-	GroupConstants}.
+	com.liferay.portal.model.GroupConstants}.
 	* @param manualMembership whether manual membership is allowed for the
 	group
 	* @param membershipRestriction the group's membership restriction. For
-	more information see {@link GroupConstants}.
+	more information see {@link com.liferay.portal.model.GroupConstants}.
 	* @param friendlyURL the group's friendlyURL (optionally
 	<code>null</code>)
 	* @param site whether the group is to be associated with a main site
@@ -160,8 +160,8 @@ public class GroupLocalServiceUtil {
 	found, or if a valid friendly URL could not be created for
 	the group
 	* @deprecated As of 7.0.0, replaced by {@link #addGroup(long, long, String,
-	long, long, Map, Map, int, boolean, int, String, boolean,
-	boolean, ServiceContext)}
+	long, long, java.util.Map, java.util.Map, int, boolean, int, String, boolean,
+	boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.Group addGroup(long userId,
@@ -219,7 +219,7 @@ public class GroupLocalServiceUtil {
 	* @param description the group's description (optionally
 	<code>null</code>)
 	* @param type the group's type. For more information see {@link
-	GroupConstants}.
+	com.liferay.portal.model.GroupConstants}.
 	* @param friendlyURL the group's friendlyURL
 	* @param site whether the group is to be associated with a main site
 	* @param active whether the group is active
@@ -232,8 +232,8 @@ public class GroupLocalServiceUtil {
 	found, or if a valid friendly URL could not be created for
 	the group
 	* @deprecated As of 6.2.0, replaced by {@link #addGroup(long, long, String,
-	long, long, Map, Map, int, boolean, int, String, boolean,
-	boolean, ServiceContext)}
+	long, long, java.util.Map, java.util.Map, int, boolean, int, String, boolean,
+	boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.Group addGroup(long userId,
@@ -760,7 +760,7 @@ public class GroupLocalServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	Group#getDescriptiveName(Locale)}
+	com.liferay.portal.model.Group#getDescriptiveName(java.util.Locale)}
 	*/
 	@Deprecated
 	public static java.lang.String getGroupDescriptiveName(
@@ -771,7 +771,7 @@ public class GroupLocalServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	Group#getDescriptiveName(Locale)}
+	com.liferay.portal.model.Group#getDescriptiveName(java.util.Locale)}
 	*/
 	@Deprecated
 	public static java.lang.String getGroupDescriptiveName(long groupId,
@@ -964,7 +964,7 @@ public class GroupLocalServiceUtil {
 	inclusive)
 	* @return the range of matching groups
 	* @deprecated As of 6.2.0, replaced by {@link #getLayoutsGroups(long, long,
-	boolean, int, int, OrderByComparator)}
+	boolean, int, int, com.liferay.portal.kernel.util.OrderByComparator)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portal.model.Group> getLayoutsGroups(
@@ -2589,11 +2589,11 @@ public class GroupLocalServiceUtil {
 	* @param description the group's new description (optionally
 	<code>null</code>)
 	* @param type the group's new type. For more information see {@link
-	GroupConstants}.
+	com.liferay.portal.model.GroupConstants}.
 	* @param manualMembership whether manual membership is allowed for the
 	group
 	* @param membershipRestriction the group's membership restriction. For
-	more information see {@link GroupConstants}.
+	more information see {@link com.liferay.portal.model.GroupConstants}.
 	* @param friendlyURL the group's new friendlyURL (optionally
 	<code>null</code>)
 	* @param active whether the group is active
@@ -2604,9 +2604,9 @@ public class GroupLocalServiceUtil {
 	* @throws PortalException if a group with the primary key could not be
 	found or if the friendly URL was invalid or could one not be
 	created
-	* @deprecated As of 7.0.0, replaced by {@link #updateGroup(long, long, Map,
-	Map, int, boolean, int, String, boolean, boolean,
-	ServiceContext)}
+	* @deprecated As of 7.0.0, replaced by {@link #updateGroup(long, long, java.util.Map,
+	java.util.Map, int, boolean, int, String, boolean, boolean,
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.Group updateGroup(long groupId,

@@ -113,7 +113,7 @@ public interface RoleLocalService extends BaseLocalService,
 	invalid, if the role is a duplicate, or if a user with the
 	primary key could not be found
 	* @deprecated As of 6.2.0, replaced by {@link #addRole(long, String, long,
-	String, Map, Map, int, String, ServiceContext)}
+	String, java.util.Map, java.util.Map, int, String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.Role addRole(long userId, long companyId,
@@ -143,7 +143,7 @@ public interface RoleLocalService extends BaseLocalService,
 	invalid, if the role is a duplicate, or if a user with the
 	primary key could not be found
 	* @deprecated As of 6.2.0, replaced by {@link #addRole(long, String, long,
-	String, Map, Map, int, String, ServiceContext)}
+	String, java.util.Map, java.util.Map, int, String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.Role addRole(long userId, long companyId,
@@ -758,7 +758,7 @@ public interface RoleLocalService extends BaseLocalService,
 	* @param groups the groups (optionally <code>null</code>)
 	* @return the union of all the user's roles within the groups
 	* @see com.liferay.portal.service.persistence.RoleFinder#findByU_G(long,
-	List)
+	java.util.List)
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<com.liferay.portal.model.Role> getUserRelatedRoles(

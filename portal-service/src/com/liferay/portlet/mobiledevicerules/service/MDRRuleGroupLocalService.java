@@ -319,7 +319,7 @@ public interface MDRRuleGroupLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #search(long, String,
-	LinkedHashMap, boolean, int, int)}
+	java.util.LinkedHashMap, boolean, int, int)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -335,7 +335,7 @@ public interface MDRRuleGroupLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #searchByKeywords(long,
-	String, LinkedHashMap, boolean, int, int)}
+	String, java.util.LinkedHashMap, boolean, int, int)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -351,7 +351,7 @@ public interface MDRRuleGroupLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #searchByKeywordsCount(long,
-	String, LinkedHashMap, boolean)}
+	String, java.util.LinkedHashMap, boolean)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -365,7 +365,7 @@ public interface MDRRuleGroupLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #searchCount(long, String,
-	LinkedHashMap, boolean)}
+	java.util.LinkedHashMap, boolean)}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

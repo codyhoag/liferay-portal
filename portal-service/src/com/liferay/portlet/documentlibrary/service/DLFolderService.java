@@ -158,7 +158,7 @@ public interface DLFolderService extends BaseService {
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @deprecated As of 7.0.0, replaced by {@link #getSubfolderIds(List, long,
+	* @deprecated As of 7.0.0, replaced by {@link #getSubfolderIds(java.util.List, long,
 	long, boolean)}
 	*/
 	@java.lang.Deprecated
@@ -220,8 +220,8 @@ public interface DLFolderService extends BaseService {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by more general {@link
-	#updateFolder(long, String, String, long, List, int,
-	ServiceContext)}
+	#updateFolder(long, String, String, long, java.util.List, int,
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portlet.documentlibrary.model.DLFolder updateFolder(

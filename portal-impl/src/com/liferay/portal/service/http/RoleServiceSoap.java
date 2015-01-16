@@ -133,7 +133,7 @@ public class RoleServiceSoap {
 	the class name or the role name were invalid, or if the role
 	is a duplicate
 	* @deprecated As of 6.2.0, replaced by {@link #addRole(String, long,
-	String, Map, Map, int, String, ServiceContext)}
+	String, java.util.Map, java.util.Map, int, String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.RoleSoap addRole(

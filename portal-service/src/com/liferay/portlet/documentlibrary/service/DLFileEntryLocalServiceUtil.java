@@ -75,7 +75,7 @@ public class DLFileEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #checkInFileEntry(long, long,
-	String, ServiceContext)}
+	String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static void checkInFileEntry(long userId, long fileEntryId,
@@ -103,7 +103,7 @@ public class DLFileEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #checkOutFileEntry(long,
-	long, ServiceContext)}
+	long, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.documentlibrary.model.DLFileEntry checkOutFileEntry(
@@ -114,7 +114,7 @@ public class DLFileEntryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #checkOutFileEntry(long,
-	long, String, long, ServiceContext)}
+	long, String, long, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.documentlibrary.model.DLFileEntry checkOutFileEntry(

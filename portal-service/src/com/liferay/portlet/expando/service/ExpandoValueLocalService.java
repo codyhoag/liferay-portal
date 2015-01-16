@@ -130,7 +130,7 @@ public interface ExpandoValueLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.1.0, replaced by {@link #addValue(long, String,
-	String, String, long, Date[])}
+	String, String, long, java.util.Date[])}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portlet.expando.model.ExpandoValue addValue(
@@ -220,7 +220,7 @@ public interface ExpandoValueLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.1.0, replaced by {@link #addValue(long, String,
-	String, String, long, Date[])}
+	String, String, long, java.util.Date[])}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portlet.expando.model.ExpandoValue addValue(
@@ -702,7 +702,7 @@ public interface ExpandoValueLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.1.0, replaced by {@link #getData(long, String,
-	String, String, long, Date[])}
+	String, String, long, java.util.Date[])}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -724,7 +724,7 @@ public interface ExpandoValueLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.1.0, replaced by {@link #getData(long, String,
-	String, String, long, Date[])}
+	String, String, long, java.util.Date[])}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

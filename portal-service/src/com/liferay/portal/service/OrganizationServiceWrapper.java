@@ -81,7 +81,7 @@ public class OrganizationServiceWrapper implements OrganizationService,
 	* @deprecated As of 6.2.0, replaced by {@link #addOrganization(long,
 	String, String, long, long, int, String, boolean,
 	java.util.List, java.util.List, java.util.List,
-	java.util.List, java.util.List, ServiceContext)}
+	java.util.List, java.util.List, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override
@@ -132,7 +132,7 @@ public class OrganizationServiceWrapper implements OrganizationService,
 	organization
 	* @deprecated As of 6.2.0, replaced by {@link #addOrganization(long,
 	String, String, long, long, int, String, boolean,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override
@@ -510,7 +510,7 @@ public class OrganizationServiceWrapper implements OrganizationService,
 	long, String, String, long, long, int, String, boolean,
 	byte[], boolean, java.util.List, java.util.List,
 	java.util.List, java.util.List, java.util.List,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override
@@ -558,7 +558,7 @@ public class OrganizationServiceWrapper implements OrganizationService,
 	information was invalid
 	* @deprecated As of 6.2.0, replaced by {@link #updateOrganization(long,
 	long, String, String, long, long, int, String, boolean,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override
@@ -655,7 +655,7 @@ public class OrganizationServiceWrapper implements OrganizationService,
 	long, String, String, long, long, int, String, boolean,
 	byte[], boolean, java.util.List, java.util.List,
 	java.util.List, java.util.List, java.util.List,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override

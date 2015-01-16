@@ -273,7 +273,7 @@ public class AssetCategoryServiceSoap {
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
 	#getVocabularyCategoriesDisplay(long, int, int,
-	OrderByComparator)}
+	com.liferay.portal.kernel.util.OrderByComparator)}
 	*/
 	@Deprecated
 	public static java.lang.String getJSONVocabularyCategories(
@@ -296,7 +296,7 @@ public class AssetCategoryServiceSoap {
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
 	#getVocabularyCategoriesDisplay(long, String, long, int, int,
-	OrderByComparator)}
+	com.liferay.portal.kernel.util.OrderByComparator)}
 	*/
 	@Deprecated
 	public static java.lang.String getJSONVocabularyCategories(long groupId,
@@ -473,7 +473,7 @@ public class AssetCategoryServiceSoap {
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
 	#getVocabularyRootCategories(long, long, int, int,
-	OrderByComparator)}
+	com.liferay.portal.kernel.util.OrderByComparator)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.asset.model.AssetCategorySoap[] getVocabularyRootCategories(

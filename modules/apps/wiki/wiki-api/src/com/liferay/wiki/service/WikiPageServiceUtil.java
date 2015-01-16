@@ -94,7 +94,7 @@ public class WikiPageServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0 replaced by {@link #addTempFileEntry(long,
-	String, String, InputStream, String)}
+	String, String, java.io.InputStream, String)}
 	*/
 	@Deprecated
 	public static void addTempPageAttachment(long nodeId,
@@ -329,7 +329,7 @@ public class WikiPageServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #renamePage(long, String,
-	String, ServiceContext)}
+	String, com.liferay.portal.service.ServiceContext)} *
 	*/
 	@Deprecated
 	public static void movePage(long nodeId, java.lang.String title,

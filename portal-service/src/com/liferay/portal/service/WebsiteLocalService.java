@@ -49,7 +49,7 @@ public interface WebsiteLocalService extends BaseLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #addWebsite(long, String,
-	long, String, int, boolean, ServiceContext)}
+	long, String, int, boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.Website addWebsite(long userId,

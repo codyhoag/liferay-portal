@@ -445,8 +445,8 @@ public interface DLAppLocalService extends BaseLocalService {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	RepositoryTrashUtil#moveFileEntryFromTrash(long, long, long,
-	long, ServiceContext)}
+	com.liferay.portal.kernel.repository.util.RepositoryTrashUtil#moveFileEntryFromTrash(long, long, long,
+	long, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.kernel.repository.model.FileEntry moveFileEntryFromTrash(
@@ -456,7 +456,7 @@ public interface DLAppLocalService extends BaseLocalService {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	RepositoryTrashUtil#moveFileEntryToTrash(long, long, long)}
+	com.liferay.portal.kernel.repository.util.RepositoryTrashUtil#moveFileEntryToTrash(long, long, long)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.kernel.repository.model.FileEntry moveFileEntryToTrash(
@@ -470,7 +470,7 @@ public interface DLAppLocalService extends BaseLocalService {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	RepositoryTrashUtil#restoreFileEntryFromTrash(long, long,
+	com.liferay.portal.kernel.repository.util.RepositoryTrashUtil#restoreFileEntryFromTrash(long, long,
 	long)}
 	*/
 	@java.lang.Deprecated

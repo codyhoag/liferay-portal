@@ -364,7 +364,7 @@ public class DDLRecordLocalServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	DDLRecordVersionLocalServiceImpl#getLatestRecordVersion(
+	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getLatestRecordVersion(
 	long)}
 	*/
 	@Deprecated
@@ -402,7 +402,7 @@ public class DDLRecordLocalServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	DDLRecordVersionLocalServiceImpl#getRecordVersion(long,
+	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getRecordVersion(long,
 	String)}
 	*/
 	@Deprecated
@@ -414,7 +414,7 @@ public class DDLRecordLocalServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	DDLRecordVersionLocalServiceImpl#getRecordVersion(long)}
+	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getRecordVersion(long)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.dynamicdatalists.model.DDLRecordVersion getRecordVersion(
@@ -425,8 +425,8 @@ public class DDLRecordLocalServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	DDLRecordVersionLocalServiceImpl#getRecordVersions(long, int,
-	int, OrderByComparator)}
+	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getRecordVersions(long, int,
+	int, com.liferay.portal.kernel.util.OrderByComparator)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.dynamicdatalists.model.DDLRecordVersion> getRecordVersions(
@@ -438,7 +438,7 @@ public class DDLRecordLocalServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	DDLRecordVersionLocalServiceImpl#getRecordVersionsCount(
+	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getRecordVersionsCount(
 	long)}
 	*/
 	@Deprecated
@@ -477,7 +477,7 @@ public class DDLRecordLocalServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #revertRecord(long, long,
-	String, ServiceContext)}
+	String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static void revertRecordVersion(long userId, long recordId,

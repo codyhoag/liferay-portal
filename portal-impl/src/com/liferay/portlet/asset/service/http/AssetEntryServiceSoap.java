@@ -182,8 +182,8 @@ public class AssetEntryServiceSoap {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #updateEntry(long, String,
-	long, String, long, long[], String[], boolean, Date, Date,
-	Date, String, String, String, String, String, String, int,
+	long, String, long, long[], String[], boolean, java.util.Date, java.util.Date,
+	java.util.Date, String, String, String, String, String, String, int,
 	int, Integer, boolean)}
 	*/
 	@Deprecated
@@ -214,9 +214,9 @@ public class AssetEntryServiceSoap {
 	}
 
 	/**
-	* @deprecated As of 6.2.0, replaced by {@link #updateEntry(long, Date,
-	Date, String, long, String, long, long[], String[], boolean,
-	Date, Date, Date, String, String, String, String, String,
+	* @deprecated As of 6.2.0, replaced by {@link #updateEntry(long, java.util.Date,
+	java.util.Date, String, long, String, long, long[], String[], boolean,
+	java.util.Date, java.util.Date, java.util.Date, String, String, String, String, String,
 	String, int, int, Integer, boolean)}
 	*/
 	@Deprecated

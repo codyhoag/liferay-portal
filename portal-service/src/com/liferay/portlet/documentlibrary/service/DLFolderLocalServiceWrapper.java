@@ -87,7 +87,7 @@ public class DLFolderLocalServiceWrapper implements DLFolderLocalService,
 	/**
 	* @deprecated As of 6.2.0, replaced by more general {@link #addFolder(long,
 	long, long, boolean, long, String, String, boolean,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override
@@ -525,7 +525,7 @@ public class DLFolderLocalServiceWrapper implements DLFolderLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
-	#getFileEntriesAndFileShortcuts(long, long, QueryDefinition)}
+	#getFileEntriesAndFileShortcuts(long, long, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	@Override
@@ -545,7 +545,7 @@ public class DLFolderLocalServiceWrapper implements DLFolderLocalService,
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
 	#getFileEntriesAndFileShortcutsCount(long, long,
-	QueryDefinition)}
+	com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	@Override
@@ -627,7 +627,7 @@ public class DLFolderLocalServiceWrapper implements DLFolderLocalService,
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
 	#getFoldersAndFileEntriesAndFileShortcuts(long, long,
-	String[], boolean, QueryDefinition)}
+	String[], boolean, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	@Override
@@ -642,7 +642,7 @@ public class DLFolderLocalServiceWrapper implements DLFolderLocalService,
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
 	#getFoldersAndFileEntriesAndFileShortcutsCount(long, long,
-	String[], boolean, QueryDefinition)}
+	String[], boolean, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	@Override
@@ -666,7 +666,7 @@ public class DLFolderLocalServiceWrapper implements DLFolderLocalService,
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
 	#getFoldersAndFileEntriesAndFileShortcutsCount(long, long,
-	String[], boolean, QueryDefinition)}
+	String[], boolean, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	@Override
@@ -679,7 +679,7 @@ public class DLFolderLocalServiceWrapper implements DLFolderLocalService,
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
 	#getFoldersAndFileEntriesAndFileShortcutsCount(long, long,
-	String[], boolean, QueryDefinition)}
+	String[], boolean, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	@Override
@@ -782,7 +782,7 @@ public class DLFolderLocalServiceWrapper implements DLFolderLocalService,
 	}
 
 	/**
-	* @deprecated As of 7.0.0, replaced by {@link #getGroupSubfolderIds(List,
+	* @deprecated As of 7.0.0, replaced by {@link #getGroupSubfolderIds(java.util.List,
 	long, long)}
 	*/
 	@Deprecated
@@ -891,7 +891,7 @@ public class DLFolderLocalServiceWrapper implements DLFolderLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced {@link #updateFolder(long, long,
-	String, String, long, List, int, ServiceContext)}
+	String, String, long, java.util.List, int, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override
@@ -921,7 +921,7 @@ public class DLFolderLocalServiceWrapper implements DLFolderLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #updateFolder(long, long,
-	String, String, long, List, int, ServiceContext)}
+	String, String, long, java.util.List, int, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override
@@ -952,7 +952,7 @@ public class DLFolderLocalServiceWrapper implements DLFolderLocalService,
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #
 	updateFolderAndFileEntryTypes(long, long, long, String,
-	String, long, List, int, ServiceContext)}
+	String, long, java.util.List, int, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override

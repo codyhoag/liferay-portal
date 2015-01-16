@@ -73,8 +73,8 @@ public interface CalEventLocalService extends BaseLocalService,
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #addEvent(long, String,
 	String, String, int, int, int, int, int, int, int, boolean,
-	boolean, String, boolean, TZSRecurrence, int, int, int,
-	ServiceContext)}
+	boolean, String, boolean, com.liferay.portal.kernel.cal.TZSRecurrence, int, int, int,
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
@@ -448,8 +448,8 @@ public interface CalEventLocalService extends BaseLocalService,
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #updateEvent(long, long,
 	String, String, String, int, int, int, int, int, int, int,
-	boolean, boolean, String, boolean, TZSRecurrence, int, int,
-	int, ServiceContext)}
+	boolean, boolean, String, boolean, com.liferay.portal.kernel.cal.TZSRecurrence, int, int,
+	int, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)

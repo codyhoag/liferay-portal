@@ -308,7 +308,7 @@ public class JournalFolderServiceSoap {
 	}
 
 	/**
-	* @deprecated As of 7.0.0, replaced by {@link #getSubfolderIds(List, long,
+	* @deprecated As of 7.0.0, replaced by {@link #getSubfolderIds(java.util.List, long,
 	long, boolean)}
 	*/
 	@Deprecated

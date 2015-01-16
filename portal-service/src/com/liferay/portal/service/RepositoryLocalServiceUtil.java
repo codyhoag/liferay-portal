@@ -67,8 +67,8 @@ public class RepositoryLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #addRepository(long, long,
-	long, long, String, String, String, UnicodeProperties,
-	boolean, ServiceContext)}
+	long, long, String, String, String, com.liferay.portal.kernel.util.UnicodeProperties,
+	boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.Repository addRepository(

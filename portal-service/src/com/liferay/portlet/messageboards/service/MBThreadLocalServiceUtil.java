@@ -257,7 +257,7 @@ public class MBThreadLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupThreads(long,
-	QueryDefinition)}
+	com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.messageboards.model.MBThread> getGroupThreads(
@@ -273,7 +273,7 @@ public class MBThreadLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupThreads(long, long,
-	QueryDefinition)}
+	com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.messageboards.model.MBThread> getGroupThreads(
@@ -283,7 +283,7 @@ public class MBThreadLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupThreads(long, long,
-	boolean, boolean, QueryDefinition)}
+	boolean, boolean, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.messageboards.model.MBThread> getGroupThreads(
@@ -296,7 +296,7 @@ public class MBThreadLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupThreads(long, long,
-	boolean, QueryDefinition)}
+	boolean, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.messageboards.model.MBThread> getGroupThreads(
@@ -330,7 +330,7 @@ public class MBThreadLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupThreadsCount(long,
-	QueryDefinition)}
+	com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static int getGroupThreadsCount(long groupId, int status) {
@@ -345,7 +345,7 @@ public class MBThreadLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupThreadsCount(long,
-	long, QueryDefinition)}
+	long, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static int getGroupThreadsCount(long groupId, long userId, int status) {
@@ -354,7 +354,7 @@ public class MBThreadLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupThreadsCount(long,
-	long, boolean, QueryDefinition)}
+	long, boolean, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static int getGroupThreadsCount(long groupId, long userId,
@@ -365,7 +365,7 @@ public class MBThreadLocalServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #getGroupThreadsCount(long,
-	long, boolean, boolean, QueryDefinition)}
+	long, boolean, boolean, com.liferay.portal.kernel.dao.orm.QueryDefinition)}
 	*/
 	@Deprecated
 	public static int getGroupThreadsCount(long groupId, long userId,

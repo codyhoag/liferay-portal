@@ -80,7 +80,7 @@ public interface WikiPageService extends BaseService {
 
 	/**
 	* @deprecated As of 7.0.0 replaced by {@link #addTempFileEntry(long,
-	String, String, InputStream, String)}
+	String, String, java.io.InputStream, String)}
 	*/
 	@java.lang.Deprecated
 	public void addTempPageAttachment(long nodeId, java.lang.String fileName,
@@ -252,7 +252,7 @@ public interface WikiPageService extends BaseService {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #renamePage(long, String,
-	String, ServiceContext)}
+	String, com.liferay.portal.service.ServiceContext)} *
 	*/
 	@java.lang.Deprecated
 	public void movePage(long nodeId, java.lang.String title,

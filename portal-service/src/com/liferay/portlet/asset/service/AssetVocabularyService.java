@@ -61,8 +61,8 @@ public interface AssetVocabularyService extends BaseService {
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @deprecated As of 6.1.0 {@link #addVocabulary(String, Map, Map, String,
-	ServiceContext)}
+	* @deprecated As of 6.1.0 {@link #addVocabulary(String, java.util.Map, java.util.Map, String,
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portlet.asset.model.AssetVocabulary addVocabulary(
@@ -74,7 +74,7 @@ public interface AssetVocabularyService extends BaseService {
 
 	/**
 	* @deprecated As of 6.2.0, Replaced by {@link #deleteVocabularies(long[],
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public void deleteVocabularies(long[] vocabularyIds)
@@ -185,7 +185,7 @@ public interface AssetVocabularyService extends BaseService {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	AssetUtil#filterVocabularyIds(PermissionChecker, long[])}
+	com.liferay.portlet.asset.util.AssetUtil#filterVocabularyIds(PermissionChecker, long[])}
 	*/
 	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -220,8 +220,8 @@ public interface AssetVocabularyService extends BaseService {
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @deprecated As of 6.1.0, {@link #updateVocabulary(long, String, Map, Map,
-	String, ServiceContext)}
+	* @deprecated As of 6.1.0, {@link #updateVocabulary(long, String, java.util.Map, java.util.Map,
+	String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portlet.asset.model.AssetVocabulary updateVocabulary(

@@ -67,7 +67,7 @@ public interface TrashEntryLocalService extends BaseLocalService,
 	* @param classPK the primary key of the entity
 	* @param classUuid the UUID of the entity's class
 	* @param referrerClassName the referrer class name used to add a deletion
-	{@link SystemEvent}
+	{@link com.liferay.portal.model.SystemEvent}
 	* @param status the status of the entity prior to being moved to trash
 	* @param statusOVPs the primary keys and statuses of any of the entry's
 	versions (e.g., {@link

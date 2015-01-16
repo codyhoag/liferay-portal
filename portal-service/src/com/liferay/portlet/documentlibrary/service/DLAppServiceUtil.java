@@ -299,8 +299,8 @@ public class DLAppServiceUtil {
 	* @param fileEntryId the primary key of the file entry to cancel the
 	checkout
 	* @throws PortalException if the file entry could not be found
-	* @see #checkInFileEntry(long, boolean, String, ServiceContext)
-	* @see #checkOutFileEntry(long, ServiceContext)
+	* @see #checkInFileEntry(long, boolean, String, com.liferay.portal.service.ServiceContext)
+	* @see #checkOutFileEntry(long, com.liferay.portal.service.ServiceContext)
 	*/
 	public static void cancelCheckOut(long fileEntryId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -309,7 +309,7 @@ public class DLAppServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #checkInFileEntry(long,
-	String, ServiceContext)}
+	String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static void checkInFileEntry(long fileEntryId,
@@ -339,7 +339,7 @@ public class DLAppServiceUtil {
 	* @param serviceContext the service context to be applied
 	* @throws PortalException if the file entry could not be found
 	* @see #cancelCheckOut(long)
-	* @see #checkOutFileEntry(long, String, long, ServiceContext)
+	* @see #checkOutFileEntry(long, String, long, com.liferay.portal.service.ServiceContext)
 	*/
 	public static void checkInFileEntry(long fileEntryId,
 		java.lang.String lockUuid,
@@ -369,7 +369,7 @@ public class DLAppServiceUtil {
 	* @param serviceContext the service context to be applied
 	* @throws PortalException if the file entry could not be found
 	* @see #cancelCheckOut(long)
-	* @see #checkOutFileEntry(long, ServiceContext)
+	* @see #checkOutFileEntry(long, com.liferay.portal.service.ServiceContext)
 	*/
 	public static void checkInFileEntry(long fileEntryId, boolean majorVersion,
 		java.lang.String changeLog,
@@ -433,7 +433,7 @@ public class DLAppServiceUtil {
 	* @param serviceContext the service context to be applied
 	* @throws PortalException if the file entry could not be found
 	* @see #cancelCheckOut(long)
-	* @see #checkInFileEntry(long, boolean, String, ServiceContext)
+	* @see #checkInFileEntry(long, boolean, String, com.liferay.portal.service.ServiceContext)
 	*/
 	public static void checkOutFileEntry(long fileEntryId,
 		com.liferay.portal.service.ServiceContext serviceContext)
@@ -1649,7 +1649,7 @@ public class DLAppServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #checkOutFileEntry(long,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.Lock lockFileEntry(long fileEntryId)
@@ -1659,7 +1659,7 @@ public class DLAppServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #checkOutFileEntry(long,
-	String, long, ServiceContext)}
+	String, long, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.Lock lockFileEntry(
@@ -1991,7 +1991,7 @@ public class DLAppServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #checkInFileEntry(long,
-	boolean, String, ServiceContext)}.
+	boolean, String, com.liferay.portal.service.ServiceContext)}.
 	*/
 	@Deprecated
 	public static void unlockFileEntry(long fileEntryId)

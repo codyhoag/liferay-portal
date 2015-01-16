@@ -105,7 +105,7 @@ public class DDLRecordServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #revertRecord(long, long,
-	String, ServiceContext)}
+	String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static void revertRecordVersion(long recordId,

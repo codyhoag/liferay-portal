@@ -60,8 +60,8 @@ public class AssetVocabularyServiceUtil {
 	}
 
 	/**
-	* @deprecated As of 6.1.0 {@link #addVocabulary(String, Map, Map, String,
-	ServiceContext)}
+	* @deprecated As of 6.1.0 {@link #addVocabulary(String, java.util.Map, java.util.Map, String,
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.asset.model.AssetVocabulary addVocabulary(
@@ -77,7 +77,7 @@ public class AssetVocabularyServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, Replaced by {@link #deleteVocabularies(long[],
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static void deleteVocabularies(long[] vocabularyIds)
@@ -222,7 +222,7 @@ public class AssetVocabularyServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	AssetUtil#filterVocabularyIds(PermissionChecker, long[])}
+	com.liferay.portlet.asset.util.AssetUtil#filterVocabularyIds(PermissionChecker, long[])}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portlet.asset.model.AssetVocabulary> getVocabularies(
@@ -268,8 +268,8 @@ public class AssetVocabularyServiceUtil {
 	}
 
 	/**
-	* @deprecated As of 6.1.0, {@link #updateVocabulary(long, String, Map, Map,
-	String, ServiceContext)}
+	* @deprecated As of 6.1.0, {@link #updateVocabulary(long, String, java.util.Map, java.util.Map,
+	String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.asset.model.AssetVocabulary updateVocabulary(

@@ -366,7 +366,7 @@ public class ResourcePermissionLocalServiceWrapper
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
 	#getAvailableResourcePermissionActionIds(long, String, int,
-	String, Collection)}
+	String, java.util.Collection)}
 	*/
 	@Deprecated
 	@Override

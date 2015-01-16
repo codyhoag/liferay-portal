@@ -46,12 +46,12 @@ public class JournalArticleServiceUtil {
 	*
 	* @param groupId the primary key of the web content article's group
 	* @param folderId the primary key of the web content article folder
-	* @param classNameId the primary key of the DDMStructure class if the web
+	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
-	JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
+	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
 	* @param classPK the primary key of the DDM structure, if the primary key
-	of the DDMStructure class is given as the
+	of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class is given as the
 	<code>classNameId</code> parameter, the primary key of the class
 	associated with the web content article, or <code>0</code>
 	otherwise
@@ -62,7 +62,7 @@ public class JournalArticleServiceUtil {
 	descriptions
 	* @param content the HTML content wrapped in XML. For more information,
 	see the content example in the class description for {@link
-	JournalArticleLocalServiceImpl}.
+	com.liferay.portlet.journal.model.JournalArticleLocalServiceImpl}.
 	* @param ddmStructureKey the primary key of the web content article's DDM
 	structure, if the article is related to a DDM structure, or
 	<code>null</code> otherwise
@@ -146,12 +146,12 @@ public class JournalArticleServiceUtil {
 	*
 	* @param groupId the primary key of the web content article's group
 	* @param folderId the primary key of the web content article folder
-	* @param classNameId the primary key of the DDMStructure class if the web
+	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
-	JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
+	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
 	* @param classPK the primary key of the DDM structure, if the primary key
-	of the DDMStructure class is given as the
+	of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class is given as the
 	<code>classNameId</code> parameter, the primary key of the class
 	associated with the web content article, or <code>0</code>
 	otherwise
@@ -162,7 +162,7 @@ public class JournalArticleServiceUtil {
 	descriptions
 	* @param content the HTML content wrapped in XML. For more information,
 	see the content example in the class description for {@link
-	JournalArticleLocalServiceImpl}.
+	com.liferay.portlet.journal.model.JournalArticleLocalServiceImpl}.
 	* @param ddmStructureKey the primary key of the web content article's DDM
 	structure, if the article is related to a DDM structure, or
 	<code>null</code> otherwise
@@ -420,12 +420,12 @@ public class JournalArticleServiceUtil {
 	* PK.
 	*
 	* @param groupId the primary key of the web content article's group
-	* @param className the DDMStructure class name if the web content article
+	* @param className the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class name if the web content article
 	is related to a DDM structure, the primary key of the class name
 	associated with the article, or {@link
-	JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
+	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
 	* @param classPK the primary key of the DDM structure, if the the
-	DDMStructure class name is given as the <code>className</code>
+	com.liferay.portlet.dynamicdatamapping.model.DDMStructure class name is given as the <code>className</code>
 	parameter, the primary key of the class associated with the web
 	content article, or <code>0</code> otherwise
 	* @return the matching web content article
@@ -508,7 +508,7 @@ public class JournalArticleServiceUtil {
 	DDM template could not be found, or if a portal exception
 	occurred
 	* @deprecated As of 7.0.0, replaced by {@link #getArticleContent(long,
-	String, String, PortletRequestModel, ThemeDisplay)}
+	String, String, com.liferay.portal.kernel.portlet.PortletRequestModel, com.liferay.portal.theme.ThemeDisplay)}
 	*/
 	@Deprecated
 	public static java.lang.String getArticleContent(long groupId,
@@ -561,7 +561,7 @@ public class JournalArticleServiceUtil {
 	DDM template could not be found, or if a portal exception
 	occurred
 	* @deprecated As of 7.0.0, replaced by {@link #getArticleContent(long,
-	String, double, String, PortletRequestModel, ThemeDisplay)}
+	String, double, String, com.liferay.portal.kernel.portlet.PortletRequestModel, com.liferay.portal.theme.ThemeDisplay)}
 	*/
 	@Deprecated
 	public static java.lang.String getArticleContent(long groupId,
@@ -674,14 +674,14 @@ public class JournalArticleServiceUtil {
 	* </p>
 	*
 	* @param groupId the primary key of the web content article's group
-	* @param classNameId the primary key of the DDMStructure class if the web
+	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
-	JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
+	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
 	* @param ddmStructureKey the primary key of the web content article's DDM
 	structure
 	* @param status the web content article's workflow status. For more
-	information see {@link WorkflowConstants} for constants starting
+	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @param start the lower bound of the range of web content articles to
 	return
@@ -751,7 +751,7 @@ public class JournalArticleServiceUtil {
 	* @param groupId the primary key of the web content article's group
 	* @param folderId the primary key of the web content article's folder
 	* @param status the web content article's workflow status. For more
-	information see {@link WorkflowConstants} for constants starting
+	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @return the number of matching web content articles
 	*/
@@ -777,14 +777,14 @@ public class JournalArticleServiceUtil {
 	* ID, DDM structure key, and workflow status.
 	*
 	* @param groupId the primary key of the web content article's group
-	* @param classNameId the primary key of the DDMStructure class if the web
+	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
-	JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
+	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
 	* @param ddmStructureKey the primary key of the web content article's DDM
 	structure
 	* @param status the web content article's workflow status. For more
-	information see {@link WorkflowConstants} for constants starting
+	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @return the number of matching web content articles
 	*/
@@ -910,7 +910,7 @@ public class JournalArticleServiceUtil {
 	* @param rootFolderId the primary key of the root folder to begin the
 	search
 	* @param status the web content article's workflow status. For more
-	information see {@link WorkflowConstants} for constants starting
+	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @param start the lower bound of the range of web content articles to
 	return
@@ -960,7 +960,7 @@ public class JournalArticleServiceUtil {
 	* @param rootFolderId the primary key of the root folder to begin the
 	search
 	* @param status the web content article's workflow status. For more
-	information see {@link WorkflowConstants} for constants starting
+	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @return the number of matching web content articles
 	* @throws PortalException if a portal exception occurred
@@ -979,7 +979,7 @@ public class JournalArticleServiceUtil {
 	* @param groupId the primary key of the web content article's group
 	* @param articleId the primary key of the web content article
 	* @param status the web content article's workflow status. For more
-	information see {@link WorkflowConstants} for constants starting
+	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @return the latest matching web content article
 	* @throws PortalException if the user did not have permission to view the
@@ -997,11 +997,11 @@ public class JournalArticleServiceUtil {
 	* and class PK.
 	*
 	* @param groupId the primary key of the web content article's group
-	* @param className the DDMStructure class name if the web content article
+	* @param className the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class name if the web content article
 	is related to a DDM structure, the class name associated with the
-	article, or {@link JournalArticleConstants#CLASSNAME_ID_DEFAULT}
+	article, or {@link com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT}
 	otherwise
-	* @param classPK the primary key of the DDM structure, if the DDMStructure
+	* @param classPK the primary key of the DDM structure, if the com.liferay.portlet.dynamicdatamapping.model.DDMStructure
 	class name is given as the <code>className</code> parameter, the
 	primary key of the class associated with the web content article,
 	or <code>0</code> otherwise
@@ -1217,10 +1217,10 @@ public class JournalArticleServiceUtil {
 	* @param groupId the primary key of the group (optionally <code>0</code>)
 	* @param folderIds the primary keys of the web content article folders
 	(optionally {@link java.util.Collections#EMPTY_LIST})
-	* @param classNameId the primary key of the DDMStructure class if the web
+	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
-	JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
+	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
 	* @param articleId the article ID keywords (space separated, optionally
 	<code>null</code>)
 	* @param version the web content article's version (optionally
@@ -1243,12 +1243,12 @@ public class JournalArticleServiceUtil {
 	article's display date must be before (optionally
 	<code>null</code>)
 	* @param status the web content article's workflow status. For more
-	information see {@link WorkflowConstants} for constants starting
+	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @param reviewDate the web content article's scheduled review date
 	(optionally <code>null</code>)
 	* @param andOperator whether every field must match its value or keywords,
-	or just one field must match. Company, group, folder IDs, class
+	or just one field must match. com.liferay.portal.model.Company, group, folder IDs, class
 	name ID, and status must all match their values.
 	* @param start the lower bound of the range of web content articles to
 	return
@@ -1294,10 +1294,10 @@ public class JournalArticleServiceUtil {
 	* @param groupId the primary key of the group (optionally <code>0</code>)
 	* @param folderIds the primary keys of the web content article folders
 	(optionally {@link java.util.Collections#EMPTY_LIST})
-	* @param classNameId the primary key of the DDMStructure class if the web
+	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
-	JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
+	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
 	* @param articleId the article ID keywords (space separated, optionally
 	<code>null</code>)
 	* @param version the web content article's version (optionally
@@ -1322,12 +1322,12 @@ public class JournalArticleServiceUtil {
 	article's display date must be before (optionally
 	<code>null</code>)
 	* @param status the web content article's workflow status. For more
-	information see {@link WorkflowConstants} for constants starting
+	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @param reviewDate the web content article's scheduled review date
 	(optionally <code>null</code>)
 	* @param andOperator whether every field must match its value or keywords,
-	or just one field must match.  Company, group, folder IDs, class
+	or just one field must match.  com.liferay.portal.model.Company, group, folder IDs, class
 	name ID, and status must all match their values.
 	* @param start the lower bound of the range of web content articles to
 	return
@@ -1373,10 +1373,10 @@ public class JournalArticleServiceUtil {
 	* @param groupId the primary key of the group (optionally <code>0</code>)
 	* @param folderIds the primary keys of the web content article folders
 	(optionally {@link java.util.Collections#EMPTY_LIST})
-	* @param classNameId the primary key of the DDMStructure class if the web
+	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
-	JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
+	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
 	* @param keywords the keywords (space separated), which may occur in the
 	web content article ID, title, description, or content
 	(optionally <code>null</code>). If the keywords value is not
@@ -1396,7 +1396,7 @@ public class JournalArticleServiceUtil {
 	article's display date must be before (optionally
 	<code>null</code>)
 	* @param status the web content article's workflow status. For more
-	information see {@link WorkflowConstants} for constants starting
+	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @param reviewDate the web content article's scheduled review date
 	(optionally <code>null</code>)
@@ -1432,7 +1432,8 @@ public class JournalArticleServiceUtil {
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link
+	* com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -1440,7 +1441,7 @@ public class JournalArticleServiceUtil {
 	* @param creatorUserId the primary key of the web content article's
 	creator
 	* @param status the web content article's workflow status. For more
-	information see {@link WorkflowConstants} for constants starting
+	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @param start the lower bound of the range of web content articles to
 	return
@@ -1465,10 +1466,10 @@ public class JournalArticleServiceUtil {
 	* @param groupId the primary key of the group (optionally <code>0</code>)
 	* @param folderIds the primary keys of the web content article folders
 	(optionally {@link java.util.Collections#EMPTY_LIST})
-	* @param classNameId the primary key of the DDMStructure class if the web
+	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
-	JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
+	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
 	* @param articleId the article ID keywords (space separated, optionally
 	<code>null</code>)
 	* @param version the web content article's version (optionally
@@ -1491,12 +1492,12 @@ public class JournalArticleServiceUtil {
 	article's display date must be before (optionally
 	<code>null</code>)
 	* @param status the web content article's workflow status. For more
-	information see {@link WorkflowConstants} for constants starting
+	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @param reviewDate the web content article's scheduled review date
 	(optionally <code>null</code>)
 	* @param andOperator whether every field must match its value or keywords,
-	or just one field must match. Group, folder IDs, class name ID,
+	or just one field must match. com.liferay.portal.model.Group, folder IDs, class name ID,
 	and status must all match their values.
 	* @return the number of matching web content articles
 	*/
@@ -1525,10 +1526,10 @@ public class JournalArticleServiceUtil {
 	* @param groupId the primary key of the group (optionally <code>0</code>)
 	* @param folderIds the primary keys of the web content article folders
 	(optionally {@link java.util.Collections#EMPTY_LIST})
-	* @param classNameId the primary key of the DDMStructure class if the web
+	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
-	JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
+	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
 	* @param articleId the article ID keywords (space separated, optionally
 	<code>null</code>)
 	* @param version the web content article's version (optionally
@@ -1553,12 +1554,12 @@ public class JournalArticleServiceUtil {
 	article's display date must be before (optionally
 	<code>null</code>)
 	* @param status the web content article's workflow status. For more
-	information see {@link WorkflowConstants} for constants starting
+	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @param reviewDate the web content article's scheduled review date
 	(optionally <code>null</code>)
 	* @param andOperator whether every field must match its value or keywords,
-	or just one field must match.  Group, folder IDs, class name ID,
+	or just one field must match.  com.liferay.portal.model.Group, folder IDs, class name ID,
 	and status must all match their values.
 	* @return the number of matching web content articles
 	*/
@@ -1587,10 +1588,10 @@ public class JournalArticleServiceUtil {
 	* @param groupId the primary key of the group (optionally <code>0</code>)
 	* @param folderIds the primary keys of the web content article folders
 	(optionally {@link java.util.Collections#EMPTY_LIST})
-	* @param classNameId the primary key of the DDMStructure class if the web
+	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
-	JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
+	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
 	* @param keywords the keywords (space separated), which may occur in the
 	web content article ID, title, description, or content
 	(optionally <code>null</code>). If the keywords value is not
@@ -1610,7 +1611,7 @@ public class JournalArticleServiceUtil {
 	article's display date must be before (optionally
 	<code>null</code>)
 	* @param status the web content article's workflow status. For more
-	information see {@link WorkflowConstants} for constants starting
+	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @param reviewDate the web content article's scheduled review date
 	(optionally <code>null</code>)
@@ -1678,7 +1679,7 @@ public class JournalArticleServiceUtil {
 	* @param version the web content article's version
 	* @param content the HTML content wrapped in XML. For more information,
 	see the content example in the class description for {@link
-	JournalArticleLocalServiceImpl}.
+	com.liferay.portlet.journal.model.JournalArticleLocalServiceImpl}.
 	* @param serviceContext the service context to be applied. Can set the
 	modification date, expando bridge attributes, asset category IDs,
 	asset tag names, asset link entry IDs, workflow actions, the and
@@ -1716,7 +1717,7 @@ public class JournalArticleServiceUtil {
 	descriptions
 	* @param content the HTML content wrapped in XML. For more information,
 	see the content example in the class description for {@link
-	JournalArticleLocalServiceImpl}.
+	com.liferay.portlet.journal.model.JournalArticleLocalServiceImpl}.
 	* @param ddmStructureKey the primary key of the web content article's DDM
 	structure, if the article is related to a DDM structure, or
 	<code>null</code> otherwise
@@ -1828,7 +1829,7 @@ public class JournalArticleServiceUtil {
 	descriptions
 	* @param content the HTML content wrapped in XML. For more information,
 	see the content example in the class description for {@link
-	JournalArticleLocalServiceImpl}.
+	com.liferay.portlet.journal.model.JournalArticleLocalServiceImpl}.
 	* @param layoutUuid the unique string identifying the web content
 	article's display page
 	* @param serviceContext the service context to be applied. Can set the
@@ -1861,8 +1862,8 @@ public class JournalArticleServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link
-	#updateArticleTranslation(long, String, double, Locale,
-	String, String, String, Map, ServiceContext)}
+	#updateArticleTranslation(long, String, double, java.util.Locale,
+	String, String, String, java.util.Map, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.journal.model.JournalArticle updateArticleTranslation(
@@ -1887,7 +1888,7 @@ public class JournalArticleServiceUtil {
 	* @param description the translated web content article description
 	* @param content the HTML content wrapped in XML. For more information,
 	see the content example in the class description for {@link
-	JournalArticleLocalServiceImpl}.
+	com.liferay.portlet.journal.model.JournalArticleLocalServiceImpl}.
 	* @param images the web content's images
 	* @param serviceContext the service context to be applied. Can set the
 	modification date and "urlTitle" attribute for the web content
@@ -1919,7 +1920,7 @@ public class JournalArticleServiceUtil {
 	* @param version the web content article's version
 	* @param content the HTML content wrapped in XML. For more information,
 	see the content example in the class description for {@link
-	JournalArticleLocalServiceImpl}.
+	com.liferay.portlet.journal.model.JournalArticleLocalServiceImpl}.
 	* @return the updated web content article
 	* @throws PortalException if the user did not have permission to update the
 	web content article or if a matching web content article could
@@ -1940,7 +1941,7 @@ public class JournalArticleServiceUtil {
 	* @param articleId the primary key of the web content article
 	* @param version the web content article's version
 	* @param status the web content article's workflow status. For more
-	information see {@link WorkflowConstants} for constants starting
+	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @param articleURL the web content article's accessible URL
 	* @param serviceContext the service context to be applied. Can set the

@@ -199,7 +199,7 @@ public class DLFolderServiceUtil {
 	}
 
 	/**
-	* @deprecated As of 7.0.0, replaced by {@link #getSubfolderIds(List, long,
+	* @deprecated As of 7.0.0, replaced by {@link #getSubfolderIds(java.util.List, long,
 	long, boolean)}
 	*/
 	@Deprecated
@@ -284,8 +284,8 @@ public class DLFolderServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by more general {@link
-	#updateFolder(long, String, String, long, List, int,
-	ServiceContext)}
+	#updateFolder(long, String, String, long, java.util.List, int,
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.documentlibrary.model.DLFolder updateFolder(

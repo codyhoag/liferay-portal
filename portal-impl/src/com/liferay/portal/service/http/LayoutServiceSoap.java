@@ -111,8 +111,8 @@ public class LayoutServiceSoap {
 	layouts involved, if layout values were invalid, or if a
 	portal exception occurred
 	* @deprecated As of 6.2.0, replaced by {@link #addLayout(long, boolean,
-	long, Map, Map, Map, Map, Map, String, String, boolean, Map,
-	ServiceContext)}
+	long, java.util.Map, java.util.Map, java.util.Map, java.util.Map, java.util.Map, String, String, boolean, java.util.Map,
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.LayoutSoap addLayout(long groupId,
@@ -830,8 +830,8 @@ public class LayoutServiceSoap {
 	generated, if a valid parent layout ID to use could not be
 	found, or if the layout parameters were invalid
 	* @deprecated As of 6.2.0, replaced by {@link #updateLayout(long, boolean,
-	long, long, Map, Map, Map, Map, Map, String, boolean, Map,
-	boolean, byte[], ServiceContext)}
+	long, long, java.util.Map, java.util.Map, java.util.Map, java.util.Map, java.util.Map, String, boolean, java.util.Map,
+	boolean, byte[], com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.LayoutSoap updateLayout(

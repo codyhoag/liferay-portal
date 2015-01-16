@@ -45,7 +45,7 @@ public class PasswordPolicyServiceUtil {
 	* @deprecated As of 6.2.0, replaced by {@link #addPasswordPolicy(String,
 	String, boolean, boolean, long, boolean, boolean, int, int,
 	int, int, int, int, String, boolean, int, boolean, long,
-	long, int, boolean, int, long, long, long, ServiceContext)}
+	long, int, boolean, int, long, long, long, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.PasswordPolicy addPasswordPolicy(
@@ -115,7 +115,7 @@ public class PasswordPolicyServiceUtil {
 	String, String, boolean, boolean, long, boolean, boolean,
 	int, int, int, int, int, int, String, boolean, int, boolean,
 	long, long, int, boolean, int, long, long, long,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.PasswordPolicy updatePasswordPolicy(

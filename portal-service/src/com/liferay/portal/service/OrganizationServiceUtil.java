@@ -92,7 +92,7 @@ public class OrganizationServiceUtil {
 	* @deprecated As of 6.2.0, replaced by {@link #addOrganization(long,
 	String, String, long, long, int, String, boolean,
 	java.util.List, java.util.List, java.util.List,
-	java.util.List, java.util.List, ServiceContext)}
+	java.util.List, java.util.List, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.Organization addOrganization(
@@ -143,7 +143,7 @@ public class OrganizationServiceUtil {
 	organization
 	* @deprecated As of 6.2.0, replaced by {@link #addOrganization(long,
 	String, String, long, long, int, String, boolean,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.Organization addOrganization(
@@ -508,7 +508,7 @@ public class OrganizationServiceUtil {
 	long, String, String, long, long, int, String, boolean,
 	byte[], boolean, java.util.List, java.util.List,
 	java.util.List, java.util.List, java.util.List,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.Organization updateOrganization(
@@ -556,7 +556,7 @@ public class OrganizationServiceUtil {
 	information was invalid
 	* @deprecated As of 6.2.0, replaced by {@link #updateOrganization(long,
 	long, String, String, long, long, int, String, boolean,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.Organization updateOrganization(
@@ -653,7 +653,7 @@ public class OrganizationServiceUtil {
 	long, String, String, long, long, int, String, boolean,
 	byte[], boolean, java.util.List, java.util.List,
 	java.util.List, java.util.List, java.util.List,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.Organization updateOrganization(

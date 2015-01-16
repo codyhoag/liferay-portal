@@ -126,7 +126,7 @@ public class WikiPageLocalServiceWrapper implements WikiPageLocalService,
 
 	/**
 	* @deprecated As of 7.0.0 replaced by {@link #addTempFileEntry(long, long,
-	String, String, InputStream, String)}
+	String, String, java.io.InputStream, String)}
 	*/
 	@Deprecated
 	@Override
@@ -884,7 +884,7 @@ public class WikiPageLocalServiceWrapper implements WikiPageLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #renamePage(long, long,
-	String, String, ServiceContext)}
+	String, String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override
@@ -898,7 +898,7 @@ public class WikiPageLocalServiceWrapper implements WikiPageLocalService,
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #renamePage(long, long,
-	String, String, boolean, ServiceContext)}
+	String, String, boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override
@@ -1050,8 +1050,8 @@ public class WikiPageLocalServiceWrapper implements WikiPageLocalService,
 	}
 
 	/**
-	* @deprecated As of 7.0.0, replaced by {@link #updateStatus(long, WikiPage,
-	int, ServiceContext, Map)}
+	* @deprecated As of 7.0.0, replaced by {@link #updateStatus(long, com.liferay.portlet.wiki.model.WikiPage,
+	int, com.liferay.portal.service.ServiceContext, java.util.Map)}
 	*/
 	@Deprecated
 	@Override

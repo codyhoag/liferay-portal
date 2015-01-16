@@ -84,8 +84,8 @@ public class LayoutServiceUtil {
 	layouts involved, if layout values were invalid, or if a
 	portal exception occurred
 	* @deprecated As of 6.2.0, replaced by {@link #addLayout(long, boolean,
-	long, Map, Map, Map, Map, Map, String, String, boolean, Map,
-	ServiceContext)}
+	long, java.util.Map, java.util.Map, java.util.Map, java.util.Map, java.util.Map, String, String, boolean, java.util.Map,
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.Layout addLayout(long groupId,
@@ -333,7 +333,7 @@ public class LayoutServiceUtil {
 	com.liferay.portal.kernel.lar.PortletDataHandlerKeys}.
 	* @param startDate the export's start date
 	* @param endDate the export's end date
-	* @return the layouts as a File
+	* @return the layouts as a java.io.File
 	* @throws PortalException if a group or any layout with the primary key
 	could not be found, it the group did not have permission to
 	manage the layouts, or if some other portal exception occurred
@@ -376,7 +376,7 @@ public class LayoutServiceUtil {
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
 	#exportLayoutsAsFileInBackground(String, long, boolean,
-	long[], Map, Date, Date)}
+	long[], java.util.Map, java.util.Date, java.util.Date)}
 	*/
 	@Deprecated
 	public static long exportLayoutsAsFileInBackground(
@@ -846,8 +846,8 @@ public class LayoutServiceUtil {
 	* @throws PortalException if the group did not have permission to
 	manage and publish
 	* @deprecated As of 7.0.0, replaced by {@link #schedulePublishToLive(long,
-	long, boolean, long[], Map, String, Date, Date, String,
-	String, Date, Date, String)}
+	long, boolean, long[], java.util.Map, String, java.util.Date, java.util.Date, String,
+	String, java.util.Date, java.util.Date, String)}
 	*/
 	@Deprecated
 	public static void schedulePublishToLive(long sourceGroupId,
@@ -1062,8 +1062,8 @@ public class LayoutServiceUtil {
 	generated, if a valid parent layout ID to use could not be
 	found, or if the layout parameters were invalid
 	* @deprecated As of 6.2.0, replaced by {@link #updateLayout(long, boolean,
-	long, long, Map, Map, Map, Map, Map, String, boolean, Map,
-	boolean, byte[], ServiceContext)}
+	long, long, java.util.Map, java.util.Map, java.util.Map, java.util.Map, java.util.Map, String, boolean, java.util.Map,
+	boolean, byte[], com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.Layout updateLayout(long groupId,

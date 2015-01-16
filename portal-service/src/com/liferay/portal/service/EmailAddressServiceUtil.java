@@ -43,7 +43,7 @@ public class EmailAddressServiceUtil {
 
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #addEmailAddress(String,
-	long, String, int, boolean, ServiceContext)}
+	long, String, int, boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.EmailAddress addEmailAddress(

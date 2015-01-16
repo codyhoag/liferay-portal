@@ -49,7 +49,7 @@ public class PasswordPolicyLocalServiceWrapper
 	boolean, String, String, boolean, boolean, long, boolean,
 	boolean, int, int, int, int, int, int, String, boolean, int,
 	boolean, long, long, int, boolean, int, long, long, long,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override
@@ -425,7 +425,7 @@ public class PasswordPolicyLocalServiceWrapper
 	String, String, boolean, boolean, long, boolean, boolean,
 	int, int, int, int, int, int, String, boolean, int, boolean,
 	long, long, int, boolean, int, long, long, long,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override

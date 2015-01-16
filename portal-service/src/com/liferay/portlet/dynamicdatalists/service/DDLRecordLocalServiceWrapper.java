@@ -386,7 +386,7 @@ public class DDLRecordLocalServiceWrapper implements DDLRecordLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	DDLRecordVersionLocalServiceImpl#getLatestRecordVersion(
+	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getLatestRecordVersion(
 	long)}
 	*/
 	@Deprecated
@@ -428,7 +428,7 @@ public class DDLRecordLocalServiceWrapper implements DDLRecordLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	DDLRecordVersionLocalServiceImpl#getRecordVersion(long,
+	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getRecordVersion(long,
 	String)}
 	*/
 	@Deprecated
@@ -441,7 +441,7 @@ public class DDLRecordLocalServiceWrapper implements DDLRecordLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	DDLRecordVersionLocalServiceImpl#getRecordVersion(long)}
+	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getRecordVersion(long)}
 	*/
 	@Deprecated
 	@Override
@@ -453,8 +453,8 @@ public class DDLRecordLocalServiceWrapper implements DDLRecordLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	DDLRecordVersionLocalServiceImpl#getRecordVersions(long, int,
-	int, OrderByComparator)}
+	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getRecordVersions(long, int,
+	int, com.liferay.portal.kernel.util.OrderByComparator)}
 	*/
 	@Deprecated
 	@Override
@@ -467,7 +467,7 @@ public class DDLRecordLocalServiceWrapper implements DDLRecordLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	DDLRecordVersionLocalServiceImpl#getRecordVersionsCount(
+	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getRecordVersionsCount(
 	long)}
 	*/
 	@Deprecated
@@ -512,7 +512,7 @@ public class DDLRecordLocalServiceWrapper implements DDLRecordLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link #revertRecord(long, long,
-	String, ServiceContext)}
+	String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	@Override

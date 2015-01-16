@@ -356,7 +356,7 @@ public class ResourcePermissionLocalServiceUtil {
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
 	#getAvailableResourcePermissionActionIds(long, String, int,
-	String, Collection)}
+	String, java.util.Collection)}
 	*/
 	@Deprecated
 	public static java.util.Map<java.lang.Long, java.util.Set<java.lang.String>> getAvailableResourcePermissionActionIds(

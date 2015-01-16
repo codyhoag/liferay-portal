@@ -350,7 +350,7 @@ public interface CompanyService extends BaseService {
 	String, String, boolean, byte[], String, String, String,
 	String, String, String, String, String, String, String,
 	String, java.util.List, java.util.List, java.util.List,
-	java.util.List, UnicodeProperties)}
+	java.util.List, com.liferay.portal.kernel.util.UnicodeProperties)}
 	*/
 	@java.lang.Deprecated
 	@com.liferay.portal.kernel.jsonwebservice.JSONWebService(mode = JSONWebServiceMode.IGNORE)

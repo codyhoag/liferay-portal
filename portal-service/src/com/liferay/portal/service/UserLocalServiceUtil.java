@@ -1398,7 +1398,7 @@ public class UserLocalServiceUtil {
 	* @throws PortalException if a user with the primary key could not be
 	found
 	* @deprecated As of 7.0.0, replaced by {@link #getSocialUsers(long, int,
-	String, int, int, OrderByComparator)}
+	String, int, int, com.liferay.portal.kernel.util.OrderByComparator)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portal.model.User> getSocialUsers(
@@ -1433,7 +1433,7 @@ public class UserLocalServiceUtil {
 	* @throws PortalException if a user with the primary key could not be
 	found
 	* @deprecated As of 7.0.0, replaced by {@link #getSocialUsers(long, int,
-	String, int, int, OrderByComparator)}
+	String, int, int, com.liferay.portal.kernel.util.OrderByComparator)}
 	*/
 	@Deprecated
 	public static java.util.List<com.liferay.portal.model.User> getSocialUsers(
@@ -3047,7 +3047,7 @@ public class UserLocalServiceUtil {
 	* @throws PortalException if a user with the primary key could not be
 	found
 	* @deprecated As of 7.0.0, replaced by {@link #updateStatus(long, int,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.User updateStatus(long userId,
@@ -3143,7 +3143,7 @@ public class UserLocalServiceUtil {
 	String, String, String, String, int, int, boolean, int, int,
 	int, String, String, String, String, String, String, String,
 	String, String, String, String, long[], long[], long[],
-	java.util.List, long[], ServiceContext)}
+	java.util.List, long[], com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
 	public static com.liferay.portal.model.User updateUser(long userId,

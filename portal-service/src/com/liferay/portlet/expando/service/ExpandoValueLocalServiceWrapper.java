@@ -145,7 +145,7 @@ public class ExpandoValueLocalServiceWrapper implements ExpandoValueLocalService
 
 	/**
 	* @deprecated As of 6.1.0, replaced by {@link #addValue(long, String,
-	String, String, long, Date[])}
+	String, String, long, java.util.Date[])}
 	*/
 	@Deprecated
 	@Override
@@ -271,7 +271,7 @@ public class ExpandoValueLocalServiceWrapper implements ExpandoValueLocalService
 
 	/**
 	* @deprecated As of 6.1.0, replaced by {@link #addValue(long, String,
-	String, String, long, Date[])}
+	String, String, long, java.util.Date[])}
 	*/
 	@Deprecated
 	@Override
@@ -994,7 +994,7 @@ public class ExpandoValueLocalServiceWrapper implements ExpandoValueLocalService
 
 	/**
 	* @deprecated As of 6.1.0, replaced by {@link #getData(long, String,
-	String, String, long, Date[])}
+	String, String, long, java.util.Date[])}
 	*/
 	@Deprecated
 	@Override
@@ -1022,7 +1022,7 @@ public class ExpandoValueLocalServiceWrapper implements ExpandoValueLocalService
 
 	/**
 	* @deprecated As of 6.1.0, replaced by {@link #getData(long, String,
-	String, String, long, Date[])}
+	String, String, long, java.util.Date[])}
 	*/
 	@Deprecated
 	@Override

@@ -60,7 +60,7 @@ public interface AddressLocalService extends BaseLocalService,
 	/**
 	* @deprecated As of 6.2.0, replaced by {@link #addAddress(long, String,
 	long, String, String, String, String, String, long, long,
-	int, boolean, boolean, ServiceContext)}
+	int, boolean, boolean, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.Address addAddress(long userId,

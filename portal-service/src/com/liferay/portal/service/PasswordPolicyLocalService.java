@@ -62,7 +62,7 @@ public interface PasswordPolicyLocalService extends BaseLocalService,
 	boolean, String, String, boolean, boolean, long, boolean,
 	boolean, int, int, int, int, int, int, String, boolean, int,
 	boolean, long, long, int, boolean, int, long, long, long,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.PasswordPolicy addPasswordPolicy(
@@ -343,7 +343,7 @@ public interface PasswordPolicyLocalService extends BaseLocalService,
 	String, String, boolean, boolean, long, boolean, boolean,
 	int, int, int, int, int, int, String, boolean, int, boolean,
 	long, long, int, boolean, int, long, long, long,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.PasswordPolicy updatePasswordPolicy(

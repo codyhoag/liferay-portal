@@ -1014,7 +1014,7 @@ public interface UserService extends BaseService {
 	or if the current user did not have permission to update the
 	user's workflow status.
 	* @deprecated As of 7.0.0, replaced by {@link #updateStatus(long, int,
-	ServiceContext)}
+	com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated
 	public com.liferay.portal.model.User updateStatus(long userId, int status)
