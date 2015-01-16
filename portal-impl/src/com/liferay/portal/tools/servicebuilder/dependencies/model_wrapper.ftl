@@ -88,7 +88,7 @@ public class ${entity.name}Wrapper implements ${entity.name}, ModelWrapper<${ent
 
 			<#assign parameters = method.parameters>
 
-			${serviceBuilder.getJavadocComment(method, "ModelWrapper")}
+			${serviceBuilder.getJavadocComment(method, "ModelWrapper", entity.name)}
 
 			<#if serviceBuilder.hasAnnotation(method, "Deprecated")>
 				@Deprecated
