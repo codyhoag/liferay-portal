@@ -1361,7 +1361,7 @@ public class DDMStructureLocalServiceImpl
 	 * @throws     PortalException if a matching structure could not be found,
 	 *             if the XSD was not well-formed, or if a portal exception
 	 *             occurred
-	 * @deprecated As of 7.0.0, replaced by {@link #updateDDMForm(long, String,
+	 * @deprecated As of 7.0.0, replaced by {@link #updateDDMForm(long, DDMForm,
 	 *             ServiceContext)}
 	 */
 	@Deprecated
