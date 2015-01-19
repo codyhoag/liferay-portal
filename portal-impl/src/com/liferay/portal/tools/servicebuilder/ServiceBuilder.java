@@ -3726,7 +3726,7 @@ public class ServiceBuilder {
 	private String _fixSpringXml(String content) {
 		return StringUtil.replace(content, ".service.spring.", ".service.");
 	}
-	
+
 	private String _formatComment(
 		String comment, DocletTag[] tags, String entityName, String indentation,
 		String classType) throws IOException {
@@ -3755,7 +3755,7 @@ public class ServiceBuilder {
 		}
 		else  {
 			javaClass = _getJavaClass(_outputPath + "/model/impl/" +
-		entityName + "Impl.java");
+				entityName + "Impl.java");
 		}
 
 			JavaSource javaSource = javaClass.getSource();
@@ -3777,25 +3777,36 @@ public class ServiceBuilder {
 			
 			String tagValue = tag.getValue();
 				
-				for (String fullImport : imports) {
-					String classImport = fullImport.substring(
-							fullImport.lastIndexOf(".") + 1);
-					
-					if (tagValue.contains(classImport)) {
-						int classImportIndex = tagValue.indexOf(classImport);
+			for (String fullImport : imports) {
+				String classImport = fullImport.substring(
+						fullImport.lastIndexOf(".") + 1);
+
+				if (tagValue.contains(classImport)) {
+					int classImportIndex = tagValue.indexOf(classImport);
+
+					int endOfClassImportIndex = classImportIndex + classImport.length();
+
+					String endOfImport = StringPool.BLANK;
+
+					if (tagValue.length() > endOfClassImportIndex) {
+						endOfImport = tagValue.substring(
+								endOfClassImportIndex, endOfClassImportIndex + 1);
+					}
 
 						if (classImportIndex > 0) {
 							String begOfImport = tagValue.substring(
 									classImportIndex - 1, classImportIndex);
 
-							if (begOfImport.equals(" ") ||
-									begOfImport.equals("(")) {
+							if ((begOfImport.equals(" ") ||
+									begOfImport.equals("(")) &&
+									!endOfImport.matches("[a-zA-Z]") &&
+									!endOfImport.equals(" ")) {
 								tagValue = tagValue.replaceAll(
 										classImport, fullImport);
 							}
 						}
-					}
 				}
+			}
 			
 			sb.append(indentation);
 			sb.append(" * @");
