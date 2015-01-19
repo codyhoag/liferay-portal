@@ -55,12 +55,12 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param userId the primary key of the web content article's creator/owner
 	* @param groupId the primary key of the web content article's group
 	* @param folderId the primary key of the web content article folder
-	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
+	* @param classNameId the primary key of the DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
 	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
 	* @param classPK the primary key of the DDM structure, if the primary key
-	of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class is given as the
+	of the DDMStructure class is given as the
 	<code>classNameId</code> parameter, the primary key of the class
 	associated with the web content article, or <code>0</code>
 	otherwise
@@ -72,7 +72,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	descriptions
 	* @param content the HTML content wrapped in XML. For more information,
 	see the content example in the class description for {@link
-	com.liferay.portlet.journal.model.JournalArticleLocalServiceImpl}.
+	JournalArticleLocalServiceImpl}.
 	* @param ddmStructureKey the primary key of the web content article's DDM
 	structure, if the article is related to a DDM structure, or
 	<code>null</code> otherwise
@@ -159,7 +159,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	descriptions
 	* @param content the HTML content wrapped in XML. For more information,
 	see the content example in the class description for {@link
-	com.liferay.portlet.journal.model.JournalArticleLocalServiceImpl}.
+	JournalArticleLocalServiceImpl}.
 	* @param ddmStructureKey the primary key of the web content article's DDM
 	structure, if the article is related to a DDM structure, or
 	<code>null</code> otherwise
@@ -733,12 +733,12 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* PK.
 	*
 	* @param groupId the primary key of the web content article's group
-	* @param className the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class name if the web content article
+	* @param className the DDMStructure class name if the web content article
 	is related to a DDM structure, the primary key of the class name
 	associated with the article, or {@link
 	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
 	* @param classPK the primary key of the DDM structure, if the the
-	com.liferay.portlet.dynamicdatamapping.model.DDMStructure class name is given as the <code>className</code>
+	DDMStructure class name is given as the <code>className</code>
 	parameter, the primary key of the class associated with the web
 	content article, or <code>0</code> otherwise
 	* @return the matching web content article
@@ -1680,7 +1680,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* and class PK.
 	*
 	* @param groupId the primary key of the web content article's group
-	* @param className the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class name if the web content article
+	* @param className the DDMStructure class name if the web content article
 	is related to a DDM structure, the class name associated with the
 	article, or {@link com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT}
 	otherwise
@@ -2220,7 +2220,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the group (optionally <code>0</code>)
 	* @param folderIds the primary keys of the web content article folders
 	(optionally {@link java.util.Collections#EMPTY_LIST})
-	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
+	* @param classNameId the primary key of the DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
 	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
@@ -2304,7 +2304,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the group (optionally <code>0</code>)
 	* @param folderIds the primary keys of the web content article folders
 	(optionally {@link java.util.Collections#EMPTY_LIST})
-	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
+	* @param classNameId the primary key of the DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
 	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
@@ -2376,7 +2376,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the group (optionally <code>0</code>)
 	* @param folderIds the primary keys of the web content article folders
 	(optionally {@link java.util.Collections#EMPTY_LIST})
-	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
+	* @param classNameId the primary key of the DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
 	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
@@ -2451,7 +2451,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the group (optionally <code>0</code>)
 	* @param folderIds the primary keys of the web content article folders
 	(optionally {@link java.util.Collections#EMPTY_LIST})
-	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
+	* @param classNameId the primary key of the DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
 	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
@@ -2504,7 +2504,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the group (optionally <code>0</code>)
 	* @param folderIds the primary keys of the web content article folders
 	(optionally {@link java.util.Collections#EMPTY_LIST})
-	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
+	* @param classNameId the primary key of the DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
 	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
@@ -2655,7 +2655,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the group (optionally <code>0</code>)
 	* @param folderIds the primary keys of the web content article folders
 	(optionally {@link java.util.Collections#EMPTY_LIST})
-	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
+	* @param classNameId the primary key of the DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
 	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
@@ -2710,7 +2710,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the group (optionally <code>0</code>)
 	* @param folderIds the primary keys of the web content article folders
 	(optionally {@link java.util.Collections#EMPTY_LIST})
-	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
+	* @param classNameId the primary key of the DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
 	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
@@ -2767,7 +2767,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the group (optionally <code>0</code>)
 	* @param folderIds the primary keys of the web content article folders
 	(optionally {@link java.util.Collections#EMPTY_LIST})
-	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
+	* @param classNameId the primary key of the DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
 	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
@@ -2863,7 +2863,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the group (optionally <code>0</code>)
 	* @param folderIds the primary keys of the web content article folders
 	(optionally {@link java.util.Collections#EMPTY_LIST})
-	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class, the
+	* @param classNameId the primary key of the DDMStructure class, the
 	primary key of the class name associated with the article, or
 	{@link com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
 	* @param articleId the article ID keywords (space separated, optionally
@@ -2937,7 +2937,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the group (optionally <code>0</code>)
 	* @param folderIds the primary keys of the web content article folders
 	(optionally {@link java.util.Collections#EMPTY_LIST})
-	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class, the
+	* @param classNameId the primary key of the DDMStructure class, the
 	primary key of the class name associated with the article, or
 	{@link com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
 	* @param ddmStructureKey the primary key of the web content article's DDM
@@ -3064,7 +3064,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param version the web content article's version
 	* @param content the HTML content wrapped in XML. For more information,
 	see the content example in the class description for {@link
-	com.liferay.portlet.journal.model.JournalArticleLocalServiceImpl}.
+	JournalArticleLocalServiceImpl}.
 	* @param serviceContext the service context to be applied. Can set the
 	modification date, expando bridge attributes, asset category IDs,
 	asset tag names, asset link entry IDs, workflow actions, the and
@@ -3099,7 +3099,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	descriptions
 	* @param content the HTML content wrapped in XML. For more information,
 	see the content example in the class description for {@link
-	com.liferay.portlet.journal.model.JournalArticleLocalServiceImpl}.
+	JournalArticleLocalServiceImpl}.
 	* @param ddmStructureKey the primary key of the web content article's DDM
 	structure, if the article is related to a DDM structure, or
 	<code>null</code> otherwise
@@ -3201,7 +3201,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	descriptions
 	* @param content the HTML content wrapped in XML. For more information,
 	see the content example in the class description for {@link
-	com.liferay.portlet.journal.model.JournalArticleLocalServiceImpl}.
+	JournalArticleLocalServiceImpl}.
 	* @param layoutUuid the unique string identifying the web content
 	article's display page
 	* @param serviceContext the service context to be applied. Can set the
@@ -3251,7 +3251,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param description the translated web content article description
 	* @param content the HTML content wrapped in XML. For more information,
 	see the content example in the class description for {@link
-	com.liferay.portlet.journal.model.JournalArticleLocalServiceImpl}.
+	JournalArticleLocalServiceImpl}.
 	* @param images the web content's images
 	* @param serviceContext the service context to be applied. Can set the
 	modification date and "urlTitle" attribute for the web content
@@ -3297,7 +3297,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param version the web content article's version
 	* @param content the HTML content wrapped in XML. For more information,
 	see the content example in the class description for {@link
-	com.liferay.portlet.journal.model.JournalArticleLocalServiceImpl}.
+	JournalArticleLocalServiceImpl}.
 	* @return the updated web content article
 	* @throws PortalException if a matching web content article could not be
 	found
@@ -3313,7 +3313,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* DDM template key, replacing the DDM template key with a new one.
 	*
 	* @param groupId the primary key of the web content article's group
-	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the web
+	* @param classNameId the primary key of the DDMStructure class if the web
 	content article is related to a DDM structure, the primary key of
 	the class name associated with the article, or {@link
 	com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT} otherwise
@@ -3424,7 +3424,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* DDM template key, replacing the DDM template key with a new one.
 	*
 	* @param groupId the primary key of the web content article's group
-	* @param classNameId the primary key of the com.liferay.portlet.dynamicdatamapping.model.DDMStructure class if the
+	* @param classNameId the primary key of the DDMStructure class if the
 	web content article is related to a DDM structure, the
 	primary key of the class name associated with the article, or
 	{@link com.liferay.portlet.journal.model.JournalArticleConstants#CLASSNAME_ID_DEFAULT}

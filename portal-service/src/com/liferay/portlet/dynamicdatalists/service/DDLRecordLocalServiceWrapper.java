@@ -386,7 +386,7 @@ public class DDLRecordLocalServiceWrapper implements DDLRecordLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getLatestRecordVersion(
+	DDLRecordVersionLocalServiceImpl#getLatestRecordVersion(
 	long)}
 	*/
 	@Deprecated
@@ -428,7 +428,7 @@ public class DDLRecordLocalServiceWrapper implements DDLRecordLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getRecordVersion(long,
+	DDLRecordVersionLocalServiceImpl#getRecordVersion(long,
 	String)}
 	*/
 	@Deprecated
@@ -441,7 +441,7 @@ public class DDLRecordLocalServiceWrapper implements DDLRecordLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getRecordVersion(long)}
+	DDLRecordVersionLocalServiceImpl#getRecordVersion(long)}
 	*/
 	@Deprecated
 	@Override
@@ -453,7 +453,7 @@ public class DDLRecordLocalServiceWrapper implements DDLRecordLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getRecordVersions(long, int,
+	DDLRecordVersionLocalServiceImpl#getRecordVersions(long, int,
 	int, com.liferay.portal.kernel.util.OrderByComparator)}
 	*/
 	@Deprecated
@@ -467,7 +467,7 @@ public class DDLRecordLocalServiceWrapper implements DDLRecordLocalService,
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getRecordVersionsCount(
+	DDLRecordVersionLocalServiceImpl#getRecordVersionsCount(
 	long)}
 	*/
 	@Deprecated

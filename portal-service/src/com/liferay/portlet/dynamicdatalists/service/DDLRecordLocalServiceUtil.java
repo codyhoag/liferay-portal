@@ -364,7 +364,7 @@ public class DDLRecordLocalServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getLatestRecordVersion(
+	DDLRecordVersionLocalServiceImpl#getLatestRecordVersion(
 	long)}
 	*/
 	@Deprecated
@@ -402,7 +402,7 @@ public class DDLRecordLocalServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getRecordVersion(long,
+	DDLRecordVersionLocalServiceImpl#getRecordVersion(long,
 	String)}
 	*/
 	@Deprecated
@@ -414,7 +414,7 @@ public class DDLRecordLocalServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getRecordVersion(long)}
+	DDLRecordVersionLocalServiceImpl#getRecordVersion(long)}
 	*/
 	@Deprecated
 	public static com.liferay.portlet.dynamicdatalists.model.DDLRecordVersion getRecordVersion(
@@ -425,7 +425,7 @@ public class DDLRecordLocalServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getRecordVersions(long, int,
+	DDLRecordVersionLocalServiceImpl#getRecordVersions(long, int,
 	int, com.liferay.portal.kernel.util.OrderByComparator)}
 	*/
 	@Deprecated
@@ -438,7 +438,7 @@ public class DDLRecordLocalServiceUtil {
 
 	/**
 	* @deprecated As of 7.0.0, replaced by {@link
-	com.liferay.portlet.dynamicdatalists.model.DDLRecordVersionLocalServiceImpl#getRecordVersionsCount(
+	DDLRecordVersionLocalServiceImpl#getRecordVersionsCount(
 	long)}
 	*/
 	@Deprecated

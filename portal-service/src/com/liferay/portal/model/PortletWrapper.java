@@ -161,7 +161,7 @@ public class PortletWrapper implements Portlet, ModelWrapper<Portlet> {
 	* Returns <code>true</code> if an action URL for this portlet should cause
 	* an auto redirect.
 	*
-	* @return <code>true</code> if an action java.net.URL for this portlet should cause
+	* @return <code>true</code> if an action URL for this portlet should cause
 	an auto redirect
 	*/
 	@Override
@@ -538,7 +538,7 @@ public class PortletWrapper implements Portlet, ModelWrapper<Portlet> {
 	/**
 	* Returns the name of the friendly URL mapper class of the portlet.
 	*
-	* @return the name of the friendly java.net.URL mapper class of the portlet
+	* @return the name of the friendly URL mapper class of the portlet
 	*/
 	@Override
 	public java.lang.String getFriendlyURLMapperClass() {
@@ -548,7 +548,7 @@ public class PortletWrapper implements Portlet, ModelWrapper<Portlet> {
 	/**
 	* Returns the friendly URL mapper instance of the portlet.
 	*
-	* @return the friendly java.net.URL mapper instance of the portlet
+	* @return the friendly URL mapper instance of the portlet
 	*/
 	@Override
 	public com.liferay.portal.kernel.portlet.FriendlyURLMapper getFriendlyURLMapperInstance() {
@@ -558,7 +558,7 @@ public class PortletWrapper implements Portlet, ModelWrapper<Portlet> {
 	/**
 	* Returns the name of the friendly URL mapping of the portlet.
 	*
-	* @return the name of the friendly java.net.URL mapping of the portlet
+	* @return the name of the friendly URL mapping of the portlet
 	*/
 	@Override
 	public java.lang.String getFriendlyURLMapping() {
@@ -569,7 +569,7 @@ public class PortletWrapper implements Portlet, ModelWrapper<Portlet> {
 	* Returns the class loader resource path to the friendly URL routes of the
 	* portlet.
 	*
-	* @return the class loader resource path to the friendly java.net.URL routes of the
+	* @return the class loader resource path to the friendly URL routes of the
 	portlet
 	*/
 	@Override
@@ -1001,7 +1001,7 @@ public class PortletWrapper implements Portlet, ModelWrapper<Portlet> {
 	/**
 	* Returns the name of the portlet URL class of the portlet.
 	*
-	* @return the name of the portlet java.net.URL class of the portlet
+	* @return the name of the portlet URL class of the portlet
 	*/
 	@Override
 	public java.lang.String getPortletURLClass() {
@@ -1541,7 +1541,7 @@ public class PortletWrapper implements Portlet, ModelWrapper<Portlet> {
 	/**
 	* Returns the name of the URL encoder class of the portlet.
 	*
-	* @return the name of the java.net.URL encoder class of the portlet
+	* @return the name of the URL encoder class of the portlet
 	*/
 	@Override
 	public java.lang.String getURLEncoderClass() {
@@ -1551,7 +1551,7 @@ public class PortletWrapper implements Portlet, ModelWrapper<Portlet> {
 	/**
 	* Returns the URL encoder instance of the portlet.
 	*
-	* @return the java.net.URL encoder instance of the portlet
+	* @return the URL encoder instance of the portlet
 	*/
 	@Override
 	public com.liferay.portal.kernel.servlet.URLEncoder getURLEncoderInstance() {
@@ -1852,7 +1852,7 @@ public class PortletWrapper implements Portlet, ModelWrapper<Portlet> {
 	* Returns <code>true</code> if an action URL for this portlet should cause
 	* an auto redirect.
 	*
-	* @return <code>true</code> if an action java.net.URL for this portlet should cause
+	* @return <code>true</code> if an action URL for this portlet should cause
 	an auto redirect
 	*/
 	@Override
@@ -3342,7 +3342,7 @@ public class PortletWrapper implements Portlet, ModelWrapper<Portlet> {
 	/**
 	* Sets the name of the URL encoder class of the portlet.
 	*
-	* @param urlEncoderClass the name of the java.net.URL encoder class of the portlet
+	* @param urlEncoderClass the name of the URL encoder class of the portlet
 	*/
 	@Override
 	public void setURLEncoderClass(java.lang.String urlEncoderClass) {
