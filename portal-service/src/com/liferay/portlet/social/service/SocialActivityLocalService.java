@@ -129,7 +129,7 @@ public interface SocialActivityLocalService extends BaseLocalService,
 	* there isn't one with the same parameters.
 	*
 	* <p>
-	* For the main functionality see {@link #addActivity(long, long, Date,
+	* For the main functionality see {@link #addActivity(long, long, java.util.Date,
 	* String, long, int, String, long)}
 	* </p>
 	*
@@ -152,7 +152,7 @@ public interface SocialActivityLocalService extends BaseLocalService,
 	* activity with the same parameters.
 	*
 	* <p>
-	* For the main functionality see {@link #addActivity(long, long, Date,
+	* For the main functionality see {@link #addActivity(long, long, java.util.Date,
 	* String, long, int, String, long)}
 	* </p>
 	*

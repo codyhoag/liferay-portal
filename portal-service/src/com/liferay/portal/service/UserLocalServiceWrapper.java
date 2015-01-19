@@ -2138,8 +2138,8 @@ public class UserLocalServiceWrapper implements UserLocalService,
 	* first name, middle name, last name, screen name, and email address match
 	* the keywords specified for them, without using the indexer. It is
 	* preferable to use the indexed version {@link #search(long, String,
-	* String, String, String, String, int, LinkedHashMap, boolean, int, int,
-	* Sort)} instead of this method wherever possible for performance reasons.
+	* String, String, String, String, int, java.util.LinkedHashMap, boolean, int, int,
+	* com.liferay.portal.kernel.search.Sort)} instead of this method wherever possible for performance reasons.
 	*
 	* <p>
 	* Useful when paginating results. Returns a maximum of <code>end -
@@ -2252,7 +2252,7 @@ public class UserLocalServiceWrapper implements UserLocalService,
 	/**
 	* Returns an ordered range of all the users who match the keywords and
 	* status, without using the indexer. It is preferable to use the indexed
-	* version {@link #search(long, String, int, LinkedHashMap, int, int, Sort)}
+	* version {@link #search(long, String, int, java.util.LinkedHashMap, int, int, com.liferay.portal.kernel.search.Sort)}
 	* instead of this method wherever possible for performance reasons.
 	*
 	* <p>

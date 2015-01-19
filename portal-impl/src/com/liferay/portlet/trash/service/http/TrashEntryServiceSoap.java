@@ -159,7 +159,7 @@ public class TrashEntryServiceSoap {
 	*
 	* @param groupId the primary key of the group
 	* @return the matching trash entries
-	* @throws PrincipalException if a principal exception occurred
+	* @throws RemoteException if a principal exception occurred
 	*/
 	public static com.liferay.portlet.trash.model.TrashEntryList getEntries(
 		long groupId) throws RemoteException {
@@ -186,7 +186,7 @@ public class TrashEntryServiceSoap {
 	<code>null</code>)
 	* @return the range of matching trash entries ordered by comparator
 	<code>obc</code>
-	* @throws PrincipalException if a system exception occurred
+	* @throws RemoteException if a system exception occurred
 	*/
 	public static com.liferay.portlet.trash.model.TrashEntryList getEntries(
 		long groupId, int start, int end,

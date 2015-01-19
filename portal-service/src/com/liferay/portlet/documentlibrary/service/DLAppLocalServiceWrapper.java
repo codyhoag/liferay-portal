@@ -124,7 +124,7 @@ public class DLAppLocalServiceWrapper implements DLAppLocalService,
 	}
 
 	/**
-	* Adds a file entry and associated metadata based on an {@link InputStream}
+	* Adds a file entry and associated metadata based on an {@link java.io.InputStream}
 	* object.
 	*
 	* <p>
@@ -753,7 +753,7 @@ public class DLAppLocalServiceWrapper implements DLAppLocalService,
 
 	/**
 	* Updates a file entry and associated metadata based on an {@link
-	* InputStream} object. If the file data is <code>null</code>, then only the
+	* java.io.InputStream} object. If the file data is <code>null</code>, then only the
 	* associated metadata (i.e., <code>title</code>, <code>description</code>,
 	* and parameters in the <code>serviceContext</code>) will be updated.
 	*

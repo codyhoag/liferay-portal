@@ -776,7 +776,7 @@ public class LayoutWrapper implements Layout, ModelWrapper<Layout> {
 	}
 
 	/**
-	* Returns the current layout's {@link LayoutSet}.
+	* Returns the current layout's {@link com.liferay.portal.model.LayoutSet}.
 	*
 	* @return the current layout's layout set
 	* @throws PortalException if a portal exception occurred
@@ -788,7 +788,7 @@ public class LayoutWrapper implements Layout, ModelWrapper<Layout> {
 	}
 
 	/**
-	* Returns the current layout's {@link LayoutType}.
+	* Returns the current layout's {@link com.liferay.portal.model.LayoutType}.
 	*
 	* @return the current layout's layout type
 	*/
@@ -1438,7 +1438,7 @@ public class LayoutWrapper implements Layout, ModelWrapper<Layout> {
 
 	/**
 	* Returns <code>true</code> if the current layout utilizes its {@link
-	* LayoutSet}'s look and feel options (e.g. theme and color scheme).
+	* com.liferay.portal.model.LayoutSet}'s look and feel options (e.g. theme and color scheme).
 	*
 	* @return <code>true</code> if the current layout utilizes its layout set's
 	look and feel options; <code>false</code> otherwise
@@ -1493,7 +1493,7 @@ public class LayoutWrapper implements Layout, ModelWrapper<Layout> {
 
 	/**
 	* Returns <code>true</code> if the current layout is part of the public
-	* {@link LayoutSet}.
+	* {@link com.liferay.portal.model.LayoutSet}.
 	*
 	* <p>
 	* Note, the returned value reflects the layout's default access options,

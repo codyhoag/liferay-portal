@@ -129,7 +129,7 @@ public interface DLAppService extends BaseService {
 
 	/**
 	* Adds a file entry and associated metadata. It is created based on a
-	* {@link InputStream} object.
+	* {@link java.io.InputStream} object.
 	*
 	* <p>
 	* This method takes two file names, the <code>sourceFileName</code> and the
@@ -234,7 +234,7 @@ public interface DLAppService extends BaseService {
 
 	/**
 	* Adds a temporary file entry. It is created based on the {@link
-	* InputStream} object.
+	* java.io.InputStream} object.
 	*
 	* <p>
 	* This allows a client to upload a file into a temporary location and
@@ -1914,7 +1914,7 @@ public interface DLAppService extends BaseService {
 
 	/**
 	* Updates a file entry and associated metadata based on an {@link
-	* InputStream} object. If the file data is <code>null</code>, then only the
+	* java.io.InputStream} object. If the file data is <code>null</code>, then only the
 	* associated metadata (i.e., <code>title</code>, <code>description</code>,
 	* and parameters in the <code>serviceContext</code>) will be updated.
 	*

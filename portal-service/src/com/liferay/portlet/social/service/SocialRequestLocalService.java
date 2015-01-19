@@ -513,12 +513,12 @@ public interface SocialRequestLocalService extends BaseLocalService,
 	* com.liferay.portlet.social.model.SocialRequestConstants#STATUS_CONFIRM}
 	* then {@link
 	* com.liferay.portlet.social.service.SocialRequestInterpreterLocalService#processConfirmation(
-	* SocialRequest, ThemeDisplay)} is called. If the status is updated to
+	* SocialRequest, com.liferay.portal.theme.ThemeDisplay)} is called. If the status is updated to
 	* {@link
 	* com.liferay.portlet.social.model.SocialRequestConstants#STATUS_IGNORE}
 	* then {@link
 	* com.liferay.portlet.social.service.SocialRequestInterpreterLocalService#processRejection(
-	* SocialRequest, ThemeDisplay)} is called.
+	* SocialRequest, com.liferay.portal.theme.ThemeDisplay)} is called.
 	* </p>
 	*
 	* @param requestId the primary key of the social request

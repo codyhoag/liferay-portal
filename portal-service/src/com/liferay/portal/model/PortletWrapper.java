@@ -1354,10 +1354,10 @@ public class PortletWrapper implements Portlet, ModelWrapper<Portlet> {
 
 	/**
 	* Returns <code>true</code> if the portlet uses Social Interactions
-	* Configuration
+	* configuration.
 	*
 	* @return <code>true</code> if the portlet uses Social Interactions
-	com.liferay.portal.kernel.configuration.Configuration
+	configuration
 	*/
 	@Override
 	public boolean getSocialInteractionsConfiguration() {
@@ -2127,10 +2127,10 @@ public class PortletWrapper implements Portlet, ModelWrapper<Portlet> {
 
 	/**
 	* Returns <code>true</code> if the portlet uses Social Interactions
-	* Configuration
+	* configuration.
 	*
 	* @return <code>true</code> if the portlet uses Social Interactions
-	com.liferay.portal.kernel.configuration.Configuration
+	configuration
 	*/
 	@Override
 	public boolean isSocialInteractionsConfiguration() {

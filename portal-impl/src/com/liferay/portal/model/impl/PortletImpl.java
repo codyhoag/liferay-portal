@@ -1718,10 +1718,10 @@ public class PortletImpl extends PortletBaseImpl {
 
 	/**
 	 * Returns <code>true</code> if the portlet uses Social Interactions
-	 * Configuration
+	 * configuration.
 	 *
 	 * @return <code>true</code> if the portlet uses Social Interactions
-	 *         Configuration
+	 *         configuration
 	 */
 	@Override
 	public boolean getSocialInteractionsConfiguration() {
@@ -2637,10 +2637,10 @@ public class PortletImpl extends PortletBaseImpl {
 
 	/**
 	 * Returns <code>true</code> if the portlet uses Social Interactions
-	 * Configuration
+	 * configuration.
 	 *
 	 * @return <code>true</code> if the portlet uses Social Interactions
-	 *         Configuration
+	 *         configuration
 	 */
 	@Override
 	public boolean isSocialInteractionsConfiguration() {

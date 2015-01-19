@@ -957,7 +957,7 @@ public class JournalArticleLocalServiceWrapper
 	found, or if a portal exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link
 	#getArticleContent(com.liferay.portlet.journal.model.JournalArticle, String, String, String,
-	com.liferay.portal.kernel.portlet.PortletRequestModel,ThemeDisplay)}
+	com.liferay.portal.kernel.portlet.PortletRequestModel,com.liferay.portal.theme.ThemeDisplay)}
 	*/
 	@Deprecated
 	@Override
@@ -1434,7 +1434,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -1462,7 +1462,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -1494,7 +1494,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -1524,7 +1524,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -1550,7 +1550,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -1659,7 +1659,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -1689,7 +1689,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -1736,7 +1736,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -2166,7 +2166,7 @@ public class JournalArticleLocalServiceWrapper
 	/**
 	* Returns the previously approved version of the web content article. For
 	* more information on the approved workflow status, see {@link
-	* WorkflowConstants#STATUS_APPROVED}.
+	* com.liferay.portal.kernel.workflow.WorkflowConstants#STATUS_APPROVED}.
 	*
 	* @param article the web content article
 	* @return the previously approved version of the web content article, or
@@ -2217,7 +2217,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -2280,7 +2280,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -2574,7 +2574,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -2658,9 +2658,9 @@ public class JournalArticleLocalServiceWrapper
 	* parameters without using the indexer, including keyword parameters for
 	* article ID, title, description, and content, a DDM structure key
 	* parameter, a DDM template key parameter, and an AND operator switch. It
-	* is preferable to use the indexed version {@link #search(long, long, List,
-	* long, String, String, String, String, int, String, String, LinkedHashMap,
-	* boolean, int, int, Sort)} instead of this method wherever possible for
+	* is preferable to use the indexed version {@link #search(long, long, java.util.List,
+	* long, String, String, String, String, int, String, String, java.util.LinkedHashMap,
+	* boolean, int, int, com.liferay.portal.kernel.search.Sort)} instead of this method wherever possible for
 	* performance reasons.
 	*
 	* <p>
@@ -2668,7 +2668,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -2745,7 +2745,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -2825,7 +2825,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -2873,8 +2873,8 @@ public class JournalArticleLocalServiceWrapper
 	* parameters without using the indexer, including a keywords parameter for
 	* matching with the article's ID, title, description, and content, a DDM
 	* structure key parameter, and a DDM template key parameter. It is
-	* preferable to use the indexed version {@link #search(long, long, List,
-	* long, String, String, String, LinkedHashMap, int, int, Sort)} instead of
+	* preferable to use the indexed version {@link #search(long, long, java.util.List,
+	* long, String, String, String, java.util.LinkedHashMap, int, int, com.liferay.portal.kernel.search.Sort)} instead of
 	* this method wherever possible for performance reasons.
 	*
 	* <p>
@@ -2882,7 +2882,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -2950,7 +2950,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -2983,7 +2983,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -3018,7 +3018,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -3254,7 +3254,7 @@ public class JournalArticleLocalServiceWrapper
 	}
 
 	/**
-	* Returns a {@link BaseModelSearchResult} containing the total number of
+	* Returns a {@link com.liferay.portal.kernel.search.BaseModelSearchResult} containing the total number of
 	* hits and an ordered range of all the web content articles matching the
 	* parameters using the indexer, including keyword parameters for article
 	* ID, title, description, or content, a DDM structure key parameter, a DDM
@@ -3274,7 +3274,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -3334,7 +3334,7 @@ public class JournalArticleLocalServiceWrapper
 	}
 
 	/**
-	* Returns a {@link BaseModelSearchResult} containing the total number of
+	* Returns a {@link com.liferay.portal.kernel.search.BaseModelSearchResult} containing the total number of
 	* hits and an ordered range of all the web content articles matching the
 	* parameters using the indexer, including a keywords parameter for matching
 	* an article's ID, title, description, or content, a DDM structure key
@@ -3353,7 +3353,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*
@@ -3399,7 +3399,7 @@ public class JournalArticleLocalServiceWrapper
 	}
 
 	/**
-	* Returns a {@link BaseModelSearchResult} containing the total number of
+	* Returns a {@link com.liferay.portal.kernel.search.BaseModelSearchResult} containing the total number of
 	* hits and an ordered range of all the web content articles matching the
 	* parameters using the indexer, including the web content article's creator
 	* ID and status. It is preferable to use this method instead of the
@@ -3416,7 +3416,7 @@ public class JournalArticleLocalServiceWrapper
 	* start</code> instances. <code>start</code> and <code>end</code> are not
 	* primary keys, they are indexes in the result set. Thus, <code>0</code>
 	* refers to the first result in the set. Setting both <code>start</code>
-	* and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full
+	* and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full
 	* result set.
 	* </p>
 	*

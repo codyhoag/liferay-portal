@@ -901,10 +901,10 @@ public interface Portlet extends PortletModel, PersistedModel {
 
 	/**
 	* Returns <code>true</code> if the portlet uses Social Interactions
-	* Configuration
+	* configuration.
 	*
 	* @return <code>true</code> if the portlet uses Social Interactions
-	com.liferay.portal.kernel.configuration.Configuration
+	configuration
 	*/
 	public boolean getSocialInteractionsConfiguration();
 
@@ -1431,10 +1431,10 @@ public interface Portlet extends PortletModel, PersistedModel {
 
 	/**
 	* Returns <code>true</code> if the portlet uses Social Interactions
-	* Configuration
+	* configuration.
 	*
 	* @return <code>true</code> if the portlet uses Social Interactions
-	com.liferay.portal.kernel.configuration.Configuration
+	configuration
 	*/
 	public boolean isSocialInteractionsConfiguration();
 

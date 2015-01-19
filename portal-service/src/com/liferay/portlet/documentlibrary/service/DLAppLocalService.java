@@ -127,7 +127,7 @@ public interface DLAppLocalService extends BaseLocalService {
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* Adds a file entry and associated metadata based on an {@link InputStream}
+	* Adds a file entry and associated metadata based on an {@link java.io.InputStream}
 	* object.
 	*
 	* <p>
@@ -642,7 +642,7 @@ public interface DLAppLocalService extends BaseLocalService {
 
 	/**
 	* Updates a file entry and associated metadata based on an {@link
-	* InputStream} object. If the file data is <code>null</code>, then only the
+	* java.io.InputStream} object. If the file data is <code>null</code>, then only the
 	* associated metadata (i.e., <code>title</code>, <code>description</code>,
 	* and parameters in the <code>serviceContext</code>) will be updated.
 	*

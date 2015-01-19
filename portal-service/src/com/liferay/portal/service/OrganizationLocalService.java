@@ -847,7 +847,7 @@ public interface OrganizationLocalService extends BaseLocalService,
 	* Returns a name ordered range of all the organizations that match the
 	* keywords, type, region, and country, without using the indexer. It is
 	* preferable to use the indexed version {@link #search(long, long, String,
-	* LinkedHashMap, int, int, Sort)} instead of this method wherever possible
+	* java.util.LinkedHashMap, int, int, com.liferay.portal.kernel.search.Sort)} instead of this method wherever possible
 	* for performance reasons.
 	*
 	* <p>
@@ -891,8 +891,8 @@ public interface OrganizationLocalService extends BaseLocalService,
 	* Returns an ordered range of all the organizations that match the
 	* keywords, type, region, and country, without using the indexer. It is
 	* preferable to use the indexed version {@link #search(long, long, String,
-	* String, String, String, String, String, String, LinkedHashMap, boolean,
-	* int, int, Sort)} instead of this method wherever possible for performance
+	* String, String, String, String, String, String, java.util.LinkedHashMap, boolean,
+	* int, int, com.liferay.portal.kernel.search.Sort)} instead of this method wherever possible for performance
 	* reasons.
 	*
 	* <p>
@@ -990,8 +990,8 @@ public interface OrganizationLocalService extends BaseLocalService,
 	* region, and country, and whose name, street, city, and zipcode match the
 	* keywords specified for them, without using the indexer. It is preferable
 	* to use the indexed version {@link #search(long, long, String, String,
-	* String, String, String, String, String, LinkedHashMap, boolean, int, int,
-	* Sort)} instead of this method wherever possible for performance reasons.
+	* String, String, String, String, String, java.util.LinkedHashMap, boolean, int, int,
+	* com.liferay.portal.kernel.search.Sort)} instead of this method wherever possible for performance reasons.
 	*
 	* <p>
 	* Useful when paginating results. Returns a maximum of <code>end -
@@ -1042,7 +1042,7 @@ public interface OrganizationLocalService extends BaseLocalService,
 	* and country, and whose name, street, city, and zipcode match the keywords
 	* specified for them, without using the indexer. It is preferable to use
 	* the indexed version {@link #search(long, long, String, String, String,
-	* String, String, String, String, LinkedHashMap, boolean, int, int, Sort)}
+	* String, String, String, String, java.util.LinkedHashMap, boolean, int, int, com.liferay.portal.kernel.search.Sort)}
 	* instead of this method wherever possible for performance reasons.
 	*
 	* <p>
