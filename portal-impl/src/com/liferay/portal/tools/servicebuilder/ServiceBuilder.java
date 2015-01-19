@@ -3763,6 +3763,7 @@ public class ServiceBuilder {
 
 		if (Validator.isNotNull(comment)) {
 			comment = comment.replaceAll("(?m)^", indentation + " * ");
+			comment = _getJavadocPackages(comment, imports);
 
 			sb.append(comment);
 			sb.append("\n");
@@ -3774,40 +3775,10 @@ public class ServiceBuilder {
 		}
 
 		for (DocletTag tag : tags) {
-			
 			String tagValue = tag.getValue();
-				
-			for (String fullImport : imports) {
-				String classImport = fullImport.substring(
-						fullImport.lastIndexOf(".") + 1);
 
-				if (tagValue.contains(classImport)) {
-					int classImportIndex = tagValue.indexOf(classImport);
+			tagValue = _getJavadocPackages(tagValue, imports);
 
-					int endOfClassImportIndex = classImportIndex + classImport.length();
-
-					String endOfImport = StringPool.BLANK;
-
-					if (tagValue.length() > endOfClassImportIndex) {
-						endOfImport = tagValue.substring(
-								endOfClassImportIndex, endOfClassImportIndex + 1);
-					}
-
-						if (classImportIndex > 0) {
-							String begOfImport = tagValue.substring(
-									classImportIndex - 1, classImportIndex);
-
-							if ((begOfImport.equals(" ") ||
-									begOfImport.equals("(")) &&
-									!endOfImport.matches("[a-zA-Z]") &&
-									!endOfImport.equals(" ")) {
-								tagValue = tagValue.replaceAll(
-										classImport, fullImport);
-							}
-						}
-				}
-			}
-			
 			sb.append(indentation);
 			sb.append(" * @");
 			sb.append(tag.getName());
@@ -3821,6 +3792,15 @@ public class ServiceBuilder {
 						"PortalException", "RemoteException");
 
 				sb.append(remoteValue);
+			}
+			else if (classType.equals("ServiceSoap") &&
+					tagValue.startsWith("PrincipalException")
+					) {
+				String remoteValue = tagValue.replaceFirst(
+						"PrincipalException", "RemoteException");
+
+				sb.append(remoteValue);
+
 			}
 			else {
 				sb.append(tagValue);
@@ -4282,6 +4262,41 @@ public class ServiceBuilder {
 		}
 
 		return javaClass;
+	}
+
+	private String _getJavadocPackages(String text, String[] imports) {
+		for (String fullImport : imports) {
+			String classImport = fullImport.substring(
+					fullImport.lastIndexOf(".") + 1);
+
+			if (text.contains(classImport)) {
+				int classImportIndex = text.indexOf(classImport);
+
+				int endOfClassImportIndex = classImportIndex + classImport.length();
+
+				String endOfImport = StringPool.BLANK;
+
+				if (text.length() > endOfClassImportIndex) {
+					endOfImport = text.substring(
+							endOfClassImportIndex, endOfClassImportIndex + 1);
+				}
+
+				if (classImportIndex > 0) {
+					String begOfImport = text.substring(
+							classImportIndex - 1, classImportIndex);
+
+					if (!begOfImport.matches("[a-zA-Z_0-9;\\.]") &&
+							!endOfImport.matches("[a-zA-Z_0-9\\.]") &&
+							!endOfImport.equals(" ")) {
+
+						text = text.replaceAll(
+								classImport, fullImport);
+					}
+				}
+			}
+		}
+
+		return text;
 	}
 
 	private String _getMethodKey(JavaMethod javaMethod) {
