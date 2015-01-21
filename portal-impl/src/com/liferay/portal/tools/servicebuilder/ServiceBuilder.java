@@ -3784,12 +3784,12 @@ public class ServiceBuilder {
 			sb.append(tag.getName());
 			sb.append(" ");
 
-			if (classType.equals("ServiceSoap") &&
-					tagValue.startsWith("PortalException")
-					) {
+			if (classType.equals("ServiceSoap") && tagValue.startsWith(
+					"com.liferay.portal.kernel.exception.PortalException")) {
 
 				String remoteValue = tagValue.replaceFirst(
-						"PortalException", "RemoteException");
+						"com.liferay.portal.kernel.exception.PortalException", 
+						"RemoteException");
 
 				sb.append(remoteValue);
 			}
@@ -3800,7 +3800,6 @@ public class ServiceBuilder {
 						"PrincipalException", "RemoteException");
 
 				sb.append(remoteValue);
-
 			}
 			else {
 				sb.append(tagValue);
@@ -4271,9 +4270,9 @@ public class ServiceBuilder {
 
 			if (text.contains(classImport)) {
 				int classImportIndex = text.indexOf(classImport);
-
 				int endOfClassImportIndex = classImportIndex + classImport.length();
 
+				String begOfImport = StringPool.BLANK;
 				String endOfImport = StringPool.BLANK;
 
 				if (text.length() > endOfClassImportIndex) {
@@ -4282,16 +4281,15 @@ public class ServiceBuilder {
 				}
 
 				if (classImportIndex > 0) {
-					String begOfImport = text.substring(
+					begOfImport = text.substring(
 							classImportIndex - 1, classImportIndex);
+				}
 
-					if (!begOfImport.matches("[a-zA-Z_0-9;\\.]") &&
-							!endOfImport.matches("[a-zA-Z_0-9\\.]") &&
-							!endOfImport.equals(" ")) {
+				if (!begOfImport.matches("[a-zA-Z_0-9;\\.]") &&
+						!endOfImport.matches("[a-zA-Z_0-9\\.]") &&
+						(!endOfImport.equals(" ") || classImportIndex == 0)) {
 
-						text = text.replaceAll(
-								classImport, fullImport);
-					}
+					text = text.replaceAll(classImport, fullImport);
 				}
 			}
 		}
