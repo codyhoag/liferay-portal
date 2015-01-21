@@ -83,7 +83,7 @@ public class DDMContentLocalServiceWrapper implements DDMContentLocalService,
 	*
 	* @param contentId the primary key of the d d m content
 	* @return the d d m content that was removed
-	* @throws PortalException if a d d m content with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m content with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMContent deleteDDMContent(
@@ -105,7 +105,7 @@ public class DDMContentLocalServiceWrapper implements DDMContentLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -268,7 +268,7 @@ public class DDMContentLocalServiceWrapper implements DDMContentLocalService,
 	*
 	* @param contentId the primary key of the d d m content
 	* @return the d d m content
-	* @throws PortalException if a d d m content with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m content with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMContent getDDMContent(
@@ -283,7 +283,7 @@ public class DDMContentLocalServiceWrapper implements DDMContentLocalService,
 	* @param uuid the d d m content's UUID
 	* @param groupId the primary key of the group
 	* @return the matching d d m content
-	* @throws PortalException if a matching d d m content could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching d d m content could not be found
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMContent getDDMContentByUuidAndGroupId(

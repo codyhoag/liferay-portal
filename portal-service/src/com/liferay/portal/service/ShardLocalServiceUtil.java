@@ -67,7 +67,7 @@ public class ShardLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -91,7 +91,7 @@ public class ShardLocalServiceUtil {
 	*
 	* @param shardId the primary key of the shard
 	* @return the shard that was removed
-	* @throws PortalException if a shard with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shard with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Shard deleteShard(long shardId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -210,7 +210,7 @@ public class ShardLocalServiceUtil {
 	*
 	* @param shardId the primary key of the shard
 	* @return the shard
-	* @throws PortalException if a shard with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shard with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Shard getShard(long shardId)
 		throws com.liferay.portal.kernel.exception.PortalException {

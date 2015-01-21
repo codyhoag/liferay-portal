@@ -57,7 +57,7 @@ public class ResourceTypePermissionLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -83,7 +83,7 @@ public class ResourceTypePermissionLocalServiceWrapper
 	*
 	* @param resourceTypePermissionId the primary key of the resource type permission
 	* @return the resource type permission that was removed
-	* @throws PortalException if a resource type permission with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a resource type permission with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.ResourceTypePermission deleteResourceTypePermission(
@@ -239,7 +239,7 @@ public class ResourceTypePermissionLocalServiceWrapper
 	*
 	* @param resourceTypePermissionId the primary key of the resource type permission
 	* @return the resource type permission
-	* @throws PortalException if a resource type permission with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a resource type permission with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.ResourceTypePermission getResourceTypePermission(

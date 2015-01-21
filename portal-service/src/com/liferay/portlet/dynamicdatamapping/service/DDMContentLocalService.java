@@ -82,7 +82,7 @@ public interface DDMContentLocalService extends BaseLocalService,
 	*
 	* @param contentId the primary key of the d d m content
 	* @return the d d m content that was removed
-	* @throws PortalException if a d d m content with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m content with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.dynamicdatamapping.model.DDMContent deleteDDMContent(
@@ -100,7 +100,7 @@ public interface DDMContentLocalService extends BaseLocalService,
 		com.liferay.portlet.dynamicdatamapping.model.DDMContent ddmContent);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -221,7 +221,7 @@ public interface DDMContentLocalService extends BaseLocalService,
 	*
 	* @param contentId the primary key of the d d m content
 	* @return the d d m content
-	* @throws PortalException if a d d m content with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m content with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.dynamicdatamapping.model.DDMContent getDDMContent(
@@ -234,7 +234,7 @@ public interface DDMContentLocalService extends BaseLocalService,
 	* @param uuid the d d m content's UUID
 	* @param groupId the primary key of the group
 	* @return the matching d d m content
-	* @throws PortalException if a matching d d m content could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching d d m content could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.dynamicdatamapping.model.DDMContent getDDMContentByUuidAndGroupId(

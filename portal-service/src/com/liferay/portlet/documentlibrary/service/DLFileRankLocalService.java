@@ -89,7 +89,7 @@ public interface DLFileRankLocalService extends BaseLocalService,
 	*
 	* @param fileRankId the primary key of the document library file rank
 	* @return the document library file rank that was removed
-	* @throws PortalException if a document library file rank with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file rank with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.documentlibrary.model.DLFileRank deleteDLFileRank(
@@ -108,7 +108,7 @@ public interface DLFileRankLocalService extends BaseLocalService,
 	public void deleteFileRanksByUserId(long userId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -209,7 +209,7 @@ public interface DLFileRankLocalService extends BaseLocalService,
 	*
 	* @param fileRankId the primary key of the document library file rank
 	* @return the document library file rank
-	* @throws PortalException if a document library file rank with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file rank with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.documentlibrary.model.DLFileRank getDLFileRank(

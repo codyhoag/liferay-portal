@@ -130,7 +130,7 @@ public class JournalFeedLocalServiceUtil {
 	*
 	* @param id the primary key of the journal feed
 	* @return the journal feed that was removed
-	* @throws PortalException if a journal feed with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal feed with the primary key could not be found
 	*/
 	public static com.liferay.portlet.journal.model.JournalFeed deleteJournalFeed(
 		long id) throws com.liferay.portal.kernel.exception.PortalException {
@@ -149,7 +149,7 @@ public class JournalFeedLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -309,7 +309,7 @@ public class JournalFeedLocalServiceUtil {
 	*
 	* @param id the primary key of the journal feed
 	* @return the journal feed
-	* @throws PortalException if a journal feed with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal feed with the primary key could not be found
 	*/
 	public static com.liferay.portlet.journal.model.JournalFeed getJournalFeed(
 		long id) throws com.liferay.portal.kernel.exception.PortalException {
@@ -322,7 +322,7 @@ public class JournalFeedLocalServiceUtil {
 	* @param uuid the journal feed's UUID
 	* @param groupId the primary key of the group
 	* @return the matching journal feed
-	* @throws PortalException if a matching journal feed could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching journal feed could not be found
 	*/
 	public static com.liferay.portlet.journal.model.JournalFeed getJournalFeedByUuidAndGroupId(
 		java.lang.String uuid, long groupId)

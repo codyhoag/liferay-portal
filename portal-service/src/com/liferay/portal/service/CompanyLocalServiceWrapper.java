@@ -55,7 +55,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	<code>0</code>)
 	* @param active whether the company is active
 	* @return the company
-	* @throws PortalException if the web domain, virtual host name, or mail
+	* @throws com.liferay.portal.kernel.exception.PortalException if the web domain, virtual host name, or mail
 	domain was invalid
 	*/
 	@Override
@@ -75,7 +75,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	*
 	* @param webId the company's web domain
 	* @return the company with the web domain
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portal.model.Company checkCompany(java.lang.String webId)
@@ -94,7 +94,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	* @param mx the company's mail domain
 	* @param shardName the company's shard
 	* @return the company with the web domain, mail domain, and shard
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portal.model.Company checkCompany(
@@ -108,7 +108,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	* does not exist.
 	*
 	* @param companyId the primary key of the company
-	* @throws PortalException if a company with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a company with the primary key could not be
 	found
 	*/
 	@Override
@@ -133,7 +133,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	*
 	* @param company the company
 	* @return the company that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.Company deleteCompany(
@@ -147,7 +147,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	*
 	* @param companyId the primary key of the company
 	* @return the company that was removed
-	* @throws PortalException if a company with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a company with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Company deleteCompany(long companyId)
@@ -160,7 +160,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	*
 	* @param companyId the primary key of the company
 	* @return the deleted logo's company
-	* @throws PortalException if the company with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if the company with the primary key could not be
 	found or if the company's logo could not be found
 	*/
 	@Override
@@ -170,7 +170,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -381,7 +381,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	*
 	* @param companyId the primary key of the company
 	* @return the company
-	* @throws PortalException if a company with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a company with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Company getCompany(long companyId)
@@ -394,7 +394,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	*
 	* @param companyId the primary key of the company
 	* @return the company with the primary key
-	* @throws PortalException if a company with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a company with the primary key could not be
 	found
 	*/
 	@Override
@@ -408,7 +408,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	*
 	* @param logoId the ID of the company's logo
 	* @return the company with the logo
-	* @throws PortalException if the company with the logo could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if the company with the logo could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Company getCompanyByLogoId(long logoId)
@@ -421,7 +421,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	*
 	* @param mx the company's mail domain
 	* @return the company with the mail domain
-	* @throws PortalException if the company with the mail domain could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if the company with the mail domain could not be
 	found
 	*/
 	@Override
@@ -435,7 +435,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	*
 	* @param virtualHostname the company's virtual host name
 	* @return the company with the virtual host name
-	* @throws PortalException if the company with the virtual host name could
+	* @throws com.liferay.portal.kernel.exception.PortalException if the company with the virtual host name could
 	not be found or if the virtual host was not associated with a
 	company
 	*/
@@ -451,7 +451,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	*
 	* @param webId the company's web domain
 	* @return the company with the web domain
-	* @throws PortalException if the company with the web domain could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if the company with the web domain could not be
 	found
 	*/
 	@Override
@@ -594,7 +594,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	* @param type the company's account type (optionally <code>null</code>)
 	* @param size the company's account size (optionally <code>null</code>)
 	* @return the company with the primary key
-	* @throws PortalException if a company with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a company with the primary key could not be
 	found or if the new information was invalid
 	*/
 	@Override
@@ -636,7 +636,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	* @param size the company's account size (optionally
 	<code>null</code>)
 	* @return the company with the primary key
-	* @throws PortalException if a company with the primary key could not
+	* @throws com.liferay.portal.kernel.exception.PortalException if a company with the primary key could not
 	be found or if the new information was invalid
 	* @deprecated As of 7.0.0, replaced by {@link #updateCompany(long, String,
 	String, String, boolean, byte[], String, String, String,
@@ -667,7 +667,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	<code>0</code>)
 	* @param active whether the company is active
 	* @return the company with the primary key
-	* @throws PortalException if a company with primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a company with primary key could not be found
 	or if the new information was invalid
 	*/
 	@Override
@@ -685,7 +685,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	* @param companyId the primary key of the company
 	* @param languageId the ID of the company's default user's language
 	* @param timeZoneId the ID of the company's default user's time zone
-	* @throws PortalException if the company's default user could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if the company's default user could not be found
 	*/
 	@Override
 	public void updateDisplay(long companyId, java.lang.String languageId,
@@ -700,7 +700,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	* @param companyId the primary key of the company
 	* @param bytes the bytes of the company's logo image
 	* @return the company with the primary key
-	* @throws PortalException if the company's logo ID could not be found or if
+	* @throws com.liferay.portal.kernel.exception.PortalException if the company's logo ID could not be found or if
 	the logo's image was corrupted
 	*/
 	@Override
@@ -716,7 +716,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	* @param companyId the primary key of the company
 	* @param file the file of the company's logo image
 	* @return the company with the primary key
-	* @throws PortalException the company's logo ID could not be found or if
+	* @throws com.liferay.portal.kernel.exception.PortalException the company's logo ID could not be found or if
 	the logo's image was corrupted
 	*/
 	@Override
@@ -732,7 +732,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	* @param companyId the primary key of the company
 	* @param is the input stream of the company's logo image
 	* @return the company with the primary key
-	* @throws PortalException if the company's logo ID could not be found or if
+	* @throws com.liferay.portal.kernel.exception.PortalException if the company's logo ID could not be found or if
 	the company's logo image was corrupted
 	*/
 	@Override
@@ -749,7 +749,7 @@ public class CompanyLocalServiceWrapper implements CompanyLocalService,
 	* @param companyId the primary key of the company
 	* @param properties the company's properties. See {@link
 	com.liferay.portal.kernel.util.UnicodeProperties}
-	* @throws PortalException if the properties contained new locales that were
+	* @throws com.liferay.portal.kernel.exception.PortalException if the properties contained new locales that were
 	not supported
 	*/
 	@Override

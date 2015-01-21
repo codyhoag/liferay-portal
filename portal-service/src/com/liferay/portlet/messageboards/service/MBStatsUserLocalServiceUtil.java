@@ -84,7 +84,7 @@ public class MBStatsUserLocalServiceUtil {
 	*
 	* @param statsUserId the primary key of the message boards stats user
 	* @return the message boards stats user that was removed
-	* @throws PortalException if a message boards stats user with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards stats user with the primary key could not be found
 	*/
 	public static com.liferay.portlet.messageboards.model.MBStatsUser deleteMBStatsUser(
 		long statsUserId)
@@ -93,7 +93,7 @@ public class MBStatsUserLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -225,7 +225,7 @@ public class MBStatsUserLocalServiceUtil {
 	*
 	* @param statsUserId the primary key of the message boards stats user
 	* @return the message boards stats user
-	* @throws PortalException if a message boards stats user with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards stats user with the primary key could not be found
 	*/
 	public static com.liferay.portlet.messageboards.model.MBStatsUser getMBStatsUser(
 		long statsUserId)

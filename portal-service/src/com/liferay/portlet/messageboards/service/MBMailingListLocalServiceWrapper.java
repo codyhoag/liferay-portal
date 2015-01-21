@@ -88,7 +88,7 @@ public class MBMailingListLocalServiceWrapper
 	*
 	* @param mailingListId the primary key of the message boards mailing list
 	* @return the message boards mailing list that was removed
-	* @throws PortalException if a message boards mailing list with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards mailing list with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.messageboards.model.MBMailingList deleteMBMailingList(
@@ -123,7 +123,7 @@ public class MBMailingListLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -271,7 +271,7 @@ public class MBMailingListLocalServiceWrapper
 	*
 	* @param mailingListId the primary key of the message boards mailing list
 	* @return the message boards mailing list
-	* @throws PortalException if a message boards mailing list with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards mailing list with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.messageboards.model.MBMailingList getMBMailingList(
@@ -286,7 +286,7 @@ public class MBMailingListLocalServiceWrapper
 	* @param uuid the message boards mailing list's UUID
 	* @param groupId the primary key of the group
 	* @return the matching message boards mailing list
-	* @throws PortalException if a matching message boards mailing list could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching message boards mailing list could not be found
 	*/
 	@Override
 	public com.liferay.portlet.messageboards.model.MBMailingList getMBMailingListByUuidAndGroupId(

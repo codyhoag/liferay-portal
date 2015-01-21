@@ -87,7 +87,7 @@ public interface ShoppingCouponLocalService extends BaseLocalService,
 	public void deleteCoupons(long groupId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -99,7 +99,7 @@ public interface ShoppingCouponLocalService extends BaseLocalService,
 	*
 	* @param couponId the primary key of the shopping coupon
 	* @return the shopping coupon that was removed
-	* @throws PortalException if a shopping coupon with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shopping coupon with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.shopping.model.ShoppingCoupon deleteShoppingCoupon(
@@ -216,7 +216,7 @@ public interface ShoppingCouponLocalService extends BaseLocalService,
 	*
 	* @param couponId the primary key of the shopping coupon
 	* @return the shopping coupon
-	* @throws PortalException if a shopping coupon with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shopping coupon with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.shopping.model.ShoppingCoupon getShoppingCoupon(

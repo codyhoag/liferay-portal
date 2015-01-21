@@ -78,7 +78,7 @@ public class AccountLocalServiceUtil {
 	*
 	* @param accountId the primary key of the account
 	* @return the account that was removed
-	* @throws PortalException if a account with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a account with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Account deleteAccount(long accountId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -86,7 +86,7 @@ public class AccountLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -181,7 +181,7 @@ public class AccountLocalServiceUtil {
 	*
 	* @param accountId the primary key of the account
 	* @return the account
-	* @throws PortalException if a account with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a account with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Account getAccount(long accountId)
 		throws com.liferay.portal.kernel.exception.PortalException {

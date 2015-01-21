@@ -85,7 +85,7 @@ public interface RoleLocalService extends BaseLocalService,
 	<code>null</code>). Can set expando bridge attributes for the
 	role.
 	* @return the role
-	* @throws PortalException if the class name or the role name were invalid,
+	* @throws com.liferay.portal.kernel.exception.PortalException if the class name or the role name were invalid,
 	if the role is a duplicate, or if a user with the primary key
 	could not be found
 	*/
@@ -109,7 +109,7 @@ public interface RoleLocalService extends BaseLocalService,
 	<code>null</code>)
 	* @param type the role's type (optionally <code>0</code>)
 	* @return the role
-	* @throws PortalException if the class name or the role name were
+	* @throws com.liferay.portal.kernel.exception.PortalException if the class name or the role name were
 	invalid, if the role is a duplicate, or if a user with the
 	primary key could not be found
 	* @deprecated As of 6.2.0, replaced by {@link #addRole(long, String, long,
@@ -139,7 +139,7 @@ public interface RoleLocalService extends BaseLocalService,
 	* @param classPK the primary key of the class for which the role is
 	created (optionally <code>0</code>)
 	* @return the role
-	* @throws PortalException if the class name or the role name were
+	* @throws com.liferay.portal.kernel.exception.PortalException if the class name or the role name were
 	invalid, if the role is a duplicate, or if a user with the
 	primary key could not be found
 	* @deprecated As of 6.2.0, replaced by {@link #addRole(long, String, long,
@@ -158,14 +158,14 @@ public interface RoleLocalService extends BaseLocalService,
 	public void addUserRole(long userId, long roleId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public void addUserRoles(long userId,
 		java.util.List<com.liferay.portal.model.Role> Roles)
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public void addUserRoles(long userId, long[] roleIds)
 		throws com.liferay.portal.kernel.exception.PortalException;
@@ -174,7 +174,7 @@ public interface RoleLocalService extends BaseLocalService,
 	* Checks to ensure that the system roles map has appropriate default roles
 	* in each company.
 	*
-	* @throws PortalException if the current user did not have permission to
+	* @throws com.liferay.portal.kernel.exception.PortalException if the current user did not have permission to
 	set applicable permissions on a role
 	*/
 	public void checkSystemRoles()
@@ -185,7 +185,7 @@ public interface RoleLocalService extends BaseLocalService,
 	* in the company.
 	*
 	* @param companyId the primary key of the company
-	* @throws PortalException if the current user did not have permission to
+	* @throws com.liferay.portal.kernel.exception.PortalException if the current user did not have permission to
 	set applicable permissions on a role
 	*/
 	@com.liferay.portal.kernel.transaction.Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -214,7 +214,7 @@ public interface RoleLocalService extends BaseLocalService,
 	public void deleteGroupRoles(long groupId, long[] roleIds);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -226,7 +226,7 @@ public interface RoleLocalService extends BaseLocalService,
 	*
 	* @param role the role
 	* @return the role that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	@com.liferay.portal.kernel.systemevent.SystemEvent(action = SystemEventConstants.ACTION_SKIP, type = SystemEventConstants.TYPE_DELETE)
@@ -239,7 +239,7 @@ public interface RoleLocalService extends BaseLocalService,
 	*
 	* @param roleId the primary key of the role
 	* @return the role that was removed
-	* @throws PortalException if a role with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a role with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.Role deleteRole(long roleId)
@@ -377,7 +377,7 @@ public interface RoleLocalService extends BaseLocalService,
 	*
 	* @param groupId the primary key of the group
 	* @return the default role for the group with the primary key
-	* @throws PortalException if a group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group with the primary key could not be
 	found, or if a default role could not be found for the group
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -475,7 +475,7 @@ public interface RoleLocalService extends BaseLocalService,
 	* @param companyId the primary key of the company
 	* @param name the role's name
 	* @return the role with the name
-	* @throws PortalException if a role with the name could not be found in the
+	* @throws com.liferay.portal.kernel.exception.PortalException if a role with the name could not be found in the
 	company
 	*/
 	@com.liferay.portal.kernel.spring.aop.Skip
@@ -489,7 +489,7 @@ public interface RoleLocalService extends BaseLocalService,
 	*
 	* @param roleId the primary key of the role
 	* @return the role
-	* @throws PortalException if a role with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a role with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Role getRole(long roleId)
@@ -501,7 +501,7 @@ public interface RoleLocalService extends BaseLocalService,
 	* @param uuid the role's UUID
 	* @param companyId the primary key of the company
 	* @return the matching role
-	* @throws PortalException if a matching role could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching role could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Role getRoleByUuidAndCompanyId(
@@ -534,7 +534,7 @@ public interface RoleLocalService extends BaseLocalService,
 	*
 	* @param roleIds the primary keys of the roles
 	* @return the roles with the primary keys
-	* @throws PortalException if any one of the roles with the primary keys
+	* @throws com.liferay.portal.kernel.exception.PortalException if any one of the roles with the primary keys
 	could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -601,7 +601,7 @@ public interface RoleLocalService extends BaseLocalService,
 	* @param companyId the primary key of the company
 	* @param teamId the primary key of the team
 	* @return the team role in the company
-	* @throws PortalException if a role could not be found in the team and
+	* @throws com.liferay.portal.kernel.exception.PortalException if a role could not be found in the team and
 	company
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -613,7 +613,7 @@ public interface RoleLocalService extends BaseLocalService,
 	*
 	* @param groupId the primary key of the group
 	* @return the team role map for the group
-	* @throws PortalException if a group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group with the primary key could not be
 	found, if a role could not be found in one of the group's teams,
 	or if a portal exception occurred
 	*/
@@ -627,7 +627,7 @@ public interface RoleLocalService extends BaseLocalService,
 	*
 	* @param groupId the primary key of the group
 	* @return the team roles in the group
-	* @throws PortalException if a group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group with the primary key could not be
 	found, if a role could not be found in one of the group's teams,
 	or if a portal exception occurred
 	*/
@@ -643,7 +643,7 @@ public interface RoleLocalService extends BaseLocalService,
 	* @param excludedRoleIds the primary keys of the roles to exclude
 	(optionally <code>null</code>)
 	* @return the team roles in the group, excluding the specified role IDs
-	* @throws PortalException if a group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group with the primary key could not be
 	found, if a role could not be found in one of the group's teams,
 	or if a portal exception occurred
 	*/
@@ -797,7 +797,7 @@ public interface RoleLocalService extends BaseLocalService,
 	search
 	* @return <code>true</code> if the user is associated with the regular
 	role; <code>false</code> otherwise
-	* @throws PortalException if a default user for the company could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a default user for the company could not be
 	found
 	*/
 	@com.liferay.portal.kernel.cache.ThreadLocalCachable
@@ -823,7 +823,7 @@ public interface RoleLocalService extends BaseLocalService,
 	search
 	* @return <code>true</code> if the user has any one of the regular roles;
 	<code>false</code> otherwise
-	* @throws PortalException if any one of the roles with the names could not
+	* @throws com.liferay.portal.kernel.exception.PortalException if any one of the roles with the names could not
 	be found in the company or if the default user for the company
 	could not be found
 	*/
@@ -850,7 +850,7 @@ public interface RoleLocalService extends BaseLocalService,
 	* @param companyId the primary key of the company
 	* @param name the role's name
 	* @return the role with the name in the company
-	* @throws PortalException if a role with the name could not be found in the
+	* @throws com.liferay.portal.kernel.exception.PortalException if a role with the name could not be found in the
 	company
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -1069,7 +1069,7 @@ public interface RoleLocalService extends BaseLocalService,
 	public void setGroupRoles(long groupId, long[] roleIds);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public void setUserRoles(long userId, long[] roleIds)
 		throws com.liferay.portal.kernel.exception.PortalException;
@@ -1080,7 +1080,7 @@ public interface RoleLocalService extends BaseLocalService,
 	*
 	* @param userId the primary key of the user
 	* @param roleIds the primary keys of the roles
-	* @throws PortalException if a user with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key could not be found
 	or if a role with any one of the primary keys could not be found
 	*/
 	public void unsetUserRoles(long userId, long[] roleIds)
@@ -1110,7 +1110,7 @@ public interface RoleLocalService extends BaseLocalService,
 	<code>null</code>). Can set expando bridge attributes for the
 	role.
 	* @return the role with the primary key
-	* @throws PortalException if a role with the primary could not be found or
+	* @throws com.liferay.portal.kernel.exception.PortalException if a role with the primary could not be found or
 	if the role's name was invalid
 	*/
 	public com.liferay.portal.model.Role updateRole(long roleId,

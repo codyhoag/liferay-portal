@@ -94,7 +94,7 @@ public interface LayoutFriendlyURLLocalService extends BaseLocalService,
 	*
 	* @param layoutFriendlyURLId the primary key of the layout friendly u r l
 	* @return the layout friendly u r l that was removed
-	* @throws PortalException if a layout friendly u r l with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout friendly u r l with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.LayoutFriendlyURL deleteLayoutFriendlyURL(
@@ -106,7 +106,7 @@ public interface LayoutFriendlyURLLocalService extends BaseLocalService,
 	public void deleteLayoutFriendlyURLs(long plid);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -229,7 +229,7 @@ public interface LayoutFriendlyURLLocalService extends BaseLocalService,
 	*
 	* @param layoutFriendlyURLId the primary key of the layout friendly u r l
 	* @return the layout friendly u r l
-	* @throws PortalException if a layout friendly u r l with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout friendly u r l with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.LayoutFriendlyURL getLayoutFriendlyURL(
@@ -252,7 +252,7 @@ public interface LayoutFriendlyURLLocalService extends BaseLocalService,
 	* @param uuid the layout friendly u r l's UUID
 	* @param groupId the primary key of the group
 	* @return the matching layout friendly u r l
-	* @throws PortalException if a matching layout friendly u r l could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching layout friendly u r l could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.LayoutFriendlyURL getLayoutFriendlyURLByUuidAndGroupId(

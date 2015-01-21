@@ -82,7 +82,7 @@ public interface WebsiteLocalService extends BaseLocalService,
 	public com.liferay.portal.model.Website createWebsite(long websiteId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -105,7 +105,7 @@ public interface WebsiteLocalService extends BaseLocalService,
 	*
 	* @param websiteId the primary key of the website
 	* @return the website that was removed
-	* @throws PortalException if a website with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a website with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.Website deleteWebsite(long websiteId)
@@ -218,7 +218,7 @@ public interface WebsiteLocalService extends BaseLocalService,
 	*
 	* @param websiteId the primary key of the website
 	* @return the website
-	* @throws PortalException if a website with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a website with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Website getWebsite(long websiteId)
@@ -230,7 +230,7 @@ public interface WebsiteLocalService extends BaseLocalService,
 	* @param uuid the website's UUID
 	* @param companyId the primary key of the company
 	* @return the matching website
-	* @throws PortalException if a matching website could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching website could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Website getWebsiteByUuidAndCompanyId(

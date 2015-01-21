@@ -123,7 +123,7 @@ public class PasswordPolicyLocalServiceWrapper
 	*
 	* @param passwordPolicy the password policy
 	* @return the password policy that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PasswordPolicy deletePasswordPolicy(
@@ -137,7 +137,7 @@ public class PasswordPolicyLocalServiceWrapper
 	*
 	* @param passwordPolicyId the primary key of the password policy
 	* @return the password policy that was removed
-	* @throws PortalException if a password policy with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a password policy with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.PasswordPolicy deletePasswordPolicy(
@@ -147,7 +147,7 @@ public class PasswordPolicyLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -347,7 +347,7 @@ public class PasswordPolicyLocalServiceWrapper
 	*
 	* @param passwordPolicyId the primary key of the password policy
 	* @return the password policy
-	* @throws PortalException if a password policy with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a password policy with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.PasswordPolicy getPasswordPolicy(
@@ -368,7 +368,7 @@ public class PasswordPolicyLocalServiceWrapper
 	* @param uuid the password policy's UUID
 	* @param companyId the primary key of the company
 	* @return the matching password policy
-	* @throws PortalException if a matching password policy could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching password policy could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.PasswordPolicy getPasswordPolicyByUuidAndCompanyId(

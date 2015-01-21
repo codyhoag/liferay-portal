@@ -114,7 +114,7 @@ public class TeamLocalServiceWrapper implements TeamLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -128,7 +128,7 @@ public class TeamLocalServiceWrapper implements TeamLocalService,
 	*
 	* @param team the team
 	* @return the team that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.Team deleteTeam(
@@ -142,7 +142,7 @@ public class TeamLocalServiceWrapper implements TeamLocalService,
 	*
 	* @param teamId the primary key of the team
 	* @return the team that was removed
-	* @throws PortalException if a team with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a team with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Team deleteTeam(long teamId)
@@ -328,7 +328,7 @@ public class TeamLocalServiceWrapper implements TeamLocalService,
 	*
 	* @param teamId the primary key of the team
 	* @return the team
-	* @throws PortalException if a team with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a team with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Team getTeam(long teamId)

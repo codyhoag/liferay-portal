@@ -91,7 +91,7 @@ public interface SCLicenseLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -103,7 +103,7 @@ public interface SCLicenseLocalService extends BaseLocalService,
 	*
 	* @param licenseId the primary key of the s c license
 	* @return the s c license that was removed
-	* @throws PortalException if a s c license with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a s c license with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.softwarecatalog.model.SCLicense deleteSCLicense(
@@ -252,7 +252,7 @@ public interface SCLicenseLocalService extends BaseLocalService,
 	*
 	* @param licenseId the primary key of the s c license
 	* @return the s c license
-	* @throws PortalException if a s c license with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a s c license with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.softwarecatalog.model.SCLicense getSCLicense(

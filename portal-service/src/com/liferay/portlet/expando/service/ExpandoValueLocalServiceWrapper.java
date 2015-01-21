@@ -535,7 +535,7 @@ public class ExpandoValueLocalServiceWrapper implements ExpandoValueLocalService
 	*
 	* @param valueId the primary key of the expando value
 	* @return the expando value that was removed
-	* @throws PortalException if a expando value with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a expando value with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.expando.model.ExpandoValue deleteExpandoValue(
@@ -545,7 +545,7 @@ public class ExpandoValueLocalServiceWrapper implements ExpandoValueLocalService
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -1275,7 +1275,7 @@ public class ExpandoValueLocalServiceWrapper implements ExpandoValueLocalService
 	*
 	* @param valueId the primary key of the expando value
 	* @return the expando value
-	* @throws PortalException if a expando value with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a expando value with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.expando.model.ExpandoValue getExpandoValue(

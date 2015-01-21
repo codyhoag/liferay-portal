@@ -64,7 +64,7 @@ public class RatingsStatsLocalServiceWrapper implements RatingsStatsLocalService
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -90,7 +90,7 @@ public class RatingsStatsLocalServiceWrapper implements RatingsStatsLocalService
 	*
 	* @param statsId the primary key of the ratings stats
 	* @return the ratings stats that was removed
-	* @throws PortalException if a ratings stats with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a ratings stats with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.ratings.model.RatingsStats deleteRatingsStats(
@@ -222,7 +222,7 @@ public class RatingsStatsLocalServiceWrapper implements RatingsStatsLocalService
 	*
 	* @param statsId the primary key of the ratings stats
 	* @return the ratings stats
-	* @throws PortalException if a ratings stats with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a ratings stats with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.ratings.model.RatingsStats getRatingsStats(

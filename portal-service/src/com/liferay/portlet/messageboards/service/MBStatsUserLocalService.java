@@ -85,7 +85,7 @@ public interface MBStatsUserLocalService extends BaseLocalService,
 	*
 	* @param statsUserId the primary key of the message boards stats user
 	* @return the message boards stats user that was removed
-	* @throws PortalException if a message boards stats user with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards stats user with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.messageboards.model.MBStatsUser deleteMBStatsUser(
@@ -93,7 +93,7 @@ public interface MBStatsUserLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -197,7 +197,7 @@ public interface MBStatsUserLocalService extends BaseLocalService,
 	*
 	* @param statsUserId the primary key of the message boards stats user
 	* @return the message boards stats user
-	* @throws PortalException if a message boards stats user with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards stats user with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.messageboards.model.MBStatsUser getMBStatsUser(

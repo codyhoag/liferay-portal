@@ -83,7 +83,7 @@ public class SystemEventLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -107,7 +107,7 @@ public class SystemEventLocalServiceUtil {
 	*
 	* @param systemEventId the primary key of the system event
 	* @return the system event that was removed
-	* @throws PortalException if a system event with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a system event with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.SystemEvent deleteSystemEvent(
 		long systemEventId)
@@ -235,7 +235,7 @@ public class SystemEventLocalServiceUtil {
 	*
 	* @param systemEventId the primary key of the system event
 	* @return the system event
-	* @throws PortalException if a system event with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a system event with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.SystemEvent getSystemEvent(
 		long systemEventId)

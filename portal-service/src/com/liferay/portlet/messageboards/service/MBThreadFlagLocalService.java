@@ -88,7 +88,7 @@ public interface MBThreadFlagLocalService extends BaseLocalService,
 	*
 	* @param threadFlagId the primary key of the message boards thread flag
 	* @return the message boards thread flag that was removed
-	* @throws PortalException if a message boards thread flag with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards thread flag with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.messageboards.model.MBThreadFlag deleteMBThreadFlag(
@@ -96,7 +96,7 @@ public interface MBThreadFlagLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -213,7 +213,7 @@ public interface MBThreadFlagLocalService extends BaseLocalService,
 	*
 	* @param threadFlagId the primary key of the message boards thread flag
 	* @return the message boards thread flag
-	* @throws PortalException if a message boards thread flag with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards thread flag with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.messageboards.model.MBThreadFlag getMBThreadFlag(
@@ -226,7 +226,7 @@ public interface MBThreadFlagLocalService extends BaseLocalService,
 	* @param uuid the message boards thread flag's UUID
 	* @param groupId the primary key of the group
 	* @return the matching message boards thread flag
-	* @throws PortalException if a matching message boards thread flag could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching message boards thread flag could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.messageboards.model.MBThreadFlag getMBThreadFlagByUuidAndGroupId(

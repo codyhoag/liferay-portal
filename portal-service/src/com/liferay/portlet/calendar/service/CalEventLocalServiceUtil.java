@@ -157,7 +157,7 @@ public class CalEventLocalServiceUtil {
 	*
 	* @param eventId the primary key of the cal event
 	* @return the cal event that was removed
-	* @throws PortalException if a cal event with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a cal event with the primary key could not be found
 	*/
 	public static com.liferay.portlet.calendar.model.CalEvent deleteCalEvent(
 		long eventId)
@@ -183,7 +183,7 @@ public class CalEventLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -322,7 +322,7 @@ public class CalEventLocalServiceUtil {
 	*
 	* @param eventId the primary key of the cal event
 	* @return the cal event
-	* @throws PortalException if a cal event with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a cal event with the primary key could not be found
 	*/
 	public static com.liferay.portlet.calendar.model.CalEvent getCalEvent(
 		long eventId)
@@ -336,7 +336,7 @@ public class CalEventLocalServiceUtil {
 	* @param uuid the cal event's UUID
 	* @param groupId the primary key of the group
 	* @return the matching cal event
-	* @throws PortalException if a matching cal event could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching cal event could not be found
 	*/
 	public static com.liferay.portlet.calendar.model.CalEvent getCalEventByUuidAndGroupId(
 		java.lang.String uuid, long groupId)

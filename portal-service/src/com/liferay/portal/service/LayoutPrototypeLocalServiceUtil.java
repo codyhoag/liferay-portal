@@ -110,7 +110,7 @@ public class LayoutPrototypeLocalServiceUtil {
 	*
 	* @param layoutPrototype the layout prototype
 	* @return the layout prototype that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.LayoutPrototype deleteLayoutPrototype(
 		com.liferay.portal.model.LayoutPrototype layoutPrototype)
@@ -123,7 +123,7 @@ public class LayoutPrototypeLocalServiceUtil {
 	*
 	* @param layoutPrototypeId the primary key of the layout prototype
 	* @return the layout prototype that was removed
-	* @throws PortalException if a layout prototype with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout prototype with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.LayoutPrototype deleteLayoutPrototype(
 		long layoutPrototypeId)
@@ -137,7 +137,7 @@ public class LayoutPrototypeLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -264,7 +264,7 @@ public class LayoutPrototypeLocalServiceUtil {
 	*
 	* @param layoutPrototypeId the primary key of the layout prototype
 	* @return the layout prototype
-	* @throws PortalException if a layout prototype with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout prototype with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.LayoutPrototype getLayoutPrototype(
 		long layoutPrototypeId)
@@ -289,7 +289,7 @@ public class LayoutPrototypeLocalServiceUtil {
 	* @param uuid the layout prototype's UUID
 	* @param companyId the primary key of the company
 	* @return the matching layout prototype
-	* @throws PortalException if a matching layout prototype could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching layout prototype could not be found
 	*/
 	public static com.liferay.portal.model.LayoutPrototype getLayoutPrototypeByUuidAndCompanyId(
 		java.lang.String uuid, long companyId)

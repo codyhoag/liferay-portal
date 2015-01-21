@@ -134,7 +134,7 @@ public interface CalEventLocalService extends BaseLocalService,
 	*
 	* @param eventId the primary key of the cal event
 	* @return the cal event that was removed
-	* @throws PortalException if a cal event with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a cal event with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.calendar.model.CalEvent deleteCalEvent(
@@ -154,7 +154,7 @@ public interface CalEventLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -268,7 +268,7 @@ public interface CalEventLocalService extends BaseLocalService,
 	*
 	* @param eventId the primary key of the cal event
 	* @return the cal event
-	* @throws PortalException if a cal event with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a cal event with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.calendar.model.CalEvent getCalEvent(long eventId)
@@ -280,7 +280,7 @@ public interface CalEventLocalService extends BaseLocalService,
 	* @param uuid the cal event's UUID
 	* @param groupId the primary key of the group
 	* @return the matching cal event
-	* @throws PortalException if a matching cal event could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching cal event could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.calendar.model.CalEvent getCalEventByUuidAndGroupId(

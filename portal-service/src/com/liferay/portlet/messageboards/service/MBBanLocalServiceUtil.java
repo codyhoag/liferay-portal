@@ -102,7 +102,7 @@ public class MBBanLocalServiceUtil {
 	*
 	* @param banId the primary key of the message boards ban
 	* @return the message boards ban that was removed
-	* @throws PortalException if a message boards ban with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards ban with the primary key could not be found
 	*/
 	public static com.liferay.portlet.messageboards.model.MBBan deleteMBBan(
 		long banId) throws com.liferay.portal.kernel.exception.PortalException {
@@ -121,7 +121,7 @@ public class MBBanLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -260,7 +260,7 @@ public class MBBanLocalServiceUtil {
 	*
 	* @param banId the primary key of the message boards ban
 	* @return the message boards ban
-	* @throws PortalException if a message boards ban with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards ban with the primary key could not be found
 	*/
 	public static com.liferay.portlet.messageboards.model.MBBan getMBBan(
 		long banId) throws com.liferay.portal.kernel.exception.PortalException {
@@ -273,7 +273,7 @@ public class MBBanLocalServiceUtil {
 	* @param uuid the message boards ban's UUID
 	* @param groupId the primary key of the group
 	* @return the matching message boards ban
-	* @throws PortalException if a matching message boards ban could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching message boards ban could not be found
 	*/
 	public static com.liferay.portlet.messageboards.model.MBBan getMBBanByUuidAndGroupId(
 		java.lang.String uuid, long groupId)

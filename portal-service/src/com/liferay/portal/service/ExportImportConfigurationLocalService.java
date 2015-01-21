@@ -86,7 +86,7 @@ public interface ExportImportConfigurationLocalService extends BaseLocalService,
 	*
 	* @param exportImportConfiguration the export import configuration
 	* @return the export import configuration that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	@com.liferay.portal.kernel.systemevent.SystemEvent(type = SystemEventConstants.TYPE_DELETE)
@@ -99,7 +99,7 @@ public interface ExportImportConfigurationLocalService extends BaseLocalService,
 	*
 	* @param exportImportConfigurationId the primary key of the export import configuration
 	* @return the export import configuration that was removed
-	* @throws PortalException if a export import configuration with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a export import configuration with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.ExportImportConfiguration deleteExportImportConfiguration(
@@ -110,7 +110,7 @@ public interface ExportImportConfigurationLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -201,7 +201,7 @@ public interface ExportImportConfigurationLocalService extends BaseLocalService,
 	*
 	* @param exportImportConfigurationId the primary key of the export import configuration
 	* @return the export import configuration
-	* @throws PortalException if a export import configuration with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a export import configuration with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.ExportImportConfiguration getExportImportConfiguration(

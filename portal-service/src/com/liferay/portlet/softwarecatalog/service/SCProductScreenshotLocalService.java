@@ -68,7 +68,7 @@ public interface SCProductScreenshotLocalService extends BaseLocalService,
 		long productScreenshotId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -87,7 +87,7 @@ public interface SCProductScreenshotLocalService extends BaseLocalService,
 	*
 	* @param productScreenshotId the primary key of the s c product screenshot
 	* @return the s c product screenshot that was removed
-	* @throws PortalException if a s c product screenshot with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a s c product screenshot with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.softwarecatalog.model.SCProductScreenshot deleteSCProductScreenshot(
@@ -213,7 +213,7 @@ public interface SCProductScreenshotLocalService extends BaseLocalService,
 	*
 	* @param productScreenshotId the primary key of the s c product screenshot
 	* @return the s c product screenshot
-	* @throws PortalException if a s c product screenshot with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a s c product screenshot with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.softwarecatalog.model.SCProductScreenshot getSCProductScreenshot(

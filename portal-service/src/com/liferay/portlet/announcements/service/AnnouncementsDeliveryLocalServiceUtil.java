@@ -85,7 +85,7 @@ public class AnnouncementsDeliveryLocalServiceUtil {
 	*
 	* @param deliveryId the primary key of the announcements delivery
 	* @return the announcements delivery that was removed
-	* @throws PortalException if a announcements delivery with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a announcements delivery with the primary key could not be found
 	*/
 	public static com.liferay.portlet.announcements.model.AnnouncementsDelivery deleteAnnouncementsDelivery(
 		long deliveryId)
@@ -112,7 +112,7 @@ public class AnnouncementsDeliveryLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -237,7 +237,7 @@ public class AnnouncementsDeliveryLocalServiceUtil {
 	*
 	* @param deliveryId the primary key of the announcements delivery
 	* @return the announcements delivery
-	* @throws PortalException if a announcements delivery with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a announcements delivery with the primary key could not be found
 	*/
 	public static com.liferay.portlet.announcements.model.AnnouncementsDelivery getAnnouncementsDelivery(
 		long deliveryId)

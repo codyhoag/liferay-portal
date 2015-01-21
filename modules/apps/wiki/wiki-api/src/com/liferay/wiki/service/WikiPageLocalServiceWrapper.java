@@ -229,7 +229,7 @@ public class WikiPageLocalServiceWrapper implements WikiPageLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -257,7 +257,7 @@ public class WikiPageLocalServiceWrapper implements WikiPageLocalService,
 	*
 	* @param pageId the primary key of the wiki page
 	* @return the wiki page that was removed
-	* @throws PortalException if a wiki page with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a wiki page with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.wiki.model.WikiPage deleteWikiPage(long pageId)
@@ -788,7 +788,7 @@ public class WikiPageLocalServiceWrapper implements WikiPageLocalService,
 	*
 	* @param pageId the primary key of the wiki page
 	* @return the wiki page
-	* @throws PortalException if a wiki page with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a wiki page with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.wiki.model.WikiPage getWikiPage(long pageId)
@@ -802,7 +802,7 @@ public class WikiPageLocalServiceWrapper implements WikiPageLocalService,
 	* @param uuid the wiki page's UUID
 	* @param groupId the primary key of the group
 	* @return the matching wiki page
-	* @throws PortalException if a matching wiki page could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching wiki page could not be found
 	*/
 	@Override
 	public com.liferay.wiki.model.WikiPage getWikiPageByUuidAndGroupId(

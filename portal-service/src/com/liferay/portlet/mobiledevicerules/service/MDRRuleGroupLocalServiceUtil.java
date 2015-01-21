@@ -104,7 +104,7 @@ public class MDRRuleGroupLocalServiceUtil {
 	*
 	* @param ruleGroupId the primary key of the m d r rule group
 	* @return the m d r rule group that was removed
-	* @throws PortalException if a m d r rule group with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a m d r rule group with the primary key could not be found
 	*/
 	public static com.liferay.portlet.mobiledevicerules.model.MDRRuleGroup deleteMDRRuleGroup(
 		long ruleGroupId)
@@ -113,7 +113,7 @@ public class MDRRuleGroupLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -257,7 +257,7 @@ public class MDRRuleGroupLocalServiceUtil {
 	*
 	* @param ruleGroupId the primary key of the m d r rule group
 	* @return the m d r rule group
-	* @throws PortalException if a m d r rule group with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a m d r rule group with the primary key could not be found
 	*/
 	public static com.liferay.portlet.mobiledevicerules.model.MDRRuleGroup getMDRRuleGroup(
 		long ruleGroupId)
@@ -271,7 +271,7 @@ public class MDRRuleGroupLocalServiceUtil {
 	* @param uuid the m d r rule group's UUID
 	* @param groupId the primary key of the group
 	* @return the matching m d r rule group
-	* @throws PortalException if a matching m d r rule group could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching m d r rule group could not be found
 	*/
 	public static com.liferay.portlet.mobiledevicerules.model.MDRRuleGroup getMDRRuleGroupByUuidAndGroupId(
 		java.lang.String uuid, long groupId)

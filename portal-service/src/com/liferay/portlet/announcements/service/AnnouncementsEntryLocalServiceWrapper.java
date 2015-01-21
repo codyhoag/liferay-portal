@@ -122,7 +122,7 @@ public class AnnouncementsEntryLocalServiceWrapper
 	*
 	* @param entryId the primary key of the announcements entry
 	* @return the announcements entry that was removed
-	* @throws PortalException if a announcements entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a announcements entry with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.announcements.model.AnnouncementsEntry deleteAnnouncementsEntry(
@@ -145,7 +145,7 @@ public class AnnouncementsEntryLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -298,7 +298,7 @@ public class AnnouncementsEntryLocalServiceWrapper
 	*
 	* @param entryId the primary key of the announcements entry
 	* @return the announcements entry
-	* @throws PortalException if a announcements entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a announcements entry with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.announcements.model.AnnouncementsEntry getAnnouncementsEntry(
@@ -313,7 +313,7 @@ public class AnnouncementsEntryLocalServiceWrapper
 	* @param uuid the announcements entry's UUID
 	* @param companyId the primary key of the company
 	* @return the matching announcements entry
-	* @throws PortalException if a matching announcements entry could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching announcements entry could not be found
 	*/
 	@Override
 	public com.liferay.portlet.announcements.model.AnnouncementsEntry getAnnouncementsEntryByUuidAndCompanyId(

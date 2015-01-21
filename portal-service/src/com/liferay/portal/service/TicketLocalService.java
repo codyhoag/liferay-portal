@@ -69,7 +69,7 @@ public interface TicketLocalService extends BaseLocalService,
 	public com.liferay.portal.model.Ticket createTicket(long ticketId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -91,7 +91,7 @@ public interface TicketLocalService extends BaseLocalService,
 	*
 	* @param ticketId the primary key of the ticket
 	* @return the ticket that was removed
-	* @throws PortalException if a ticket with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a ticket with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.Ticket deleteTicket(long ticketId)
@@ -193,7 +193,7 @@ public interface TicketLocalService extends BaseLocalService,
 	*
 	* @param ticketId the primary key of the ticket
 	* @return the ticket
-	* @throws PortalException if a ticket with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a ticket with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Ticket getTicket(long ticketId)

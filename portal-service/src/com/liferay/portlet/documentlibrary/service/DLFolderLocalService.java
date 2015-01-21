@@ -140,7 +140,7 @@ public interface DLFolderLocalService extends BaseLocalService,
 	*
 	* @param folderId the primary key of the document library folder
 	* @return the document library folder that was removed
-	* @throws PortalException if a document library folder with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library folder with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.documentlibrary.model.DLFolder deleteDLFolder(
@@ -176,7 +176,7 @@ public interface DLFolderLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -318,7 +318,7 @@ public interface DLFolderLocalService extends BaseLocalService,
 	*
 	* @param folderId the primary key of the document library folder
 	* @return the document library folder
-	* @throws PortalException if a document library folder with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library folder with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.documentlibrary.model.DLFolder getDLFolder(
@@ -331,7 +331,7 @@ public interface DLFolderLocalService extends BaseLocalService,
 	* @param uuid the document library folder's UUID
 	* @param groupId the primary key of the group
 	* @return the matching document library folder
-	* @throws PortalException if a matching document library folder could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching document library folder could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.documentlibrary.model.DLFolder getDLFolderByUuidAndGroupId(

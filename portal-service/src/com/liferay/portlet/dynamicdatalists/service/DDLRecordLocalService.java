@@ -102,7 +102,7 @@ public interface DDLRecordLocalService extends BaseLocalService,
 	*
 	* @param recordId the primary key of the d d l record
 	* @return the d d l record that was removed
-	* @throws PortalException if a d d l record with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d l record with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.dynamicdatalists.model.DDLRecord deleteDDLRecord(
@@ -110,7 +110,7 @@ public interface DDLRecordLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -241,7 +241,7 @@ public interface DDLRecordLocalService extends BaseLocalService,
 	*
 	* @param recordId the primary key of the d d l record
 	* @return the d d l record
-	* @throws PortalException if a d d l record with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d l record with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.dynamicdatalists.model.DDLRecord getDDLRecord(
@@ -254,7 +254,7 @@ public interface DDLRecordLocalService extends BaseLocalService,
 	* @param uuid the d d l record's UUID
 	* @param groupId the primary key of the group
 	* @return the matching d d l record
-	* @throws PortalException if a matching d d l record could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching d d l record could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.dynamicdatalists.model.DDLRecord getDDLRecordByUuidAndGroupId(

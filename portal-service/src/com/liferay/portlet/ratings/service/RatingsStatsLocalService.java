@@ -71,7 +71,7 @@ public interface RatingsStatsLocalService extends BaseLocalService,
 		long statsId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -93,7 +93,7 @@ public interface RatingsStatsLocalService extends BaseLocalService,
 	*
 	* @param statsId the primary key of the ratings stats
 	* @return the ratings stats that was removed
-	* @throws PortalException if a ratings stats with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a ratings stats with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.ratings.model.RatingsStats deleteRatingsStats(
@@ -192,7 +192,7 @@ public interface RatingsStatsLocalService extends BaseLocalService,
 	*
 	* @param statsId the primary key of the ratings stats
 	* @return the ratings stats
-	* @throws PortalException if a ratings stats with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a ratings stats with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.ratings.model.RatingsStats getRatingsStats(

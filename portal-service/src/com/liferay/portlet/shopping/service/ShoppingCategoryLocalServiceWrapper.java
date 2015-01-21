@@ -122,7 +122,7 @@ public class ShoppingCategoryLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -136,7 +136,7 @@ public class ShoppingCategoryLocalServiceWrapper
 	*
 	* @param categoryId the primary key of the shopping category
 	* @return the shopping category that was removed
-	* @throws PortalException if a shopping category with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shopping category with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.shopping.model.ShoppingCategory deleteShoppingCategory(
@@ -356,7 +356,7 @@ public class ShoppingCategoryLocalServiceWrapper
 	*
 	* @param categoryId the primary key of the shopping category
 	* @return the shopping category
-	* @throws PortalException if a shopping category with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shopping category with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.shopping.model.ShoppingCategory getShoppingCategory(

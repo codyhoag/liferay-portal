@@ -85,7 +85,7 @@ public class JournalArticleResourceLocalServiceUtil {
 	*
 	* @param resourcePrimKey the primary key of the journal article resource
 	* @return the journal article resource that was removed
-	* @throws PortalException if a journal article resource with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal article resource with the primary key could not be found
 	*/
 	public static com.liferay.portlet.journal.model.JournalArticleResource deleteJournalArticleResource(
 		long resourcePrimKey)
@@ -94,7 +94,7 @@ public class JournalArticleResourceLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -247,7 +247,7 @@ public class JournalArticleResourceLocalServiceUtil {
 	*
 	* @param resourcePrimKey the primary key of the journal article resource
 	* @return the journal article resource
-	* @throws PortalException if a journal article resource with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal article resource with the primary key could not be found
 	*/
 	public static com.liferay.portlet.journal.model.JournalArticleResource getJournalArticleResource(
 		long resourcePrimKey)
@@ -261,7 +261,7 @@ public class JournalArticleResourceLocalServiceUtil {
 	* @param uuid the journal article resource's UUID
 	* @param groupId the primary key of the group
 	* @return the matching journal article resource
-	* @throws PortalException if a matching journal article resource could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching journal article resource could not be found
 	*/
 	public static com.liferay.portlet.journal.model.JournalArticleResource getJournalArticleResourceByUuidAndGroupId(
 		java.lang.String uuid, long groupId)

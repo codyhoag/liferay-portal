@@ -113,7 +113,7 @@ public class TeamLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -126,7 +126,7 @@ public class TeamLocalServiceUtil {
 	*
 	* @param team the team
 	* @return the team that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.Team deleteTeam(
 		com.liferay.portal.model.Team team)
@@ -139,7 +139,7 @@ public class TeamLocalServiceUtil {
 	*
 	* @param teamId the primary key of the team
 	* @return the team that was removed
-	* @throws PortalException if a team with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a team with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Team deleteTeam(long teamId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -304,7 +304,7 @@ public class TeamLocalServiceUtil {
 	*
 	* @param teamId the primary key of the team
 	* @return the team
-	* @throws PortalException if a team with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a team with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Team getTeam(long teamId)
 		throws com.liferay.portal.kernel.exception.PortalException {

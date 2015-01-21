@@ -56,7 +56,7 @@ public class UserIdMapperLocalServiceWrapper implements UserIdMapperLocalService
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -82,7 +82,7 @@ public class UserIdMapperLocalServiceWrapper implements UserIdMapperLocalService
 	*
 	* @param userIdMapperId the primary key of the user ID mapper
 	* @return the user ID mapper that was removed
-	* @throws PortalException if a user ID mapper with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user ID mapper with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.UserIdMapper deleteUserIdMapper(
@@ -221,7 +221,7 @@ public class UserIdMapperLocalServiceWrapper implements UserIdMapperLocalService
 	*
 	* @param userIdMapperId the primary key of the user ID mapper
 	* @return the user ID mapper
-	* @throws PortalException if a user ID mapper with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user ID mapper with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.UserIdMapper getUserIdMapper(

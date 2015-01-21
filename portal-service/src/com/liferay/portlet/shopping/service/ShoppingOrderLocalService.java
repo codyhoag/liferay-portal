@@ -88,7 +88,7 @@ public interface ShoppingOrderLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -100,7 +100,7 @@ public interface ShoppingOrderLocalService extends BaseLocalService,
 	*
 	* @param orderId the primary key of the shopping order
 	* @return the shopping order that was removed
-	* @throws PortalException if a shopping order with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shopping order with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.shopping.model.ShoppingOrder deleteShoppingOrder(
@@ -227,7 +227,7 @@ public interface ShoppingOrderLocalService extends BaseLocalService,
 	*
 	* @param orderId the primary key of the shopping order
 	* @return the shopping order
-	* @throws PortalException if a shopping order with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shopping order with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.shopping.model.ShoppingOrder getShoppingOrder(

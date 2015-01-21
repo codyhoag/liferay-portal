@@ -87,7 +87,7 @@ public interface MBMailingListLocalService extends BaseLocalService,
 	*
 	* @param mailingListId the primary key of the message boards mailing list
 	* @return the message boards mailing list that was removed
-	* @throws PortalException if a message boards mailing list with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards mailing list with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.messageboards.model.MBMailingList deleteMBMailingList(
@@ -112,7 +112,7 @@ public interface MBMailingListLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -223,7 +223,7 @@ public interface MBMailingListLocalService extends BaseLocalService,
 	*
 	* @param mailingListId the primary key of the message boards mailing list
 	* @return the message boards mailing list
-	* @throws PortalException if a message boards mailing list with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards mailing list with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.messageboards.model.MBMailingList getMBMailingList(
@@ -236,7 +236,7 @@ public interface MBMailingListLocalService extends BaseLocalService,
 	* @param uuid the message boards mailing list's UUID
 	* @param groupId the primary key of the group
 	* @return the matching message boards mailing list
-	* @throws PortalException if a matching message boards mailing list could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching message boards mailing list could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.messageboards.model.MBMailingList getMBMailingListByUuidAndGroupId(

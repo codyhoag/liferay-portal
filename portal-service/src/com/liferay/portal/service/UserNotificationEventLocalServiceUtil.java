@@ -123,7 +123,7 @@ public class UserNotificationEventLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -147,7 +147,7 @@ public class UserNotificationEventLocalServiceUtil {
 	*
 	* @param userNotificationEventId the primary key of the user notification event
 	* @return the user notification event that was removed
-	* @throws PortalException if a user notification event with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user notification event with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.UserNotificationEvent deleteUserNotificationEvent(
 		long userNotificationEventId)
@@ -451,7 +451,7 @@ public class UserNotificationEventLocalServiceUtil {
 	*
 	* @param userNotificationEventId the primary key of the user notification event
 	* @return the user notification event
-	* @throws PortalException if a user notification event with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user notification event with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.UserNotificationEvent getUserNotificationEvent(
 		long userNotificationEventId)
@@ -465,7 +465,7 @@ public class UserNotificationEventLocalServiceUtil {
 	* @param uuid the user notification event's UUID
 	* @param companyId the primary key of the company
 	* @return the matching user notification event
-	* @throws PortalException if a matching user notification event could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching user notification event could not be found
 	*/
 	public static com.liferay.portal.model.UserNotificationEvent getUserNotificationEventByUuidAndCompanyId(
 		java.lang.String uuid, long companyId)

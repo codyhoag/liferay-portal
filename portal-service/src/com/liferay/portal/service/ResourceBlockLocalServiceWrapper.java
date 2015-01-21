@@ -145,7 +145,7 @@ public class ResourceBlockLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -171,7 +171,7 @@ public class ResourceBlockLocalServiceWrapper
 	*
 	* @param resourceBlockId the primary key of the resource block
 	* @return the resource block that was removed
-	* @throws PortalException if a resource block with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a resource block with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.ResourceBlock deleteResourceBlock(
@@ -351,7 +351,7 @@ public class ResourceBlockLocalServiceWrapper
 	*
 	* @param resourceBlockId the primary key of the resource block
 	* @return the resource block
-	* @throws PortalException if a resource block with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a resource block with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.ResourceBlock getResourceBlock(

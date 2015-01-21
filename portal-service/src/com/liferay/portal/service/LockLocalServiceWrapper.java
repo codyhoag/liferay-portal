@@ -75,7 +75,7 @@ public class LockLocalServiceWrapper implements LockLocalService,
 	*
 	* @param lockId the primary key of the lock
 	* @return the lock that was removed
-	* @throws PortalException if a lock with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a lock with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Lock deleteLock(long lockId)
@@ -84,7 +84,7 @@ public class LockLocalServiceWrapper implements LockLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -228,7 +228,7 @@ public class LockLocalServiceWrapper implements LockLocalService,
 	*
 	* @param lockId the primary key of the lock
 	* @return the lock
-	* @throws PortalException if a lock with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a lock with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Lock getLock(long lockId)
@@ -242,7 +242,7 @@ public class LockLocalServiceWrapper implements LockLocalService,
 	* @param uuid the lock's UUID
 	* @param companyId the primary key of the company
 	* @return the matching lock
-	* @throws PortalException if a matching lock could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching lock could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Lock getLockByUuidAndCompanyId(

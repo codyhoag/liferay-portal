@@ -101,7 +101,7 @@ public interface LayoutPrototypeLocalService extends BaseLocalService,
 	*
 	* @param layoutPrototype the layout prototype
 	* @return the layout prototype that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	@com.liferay.portal.kernel.systemevent.SystemEvent(action = SystemEventConstants.ACTION_SKIP, type = SystemEventConstants.TYPE_DELETE)
@@ -114,7 +114,7 @@ public interface LayoutPrototypeLocalService extends BaseLocalService,
 	*
 	* @param layoutPrototypeId the primary key of the layout prototype
 	* @return the layout prototype that was removed
-	* @throws PortalException if a layout prototype with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout prototype with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.LayoutPrototype deleteLayoutPrototype(
@@ -125,7 +125,7 @@ public interface LayoutPrototypeLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -231,7 +231,7 @@ public interface LayoutPrototypeLocalService extends BaseLocalService,
 	*
 	* @param layoutPrototypeId the primary key of the layout prototype
 	* @return the layout prototype
-	* @throws PortalException if a layout prototype with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout prototype with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.LayoutPrototype getLayoutPrototype(
@@ -254,7 +254,7 @@ public interface LayoutPrototypeLocalService extends BaseLocalService,
 	* @param uuid the layout prototype's UUID
 	* @param companyId the primary key of the company
 	* @return the matching layout prototype
-	* @throws PortalException if a matching layout prototype could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching layout prototype could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.LayoutPrototype getLayoutPrototypeByUuidAndCompanyId(

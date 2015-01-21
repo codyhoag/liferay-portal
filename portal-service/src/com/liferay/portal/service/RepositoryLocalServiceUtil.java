@@ -99,7 +99,7 @@ public class RepositoryLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -127,7 +127,7 @@ public class RepositoryLocalServiceUtil {
 	*
 	* @param repositoryId the primary key of the repository
 	* @return the repository that was removed
-	* @throws PortalException if a repository with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a repository with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Repository deleteRepository(
 		long repositoryId)
@@ -359,7 +359,7 @@ public class RepositoryLocalServiceUtil {
 	*
 	* @param repositoryId the primary key of the repository
 	* @return the repository
-	* @throws PortalException if a repository with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a repository with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Repository getRepository(
 		long repositoryId)
@@ -373,7 +373,7 @@ public class RepositoryLocalServiceUtil {
 	* @param uuid the repository's UUID
 	* @param groupId the primary key of the group
 	* @return the matching repository
-	* @throws PortalException if a matching repository could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching repository could not be found
 	*/
 	public static com.liferay.portal.model.Repository getRepositoryByUuidAndGroupId(
 		java.lang.String uuid, long groupId)

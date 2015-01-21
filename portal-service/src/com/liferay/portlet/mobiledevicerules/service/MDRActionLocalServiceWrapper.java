@@ -103,7 +103,7 @@ public class MDRActionLocalServiceWrapper implements MDRActionLocalService,
 	*
 	* @param actionId the primary key of the m d r action
 	* @return the m d r action that was removed
-	* @throws PortalException if a m d r action with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a m d r action with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.mobiledevicerules.model.MDRAction deleteMDRAction(
@@ -125,7 +125,7 @@ public class MDRActionLocalServiceWrapper implements MDRActionLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -294,7 +294,7 @@ public class MDRActionLocalServiceWrapper implements MDRActionLocalService,
 	*
 	* @param actionId the primary key of the m d r action
 	* @return the m d r action
-	* @throws PortalException if a m d r action with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a m d r action with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.mobiledevicerules.model.MDRAction getMDRAction(
@@ -309,7 +309,7 @@ public class MDRActionLocalServiceWrapper implements MDRActionLocalService,
 	* @param uuid the m d r action's UUID
 	* @param groupId the primary key of the group
 	* @return the matching m d r action
-	* @throws PortalException if a matching m d r action could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching m d r action could not be found
 	*/
 	@Override
 	public com.liferay.portlet.mobiledevicerules.model.MDRAction getMDRActionByUuidAndGroupId(

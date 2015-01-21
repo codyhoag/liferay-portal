@@ -86,7 +86,7 @@ public class AssetCategoryPropertyLocalServiceUtil {
 	*
 	* @param categoryPropertyId the primary key of the asset category property
 	* @return the asset category property that was removed
-	* @throws PortalException if a asset category property with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a asset category property with the primary key could not be found
 	*/
 	public static com.liferay.portlet.asset.model.AssetCategoryProperty deleteAssetCategoryProperty(
 		long categoryPropertyId)
@@ -109,7 +109,7 @@ public class AssetCategoryPropertyLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -234,7 +234,7 @@ public class AssetCategoryPropertyLocalServiceUtil {
 	*
 	* @param categoryPropertyId the primary key of the asset category property
 	* @return the asset category property
-	* @throws PortalException if a asset category property with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a asset category property with the primary key could not be found
 	*/
 	public static com.liferay.portlet.asset.model.AssetCategoryProperty getAssetCategoryProperty(
 		long categoryPropertyId)

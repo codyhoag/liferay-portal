@@ -60,7 +60,7 @@ public class ShardLocalServiceWrapper implements ShardLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -86,7 +86,7 @@ public class ShardLocalServiceWrapper implements ShardLocalService,
 	*
 	* @param shardId the primary key of the shard
 	* @return the shard that was removed
-	* @throws PortalException if a shard with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shard with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Shard deleteShard(long shardId)
@@ -217,7 +217,7 @@ public class ShardLocalServiceWrapper implements ShardLocalService,
 	*
 	* @param shardId the primary key of the shard
 	* @return the shard
-	* @throws PortalException if a shard with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shard with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Shard getShard(long shardId)

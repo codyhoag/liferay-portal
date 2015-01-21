@@ -93,14 +93,14 @@ public interface ContactLocalService extends BaseLocalService,
 	*
 	* @param contactId the primary key of the contact
 	* @return the contact that was removed
-	* @throws PortalException if a contact with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a contact with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.Contact deleteContact(long contactId)
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -190,7 +190,7 @@ public interface ContactLocalService extends BaseLocalService,
 	*
 	* @param contactId the primary key of the contact
 	* @return the contact
-	* @throws PortalException if a contact with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a contact with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Contact getContact(long contactId)

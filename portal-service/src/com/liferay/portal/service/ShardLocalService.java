@@ -67,7 +67,7 @@ public interface ShardLocalService extends BaseLocalService,
 	public com.liferay.portal.model.Shard createShard(long shardId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -89,7 +89,7 @@ public interface ShardLocalService extends BaseLocalService,
 	*
 	* @param shardId the primary key of the shard
 	* @return the shard that was removed
-	* @throws PortalException if a shard with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shard with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.Shard deleteShard(long shardId)
@@ -189,7 +189,7 @@ public interface ShardLocalService extends BaseLocalService,
 	*
 	* @param shardId the primary key of the shard
 	* @return the shard
-	* @throws PortalException if a shard with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shard with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Shard getShard(long shardId)

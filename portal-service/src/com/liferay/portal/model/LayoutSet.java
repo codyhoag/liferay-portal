@@ -52,7 +52,7 @@ public interface LayoutSet extends LayoutSetModel, PersistedModel {
 	* Returns the layout set's group.
 	*
 	* @return the layout set's group
-	* @throws PortalException if a group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group with the primary key could not be
 	found
 	*/
 	public com.liferay.portal.model.Group getGroup()
@@ -68,7 +68,7 @@ public interface LayoutSet extends LayoutSetModel, PersistedModel {
 	*
 	* @return the layout set prototype's ID, or <code>0</code> if it has no
 	layout set prototype
-	* @throws PortalException if a matching layout set prototype could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching layout set prototype could not be
 	found
 	*/
 	public long getLayoutSetPrototypeId()

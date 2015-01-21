@@ -65,7 +65,7 @@ public class ResourceTypePermissionLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -89,7 +89,7 @@ public class ResourceTypePermissionLocalServiceUtil {
 	*
 	* @param resourceTypePermissionId the primary key of the resource type permission
 	* @return the resource type permission that was removed
-	* @throws PortalException if a resource type permission with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a resource type permission with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.ResourceTypePermission deleteResourceTypePermission(
 		long resourceTypePermissionId)
@@ -229,7 +229,7 @@ public class ResourceTypePermissionLocalServiceUtil {
 	*
 	* @param resourceTypePermissionId the primary key of the resource type permission
 	* @return the resource type permission
-	* @throws PortalException if a resource type permission with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a resource type permission with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.ResourceTypePermission getResourceTypePermission(
 		long resourceTypePermissionId)

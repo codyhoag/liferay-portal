@@ -84,7 +84,7 @@ public class AnnouncementsFlagLocalServiceUtil {
 	*
 	* @param flagId the primary key of the announcements flag
 	* @return the announcements flag that was removed
-	* @throws PortalException if a announcements flag with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a announcements flag with the primary key could not be found
 	*/
 	public static com.liferay.portlet.announcements.model.AnnouncementsFlag deleteAnnouncementsFlag(
 		long flagId) throws com.liferay.portal.kernel.exception.PortalException {
@@ -106,7 +106,7 @@ public class AnnouncementsFlagLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -206,7 +206,7 @@ public class AnnouncementsFlagLocalServiceUtil {
 	*
 	* @param flagId the primary key of the announcements flag
 	* @return the announcements flag
-	* @throws PortalException if a announcements flag with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a announcements flag with the primary key could not be found
 	*/
 	public static com.liferay.portlet.announcements.model.AnnouncementsFlag getAnnouncementsFlag(
 		long flagId) throws com.liferay.portal.kernel.exception.PortalException {

@@ -84,7 +84,7 @@ public interface JournalContentSearchLocalService extends BaseLocalService,
 	*
 	* @param contentSearchId the primary key of the journal content search
 	* @return the journal content search that was removed
-	* @throws PortalException if a journal content search with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal content search with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.journal.model.JournalContentSearch deleteJournalContentSearch(
@@ -107,7 +107,7 @@ public interface JournalContentSearchLocalService extends BaseLocalService,
 	public void deleteOwnerContentSearches(long groupId, boolean privateLayout);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -209,7 +209,7 @@ public interface JournalContentSearchLocalService extends BaseLocalService,
 	*
 	* @param contentSearchId the primary key of the journal content search
 	* @return the journal content search
-	* @throws PortalException if a journal content search with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal content search with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.journal.model.JournalContentSearch getJournalContentSearch(

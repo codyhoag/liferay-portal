@@ -104,7 +104,7 @@ public class DDLRecordLocalServiceWrapper implements DDLRecordLocalService,
 	*
 	* @param recordId the primary key of the d d l record
 	* @return the d d l record that was removed
-	* @throws PortalException if a d d l record with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d l record with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatalists.model.DDLRecord deleteDDLRecord(
@@ -114,7 +114,7 @@ public class DDLRecordLocalServiceWrapper implements DDLRecordLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -295,7 +295,7 @@ public class DDLRecordLocalServiceWrapper implements DDLRecordLocalService,
 	*
 	* @param recordId the primary key of the d d l record
 	* @return the d d l record
-	* @throws PortalException if a d d l record with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d l record with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatalists.model.DDLRecord getDDLRecord(
@@ -310,7 +310,7 @@ public class DDLRecordLocalServiceWrapper implements DDLRecordLocalService,
 	* @param uuid the d d l record's UUID
 	* @param groupId the primary key of the group
 	* @return the matching d d l record
-	* @throws PortalException if a matching d d l record could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching d d l record could not be found
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatalists.model.DDLRecord getDDLRecordByUuidAndGroupId(

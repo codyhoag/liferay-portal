@@ -112,7 +112,7 @@ public interface JournalFeedLocalService extends BaseLocalService,
 	*
 	* @param id the primary key of the journal feed
 	* @return the journal feed that was removed
-	* @throws PortalException if a journal feed with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal feed with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.journal.model.JournalFeed deleteJournalFeed(
@@ -129,7 +129,7 @@ public interface JournalFeedLocalService extends BaseLocalService,
 		com.liferay.portlet.journal.model.JournalFeed journalFeed);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -262,7 +262,7 @@ public interface JournalFeedLocalService extends BaseLocalService,
 	*
 	* @param id the primary key of the journal feed
 	* @return the journal feed
-	* @throws PortalException if a journal feed with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal feed with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.journal.model.JournalFeed getJournalFeed(long id)
@@ -274,7 +274,7 @@ public interface JournalFeedLocalService extends BaseLocalService,
 	* @param uuid the journal feed's UUID
 	* @param groupId the primary key of the group
 	* @return the matching journal feed
-	* @throws PortalException if a matching journal feed could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching journal feed could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.journal.model.JournalFeed getJournalFeedByUuidAndGroupId(

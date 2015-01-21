@@ -70,7 +70,7 @@ public class RatingsEntryLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -83,7 +83,7 @@ public class RatingsEntryLocalServiceUtil {
 	*
 	* @param entryId the primary key of the ratings entry
 	* @return the ratings entry that was removed
-	* @throws PortalException if a ratings entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a ratings entry with the primary key could not be found
 	*/
 	public static com.liferay.portlet.ratings.model.RatingsEntry deleteRatingsEntry(
 		long entryId)
@@ -283,7 +283,7 @@ public class RatingsEntryLocalServiceUtil {
 	*
 	* @param entryId the primary key of the ratings entry
 	* @return the ratings entry
-	* @throws PortalException if a ratings entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a ratings entry with the primary key could not be found
 	*/
 	public static com.liferay.portlet.ratings.model.RatingsEntry getRatingsEntry(
 		long entryId)
@@ -297,7 +297,7 @@ public class RatingsEntryLocalServiceUtil {
 	* @param uuid the ratings entry's UUID
 	* @param companyId the primary key of the company
 	* @return the matching ratings entry
-	* @throws PortalException if a matching ratings entry could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching ratings entry could not be found
 	*/
 	public static com.liferay.portlet.ratings.model.RatingsEntry getRatingsEntryByUuidAndCompanyId(
 		java.lang.String uuid, long companyId)

@@ -96,7 +96,7 @@ public class ShoppingOrderLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -109,7 +109,7 @@ public class ShoppingOrderLocalServiceUtil {
 	*
 	* @param orderId the primary key of the shopping order
 	* @return the shopping order that was removed
-	* @throws PortalException if a shopping order with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shopping order with the primary key could not be found
 	*/
 	public static com.liferay.portlet.shopping.model.ShoppingOrder deleteShoppingOrder(
 		long orderId)
@@ -259,7 +259,7 @@ public class ShoppingOrderLocalServiceUtil {
 	*
 	* @param orderId the primary key of the shopping order
 	* @return the shopping order
-	* @throws PortalException if a shopping order with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shopping order with the primary key could not be found
 	*/
 	public static com.liferay.portlet.shopping.model.ShoppingOrder getShoppingOrder(
 		long orderId)

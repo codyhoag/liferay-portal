@@ -84,7 +84,7 @@ public class ExportImportConfigurationLocalServiceWrapper
 	*
 	* @param exportImportConfiguration the export import configuration
 	* @return the export import configuration that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.ExportImportConfiguration deleteExportImportConfiguration(
@@ -98,7 +98,7 @@ public class ExportImportConfigurationLocalServiceWrapper
 	*
 	* @param exportImportConfigurationId the primary key of the export import configuration
 	* @return the export import configuration that was removed
-	* @throws PortalException if a export import configuration with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a export import configuration with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.ExportImportConfiguration deleteExportImportConfiguration(
@@ -114,7 +114,7 @@ public class ExportImportConfigurationLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -235,7 +235,7 @@ public class ExportImportConfigurationLocalServiceWrapper
 	*
 	* @param exportImportConfigurationId the primary key of the export import configuration
 	* @return the export import configuration
-	* @throws PortalException if a export import configuration with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a export import configuration with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.ExportImportConfiguration getExportImportConfiguration(

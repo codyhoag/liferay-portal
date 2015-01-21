@@ -72,7 +72,7 @@ public class ResourceBlockPermissionLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -97,7 +97,7 @@ public class ResourceBlockPermissionLocalServiceUtil {
 	*
 	* @param resourceBlockPermissionId the primary key of the resource block permission
 	* @return the resource block permission that was removed
-	* @throws PortalException if a resource block permission with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a resource block permission with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.ResourceBlockPermission deleteResourceBlockPermission(
 		long resourceBlockPermissionId)
@@ -242,7 +242,7 @@ public class ResourceBlockPermissionLocalServiceUtil {
 	*
 	* @param resourceBlockPermissionId the primary key of the resource block permission
 	* @return the resource block permission
-	* @throws PortalException if a resource block permission with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a resource block permission with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.ResourceBlockPermission getResourceBlockPermission(
 		long resourceBlockPermissionId)

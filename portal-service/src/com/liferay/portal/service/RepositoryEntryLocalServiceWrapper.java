@@ -67,7 +67,7 @@ public class RepositoryEntryLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -93,7 +93,7 @@ public class RepositoryEntryLocalServiceWrapper
 	*
 	* @param repositoryEntryId the primary key of the repository entry
 	* @return the repository entry that was removed
-	* @throws PortalException if a repository entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a repository entry with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.RepositoryEntry deleteRepositoryEntry(
@@ -306,7 +306,7 @@ public class RepositoryEntryLocalServiceWrapper
 	*
 	* @param repositoryEntryId the primary key of the repository entry
 	* @return the repository entry
-	* @throws PortalException if a repository entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a repository entry with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.RepositoryEntry getRepositoryEntry(
@@ -321,7 +321,7 @@ public class RepositoryEntryLocalServiceWrapper
 	* @param uuid the repository entry's UUID
 	* @param groupId the primary key of the group
 	* @return the matching repository entry
-	* @throws PortalException if a matching repository entry could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching repository entry could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.RepositoryEntry getRepositoryEntryByUuidAndGroupId(

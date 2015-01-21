@@ -180,7 +180,7 @@ public class DLFileEntryTypeLocalServiceUtil {
 	*
 	* @param fileEntryTypeId the primary key of the document library file entry type
 	* @return the document library file entry type that was removed
-	* @throws PortalException if a document library file entry type with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file entry type with the primary key could not be found
 	*/
 	public static com.liferay.portlet.documentlibrary.model.DLFileEntryType deleteDLFileEntryType(
 		long fileEntryTypeId)
@@ -225,7 +225,7 @@ public class DLFileEntryTypeLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -389,7 +389,7 @@ public class DLFileEntryTypeLocalServiceUtil {
 	*
 	* @param fileEntryTypeId the primary key of the document library file entry type
 	* @return the document library file entry type
-	* @throws PortalException if a document library file entry type with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file entry type with the primary key could not be found
 	*/
 	public static com.liferay.portlet.documentlibrary.model.DLFileEntryType getDLFileEntryType(
 		long fileEntryTypeId)
@@ -403,7 +403,7 @@ public class DLFileEntryTypeLocalServiceUtil {
 	* @param uuid the document library file entry type's UUID
 	* @param groupId the primary key of the group
 	* @return the matching document library file entry type
-	* @throws PortalException if a matching document library file entry type could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching document library file entry type could not be found
 	*/
 	public static com.liferay.portlet.documentlibrary.model.DLFileEntryType getDLFileEntryTypeByUuidAndGroupId(
 		java.lang.String uuid, long groupId)

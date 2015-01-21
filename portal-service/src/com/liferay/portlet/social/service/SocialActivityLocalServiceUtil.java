@@ -58,7 +58,7 @@ public class SocialActivityLocalServiceUtil {
 	* @param type the activity's type
 	* @param extraData any extra data regarding the activity
 	* @param receiverUserId the primary key of the receiving user
-	* @throws PortalException if the user or group could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user or group could not be found
 	*/
 	public static void addActivity(long userId, long groupId,
 		java.lang.String className, long classPK, int type,
@@ -105,7 +105,7 @@ public class SocialActivityLocalServiceUtil {
 	* @param type the activity's type
 	* @param extraData any extra data regarding the activity
 	* @param receiverUserId the primary key of the receiving user
-	* @throws PortalException if the user or group could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user or group could not be found
 	*/
 	public static void addActivity(long userId, long groupId,
 		java.util.Date createDate, java.lang.String className, long classPK,
@@ -143,7 +143,7 @@ public class SocialActivityLocalServiceUtil {
 	* @param type the activity's type
 	* @param extraData any extra data regarding the activity
 	* @param receiverUserId the primary key of the receiving user
-	* @throws PortalException if the user or group could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user or group could not be found
 	*/
 	public static void addUniqueActivity(long userId, long groupId,
 		java.lang.String className, long classPK, int type,
@@ -171,7 +171,7 @@ public class SocialActivityLocalServiceUtil {
 	* @param type the activity's type
 	* @param extraData any extra data regarding the activity
 	* @param receiverUserId the primary key of the receiving user
-	* @throws PortalException if the user or group could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user or group could not be found
 	*/
 	public static void addUniqueActivity(long userId, long groupId,
 		java.util.Date createDate, java.lang.String className, long classPK,
@@ -197,7 +197,7 @@ public class SocialActivityLocalServiceUtil {
 	* Removes stored activities for the asset.
 	*
 	* @param assetEntry the asset from which to remove stored activities
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public static void deleteActivities(
 		com.liferay.portlet.asset.model.AssetEntry assetEntry)
@@ -211,7 +211,7 @@ public class SocialActivityLocalServiceUtil {
 	*
 	* @param className the target asset's class name
 	* @param classPK the primary key of the target asset
-	* @throws PortalException if the user's activity counters could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user's activity counters could not be
 	deleted
 	*/
 	public static void deleteActivities(java.lang.String className, long classPK)
@@ -227,7 +227,7 @@ public class SocialActivityLocalServiceUtil {
 	* Removes the stored activity and its mirror activity from the database.
 	*
 	* @param activity the activity to be removed
-	* @throws PortalException if the user's activity counters could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user's activity counters could not be
 	deleted or if a portal exception occurred
 	*/
 	public static void deleteActivity(
@@ -240,7 +240,7 @@ public class SocialActivityLocalServiceUtil {
 	* Removes the stored activity from the database.
 	*
 	* @param activityId the primary key of the stored activity
-	* @throws PortalException if the activity could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if the activity could not be found
 	*/
 	public static void deleteActivity(long activityId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -248,7 +248,7 @@ public class SocialActivityLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -261,7 +261,7 @@ public class SocialActivityLocalServiceUtil {
 	*
 	* @param activityId the primary key of the social activity
 	* @return the social activity that was removed
-	* @throws PortalException if a social activity with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a social activity with the primary key could not be found
 	*/
 	public static com.liferay.portlet.social.model.SocialActivity deleteSocialActivity(
 		long activityId)
@@ -289,7 +289,7 @@ public class SocialActivityLocalServiceUtil {
 	* </p>
 	*
 	* @param userId the primary key of the user
-	* @throws PortalException if the user's activity counters could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user's activity counters could not be
 	deleted
 	*/
 	public static void deleteUserActivities(long userId)
@@ -555,7 +555,7 @@ public class SocialActivityLocalServiceUtil {
 	*
 	* @param activityId the primary key of the activity
 	* @return Returns the activity
-	* @throws PortalException if the activity could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if the activity could not be found
 	*/
 	public static com.liferay.portlet.social.model.SocialActivity getActivity(
 		long activityId)
@@ -666,7 +666,7 @@ public class SocialActivityLocalServiceUtil {
 	*
 	* @param mirrorActivityId the primary key of the mirror activity
 	* @return Returns the mirror activity
-	* @throws PortalException if the mirror activity could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if the mirror activity could not be found
 	*/
 	public static com.liferay.portlet.social.model.SocialActivity getMirrorActivity(
 		long mirrorActivityId)
@@ -855,7 +855,7 @@ public class SocialActivityLocalServiceUtil {
 	*
 	* @param activityId the primary key of the social activity
 	* @return the social activity
-	* @throws PortalException if a social activity with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a social activity with the primary key could not be found
 	*/
 	public static com.liferay.portlet.social.model.SocialActivity getSocialActivity(
 		long activityId)

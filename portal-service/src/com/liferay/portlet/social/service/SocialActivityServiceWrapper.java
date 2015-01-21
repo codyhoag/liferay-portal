@@ -51,7 +51,7 @@ public class SocialActivityServiceWrapper implements SocialActivityService,
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws com.liferay.portal.kernel.exception.PortalException if a permission checker was not initialized
 	*/
 	@Override
 	public java.util.List<com.liferay.portlet.social.model.SocialActivity> getActivities(
@@ -78,7 +78,7 @@ public class SocialActivityServiceWrapper implements SocialActivityService,
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws com.liferay.portal.kernel.exception.PortalException if a permission checker was not initialized
 	*/
 	@Override
 	public java.util.List<com.liferay.portlet.social.model.SocialActivity> getActivities(
@@ -108,7 +108,7 @@ public class SocialActivityServiceWrapper implements SocialActivityService,
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws com.liferay.portal.kernel.exception.PortalException if a permission checker was not initialized
 	*/
 	@Override
 	public java.util.List<com.liferay.portlet.social.model.SocialActivity> getActivities(
@@ -140,7 +140,7 @@ public class SocialActivityServiceWrapper implements SocialActivityService,
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws com.liferay.portal.kernel.exception.PortalException if a permission checker was not initialized
 	*/
 	@Override
 	public java.util.List<com.liferay.portlet.social.model.SocialActivity> getActivities(
@@ -212,7 +212,7 @@ public class SocialActivityServiceWrapper implements SocialActivityService,
 	*
 	* @param activityId the primary key of the activity
 	* @return Returns the activity
-	* @throws PortalException if the activity could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if the activity could not be found
 	*/
 	@Override
 	public com.liferay.portlet.social.model.SocialActivity getActivity(
@@ -260,7 +260,7 @@ public class SocialActivityServiceWrapper implements SocialActivityService,
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws com.liferay.portal.kernel.exception.PortalException if a permission checker was not initialized
 	*/
 	@Override
 	public java.util.List<com.liferay.portlet.social.model.SocialActivity> getGroupActivities(
@@ -306,7 +306,7 @@ public class SocialActivityServiceWrapper implements SocialActivityService,
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws com.liferay.portal.kernel.exception.PortalException if a permission checker was not initialized
 	*/
 	@Override
 	public java.util.List<com.liferay.portlet.social.model.SocialActivity> getGroupUsersActivities(
@@ -337,7 +337,7 @@ public class SocialActivityServiceWrapper implements SocialActivityService,
 	*
 	* @param mirrorActivityId the primary key of the mirror activity
 	* @return Returns the mirror activity
-	* @throws PortalException if the mirror activity could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if the mirror activity could not be found
 	*/
 	@Override
 	public com.liferay.portlet.social.model.SocialActivity getMirrorActivity(
@@ -364,7 +364,7 @@ public class SocialActivityServiceWrapper implements SocialActivityService,
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws com.liferay.portal.kernel.exception.PortalException if a permission checker was not initialized
 	*/
 	@Override
 	public java.util.List<com.liferay.portlet.social.model.SocialActivity> getOrganizationActivities(
@@ -404,7 +404,7 @@ public class SocialActivityServiceWrapper implements SocialActivityService,
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws com.liferay.portal.kernel.exception.PortalException if a permission checker was not initialized
 	*/
 	@Override
 	public java.util.List<com.liferay.portlet.social.model.SocialActivity> getOrganizationUsersActivities(
@@ -444,7 +444,7 @@ public class SocialActivityServiceWrapper implements SocialActivityService,
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws com.liferay.portal.kernel.exception.PortalException if a permission checker was not initialized
 	*/
 	@Override
 	public java.util.List<com.liferay.portlet.social.model.SocialActivity> getRelationActivities(
@@ -473,7 +473,7 @@ public class SocialActivityServiceWrapper implements SocialActivityService,
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws com.liferay.portal.kernel.exception.PortalException if a permission checker was not initialized
 	*/
 	@Override
 	public java.util.List<com.liferay.portlet.social.model.SocialActivity> getRelationActivities(
@@ -526,7 +526,7 @@ public class SocialActivityServiceWrapper implements SocialActivityService,
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws com.liferay.portal.kernel.exception.PortalException if a permission checker was not initialized
 	*/
 	@Override
 	public java.util.List<com.liferay.portlet.social.model.SocialActivity> getUserActivities(
@@ -564,7 +564,7 @@ public class SocialActivityServiceWrapper implements SocialActivityService,
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws com.liferay.portal.kernel.exception.PortalException if a permission checker was not initialized
 	*/
 	@Override
 	public java.util.List<com.liferay.portlet.social.model.SocialActivity> getUserGroupsActivities(
@@ -603,7 +603,7 @@ public class SocialActivityServiceWrapper implements SocialActivityService,
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws com.liferay.portal.kernel.exception.PortalException if a permission checker was not initialized
 	*/
 	@Override
 	public java.util.List<com.liferay.portlet.social.model.SocialActivity> getUserGroupsAndOrganizationsActivities(
@@ -643,7 +643,7 @@ public class SocialActivityServiceWrapper implements SocialActivityService,
 	* @param start the lower bound of the range of results
 	* @param end the upper bound of the range of results (not inclusive)
 	* @return the range of matching activities
-	* @throws PortalException if a permission checker was not initialized
+	* @throws com.liferay.portal.kernel.exception.PortalException if a permission checker was not initialized
 	*/
 	@Override
 	public java.util.List<com.liferay.portlet.social.model.SocialActivity> getUserOrganizationsActivities(

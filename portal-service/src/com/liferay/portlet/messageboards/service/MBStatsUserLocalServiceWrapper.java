@@ -80,7 +80,7 @@ public class MBStatsUserLocalServiceWrapper implements MBStatsUserLocalService,
 	*
 	* @param statsUserId the primary key of the message boards stats user
 	* @return the message boards stats user that was removed
-	* @throws PortalException if a message boards stats user with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards stats user with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.messageboards.model.MBStatsUser deleteMBStatsUser(
@@ -90,7 +90,7 @@ public class MBStatsUserLocalServiceWrapper implements MBStatsUserLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -237,7 +237,7 @@ public class MBStatsUserLocalServiceWrapper implements MBStatsUserLocalService,
 	*
 	* @param statsUserId the primary key of the message boards stats user
 	* @return the message boards stats user
-	* @throws PortalException if a message boards stats user with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards stats user with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.messageboards.model.MBStatsUser getMBStatsUser(

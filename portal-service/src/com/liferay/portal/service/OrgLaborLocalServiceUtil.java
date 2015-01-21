@@ -91,7 +91,7 @@ public class OrgLaborLocalServiceUtil {
 	*
 	* @param orgLaborId the primary key of the org labor
 	* @return the org labor that was removed
-	* @throws PortalException if a org labor with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a org labor with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.OrgLabor deleteOrgLabor(
 		long orgLaborId)
@@ -100,7 +100,7 @@ public class OrgLaborLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -209,7 +209,7 @@ public class OrgLaborLocalServiceUtil {
 	*
 	* @param orgLaborId the primary key of the org labor
 	* @return the org labor
-	* @throws PortalException if a org labor with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a org labor with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.OrgLabor getOrgLabor(long orgLaborId)
 		throws com.liferay.portal.kernel.exception.PortalException {

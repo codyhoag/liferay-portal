@@ -72,7 +72,7 @@ public class SocialActivityLimitLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -85,7 +85,7 @@ public class SocialActivityLimitLocalServiceUtil {
 	*
 	* @param activityLimitId the primary key of the social activity limit
 	* @return the social activity limit that was removed
-	* @throws PortalException if a social activity limit with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a social activity limit with the primary key could not be found
 	*/
 	public static com.liferay.portlet.social.model.SocialActivityLimit deleteSocialActivityLimit(
 		long activityLimitId)
@@ -219,7 +219,7 @@ public class SocialActivityLimitLocalServiceUtil {
 	*
 	* @param activityLimitId the primary key of the social activity limit
 	* @return the social activity limit
-	* @throws PortalException if a social activity limit with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a social activity limit with the primary key could not be found
 	*/
 	public static com.liferay.portlet.social.model.SocialActivityLimit getSocialActivityLimit(
 		long activityLimitId)

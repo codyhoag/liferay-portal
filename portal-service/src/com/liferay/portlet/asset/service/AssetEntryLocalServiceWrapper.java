@@ -157,7 +157,7 @@ public class AssetEntryLocalServiceWrapper implements AssetEntryLocalService,
 	*
 	* @param entryId the primary key of the asset entry
 	* @return the asset entry that was removed
-	* @throws PortalException if a asset entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a asset entry with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.asset.model.AssetEntry deleteAssetEntry(
@@ -213,7 +213,7 @@ public class AssetEntryLocalServiceWrapper implements AssetEntryLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -411,7 +411,7 @@ public class AssetEntryLocalServiceWrapper implements AssetEntryLocalService,
 	*
 	* @param entryId the primary key of the asset entry
 	* @return the asset entry
-	* @throws PortalException if a asset entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a asset entry with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.asset.model.AssetEntry getAssetEntry(

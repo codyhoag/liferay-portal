@@ -70,7 +70,7 @@ public interface ReleaseLocalService extends BaseLocalService,
 	public void createTablesAndPopulate();
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -92,7 +92,7 @@ public interface ReleaseLocalService extends BaseLocalService,
 	*
 	* @param releaseId the primary key of the release
 	* @return the release that was removed
-	* @throws PortalException if a release with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a release with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.Release deleteRelease(long releaseId)
@@ -195,7 +195,7 @@ public interface ReleaseLocalService extends BaseLocalService,
 	*
 	* @param releaseId the primary key of the release
 	* @return the release
-	* @throws PortalException if a release with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a release with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Release getRelease(long releaseId)

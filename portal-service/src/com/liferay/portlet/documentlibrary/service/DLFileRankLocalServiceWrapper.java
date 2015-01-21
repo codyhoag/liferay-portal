@@ -87,7 +87,7 @@ public class DLFileRankLocalServiceWrapper implements DLFileRankLocalService,
 	*
 	* @param fileRankId the primary key of the document library file rank
 	* @return the document library file rank that was removed
-	* @throws PortalException if a document library file rank with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file rank with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.documentlibrary.model.DLFileRank deleteDLFileRank(
@@ -119,7 +119,7 @@ public class DLFileRankLocalServiceWrapper implements DLFileRankLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -261,7 +261,7 @@ public class DLFileRankLocalServiceWrapper implements DLFileRankLocalService,
 	*
 	* @param fileRankId the primary key of the document library file rank
 	* @return the document library file rank
-	* @throws PortalException if a document library file rank with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file rank with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.documentlibrary.model.DLFileRank getDLFileRank(

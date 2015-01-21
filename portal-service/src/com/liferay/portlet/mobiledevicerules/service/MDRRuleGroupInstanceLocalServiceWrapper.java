@@ -100,7 +100,7 @@ public class MDRRuleGroupInstanceLocalServiceWrapper
 	*
 	* @param ruleGroupInstanceId the primary key of the m d r rule group instance
 	* @return the m d r rule group instance that was removed
-	* @throws PortalException if a m d r rule group instance with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a m d r rule group instance with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.mobiledevicerules.model.MDRRuleGroupInstance deleteMDRRuleGroupInstance(
@@ -110,7 +110,7 @@ public class MDRRuleGroupInstanceLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -280,7 +280,7 @@ public class MDRRuleGroupInstanceLocalServiceWrapper
 	*
 	* @param ruleGroupInstanceId the primary key of the m d r rule group instance
 	* @return the m d r rule group instance
-	* @throws PortalException if a m d r rule group instance with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a m d r rule group instance with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.mobiledevicerules.model.MDRRuleGroupInstance getMDRRuleGroupInstance(
@@ -295,7 +295,7 @@ public class MDRRuleGroupInstanceLocalServiceWrapper
 	* @param uuid the m d r rule group instance's UUID
 	* @param groupId the primary key of the group
 	* @return the matching m d r rule group instance
-	* @throws PortalException if a matching m d r rule group instance could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching m d r rule group instance could not be found
 	*/
 	@Override
 	public com.liferay.portlet.mobiledevicerules.model.MDRRuleGroupInstance getMDRRuleGroupInstanceByUuidAndGroupId(

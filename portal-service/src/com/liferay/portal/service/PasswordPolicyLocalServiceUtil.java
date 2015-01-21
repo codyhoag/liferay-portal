@@ -127,7 +127,7 @@ public class PasswordPolicyLocalServiceUtil {
 	*
 	* @param passwordPolicy the password policy
 	* @return the password policy that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PasswordPolicy deletePasswordPolicy(
 		com.liferay.portal.model.PasswordPolicy passwordPolicy)
@@ -140,7 +140,7 @@ public class PasswordPolicyLocalServiceUtil {
 	*
 	* @param passwordPolicyId the primary key of the password policy
 	* @return the password policy that was removed
-	* @throws PortalException if a password policy with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a password policy with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.PasswordPolicy deletePasswordPolicy(
 		long passwordPolicyId)
@@ -149,7 +149,7 @@ public class PasswordPolicyLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -329,7 +329,7 @@ public class PasswordPolicyLocalServiceUtil {
 	*
 	* @param passwordPolicyId the primary key of the password policy
 	* @return the password policy
-	* @throws PortalException if a password policy with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a password policy with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.PasswordPolicy getPasswordPolicy(
 		long passwordPolicyId)
@@ -348,7 +348,7 @@ public class PasswordPolicyLocalServiceUtil {
 	* @param uuid the password policy's UUID
 	* @param companyId the primary key of the company
 	* @return the matching password policy
-	* @throws PortalException if a matching password policy could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching password policy could not be found
 	*/
 	public static com.liferay.portal.model.PasswordPolicy getPasswordPolicyByUuidAndCompanyId(
 		java.lang.String uuid, long companyId)

@@ -71,7 +71,7 @@ public class WikiPageResourceLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -85,7 +85,7 @@ public class WikiPageResourceLocalServiceWrapper
 	*
 	* @param resourcePrimKey the primary key of the wiki page resource
 	* @return the wiki page resource that was removed
-	* @throws PortalException if a wiki page resource with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a wiki page resource with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.wiki.model.WikiPageResource deleteWikiPageResource(
@@ -257,7 +257,7 @@ public class WikiPageResourceLocalServiceWrapper
 	*
 	* @param resourcePrimKey the primary key of the wiki page resource
 	* @return the wiki page resource
-	* @throws PortalException if a wiki page resource with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a wiki page resource with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.wiki.model.WikiPageResource getWikiPageResource(

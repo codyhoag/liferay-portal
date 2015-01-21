@@ -73,7 +73,7 @@ public interface AssetLinkLocalService extends BaseLocalService,
 	* @param weight the weight of the relationship, allowing precedence
 	ordering of links
 	* @return the asset link
-	* @throws PortalException if the user could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user could not be found
 	*/
 	public com.liferay.portlet.asset.model.AssetLink addLink(long userId,
 		long entryId1, long entryId2, int type, int weight)
@@ -103,7 +103,7 @@ public interface AssetLinkLocalService extends BaseLocalService,
 	*
 	* @param linkId the primary key of the asset link
 	* @return the asset link that was removed
-	* @throws PortalException if a asset link with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a asset link with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.asset.model.AssetLink deleteAssetLink(
@@ -120,7 +120,7 @@ public interface AssetLinkLocalService extends BaseLocalService,
 	* Deletes the asset link.
 	*
 	* @param linkId the primary key of the asset link
-	* @throws PortalException if the asset link could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if the asset link could not be found
 	*/
 	public void deleteLink(long linkId)
 		throws com.liferay.portal.kernel.exception.PortalException;
@@ -141,7 +141,7 @@ public interface AssetLinkLocalService extends BaseLocalService,
 	public void deleteLinks(long entryId1, long entryId2);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -224,7 +224,7 @@ public interface AssetLinkLocalService extends BaseLocalService,
 	*
 	* @param linkId the primary key of the asset link
 	* @return the asset link
-	* @throws PortalException if a asset link with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a asset link with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.asset.model.AssetLink getAssetLink(long linkId)
@@ -386,7 +386,7 @@ public interface AssetLinkLocalService extends BaseLocalService,
 	com.liferay.portlet.asset.model.AssetLinkConstants#TYPE_CHILD}
 	which is a unidirectional relationship. For more information see
 	{@link com.liferay.portlet.asset.model.AssetLinkConstants}
-	* @throws PortalException if the user could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user could not be found
 	*/
 	public void updateLinks(long userId, long entryId, long[] linkEntryIds,
 		int typeId) throws com.liferay.portal.kernel.exception.PortalException;

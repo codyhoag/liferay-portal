@@ -72,7 +72,7 @@ public interface RatingsEntryLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -84,7 +84,7 @@ public interface RatingsEntryLocalService extends BaseLocalService,
 	*
 	* @param entryId the primary key of the ratings entry
 	* @return the ratings entry that was removed
-	* @throws PortalException if a ratings entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a ratings entry with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.ratings.model.RatingsEntry deleteRatingsEntry(
@@ -255,7 +255,7 @@ public interface RatingsEntryLocalService extends BaseLocalService,
 	*
 	* @param entryId the primary key of the ratings entry
 	* @return the ratings entry
-	* @throws PortalException if a ratings entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a ratings entry with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.ratings.model.RatingsEntry getRatingsEntry(
@@ -268,7 +268,7 @@ public interface RatingsEntryLocalService extends BaseLocalService,
 	* @param uuid the ratings entry's UUID
 	* @param companyId the primary key of the company
 	* @return the matching ratings entry
-	* @throws PortalException if a matching ratings entry could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching ratings entry could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.ratings.model.RatingsEntry getRatingsEntryByUuidAndCompanyId(

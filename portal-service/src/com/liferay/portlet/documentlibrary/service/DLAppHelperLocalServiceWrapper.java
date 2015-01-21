@@ -178,7 +178,7 @@ public class DLAppHelperLocalServiceWrapper implements DLAppHelperLocalService,
 	* @param userId the primary key of the user moving the file entry
 	* @param fileEntry the file entry to be moved
 	* @return the moved file entry
-	* @throws PortalException if a user with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.kernel.repository.model.FileEntry moveFileEntryToTrash(
@@ -205,7 +205,7 @@ public class DLAppHelperLocalServiceWrapper implements DLAppHelperLocalService,
 	* @param userId the primary key of the user moving the file shortcut
 	* @param dlFileShortcut the file shortcut to be moved
 	* @return the moved file shortcut
-	* @throws PortalException if a user with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.documentlibrary.model.DLFileShortcut moveFileShortcutToTrash(
@@ -232,7 +232,7 @@ public class DLAppHelperLocalServiceWrapper implements DLAppHelperLocalService,
 	* @param userId the primary key of the user moving the folder
 	* @param folder the folder to be moved
 	* @return the moved folder
-	* @throws PortalException if a user with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.kernel.repository.model.Folder moveFolderToTrash(

@@ -69,7 +69,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	UUID, creation date, modification date, guest permissions, and
 	group permissions for the template.
 	* @return the template
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMTemplate addTemplate(
@@ -118,7 +118,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	UUID, creation date, modification date, guest permissions, and
 	group permissions for the template.
 	* @return the template
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMTemplate addTemplate(
@@ -144,7 +144,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	* @param template the template to add resources to
 	* @param addGroupPermissions whether to add group permissions
 	* @param addGuestPermissions whether to add guest permissions
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public void addTemplateResources(
@@ -161,7 +161,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	* @param template the template to add resources to
 	* @param groupPermissions the group permissions to be added
 	* @param guestPermissions the guest permissions to be added
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public void addTemplateResources(
@@ -186,7 +186,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	UUID, creation date, modification date, guest permissions, and
 	group permissions for the template.
 	* @return the new template
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMTemplate copyTemplate(
@@ -224,7 +224,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	creation date, modification date, guest permissions, and group
 	permissions for the new templates.
 	* @return the new templates
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public java.util.List<com.liferay.portlet.dynamicdatamapping.model.DDMTemplate> copyTemplates(
@@ -265,7 +265,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	*
 	* @param templateId the primary key of the d d m template
 	* @return the d d m template that was removed
-	* @throws PortalException if a d d m template with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m template with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMTemplate deleteDDMTemplate(
@@ -275,7 +275,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -288,7 +288,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	* Deletes the template and its resources.
 	*
 	* @param template the template to be deleted
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public void deleteTemplate(
@@ -301,7 +301,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	* Deletes the template and its resources.
 	*
 	* @param templateId the primary key of the template to be deleted
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public void deleteTemplate(long templateId)
@@ -313,7 +313,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	* Deletes all the templates of the group.
 	*
 	* @param groupId the primary key of the group
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public void deleteTemplates(long groupId)
@@ -470,7 +470,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	search in the search
 	* @return the matching template, or <code>null</code> if a matching
 	template could not be found
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMTemplate fetchTemplate(
@@ -501,7 +501,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	*
 	* @param templateId the primary key of the d d m template
 	* @return the d d m template
-	* @throws PortalException if a d d m template with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m template with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMTemplate getDDMTemplate(
@@ -516,7 +516,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	* @param uuid the d d m template's UUID
 	* @param groupId the primary key of the group
 	* @return the matching d d m template
-	* @throws PortalException if a matching d d m template could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching d d m template could not be found
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMTemplate getDDMTemplateByUuidAndGroupId(
@@ -606,7 +606,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	related model
 	* @param templateKey the unique string identifying the template
 	* @return the matching template
-	* @throws PortalException if a matching template could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching template could not be found
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMTemplate getTemplate(
@@ -636,7 +636,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	have sharing enabled) and include global scoped sites in the
 	search in the search
 	* @return the matching template
-	* @throws PortalException if a matching template could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching template could not be found
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMTemplate getTemplate(
@@ -652,7 +652,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	*
 	* @param templateId the primary key of the template
 	* @return the template with the ID
-	* @throws PortalException if a matching template could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching template could not be found
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMTemplate getTemplate(
@@ -1253,7 +1253,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	* @param serviceContext the service context to be applied. Can set the
 	modification date.
 	* @return the updated template
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMTemplate updateTemplate(
@@ -1294,7 +1294,7 @@ public class DDMTemplateLocalServiceWrapper implements DDMTemplateLocalService,
 	* @param serviceContext the service context to be applied. Can set the
 	modification date.
 	* @return the updated template
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMTemplate updateTemplate(

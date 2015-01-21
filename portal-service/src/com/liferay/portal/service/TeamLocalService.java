@@ -92,7 +92,7 @@ public interface TeamLocalService extends BaseLocalService,
 	public com.liferay.portal.model.Team createTeam(long teamId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -104,7 +104,7 @@ public interface TeamLocalService extends BaseLocalService,
 	*
 	* @param team the team
 	* @return the team that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.Team deleteTeam(
@@ -116,7 +116,7 @@ public interface TeamLocalService extends BaseLocalService,
 	*
 	* @param teamId the primary key of the team
 	* @return the team that was removed
-	* @throws PortalException if a team with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a team with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.Team deleteTeam(long teamId)
@@ -242,7 +242,7 @@ public interface TeamLocalService extends BaseLocalService,
 	*
 	* @param teamId the primary key of the team
 	* @return the team
-	* @throws PortalException if a team with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a team with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Team getTeam(long teamId)

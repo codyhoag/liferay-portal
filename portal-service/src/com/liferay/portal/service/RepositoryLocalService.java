@@ -91,7 +91,7 @@ public interface RepositoryLocalService extends BaseLocalService,
 		long repositoryId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -116,7 +116,7 @@ public interface RepositoryLocalService extends BaseLocalService,
 	*
 	* @param repositoryId the primary key of the repository
 	* @return the repository that was removed
-	* @throws PortalException if a repository with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a repository with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.Repository deleteRepository(
@@ -313,7 +313,7 @@ public interface RepositoryLocalService extends BaseLocalService,
 	*
 	* @param repositoryId the primary key of the repository
 	* @return the repository
-	* @throws PortalException if a repository with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a repository with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Repository getRepository(long repositoryId)
@@ -325,7 +325,7 @@ public interface RepositoryLocalService extends BaseLocalService,
 	* @param uuid the repository's UUID
 	* @param groupId the primary key of the group
 	* @return the matching repository
-	* @throws PortalException if a matching repository could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching repository could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Repository getRepositoryByUuidAndGroupId(

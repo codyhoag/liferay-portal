@@ -89,7 +89,7 @@ public interface DLContentLocalService extends BaseLocalService,
 	*
 	* @param contentId the primary key of the document library content
 	* @return the document library content that was removed
-	* @throws PortalException if a document library content with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library content with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.documentlibrary.model.DLContent deleteDLContent(
@@ -107,7 +107,7 @@ public interface DLContentLocalService extends BaseLocalService,
 		com.liferay.portlet.documentlibrary.model.DLContent dlContent);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -221,7 +221,7 @@ public interface DLContentLocalService extends BaseLocalService,
 	*
 	* @param contentId the primary key of the document library content
 	* @return the document library content
-	* @throws PortalException if a document library content with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library content with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.documentlibrary.model.DLContent getDLContent(

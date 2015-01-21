@@ -104,7 +104,7 @@ public interface BackgroundTaskLocalService extends BaseLocalService,
 	*
 	* @param backgroundTask the background task
 	* @return the background task that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.BackgroundTask deleteBackgroundTask(
@@ -116,7 +116,7 @@ public interface BackgroundTaskLocalService extends BaseLocalService,
 	*
 	* @param backgroundTaskId the primary key of the background task
 	* @return the background task that was removed
-	* @throws PortalException if a background task with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a background task with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.BackgroundTask deleteBackgroundTask(
@@ -130,7 +130,7 @@ public interface BackgroundTaskLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -229,7 +229,7 @@ public interface BackgroundTaskLocalService extends BaseLocalService,
 	*
 	* @param backgroundTaskId the primary key of the background task
 	* @return the background task
-	* @throws PortalException if a background task with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a background task with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.BackgroundTask getBackgroundTask(

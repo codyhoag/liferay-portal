@@ -88,7 +88,7 @@ public class LayoutRevisionLocalServiceWrapper
 	*
 	* @param layoutRevision the layout revision
 	* @return the layout revision that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.LayoutRevision deleteLayoutRevision(
@@ -102,7 +102,7 @@ public class LayoutRevisionLocalServiceWrapper
 	*
 	* @param layoutRevisionId the primary key of the layout revision
 	* @return the layout revision that was removed
-	* @throws PortalException if a layout revision with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout revision with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.LayoutRevision deleteLayoutRevision(
@@ -133,7 +133,7 @@ public class LayoutRevisionLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -289,7 +289,7 @@ public class LayoutRevisionLocalServiceWrapper
 	*
 	* @param layoutRevisionId the primary key of the layout revision
 	* @return the layout revision
-	* @throws PortalException if a layout revision with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout revision with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.LayoutRevision getLayoutRevision(

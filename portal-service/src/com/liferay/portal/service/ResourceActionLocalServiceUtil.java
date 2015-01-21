@@ -78,7 +78,7 @@ public class ResourceActionLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -102,7 +102,7 @@ public class ResourceActionLocalServiceUtil {
 	*
 	* @param resourceActionId the primary key of the resource action
 	* @return the resource action that was removed
-	* @throws PortalException if a resource action with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a resource action with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.ResourceAction deleteResourceAction(
 		long resourceActionId)
@@ -228,7 +228,7 @@ public class ResourceActionLocalServiceUtil {
 	*
 	* @param resourceActionId the primary key of the resource action
 	* @return the resource action
-	* @throws PortalException if a resource action with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a resource action with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.ResourceAction getResourceAction(
 		long resourceActionId)

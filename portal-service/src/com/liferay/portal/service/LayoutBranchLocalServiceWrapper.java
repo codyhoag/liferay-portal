@@ -92,7 +92,7 @@ public class LayoutBranchLocalServiceWrapper implements LayoutBranchLocalService
 	*
 	* @param layoutBranchId the primary key of the layout branch
 	* @return the layout branch that was removed
-	* @throws PortalException if a layout branch with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout branch with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.LayoutBranch deleteLayoutBranch(
@@ -108,7 +108,7 @@ public class LayoutBranchLocalServiceWrapper implements LayoutBranchLocalService
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -228,7 +228,7 @@ public class LayoutBranchLocalServiceWrapper implements LayoutBranchLocalService
 	*
 	* @param layoutBranchId the primary key of the layout branch
 	* @return the layout branch
-	* @throws PortalException if a layout branch with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout branch with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.LayoutBranch getLayoutBranch(

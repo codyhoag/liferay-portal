@@ -137,7 +137,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 	*
 	* @param entryId the primary key of the blogs entry
 	* @return the blogs entry that was removed
-	* @throws PortalException if a blogs entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a blogs entry with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.blogs.model.BlogsEntry deleteBlogsEntry(
@@ -157,7 +157,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -308,7 +308,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 	*
 	* @param entryId the primary key of the blogs entry
 	* @return the blogs entry
-	* @throws PortalException if a blogs entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a blogs entry with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.blogs.model.BlogsEntry getBlogsEntry(
@@ -321,7 +321,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 	* @param uuid the blogs entry's UUID
 	* @param groupId the primary key of the group
 	* @return the matching blogs entry
-	* @throws PortalException if a matching blogs entry could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching blogs entry could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.blogs.model.BlogsEntry getBlogsEntryByUuidAndGroupId(
@@ -574,7 +574,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 	* @param userId the primary key of the user moving the blogs entry
 	* @param entry the blogs entry to be moved
 	* @return the moved blogs entry
-	* @throws PortalException if a user with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key could not be found
 	or if the blogs entry owner's social activity counter could not
 	be updated
 	*/
@@ -589,7 +589,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 	* @param userId the primary key of the user moving the blogs entry
 	* @param entryId the primary key of the blogs entry to be moved
 	* @return the moved blogs entry
-	* @throws PortalException if a user or blogs entry with the primary key
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user or blogs entry with the primary key
 	could not be found or if the blogs entry owner's social activity
 	counter could not be updated
 	*/
@@ -604,7 +604,7 @@ public interface BlogsEntryLocalService extends BaseLocalService,
 	* @param userId the primary key of the user restoring the blogs entry
 	* @param entryId the primary key of the blogs entry to be restored
 	* @return the restored blogs entry from the recycle bin
-	* @throws PortalException if a user or blogs entry with the primary key
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user or blogs entry with the primary key
 	could not be found or if the blogs entry owner's social activity
 	counter could not be updated
 	*/

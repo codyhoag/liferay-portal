@@ -391,7 +391,7 @@ public class UserWrapper implements User, ModelWrapper<User> {
 	* Returns the user's birth date.
 	*
 	* @return the user's birth date
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public java.util.Date getBirthday()
@@ -423,7 +423,7 @@ public class UserWrapper implements User, ModelWrapper<User> {
 	* Returns the user's company's mail domain.
 	*
 	* @return the user's company's mail domain
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public java.lang.String getCompanyMx()
@@ -435,8 +435,8 @@ public class UserWrapper implements User, ModelWrapper<User> {
 	* Returns the user's associated contact.
 	*
 	* @return the user's associated contact
-	* @throws PortalException if a portal exception occurred
-	* @see Contact
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
+	* @see com.liferay.portal.model.Contact
 	*/
 	@Override
 	public com.liferay.portal.model.Contact getContact()
@@ -531,7 +531,7 @@ public class UserWrapper implements User, ModelWrapper<User> {
 	* @param portalURL the portal's URL
 	* @param mainPath the main path
 	* @return the user's display URL
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link #getDisplayURL(ThemeDisplay)}
 	*/
 	@Deprecated
@@ -572,7 +572,7 @@ public class UserWrapper implements User, ModelWrapper<User> {
 	intranet(versus extranet)  site home page, if no friendly URL
 	is available for the user's profile
 	* @return the user's display URL
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link #getDisplayURL(ThemeDisplay)}
 	*/
 	@Deprecated
@@ -606,7 +606,7 @@ public class UserWrapper implements User, ModelWrapper<User> {
 	*
 	* @param themeDisplay the theme display
 	* @return the user's display URL
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public java.lang.String getDisplayURL(
@@ -644,7 +644,7 @@ public class UserWrapper implements User, ModelWrapper<User> {
 	intranet (versus extranet) site home page, if no friendly URL is
 	available for the user's profile
 	* @return the user's display URL
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public java.lang.String getDisplayURL(
@@ -714,7 +714,7 @@ public class UserWrapper implements User, ModelWrapper<User> {
 	*
 	* @return <code>true</code> if the user is female; <code>false</code>
 	otherwise
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public boolean getFemale()
@@ -908,7 +908,7 @@ public class UserWrapper implements User, ModelWrapper<User> {
 	*
 	* @return <code>true</code> if the user is male; <code>false</code>
 	otherwise
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public boolean getMale()

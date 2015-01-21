@@ -64,7 +64,7 @@ public class VirtualHostLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -88,7 +88,7 @@ public class VirtualHostLocalServiceUtil {
 	*
 	* @param virtualHostId the primary key of the virtual host
 	* @return the virtual host that was removed
-	* @throws PortalException if a virtual host with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a virtual host with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.VirtualHost deleteVirtualHost(
 		long virtualHostId)
@@ -225,7 +225,7 @@ public class VirtualHostLocalServiceUtil {
 	*
 	* @param virtualHostId the primary key of the virtual host
 	* @return the virtual host
-	* @throws PortalException if a virtual host with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a virtual host with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.VirtualHost getVirtualHost(
 		long virtualHostId)

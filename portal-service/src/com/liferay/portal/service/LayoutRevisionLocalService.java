@@ -86,7 +86,7 @@ public interface LayoutRevisionLocalService extends BaseLocalService,
 	*
 	* @param layoutRevision the layout revision
 	* @return the layout revision that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.LayoutRevision deleteLayoutRevision(
@@ -98,7 +98,7 @@ public interface LayoutRevisionLocalService extends BaseLocalService,
 	*
 	* @param layoutRevisionId the primary key of the layout revision
 	* @return the layout revision that was removed
-	* @throws PortalException if a layout revision with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout revision with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.LayoutRevision deleteLayoutRevision(
@@ -116,7 +116,7 @@ public interface LayoutRevisionLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -229,7 +229,7 @@ public interface LayoutRevisionLocalService extends BaseLocalService,
 	*
 	* @param layoutRevisionId the primary key of the layout revision
 	* @return the layout revision
-	* @throws PortalException if a layout revision with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout revision with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.LayoutRevision getLayoutRevision(

@@ -66,7 +66,7 @@ public interface VirtualHostLocalService extends BaseLocalService,
 		long virtualHostId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -88,7 +88,7 @@ public interface VirtualHostLocalService extends BaseLocalService,
 	*
 	* @param virtualHostId the primary key of the virtual host
 	* @return the virtual host that was removed
-	* @throws PortalException if a virtual host with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a virtual host with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.VirtualHost deleteVirtualHost(
@@ -203,7 +203,7 @@ public interface VirtualHostLocalService extends BaseLocalService,
 	*
 	* @param virtualHostId the primary key of the virtual host
 	* @return the virtual host
-	* @throws PortalException if a virtual host with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a virtual host with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.VirtualHost getVirtualHost(

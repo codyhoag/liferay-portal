@@ -143,7 +143,7 @@ public class AssetEntryLocalServiceUtil {
 	*
 	* @param entryId the primary key of the asset entry
 	* @return the asset entry that was removed
-	* @throws PortalException if a asset entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a asset entry with the primary key could not be found
 	*/
 	public static com.liferay.portlet.asset.model.AssetEntry deleteAssetEntry(
 		long entryId)
@@ -191,7 +191,7 @@ public class AssetEntryLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -369,7 +369,7 @@ public class AssetEntryLocalServiceUtil {
 	*
 	* @param entryId the primary key of the asset entry
 	* @return the asset entry
-	* @throws PortalException if a asset entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a asset entry with the primary key could not be found
 	*/
 	public static com.liferay.portlet.asset.model.AssetEntry getAssetEntry(
 		long entryId)

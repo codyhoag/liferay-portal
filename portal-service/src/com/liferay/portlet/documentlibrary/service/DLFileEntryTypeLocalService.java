@@ -139,7 +139,7 @@ public interface DLFileEntryTypeLocalService extends BaseLocalService,
 	*
 	* @param fileEntryTypeId the primary key of the document library file entry type
 	* @return the document library file entry type that was removed
-	* @throws PortalException if a document library file entry type with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file entry type with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.documentlibrary.model.DLFileEntryType deleteDLFileEntryType(
@@ -170,7 +170,7 @@ public interface DLFileEntryTypeLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -305,7 +305,7 @@ public interface DLFileEntryTypeLocalService extends BaseLocalService,
 	*
 	* @param fileEntryTypeId the primary key of the document library file entry type
 	* @return the document library file entry type
-	* @throws PortalException if a document library file entry type with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file entry type with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.documentlibrary.model.DLFileEntryType getDLFileEntryType(
@@ -318,7 +318,7 @@ public interface DLFileEntryTypeLocalService extends BaseLocalService,
 	* @param uuid the document library file entry type's UUID
 	* @param groupId the primary key of the group
 	* @return the matching document library file entry type
-	* @throws PortalException if a matching document library file entry type could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching document library file entry type could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.documentlibrary.model.DLFileEntryType getDLFileEntryTypeByUuidAndGroupId(

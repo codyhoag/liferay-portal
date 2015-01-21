@@ -84,7 +84,7 @@ public class MBThreadLocalServiceWrapper implements MBThreadLocalService,
 	*
 	* @param threadId the primary key of the message boards thread
 	* @return the message boards thread that was removed
-	* @throws PortalException if a message boards thread with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards thread with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.messageboards.model.MBThread deleteMBThread(
@@ -94,7 +94,7 @@ public class MBThreadLocalServiceWrapper implements MBThreadLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -427,7 +427,7 @@ public class MBThreadLocalServiceWrapper implements MBThreadLocalService,
 	*
 	* @param threadId the primary key of the message boards thread
 	* @return the message boards thread
-	* @throws PortalException if a message boards thread with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards thread with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.messageboards.model.MBThread getMBThread(
@@ -442,7 +442,7 @@ public class MBThreadLocalServiceWrapper implements MBThreadLocalService,
 	* @param uuid the message boards thread's UUID
 	* @param groupId the primary key of the group
 	* @return the matching message boards thread
-	* @throws PortalException if a matching message boards thread could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching message boards thread could not be found
 	*/
 	@Override
 	public com.liferay.portlet.messageboards.model.MBThread getMBThreadByUuidAndGroupId(

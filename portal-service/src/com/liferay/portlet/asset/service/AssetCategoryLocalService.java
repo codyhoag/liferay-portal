@@ -119,7 +119,7 @@ public interface AssetCategoryLocalService extends BaseLocalService,
 	*
 	* @param categoryId the primary key of the asset category
 	* @return the asset category that was removed
-	* @throws PortalException if a asset category with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a asset category with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.asset.model.AssetCategory deleteAssetCategory(
@@ -159,7 +159,7 @@ public interface AssetCategoryLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -310,7 +310,7 @@ public interface AssetCategoryLocalService extends BaseLocalService,
 	*
 	* @param categoryId the primary key of the asset category
 	* @return the asset category
-	* @throws PortalException if a asset category with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a asset category with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.asset.model.AssetCategory getAssetCategory(
@@ -323,7 +323,7 @@ public interface AssetCategoryLocalService extends BaseLocalService,
 	* @param uuid the asset category's UUID
 	* @param groupId the primary key of the group
 	* @return the matching asset category
-	* @throws PortalException if a matching asset category could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching asset category could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.asset.model.AssetCategory getAssetCategoryByUuidAndGroupId(

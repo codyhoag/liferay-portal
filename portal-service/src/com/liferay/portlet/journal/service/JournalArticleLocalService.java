@@ -124,7 +124,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	attribute, and workflow actions for the web content article. Can
 	also set whether to add the default guest and group permissions.
 	* @return the web content article
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public com.liferay.portlet.journal.model.JournalArticle addArticle(
@@ -172,7 +172,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	attribute, and workflow actions for the web content article. Can
 	also set whether to add the default guest and group permissions.
 	* @return the web content article
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public com.liferay.portlet.journal.model.JournalArticle addArticle(
 		long userId, long groupId, long folderId,
@@ -189,7 +189,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param article the web content article
 	* @param addGroupPermissions whether to add group permissions
 	* @param addGuestPermissions whether to add guest permissions
-	* @throws PortalException if no portal actions could be found associated
+	* @throws com.liferay.portal.kernel.exception.PortalException if no portal actions could be found associated
 	with the web content article or if a portal exception occurred
 	*/
 	public void addArticleResources(
@@ -203,7 +203,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param article the web content article to add resources to
 	* @param groupPermissions the group permissions to be added
 	* @param guestPermissions the guest permissions to be added
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public void addArticleResources(
 		com.liferay.portlet.journal.model.JournalArticle article,
@@ -217,7 +217,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param articleId the primary key of the web content article
 	* @param addGroupPermissions whether to add group permissions
 	* @param addGuestPermissions whether to add guest permissions
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public void addArticleResources(long groupId, java.lang.String articleId,
 		boolean addGroupPermissions, boolean addGuestPermissions)
@@ -231,7 +231,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param articleId the primary key of the web content article
 	* @param groupPermissions the group permissions to be added
 	* @param guestPermissions the guest permissions to be added
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public void addArticleResources(long groupId, java.lang.String articleId,
 		java.lang.String[] groupPermissions, java.lang.String[] guestPermissions)
@@ -256,7 +256,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param articleId the primary key of the web content article
 	* @param version the web content article's version
 	* @return the matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	public com.liferay.portlet.journal.model.JournalArticle checkArticleResourcePrimKey(
@@ -267,7 +267,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* Checks all web content articles by handling their expirations and sending
 	* review notifications based on their current workflow.
 	*
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public void checkArticles()
 		throws com.liferay.portal.kernel.exception.PortalException;
@@ -280,7 +280,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the web content article's group
 	* @param articleId the primary key of the web content article
 	* @param version the web content article's version
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	public void checkNewLine(long groupId, java.lang.String articleId,
@@ -295,7 +295,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the web content article's group
 	* @param articleId the primary key of the web content article
 	* @param version the web content article's version
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found, if the article's structure does not match it, or if a
 	portal exception occurred
 	*/
@@ -315,7 +315,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param autoArticleId whether to auto-generate the web content article ID
 	* @param version the web content article's version
 	* @return the new web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found or if a portal exception occurred
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
@@ -338,7 +338,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	*
 	* @param article the web content article
 	* @return the deleted web content article
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@com.liferay.portal.kernel.systemevent.SystemEvent(action = SystemEventConstants.ACTION_SKIP, send = false, type = SystemEventConstants.TYPE_DELETE)
 	public com.liferay.portlet.journal.model.JournalArticle deleteArticle(
@@ -357,7 +357,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	email information to notify recipients of the unapproved web
 	content's denial.
 	* @return the deleted web content article
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	@com.liferay.portal.kernel.systemevent.SystemEvent(action = SystemEventConstants.ACTION_SKIP, send = false, type = SystemEventConstants.TYPE_DELETE)
@@ -377,7 +377,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param serviceContext the service context to be applied. Can set the
 	portlet preferences that include email information to notify
 	recipients of the unapproved web content article's denial.
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public void deleteArticle(long groupId, java.lang.String articleId,
 		com.liferay.portal.service.ServiceContext serviceContext)
@@ -396,7 +396,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	portlet preferences that include email information to notify
 	recipients of the unapproved web content article's denial.
 	* @return the deleted web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found or if a portal exception occurred
 	*/
 	public com.liferay.portlet.journal.model.JournalArticle deleteArticle(
@@ -409,7 +409,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* Deletes all the group's web content articles and resources.
 	*
 	* @param groupId the primary key of the web content article's group
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public void deleteArticles(long groupId)
 		throws com.liferay.portal.kernel.exception.PortalException;
@@ -420,7 +420,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	*
 	* @param groupId the primary key of the web content article's group
 	* @param folderId the primary key of the web content article folder
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public void deleteArticles(long groupId, long folderId)
 		throws com.liferay.portal.kernel.exception.PortalException;
@@ -433,7 +433,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param folderId the primary key of the web content article folder
 	* @param includeTrashedEntries whether to include recycled web content
 	articles
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public void deleteArticles(long groupId, long folderId,
 		boolean includeTrashedEntries)
@@ -444,7 +444,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	*
 	* @param id the primary key of the journal article
 	* @return the journal article that was removed
-	* @throws PortalException if a journal article with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal article with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.journal.model.JournalArticle deleteJournalArticle(
@@ -472,7 +472,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 		java.lang.String layoutUuid);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -563,7 +563,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	com.liferay.portal.kernel.util.Constants#UPDATE}, the invocation
 	is considered a web content update activity; otherwise it is
 	considered a web content add activity.
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found or if a portal exception occurred
 	*/
 	public void expireArticle(long userId, long groupId,
@@ -590,7 +590,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	is considered a web content update activity; otherwise it is
 	considered a web content add activity.
 	* @return the web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found or if a portal exception occurred
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
@@ -704,7 +704,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the web content article's group
 	* @param articleId the primary key of the web content article
 	* @return the matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -720,7 +720,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param articleId the primary key of the web content article
 	* @param version the web content article's version
 	* @return the matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -742,7 +742,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	parameter, the primary key of the class associated with the web
 	content article, or <code>0</code> otherwise
 	* @return the matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -755,7 +755,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	*
 	* @param id the primary key of the web content article
 	* @return the web content article with the ID
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -770,7 +770,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the web content article's group
 	* @param urlTitle the web content article's accessible URL title
 	* @return the matching web content article
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.journal.model.JournalArticle getArticleByUrlTitle(
@@ -790,7 +790,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param themeDisplay the theme display
 	* @return the web content from the web content article associated with the
 	portlet request model and the DDM template
-	* @throws PortalException if a matching DDM template could not be found, or
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching DDM template could not be found, or
 	if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -813,7 +813,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param languageId the primary key of the language translation to get
 	* @param themeDisplay the theme display
 	* @return the web content from the matching web content article
-	* @throws PortalException if a matching DDM template could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching DDM template could not be
 	found, or if a portal exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link
 	#getArticleContent(com.liferay.portlet.journal.model.JournalArticle, String, String, String,
@@ -843,7 +843,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param portletRequestModel the portlet request model
 	* @param themeDisplay the theme display
 	* @return the web content from the matching web content article
-	* @throws PortalException if a matching web content article or DDM template
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM template
 	could not be found, or if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -869,7 +869,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param languageId the primary key of the language translation to get
 	* @param themeDisplay the theme display
 	* @return the web content from the matching web content article
-	* @throws PortalException if a matching web content article or DDM
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM
 	template could not be found, or if a portal exception
 	occurred
 	* @deprecated As of 7.0.0, replaced by {@link #getArticleContent(long,
@@ -895,7 +895,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param languageId the primary key of the language translation to get
 	* @param themeDisplay the theme display
 	* @return the web content from the matching web content article
-	* @throws PortalException if a matching web content article or DDM
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM
 	template could not be found, or if a portal exception
 	occurred
 	* @deprecated As of 7.0.0, replaced by {@link #getArticleContent(long,
@@ -924,7 +924,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param portletRequestModel the portlet request model
 	* @param themeDisplay the theme display
 	* @return the latest web content from the matching web content article
-	* @throws PortalException if a matching web content article or DDM template
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM template
 	could not be found, or if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -947,7 +947,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param languageId the primary key of the language translation to get
 	* @param themeDisplay the theme display
 	* @return the latest web content from the matching web content article
-	* @throws PortalException if a matching web content article or DDM
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM
 	template could not be found, or if a portal exception
 	occurred
 	* @deprecated As of 7.0.0, replaced by {@link #getArticleContent(long,
@@ -972,7 +972,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param languageId the primary key of the language translation to get
 	* @param themeDisplay the theme display
 	* @return the latest web content from the matching web content article
-	* @throws PortalException if a matching web content article or DDM
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM
 	template could not be found, or if a portal exception
 	occurred
 	* @deprecated As of 7.0.0, replaced by {@link #getArticleContent(long,
@@ -1004,7 +1004,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @return the web content article display, or <code>null</code> if the
 	article has expired or if article's display date/time is after
 	the current date/time
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.journal.model.JournalArticleDisplay getArticleDisplay(
@@ -1033,7 +1033,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @return the web content article display, or <code>null</code> if the
 	article has expired or if article's display date/time is after
 	the current date/time
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.journal.model.JournalArticleDisplay getArticleDisplay(
@@ -1060,7 +1060,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @return the web content article display, or <code>null</code> if the
 	article has expired or if article's display date/time is after
 	the current date/time
-	* @throws PortalException if a matching web content article or DDM template
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM template
 	could not be found, or if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -1090,7 +1090,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @return the web content article display, or <code>null</code> if the
 	article has expired or if article's display date/time is after
 	the current date/time
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.journal.model.JournalArticleDisplay getArticleDisplay(
@@ -1118,7 +1118,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @return the web content article display, or <code>null</code> if the
 	article has expired or if article's display date/time is after
 	the current date/time
-	* @throws PortalException if a matching web content article or DDM template
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM template
 	could not be found, or if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -1145,7 +1145,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @return the web content article display, or <code>null</code> if the
 	article has expired or if article's display date/time is after
 	the current date/time
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.journal.model.JournalArticleDisplay getArticleDisplay(
@@ -1169,7 +1169,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @return the web content article display, or <code>null</code> if the
 	article has expired or if article's display date/time is after
 	the current date/time
-	* @throws PortalException if a matching web content article or DDM template
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM template
 	could not be found, or if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -1525,7 +1525,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @return the matching web content article currently displayed, or the next
 	one to be displayed if no version of the article is currently
 	displayed
-	* @throws PortalException if no approved matching web content articles
+	* @throws com.liferay.portal.kernel.exception.PortalException if no approved matching web content articles
 	could be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -1542,7 +1542,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @return the web content article matching the URL title that is currently
 	displayed, or next one to be displayed if no version of the
 	article is currently displayed
-	* @throws PortalException if no approved matching web content articles
+	* @throws com.liferay.portal.kernel.exception.PortalException if no approved matching web content articles
 	could be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -1575,7 +1575,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	*
 	* @param id the primary key of the journal article
 	* @return the journal article
-	* @throws PortalException if a journal article with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal article with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.journal.model.JournalArticle getJournalArticle(
@@ -1587,7 +1587,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param uuid the journal article's UUID
 	* @param groupId the primary key of the group
 	* @return the matching journal article
-	* @throws PortalException if a matching journal article could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching journal article could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.journal.model.JournalArticle getJournalArticleByUuidAndGroupId(
@@ -1649,7 +1649,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the web content article's group
 	* @param articleId the primary key of the web content article
 	* @return the latest matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -1667,7 +1667,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @return the latest matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -1689,7 +1689,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	primary key of the class associated with the web content article,
 	or <code>0</code> otherwise
 	* @return the latest matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -1704,7 +1704,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param resourcePrimKey the primary key of the resource instance
 	* @return the latest web content article matching the resource primary key,
 	preferring articles with approved workflow status
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -1723,7 +1723,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @return the latest web content article matching the resource primary key
 	and workflow status, preferring articles with approved workflow
 	status
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -1747,7 +1747,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @return the latest web content article matching the resource primary key
 	and workflow status, optionally preferring articles with approved
 	workflow status
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -1765,7 +1765,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @return the latest matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -1780,7 +1780,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the web content article's group
 	* @param articleId the primary key of the web content article
 	* @return the latest version number of the matching web content
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -1797,7 +1797,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @return the latest version number of the matching web content
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -1826,7 +1826,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the web content article's group
 	* @param articleId the primary key of the web content article
 	* @return the oldest matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -1844,7 +1844,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @return the oldest matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -1999,7 +1999,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param articleId the primary key of the web content article
 	* @param urlTitle the web content article's accessible URL title
 	* @return the web content article's unique URL title
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.lang.String getUniqueUrlTitle(long groupId,
@@ -2026,7 +2026,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param version the web content article's version
 	* @return <code>true</code> if the specified web content article is the
 	latest version; <code>false</code> otherwise
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -2046,7 +2046,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	with the "STATUS_" prefix.
 	* @return <code>true</code> if the specified web content article is the
 	latest version; <code>false</code> otherwise
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -2069,7 +2069,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param newFolderId the primary key of the web content article's new
 	folder
 	* @return the updated web content article, which was moved to a new folder
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
@@ -2096,7 +2096,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	considered a web content add activity.
 	* @return the updated web content article, which was moved from the Recycle
 	Bin to a new folder
-	* @throws PortalException if a trashed web content article with the primary
+	* @throws com.liferay.portal.kernel.exception.PortalException if a trashed web content article with the primary
 	key could not be found or if a portal exception occurred
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
@@ -2116,7 +2116,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param article the web content article
 	* @return the updated web content article, which was moved to the Recycle
 	Bin
-	* @throws PortalException if the user did not have permission to move the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to move the
 	article to the Recycle Bin or if a portal exception occurred
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
@@ -2134,7 +2134,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param articleId the primary key of the web content article
 	* @return the moved web content article or <code>null</code> if no matching
 	article was found
-	* @throws PortalException if the user did not have permission to move the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to move the
 	article to the Recycle Bin or if a portal exception occurred
 	*/
 	public com.liferay.portlet.journal.model.JournalArticle moveArticleToTrash(
@@ -2158,7 +2158,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* </p>
 	*
 	* @param companyId the primary key of the web content article's company
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public void rebuildTree(long companyId)
 		throws com.liferay.portal.kernel.exception.PortalException;
@@ -2172,7 +2172,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param version the web content article's version
 	* @param languageId the primary key of the language locale to remove
 	* @return the updated web content article with the locale removed
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
@@ -2188,7 +2188,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	article
 	* @param article the web content article
 	* @return the restored web content article from the Recycle Bin
-	* @throws PortalException if the web content article with the primary key
+	* @throws com.liferay.portal.kernel.exception.PortalException if the web content article with the primary key
 	could not be found in the Recycle Bin, if the user did not have
 	permission to restore the article, or if a portal exception
 	occurred
@@ -2638,7 +2638,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param end the upper bound of the range of web content articles to
 	return (not inclusive)
 	* @return the matching web content articles
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.kernel.search.Hits search(long groupId,
@@ -2896,7 +2896,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @return a {@link com.liferay.portal.kernel.search.BaseModelSearchResult} containing the total number of
 	hits and an ordered range of all the matching web content
 	articles ordered by <code>sort</code>
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.kernel.search.BaseModelSearchResult<com.liferay.portlet.journal.model.JournalArticle> searchJournalArticles(
@@ -2959,7 +2959,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @return a {@link com.liferay.portal.kernel.search.BaseModelSearchResult} containing the total number of
 	hits and an ordered range of all the matching web content
 	articles ordered by <code>sort</code>
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.kernel.search.BaseModelSearchResult<com.liferay.portlet.journal.model.JournalArticle> searchJournalArticles(
@@ -3007,7 +3007,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @return a {@link com.liferay.portal.kernel.search.BaseModelSearchResult} containing the total number of
 	hits and an ordered range of all the matching web content
 	articles ordered by <code>sort</code>
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.kernel.search.BaseModelSearchResult<com.liferay.portlet.journal.model.JournalArticle> searchJournalArticles(
@@ -3032,7 +3032,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the folder's group
 	* @param userId the primary key of the user to be subscribed
 	* @param ddmStructureId the primary key of the structure to subscribe to
-	* @throws PortalException if a matching user or group could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching user or group could not be found
 	*/
 	public void subscribeStructure(long groupId, long userId,
 		long ddmStructureId)
@@ -3045,7 +3045,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param groupId the primary key of the folder's group
 	* @param userId the primary key of the user to be subscribed
 	* @param ddmStructureId the primary key of the structure to subscribe to
-	* @throws PortalException if a matching user or subscription could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching user or subscription could not be
 	found
 	*/
 	public void unsubscribeStructure(long groupId, long userId,
@@ -3075,7 +3075,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	invocation is considered a web content update activity; otherwise
 	it is considered a web content add activity.
 	* @return the updated web content article
-	* @throws PortalException if a user with the primary key or a matching web
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key or a matching web
 	content article could not be found, or if a portal exception
 	occurred
 	*/
@@ -3161,7 +3161,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	invocation is considered a web content update activity; otherwise
 	it is considered a web content add activity.
 	* @return the updated web content article
-	* @throws PortalException if a user with the primary key or a matching web
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key or a matching web
 	content article could not be found, or if a portal exception
 	occurred
 	*/
@@ -3214,7 +3214,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	invocation is considered a web content update activity; otherwise
 	it is considered a web content add activity.
 	* @return the updated web content article
-	* @throws PortalException if a user with the primary key or a matching web
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key or a matching web
 	content article could not be found, or if a portal exception
 	occurred
 	*/
@@ -3257,7 +3257,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	modification date and "urlTitle" attribute for the web content
 	article.
 	* @return the updated web content article
-	* @throws PortalException if a user with the primary key or a matching web
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key or a matching web
 	content article could not be found, or if a portal exception
 	occurred
 	*/
@@ -3280,7 +3280,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param assetCategoryIds the primary keys of the new asset categories
 	* @param assetTagNames the new asset tag names
 	* @param assetLinkEntryIds the primary keys of the new asset link entries
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public void updateAsset(long userId,
 		com.liferay.portlet.journal.model.JournalArticle article,
@@ -3299,7 +3299,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	see the content example in the class description for {@link
 	JournalArticleLocalServiceImpl}.
 	* @return the updated web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
@@ -3355,7 +3355,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	* @param workflowContext the web content article's configured workflow
 	context
 	* @return the updated web content article
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public com.liferay.portlet.journal.model.JournalArticle updateStatus(
@@ -3382,7 +3382,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	modification date, portlet preferences, and can set whether to
 	add the default command update for the web content article.
 	* @return the updated web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found or if a portal exception occurred
 	*/
 	public com.liferay.portlet.journal.model.JournalArticle updateStatus(
@@ -3409,7 +3409,7 @@ public interface JournalArticleLocalService extends BaseLocalService,
 	modification date, portlet preferences, and can set whether to
 	add the default command update for the web content article.
 	* @return the updated web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found or if a portal exception occurred
 	*/
 	public com.liferay.portlet.journal.model.JournalArticle updateStatus(

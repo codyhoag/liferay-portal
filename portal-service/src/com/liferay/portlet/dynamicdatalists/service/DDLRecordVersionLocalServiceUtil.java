@@ -79,7 +79,7 @@ public class DDLRecordVersionLocalServiceUtil {
 	*
 	* @param recordVersionId the primary key of the d d l record version
 	* @return the d d l record version that was removed
-	* @throws PortalException if a d d l record version with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d l record version with the primary key could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatalists.model.DDLRecordVersion deleteDDLRecordVersion(
 		long recordVersionId)
@@ -88,7 +88,7 @@ public class DDLRecordVersionLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -197,7 +197,7 @@ public class DDLRecordVersionLocalServiceUtil {
 	*
 	* @param recordVersionId the primary key of the d d l record version
 	* @return the d d l record version
-	* @throws PortalException if a d d l record version with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d l record version with the primary key could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatalists.model.DDLRecordVersion getDDLRecordVersion(
 		long recordVersionId)

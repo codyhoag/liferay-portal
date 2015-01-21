@@ -82,7 +82,7 @@ public class AnnouncementsDeliveryLocalServiceWrapper
 	*
 	* @param deliveryId the primary key of the announcements delivery
 	* @return the announcements delivery that was removed
-	* @throws PortalException if a announcements delivery with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a announcements delivery with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.announcements.model.AnnouncementsDelivery deleteAnnouncementsDelivery(
@@ -114,7 +114,7 @@ public class AnnouncementsDeliveryLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -253,7 +253,7 @@ public class AnnouncementsDeliveryLocalServiceWrapper
 	*
 	* @param deliveryId the primary key of the announcements delivery
 	* @return the announcements delivery
-	* @throws PortalException if a announcements delivery with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a announcements delivery with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.announcements.model.AnnouncementsDelivery getAnnouncementsDelivery(

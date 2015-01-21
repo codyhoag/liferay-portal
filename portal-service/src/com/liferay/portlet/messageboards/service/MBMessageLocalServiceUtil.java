@@ -195,7 +195,7 @@ public class MBMessageLocalServiceUtil {
 	*
 	* @param messageId the primary key of the message-boards message
 	* @return the message-boards message that was removed
-	* @throws PortalException if a message-boards message with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message-boards message with the primary key could not be found
 	*/
 	public static com.liferay.portlet.messageboards.model.MBMessage deleteMBMessage(
 		long messageId)
@@ -227,7 +227,7 @@ public class MBMessageLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -454,7 +454,7 @@ public class MBMessageLocalServiceUtil {
 	*
 	* @param messageId the primary key of the message-boards message
 	* @return the message-boards message
-	* @throws PortalException if a message-boards message with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message-boards message with the primary key could not be found
 	*/
 	public static com.liferay.portlet.messageboards.model.MBMessage getMBMessage(
 		long messageId)
@@ -468,7 +468,7 @@ public class MBMessageLocalServiceUtil {
 	* @param uuid the message-boards message's UUID
 	* @param groupId the primary key of the group
 	* @return the matching message-boards message
-	* @throws PortalException if a matching message-boards message could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching message-boards message could not be found
 	*/
 	public static com.liferay.portlet.messageboards.model.MBMessage getMBMessageByUuidAndGroupId(
 		java.lang.String uuid, long groupId)

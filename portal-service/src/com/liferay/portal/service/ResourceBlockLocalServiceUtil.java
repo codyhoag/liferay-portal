@@ -148,7 +148,7 @@ public class ResourceBlockLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -172,7 +172,7 @@ public class ResourceBlockLocalServiceUtil {
 	*
 	* @param resourceBlockId the primary key of the resource block
 	* @return the resource block that was removed
-	* @throws PortalException if a resource block with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a resource block with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.ResourceBlock deleteResourceBlock(
 		long resourceBlockId)
@@ -331,7 +331,7 @@ public class ResourceBlockLocalServiceUtil {
 	*
 	* @param resourceBlockId the primary key of the resource block
 	* @return the resource block
-	* @throws PortalException if a resource block with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a resource block with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.ResourceBlock getResourceBlock(
 		long resourceBlockId)

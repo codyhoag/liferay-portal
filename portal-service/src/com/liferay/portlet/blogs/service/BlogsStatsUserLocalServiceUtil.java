@@ -79,7 +79,7 @@ public class BlogsStatsUserLocalServiceUtil {
 	*
 	* @param statsUserId the primary key of the blogs stats user
 	* @return the blogs stats user that was removed
-	* @throws PortalException if a blogs stats user with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a blogs stats user with the primary key could not be found
 	*/
 	public static com.liferay.portlet.blogs.model.BlogsStatsUser deleteBlogsStatsUser(
 		long statsUserId)
@@ -88,7 +88,7 @@ public class BlogsStatsUserLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -215,7 +215,7 @@ public class BlogsStatsUserLocalServiceUtil {
 	*
 	* @param statsUserId the primary key of the blogs stats user
 	* @return the blogs stats user
-	* @throws PortalException if a blogs stats user with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a blogs stats user with the primary key could not be found
 	*/
 	public static com.liferay.portlet.blogs.model.BlogsStatsUser getBlogsStatsUser(
 		long statsUserId)

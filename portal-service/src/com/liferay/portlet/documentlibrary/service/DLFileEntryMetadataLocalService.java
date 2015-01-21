@@ -82,7 +82,7 @@ public interface DLFileEntryMetadataLocalService extends BaseLocalService,
 	*
 	* @param fileEntryMetadataId the primary key of the document library file entry metadata
 	* @return the document library file entry metadata that was removed
-	* @throws PortalException if a document library file entry metadata with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file entry metadata with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.documentlibrary.model.DLFileEntryMetadata deleteDLFileEntryMetadata(
@@ -96,7 +96,7 @@ public interface DLFileEntryMetadataLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -195,7 +195,7 @@ public interface DLFileEntryMetadataLocalService extends BaseLocalService,
 	*
 	* @param fileEntryMetadataId the primary key of the document library file entry metadata
 	* @return the document library file entry metadata
-	* @throws PortalException if a document library file entry metadata with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file entry metadata with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.documentlibrary.model.DLFileEntryMetadata getDLFileEntryMetadata(

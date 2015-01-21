@@ -77,7 +77,7 @@ public interface LayoutSetBranchLocalService extends BaseLocalService,
 	*
 	* @param layoutSetBranch the layout set branch
 	* @return the layout set branch that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.LayoutSetBranch deleteLayoutSetBranch(
@@ -94,7 +94,7 @@ public interface LayoutSetBranchLocalService extends BaseLocalService,
 	*
 	* @param layoutSetBranchId the primary key of the layout set branch
 	* @return the layout set branch that was removed
-	* @throws PortalException if a layout set branch with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout set branch with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.LayoutSetBranch deleteLayoutSetBranch(
@@ -109,7 +109,7 @@ public interface LayoutSetBranchLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -209,7 +209,7 @@ public interface LayoutSetBranchLocalService extends BaseLocalService,
 	*
 	* @param layoutSetBranchId the primary key of the layout set branch
 	* @return the layout set branch
-	* @throws PortalException if a layout set branch with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout set branch with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.LayoutSetBranch getLayoutSetBranch(

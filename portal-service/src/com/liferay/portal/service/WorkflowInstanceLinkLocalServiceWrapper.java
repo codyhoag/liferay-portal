@@ -66,7 +66,7 @@ public class WorkflowInstanceLinkLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -88,7 +88,7 @@ public class WorkflowInstanceLinkLocalServiceWrapper
 	*
 	* @param workflowInstanceLink the workflow instance link
 	* @return the workflow instance link that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.WorkflowInstanceLink deleteWorkflowInstanceLink(
@@ -102,7 +102,7 @@ public class WorkflowInstanceLinkLocalServiceWrapper
 	*
 	* @param workflowInstanceLinkId the primary key of the workflow instance link
 	* @return the workflow instance link that was removed
-	* @throws PortalException if a workflow instance link with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a workflow instance link with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.WorkflowInstanceLink deleteWorkflowInstanceLink(
@@ -261,7 +261,7 @@ public class WorkflowInstanceLinkLocalServiceWrapper
 	*
 	* @param workflowInstanceLinkId the primary key of the workflow instance link
 	* @return the workflow instance link
-	* @throws PortalException if a workflow instance link with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a workflow instance link with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.WorkflowInstanceLink getWorkflowInstanceLink(

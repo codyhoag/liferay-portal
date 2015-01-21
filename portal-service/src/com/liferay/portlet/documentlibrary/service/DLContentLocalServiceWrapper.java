@@ -99,7 +99,7 @@ public class DLContentLocalServiceWrapper implements DLContentLocalService,
 	*
 	* @param contentId the primary key of the document library content
 	* @return the document library content that was removed
-	* @throws PortalException if a document library content with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library content with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.documentlibrary.model.DLContent deleteDLContent(
@@ -121,7 +121,7 @@ public class DLContentLocalServiceWrapper implements DLContentLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -275,7 +275,7 @@ public class DLContentLocalServiceWrapper implements DLContentLocalService,
 	*
 	* @param contentId the primary key of the document library content
 	* @return the document library content
-	* @throws PortalException if a document library content with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library content with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.documentlibrary.model.DLContent getDLContent(

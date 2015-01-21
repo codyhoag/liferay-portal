@@ -96,7 +96,7 @@ public class ShoppingCouponLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -110,7 +110,7 @@ public class ShoppingCouponLocalServiceWrapper
 	*
 	* @param couponId the primary key of the shopping coupon
 	* @return the shopping coupon that was removed
-	* @throws PortalException if a shopping coupon with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shopping coupon with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.shopping.model.ShoppingCoupon deleteShoppingCoupon(
@@ -263,7 +263,7 @@ public class ShoppingCouponLocalServiceWrapper
 	*
 	* @param couponId the primary key of the shopping coupon
 	* @return the shopping coupon
-	* @throws PortalException if a shopping coupon with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shopping coupon with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.shopping.model.ShoppingCoupon getShoppingCoupon(

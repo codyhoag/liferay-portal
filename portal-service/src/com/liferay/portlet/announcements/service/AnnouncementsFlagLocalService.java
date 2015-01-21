@@ -85,7 +85,7 @@ public interface AnnouncementsFlagLocalService extends BaseLocalService,
 	*
 	* @param flagId the primary key of the announcements flag
 	* @return the announcements flag that was removed
-	* @throws PortalException if a announcements flag with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a announcements flag with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.announcements.model.AnnouncementsFlag deleteAnnouncementsFlag(
@@ -100,7 +100,7 @@ public interface AnnouncementsFlagLocalService extends BaseLocalService,
 	public void deleteFlags(long entryId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -184,7 +184,7 @@ public interface AnnouncementsFlagLocalService extends BaseLocalService,
 	*
 	* @param flagId the primary key of the announcements flag
 	* @return the announcements flag
-	* @throws PortalException if a announcements flag with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a announcements flag with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.announcements.model.AnnouncementsFlag getAnnouncementsFlag(

@@ -85,7 +85,7 @@ public interface MembershipRequestLocalService extends BaseLocalService,
 	*
 	* @param membershipRequestId the primary key of the membership request
 	* @return the membership request that was removed
-	* @throws PortalException if a membership request with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a membership request with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.MembershipRequest deleteMembershipRequest(
@@ -99,7 +99,7 @@ public interface MembershipRequestLocalService extends BaseLocalService,
 	public void deleteMembershipRequestsByUserId(long userId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -190,7 +190,7 @@ public interface MembershipRequestLocalService extends BaseLocalService,
 	*
 	* @param membershipRequestId the primary key of the membership request
 	* @return the membership request
-	* @throws PortalException if a membership request with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a membership request with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.MembershipRequest getMembershipRequest(

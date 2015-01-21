@@ -117,7 +117,7 @@ public interface JournalArticleService extends BaseService {
 	attribute, and workflow actions for the web content article. Can
 	also set whether to add the default guest and group permissions.
 	* @return the web content article
-	* @throws PortalException if the user did not have permission to add the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to add the
 	web content article or if a portal exception occurred
 	*/
 	public com.liferay.portlet.journal.model.JournalArticle addArticle(
@@ -210,7 +210,7 @@ public interface JournalArticleService extends BaseService {
 	attribute, and workflow actions for the web content article. Can
 	also set whether to add the default guest and group permissions.
 	* @return the web content article
-	* @throws PortalException if the user did not have permission to add the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to add the
 	web content article or if a portal exception occurred
 	*/
 	public com.liferay.portlet.journal.model.JournalArticle addArticle(
@@ -243,7 +243,7 @@ public interface JournalArticleService extends BaseService {
 	* @param autoArticleId whether to auto-generate the web content article ID
 	* @param version the web content article's version
 	* @return the new web content article
-	* @throws PortalException if the user did not have permission to add the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to add the
 	copy the web content article, if a matching web content article
 	could not be found, or if a portal exception occurred
 	*/
@@ -263,7 +263,7 @@ public interface JournalArticleService extends BaseService {
 	* @param serviceContext the service context to be applied. Can set the
 	portlet preferences that include email information to notify
 	recipients of the unapproved web content article's denial.
-	* @throws PortalException if the user did not have permission to delete the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to delete the
 	web content article or if a portal exception occurred
 	*/
 	public void deleteArticle(long groupId, java.lang.String articleId,
@@ -283,7 +283,7 @@ public interface JournalArticleService extends BaseService {
 	* @param serviceContext the service context to be applied. Can set the
 	portlet preferences that include email information to notify
 	recipients of the unapproved web content article's denial.
-	* @throws PortalException if the user did not have permission to delete the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to delete the
 	web content article, if a matching web content article could not
 	be found, or if a portal exception occurred
 	*/
@@ -309,7 +309,7 @@ public interface JournalArticleService extends BaseService {
 	com.liferay.portal.kernel.util.Constants#UPDATE}, the invocation
 	is considered a web content update activity; otherwise it is
 	considered a web content add activity.
-	* @throws PortalException if the user did not have permission to expire the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to expire the
 	web content article, if a matching web content article could not
 	be found, or if a portal exception occurred
 	*/
@@ -335,7 +335,7 @@ public interface JournalArticleService extends BaseService {
 	is considered a web content update activity; otherwise it is
 	considered a web content add activity.
 	* @return the web content article
-	* @throws PortalException if the user did not have permission to expire the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to expire the
 	web content article, if a matching web content article could not
 	be found, or if a portal exception occurred
 	*/
@@ -353,7 +353,7 @@ public interface JournalArticleService extends BaseService {
 	* @param groupId the primary key of the web content article's group
 	* @param articleId the primary key of the web content article
 	* @return the matching web content article
-	* @throws PortalException if the user did not have permission to view the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to view the
 	web content article or if a matching web content article could
 	not be found
 	*/
@@ -370,7 +370,7 @@ public interface JournalArticleService extends BaseService {
 	* @param articleId the primary key of the web content article
 	* @param version the web content article's version
 	* @return the matching web content article
-	* @throws PortalException if the user did not have permission to view the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to view the
 	web content article or if a matching web content article could
 	not be found
 	*/
@@ -393,7 +393,7 @@ public interface JournalArticleService extends BaseService {
 	parameter, the primary key of the class associated with the web
 	content article, or <code>0</code> otherwise
 	* @return the matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found or if the user did not have permission to view the web
 	content article
 	*/
@@ -407,7 +407,7 @@ public interface JournalArticleService extends BaseService {
 	*
 	* @param id the primary key of the web content article
 	* @return the web content article with the ID
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found or if the user did not have permission to view the web
 	content article
 	*/
@@ -423,7 +423,7 @@ public interface JournalArticleService extends BaseService {
 	* @param groupId the primary key of the web content article's group
 	* @param urlTitle the web content article's accessible URL title
 	* @return the matching web content article
-	* @throws PortalException if the user did not have permission to view the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to view the
 	web content article or if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -441,7 +441,7 @@ public interface JournalArticleService extends BaseService {
 	* @param portletRequestModel the portlet request model
 	* @param themeDisplay the theme display
 	* @return the matching web content
-	* @throws PortalException if the user did not have permission to view the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to view the
 	web content article, if a matching web content article or DDM
 	template could not be found, or if a portal exception occurred
 	*/
@@ -461,7 +461,7 @@ public interface JournalArticleService extends BaseService {
 	* @param languageId the primary key of the language translation to get
 	* @param themeDisplay the theme display
 	* @return the matching web content
-	* @throws PortalException if the user did not have permission to view
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to view
 	the web content article, if a matching web content article or
 	DDM template could not be found, or if a portal exception
 	occurred
@@ -486,7 +486,7 @@ public interface JournalArticleService extends BaseService {
 	* @param portletRequestModel the portlet request model
 	* @param themeDisplay the theme display
 	* @return the matching web content
-	* @throws PortalException if the user did not have permission to view the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to view the
 	web content article, if a matching web content article or DDM
 	template could not be found, or if a portal exception occurred
 	*/
@@ -508,7 +508,7 @@ public interface JournalArticleService extends BaseService {
 	* @param languageId the primary key of the language translation to get
 	* @param themeDisplay the theme display
 	* @return the matching web content
-	* @throws PortalException if the user did not have permission to view
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to view
 	the web content article, if a matching web content article or
 	DDM template could not be found, or if a portal exception
 	occurred
@@ -756,7 +756,7 @@ public interface JournalArticleService extends BaseService {
 	* @return the web content article matching the URL title that is currently
 	displayed, or next one to be displayed if no version of the
 	article is currently displayed
-	* @throws PortalException if the user did not have permission to view the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to view the
 	web content article or if no approved matching web content
 	articles could be found
 	*/
@@ -804,7 +804,7 @@ public interface JournalArticleService extends BaseService {
 	articles
 	* @return the range of matching web content articles ordered by the
 	comparator
-	* @throws PortalException if the root folder could not be found, if the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the root folder could not be found, if the
 	current user did not have permission to view the root folder, or
 	if a portal exception occurred
 	*/
@@ -843,7 +843,7 @@ public interface JournalArticleService extends BaseService {
 	articles
 	* @return the range of matching web content articles ordered by the
 	comparator
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<com.liferay.portlet.journal.model.JournalArticle> getGroupArticles(
@@ -861,7 +861,7 @@ public interface JournalArticleService extends BaseService {
 	* @param rootFolderId the primary key of the root folder to begin the
 	search
 	* @return the number of matching web content articles
-	* @throws PortalException if the root folder could not be found, if the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the root folder could not be found, if the
 	current user did not have permission to view the root folder, or
 	if a portal exception occurred
 	*/
@@ -882,7 +882,7 @@ public interface JournalArticleService extends BaseService {
 	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @return the number of matching web content articles
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public int getGroupArticlesCount(long groupId, long userId,
@@ -899,7 +899,7 @@ public interface JournalArticleService extends BaseService {
 	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @return the latest matching web content article
-	* @throws PortalException if the user did not have permission to view the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to view the
 	web content article or if a matching web content article could
 	not be found
 	*/
@@ -922,7 +922,7 @@ public interface JournalArticleService extends BaseService {
 	primary key of the class associated with the web content article,
 	or <code>0</code> otherwise
 	* @return the latest matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found or if the user did not have permission to view the web
 	content article
 	*/
@@ -938,7 +938,7 @@ public interface JournalArticleService extends BaseService {
 	* @param resourcePrimKey the primary key of the resource instance
 	* @return the latest web content article matching the resource primary key,
 	preferring articles with approved workflow status
-	* @throws PortalException if the user did not have permission to view the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to view the
 	web content article or if a matching web content article could
 	not be found
 	*/
@@ -955,7 +955,7 @@ public interface JournalArticleService extends BaseService {
 	* @param articleId the primary key of the web content article
 	* @param newFolderId the primary key of the web content article's new
 	folder
-	* @throws PortalException if the user did not have permission to update any
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to update any
 	one of the versions of the web content article or if any one of
 	the versions of the web content article could not be moved to the
 	folder
@@ -981,7 +981,7 @@ public interface JournalArticleService extends BaseService {
 	considered a web content add activity.
 	* @return the updated web content article, which was moved from the Recycle
 	Bin to the folder
-	* @throws PortalException if the user did not have permission to view or
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to view or
 	update the web content article, if a trashed web content article
 	with the primary key could not be found, or if a portal exception
 	occurred
@@ -1008,7 +1008,7 @@ public interface JournalArticleService extends BaseService {
 	considered a web content add activity.
 	* @return the updated web content article, which was moved from the Recycle
 	Bin to the folder
-	* @throws PortalException if the user did not have permission to view or
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to view or
 	update the web content article, if a matching trashed web content
 	article could not be found, or if a portal exception occurred
 	*/
@@ -1025,7 +1025,7 @@ public interface JournalArticleService extends BaseService {
 	* @param articleId the primary key of the web content article
 	* @return the moved web content article or <code>null</code> if no matching
 	article was found
-	* @throws PortalException if the user did not have permission to move the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to move the
 	article to the Recycle Bin or if a portal exception occurred
 	*/
 	public com.liferay.portlet.journal.model.JournalArticle moveArticleToTrash(
@@ -1038,7 +1038,7 @@ public interface JournalArticleService extends BaseService {
 	*
 	* @param companyId the primary key of the web content article's company
 	* @param languageId the primary key of the language locale to remove
-	* @throws PortalException if the user did not have permission to update any
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to update any
 	one of the the web content articles or if web content matching
 	the language could not be found for any one of the articles
 	*/
@@ -1054,7 +1054,7 @@ public interface JournalArticleService extends BaseService {
 	* @param version the web content article's version
 	* @param languageId the primary key of the language locale to remove
 	* @return the updated web content article with the locale removed
-	* @throws PortalException if the user did not have permission to update the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to update the
 	web content article or if a matching web content article could
 	not be found
 	*/
@@ -1068,7 +1068,7 @@ public interface JournalArticleService extends BaseService {
 	*
 	* @param groupId the primary key of the web content article's group
 	* @param articleId the primary key of the web content article
-	* @throws PortalException if the web content article with the primary key
+	* @throws com.liferay.portal.kernel.exception.PortalException if the web content article with the primary key
 	could not be found in the Recycle Bin, if the user did not have
 	permission to restore the article, or if a portal exception
 	occurred
@@ -1081,7 +1081,7 @@ public interface JournalArticleService extends BaseService {
 	* from the Recycle Bin.
 	*
 	* @param resourcePrimKey the primary key of the resource instance
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found in the Recycle Bin, if the user did not have permission to
 	view or restore the article, or if a portal exception occurred
 	*/
@@ -1325,7 +1325,7 @@ public interface JournalArticleService extends BaseService {
 	* @param end the upper bound of the range of web content articles to
 	return (not inclusive)
 	* @return the matching web content articles
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.kernel.search.Hits search(long groupId,
@@ -1505,7 +1505,7 @@ public interface JournalArticleService extends BaseService {
 	* @param groupId the primary key of the folder's group
 	* @param userId the primary key of the user to be subscribed
 	* @param ddmStructureId the primary key of the structure to subscribe to
-	* @throws PortalException if a matching user or group could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching user or group could not be found
 	*/
 	public void subscribeStructure(long groupId, long userId,
 		long ddmStructureId)
@@ -1518,7 +1518,7 @@ public interface JournalArticleService extends BaseService {
 	* @param groupId the primary key of the folder's group
 	* @param userId the primary key of the user to be subscribed
 	* @param ddmStructureId the primary key of the structure to subscribe to
-	* @throws PortalException if a matching user or subscription could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching user or subscription could not be
 	found
 	*/
 	public void unsubscribeStructure(long groupId, long userId,
@@ -1546,7 +1546,7 @@ public interface JournalArticleService extends BaseService {
 	invocation is considered a web content update activity; otherwise
 	it is considered a web content add activity.
 	* @return the updated web content article
-	* @throws PortalException if the user did not have permission to update the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to update the
 	web content article, if a user with the primary key or a matching
 	web content article could not be found, or if a portal exception
 	occurred
@@ -1631,7 +1631,7 @@ public interface JournalArticleService extends BaseService {
 	invocation is considered a web content update activity; otherwise
 	it is considered a web content add activity.
 	* @return the updated web content article
-	* @throws PortalException if the user did not have permission to update the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to update the
 	web content article, if a user with the primary key or a matching
 	web content article could not be found, or if a portal exception
 	occurred
@@ -1683,7 +1683,7 @@ public interface JournalArticleService extends BaseService {
 	invocation is considered a web content update activity; otherwise
 	it is considered a web content add activity.
 	* @return the updated web content article
-	* @throws PortalException if a user with the primary key or a matching web
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key or a matching web
 	content article could not be found, or if a portal exception
 	occurred
 	*/
@@ -1726,7 +1726,7 @@ public interface JournalArticleService extends BaseService {
 	modification date and "urlTitle" attribute for the web content
 	article.
 	* @return the updated web content article
-	* @throws PortalException if the user did not have permission to update the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to update the
 	web content article, if a user with the primary key or a matching
 	web content article could not be found, or if a portal exception
 	occurred
@@ -1750,7 +1750,7 @@ public interface JournalArticleService extends BaseService {
 	see the content example in the class description for {@link
 	JournalArticleLocalServiceImpl}.
 	* @return the updated web content article
-	* @throws PortalException if the user did not have permission to update the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to update the
 	web content article or if a matching web content article could
 	not be found
 	*/
@@ -1774,7 +1774,7 @@ public interface JournalArticleService extends BaseService {
 	modification date, portlet preferences, and can set whether to
 	add the default command update for the web content article.
 	* @return the updated web content article
-	* @throws PortalException if the user did not have permission to update the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to update the
 	web content article, if a matching web content article could not
 	be found, or if a portal exception occurred
 	*/

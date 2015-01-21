@@ -156,7 +156,7 @@ public interface MBMessageLocalService extends BaseLocalService,
 	*
 	* @param messageId the primary key of the message-boards message
 	* @return the message-boards message that was removed
-	* @throws PortalException if a message-boards message with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message-boards message with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.messageboards.model.MBMessage deleteMBMessage(
@@ -182,7 +182,7 @@ public interface MBMessageLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -360,7 +360,7 @@ public interface MBMessageLocalService extends BaseLocalService,
 	*
 	* @param messageId the primary key of the message-boards message
 	* @return the message-boards message
-	* @throws PortalException if a message-boards message with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message-boards message with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.messageboards.model.MBMessage getMBMessage(
@@ -373,7 +373,7 @@ public interface MBMessageLocalService extends BaseLocalService,
 	* @param uuid the message-boards message's UUID
 	* @param groupId the primary key of the group
 	* @return the matching message-boards message
-	* @throws PortalException if a matching message-boards message could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching message-boards message could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.messageboards.model.MBMessage getMBMessageByUuidAndGroupId(

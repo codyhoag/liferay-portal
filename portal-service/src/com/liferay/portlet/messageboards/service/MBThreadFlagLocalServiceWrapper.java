@@ -82,7 +82,7 @@ public class MBThreadFlagLocalServiceWrapper implements MBThreadFlagLocalService
 	*
 	* @param threadFlagId the primary key of the message boards thread flag
 	* @return the message boards thread flag that was removed
-	* @throws PortalException if a message boards thread flag with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards thread flag with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.messageboards.model.MBThreadFlag deleteMBThreadFlag(
@@ -92,7 +92,7 @@ public class MBThreadFlagLocalServiceWrapper implements MBThreadFlagLocalService
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -254,7 +254,7 @@ public class MBThreadFlagLocalServiceWrapper implements MBThreadFlagLocalService
 	*
 	* @param threadFlagId the primary key of the message boards thread flag
 	* @return the message boards thread flag
-	* @throws PortalException if a message boards thread flag with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards thread flag with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.messageboards.model.MBThreadFlag getMBThreadFlag(
@@ -269,7 +269,7 @@ public class MBThreadFlagLocalServiceWrapper implements MBThreadFlagLocalService
 	* @param uuid the message boards thread flag's UUID
 	* @param groupId the primary key of the group
 	* @return the matching message boards thread flag
-	* @throws PortalException if a matching message boards thread flag could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching message boards thread flag could not be found
 	*/
 	@Override
 	public com.liferay.portlet.messageboards.model.MBThreadFlag getMBThreadFlagByUuidAndGroupId(

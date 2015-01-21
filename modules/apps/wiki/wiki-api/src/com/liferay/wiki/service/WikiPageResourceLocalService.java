@@ -73,7 +73,7 @@ public interface WikiPageResourceLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -85,7 +85,7 @@ public interface WikiPageResourceLocalService extends BaseLocalService,
 	*
 	* @param resourcePrimKey the primary key of the wiki page resource
 	* @return the wiki page resource that was removed
-	* @throws PortalException if a wiki page resource with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a wiki page resource with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.wiki.model.WikiPageResource deleteWikiPageResource(
@@ -213,7 +213,7 @@ public interface WikiPageResourceLocalService extends BaseLocalService,
 	*
 	* @param resourcePrimKey the primary key of the wiki page resource
 	* @return the wiki page resource
-	* @throws PortalException if a wiki page resource with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a wiki page resource with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.wiki.model.WikiPageResource getWikiPageResource(

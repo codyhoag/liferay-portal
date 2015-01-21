@@ -88,7 +88,7 @@ public class AssetTagStatsLocalServiceWrapper
 	*
 	* @param tagStatsId the primary key of the asset tag stats
 	* @return the asset tag stats that was removed
-	* @throws PortalException if a asset tag stats with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a asset tag stats with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.asset.model.AssetTagStats deleteAssetTagStats(
@@ -98,7 +98,7 @@ public class AssetTagStatsLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -122,7 +122,7 @@ public class AssetTagStatsLocalServiceWrapper
 	* Deletes the asset tag statistics instance matching the tag statistics ID.
 	*
 	* @param tagStatsId the primary key of the asset tag statistics instance
-	* @throws PortalException if the assetTagStats with the primary key could
+	* @throws com.liferay.portal.kernel.exception.PortalException if the assetTagStats with the primary key could
 	not be found
 	*/
 	@Override
@@ -253,7 +253,7 @@ public class AssetTagStatsLocalServiceWrapper
 	*
 	* @param tagStatsId the primary key of the asset tag stats
 	* @return the asset tag stats
-	* @throws PortalException if a asset tag stats with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a asset tag stats with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.asset.model.AssetTagStats getAssetTagStats(
@@ -375,7 +375,7 @@ public class AssetTagStatsLocalServiceWrapper
 	* @param tagId the primary key of the tag
 	* @param classNameId the asset entry's class name ID
 	* @return the updated asset tag statistics instance
-	* @throws PortalException if an asset tag with the tag ID could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if an asset tag with the tag ID could not be
 	found
 	*/
 	@Override

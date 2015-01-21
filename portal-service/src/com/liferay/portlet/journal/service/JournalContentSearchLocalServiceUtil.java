@@ -93,7 +93,7 @@ public class JournalContentSearchLocalServiceUtil {
 	*
 	* @param contentSearchId the primary key of the journal content search
 	* @return the journal content search that was removed
-	* @throws PortalException if a journal content search with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal content search with the primary key could not be found
 	*/
 	public static com.liferay.portlet.journal.model.JournalContentSearch deleteJournalContentSearch(
 		long contentSearchId)
@@ -124,7 +124,7 @@ public class JournalContentSearchLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -247,7 +247,7 @@ public class JournalContentSearchLocalServiceUtil {
 	*
 	* @param contentSearchId the primary key of the journal content search
 	* @return the journal content search
-	* @throws PortalException if a journal content search with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal content search with the primary key could not be found
 	*/
 	public static com.liferay.portlet.journal.model.JournalContentSearch getJournalContentSearch(
 		long contentSearchId)

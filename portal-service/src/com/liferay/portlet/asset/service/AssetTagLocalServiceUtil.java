@@ -105,7 +105,7 @@ public class AssetTagLocalServiceUtil {
 	* @param names the tag names
 	* @return the tags matching the group and names and new tags matching the
 	names that don't already exist for the group
-	* @throws PortalException if a matching group could not be found, if the
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching group could not be found, if the
 	tag's key or value were invalid, or if a portal exception
 	occurred
 	*/
@@ -177,7 +177,7 @@ public class AssetTagLocalServiceUtil {
 	*
 	* @param tagId the primary key of the asset tag
 	* @return the asset tag that was removed
-	* @throws PortalException if a asset tag with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a asset tag with the primary key could not be found
 	*/
 	public static com.liferay.portlet.asset.model.AssetTag deleteAssetTag(
 		long tagId) throws com.liferay.portal.kernel.exception.PortalException {
@@ -190,7 +190,7 @@ public class AssetTagLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -332,7 +332,7 @@ public class AssetTagLocalServiceUtil {
 	*
 	* @param tagId the primary key of the asset tag
 	* @return the asset tag
-	* @throws PortalException if a asset tag with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a asset tag with the primary key could not be found
 	*/
 	public static com.liferay.portlet.asset.model.AssetTag getAssetTag(
 		long tagId) throws com.liferay.portal.kernel.exception.PortalException {

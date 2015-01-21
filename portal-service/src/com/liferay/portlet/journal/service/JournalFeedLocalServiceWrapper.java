@@ -133,7 +133,7 @@ public class JournalFeedLocalServiceWrapper implements JournalFeedLocalService,
 	*
 	* @param id the primary key of the journal feed
 	* @return the journal feed that was removed
-	* @throws PortalException if a journal feed with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal feed with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalFeed deleteJournalFeed(
@@ -154,7 +154,7 @@ public class JournalFeedLocalServiceWrapper implements JournalFeedLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -335,7 +335,7 @@ public class JournalFeedLocalServiceWrapper implements JournalFeedLocalService,
 	*
 	* @param id the primary key of the journal feed
 	* @return the journal feed
-	* @throws PortalException if a journal feed with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal feed with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalFeed getJournalFeed(long id)
@@ -349,7 +349,7 @@ public class JournalFeedLocalServiceWrapper implements JournalFeedLocalService,
 	* @param uuid the journal feed's UUID
 	* @param groupId the primary key of the group
 	* @return the matching journal feed
-	* @throws PortalException if a matching journal feed could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching journal feed could not be found
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalFeed getJournalFeedByUuidAndGroupId(

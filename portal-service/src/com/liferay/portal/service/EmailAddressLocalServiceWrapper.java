@@ -96,7 +96,7 @@ public class EmailAddressLocalServiceWrapper implements EmailAddressLocalService
 	*
 	* @param emailAddressId the primary key of the email address
 	* @return the email address that was removed
-	* @throws PortalException if a email address with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a email address with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.EmailAddress deleteEmailAddress(
@@ -113,7 +113,7 @@ public class EmailAddressLocalServiceWrapper implements EmailAddressLocalService
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -247,7 +247,7 @@ public class EmailAddressLocalServiceWrapper implements EmailAddressLocalService
 	*
 	* @param emailAddressId the primary key of the email address
 	* @return the email address
-	* @throws PortalException if a email address with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a email address with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.EmailAddress getEmailAddress(
@@ -262,7 +262,7 @@ public class EmailAddressLocalServiceWrapper implements EmailAddressLocalService
 	* @param uuid the email address's UUID
 	* @param companyId the primary key of the company
 	* @return the matching email address
-	* @throws PortalException if a matching email address could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching email address could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.EmailAddress getEmailAddressByUuidAndCompanyId(

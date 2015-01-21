@@ -153,7 +153,7 @@ public class MBCategoryLocalServiceUtil {
 	*
 	* @param categoryId the primary key of the message boards category
 	* @return the message boards category that was removed
-	* @throws PortalException if a message boards category with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards category with the primary key could not be found
 	*/
 	public static com.liferay.portlet.messageboards.model.MBCategory deleteMBCategory(
 		long categoryId)
@@ -173,7 +173,7 @@ public class MBCategoryLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -463,7 +463,7 @@ public class MBCategoryLocalServiceUtil {
 	*
 	* @param categoryId the primary key of the message boards category
 	* @return the message boards category
-	* @throws PortalException if a message boards category with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards category with the primary key could not be found
 	*/
 	public static com.liferay.portlet.messageboards.model.MBCategory getMBCategory(
 		long categoryId)
@@ -477,7 +477,7 @@ public class MBCategoryLocalServiceUtil {
 	* @param uuid the message boards category's UUID
 	* @param groupId the primary key of the group
 	* @return the matching message boards category
-	* @throws PortalException if a matching message boards category could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching message boards category could not be found
 	*/
 	public static com.liferay.portlet.messageboards.model.MBCategory getMBCategoryByUuidAndGroupId(
 		java.lang.String uuid, long groupId)

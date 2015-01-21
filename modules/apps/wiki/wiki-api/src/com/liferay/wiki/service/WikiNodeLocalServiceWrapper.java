@@ -123,7 +123,7 @@ public class WikiNodeLocalServiceWrapper implements WikiNodeLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -137,7 +137,7 @@ public class WikiNodeLocalServiceWrapper implements WikiNodeLocalService,
 	*
 	* @param nodeId the primary key of the wiki node
 	* @return the wiki node that was removed
-	* @throws PortalException if a wiki node with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a wiki node with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.wiki.model.WikiNode deleteWikiNode(long nodeId)
@@ -378,7 +378,7 @@ public class WikiNodeLocalServiceWrapper implements WikiNodeLocalService,
 	*
 	* @param nodeId the primary key of the wiki node
 	* @return the wiki node
-	* @throws PortalException if a wiki node with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a wiki node with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.wiki.model.WikiNode getWikiNode(long nodeId)
@@ -392,7 +392,7 @@ public class WikiNodeLocalServiceWrapper implements WikiNodeLocalService,
 	* @param uuid the wiki node's UUID
 	* @param groupId the primary key of the group
 	* @return the matching wiki node
-	* @throws PortalException if a matching wiki node could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching wiki node could not be found
 	*/
 	@Override
 	public com.liferay.wiki.model.WikiNode getWikiNodeByUuidAndGroupId(

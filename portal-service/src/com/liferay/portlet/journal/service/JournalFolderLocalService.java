@@ -127,7 +127,7 @@ public interface JournalFolderLocalService extends BaseLocalService,
 	*
 	* @param folderId the primary key of the journal folder
 	* @return the journal folder that was removed
-	* @throws PortalException if a journal folder with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal folder with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.journal.model.JournalFolder deleteJournalFolder(
@@ -145,7 +145,7 @@ public interface JournalFolderLocalService extends BaseLocalService,
 		com.liferay.portlet.journal.model.JournalFolder journalFolder);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -354,7 +354,7 @@ public interface JournalFolderLocalService extends BaseLocalService,
 	*
 	* @param folderId the primary key of the journal folder
 	* @return the journal folder
-	* @throws PortalException if a journal folder with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal folder with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.journal.model.JournalFolder getJournalFolder(
@@ -367,7 +367,7 @@ public interface JournalFolderLocalService extends BaseLocalService,
 	* @param uuid the journal folder's UUID
 	* @param groupId the primary key of the group
 	* @return the matching journal folder
-	* @throws PortalException if a matching journal folder could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching journal folder could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.journal.model.JournalFolder getJournalFolderByUuidAndGroupId(

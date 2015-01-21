@@ -80,7 +80,7 @@ public interface PasswordTrackerLocalService extends BaseLocalService,
 	*
 	* @param passwordTrackerId the primary key of the password tracker
 	* @return the password tracker that was removed
-	* @throws PortalException if a password tracker with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a password tracker with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.PasswordTracker deletePasswordTracker(
@@ -90,7 +90,7 @@ public interface PasswordTrackerLocalService extends BaseLocalService,
 	public void deletePasswordTrackers(long userId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -181,7 +181,7 @@ public interface PasswordTrackerLocalService extends BaseLocalService,
 	*
 	* @param passwordTrackerId the primary key of the password tracker
 	* @return the password tracker
-	* @throws PortalException if a password tracker with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a password tracker with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.PasswordTracker getPasswordTracker(

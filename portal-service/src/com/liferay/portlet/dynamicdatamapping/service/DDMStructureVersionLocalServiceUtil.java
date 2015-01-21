@@ -79,7 +79,7 @@ public class DDMStructureVersionLocalServiceUtil {
 	*
 	* @param structureVersionId the primary key of the d d m structure version
 	* @return the d d m structure version that was removed
-	* @throws PortalException if a d d m structure version with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m structure version with the primary key could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructureVersion deleteDDMStructureVersion(
 		long structureVersionId)
@@ -88,7 +88,7 @@ public class DDMStructureVersionLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -197,7 +197,7 @@ public class DDMStructureVersionLocalServiceUtil {
 	*
 	* @param structureVersionId the primary key of the d d m structure version
 	* @return the d d m structure version
-	* @throws PortalException if a d d m structure version with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m structure version with the primary key could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructureVersion getDDMStructureVersion(
 		long structureVersionId)

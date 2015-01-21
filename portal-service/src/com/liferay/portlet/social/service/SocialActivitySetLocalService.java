@@ -77,7 +77,7 @@ public interface SocialActivitySetLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -89,7 +89,7 @@ public interface SocialActivitySetLocalService extends BaseLocalService,
 	*
 	* @param activitySetId the primary key of the social activity set
 	* @return the social activity set that was removed
-	* @throws PortalException if a social activity set with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a social activity set with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.social.model.SocialActivitySet deleteSocialActivitySet(
@@ -225,7 +225,7 @@ public interface SocialActivitySetLocalService extends BaseLocalService,
 	*
 	* @param activitySetId the primary key of the social activity set
 	* @return the social activity set
-	* @throws PortalException if a social activity set with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a social activity set with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.social.model.SocialActivitySet getSocialActivitySet(

@@ -102,7 +102,7 @@ public interface AddressLocalService extends BaseLocalService,
 	*
 	* @param addressId the primary key of the address
 	* @return the address that was removed
-	* @throws PortalException if a address with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a address with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.Address deleteAddress(long addressId)
@@ -112,7 +112,7 @@ public interface AddressLocalService extends BaseLocalService,
 		long classPK);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -206,7 +206,7 @@ public interface AddressLocalService extends BaseLocalService,
 	*
 	* @param addressId the primary key of the address
 	* @return the address
-	* @throws PortalException if a address with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a address with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Address getAddress(long addressId)
@@ -218,7 +218,7 @@ public interface AddressLocalService extends BaseLocalService,
 	* @param uuid the address's UUID
 	* @param companyId the primary key of the company
 	* @return the matching address
-	* @throws PortalException if a matching address could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching address could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Address getAddressByUuidAndCompanyId(

@@ -73,7 +73,7 @@ public class LayoutSetBranchLocalServiceWrapper
 	*
 	* @param layoutSetBranch the layout set branch
 	* @return the layout set branch that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.LayoutSetBranch deleteLayoutSetBranch(
@@ -96,7 +96,7 @@ public class LayoutSetBranchLocalServiceWrapper
 	*
 	* @param layoutSetBranchId the primary key of the layout set branch
 	* @return the layout set branch that was removed
-	* @throws PortalException if a layout set branch with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout set branch with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.LayoutSetBranch deleteLayoutSetBranch(
@@ -121,7 +121,7 @@ public class LayoutSetBranchLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -257,7 +257,7 @@ public class LayoutSetBranchLocalServiceWrapper
 	*
 	* @param layoutSetBranchId the primary key of the layout set branch
 	* @return the layout set branch
-	* @throws PortalException if a layout set branch with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout set branch with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.LayoutSetBranch getLayoutSetBranch(

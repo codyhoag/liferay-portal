@@ -156,7 +156,7 @@ public class SCFrameworkVersionLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -169,7 +169,7 @@ public class SCFrameworkVersionLocalServiceUtil {
 	*
 	* @param frameworkVersionId the primary key of the s c framework version
 	* @return the s c framework version that was removed
-	* @throws PortalException if a s c framework version with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a s c framework version with the primary key could not be found
 	*/
 	public static com.liferay.portlet.softwarecatalog.model.SCFrameworkVersion deleteSCFrameworkVersion(
 		long frameworkVersionId)
@@ -359,7 +359,7 @@ public class SCFrameworkVersionLocalServiceUtil {
 	*
 	* @param frameworkVersionId the primary key of the s c framework version
 	* @return the s c framework version
-	* @throws PortalException if a s c framework version with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a s c framework version with the primary key could not be found
 	*/
 	public static com.liferay.portlet.softwarecatalog.model.SCFrameworkVersion getSCFrameworkVersion(
 		long frameworkVersionId)

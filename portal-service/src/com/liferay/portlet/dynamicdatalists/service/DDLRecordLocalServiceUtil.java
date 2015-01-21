@@ -109,7 +109,7 @@ public class DDLRecordLocalServiceUtil {
 	*
 	* @param recordId the primary key of the d d l record
 	* @return the d d l record that was removed
-	* @throws PortalException if a d d l record with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d l record with the primary key could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatalists.model.DDLRecord deleteDDLRecord(
 		long recordId)
@@ -118,7 +118,7 @@ public class DDLRecordLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -280,7 +280,7 @@ public class DDLRecordLocalServiceUtil {
 	*
 	* @param recordId the primary key of the d d l record
 	* @return the d d l record
-	* @throws PortalException if a d d l record with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d l record with the primary key could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatalists.model.DDLRecord getDDLRecord(
 		long recordId)
@@ -294,7 +294,7 @@ public class DDLRecordLocalServiceUtil {
 	* @param uuid the d d l record's UUID
 	* @param groupId the primary key of the group
 	* @return the matching d d l record
-	* @throws PortalException if a matching d d l record could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching d d l record could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatalists.model.DDLRecord getDDLRecordByUuidAndGroupId(
 		java.lang.String uuid, long groupId)

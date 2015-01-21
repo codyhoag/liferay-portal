@@ -64,7 +64,7 @@ public class PluginSettingLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -90,7 +90,7 @@ public class PluginSettingLocalServiceWrapper
 	*
 	* @param pluginSettingId the primary key of the plugin setting
 	* @return the plugin setting that was removed
-	* @throws PortalException if a plugin setting with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a plugin setting with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.PluginSetting deletePluginSetting(
@@ -229,7 +229,7 @@ public class PluginSettingLocalServiceWrapper
 	*
 	* @param pluginSettingId the primary key of the plugin setting
 	* @return the plugin setting
-	* @throws PortalException if a plugin setting with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a plugin setting with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.PluginSetting getPluginSetting(

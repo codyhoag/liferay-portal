@@ -104,7 +104,7 @@ public interface UserNotificationEventLocalService extends BaseLocalService,
 		long userNotificationEventId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -126,7 +126,7 @@ public interface UserNotificationEventLocalService extends BaseLocalService,
 	*
 	* @param userNotificationEventId the primary key of the user notification event
 	* @return the user notification event that was removed
-	* @throws PortalException if a user notification event with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user notification event with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.UserNotificationEvent deleteUserNotificationEvent(
@@ -340,7 +340,7 @@ public interface UserNotificationEventLocalService extends BaseLocalService,
 	*
 	* @param userNotificationEventId the primary key of the user notification event
 	* @return the user notification event
-	* @throws PortalException if a user notification event with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user notification event with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.UserNotificationEvent getUserNotificationEvent(
@@ -353,7 +353,7 @@ public interface UserNotificationEventLocalService extends BaseLocalService,
 	* @param uuid the user notification event's UUID
 	* @param companyId the primary key of the company
 	* @return the matching user notification event
-	* @throws PortalException if a matching user notification event could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching user notification event could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.UserNotificationEvent getUserNotificationEventByUuidAndCompanyId(

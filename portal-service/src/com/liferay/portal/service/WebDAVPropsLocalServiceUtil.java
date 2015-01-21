@@ -64,7 +64,7 @@ public class WebDAVPropsLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -93,7 +93,7 @@ public class WebDAVPropsLocalServiceUtil {
 	*
 	* @param webDavPropsId the primary key of the web d a v props
 	* @return the web d a v props that was removed
-	* @throws PortalException if a web d a v props with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a web d a v props with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.WebDAVProps deleteWebDAVProps(
 		long webDavPropsId)
@@ -213,7 +213,7 @@ public class WebDAVPropsLocalServiceUtil {
 	*
 	* @param webDavPropsId the primary key of the web d a v props
 	* @return the web d a v props
-	* @throws PortalException if a web d a v props with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a web d a v props with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.WebDAVProps getWebDAVProps(
 		long webDavPropsId)

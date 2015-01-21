@@ -68,7 +68,7 @@ public class ShoppingCartLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -81,7 +81,7 @@ public class ShoppingCartLocalServiceUtil {
 	*
 	* @param cartId the primary key of the shopping cart
 	* @return the shopping cart that was removed
-	* @throws PortalException if a shopping cart with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shopping cart with the primary key could not be found
 	*/
 	public static com.liferay.portlet.shopping.model.ShoppingCart deleteShoppingCart(
 		long cartId) throws com.liferay.portal.kernel.exception.PortalException {
@@ -221,7 +221,7 @@ public class ShoppingCartLocalServiceUtil {
 	*
 	* @param cartId the primary key of the shopping cart
 	* @return the shopping cart
-	* @throws PortalException if a shopping cart with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shopping cart with the primary key could not be found
 	*/
 	public static com.liferay.portlet.shopping.model.ShoppingCart getShoppingCart(
 		long cartId) throws com.liferay.portal.kernel.exception.PortalException {

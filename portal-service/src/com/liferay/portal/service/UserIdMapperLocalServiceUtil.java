@@ -64,7 +64,7 @@ public class UserIdMapperLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -88,7 +88,7 @@ public class UserIdMapperLocalServiceUtil {
 	*
 	* @param userIdMapperId the primary key of the user ID mapper
 	* @return the user ID mapper that was removed
-	* @throws PortalException if a user ID mapper with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user ID mapper with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.UserIdMapper deleteUserIdMapper(
 		long userIdMapperId)
@@ -213,7 +213,7 @@ public class UserIdMapperLocalServiceUtil {
 	*
 	* @param userIdMapperId the primary key of the user ID mapper
 	* @return the user ID mapper
-	* @throws PortalException if a user ID mapper with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user ID mapper with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.UserIdMapper getUserIdMapper(
 		long userIdMapperId)

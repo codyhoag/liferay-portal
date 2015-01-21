@@ -108,7 +108,7 @@ public class AddressLocalServiceUtil {
 	*
 	* @param addressId the primary key of the address
 	* @return the address that was removed
-	* @throws PortalException if a address with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a address with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Address deleteAddress(long addressId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -121,7 +121,7 @@ public class AddressLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -232,7 +232,7 @@ public class AddressLocalServiceUtil {
 	*
 	* @param addressId the primary key of the address
 	* @return the address
-	* @throws PortalException if a address with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a address with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Address getAddress(long addressId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -245,7 +245,7 @@ public class AddressLocalServiceUtil {
 	* @param uuid the address's UUID
 	* @param companyId the primary key of the company
 	* @return the matching address
-	* @throws PortalException if a matching address could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching address could not be found
 	*/
 	public static com.liferay.portal.model.Address getAddressByUuidAndCompanyId(
 		java.lang.String uuid, long companyId)

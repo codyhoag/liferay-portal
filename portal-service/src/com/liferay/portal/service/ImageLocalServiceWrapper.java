@@ -70,7 +70,7 @@ public class ImageLocalServiceWrapper implements ImageLocalService,
 	*
 	* @param imageId the primary key of the image
 	* @return the image that was removed
-	* @throws PortalException if a image with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a image with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Image deleteImage(long imageId)
@@ -79,7 +79,7 @@ public class ImageLocalServiceWrapper implements ImageLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -202,7 +202,7 @@ public class ImageLocalServiceWrapper implements ImageLocalService,
 	*
 	* @param imageId the primary key of the image
 	* @return the image
-	* @throws PortalException if a image with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a image with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Image getImage(long imageId)

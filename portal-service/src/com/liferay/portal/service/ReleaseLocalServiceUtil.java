@@ -72,7 +72,7 @@ public class ReleaseLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -96,7 +96,7 @@ public class ReleaseLocalServiceUtil {
 	*
 	* @param releaseId the primary key of the release
 	* @return the release that was removed
-	* @throws PortalException if a release with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a release with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Release deleteRelease(long releaseId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -219,7 +219,7 @@ public class ReleaseLocalServiceUtil {
 	*
 	* @param releaseId the primary key of the release
 	* @return the release
-	* @throws PortalException if a release with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a release with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Release getRelease(long releaseId)
 		throws com.liferay.portal.kernel.exception.PortalException {

@@ -155,7 +155,7 @@ public class MBCategoryLocalServiceWrapper implements MBCategoryLocalService,
 	*
 	* @param categoryId the primary key of the message boards category
 	* @return the message boards category that was removed
-	* @throws PortalException if a message boards category with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards category with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.messageboards.model.MBCategory deleteMBCategory(
@@ -177,7 +177,7 @@ public class MBCategoryLocalServiceWrapper implements MBCategoryLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -508,7 +508,7 @@ public class MBCategoryLocalServiceWrapper implements MBCategoryLocalService,
 	*
 	* @param categoryId the primary key of the message boards category
 	* @return the message boards category
-	* @throws PortalException if a message boards category with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards category with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.messageboards.model.MBCategory getMBCategory(
@@ -523,7 +523,7 @@ public class MBCategoryLocalServiceWrapper implements MBCategoryLocalService,
 	* @param uuid the message boards category's UUID
 	* @param groupId the primary key of the group
 	* @return the matching message boards category
-	* @throws PortalException if a matching message boards category could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching message boards category could not be found
 	*/
 	@Override
 	public com.liferay.portlet.messageboards.model.MBCategory getMBCategoryByUuidAndGroupId(

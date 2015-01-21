@@ -52,7 +52,7 @@ public interface UserGroupService extends BaseService {
 	*
 	* @param groupId the primary key of the group
 	* @param userGroupIds the primary keys of the user groups
-	* @throws PortalException if a group or user group with the primary key
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group or user group with the primary key
 	could not be found, or if the user did not have permission to
 	assign group members
 	*/
@@ -64,7 +64,7 @@ public interface UserGroupService extends BaseService {
 	*
 	* @param teamId the primary key of the team
 	* @param userGroupIds the primary keys of the user groups
-	* @throws PortalException if a team or user group with the primary key
+	* @throws com.liferay.portal.kernel.exception.PortalException if a team or user group with the primary key
 	could not be found, or if the user did not have permission to
 	assign team members
 	*/
@@ -82,7 +82,7 @@ public interface UserGroupService extends BaseService {
 	* @param name the user group's name
 	* @param description the user group's description
 	* @return the user group
-	* @throws PortalException if the user group's information was invalid
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user group's information was invalid
 	or if the user did not have permission to add the user group
 	* @deprecated As of 6.2.0, replaced by {@link #addUserGroup(String, String,
 	com.liferay.portal.service.ServiceContext)}
@@ -106,7 +106,7 @@ public interface UserGroupService extends BaseService {
 	<code>null</code>). Can set expando bridge attributes for the
 	user group.
 	* @return the user group
-	* @throws PortalException if the user group's information was invalid or if
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user group's information was invalid or if
 	the user did not have permission to add the user group
 	*/
 	public com.liferay.portal.model.UserGroup addUserGroup(
@@ -118,7 +118,7 @@ public interface UserGroupService extends BaseService {
 	* Deletes the user group.
 	*
 	* @param userGroupId the primary key of the user group
-	* @throws PortalException if a user group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user group with the primary key could not be
 	found, if the user did not have permission to delete the user
 	group, or if the user group had a workflow in approved status
 	*/
@@ -137,7 +137,7 @@ public interface UserGroupService extends BaseService {
 	*
 	* @param name the user group's name
 	* @return Returns the user group with the name
-	* @throws PortalException if a user group with the name could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user group with the name could not be found
 	or if the user did not have permission to view the user group
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -150,7 +150,7 @@ public interface UserGroupService extends BaseService {
 	*
 	* @param userGroupId the primary key of the user group
 	* @return Returns the user group with the primary key
-	* @throws PortalException if a user group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user group with the primary key could not be
 	found or if the user did not have permission to view the user
 	group
 	*/
@@ -163,7 +163,7 @@ public interface UserGroupService extends BaseService {
 	*
 	* @param userId the primary key of the user
 	* @return the user groups to which the user belongs
-	* @throws PortalException if the current user did not have permission to
+	* @throws com.liferay.portal.kernel.exception.PortalException if the current user did not have permission to
 	view the user or any one of the user group members
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -182,7 +182,7 @@ public interface UserGroupService extends BaseService {
 	*
 	* @param groupId the primary key of the group
 	* @param userGroupIds the primary keys of the user groups
-	* @throws PortalException if the user did not have permission to assign
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to assign
 	group members
 	*/
 	public void unsetGroupUserGroups(long groupId, long[] userGroupIds)
@@ -193,7 +193,7 @@ public interface UserGroupService extends BaseService {
 	*
 	* @param teamId the primary key of the team
 	* @param userGroupIds the primary keys of the user groups
-	* @throws PortalException if the user did not have permission to assign
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to assign
 	team members
 	*/
 	public void unsetTeamUserGroups(long teamId, long[] userGroupIds)
@@ -206,7 +206,7 @@ public interface UserGroupService extends BaseService {
 	* @param name the user group's name
 	* @param description the the user group's description
 	* @return the user group
-	* @throws PortalException if a user group with the primary key was not
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user group with the primary key was not
 	found, if the new information was invalid, or if the user did
 	not have permission to update the user group information
 	* @deprecated As of 6.2.0, replaced by {@link #updateUserGroup(long,
@@ -227,7 +227,7 @@ public interface UserGroupService extends BaseService {
 	<code>null</code>). Can set expando bridge attributes for the
 	user group.
 	* @return the user group
-	* @throws PortalException if a user group with the primary key was not
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user group with the primary key was not
 	found, if the new information was invalid, or if the user did not
 	have permission to update the user group information
 	*/

@@ -98,7 +98,7 @@ public class DLContentLocalServiceUtil {
 	*
 	* @param contentId the primary key of the document library content
 	* @return the document library content that was removed
-	* @throws PortalException if a document library content with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library content with the primary key could not be found
 	*/
 	public static com.liferay.portlet.documentlibrary.model.DLContent deleteDLContent(
 		long contentId)
@@ -118,7 +118,7 @@ public class DLContentLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -256,7 +256,7 @@ public class DLContentLocalServiceUtil {
 	*
 	* @param contentId the primary key of the document library content
 	* @return the document library content
-	* @throws PortalException if a document library content with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library content with the primary key could not be found
 	*/
 	public static com.liferay.portlet.documentlibrary.model.DLContent getDLContent(
 		long contentId)

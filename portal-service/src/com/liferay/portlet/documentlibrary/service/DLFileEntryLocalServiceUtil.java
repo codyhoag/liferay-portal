@@ -185,7 +185,7 @@ public class DLFileEntryLocalServiceUtil {
 	*
 	* @param fileEntryId the primary key of the document library file entry
 	* @return the document library file entry that was removed
-	* @throws PortalException if a document library file entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file entry with the primary key could not be found
 	*/
 	public static com.liferay.portlet.documentlibrary.model.DLFileEntry deleteDLFileEntry(
 		long fileEntryId)
@@ -229,7 +229,7 @@ public class DLFileEntryLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -444,7 +444,7 @@ public class DLFileEntryLocalServiceUtil {
 	*
 	* @param fileEntryId the primary key of the document library file entry
 	* @return the document library file entry
-	* @throws PortalException if a document library file entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file entry with the primary key could not be found
 	*/
 	public static com.liferay.portlet.documentlibrary.model.DLFileEntry getDLFileEntry(
 		long fileEntryId)
@@ -458,7 +458,7 @@ public class DLFileEntryLocalServiceUtil {
 	* @param uuid the document library file entry's UUID
 	* @param groupId the primary key of the group
 	* @return the matching document library file entry
-	* @throws PortalException if a matching document library file entry could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching document library file entry could not be found
 	*/
 	public static com.liferay.portlet.documentlibrary.model.DLFileEntry getDLFileEntryByUuidAndGroupId(
 		java.lang.String uuid, long groupId)

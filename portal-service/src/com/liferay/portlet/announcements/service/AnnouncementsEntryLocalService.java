@@ -110,7 +110,7 @@ public interface AnnouncementsEntryLocalService extends BaseLocalService,
 	*
 	* @param entryId the primary key of the announcements entry
 	* @return the announcements entry that was removed
-	* @throws PortalException if a announcements entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a announcements entry with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.announcements.model.AnnouncementsEntry deleteAnnouncementsEntry(
@@ -125,7 +125,7 @@ public interface AnnouncementsEntryLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -243,7 +243,7 @@ public interface AnnouncementsEntryLocalService extends BaseLocalService,
 	*
 	* @param entryId the primary key of the announcements entry
 	* @return the announcements entry
-	* @throws PortalException if a announcements entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a announcements entry with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.announcements.model.AnnouncementsEntry getAnnouncementsEntry(
@@ -256,7 +256,7 @@ public interface AnnouncementsEntryLocalService extends BaseLocalService,
 	* @param uuid the announcements entry's UUID
 	* @param companyId the primary key of the company
 	* @return the matching announcements entry
-	* @throws PortalException if a matching announcements entry could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching announcements entry could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.announcements.model.AnnouncementsEntry getAnnouncementsEntryByUuidAndCompanyId(

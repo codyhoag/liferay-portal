@@ -115,7 +115,7 @@ public interface ExpandoTableLocalService extends BaseLocalService,
 	*
 	* @param tableId the primary key of the expando table
 	* @return the expando table that was removed
-	* @throws PortalException if a expando table with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a expando table with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.expando.model.ExpandoTable deleteExpandoTable(
@@ -123,7 +123,7 @@ public interface ExpandoTableLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -254,7 +254,7 @@ public interface ExpandoTableLocalService extends BaseLocalService,
 	*
 	* @param tableId the primary key of the expando table
 	* @return the expando table
-	* @throws PortalException if a expando table with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a expando table with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.expando.model.ExpandoTable getExpandoTable(

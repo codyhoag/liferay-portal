@@ -122,7 +122,7 @@ public class DLFileShortcutLocalServiceUtil {
 	*
 	* @param fileShortcutId the primary key of the document library file shortcut
 	* @return the document library file shortcut that was removed
-	* @throws PortalException if a document library file shortcut with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file shortcut with the primary key could not be found
 	*/
 	public static com.liferay.portlet.documentlibrary.model.DLFileShortcut deleteDLFileShortcut(
 		long fileShortcutId)
@@ -159,7 +159,7 @@ public class DLFileShortcutLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -288,7 +288,7 @@ public class DLFileShortcutLocalServiceUtil {
 	*
 	* @param fileShortcutId the primary key of the document library file shortcut
 	* @return the document library file shortcut
-	* @throws PortalException if a document library file shortcut with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file shortcut with the primary key could not be found
 	*/
 	public static com.liferay.portlet.documentlibrary.model.DLFileShortcut getDLFileShortcut(
 		long fileShortcutId)
@@ -302,7 +302,7 @@ public class DLFileShortcutLocalServiceUtil {
 	* @param uuid the document library file shortcut's UUID
 	* @param groupId the primary key of the group
 	* @return the matching document library file shortcut
-	* @throws PortalException if a matching document library file shortcut could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching document library file shortcut could not be found
 	*/
 	public static com.liferay.portlet.documentlibrary.model.DLFileShortcut getDLFileShortcutByUuidAndGroupId(
 		java.lang.String uuid, long groupId)

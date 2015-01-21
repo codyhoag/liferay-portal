@@ -75,7 +75,7 @@ public class DLFileVersionLocalServiceWrapper
 	*
 	* @param fileVersionId the primary key of the document library file version
 	* @return the document library file version that was removed
-	* @throws PortalException if a document library file version with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file version with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.documentlibrary.model.DLFileVersion deleteDLFileVersion(
@@ -85,7 +85,7 @@ public class DLFileVersionLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -219,7 +219,7 @@ public class DLFileVersionLocalServiceWrapper
 	*
 	* @param fileVersionId the primary key of the document library file version
 	* @return the document library file version
-	* @throws PortalException if a document library file version with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file version with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.documentlibrary.model.DLFileVersion getDLFileVersion(
@@ -234,7 +234,7 @@ public class DLFileVersionLocalServiceWrapper
 	* @param uuid the document library file version's UUID
 	* @param groupId the primary key of the group
 	* @return the matching document library file version
-	* @throws PortalException if a matching document library file version could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching document library file version could not be found
 	*/
 	@Override
 	public com.liferay.portlet.documentlibrary.model.DLFileVersion getDLFileVersionByUuidAndGroupId(

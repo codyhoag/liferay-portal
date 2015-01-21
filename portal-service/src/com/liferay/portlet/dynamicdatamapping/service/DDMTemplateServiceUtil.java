@@ -65,7 +65,7 @@ public class DDMTemplateServiceUtil {
 	the UUID, creation date, modification date, guest permissions,
 	and group permissions for the template.
 	* @return the template
-	* @throws PortalException if the user did not have permission to add the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to add the
 	template or if a portal exception occurred
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMTemplate addTemplate(
@@ -114,7 +114,7 @@ public class DDMTemplateServiceUtil {
 	the UUID, creation date, modification date, guest permissions,
 	and group permissions for the template.
 	* @return the template
-	* @throws PortalException if the user did not have permission to add the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to add the
 	template or if a portal exception occurred
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMTemplate addTemplate(
@@ -149,7 +149,7 @@ public class DDMTemplateServiceUtil {
 	the UUID, creation date, modification date, guest permissions,
 	and group permissions for the template.
 	* @return the new template
-	* @throws PortalException if the user did not have permission to add the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to add the
 	template or if a portal exception occurred
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMTemplate copyTemplate(
@@ -188,7 +188,7 @@ public class DDMTemplateServiceUtil {
 	the UUID, creation date, modification date, guest permissions,
 	and group permissions for the template.
 	* @return the new template
-	* @throws PortalException if the user did not have permission to add the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to add the
 	template or if a portal exception occurred
 	*/
 	public static java.util.List<com.liferay.portlet.dynamicdatamapping.model.DDMTemplate> copyTemplates(
@@ -205,7 +205,7 @@ public class DDMTemplateServiceUtil {
 	* Deletes the template and its resources.
 	*
 	* @param templateId the primary key of the template to be deleted
-	* @throws PortalException if the user did not have permission to delete the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to delete the
 	template or if a portal exception occurred
 	*/
 	public static void deleteTemplate(long templateId)
@@ -222,7 +222,7 @@ public class DDMTemplateServiceUtil {
 	* @param templateKey the unique string identifying the template
 	* @return the matching template, or <code>null</code> if a matching
 	template could not be found
-	* @throws PortalException if the user did not have permission to view the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to view the
 	template
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMTemplate fetchTemplate(
@@ -248,7 +248,7 @@ public class DDMTemplateServiceUtil {
 	related model
 	* @param templateKey the unique string identifying the template
 	* @return the matching template
-	* @throws PortalException if a matching template could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching template could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMTemplate getTemplate(
 		long groupId, long classNameId, java.lang.String templateKey)
@@ -276,7 +276,7 @@ public class DDMTemplateServiceUtil {
 	have sharing enabled) and include global scoped sites in the
 	search
 	* @return the matching template
-	* @throws PortalException if a matching template could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching template could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMTemplate getTemplate(
 		long groupId, long classNameId, java.lang.String templateKey,
@@ -292,7 +292,7 @@ public class DDMTemplateServiceUtil {
 	*
 	* @param templateId the primary key of the template
 	* @return the template with the ID
-	* @throws PortalException if the user did not have permission to view the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to view the
 	template or if a matching template could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMTemplate getTemplate(
@@ -774,7 +774,7 @@ public class DDMTemplateServiceUtil {
 	* @param serviceContext the service context to be applied. Can set the
 	modification date.
 	* @return the updated template
-	* @throws PortalException if the user did not have permission to update the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to update the
 	template or if a portal exception occurred
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMTemplate updateTemplate(
@@ -816,7 +816,7 @@ public class DDMTemplateServiceUtil {
 	* @param serviceContext the service context to be applied. Can set the
 	modification date.
 	* @return the updated template
-	* @throws PortalException if the user did not have permission to update the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to update the
 	template or if a portal exception occurred
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMTemplate updateTemplate(

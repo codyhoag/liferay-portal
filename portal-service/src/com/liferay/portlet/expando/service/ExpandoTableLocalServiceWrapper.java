@@ -126,7 +126,7 @@ public class ExpandoTableLocalServiceWrapper implements ExpandoTableLocalService
 	*
 	* @param tableId the primary key of the expando table
 	* @return the expando table that was removed
-	* @throws PortalException if a expando table with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a expando table with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.expando.model.ExpandoTable deleteExpandoTable(
@@ -136,7 +136,7 @@ public class ExpandoTableLocalServiceWrapper implements ExpandoTableLocalService
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -325,7 +325,7 @@ public class ExpandoTableLocalServiceWrapper implements ExpandoTableLocalService
 	*
 	* @param tableId the primary key of the expando table
 	* @return the expando table
-	* @throws PortalException if a expando table with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a expando table with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.expando.model.ExpandoTable getExpandoTable(

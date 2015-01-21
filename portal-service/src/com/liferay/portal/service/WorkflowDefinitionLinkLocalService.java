@@ -71,7 +71,7 @@ public interface WorkflowDefinitionLinkLocalService extends BaseLocalService,
 		long workflowDefinitionLinkId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -96,7 +96,7 @@ public interface WorkflowDefinitionLinkLocalService extends BaseLocalService,
 	*
 	* @param workflowDefinitionLinkId the primary key of the workflow definition link
 	* @return the workflow definition link that was removed
-	* @throws PortalException if a workflow definition link with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a workflow definition link with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.WorkflowDefinitionLink deleteWorkflowDefinitionLink(
@@ -223,7 +223,7 @@ public interface WorkflowDefinitionLinkLocalService extends BaseLocalService,
 	*
 	* @param workflowDefinitionLinkId the primary key of the workflow definition link
 	* @return the workflow definition link
-	* @throws PortalException if a workflow definition link with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a workflow definition link with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.WorkflowDefinitionLink getWorkflowDefinitionLink(

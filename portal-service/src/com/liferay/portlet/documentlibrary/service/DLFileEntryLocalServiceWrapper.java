@@ -188,7 +188,7 @@ public class DLFileEntryLocalServiceWrapper implements DLFileEntryLocalService,
 	*
 	* @param fileEntryId the primary key of the document library file entry
 	* @return the document library file entry that was removed
-	* @throws PortalException if a document library file entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file entry with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.documentlibrary.model.DLFileEntry deleteDLFileEntry(
@@ -241,7 +241,7 @@ public class DLFileEntryLocalServiceWrapper implements DLFileEntryLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -481,7 +481,7 @@ public class DLFileEntryLocalServiceWrapper implements DLFileEntryLocalService,
 	*
 	* @param fileEntryId the primary key of the document library file entry
 	* @return the document library file entry
-	* @throws PortalException if a document library file entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file entry with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.documentlibrary.model.DLFileEntry getDLFileEntry(
@@ -496,7 +496,7 @@ public class DLFileEntryLocalServiceWrapper implements DLFileEntryLocalService,
 	* @param uuid the document library file entry's UUID
 	* @param groupId the primary key of the group
 	* @return the matching document library file entry
-	* @throws PortalException if a matching document library file entry could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching document library file entry could not be found
 	*/
 	@Override
 	public com.liferay.portlet.documentlibrary.model.DLFileEntry getDLFileEntryByUuidAndGroupId(

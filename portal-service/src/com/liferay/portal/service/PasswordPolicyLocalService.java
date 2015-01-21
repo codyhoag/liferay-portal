@@ -109,7 +109,7 @@ public interface PasswordPolicyLocalService extends BaseLocalService,
 	*
 	* @param passwordPolicy the password policy
 	* @return the password policy that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	@com.liferay.portal.kernel.systemevent.SystemEvent(action = SystemEventConstants.ACTION_SKIP, type = SystemEventConstants.TYPE_DELETE)
@@ -122,7 +122,7 @@ public interface PasswordPolicyLocalService extends BaseLocalService,
 	*
 	* @param passwordPolicyId the primary key of the password policy
 	* @return the password policy that was removed
-	* @throws PortalException if a password policy with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a password policy with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.PasswordPolicy deletePasswordPolicy(
@@ -130,7 +130,7 @@ public interface PasswordPolicyLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -282,7 +282,7 @@ public interface PasswordPolicyLocalService extends BaseLocalService,
 	*
 	* @param passwordPolicyId the primary key of the password policy
 	* @return the password policy
-	* @throws PortalException if a password policy with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a password policy with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.PasswordPolicy getPasswordPolicy(
@@ -300,7 +300,7 @@ public interface PasswordPolicyLocalService extends BaseLocalService,
 	* @param uuid the password policy's UUID
 	* @param companyId the primary key of the company
 	* @return the matching password policy
-	* @throws PortalException if a matching password policy could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching password policy could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.PasswordPolicy getPasswordPolicyByUuidAndCompanyId(

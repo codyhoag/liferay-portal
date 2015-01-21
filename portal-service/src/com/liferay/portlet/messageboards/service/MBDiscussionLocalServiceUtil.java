@@ -91,7 +91,7 @@ public class MBDiscussionLocalServiceUtil {
 	*
 	* @param discussionId the primary key of the message boards discussion
 	* @return the message boards discussion that was removed
-	* @throws PortalException if a message boards discussion with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards discussion with the primary key could not be found
 	*/
 	public static com.liferay.portlet.messageboards.model.MBDiscussion deleteMBDiscussion(
 		long discussionId)
@@ -111,7 +111,7 @@ public class MBDiscussionLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -259,7 +259,7 @@ public class MBDiscussionLocalServiceUtil {
 	*
 	* @param discussionId the primary key of the message boards discussion
 	* @return the message boards discussion
-	* @throws PortalException if a message boards discussion with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards discussion with the primary key could not be found
 	*/
 	public static com.liferay.portlet.messageboards.model.MBDiscussion getMBDiscussion(
 		long discussionId)
@@ -273,7 +273,7 @@ public class MBDiscussionLocalServiceUtil {
 	* @param uuid the message boards discussion's UUID
 	* @param groupId the primary key of the group
 	* @return the matching message boards discussion
-	* @throws PortalException if a matching message boards discussion could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching message boards discussion could not be found
 	*/
 	public static com.liferay.portlet.messageboards.model.MBDiscussion getMBDiscussionByUuidAndGroupId(
 		java.lang.String uuid, long groupId)

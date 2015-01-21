@@ -103,7 +103,7 @@ public class EmailAddressLocalServiceUtil {
 	*
 	* @param emailAddressId the primary key of the email address
 	* @return the email address that was removed
-	* @throws PortalException if a email address with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a email address with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.EmailAddress deleteEmailAddress(
 		long emailAddressId)
@@ -117,7 +117,7 @@ public class EmailAddressLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -238,7 +238,7 @@ public class EmailAddressLocalServiceUtil {
 	*
 	* @param emailAddressId the primary key of the email address
 	* @return the email address
-	* @throws PortalException if a email address with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a email address with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.EmailAddress getEmailAddress(
 		long emailAddressId)
@@ -252,7 +252,7 @@ public class EmailAddressLocalServiceUtil {
 	* @param uuid the email address's UUID
 	* @param companyId the primary key of the company
 	* @return the matching email address
-	* @throws PortalException if a matching email address could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching email address could not be found
 	*/
 	public static com.liferay.portal.model.EmailAddress getEmailAddressByUuidAndCompanyId(
 		java.lang.String uuid, long companyId)

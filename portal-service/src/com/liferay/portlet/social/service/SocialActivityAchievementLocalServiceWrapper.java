@@ -67,7 +67,7 @@ public class SocialActivityAchievementLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -81,7 +81,7 @@ public class SocialActivityAchievementLocalServiceWrapper
 	*
 	* @param activityAchievementId the primary key of the social activity achievement
 	* @return the social activity achievement that was removed
-	* @throws PortalException if a social activity achievement with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a social activity achievement with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.social.model.SocialActivityAchievement deleteSocialActivityAchievement(
@@ -263,7 +263,7 @@ public class SocialActivityAchievementLocalServiceWrapper
 	*
 	* @param activityAchievementId the primary key of the social activity achievement
 	* @return the social activity achievement
-	* @throws PortalException if a social activity achievement with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a social activity achievement with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.social.model.SocialActivityAchievement getSocialActivityAchievement(

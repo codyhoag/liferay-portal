@@ -81,7 +81,7 @@ public class ExpandoRowLocalServiceWrapper implements ExpandoRowLocalService,
 	*
 	* @param rowId the primary key of the expando row
 	* @return the expando row that was removed
-	* @throws PortalException if a expando row with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a expando row with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.expando.model.ExpandoRow deleteExpandoRow(
@@ -90,7 +90,7 @@ public class ExpandoRowLocalServiceWrapper implements ExpandoRowLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -275,7 +275,7 @@ public class ExpandoRowLocalServiceWrapper implements ExpandoRowLocalService,
 	*
 	* @param rowId the primary key of the expando row
 	* @return the expando row
-	* @throws PortalException if a expando row with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a expando row with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.expando.model.ExpandoRow getExpandoRow(

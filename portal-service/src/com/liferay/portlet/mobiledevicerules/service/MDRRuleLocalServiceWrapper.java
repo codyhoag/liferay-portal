@@ -115,7 +115,7 @@ public class MDRRuleLocalServiceWrapper implements MDRRuleLocalService,
 	*
 	* @param ruleId the primary key of the m d r rule
 	* @return the m d r rule that was removed
-	* @throws PortalException if a m d r rule with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a m d r rule with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.mobiledevicerules.model.MDRRule deleteMDRRule(
@@ -124,7 +124,7 @@ public class MDRRuleLocalServiceWrapper implements MDRRuleLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -284,7 +284,7 @@ public class MDRRuleLocalServiceWrapper implements MDRRuleLocalService,
 	*
 	* @param ruleId the primary key of the m d r rule
 	* @return the m d r rule
-	* @throws PortalException if a m d r rule with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a m d r rule with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.mobiledevicerules.model.MDRRule getMDRRule(
@@ -298,7 +298,7 @@ public class MDRRuleLocalServiceWrapper implements MDRRuleLocalService,
 	* @param uuid the m d r rule's UUID
 	* @param groupId the primary key of the group
 	* @return the matching m d r rule
-	* @throws PortalException if a matching m d r rule could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching m d r rule could not be found
 	*/
 	@Override
 	public com.liferay.portlet.mobiledevicerules.model.MDRRule getMDRRuleByUuidAndGroupId(

@@ -86,7 +86,7 @@ public interface AnnouncementsDeliveryLocalService extends BaseLocalService,
 	*
 	* @param deliveryId the primary key of the announcements delivery
 	* @return the announcements delivery that was removed
-	* @throws PortalException if a announcements delivery with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a announcements delivery with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.announcements.model.AnnouncementsDelivery deleteAnnouncementsDelivery(
@@ -104,7 +104,7 @@ public interface AnnouncementsDeliveryLocalService extends BaseLocalService,
 	public void deleteDelivery(long userId, java.lang.String type);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -211,7 +211,7 @@ public interface AnnouncementsDeliveryLocalService extends BaseLocalService,
 	*
 	* @param deliveryId the primary key of the announcements delivery
 	* @return the announcements delivery
-	* @throws PortalException if a announcements delivery with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a announcements delivery with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.announcements.model.AnnouncementsDelivery getAnnouncementsDelivery(

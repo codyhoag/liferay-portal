@@ -98,7 +98,7 @@ public class ContactLocalServiceUtil {
 	*
 	* @param contactId the primary key of the contact
 	* @return the contact that was removed
-	* @throws PortalException if a contact with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a contact with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Contact deleteContact(long contactId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -106,7 +106,7 @@ public class ContactLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -214,7 +214,7 @@ public class ContactLocalServiceUtil {
 	*
 	* @param contactId the primary key of the contact
 	* @return the contact
-	* @throws PortalException if a contact with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a contact with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Contact getContact(long contactId)
 		throws com.liferay.portal.kernel.exception.PortalException {

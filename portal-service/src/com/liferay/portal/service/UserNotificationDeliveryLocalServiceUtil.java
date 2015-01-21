@@ -73,7 +73,7 @@ public class UserNotificationDeliveryLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -110,7 +110,7 @@ public class UserNotificationDeliveryLocalServiceUtil {
 	*
 	* @param userNotificationDeliveryId the primary key of the user notification delivery
 	* @return the user notification delivery that was removed
-	* @throws PortalException if a user notification delivery with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user notification delivery with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.UserNotificationDelivery deleteUserNotificationDelivery(
 		long userNotificationDeliveryId)
@@ -269,7 +269,7 @@ public class UserNotificationDeliveryLocalServiceUtil {
 	*
 	* @param userNotificationDeliveryId the primary key of the user notification delivery
 	* @return the user notification delivery
-	* @throws PortalException if a user notification delivery with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user notification delivery with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.UserNotificationDelivery getUserNotificationDelivery(
 		long userNotificationDeliveryId)

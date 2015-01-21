@@ -78,7 +78,7 @@ public class ImageLocalServiceUtil {
 	*
 	* @param imageId the primary key of the image
 	* @return the image that was removed
-	* @throws PortalException if a image with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a image with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Image deleteImage(long imageId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -86,7 +86,7 @@ public class ImageLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -198,7 +198,7 @@ public class ImageLocalServiceUtil {
 	*
 	* @param imageId the primary key of the image
 	* @return the image
-	* @throws PortalException if a image with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a image with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Image getImage(long imageId)
 		throws com.liferay.portal.kernel.exception.PortalException {

@@ -73,7 +73,7 @@ public class SocialActivitySettingLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -86,7 +86,7 @@ public class SocialActivitySettingLocalServiceUtil {
 	*
 	* @param activitySettingId the primary key of the social activity setting
 	* @return the social activity setting that was removed
-	* @throws PortalException if a social activity setting with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a social activity setting with the primary key could not be found
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySetting deleteSocialActivitySetting(
 		long activitySettingId)
@@ -228,7 +228,7 @@ public class SocialActivitySettingLocalServiceUtil {
 	*
 	* @param activitySettingId the primary key of the social activity setting
 	* @return the social activity setting
-	* @throws PortalException if a social activity setting with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a social activity setting with the primary key could not be found
 	*/
 	public static com.liferay.portlet.social.model.SocialActivitySetting getSocialActivitySetting(
 		long activitySettingId)

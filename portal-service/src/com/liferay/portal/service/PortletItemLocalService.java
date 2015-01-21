@@ -71,7 +71,7 @@ public interface PortletItemLocalService extends BaseLocalService,
 		long portletItemId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -93,7 +93,7 @@ public interface PortletItemLocalService extends BaseLocalService,
 	*
 	* @param portletItemId the primary key of the portlet item
 	* @return the portlet item that was removed
-	* @throws PortalException if a portlet item with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portlet item with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.PortletItem deletePortletItem(
@@ -196,7 +196,7 @@ public interface PortletItemLocalService extends BaseLocalService,
 	*
 	* @param portletItemId the primary key of the portlet item
 	* @return the portlet item
-	* @throws PortalException if a portlet item with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portlet item with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.PortletItem getPortletItem(

@@ -198,7 +198,7 @@ public class DLFileEntryTypeLocalServiceWrapper
 	*
 	* @param fileEntryTypeId the primary key of the document library file entry type
 	* @return the document library file entry type that was removed
-	* @throws PortalException if a document library file entry type with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file entry type with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.documentlibrary.model.DLFileEntryType deleteDLFileEntryType(
@@ -255,7 +255,7 @@ public class DLFileEntryTypeLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -440,7 +440,7 @@ public class DLFileEntryTypeLocalServiceWrapper
 	*
 	* @param fileEntryTypeId the primary key of the document library file entry type
 	* @return the document library file entry type
-	* @throws PortalException if a document library file entry type with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a document library file entry type with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.documentlibrary.model.DLFileEntryType getDLFileEntryType(
@@ -455,7 +455,7 @@ public class DLFileEntryTypeLocalServiceWrapper
 	* @param uuid the document library file entry type's UUID
 	* @param groupId the primary key of the group
 	* @return the matching document library file entry type
-	* @throws PortalException if a matching document library file entry type could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching document library file entry type could not be found
 	*/
 	@Override
 	public com.liferay.portlet.documentlibrary.model.DLFileEntryType getDLFileEntryTypeByUuidAndGroupId(

@@ -71,7 +71,7 @@ public class TicketLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -95,7 +95,7 @@ public class TicketLocalServiceUtil {
 	*
 	* @param ticketId the primary key of the ticket
 	* @return the ticket that was removed
-	* @throws PortalException if a ticket with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a ticket with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Ticket deleteTicket(long ticketId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -219,7 +219,7 @@ public class TicketLocalServiceUtil {
 	*
 	* @param ticketId the primary key of the ticket
 	* @return the ticket
-	* @throws PortalException if a ticket with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a ticket with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Ticket getTicket(long ticketId)
 		throws com.liferay.portal.kernel.exception.PortalException {

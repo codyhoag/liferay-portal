@@ -68,7 +68,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	specify whether site administrators can modify this page
 	within their site.
 	* @return the layout
-	* @throws PortalException if a group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group with the primary key could not be
 	found, if the group did not have permission to manage the
 	layouts involved, if layout values were invalid, or if a
 	portal exception occurred
@@ -132,7 +132,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	<code>layoutUpdateable</code> can be used to specify whether site
 	administrators can modify this page within their site.
 	* @return the layout
-	* @throws PortalException if a group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group with the primary key could not be
 	found, if the group did not have permission to manage the layouts
 	involved, if layout values were invalid, or if a portal exception
 	occurred
@@ -190,7 +190,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	<code>layoutUpdateable</code> can be used to specify whether site
 	administrators can modify this page within their site.
 	* @return the layout
-	* @throws PortalException if a group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group with the primary key could not be
 	found, if the group did not have permission to manage the layouts
 	involved, if layout values were invalid, or if a portal exception
 	occurred
@@ -223,7 +223,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param privateLayout whether the layout is private to the group
 	* @param layoutId the primary key of the layout
 	* @param serviceContext the service context to be applied
-	* @throws PortalException if the user did not have permission to delete the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to delete the
 	layout, if a matching layout could not be found , or if some
 	other portal exception occurred
 	*/
@@ -241,7 +241,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	*
 	* @param plid the primary key of the layout
 	* @param serviceContext the service context to be applied
-	* @throws PortalException if the user did not have permission to delete the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to delete the
 	layout, if a layout with the primary key could not be found , or
 	if some other portal exception occurred
 	*/
@@ -273,7 +273,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param startDate the export's start date
 	* @param endDate the export's end date
 	* @return the layouts as a byte array
-	* @throws PortalException if a group or any layout with the primary key
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group or any layout with the primary key
 	could not be found, if the group did not have permission to
 	manage the layouts, or if some other portal exception occurred
 	*/
@@ -299,7 +299,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param startDate the export's start date
 	* @param endDate the export's end date
 	* @return the layout as a byte array
-	* @throws PortalException if a group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group with the primary key could not be
 	found, if the group did not have permission to manage the
 	layouts, or if some other portal exception occurred
 	*/
@@ -326,7 +326,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param startDate the export's start date
 	* @param endDate the export's end date
 	* @return the layouts as a java.io.File
-	* @throws PortalException if a group or any layout with the primary key
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group or any layout with the primary key
 	could not be found, it the group did not have permission to
 	manage the layouts, or if some other portal exception occurred
 	*/
@@ -405,7 +405,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param startDate the export's start date
 	* @param endDate the export's end date
 	* @return the portlet information as a byte array
-	* @throws PortalException if a layout, group, or portlet with the primary
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout, group, or portlet with the primary
 	key could not be found, if the group did not have permission to
 	manage the layouts involved, or if some other portal exception
 	occurred
@@ -434,7 +434,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param startDate the export's start date
 	* @param endDate the export's end date
 	* @return the portlet information as a file
-	* @throws PortalException if a layout, group, or portlet with the primary
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout, group, or portlet with the primary
 	key could not be found, it the group did not have permission to
 	manage the layouts involved, or if some other portal exception
 	occurred
@@ -485,7 +485,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	*
 	* @param plid the primary key of the layout
 	* @return the ancestor layouts of the layout
-	* @throws PortalException if a matching layout could not be found or if a
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching layout could not be found or if a
 	portal exception occurred
 	*/
 	@Override
@@ -521,7 +521,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param portletId the primary key of the portlet
 	* @return Returns the primary key of the default layout group; {@link
 	com.liferay.portal.model.LayoutConstants#DEFAULT_PLID} otherwise
-	* @throws PortalException if a group, layout, or portlet with the primary
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group, layout, or portlet with the primary
 	key could not be found
 	*/
 	@Override
@@ -539,7 +539,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param groupId the primary key of the group
 	* @param privateLayout whether the layout is private to the group
 	* @return the matching layout
-	* @throws PortalException if a matching layout could not be found, if the
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching layout could not be found, if the
 	user did not have permission to view the layout, or if some other
 	portal exception occurred
 	*/
@@ -560,7 +560,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param languageId the primary key of the language. For more information
 	See {@link java.util.Locale}.
 	* @return the layout's name
-	* @throws PortalException if a matching layout could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching layout could not be found
 	*/
 	@Override
 	public java.lang.String getLayoutName(long groupId, boolean privateLayout,
@@ -633,7 +633,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	the map see {@link
 	com.liferay.portal.kernel.lar.PortletDataHandlerKeys}.
 	* @param bytes the byte array with the data
-	* @throws PortalException if a group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group with the primary key could not be
 	found, if the group did not have permission to manage the
 	layouts, or if some other portal exception occurred
 	* @see com.liferay.portal.lar.LayoutImporter
@@ -656,7 +656,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	the map see {@link
 	com.liferay.portal.kernel.lar.PortletDataHandlerKeys}.
 	* @param file the LAR file with the data
-	* @throws PortalException if a group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group with the primary key could not be
 	found, if the group did not have permission to manage the layouts
 	and publish, or if some other portal exception occurred
 	* @see com.liferay.portal.lar.LayoutImporter
@@ -679,7 +679,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	the map see {@link
 	com.liferay.portal.kernel.lar.PortletDataHandlerKeys}.
 	* @param is the input stream
-	* @throws PortalException if a group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group with the primary key could not be
 	found, if the group did not have permission to manage the
 	layouts, or if some other portal exception occurred
 	* @see com.liferay.portal.lar.LayoutImporter
@@ -724,7 +724,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	the map see {@link
 	com.liferay.portal.kernel.lar.PortletDataHandlerKeys}.
 	* @param file the LAR file with the data
-	* @throws PortalException if a group, layout, or portlet with the primary
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group, layout, or portlet with the primary
 	key could not be found, or if the group did not have permission
 	to manage the layouts
 	*/
@@ -750,7 +750,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	the map see {@link
 	com.liferay.portal.kernel.lar.PortletDataHandlerKeys}.
 	* @param is the input stream
-	* @throws PortalException if a group, portlet, or layout with the primary
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group, portlet, or layout with the primary
 	key could not be found or if the group did not have permission to
 	manage the layouts
 	*/
@@ -846,7 +846,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param schedulerStartDate the scheduler start date
 	* @param schedulerEndDate the scheduler end date
 	* @param description the scheduler description
-	* @throws PortalException if the group did not have permission to
+	* @throws com.liferay.portal.kernel.exception.PortalException if the group did not have permission to
 	manage and publish
 	* @deprecated As of 7.0.0, replaced by {@link #schedulePublishToLive(long,
 	long, boolean, long[], java.util.Map, String, java.util.Date, java.util.Date, String,
@@ -892,7 +892,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param schedulerStartDate the scheduler start date
 	* @param schedulerEndDate the scheduler end date
 	* @param description the scheduler description
-	* @throws PortalException if the group did not have permission to manage
+	* @throws com.liferay.portal.kernel.exception.PortalException if the group did not have permission to manage
 	and publish
 	*/
 	@Override
@@ -936,7 +936,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param schedulerStartDate the scheduler start date
 	* @param schedulerEndDate the scheduler end date
 	* @param description the scheduler description
-	* @throws PortalException if a group with the source group primary key was
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group with the source group primary key was
 	not found or if the group did not have permission to publish
 	*/
 	@Override
@@ -978,7 +978,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param parentLayoutId the primary key of the parent layout
 	* @param layoutIds the primary keys of the layouts
 	* @param serviceContext the service context to be applied
-	* @throws PortalException if a group or layout with the primary key could
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group or layout with the primary key could
 	not be found, if the group did not have permission to manage the
 	layouts, if no layouts were specified, if the first layout was
 	not page-able, if the first layout was hidden, or if some other
@@ -1001,7 +1001,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param groupName the group name (optionally {@link
 	com.liferay.portal.kernel.messaging.DestinationNames#LAYOUTS_LOCAL_PUBLISHER}).
 	See {@link com.liferay.portal.kernel.messaging.DestinationNames}.
-	* @throws PortalException if the group did not permission to manage staging
+	* @throws com.liferay.portal.kernel.exception.PortalException if the group did not permission to manage staging
 	and publish
 	*/
 	@Override
@@ -1019,7 +1019,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param groupName the group name (optionally {@link
 	com.liferay.portal.kernel.messaging.DestinationNames#LAYOUTS_LOCAL_PUBLISHER}).
 	See {@link com.liferay.portal.kernel.messaging.DestinationNames}.
-	* @throws PortalException if a group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group with the primary key could not be
 	found or if the group did not have permission to publish
 	*/
 	@Override
@@ -1065,7 +1065,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	modification date and expando bridge attributes for the
 	layout.
 	* @return the updated layout
-	* @throws PortalException if a group or layout with the primary key
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group or layout with the primary key
 	could not be found, if the user did not have permission to
 	update the layout, if a unique friendly URL could not be
 	generated, if a valid parent layout ID to use could not be
@@ -1120,7 +1120,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param serviceContext the service context to be applied. Can set the
 	modification date and expando bridge attributes for the layout.
 	* @return the updated layout
-	* @throws PortalException if a group or layout with the primary key could
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group or layout with the primary key could
 	not be found, if the user did not have permission to update the
 	layout, if a unique friendly URL could not be generated, if a
 	valid parent layout ID to use could not be found, or if the
@@ -1155,7 +1155,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	See {@link com.liferay.portal.kernel.util.UnicodeProperties
 	#fastLoad(String)}.
 	* @return the updated layout
-	* @throws PortalException if a matching layout could not be found or if the
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching layout could not be found or if the
 	user did not have permission to update the layout
 	*/
 	@Override
@@ -1177,7 +1177,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param css the layout's new CSS
 	* @param wapTheme whether the theme is for WAP browsers
 	* @return the updated layout
-	* @throws PortalException if a matching layout could not be found, or if
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching layout could not be found, or if
 	the user did not have permission to update the layout and
 	permission to apply the theme
 	*/
@@ -1201,7 +1201,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param languageId the primary key of the language. For more information
 	see {@link java.util.Locale}.
 	* @return the updated layout
-	* @throws PortalException if a matching layout could not be found, if the
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching layout could not be found, if the
 	user did not have permission to update the layout, or if the new
 	name was <code>null</code>
 	*/
@@ -1222,7 +1222,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param languageId the primary key of the language. For more information
 	see {@link java.util.Locale}.
 	* @return the updated layout
-	* @throws PortalException if a layout with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout with the primary key could not be
 	found, or if the user did not have permission to update the
 	layout, or if the name was <code>null</code>
 	*/
@@ -1243,7 +1243,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param parentLayoutId the primary key to be assigned to the parent
 	layout
 	* @return the matching layout
-	* @throws PortalException if a valid parent layout ID to use could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a valid parent layout ID to use could not be
 	found, if a matching layout could not be found, or if the user
 	did not have permission to update the layout
 	*/
@@ -1265,7 +1265,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param plid the primary key of the layout
 	* @param parentPlid the primary key of the parent layout
 	* @return the layout matching the primary key
-	* @throws PortalException if a layout with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout with the primary key could not be
 	found, if the user did not have permission to update the layout,
 	or if a valid parent layout ID to use could not be found
 	*/
@@ -1283,7 +1283,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param parentPlid the primary key of the parent layout
 	* @param priority the layout's new priority
 	* @return the layout matching the primary key
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portal.model.Layout updateParentLayoutIdAndPriority(
@@ -1304,7 +1304,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param nextLayoutId the primary key of the next layout
 	* @param previousLayoutId the primary key of the previous layout
 	* @return the updated layout
-	* @throws PortalException if a matching layout could not be found or if the
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching layout could not be found or if the
 	user did not have permission to update the layout
 	*/
 	@Override
@@ -1325,7 +1325,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param layoutId the primary key of the layout
 	* @param priority the layout's new priority
 	* @return the updated layout
-	* @throws PortalException if a matching layout could not be found or if the
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching layout could not be found or if the
 	user did not have permission to update the layout
 	*/
 	@Override
@@ -1342,7 +1342,7 @@ public class LayoutServiceWrapper implements LayoutService,
 	* @param plid the primary key of the layout
 	* @param priority the layout's new priority
 	* @return the updated layout
-	* @throws PortalException if a layout with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout with the primary key could not be
 	found
 	*/
 	@Override

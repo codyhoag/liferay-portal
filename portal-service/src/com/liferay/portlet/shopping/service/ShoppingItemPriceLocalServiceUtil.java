@@ -64,7 +64,7 @@ public class ShoppingItemPriceLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -77,7 +77,7 @@ public class ShoppingItemPriceLocalServiceUtil {
 	*
 	* @param itemPriceId the primary key of the shopping item price
 	* @return the shopping item price that was removed
-	* @throws PortalException if a shopping item price with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shopping item price with the primary key could not be found
 	*/
 	public static com.liferay.portlet.shopping.model.ShoppingItemPrice deleteShoppingItemPrice(
 		long itemPriceId)
@@ -208,7 +208,7 @@ public class ShoppingItemPriceLocalServiceUtil {
 	*
 	* @param itemPriceId the primary key of the shopping item price
 	* @return the shopping item price
-	* @throws PortalException if a shopping item price with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shopping item price with the primary key could not be found
 	*/
 	public static com.liferay.portlet.shopping.model.ShoppingItemPrice getShoppingItemPrice(
 		long itemPriceId)

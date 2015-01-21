@@ -106,7 +106,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	UUID, creation date, modification date, guest permissions,
 	and group permissions for the structure.
 	* @return the structure
-	* @throws PortalException if a user with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key could not be
 	found, if the XSD was not well-formed, or if a portal
 	exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link #addStructure(long, long,
@@ -156,7 +156,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	UUID, creation date, modification date, guest permissions,
 	and group permissions for the structure.
 	* @return the structure
-	* @throws PortalException if a user with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key could not be
 	found, if the XSD was not well-formed, or if a portal
 	exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link #addStructure(long, long,
@@ -208,7 +208,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	UUID, creation date, modification date, guest permissions and
 	group permissions for the structure.
 	* @return the structure
-	* @throws PortalException if a user with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key could not be
 	found, if the XSD was not well-formed, or if a portal
 	exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link #addStructure(long, long,
@@ -231,7 +231,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	* @param structure the structure to add resources to
 	* @param addGroupPermissions whether to add group permissions
 	* @param addGuestPermissions whether to add guest permissions
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public void addStructureResources(
 		com.liferay.portlet.dynamicdatamapping.model.DDMStructure structure,
@@ -244,7 +244,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	* @param structure the structure to add resources to
 	* @param groupPermissions the group permissions to be added
 	* @param guestPermissions the guest permissions to be added
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public void addStructureResources(
 		com.liferay.portlet.dynamicdatamapping.model.DDMStructure structure,
@@ -269,7 +269,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	UUID, creation date, modification date, guest permissions, and
 	group permissions for the structure.
 	* @return the new structure
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public com.liferay.portlet.dynamicdatamapping.model.DDMStructure copyStructure(
 		long userId, long structureId,
@@ -307,7 +307,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	*
 	* @param structureId the primary key of the d d m structure
 	* @return the d d m structure that was removed
-	* @throws PortalException if a d d m structure with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m structure with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.dynamicdatamapping.model.DDMStructure deleteDDMStructure(
@@ -338,7 +338,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 		long[] structureIds);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -357,7 +357,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	* @param classNameId the primary key of the class name for the structure's
 	related model
 	* @param structureKey the unique string identifying the structure
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public void deleteStructure(long groupId, long classNameId,
 		java.lang.String structureKey)
@@ -372,7 +372,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	* </p>
 	*
 	* @param structure the structure to be deleted
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@com.liferay.portal.kernel.systemevent.SystemEvent(type = SystemEventConstants.TYPE_DELETE)
 	public void deleteStructure(
@@ -388,7 +388,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	* </p>
 	*
 	* @param structureId the primary key of the structure to be deleted
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public void deleteStructure(long structureId)
 		throws com.liferay.portal.kernel.exception.PortalException;
@@ -403,7 +403,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	* </p>
 	*
 	* @param groupId the primary key of the group
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public void deleteStructures(long groupId)
 		throws com.liferay.portal.kernel.exception.PortalException;
@@ -527,7 +527,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	search
 	* @return the matching structure, or <code>null</code> if a matching
 	structure could not be found
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.dynamicdatamapping.model.DDMStructure fetchStructure(
@@ -614,7 +614,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	*
 	* @param structureId the primary key of the d d m structure
 	* @return the d d m structure
-	* @throws PortalException if a d d m structure with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m structure with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.dynamicdatamapping.model.DDMStructure getDDMStructure(
@@ -627,7 +627,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	* @param uuid the d d m structure's UUID
 	* @param groupId the primary key of the group
 	* @return the matching d d m structure
-	* @throws PortalException if a matching d d m structure could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching d d m structure could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.dynamicdatamapping.model.DDMStructure getDDMStructureByUuidAndGroupId(
@@ -768,7 +768,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	related model
 	* @param structureKey the unique string identifying the structure
 	* @return the matching structure
-	* @throws PortalException if a matching structure could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching structure could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.dynamicdatamapping.model.DDMStructure getStructure(
@@ -795,7 +795,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	have sharing enabled) and include global scoped sites in the
 	search in the search
 	* @return the matching structure
-	* @throws PortalException if a matching structure could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching structure could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.dynamicdatamapping.model.DDMStructure getStructure(
@@ -820,7 +820,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	*
 	* @param structureId the primary key of the structure
 	* @return the structure with the ID
-	* @throws PortalException if a structure with the ID could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a structure with the ID could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.dynamicdatamapping.model.DDMStructure getStructure(
@@ -1201,7 +1201,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	* @param serviceContext the service context to be applied. Can set the
 	structure's modification date.
 	* @return the updated structure
-	* @throws PortalException if a matching structure could not be found,
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching structure could not be found,
 	if the XSD was not well-formed, or if a portal exception
 	occurred
 	* @deprecated As of 7.0.0, replaced by {@link #updateStructure(long, long,
@@ -1238,7 +1238,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	* @param serviceContext the service context to be applied. Can set the
 	structure's modification date.
 	* @return the updated structure
-	* @throws PortalException if a matching structure could not be found,
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching structure could not be found,
 	if the XSD was not well-formed, or if a portal exception
 	occurred
 	* @deprecated As of 7.0.0, replaced by {@link #updateStructure(long, long,
@@ -1262,7 +1262,7 @@ public interface DDMStructureLocalService extends BaseLocalService,
 	* @param serviceContext the service context to be applied. Can set the
 	structure's modification date.
 	* @return the updated structure
-	* @throws PortalException if a matching structure could not be found,
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching structure could not be found,
 	if the XSD was not well-formed, or if a portal exception
 	occurred
 	* @deprecated As of 7.0.0, replaced by {@link #updateDDMForm(long, DDMForm,

@@ -82,7 +82,7 @@ public class LockLocalServiceUtil {
 	*
 	* @param lockId the primary key of the lock
 	* @return the lock that was removed
-	* @throws PortalException if a lock with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a lock with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Lock deleteLock(long lockId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -90,7 +90,7 @@ public class LockLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -222,7 +222,7 @@ public class LockLocalServiceUtil {
 	*
 	* @param lockId the primary key of the lock
 	* @return the lock
-	* @throws PortalException if a lock with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a lock with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Lock getLock(long lockId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -235,7 +235,7 @@ public class LockLocalServiceUtil {
 	* @param uuid the lock's UUID
 	* @param companyId the primary key of the company
 	* @return the matching lock
-	* @throws PortalException if a matching lock could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching lock could not be found
 	*/
 	public static com.liferay.portal.model.Lock getLockByUuidAndCompanyId(
 		java.lang.String uuid, long companyId)

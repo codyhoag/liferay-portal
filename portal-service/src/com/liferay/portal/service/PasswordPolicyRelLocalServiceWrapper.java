@@ -100,7 +100,7 @@ public class PasswordPolicyRelLocalServiceWrapper
 	*
 	* @param passwordPolicyRelId the primary key of the password policy rel
 	* @return the password policy rel that was removed
-	* @throws PortalException if a password policy rel with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a password policy rel with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.PasswordPolicyRel deletePasswordPolicyRel(
@@ -122,7 +122,7 @@ public class PasswordPolicyRelLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -266,7 +266,7 @@ public class PasswordPolicyRelLocalServiceWrapper
 	*
 	* @param passwordPolicyRelId the primary key of the password policy rel
 	* @return the password policy rel
-	* @throws PortalException if a password policy rel with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a password policy rel with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.PasswordPolicyRel getPasswordPolicyRel(

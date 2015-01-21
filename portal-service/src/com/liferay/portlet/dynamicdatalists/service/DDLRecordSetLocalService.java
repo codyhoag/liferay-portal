@@ -102,7 +102,7 @@ public interface DDLRecordSetLocalService extends BaseLocalService,
 	*
 	* @param recordSetId the primary key of the d d l record set
 	* @return the d d l record set that was removed
-	* @throws PortalException if a d d l record set with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d l record set with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.dynamicdatalists.model.DDLRecordSet deleteDDLRecordSet(
@@ -110,7 +110,7 @@ public interface DDLRecordSetLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -234,7 +234,7 @@ public interface DDLRecordSetLocalService extends BaseLocalService,
 	*
 	* @param recordSetId the primary key of the d d l record set
 	* @return the d d l record set
-	* @throws PortalException if a d d l record set with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d l record set with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.dynamicdatalists.model.DDLRecordSet getDDLRecordSet(
@@ -247,7 +247,7 @@ public interface DDLRecordSetLocalService extends BaseLocalService,
 	* @param uuid the d d l record set's UUID
 	* @param groupId the primary key of the group
 	* @return the matching d d l record set
-	* @throws PortalException if a matching d d l record set could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching d d l record set could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.dynamicdatalists.model.DDLRecordSet getDDLRecordSetByUuidAndGroupId(

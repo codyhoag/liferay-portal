@@ -222,7 +222,7 @@ public class WikiPageLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -247,7 +247,7 @@ public class WikiPageLocalServiceUtil {
 	*
 	* @param pageId the primary key of the wiki page
 	* @return the wiki page that was removed
-	* @throws PortalException if a wiki page with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a wiki page with the primary key could not be found
 	*/
 	public static com.liferay.wiki.model.WikiPage deleteWikiPage(long pageId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -707,7 +707,7 @@ public class WikiPageLocalServiceUtil {
 	*
 	* @param pageId the primary key of the wiki page
 	* @return the wiki page
-	* @throws PortalException if a wiki page with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a wiki page with the primary key could not be found
 	*/
 	public static com.liferay.wiki.model.WikiPage getWikiPage(long pageId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -720,7 +720,7 @@ public class WikiPageLocalServiceUtil {
 	* @param uuid the wiki page's UUID
 	* @param groupId the primary key of the group
 	* @return the matching wiki page
-	* @throws PortalException if a matching wiki page could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching wiki page could not be found
 	*/
 	public static com.liferay.wiki.model.WikiPage getWikiPageByUuidAndGroupId(
 		java.lang.String uuid, long groupId)

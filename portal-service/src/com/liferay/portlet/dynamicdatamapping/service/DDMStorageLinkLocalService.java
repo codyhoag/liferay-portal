@@ -89,7 +89,7 @@ public interface DDMStorageLinkLocalService extends BaseLocalService,
 	*
 	* @param storageLinkId the primary key of the d d m storage link
 	* @return the d d m storage link that was removed
-	* @throws PortalException if a d d m storage link with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m storage link with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.dynamicdatamapping.model.DDMStorageLink deleteDDMStorageLink(
@@ -97,7 +97,7 @@ public interface DDMStorageLinkLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -201,7 +201,7 @@ public interface DDMStorageLinkLocalService extends BaseLocalService,
 	*
 	* @param storageLinkId the primary key of the d d m storage link
 	* @return the d d m storage link
-	* @throws PortalException if a d d m storage link with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m storage link with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.dynamicdatamapping.model.DDMStorageLink getDDMStorageLink(

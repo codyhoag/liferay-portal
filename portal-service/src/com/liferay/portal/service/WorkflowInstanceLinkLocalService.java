@@ -70,7 +70,7 @@ public interface WorkflowInstanceLinkLocalService extends BaseLocalService,
 		long workflowInstanceLinkId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -86,7 +86,7 @@ public interface WorkflowInstanceLinkLocalService extends BaseLocalService,
 	*
 	* @param workflowInstanceLink the workflow instance link
 	* @return the workflow instance link that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.WorkflowInstanceLink deleteWorkflowInstanceLink(
@@ -98,7 +98,7 @@ public interface WorkflowInstanceLinkLocalService extends BaseLocalService,
 	*
 	* @param workflowInstanceLinkId the primary key of the workflow instance link
 	* @return the workflow instance link that was removed
-	* @throws PortalException if a workflow instance link with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a workflow instance link with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.WorkflowInstanceLink deleteWorkflowInstanceLink(
@@ -213,7 +213,7 @@ public interface WorkflowInstanceLinkLocalService extends BaseLocalService,
 	*
 	* @param workflowInstanceLinkId the primary key of the workflow instance link
 	* @return the workflow instance link
-	* @throws PortalException if a workflow instance link with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a workflow instance link with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.WorkflowInstanceLink getWorkflowInstanceLink(

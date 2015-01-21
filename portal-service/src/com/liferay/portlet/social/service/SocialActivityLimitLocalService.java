@@ -73,7 +73,7 @@ public interface SocialActivityLimitLocalService extends BaseLocalService,
 		long activityLimitId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -85,7 +85,7 @@ public interface SocialActivityLimitLocalService extends BaseLocalService,
 	*
 	* @param activityLimitId the primary key of the social activity limit
 	* @return the social activity limit that was removed
-	* @throws PortalException if a social activity limit with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a social activity limit with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.social.model.SocialActivityLimit deleteSocialActivityLimit(
@@ -197,7 +197,7 @@ public interface SocialActivityLimitLocalService extends BaseLocalService,
 	*
 	* @param activityLimitId the primary key of the social activity limit
 	* @return the social activity limit
-	* @throws PortalException if a social activity limit with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a social activity limit with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.social.model.SocialActivityLimit getSocialActivityLimit(

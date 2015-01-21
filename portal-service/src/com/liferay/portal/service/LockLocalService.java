@@ -81,14 +81,14 @@ public interface LockLocalService extends BaseLocalService,
 	*
 	* @param lockId the primary key of the lock
 	* @return the lock that was removed
-	* @throws PortalException if a lock with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a lock with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.Lock deleteLock(long lockId)
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -198,7 +198,7 @@ public interface LockLocalService extends BaseLocalService,
 	*
 	* @param lockId the primary key of the lock
 	* @return the lock
-	* @throws PortalException if a lock with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a lock with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Lock getLock(long lockId)
@@ -210,7 +210,7 @@ public interface LockLocalService extends BaseLocalService,
 	* @param uuid the lock's UUID
 	* @param companyId the primary key of the company
 	* @return the matching lock
-	* @throws PortalException if a matching lock could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching lock could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Lock getLockByUuidAndCompanyId(

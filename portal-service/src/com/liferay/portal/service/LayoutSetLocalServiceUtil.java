@@ -90,7 +90,7 @@ public class LayoutSetLocalServiceUtil {
 	*
 	* @param layoutSetId the primary key of the layout set
 	* @return the layout set that was removed
-	* @throws PortalException if a layout set with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout set with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.LayoutSet deleteLayoutSet(
 		long layoutSetId)
@@ -99,7 +99,7 @@ public class LayoutSetLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -219,7 +219,7 @@ public class LayoutSetLocalServiceUtil {
 	*
 	* @param layoutSetId the primary key of the layout set
 	* @return the layout set
-	* @throws PortalException if a layout set with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout set with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.LayoutSet getLayoutSet(
 		long layoutSetId)
@@ -307,7 +307,7 @@ public class LayoutSetLocalServiceUtil {
 	* @param privateLayout whether the layout set is private to the group
 	* @param layoutSetPrototypeLinkEnabled whether the layout set
 	prototype is link enabled
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	* @deprecated As of 6.1.0, replaced by {@link
 	#updateLayoutSetPrototypeLinkEnabled(long, boolean, boolean,
 	String)}
@@ -330,7 +330,7 @@ public class LayoutSetLocalServiceUtil {
 	link enabled
 	* @param layoutSetPrototypeUuid the uuid of the layout set prototype to
 	link with
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public static void updateLayoutSetPrototypeLinkEnabled(long groupId,
 		boolean privateLayout, boolean layoutSetPrototypeLinkEnabled,

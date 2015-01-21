@@ -105,7 +105,7 @@ public class MDRActionLocalServiceUtil {
 	*
 	* @param actionId the primary key of the m d r action
 	* @return the m d r action that was removed
-	* @throws PortalException if a m d r action with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a m d r action with the primary key could not be found
 	*/
 	public static com.liferay.portlet.mobiledevicerules.model.MDRAction deleteMDRAction(
 		long actionId)
@@ -125,7 +125,7 @@ public class MDRActionLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -276,7 +276,7 @@ public class MDRActionLocalServiceUtil {
 	*
 	* @param actionId the primary key of the m d r action
 	* @return the m d r action
-	* @throws PortalException if a m d r action with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a m d r action with the primary key could not be found
 	*/
 	public static com.liferay.portlet.mobiledevicerules.model.MDRAction getMDRAction(
 		long actionId)
@@ -290,7 +290,7 @@ public class MDRActionLocalServiceUtil {
 	* @param uuid the m d r action's UUID
 	* @param groupId the primary key of the group
 	* @return the matching m d r action
-	* @throws PortalException if a matching m d r action could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching m d r action could not be found
 	*/
 	public static com.liferay.portlet.mobiledevicerules.model.MDRAction getMDRActionByUuidAndGroupId(
 		java.lang.String uuid, long groupId)

@@ -76,7 +76,7 @@ public interface SubscriptionLocalService extends BaseLocalService,
 	* @param className the entity's class name
 	* @param classPK the primary key of the entity's instance
 	* @return the subscription
-	* @throws PortalException if a matching user or group could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching user or group could not be found
 	*/
 	public com.liferay.portal.model.Subscription addSubscription(long userId,
 		long groupId, java.lang.String className, long classPK)
@@ -102,7 +102,7 @@ public interface SubscriptionLocalService extends BaseLocalService,
 	* @param classPK the primary key of the entity's instance
 	* @param frequency the frequency for notifications
 	* @return the subscription
-	* @throws PortalException if a matching user or group could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching user or group could not be found
 	*/
 	public com.liferay.portal.model.Subscription addSubscription(long userId,
 		long groupId, java.lang.String className, long classPK,
@@ -119,7 +119,7 @@ public interface SubscriptionLocalService extends BaseLocalService,
 		long subscriptionId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -131,7 +131,7 @@ public interface SubscriptionLocalService extends BaseLocalService,
 	*
 	* @param subscription the subscription
 	* @return the subscription that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.Subscription deleteSubscription(
@@ -143,7 +143,7 @@ public interface SubscriptionLocalService extends BaseLocalService,
 	*
 	* @param subscriptionId the primary key of the subscription
 	* @return the subscription that was removed
-	* @throws PortalException if a subscription with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a subscription with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.Subscription deleteSubscription(
@@ -157,7 +157,7 @@ public interface SubscriptionLocalService extends BaseLocalService,
 	* @param userId the primary key of the user
 	* @param className the entity's class name
 	* @param classPK the primary key of the entity's instance
-	* @throws PortalException if a matching user or subscription could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching user or subscription could not be
 	found
 	*/
 	public void deleteSubscription(long userId, java.lang.String className,
@@ -170,7 +170,7 @@ public interface SubscriptionLocalService extends BaseLocalService,
 	* @param companyId the primary key of the company
 	* @param className the entity's class name
 	* @param classPK the primary key of the entity's instance
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public void deleteSubscriptions(long companyId, java.lang.String className,
 		long classPK)
@@ -180,7 +180,7 @@ public interface SubscriptionLocalService extends BaseLocalService,
 	* Deletes all the subscriptions of the user.
 	*
 	* @param userId the primary key of the user
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public void deleteSubscriptions(long userId)
 		throws com.liferay.portal.kernel.exception.PortalException;
@@ -278,7 +278,7 @@ public interface SubscriptionLocalService extends BaseLocalService,
 	* @param className the entity's class name
 	* @param classPK the primary key of the entity's instance
 	* @return the subscription of the user to the entity
-	* @throws PortalException if a matching subscription could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching subscription could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Subscription getSubscription(
@@ -290,7 +290,7 @@ public interface SubscriptionLocalService extends BaseLocalService,
 	*
 	* @param subscriptionId the primary key of the subscription
 	* @return the subscription
-	* @throws PortalException if a subscription with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a subscription with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Subscription getSubscription(

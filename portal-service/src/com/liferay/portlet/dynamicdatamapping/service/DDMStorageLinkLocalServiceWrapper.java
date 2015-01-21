@@ -89,7 +89,7 @@ public class DDMStorageLinkLocalServiceWrapper
 	*
 	* @param storageLinkId the primary key of the d d m storage link
 	* @return the d d m storage link that was removed
-	* @throws PortalException if a d d m storage link with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m storage link with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMStorageLink deleteDDMStorageLink(
@@ -99,7 +99,7 @@ public class DDMStorageLinkLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -243,7 +243,7 @@ public class DDMStorageLinkLocalServiceWrapper
 	*
 	* @param storageLinkId the primary key of the d d m storage link
 	* @return the d d m storage link
-	* @throws PortalException if a d d m storage link with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m storage link with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMStorageLink getDDMStorageLink(

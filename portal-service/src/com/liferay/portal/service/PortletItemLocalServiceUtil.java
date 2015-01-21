@@ -72,7 +72,7 @@ public class PortletItemLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -96,7 +96,7 @@ public class PortletItemLocalServiceUtil {
 	*
 	* @param portletItemId the primary key of the portlet item
 	* @return the portlet item that was removed
-	* @throws PortalException if a portlet item with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portlet item with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.PortletItem deletePortletItem(
 		long portletItemId)
@@ -218,7 +218,7 @@ public class PortletItemLocalServiceUtil {
 	*
 	* @param portletItemId the primary key of the portlet item
 	* @return the portlet item
-	* @throws PortalException if a portlet item with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portlet item with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.PortletItem getPortletItem(
 		long portletItemId)

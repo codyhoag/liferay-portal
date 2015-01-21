@@ -141,7 +141,7 @@ public class SCProductEntryLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -203,7 +203,7 @@ public class SCProductEntryLocalServiceWrapper
 	*
 	* @param productEntryId the primary key of the s c product entry
 	* @return the s c product entry that was removed
-	* @throws PortalException if a s c product entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a s c product entry with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.softwarecatalog.model.SCProductEntry deleteSCProductEntry(
@@ -482,7 +482,7 @@ public class SCProductEntryLocalServiceWrapper
 	*
 	* @param productEntryId the primary key of the s c product entry
 	* @return the s c product entry
-	* @throws PortalException if a s c product entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a s c product entry with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.softwarecatalog.model.SCProductEntry getSCProductEntry(

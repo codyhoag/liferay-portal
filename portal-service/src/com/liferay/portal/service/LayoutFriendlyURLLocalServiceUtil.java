@@ -101,7 +101,7 @@ public class LayoutFriendlyURLLocalServiceUtil {
 	*
 	* @param layoutFriendlyURLId the primary key of the layout friendly u r l
 	* @return the layout friendly u r l that was removed
-	* @throws PortalException if a layout friendly u r l with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout friendly u r l with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.LayoutFriendlyURL deleteLayoutFriendlyURL(
 		long layoutFriendlyURLId)
@@ -119,7 +119,7 @@ public class LayoutFriendlyURLLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -270,7 +270,7 @@ public class LayoutFriendlyURLLocalServiceUtil {
 	*
 	* @param layoutFriendlyURLId the primary key of the layout friendly u r l
 	* @return the layout friendly u r l
-	* @throws PortalException if a layout friendly u r l with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout friendly u r l with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.LayoutFriendlyURL getLayoutFriendlyURL(
 		long layoutFriendlyURLId)
@@ -296,7 +296,7 @@ public class LayoutFriendlyURLLocalServiceUtil {
 	* @param uuid the layout friendly u r l's UUID
 	* @param groupId the primary key of the group
 	* @return the matching layout friendly u r l
-	* @throws PortalException if a matching layout friendly u r l could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching layout friendly u r l could not be found
 	*/
 	public static com.liferay.portal.model.LayoutFriendlyURL getLayoutFriendlyURLByUuidAndGroupId(
 		java.lang.String uuid, long groupId)

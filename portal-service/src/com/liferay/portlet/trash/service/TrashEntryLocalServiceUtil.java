@@ -68,7 +68,7 @@ public class TrashEntryLocalServiceUtil {
 	com.liferay.portlet.documentlibrary.model.DLFileVersion})
 	* @param typeSettingsProperties the type settings properties
 	* @return the trashEntry
-	* @throws PortalException if a user with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key could not be found
 	*/
 	public static com.liferay.portlet.trash.model.TrashEntry addTrashEntry(
 		long userId, long groupId, java.lang.String className, long classPK,
@@ -105,7 +105,7 @@ public class TrashEntryLocalServiceUtil {
 	* @param className the class name of entity
 	* @param classPK the primary key of the entry
 	* @return the trash entry with the entity class name and primary key
-	* @throws PortalException if a trash entry with the primary key could not
+	* @throws com.liferay.portal.kernel.exception.PortalException if a trash entry with the primary key could not
 	be found
 	*/
 	public static com.liferay.portlet.trash.model.TrashEntry deleteEntry(
@@ -119,7 +119,7 @@ public class TrashEntryLocalServiceUtil {
 	*
 	* @param entryId the primary key of the trash entry
 	* @return the trash entry with the primary key
-	* @throws PortalException if a trash entry with the primary key could not
+	* @throws com.liferay.portal.kernel.exception.PortalException if a trash entry with the primary key could not
 	be found
 	*/
 	public static com.liferay.portlet.trash.model.TrashEntry deleteEntry(
@@ -134,7 +134,7 @@ public class TrashEntryLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -147,7 +147,7 @@ public class TrashEntryLocalServiceUtil {
 	*
 	* @param entryId the primary key of the trash entry
 	* @return the trash entry that was removed
-	* @throws PortalException if a trash entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a trash entry with the primary key could not be found
 	*/
 	public static com.liferay.portlet.trash.model.TrashEntry deleteTrashEntry(
 		long entryId)
@@ -349,7 +349,7 @@ public class TrashEntryLocalServiceUtil {
 	* @param className the class name of the entity
 	* @param classPK the primary key of the entity
 	* @return the trash entry with the entity class name and primary key
-	* @throws PortalException if a trash entry with the primary key could not
+	* @throws com.liferay.portal.kernel.exception.PortalException if a trash entry with the primary key could not
 	be found
 	*/
 	public static com.liferay.portlet.trash.model.TrashEntry getEntry(
@@ -363,7 +363,7 @@ public class TrashEntryLocalServiceUtil {
 	*
 	* @param entryId the primary key of the trash entry
 	* @return the trash entry with the primary key
-	* @throws PortalException if a trash entry with the primary key could not
+	* @throws com.liferay.portal.kernel.exception.PortalException if a trash entry with the primary key could not
 	be found
 	*/
 	public static com.liferay.portlet.trash.model.TrashEntry getEntry(
@@ -408,7 +408,7 @@ public class TrashEntryLocalServiceUtil {
 	*
 	* @param entryId the primary key of the trash entry
 	* @return the trash entry
-	* @throws PortalException if a trash entry with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a trash entry with the primary key could not be found
 	*/
 	public static com.liferay.portlet.trash.model.TrashEntry getTrashEntry(
 		long entryId)

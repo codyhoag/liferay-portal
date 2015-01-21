@@ -74,7 +74,7 @@ public class UserGroupRoleLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -98,7 +98,7 @@ public class UserGroupRoleLocalServiceUtil {
 	*
 	* @param userGroupRolePK the primary key of the user group role
 	* @return the user group role that was removed
-	* @throws PortalException if a user group role with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user group role with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.UserGroupRole deleteUserGroupRole(
 		com.liferay.portal.service.persistence.UserGroupRolePK userGroupRolePK)
@@ -248,7 +248,7 @@ public class UserGroupRoleLocalServiceUtil {
 	*
 	* @param userGroupRolePK the primary key of the user group role
 	* @return the user group role
-	* @throws PortalException if a user group role with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user group role with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.UserGroupRole getUserGroupRole(
 		com.liferay.portal.service.persistence.UserGroupRolePK userGroupRolePK)

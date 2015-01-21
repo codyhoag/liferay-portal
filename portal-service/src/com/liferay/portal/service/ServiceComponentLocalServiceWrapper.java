@@ -57,7 +57,7 @@ public class ServiceComponentLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -83,7 +83,7 @@ public class ServiceComponentLocalServiceWrapper
 	*
 	* @param serviceComponentId the primary key of the service component
 	* @return the service component that was removed
-	* @throws PortalException if a service component with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a service component with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.ServiceComponent deleteServiceComponent(
@@ -219,7 +219,7 @@ public class ServiceComponentLocalServiceWrapper
 	*
 	* @param serviceComponentId the primary key of the service component
 	* @return the service component
-	* @throws PortalException if a service component with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a service component with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.ServiceComponent getServiceComponent(

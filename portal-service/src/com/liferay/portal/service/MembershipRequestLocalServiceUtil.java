@@ -88,7 +88,7 @@ public class MembershipRequestLocalServiceUtil {
 	*
 	* @param membershipRequestId the primary key of the membership request
 	* @return the membership request that was removed
-	* @throws PortalException if a membership request with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a membership request with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.MembershipRequest deleteMembershipRequest(
 		long membershipRequestId)
@@ -109,7 +109,7 @@ public class MembershipRequestLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -218,7 +218,7 @@ public class MembershipRequestLocalServiceUtil {
 	*
 	* @param membershipRequestId the primary key of the membership request
 	* @return the membership request
-	* @throws PortalException if a membership request with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a membership request with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.MembershipRequest getMembershipRequest(
 		long membershipRequestId)

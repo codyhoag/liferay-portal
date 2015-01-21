@@ -53,7 +53,7 @@ public class SocialRequestLocalServiceWrapper
 	* @param extraData the extra data regarding the request
 	* @param receiverUserId the primary key of the user receiving the request
 	* @return the social request
-	* @throws PortalException if the users could not be found, if the users
+	* @throws com.liferay.portal.kernel.exception.PortalException if the users could not be found, if the users
 	were not from the same company, or if either of the users was the
 	default user
 	*/
@@ -91,7 +91,7 @@ public class SocialRequestLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -126,7 +126,7 @@ public class SocialRequestLocalServiceWrapper
 	* database.
 	*
 	* @param requestId the primary key of the social request
-	* @throws PortalException if the social request could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if the social request could not be found
 	*/
 	@Override
 	public void deleteRequest(long requestId)
@@ -144,7 +144,7 @@ public class SocialRequestLocalServiceWrapper
 	*
 	* @param requestId the primary key of the social request
 	* @return the social request that was removed
-	* @throws PortalException if a social request with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a social request with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.social.model.SocialRequest deleteSocialRequest(
@@ -384,7 +384,7 @@ public class SocialRequestLocalServiceWrapper
 	*
 	* @param requestId the primary key of the social request
 	* @return the social request
-	* @throws PortalException if a social request with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a social request with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.social.model.SocialRequest getSocialRequest(
@@ -399,7 +399,7 @@ public class SocialRequestLocalServiceWrapper
 	* @param uuid the social request's UUID
 	* @param groupId the primary key of the group
 	* @return the matching social request
-	* @throws PortalException if a matching social request could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching social request could not be found
 	*/
 	@Override
 	public com.liferay.portlet.social.model.SocialRequest getSocialRequestByUuidAndGroupId(
@@ -616,7 +616,7 @@ public class SocialRequestLocalServiceWrapper
 	* @param status the new status
 	* @param themeDisplay the theme display
 	* @return the updated social request
-	* @throws PortalException if the social request could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if the social request could not be found
 	*/
 	@Override
 	public com.liferay.portlet.social.model.SocialRequest updateRequest(

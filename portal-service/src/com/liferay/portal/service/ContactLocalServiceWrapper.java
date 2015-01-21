@@ -90,7 +90,7 @@ public class ContactLocalServiceWrapper implements ContactLocalService,
 	*
 	* @param contactId the primary key of the contact
 	* @return the contact that was removed
-	* @throws PortalException if a contact with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a contact with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Contact deleteContact(long contactId)
@@ -99,7 +99,7 @@ public class ContactLocalServiceWrapper implements ContactLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -217,7 +217,7 @@ public class ContactLocalServiceWrapper implements ContactLocalService,
 	*
 	* @param contactId the primary key of the contact
 	* @return the contact
-	* @throws PortalException if a contact with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a contact with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Contact getContact(long contactId)

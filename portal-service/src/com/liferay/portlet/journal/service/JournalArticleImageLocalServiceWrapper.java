@@ -99,7 +99,7 @@ public class JournalArticleImageLocalServiceWrapper
 	*
 	* @param articleImageId the primary key of the journal article image
 	* @return the journal article image that was removed
-	* @throws PortalException if a journal article image with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal article image with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalArticleImage deleteJournalArticleImage(
@@ -121,7 +121,7 @@ public class JournalArticleImageLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -283,7 +283,7 @@ public class JournalArticleImageLocalServiceWrapper
 	*
 	* @param articleImageId the primary key of the journal article image
 	* @return the journal article image
-	* @throws PortalException if a journal article image with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal article image with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalArticleImage getJournalArticleImage(

@@ -73,7 +73,7 @@ public class PasswordTrackerLocalServiceWrapper
 	*
 	* @param passwordTrackerId the primary key of the password tracker
 	* @return the password tracker that was removed
-	* @throws PortalException if a password tracker with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a password tracker with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.PasswordTracker deletePasswordTracker(
@@ -88,7 +88,7 @@ public class PasswordTrackerLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -209,7 +209,7 @@ public class PasswordTrackerLocalServiceWrapper
 	*
 	* @param passwordTrackerId the primary key of the password tracker
 	* @return the password tracker
-	* @throws PortalException if a password tracker with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a password tracker with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.PasswordTracker getPasswordTracker(

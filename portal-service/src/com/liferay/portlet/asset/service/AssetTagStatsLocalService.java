@@ -92,7 +92,7 @@ public interface AssetTagStatsLocalService extends BaseLocalService,
 	*
 	* @param tagStatsId the primary key of the asset tag stats
 	* @return the asset tag stats that was removed
-	* @throws PortalException if a asset tag stats with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a asset tag stats with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.asset.model.AssetTagStats deleteAssetTagStats(
@@ -100,7 +100,7 @@ public interface AssetTagStatsLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -119,7 +119,7 @@ public interface AssetTagStatsLocalService extends BaseLocalService,
 	* Deletes the asset tag statistics instance matching the tag statistics ID.
 	*
 	* @param tagStatsId the primary key of the asset tag statistics instance
-	* @throws PortalException if the assetTagStats with the primary key could
+	* @throws com.liferay.portal.kernel.exception.PortalException if the assetTagStats with the primary key could
 	not be found
 	*/
 	public void deleteTagStats(long tagStatsId)
@@ -217,7 +217,7 @@ public interface AssetTagStatsLocalService extends BaseLocalService,
 	*
 	* @param tagStatsId the primary key of the asset tag stats
 	* @return the asset tag stats
-	* @throws PortalException if a asset tag stats with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a asset tag stats with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.asset.model.AssetTagStats getAssetTagStats(
@@ -320,7 +320,7 @@ public interface AssetTagStatsLocalService extends BaseLocalService,
 	* @param tagId the primary key of the tag
 	* @param classNameId the asset entry's class name ID
 	* @return the updated asset tag statistics instance
-	* @throws PortalException if an asset tag with the tag ID could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if an asset tag with the tag ID could not be
 	found
 	*/
 	public com.liferay.portlet.asset.model.AssetTagStats updateTagStats(

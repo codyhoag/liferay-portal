@@ -126,7 +126,7 @@ public class BackgroundTaskLocalServiceUtil {
 	*
 	* @param backgroundTask the background task
 	* @return the background task that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.BackgroundTask deleteBackgroundTask(
 		com.liferay.portal.model.BackgroundTask backgroundTask)
@@ -139,7 +139,7 @@ public class BackgroundTaskLocalServiceUtil {
 	*
 	* @param backgroundTaskId the primary key of the background task
 	* @return the background task that was removed
-	* @throws PortalException if a background task with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a background task with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.BackgroundTask deleteBackgroundTask(
 		long backgroundTaskId)
@@ -158,7 +158,7 @@ public class BackgroundTaskLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -281,7 +281,7 @@ public class BackgroundTaskLocalServiceUtil {
 	*
 	* @param backgroundTaskId the primary key of the background task
 	* @return the background task
-	* @throws PortalException if a background task with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a background task with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.BackgroundTask getBackgroundTask(
 		long backgroundTaskId)

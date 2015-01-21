@@ -87,7 +87,7 @@ public class PhoneLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -111,7 +111,7 @@ public class PhoneLocalServiceUtil {
 	*
 	* @param phoneId the primary key of the phone
 	* @return the phone that was removed
-	* @throws PortalException if a phone with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a phone with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Phone deletePhone(long phoneId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -246,7 +246,7 @@ public class PhoneLocalServiceUtil {
 	*
 	* @param phoneId the primary key of the phone
 	* @return the phone
-	* @throws PortalException if a phone with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a phone with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Phone getPhone(long phoneId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -259,7 +259,7 @@ public class PhoneLocalServiceUtil {
 	* @param uuid the phone's UUID
 	* @param companyId the primary key of the company
 	* @return the matching phone
-	* @throws PortalException if a matching phone could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching phone could not be found
 	*/
 	public static com.liferay.portal.model.Phone getPhoneByUuidAndCompanyId(
 		java.lang.String uuid, long companyId)

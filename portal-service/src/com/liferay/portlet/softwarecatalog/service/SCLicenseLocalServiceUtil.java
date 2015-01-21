@@ -105,7 +105,7 @@ public class SCLicenseLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -118,7 +118,7 @@ public class SCLicenseLocalServiceUtil {
 	*
 	* @param licenseId the primary key of the s c license
 	* @return the s c license that was removed
-	* @throws PortalException if a s c license with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a s c license with the primary key could not be found
 	*/
 	public static com.liferay.portlet.softwarecatalog.model.SCLicense deleteSCLicense(
 		long licenseId)
@@ -302,7 +302,7 @@ public class SCLicenseLocalServiceUtil {
 	*
 	* @param licenseId the primary key of the s c license
 	* @return the s c license
-	* @throws PortalException if a s c license with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a s c license with the primary key could not be found
 	*/
 	public static com.liferay.portlet.softwarecatalog.model.SCLicense getSCLicense(
 		long licenseId)

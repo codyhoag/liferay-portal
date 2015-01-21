@@ -70,7 +70,7 @@ public interface UserNotificationDeliveryLocalService extends BaseLocalService,
 		long userNotificationDeliveryId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -98,7 +98,7 @@ public interface UserNotificationDeliveryLocalService extends BaseLocalService,
 	*
 	* @param userNotificationDeliveryId the primary key of the user notification delivery
 	* @return the user notification delivery that was removed
-	* @throws PortalException if a user notification delivery with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user notification delivery with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.UserNotificationDelivery deleteUserNotificationDelivery(
@@ -229,7 +229,7 @@ public interface UserNotificationDeliveryLocalService extends BaseLocalService,
 	*
 	* @param userNotificationDeliveryId the primary key of the user notification delivery
 	* @return the user notification delivery
-	* @throws PortalException if a user notification delivery with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user notification delivery with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.UserNotificationDelivery getUserNotificationDelivery(

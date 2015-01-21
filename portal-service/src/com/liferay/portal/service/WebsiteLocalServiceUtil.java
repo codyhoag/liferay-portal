@@ -86,7 +86,7 @@ public class WebsiteLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -110,7 +110,7 @@ public class WebsiteLocalServiceUtil {
 	*
 	* @param websiteId the primary key of the website
 	* @return the website that was removed
-	* @throws PortalException if a website with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a website with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Website deleteWebsite(long websiteId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -245,7 +245,7 @@ public class WebsiteLocalServiceUtil {
 	*
 	* @param websiteId the primary key of the website
 	* @return the website
-	* @throws PortalException if a website with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a website with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.Website getWebsite(long websiteId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -258,7 +258,7 @@ public class WebsiteLocalServiceUtil {
 	* @param uuid the website's UUID
 	* @param companyId the primary key of the company
 	* @return the matching website
-	* @throws PortalException if a matching website could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching website could not be found
 	*/
 	public static com.liferay.portal.model.Website getWebsiteByUuidAndCompanyId(
 		java.lang.String uuid, long companyId)

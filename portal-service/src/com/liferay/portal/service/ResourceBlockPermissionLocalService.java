@@ -69,7 +69,7 @@ public interface ResourceBlockPermissionLocalService extends BaseLocalService,
 		long resourceBlockPermissionId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -91,7 +91,7 @@ public interface ResourceBlockPermissionLocalService extends BaseLocalService,
 	*
 	* @param resourceBlockPermissionId the primary key of the resource block permission
 	* @return the resource block permission that was removed
-	* @throws PortalException if a resource block permission with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a resource block permission with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portal.model.ResourceBlockPermission deleteResourceBlockPermission(
@@ -208,7 +208,7 @@ public interface ResourceBlockPermissionLocalService extends BaseLocalService,
 	*
 	* @param resourceBlockPermissionId the primary key of the resource block permission
 	* @return the resource block permission
-	* @throws PortalException if a resource block permission with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a resource block permission with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.ResourceBlockPermission getResourceBlockPermission(

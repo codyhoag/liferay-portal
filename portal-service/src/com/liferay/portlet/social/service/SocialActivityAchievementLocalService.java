@@ -71,7 +71,7 @@ public interface SocialActivityAchievementLocalService extends BaseLocalService,
 		long activityAchievementId);
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -83,7 +83,7 @@ public interface SocialActivityAchievementLocalService extends BaseLocalService,
 	*
 	* @param activityAchievementId the primary key of the social activity achievement
 	* @return the social activity achievement that was removed
-	* @throws PortalException if a social activity achievement with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a social activity achievement with the primary key could not be found
 	*/
 	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public com.liferay.portlet.social.model.SocialActivityAchievement deleteSocialActivityAchievement(
@@ -215,7 +215,7 @@ public interface SocialActivityAchievementLocalService extends BaseLocalService,
 	*
 	* @param activityAchievementId the primary key of the social activity achievement
 	* @return the social activity achievement
-	* @throws PortalException if a social activity achievement with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a social activity achievement with the primary key could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portlet.social.model.SocialActivityAchievement getSocialActivityAchievement(

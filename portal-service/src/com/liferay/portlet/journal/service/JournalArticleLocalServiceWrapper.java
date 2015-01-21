@@ -109,7 +109,7 @@ public class JournalArticleLocalServiceWrapper
 	attribute, and workflow actions for the web content article. Can
 	also set whether to add the default guest and group permissions.
 	* @return the web content article
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalArticle addArticle(
@@ -168,7 +168,7 @@ public class JournalArticleLocalServiceWrapper
 	attribute, and workflow actions for the web content article. Can
 	also set whether to add the default guest and group permissions.
 	* @return the web content article
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalArticle addArticle(
@@ -190,7 +190,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param article the web content article
 	* @param addGroupPermissions whether to add group permissions
 	* @param addGuestPermissions whether to add guest permissions
-	* @throws PortalException if no portal actions could be found associated
+	* @throws com.liferay.portal.kernel.exception.PortalException if no portal actions could be found associated
 	with the web content article or if a portal exception occurred
 	*/
 	@Override
@@ -208,7 +208,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param article the web content article to add resources to
 	* @param groupPermissions the group permissions to be added
 	* @param guestPermissions the guest permissions to be added
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public void addArticleResources(
@@ -226,7 +226,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param articleId the primary key of the web content article
 	* @param addGroupPermissions whether to add group permissions
 	* @param addGuestPermissions whether to add guest permissions
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public void addArticleResources(long groupId, java.lang.String articleId,
@@ -244,7 +244,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param articleId the primary key of the web content article
 	* @param groupPermissions the group permissions to be added
 	* @param guestPermissions the guest permissions to be added
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public void addArticleResources(long groupId, java.lang.String articleId,
@@ -275,7 +275,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param articleId the primary key of the web content article
 	* @param version the web content article's version
 	* @return the matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -290,7 +290,7 @@ public class JournalArticleLocalServiceWrapper
 	* Checks all web content articles by handling their expirations and sending
 	* review notifications based on their current workflow.
 	*
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public void checkArticles()
@@ -306,7 +306,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param groupId the primary key of the web content article's group
 	* @param articleId the primary key of the web content article
 	* @param version the web content article's version
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -324,7 +324,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param groupId the primary key of the web content article's group
 	* @param articleId the primary key of the web content article
 	* @param version the web content article's version
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found, if the article's structure does not match it, or if a
 	portal exception occurred
 	*/
@@ -347,7 +347,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param autoArticleId whether to auto-generate the web content article ID
 	* @param version the web content article's version
 	* @return the new web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found or if a portal exception occurred
 	*/
 	@Override
@@ -376,7 +376,7 @@ public class JournalArticleLocalServiceWrapper
 	*
 	* @param article the web content article
 	* @return the deleted web content article
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalArticle deleteArticle(
@@ -397,7 +397,7 @@ public class JournalArticleLocalServiceWrapper
 	email information to notify recipients of the unapproved web
 	content's denial.
 	* @return the deleted web content article
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalArticle deleteArticle(
@@ -419,7 +419,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param serviceContext the service context to be applied. Can set the
 	portlet preferences that include email information to notify
 	recipients of the unapproved web content article's denial.
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public void deleteArticle(long groupId, java.lang.String articleId,
@@ -442,7 +442,7 @@ public class JournalArticleLocalServiceWrapper
 	portlet preferences that include email information to notify
 	recipients of the unapproved web content article's denial.
 	* @return the deleted web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found or if a portal exception occurred
 	*/
 	@Override
@@ -459,7 +459,7 @@ public class JournalArticleLocalServiceWrapper
 	* Deletes all the group's web content articles and resources.
 	*
 	* @param groupId the primary key of the web content article's group
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public void deleteArticles(long groupId)
@@ -473,7 +473,7 @@ public class JournalArticleLocalServiceWrapper
 	*
 	* @param groupId the primary key of the web content article's group
 	* @param folderId the primary key of the web content article folder
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public void deleteArticles(long groupId, long folderId)
@@ -489,7 +489,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param folderId the primary key of the web content article folder
 	* @param includeTrashedEntries whether to include recycled web content
 	articles
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public void deleteArticles(long groupId, long folderId,
@@ -504,7 +504,7 @@ public class JournalArticleLocalServiceWrapper
 	*
 	* @param id the primary key of the journal article
 	* @return the journal article that was removed
-	* @throws PortalException if a journal article with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal article with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalArticle deleteJournalArticle(
@@ -540,7 +540,7 @@ public class JournalArticleLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -653,7 +653,7 @@ public class JournalArticleLocalServiceWrapper
 	com.liferay.portal.kernel.util.Constants#UPDATE}, the invocation
 	is considered a web content update activity; otherwise it is
 	considered a web content add activity.
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found or if a portal exception occurred
 	*/
 	@Override
@@ -684,7 +684,7 @@ public class JournalArticleLocalServiceWrapper
 	is considered a web content update activity; otherwise it is
 	considered a web content add activity.
 	* @return the web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found or if a portal exception occurred
 	*/
 	@Override
@@ -827,7 +827,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param groupId the primary key of the web content article's group
 	* @param articleId the primary key of the web content article
 	* @return the matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -845,7 +845,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param articleId the primary key of the web content article
 	* @param version the web content article's version
 	* @return the matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -870,7 +870,7 @@ public class JournalArticleLocalServiceWrapper
 	parameter, the primary key of the class associated with the web
 	content article, or <code>0</code> otherwise
 	* @return the matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -886,7 +886,7 @@ public class JournalArticleLocalServiceWrapper
 	*
 	* @param id the primary key of the web content article
 	* @return the web content article with the ID
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -903,7 +903,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param groupId the primary key of the web content article's group
 	* @param urlTitle the web content article's accessible URL title
 	* @return the matching web content article
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalArticle getArticleByUrlTitle(
@@ -926,7 +926,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param themeDisplay the theme display
 	* @return the web content from the web content article associated with the
 	portlet request model and the DDM template
-	* @throws PortalException if a matching DDM template could not be found, or
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching DDM template could not be found, or
 	if a portal exception occurred
 	*/
 	@Override
@@ -953,7 +953,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param languageId the primary key of the language translation to get
 	* @param themeDisplay the theme display
 	* @return the web content from the matching web content article
-	* @throws PortalException if a matching DDM template could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching DDM template could not be
 	found, or if a portal exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link
 	#getArticleContent(com.liferay.portlet.journal.model.JournalArticle, String, String, String,
@@ -986,7 +986,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param portletRequestModel the portlet request model
 	* @param themeDisplay the theme display
 	* @return the web content from the matching web content article
-	* @throws PortalException if a matching web content article or DDM template
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM template
 	could not be found, or if a portal exception occurred
 	*/
 	@Override
@@ -1016,7 +1016,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param languageId the primary key of the language translation to get
 	* @param themeDisplay the theme display
 	* @return the web content from the matching web content article
-	* @throws PortalException if a matching web content article or DDM
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM
 	template could not be found, or if a portal exception
 	occurred
 	* @deprecated As of 7.0.0, replaced by {@link #getArticleContent(long,
@@ -1046,7 +1046,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param languageId the primary key of the language translation to get
 	* @param themeDisplay the theme display
 	* @return the web content from the matching web content article
-	* @throws PortalException if a matching web content article or DDM
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM
 	template could not be found, or if a portal exception
 	occurred
 	* @deprecated As of 7.0.0, replaced by {@link #getArticleContent(long,
@@ -1078,7 +1078,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param portletRequestModel the portlet request model
 	* @param themeDisplay the theme display
 	* @return the latest web content from the matching web content article
-	* @throws PortalException if a matching web content article or DDM template
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM template
 	could not be found, or if a portal exception occurred
 	*/
 	@Override
@@ -1105,7 +1105,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param languageId the primary key of the language translation to get
 	* @param themeDisplay the theme display
 	* @return the latest web content from the matching web content article
-	* @throws PortalException if a matching web content article or DDM
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM
 	template could not be found, or if a portal exception
 	occurred
 	* @deprecated As of 7.0.0, replaced by {@link #getArticleContent(long,
@@ -1133,7 +1133,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param languageId the primary key of the language translation to get
 	* @param themeDisplay the theme display
 	* @return the latest web content from the matching web content article
-	* @throws PortalException if a matching web content article or DDM
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM
 	template could not be found, or if a portal exception
 	occurred
 	* @deprecated As of 7.0.0, replaced by {@link #getArticleContent(long,
@@ -1168,7 +1168,7 @@ public class JournalArticleLocalServiceWrapper
 	* @return the web content article display, or <code>null</code> if the
 	article has expired or if article's display date/time is after
 	the current date/time
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalArticleDisplay getArticleDisplay(
@@ -1201,7 +1201,7 @@ public class JournalArticleLocalServiceWrapper
 	* @return the web content article display, or <code>null</code> if the
 	article has expired or if article's display date/time is after
 	the current date/time
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalArticleDisplay getArticleDisplay(
@@ -1232,7 +1232,7 @@ public class JournalArticleLocalServiceWrapper
 	* @return the web content article display, or <code>null</code> if the
 	article has expired or if article's display date/time is after
 	the current date/time
-	* @throws PortalException if a matching web content article or DDM template
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM template
 	could not be found, or if a portal exception occurred
 	*/
 	@Override
@@ -1265,7 +1265,7 @@ public class JournalArticleLocalServiceWrapper
 	* @return the web content article display, or <code>null</code> if the
 	article has expired or if article's display date/time is after
 	the current date/time
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalArticleDisplay getArticleDisplay(
@@ -1297,7 +1297,7 @@ public class JournalArticleLocalServiceWrapper
 	* @return the web content article display, or <code>null</code> if the
 	article has expired or if article's display date/time is after
 	the current date/time
-	* @throws PortalException if a matching web content article or DDM template
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM template
 	could not be found, or if a portal exception occurred
 	*/
 	@Override
@@ -1328,7 +1328,7 @@ public class JournalArticleLocalServiceWrapper
 	* @return the web content article display, or <code>null</code> if the
 	article has expired or if article's display date/time is after
 	the current date/time
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalArticleDisplay getArticleDisplay(
@@ -1356,7 +1356,7 @@ public class JournalArticleLocalServiceWrapper
 	* @return the web content article display, or <code>null</code> if the
 	article has expired or if article's display date/time is after
 	the current date/time
-	* @throws PortalException if a matching web content article or DDM template
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article or DDM template
 	could not be found, or if a portal exception occurred
 	*/
 	@Override
@@ -1767,7 +1767,7 @@ public class JournalArticleLocalServiceWrapper
 	* @return the matching web content article currently displayed, or the next
 	one to be displayed if no version of the article is currently
 	displayed
-	* @throws PortalException if no approved matching web content articles
+	* @throws com.liferay.portal.kernel.exception.PortalException if no approved matching web content articles
 	could be found
 	*/
 	@Override
@@ -1786,7 +1786,7 @@ public class JournalArticleLocalServiceWrapper
 	* @return the web content article matching the URL title that is currently
 	displayed, or next one to be displayed if no version of the
 	article is currently displayed
-	* @throws PortalException if no approved matching web content articles
+	* @throws com.liferay.portal.kernel.exception.PortalException if no approved matching web content articles
 	could be found
 	*/
 	@Override
@@ -1828,7 +1828,7 @@ public class JournalArticleLocalServiceWrapper
 	*
 	* @param id the primary key of the journal article
 	* @return the journal article
-	* @throws PortalException if a journal article with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a journal article with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalArticle getJournalArticle(
@@ -1842,7 +1842,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param uuid the journal article's UUID
 	* @param groupId the primary key of the group
 	* @return the matching journal article
-	* @throws PortalException if a matching journal article could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching journal article could not be found
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalArticle getJournalArticleByUuidAndGroupId(
@@ -1917,7 +1917,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param groupId the primary key of the web content article's group
 	* @param articleId the primary key of the web content article
 	* @return the latest matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -1937,7 +1937,7 @@ public class JournalArticleLocalServiceWrapper
 	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @return the latest matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -1962,7 +1962,7 @@ public class JournalArticleLocalServiceWrapper
 	primary key of the class associated with the web content article,
 	or <code>0</code> otherwise
 	* @return the latest matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -1980,7 +1980,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param resourcePrimKey the primary key of the resource instance
 	* @return the latest web content article matching the resource primary key,
 	preferring articles with approved workflow status
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -2001,7 +2001,7 @@ public class JournalArticleLocalServiceWrapper
 	* @return the latest web content article matching the resource primary key
 	and workflow status, preferring articles with approved workflow
 	status
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -2028,7 +2028,7 @@ public class JournalArticleLocalServiceWrapper
 	* @return the latest web content article matching the resource primary key
 	and workflow status, optionally preferring articles with approved
 	workflow status
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -2049,7 +2049,7 @@ public class JournalArticleLocalServiceWrapper
 	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @return the latest matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -2067,7 +2067,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param groupId the primary key of the web content article's group
 	* @param articleId the primary key of the web content article
 	* @return the latest version number of the matching web content
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -2086,7 +2086,7 @@ public class JournalArticleLocalServiceWrapper
 	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @return the latest version number of the matching web content
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -2125,7 +2125,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param groupId the primary key of the web content article's group
 	* @param articleId the primary key of the web content article
 	* @return the oldest matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -2145,7 +2145,7 @@ public class JournalArticleLocalServiceWrapper
 	information see {@link com.liferay.portal.kernel.workflow.WorkflowConstants} for constants starting
 	with the "STATUS_" prefix.
 	* @return the oldest matching web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -2326,7 +2326,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param articleId the primary key of the web content article
 	* @param urlTitle the web content article's accessible URL title
 	* @return the web content article's unique URL title
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public java.lang.String getUniqueUrlTitle(long groupId,
@@ -2358,7 +2358,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param version the web content article's version
 	* @return <code>true</code> if the specified web content article is the
 	latest version; <code>false</code> otherwise
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -2381,7 +2381,7 @@ public class JournalArticleLocalServiceWrapper
 	with the "STATUS_" prefix.
 	* @return <code>true</code> if the specified web content article is the
 	latest version; <code>false</code> otherwise
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -2410,7 +2410,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param newFolderId the primary key of the web content article's new
 	folder
 	* @return the updated web content article, which was moved to a new folder
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -2440,7 +2440,7 @@ public class JournalArticleLocalServiceWrapper
 	considered a web content add activity.
 	* @return the updated web content article, which was moved from the Recycle
 	Bin to a new folder
-	* @throws PortalException if a trashed web content article with the primary
+	* @throws com.liferay.portal.kernel.exception.PortalException if a trashed web content article with the primary
 	key could not be found or if a portal exception occurred
 	*/
 	@Override
@@ -2463,7 +2463,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param article the web content article
 	* @return the updated web content article, which was moved to the Recycle
 	Bin
-	* @throws PortalException if the user did not have permission to move the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to move the
 	article to the Recycle Bin or if a portal exception occurred
 	*/
 	@Override
@@ -2483,7 +2483,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param articleId the primary key of the web content article
 	* @return the moved web content article or <code>null</code> if no matching
 	article was found
-	* @throws PortalException if the user did not have permission to move the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to move the
 	article to the Recycle Bin or if a portal exception occurred
 	*/
 	@Override
@@ -2511,7 +2511,7 @@ public class JournalArticleLocalServiceWrapper
 	* </p>
 	*
 	* @param companyId the primary key of the web content article's company
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public void rebuildTree(long companyId)
@@ -2528,7 +2528,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param version the web content article's version
 	* @param languageId the primary key of the language locale to remove
 	* @return the updated web content article with the locale removed
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -2547,7 +2547,7 @@ public class JournalArticleLocalServiceWrapper
 	article
 	* @param article the web content article
 	* @return the restored web content article from the Recycle Bin
-	* @throws PortalException if the web content article with the primary key
+	* @throws com.liferay.portal.kernel.exception.PortalException if the web content article with the primary key
 	could not be found in the Recycle Bin, if the user did not have
 	permission to restore the article, or if a portal exception
 	occurred
@@ -3035,7 +3035,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param end the upper bound of the range of web content articles to
 	return (not inclusive)
 	* @return the matching web content articles
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portal.kernel.search.Hits search(long groupId,
@@ -3315,7 +3315,7 @@ public class JournalArticleLocalServiceWrapper
 	* @return a {@link com.liferay.portal.kernel.search.BaseModelSearchResult} containing the total number of
 	hits and an ordered range of all the matching web content
 	articles ordered by <code>sort</code>
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portal.kernel.search.BaseModelSearchResult<com.liferay.portlet.journal.model.JournalArticle> searchJournalArticles(
@@ -3383,7 +3383,7 @@ public class JournalArticleLocalServiceWrapper
 	* @return a {@link com.liferay.portal.kernel.search.BaseModelSearchResult} containing the total number of
 	hits and an ordered range of all the matching web content
 	articles ordered by <code>sort</code>
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portal.kernel.search.BaseModelSearchResult<com.liferay.portlet.journal.model.JournalArticle> searchJournalArticles(
@@ -3435,7 +3435,7 @@ public class JournalArticleLocalServiceWrapper
 	* @return a {@link com.liferay.portal.kernel.search.BaseModelSearchResult} containing the total number of
 	hits and an ordered range of all the matching web content
 	articles ordered by <code>sort</code>
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portal.kernel.search.BaseModelSearchResult<com.liferay.portlet.journal.model.JournalArticle> searchJournalArticles(
@@ -3469,7 +3469,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param groupId the primary key of the folder's group
 	* @param userId the primary key of the user to be subscribed
 	* @param ddmStructureId the primary key of the structure to subscribe to
-	* @throws PortalException if a matching user or group could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching user or group could not be found
 	*/
 	@Override
 	public void subscribeStructure(long groupId, long userId,
@@ -3486,7 +3486,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param groupId the primary key of the folder's group
 	* @param userId the primary key of the user to be subscribed
 	* @param ddmStructureId the primary key of the structure to subscribe to
-	* @throws PortalException if a matching user or subscription could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching user or subscription could not be
 	found
 	*/
 	@Override
@@ -3520,7 +3520,7 @@ public class JournalArticleLocalServiceWrapper
 	invocation is considered a web content update activity; otherwise
 	it is considered a web content add activity.
 	* @return the updated web content article
-	* @throws PortalException if a user with the primary key or a matching web
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key or a matching web
 	content article could not be found, or if a portal exception
 	occurred
 	*/
@@ -3610,7 +3610,7 @@ public class JournalArticleLocalServiceWrapper
 	invocation is considered a web content update activity; otherwise
 	it is considered a web content add activity.
 	* @return the updated web content article
-	* @throws PortalException if a user with the primary key or a matching web
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key or a matching web
 	content article could not be found, or if a portal exception
 	occurred
 	*/
@@ -3674,7 +3674,7 @@ public class JournalArticleLocalServiceWrapper
 	invocation is considered a web content update activity; otherwise
 	it is considered a web content add activity.
 	* @return the updated web content article
-	* @throws PortalException if a user with the primary key or a matching web
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key or a matching web
 	content article could not be found, or if a portal exception
 	occurred
 	*/
@@ -3726,7 +3726,7 @@ public class JournalArticleLocalServiceWrapper
 	modification date and "urlTitle" attribute for the web content
 	article.
 	* @return the updated web content article
-	* @throws PortalException if a user with the primary key or a matching web
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key or a matching web
 	content article could not be found, or if a portal exception
 	occurred
 	*/
@@ -3753,7 +3753,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param assetCategoryIds the primary keys of the new asset categories
 	* @param assetTagNames the new asset tag names
 	* @param assetLinkEntryIds the primary keys of the new asset link entries
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public void updateAsset(long userId,
@@ -3776,7 +3776,7 @@ public class JournalArticleLocalServiceWrapper
 	see the content example in the class description for {@link
 	JournalArticleLocalServiceImpl}.
 	* @return the updated web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found
 	*/
 	@Override
@@ -3841,7 +3841,7 @@ public class JournalArticleLocalServiceWrapper
 	* @param workflowContext the web content article's configured workflow
 	context
 	* @return the updated web content article
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public com.liferay.portlet.journal.model.JournalArticle updateStatus(
@@ -3871,7 +3871,7 @@ public class JournalArticleLocalServiceWrapper
 	modification date, portlet preferences, and can set whether to
 	add the default command update for the web content article.
 	* @return the updated web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found or if a portal exception occurred
 	*/
 	@Override
@@ -3902,7 +3902,7 @@ public class JournalArticleLocalServiceWrapper
 	modification date, portlet preferences, and can set whether to
 	add the default command update for the web content article.
 	* @return the updated web content article
-	* @throws PortalException if a matching web content article could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching web content article could not be
 	found or if a portal exception occurred
 	*/
 	@Override

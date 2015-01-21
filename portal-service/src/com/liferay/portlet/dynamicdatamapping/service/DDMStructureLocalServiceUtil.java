@@ -124,7 +124,7 @@ public class DDMStructureLocalServiceUtil {
 	UUID, creation date, modification date, guest permissions,
 	and group permissions for the structure.
 	* @return the structure
-	* @throws PortalException if a user with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key could not be
 	found, if the XSD was not well-formed, or if a portal
 	exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link #addStructure(long, long,
@@ -183,7 +183,7 @@ public class DDMStructureLocalServiceUtil {
 	UUID, creation date, modification date, guest permissions,
 	and group permissions for the structure.
 	* @return the structure
-	* @throws PortalException if a user with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key could not be
 	found, if the XSD was not well-formed, or if a portal
 	exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link #addStructure(long, long,
@@ -245,7 +245,7 @@ public class DDMStructureLocalServiceUtil {
 	UUID, creation date, modification date, guest permissions and
 	group permissions for the structure.
 	* @return the structure
-	* @throws PortalException if a user with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key could not be
 	found, if the XSD was not well-formed, or if a portal
 	exception occurred
 	* @deprecated As of 7.0.0, replaced by {@link #addStructure(long, long,
@@ -273,7 +273,7 @@ public class DDMStructureLocalServiceUtil {
 	* @param structure the structure to add resources to
 	* @param addGroupPermissions whether to add group permissions
 	* @param addGuestPermissions whether to add guest permissions
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public static void addStructureResources(
 		com.liferay.portlet.dynamicdatamapping.model.DDMStructure structure,
@@ -290,7 +290,7 @@ public class DDMStructureLocalServiceUtil {
 	* @param structure the structure to add resources to
 	* @param groupPermissions the group permissions to be added
 	* @param guestPermissions the guest permissions to be added
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public static void addStructureResources(
 		com.liferay.portlet.dynamicdatamapping.model.DDMStructure structure,
@@ -322,7 +322,7 @@ public class DDMStructureLocalServiceUtil {
 	UUID, creation date, modification date, guest permissions, and
 	group permissions for the structure.
 	* @return the new structure
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructure copyStructure(
 		long userId, long structureId,
@@ -369,7 +369,7 @@ public class DDMStructureLocalServiceUtil {
 	*
 	* @param structureId the primary key of the d d m structure
 	* @return the d d m structure that was removed
-	* @throws PortalException if a d d m structure with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m structure with the primary key could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructure deleteDDMStructure(
 		long structureId)
@@ -423,7 +423,7 @@ public class DDMStructureLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -443,7 +443,7 @@ public class DDMStructureLocalServiceUtil {
 	* @param classNameId the primary key of the class name for the structure's
 	related model
 	* @param structureKey the unique string identifying the structure
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public static void deleteStructure(long groupId, long classNameId,
 		java.lang.String structureKey)
@@ -460,7 +460,7 @@ public class DDMStructureLocalServiceUtil {
 	* </p>
 	*
 	* @param structure the structure to be deleted
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public static void deleteStructure(
 		com.liferay.portlet.dynamicdatamapping.model.DDMStructure structure)
@@ -477,7 +477,7 @@ public class DDMStructureLocalServiceUtil {
 	* </p>
 	*
 	* @param structureId the primary key of the structure to be deleted
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public static void deleteStructure(long structureId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -494,7 +494,7 @@ public class DDMStructureLocalServiceUtil {
 	* </p>
 	*
 	* @param groupId the primary key of the group
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public static void deleteStructures(long groupId)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -638,7 +638,7 @@ public class DDMStructureLocalServiceUtil {
 	search
 	* @return the matching structure, or <code>null</code> if a matching
 	structure could not be found
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructure fetchStructure(
 		long groupId, long classNameId, java.lang.String structureKey,
@@ -737,7 +737,7 @@ public class DDMStructureLocalServiceUtil {
 	*
 	* @param structureId the primary key of the d d m structure
 	* @return the d d m structure
-	* @throws PortalException if a d d m structure with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m structure with the primary key could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructure getDDMStructure(
 		long structureId)
@@ -751,7 +751,7 @@ public class DDMStructureLocalServiceUtil {
 	* @param uuid the d d m structure's UUID
 	* @param groupId the primary key of the group
 	* @return the matching d d m structure
-	* @throws PortalException if a matching d d m structure could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching d d m structure could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructure getDDMStructureByUuidAndGroupId(
 		java.lang.String uuid, long groupId)
@@ -919,7 +919,7 @@ public class DDMStructureLocalServiceUtil {
 	related model
 	* @param structureKey the unique string identifying the structure
 	* @return the matching structure
-	* @throws PortalException if a matching structure could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching structure could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructure getStructure(
 		long groupId, long classNameId, java.lang.String structureKey)
@@ -947,7 +947,7 @@ public class DDMStructureLocalServiceUtil {
 	have sharing enabled) and include global scoped sites in the
 	search in the search
 	* @return the matching structure
-	* @throws PortalException if a matching structure could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching structure could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructure getStructure(
 		long groupId, long classNameId, java.lang.String structureKey,
@@ -976,7 +976,7 @@ public class DDMStructureLocalServiceUtil {
 	*
 	* @param structureId the primary key of the structure
 	* @return the structure with the ID
-	* @throws PortalException if a structure with the ID could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a structure with the ID could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMStructure getStructure(
 		long structureId)
@@ -1405,7 +1405,7 @@ public class DDMStructureLocalServiceUtil {
 	* @param serviceContext the service context to be applied. Can set the
 	structure's modification date.
 	* @return the updated structure
-	* @throws PortalException if a matching structure could not be found,
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching structure could not be found,
 	if the XSD was not well-formed, or if a portal exception
 	occurred
 	* @deprecated As of 7.0.0, replaced by {@link #updateStructure(long, long,
@@ -1450,7 +1450,7 @@ public class DDMStructureLocalServiceUtil {
 	* @param serviceContext the service context to be applied. Can set the
 	structure's modification date.
 	* @return the updated structure
-	* @throws PortalException if a matching structure could not be found,
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching structure could not be found,
 	if the XSD was not well-formed, or if a portal exception
 	occurred
 	* @deprecated As of 7.0.0, replaced by {@link #updateStructure(long, long,
@@ -1478,7 +1478,7 @@ public class DDMStructureLocalServiceUtil {
 	* @param serviceContext the service context to be applied. Can set the
 	structure's modification date.
 	* @return the updated structure
-	* @throws PortalException if a matching structure could not be found,
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching structure could not be found,
 	if the XSD was not well-formed, or if a portal exception
 	occurred
 	* @deprecated As of 7.0.0, replaced by {@link #updateDDMForm(long, DDMForm,

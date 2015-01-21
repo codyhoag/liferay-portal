@@ -65,7 +65,7 @@ public class PortletItemLocalServiceWrapper implements PortletItemLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -91,7 +91,7 @@ public class PortletItemLocalServiceWrapper implements PortletItemLocalService,
 	*
 	* @param portletItemId the primary key of the portlet item
 	* @return the portlet item that was removed
-	* @throws PortalException if a portlet item with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portlet item with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.PortletItem deletePortletItem(
@@ -227,7 +227,7 @@ public class PortletItemLocalServiceWrapper implements PortletItemLocalService,
 	*
 	* @param portletItemId the primary key of the portlet item
 	* @return the portlet item
-	* @throws PortalException if a portlet item with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portlet item with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.PortletItem getPortletItem(

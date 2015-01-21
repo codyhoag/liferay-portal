@@ -75,7 +75,7 @@ public class WikiPageResourceLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -88,7 +88,7 @@ public class WikiPageResourceLocalServiceUtil {
 	*
 	* @param resourcePrimKey the primary key of the wiki page resource
 	* @return the wiki page resource that was removed
-	* @throws PortalException if a wiki page resource with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a wiki page resource with the primary key could not be found
 	*/
 	public static com.liferay.wiki.model.WikiPageResource deleteWikiPageResource(
 		long resourcePrimKey)
@@ -241,7 +241,7 @@ public class WikiPageResourceLocalServiceUtil {
 	*
 	* @param resourcePrimKey the primary key of the wiki page resource
 	* @return the wiki page resource
-	* @throws PortalException if a wiki page resource with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a wiki page resource with the primary key could not be found
 	*/
 	public static com.liferay.wiki.model.WikiPageResource getWikiPageResource(
 		long resourcePrimKey)

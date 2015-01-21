@@ -43,7 +43,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public void addGroupOrganizations(long groupId,
@@ -53,7 +53,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public void addGroupOrganizations(long groupId, long[] organizationIds)
@@ -90,7 +90,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	* @param site whether the organization is to be associated with a main
 	site
 	* @return the organization
-	* @throws PortalException if a creator or parent organization with the
+	* @throws com.liferay.portal.kernel.exception.PortalException if a creator or parent organization with the
 	primary key could not be found or if the organization's
 	information was invalid
 	*/
@@ -130,7 +130,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	<code>null</code>). Can set asset category IDs, asset tag
 	names, and expando bridge attributes for the organization.
 	* @return the organization
-	* @throws PortalException if a creator or parent organization with the
+	* @throws com.liferay.portal.kernel.exception.PortalException if a creator or parent organization with the
 	primary key could not be found or if the organization's
 	information was invalid
 	* @deprecated As of 6.2.0, replaced by {@link #addOrganization(long, long,
@@ -175,7 +175,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	<code>null</code>). Can set asset category IDs, asset tag names,
 	and expando bridge attributes for the organization.
 	* @return the organization
-	* @throws PortalException if a creator or parent organization with the
+	* @throws com.liferay.portal.kernel.exception.PortalException if a creator or parent organization with the
 	primary key could not be found or if the organization's
 	information was invalid
 	*/
@@ -197,7 +197,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	*
 	* @param userId the primary key of the creator/owner of the organization
 	* @param organization the organization
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public void addOrganizationResources(long userId,
@@ -293,7 +293,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	* Deletes the organization's logo.
 	*
 	* @param organizationId the primary key of the organization
-	* @throws PortalException if an organization or parent organization with
+	* @throws com.liferay.portal.kernel.exception.PortalException if an organization or parent organization with
 	the primary key could not be found or if the organization's logo
 	could not be found
 	*/
@@ -308,7 +308,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	*
 	* @param organization the organization
 	* @return the organization that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.Organization deleteOrganization(
@@ -322,7 +322,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	*
 	* @param organizationId the primary key of the organization
 	* @return the organization that was removed
-	* @throws PortalException if a organization with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a organization with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Organization deleteOrganization(
@@ -332,7 +332,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -560,7 +560,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	* @param companyId the primary key of the organization's company
 	* @param name the organization's name
 	* @return the organization with the name
-	* @throws PortalException if the organization with the name could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if the organization with the name could not be
 	found
 	*/
 	@Override
@@ -575,7 +575,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	*
 	* @param organizationId the primary key of the organization
 	* @return the organization
-	* @throws PortalException if a organization with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a organization with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Organization getOrganization(
@@ -590,7 +590,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	* @param uuid the organization's UUID
 	* @param companyId the primary key of the company
 	* @return the matching organization
-	* @throws PortalException if a matching organization could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching organization could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Organization getOrganizationByUuidAndCompanyId(
@@ -664,7 +664,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	*
 	* @param organizationIds the primary keys of the organizations
 	* @return the organizations with the primary keys
-	* @throws PortalException if any one of the organizations could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if any one of the organizations could not be
 	found
 	*/
 	@Override
@@ -730,7 +730,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	*
 	* @param organizationId the primary key of the organization
 	* @return the parent organizations in order by closest ancestor
-	* @throws PortalException if an organization with the primary key could not
+	* @throws com.liferay.portal.kernel.exception.PortalException if an organization with the primary key could not
 	be found
 	*/
 	@Override
@@ -822,8 +822,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	* @return the IDs of organizations with which the user is explicitly
 	associated, optionally including the IDs of organizations that
 	the user administers or owns
-	* @throws PortalException if a user with the primary key could not be found
-	or if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.SystemException if a system exception occurred
 	*/
 	@Override
 	public long[] getUserOrganizationIds(long userId,
@@ -857,7 +856,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	* @return the organizations with which the user is explicitly associated,
 	optionally including the organizations that the user administers
 	or owns
-	* @throws PortalException if a user with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key could not be found
 	*/
 	@Override
 	public java.util.List<com.liferay.portal.model.Organization> getUserOrganizations(
@@ -974,7 +973,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	considered in the determination
 	* @return <code>true</code> if the user has access to the organization;
 	<code>false</code> otherwise
-	* @throws PortalException if an organization with the primary key could not
+	* @throws com.liferay.portal.kernel.exception.PortalException if an organization with the primary key could not
 	be found
 	* @see com.liferay.portal.service.persistence.OrganizationFinder
 	*/
@@ -1002,7 +1001,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	* </p>
 	*
 	* @param companyId the primary key of the organization's company
-	* @throws PortalException if an organization with the primary key could not
+	* @throws com.liferay.portal.kernel.exception.PortalException if an organization with the primary key could not
 	be found
 	*/
 	@Override
@@ -1428,7 +1427,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public void setGroupOrganizations(long groupId, long[] organizationIds)
@@ -1446,7 +1445,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	*
 	* @param groupId the primary key of the group
 	* @param organizationIds the primary keys of the organizations
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Override
 	public void unsetGroupOrganizations(long groupId, long[] organizationIds)
@@ -1476,7 +1475,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	* @param organization the organization
 	* @param assetCategoryIds the primary keys of the asset categories
 	* @param assetTagNames the asset tag names
-	* @throws PortalException if a user with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key could not be found
 	*/
 	@Override
 	public void updateAsset(long userId,
@@ -1509,7 +1508,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	names for the organization, and merge expando bridge
 	attributes for the organization.
 	* @return the organization
-	* @throws PortalException if an organization or parent organization
+	* @throws com.liferay.portal.kernel.exception.PortalException if an organization or parent organization
 	with the primary key could not be found or if the new
 	information was invalid
 	* @deprecated As of 6.2.0, replaced by {@link #updateOrganization(long,
@@ -1551,7 +1550,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	names for the organization, and merge expando bridge attributes
 	for the organization.
 	* @return the organization
-	* @throws PortalException if an organization or parent organization with
+	* @throws com.liferay.portal.kernel.exception.PortalException if an organization or parent organization with
 	the primary key could not be found or if the new information was
 	invalid
 	*/
@@ -1588,7 +1587,7 @@ public class OrganizationLocalServiceWrapper implements OrganizationLocalService
 	names for the organization, and merge expando bridge
 	attributes for the organization.
 	* @return the organization
-	* @throws PortalException if an organization or parent organization
+	* @throws com.liferay.portal.kernel.exception.PortalException if an organization or parent organization
 	with the primary key could not be found or if the new
 	information was invalid
 	* @deprecated As of 7.0.0, replaced by {@link #updateOrganization(long,

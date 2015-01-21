@@ -66,7 +66,7 @@ public class PortletPreferencesLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -106,7 +106,7 @@ public class PortletPreferencesLocalServiceWrapper
 	*
 	* @param portletPreferencesId the primary key of the portlet preferences
 	* @return the portlet preferences that was removed
-	* @throws PortalException if a portlet preferences with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portlet preferences with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.PortletPreferences deletePortletPreferences(
@@ -301,7 +301,7 @@ public class PortletPreferencesLocalServiceWrapper
 	*
 	* @param portletPreferencesId the primary key of the portlet preferences
 	* @return the portlet preferences
-	* @throws PortalException if a portlet preferences with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portlet preferences with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.PortletPreferences getPortletPreferences(

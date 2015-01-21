@@ -92,7 +92,7 @@ public class LayoutSetPrototypeLocalServiceWrapper
 	*
 	* @param layoutSetPrototype the layout set prototype
 	* @return the layout set prototype that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.LayoutSetPrototype deleteLayoutSetPrototype(
@@ -106,7 +106,7 @@ public class LayoutSetPrototypeLocalServiceWrapper
 	*
 	* @param layoutSetPrototypeId the primary key of the layout set prototype
 	* @return the layout set prototype that was removed
-	* @throws PortalException if a layout set prototype with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout set prototype with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.LayoutSetPrototype deleteLayoutSetPrototype(
@@ -128,7 +128,7 @@ public class LayoutSetPrototypeLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -269,7 +269,7 @@ public class LayoutSetPrototypeLocalServiceWrapper
 	*
 	* @param layoutSetPrototypeId the primary key of the layout set prototype
 	* @return the layout set prototype
-	* @throws PortalException if a layout set prototype with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a layout set prototype with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.LayoutSetPrototype getLayoutSetPrototype(
@@ -296,7 +296,7 @@ public class LayoutSetPrototypeLocalServiceWrapper
 	* @param uuid the layout set prototype's UUID
 	* @param companyId the primary key of the company
 	* @return the matching layout set prototype
-	* @throws PortalException if a matching layout set prototype could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching layout set prototype could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.LayoutSetPrototype getLayoutSetPrototypeByUuidAndCompanyId(

@@ -56,7 +56,7 @@ public class WebDAVPropsLocalServiceWrapper implements WebDAVPropsLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -87,7 +87,7 @@ public class WebDAVPropsLocalServiceWrapper implements WebDAVPropsLocalService,
 	*
 	* @param webDavPropsId the primary key of the web d a v props
 	* @return the web d a v props that was removed
-	* @throws PortalException if a web d a v props with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a web d a v props with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.WebDAVProps deleteWebDAVProps(
@@ -221,7 +221,7 @@ public class WebDAVPropsLocalServiceWrapper implements WebDAVPropsLocalService,
 	*
 	* @param webDavPropsId the primary key of the web d a v props
 	* @return the web d a v props
-	* @throws PortalException if a web d a v props with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a web d a v props with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.WebDAVProps getWebDAVProps(

@@ -81,7 +81,7 @@ public interface GroupService extends BaseService {
 	tag names for the group, and can set whether the group is for
 	staging
 	* @return the group
-	* @throws PortalException if the user did not have permission to add
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to add
 	the group, if a creator could not be found, if the group's
 	information was invalid, if a layout could not be found, or
 	if a valid friendly URL could not be created for the group
@@ -132,7 +132,7 @@ public interface GroupService extends BaseService {
 	names for the group, and can set whether the group is for
 	staging
 	* @return the group
-	* @throws PortalException if the user did not have permission to add
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to add
 	the group, if a creator could not be found, if the group's
 	information was invalid, if a layout could not be found, or
 	if a valid friendly URL could not be created for the group
@@ -152,7 +152,7 @@ public interface GroupService extends BaseService {
 	*
 	* @param roleId the primary key of the role
 	* @param groupIds the primary keys of the groups
-	* @throws PortalException if the user did not have permission to update the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to update the
 	role
 	*/
 	public void addRoleGroups(long roleId, long[] groupIds)
@@ -163,7 +163,7 @@ public interface GroupService extends BaseService {
 	* Staging.
 	*
 	* @param groupId the primary key of the group
-	* @throws PortalException if a group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group with the primary key could not be
 	found, if the current user did not have permission to view the
 	group, or if the group's company was different from the current
 	user's company
@@ -182,7 +182,7 @@ public interface GroupService extends BaseService {
 	* </p>
 	*
 	* @param groupId the primary key of the group
-	* @throws PortalException if the user did not have permission to delete the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to delete the
 	group or its assets or resources, if a group with the primary key
 	could not be found, or if the group was a system group
 	*/
@@ -207,7 +207,7 @@ public interface GroupService extends BaseService {
 	*
 	* @param companyId the primary key of the company
 	* @return the group associated with the company
-	* @throws PortalException if a matching group could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching group could not be found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public com.liferay.portal.model.Group getCompanyGroup(long companyId)
@@ -219,7 +219,7 @@ public interface GroupService extends BaseService {
 	* @param companyId the primary key of the company
 	* @param groupKey the group key
 	* @return the group with the group key
-	* @throws PortalException if a matching group could not be found or if the
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching group could not be found or if the
 	current user did not have permission to view the group
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -232,7 +232,7 @@ public interface GroupService extends BaseService {
 	*
 	* @param groupId the primary key of the group
 	* @return the group with the primary key
-	* @throws PortalException if a group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a group with the primary key could not be
 	found or if the current user did not have permission to view the
 	group
 	*/
@@ -248,7 +248,7 @@ public interface GroupService extends BaseService {
 	* @param site whether the group is to be associated with a main site
 	* @return the matching groups, or <code>null</code> if no matches were
 	found
-	* @throws PortalException if the user did not have permission to view the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to view the
 	group or if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -265,7 +265,7 @@ public interface GroupService extends BaseService {
 	inclusive)
 	* @return the range of site groups for which the user has Control Panel
 	access
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<com.liferay.portal.model.Group> getManageableSiteGroups(
@@ -281,7 +281,7 @@ public interface GroupService extends BaseService {
 	inclusive)
 	* @return the range of site groups for which the user has Control Panel
 	access
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	* @deprecated As of 6.2.0, replaced by {@link
 	#getManageableSiteGroups(java.util.Collection, int)}
 	*/
@@ -296,7 +296,7 @@ public interface GroupService extends BaseService {
 	*
 	* @param organizations the organizations
 	* @return the groups associated with the organizations
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<com.liferay.portal.model.Group> getOrganizationsGroups(
@@ -309,7 +309,7 @@ public interface GroupService extends BaseService {
 	* @param companyId the primary key of the company
 	* @param userId the primary key of the user
 	* @return the group directly associated with the user
-	* @throws PortalException if a matching group could not be found or if the
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching group could not be found or if the
 	current user did not have permission to view the group
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -321,7 +321,7 @@ public interface GroupService extends BaseService {
 	*
 	* @param userGroups the user groups
 	* @return the groups associated with the user groups
-	* @throws PortalException if any one of the user group's group could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if any one of the user group's group could not be
 	found
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -350,7 +350,7 @@ public interface GroupService extends BaseService {
 	* @param end the upper bound of the range of groups to consider (not
 	inclusive)
 	* @return the range of groups associated with the user's organizations
-	* @throws PortalException if a user with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key could not be found
 	or if another portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -388,7 +388,7 @@ public interface GroupService extends BaseService {
 	#getUserSitesGroups(String[], int)}.
 	* @param max the maximum number of groups to return
 	* @return the user's groups &quot;sites&quot;
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	* @deprecated As of 6.2.0, replaced by {@link #getUserSitesGroups(String[],
 	int)}
 	*/
@@ -440,7 +440,7 @@ public interface GroupService extends BaseService {
 	#getUserSitesGroups(long, String[], int)}.
 	* @param max the maximum number of groups to return
 	* @return the user's groups &quot;sites&quot;
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	* @deprecated As of 6.2.0, replaced by {@link #getUserSitesGroups(long,
 	String[], int)}
 	*/
@@ -457,7 +457,7 @@ public interface GroupService extends BaseService {
 	* Panel.
 	*
 	* @return the number of user's groups &quot;sites&quot;
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	* @deprecated As of 6.2.0, replaced by {@link #getUserSitesGroupsCount()}
 	*/
 	@java.lang.Deprecated
@@ -471,7 +471,7 @@ public interface GroupService extends BaseService {
 	*
 	* @return the user's layout set group, organization groups, and
 	inherited organization groups, and site groups
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	* @deprecated As of 6.2.0, replaced by {@link #getUserSitesGroups}
 	*/
 	@java.lang.Deprecated
@@ -513,7 +513,7 @@ public interface GroupService extends BaseService {
 	#getUserSitesGroups(long, String[], boolean, int)}.
 	* @param max the maximum number of groups to return
 	* @return the user's groups &quot;sites&quot;
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<com.liferay.portal.model.Group> getUserSitesGroups(
@@ -557,7 +557,7 @@ public interface GroupService extends BaseService {
 	#getUserSitesGroups(long, String[], boolean, int)}.
 	* @param max the maximum number of groups to return
 	* @return the user's groups &quot;sites&quot;
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<com.liferay.portal.model.Group> getUserSitesGroups(
@@ -571,7 +571,7 @@ public interface GroupService extends BaseService {
 	* Panel.
 	*
 	* @return the number of user's groups &quot;sites&quot;
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public int getUserSitesGroupsCount()
@@ -586,7 +586,7 @@ public interface GroupService extends BaseService {
 	* @param groupId the primary key of the group
 	* @return <code>true</code> if the user is associated with the group;
 	<code>false</code> otherwise
-	* @throws PortalException if the current user did not have permission to
+	* @throws com.liferay.portal.kernel.exception.PortalException if the current user did not have permission to
 	view the user or group members
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -640,7 +640,7 @@ public interface GroupService extends BaseService {
 	* @param end the upper bound of the range of groups to return (not
 	inclusive)
 	* @return the matching groups ordered by name
-	* @throws PortalException if a portal exception occurred
+	* @throws com.liferay.portal.kernel.exception.PortalException if a portal exception occurred
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<com.liferay.portal.model.Group> search(
@@ -682,7 +682,7 @@ public interface GroupService extends BaseService {
 	*
 	* @param roleId the primary key of the role
 	* @param groupIds the primary keys of the groups
-	* @throws PortalException if the user did not have permission to update
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to update
 	update the role
 	*/
 	public void setRoleGroups(long roleId, long[] groupIds)
@@ -693,7 +693,7 @@ public interface GroupService extends BaseService {
 	*
 	* @param roleId the primary key of the role
 	* @param groupIds the primary keys of the groups
-	* @throws PortalException if the user did not have permission to update the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to update the
 	role
 	*/
 	public void unsetRoleGroups(long roleId, long[] groupIds)
@@ -706,7 +706,7 @@ public interface GroupService extends BaseService {
 	* @param friendlyURL the group's new friendlyURL (optionally
 	<code>null</code>)
 	* @return the group
-	* @throws PortalException if the user did not have permission to update the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to update the
 	group, if a group with the primary key could not be found, or if
 	a valid friendly URL could not be created for the group
 	*/
@@ -735,7 +735,7 @@ public interface GroupService extends BaseService {
 	<code>null</code>). Can set the asset category IDs and asset
 	tag names for the group.
 	* @return the group
-	* @throws PortalException if the user did not have permission to update
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to update
 	the group, if a group with the primary key could not be
 	found, if the friendly URL was invalid or could one not be
 	created
@@ -768,7 +768,7 @@ public interface GroupService extends BaseService {
 	* @param typeSettings the group's new type settings (optionally
 	<code>null</code>)
 	* @return the group
-	* @throws PortalException if the user did not have permission to update the
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user did not have permission to update the
 	group or if a group with the primary key could not be found
 	*/
 	public com.liferay.portal.model.Group updateGroup(long groupId,

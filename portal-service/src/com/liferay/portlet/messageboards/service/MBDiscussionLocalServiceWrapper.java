@@ -85,7 +85,7 @@ public class MBDiscussionLocalServiceWrapper implements MBDiscussionLocalService
 	*
 	* @param discussionId the primary key of the message boards discussion
 	* @return the message boards discussion that was removed
-	* @throws PortalException if a message boards discussion with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards discussion with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.messageboards.model.MBDiscussion deleteMBDiscussion(
@@ -107,7 +107,7 @@ public class MBDiscussionLocalServiceWrapper implements MBDiscussionLocalService
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -273,7 +273,7 @@ public class MBDiscussionLocalServiceWrapper implements MBDiscussionLocalService
 	*
 	* @param discussionId the primary key of the message boards discussion
 	* @return the message boards discussion
-	* @throws PortalException if a message boards discussion with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a message boards discussion with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.messageboards.model.MBDiscussion getMBDiscussion(
@@ -288,7 +288,7 @@ public class MBDiscussionLocalServiceWrapper implements MBDiscussionLocalService
 	* @param uuid the message boards discussion's UUID
 	* @param groupId the primary key of the group
 	* @return the matching message boards discussion
-	* @throws PortalException if a matching message boards discussion could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching message boards discussion could not be found
 	*/
 	@Override
 	public com.liferay.portlet.messageboards.model.MBDiscussion getMBDiscussionByUuidAndGroupId(

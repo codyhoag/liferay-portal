@@ -102,7 +102,7 @@ public class UserGroupLocalServiceUtil {
 	* @param name the user group's name
 	* @param description the user group's description
 	* @return the user group
-	* @throws PortalException if the user group's information was invalid
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user group's information was invalid
 	* @deprecated As of 6.2.0, replaced by {@link #addUserGroup(long, long,
 	String, String, com.liferay.portal.service.ServiceContext)}
 	*/
@@ -131,7 +131,7 @@ public class UserGroupLocalServiceUtil {
 	<code>null</code>). Can set expando bridge attributes for the
 	user group.
 	* @return the user group
-	* @throws PortalException if the user group's information was invalid
+	* @throws com.liferay.portal.kernel.exception.PortalException if the user group's information was invalid
 	*/
 	public static com.liferay.portal.model.UserGroup addUserGroup(long userId,
 		long companyId, java.lang.String name, java.lang.String description,
@@ -177,7 +177,7 @@ public class UserGroupLocalServiceUtil {
 	*
 	* @param userGroupId the primary key of the user group
 	* @param userId the primary key of the user
-	* @throws PortalException if a user with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key could not be
 	found or if a portal exception occurred
 	* @deprecated As of 6.2.0
 	*/
@@ -193,7 +193,7 @@ public class UserGroupLocalServiceUtil {
 	*
 	* @param userGroupId the primary key of the user group
 	* @param userIds the primary keys of the users
-	* @throws PortalException if any one of the users could not be found or
+	* @throws com.liferay.portal.kernel.exception.PortalException if any one of the users could not be found or
 	if a portal exception occurred
 	* @deprecated As of 6.1.0
 	*/
@@ -208,7 +208,7 @@ public class UserGroupLocalServiceUtil {
 	*
 	* @param userGroupIds the primary keys of the user groups
 	* @param userId the primary key of the user
-	* @throws PortalException if a user with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user with the primary key could not be
 	found or if a portal exception occurred
 	* @deprecated As of 6.1.0
 	*/
@@ -248,7 +248,7 @@ public class UserGroupLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -279,7 +279,7 @@ public class UserGroupLocalServiceUtil {
 	*
 	* @param userGroup the user group
 	* @return the user group that was removed
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.UserGroup deleteUserGroup(
 		com.liferay.portal.model.UserGroup userGroup)
@@ -292,7 +292,7 @@ public class UserGroupLocalServiceUtil {
 	*
 	* @param userGroupId the primary key of the user group
 	* @return the user group that was removed
-	* @throws PortalException if a user group with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user group with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.UserGroup deleteUserGroup(
 		long userGroupId)
@@ -521,7 +521,7 @@ public class UserGroupLocalServiceUtil {
 	* @param companyId the primary key of the user group's company
 	* @param name the user group's name
 	* @return Returns the user group with the name
-	* @throws PortalException if a user group with the name could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user group with the name could not be found
 	*/
 	public static com.liferay.portal.model.UserGroup getUserGroup(
 		long companyId, java.lang.String name)
@@ -534,7 +534,7 @@ public class UserGroupLocalServiceUtil {
 	*
 	* @param userGroupId the primary key of the user group
 	* @return the user group
-	* @throws PortalException if a user group with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user group with the primary key could not be found
 	*/
 	public static com.liferay.portal.model.UserGroup getUserGroup(
 		long userGroupId)
@@ -548,7 +548,7 @@ public class UserGroupLocalServiceUtil {
 	* @param uuid the user group's UUID
 	* @param companyId the primary key of the company
 	* @return the matching user group
-	* @throws PortalException if a matching user group could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching user group could not be found
 	*/
 	public static com.liferay.portal.model.UserGroup getUserGroupByUuidAndCompanyId(
 		java.lang.String uuid, long companyId)
@@ -588,7 +588,7 @@ public class UserGroupLocalServiceUtil {
 	*
 	* @param userGroupIds the primary keys of the user groups
 	* @return the user groups with the primary keys
-	* @throws PortalException if any one of the user groups could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if any one of the user groups could not be found
 	*/
 	public static java.util.List<com.liferay.portal.model.UserGroup> getUserGroups(
 		long[] userGroupIds)
@@ -894,7 +894,7 @@ public class UserGroupLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static void setUserUserGroups(long userId, long[] userGroupIds)
 		throws com.liferay.portal.kernel.exception.PortalException {
@@ -929,7 +929,7 @@ public class UserGroupLocalServiceUtil {
 	* @param name the user group's name
 	* @param description the user group's description
 	* @return the user group
-	* @throws PortalException if a user group with the primary key could
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user group with the primary key could
 	not be found or if the new information was invalid
 	* @deprecated As of 6.2.0, replaced by {@link #updateUserGroup(long, long,
 	String, String, com.liferay.portal.service.ServiceContext)}
@@ -954,7 +954,7 @@ public class UserGroupLocalServiceUtil {
 	<code>null</code>). Can set expando bridge attributes for the
 	user group.
 	* @return the user group
-	* @throws PortalException if a user group with the primary key could not be
+	* @throws com.liferay.portal.kernel.exception.PortalException if a user group with the primary key could not be
 	found or if the new information was invalid
 	*/
 	public static com.liferay.portal.model.UserGroup updateUserGroup(

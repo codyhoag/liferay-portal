@@ -122,7 +122,7 @@ public class ExpandoColumnLocalServiceUtil {
 	*
 	* @param columnId the primary key of the expando column
 	* @return the expando column that was removed
-	* @throws PortalException if a expando column with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a expando column with the primary key could not be found
 	*/
 	public static com.liferay.portlet.expando.model.ExpandoColumn deleteExpandoColumn(
 		long columnId)
@@ -142,7 +142,7 @@ public class ExpandoColumnLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -351,7 +351,7 @@ public class ExpandoColumnLocalServiceUtil {
 	*
 	* @param columnId the primary key of the expando column
 	* @return the expando column
-	* @throws PortalException if a expando column with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a expando column with the primary key could not be found
 	*/
 	public static com.liferay.portlet.expando.model.ExpandoColumn getExpandoColumn(
 		long columnId)

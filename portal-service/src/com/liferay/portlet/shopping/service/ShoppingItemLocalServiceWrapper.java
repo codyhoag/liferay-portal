@@ -133,7 +133,7 @@ public class ShoppingItemLocalServiceWrapper implements ShoppingItemLocalService
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -147,7 +147,7 @@ public class ShoppingItemLocalServiceWrapper implements ShoppingItemLocalService
 	*
 	* @param itemId the primary key of the shopping item
 	* @return the shopping item that was removed
-	* @throws PortalException if a shopping item with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shopping item with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.shopping.model.ShoppingItem deleteShoppingItem(
@@ -367,7 +367,7 @@ public class ShoppingItemLocalServiceWrapper implements ShoppingItemLocalService
 	*
 	* @param itemId the primary key of the shopping item
 	* @return the shopping item
-	* @throws PortalException if a shopping item with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a shopping item with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.shopping.model.ShoppingItem getShoppingItem(

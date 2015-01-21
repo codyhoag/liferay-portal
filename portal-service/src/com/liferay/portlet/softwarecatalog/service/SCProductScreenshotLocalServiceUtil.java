@@ -64,7 +64,7 @@ public class SCProductScreenshotLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -88,7 +88,7 @@ public class SCProductScreenshotLocalServiceUtil {
 	*
 	* @param productScreenshotId the primary key of the s c product screenshot
 	* @return the s c product screenshot that was removed
-	* @throws PortalException if a s c product screenshot with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a s c product screenshot with the primary key could not be found
 	*/
 	public static com.liferay.portlet.softwarecatalog.model.SCProductScreenshot deleteSCProductScreenshot(
 		long productScreenshotId)
@@ -237,7 +237,7 @@ public class SCProductScreenshotLocalServiceUtil {
 	*
 	* @param productScreenshotId the primary key of the s c product screenshot
 	* @return the s c product screenshot
-	* @throws PortalException if a s c product screenshot with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a s c product screenshot with the primary key could not be found
 	*/
 	public static com.liferay.portlet.softwarecatalog.model.SCProductScreenshot getSCProductScreenshot(
 		long productScreenshotId)

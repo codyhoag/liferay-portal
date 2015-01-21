@@ -89,7 +89,7 @@ public class DDMStructureLinkLocalServiceWrapper
 	*
 	* @param structureLinkId the primary key of the d d m structure link
 	* @return the d d m structure link that was removed
-	* @throws PortalException if a d d m structure link with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m structure link with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMStructureLink deleteDDMStructureLink(
@@ -99,7 +99,7 @@ public class DDMStructureLinkLocalServiceWrapper
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -250,7 +250,7 @@ public class DDMStructureLinkLocalServiceWrapper
 	*
 	* @param structureLinkId the primary key of the d d m structure link
 	* @return the d d m structure link
-	* @throws PortalException if a d d m structure link with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m structure link with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portlet.dynamicdatamapping.model.DDMStructureLink getDDMStructureLink(

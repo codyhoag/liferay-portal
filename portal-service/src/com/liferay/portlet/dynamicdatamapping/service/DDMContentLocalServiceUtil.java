@@ -86,7 +86,7 @@ public class DDMContentLocalServiceUtil {
 	*
 	* @param contentId the primary key of the d d m content
 	* @return the d d m content that was removed
-	* @throws PortalException if a d d m content with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m content with the primary key could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMContent deleteDDMContent(
 		long contentId)
@@ -106,7 +106,7 @@ public class DDMContentLocalServiceUtil {
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	public static com.liferay.portal.model.PersistedModel deletePersistedModel(
 		com.liferay.portal.model.PersistedModel persistedModel)
@@ -251,7 +251,7 @@ public class DDMContentLocalServiceUtil {
 	*
 	* @param contentId the primary key of the d d m content
 	* @return the d d m content
-	* @throws PortalException if a d d m content with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a d d m content with the primary key could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMContent getDDMContent(
 		long contentId)
@@ -265,7 +265,7 @@ public class DDMContentLocalServiceUtil {
 	* @param uuid the d d m content's UUID
 	* @param groupId the primary key of the group
 	* @return the matching d d m content
-	* @throws PortalException if a matching d d m content could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching d d m content could not be found
 	*/
 	public static com.liferay.portlet.dynamicdatamapping.model.DDMContent getDDMContentByUuidAndGroupId(
 		java.lang.String uuid, long groupId)

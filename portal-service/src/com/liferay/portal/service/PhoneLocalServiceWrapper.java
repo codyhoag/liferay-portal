@@ -78,7 +78,7 @@ public class PhoneLocalServiceWrapper implements PhoneLocalService,
 	}
 
 	/**
-	* @throws PortalException
+	* @throws com.liferay.portal.kernel.exception.PortalException
 	*/
 	@Override
 	public com.liferay.portal.model.PersistedModel deletePersistedModel(
@@ -104,7 +104,7 @@ public class PhoneLocalServiceWrapper implements PhoneLocalService,
 	*
 	* @param phoneId the primary key of the phone
 	* @return the phone that was removed
-	* @throws PortalException if a phone with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a phone with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Phone deletePhone(long phoneId)
@@ -253,7 +253,7 @@ public class PhoneLocalServiceWrapper implements PhoneLocalService,
 	*
 	* @param phoneId the primary key of the phone
 	* @return the phone
-	* @throws PortalException if a phone with the primary key could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a phone with the primary key could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Phone getPhone(long phoneId)
@@ -267,7 +267,7 @@ public class PhoneLocalServiceWrapper implements PhoneLocalService,
 	* @param uuid the phone's UUID
 	* @param companyId the primary key of the company
 	* @return the matching phone
-	* @throws PortalException if a matching phone could not be found
+	* @throws com.liferay.portal.kernel.exception.PortalException if a matching phone could not be found
 	*/
 	@Override
 	public com.liferay.portal.model.Phone getPhoneByUuidAndCompanyId(
