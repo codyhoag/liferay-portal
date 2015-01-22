@@ -90,7 +90,7 @@ public interface DDLRecordService extends BaseService {
 		throws com.liferay.portal.kernel.exception.PortalException;
 
 	/**
-	* @deprecated As of 7.0.0, replaced by {@link #revertRecord(long, long,
+	* @deprecated As of 7.0.0, replaced by {@link #revertRecord(long,
 	String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@java.lang.Deprecated

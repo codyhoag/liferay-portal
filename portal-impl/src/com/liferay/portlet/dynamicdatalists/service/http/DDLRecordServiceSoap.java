@@ -140,7 +140,7 @@ public class DDLRecordServiceSoap {
 	}
 
 	/**
-	* @deprecated As of 7.0.0, replaced by {@link #revertRecord(long, long,
+	* @deprecated As of 7.0.0, replaced by {@link #revertRecord(long,
 	String, com.liferay.portal.service.ServiceContext)}
 	*/
 	@Deprecated
