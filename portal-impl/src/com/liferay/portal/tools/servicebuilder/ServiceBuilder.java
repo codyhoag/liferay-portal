@@ -1222,12 +1222,12 @@ public class ServiceBuilder {
 
 	public String getJavadocComment(JavaClass javaClass) throws IOException {
 		return _formatComment(
-			javaClass.getComment(), javaClass.getTags(), null, StringPool.BLANK, null);
+			javaClass.getComment(), javaClass.getTags(), null, StringPool.BLANK, null, null);
 	}
 
-	public String getJavadocComment(JavaMethod javaMethod, String classType, String entityName) throws IOException {
+	public String getJavadocComment(JavaMethod javaMethod, String classType, String entityName, String sessionTypeName) throws IOException {
 		return _formatComment(
-			javaMethod.getComment(), javaMethod.getTags(), entityName, StringPool.TAB, classType);
+			javaMethod.getComment(), javaMethod.getTags(), entityName, StringPool.TAB, classType, sessionTypeName);
 	}
 
 	public String getListActualTypeArguments(Type type) {
@@ -3740,7 +3740,7 @@ public class ServiceBuilder {
 
 	private String _formatComment(
 		String comment, DocletTag[] tags, String entityName, String indentation,
-		String classType) throws IOException {
+		String classType, String sessionTypeName) throws IOException {
 
 		StringBundler sb = new StringBundler();
 
@@ -3751,7 +3751,7 @@ public class ServiceBuilder {
 		sb.append(indentation);
 		sb.append("/**\n");
 
-		String[] imports = _getJavadocImports(entityName);
+		String[] imports = _getJavadocImports(entityName, sessionTypeName);
 
 		if (Validator.isNotNull(comment)) {
 			comment = comment.replaceAll("(?m)^", indentation + " * ");
@@ -4255,18 +4255,16 @@ public class ServiceBuilder {
 		return javaClass;
 	}
 
-	private String[] _getJavadocImports(String entityName) throws IOException {
+	private String[] _getJavadocImports(String entityName, String sessionTypeName) throws IOException {
 		String path = _outputPath + "/service/impl/" + entityName;
 
 		JavaClass javaClass = null;
+		File serviceImplFile = new File(path + "ServiceImpl.java");
 
-		File file1 = new File(path + "LocalServiceImpl.java");
-		File file2 = new File(path + "ServiceImpl.java");
-
-		if (file1.exists()) {
+		if (sessionTypeName.equals("Local")) {
 			javaClass = _getJavaClass(path + "LocalServiceImpl.java");
 		}
-		else if (file2.exists()) {
+		else if (serviceImplFile.exists()) {
 			javaClass = _getJavaClass(path + "ServiceImpl.java");
 		}
 		else  {
