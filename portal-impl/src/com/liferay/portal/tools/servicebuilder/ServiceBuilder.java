@@ -103,6 +103,7 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.dom4j.DocumentException;
 
 /**
@@ -3749,7 +3750,7 @@ public class ServiceBuilder {
 
 		sb.append(indentation);
 		sb.append("/**\n");
-		
+
 		String path = _outputPath + "/service/impl/" + entityName;
 
 		JavaClass javaClass = null;
@@ -3771,9 +3772,15 @@ public class ServiceBuilder {
 			JavaSource javaSource = javaClass.getSource();
 			String[] imports = javaSource.getImports();
 
+			JavaClass parentJavaClass = _getParentJavaClass(javaClass);
+			JavaSource parentJavaSource = parentJavaClass.getSource();
+			String[] parentImports = parentJavaSource.getImports();
+
+			String[] allImports = ArrayUtils.addAll(imports, parentImports);
+
 		if (Validator.isNotNull(comment)) {
 			comment = comment.replaceAll("(?m)^", indentation + " * ");
-			comment = _getJavadocPackages(comment, imports);
+			comment = _getJavadocPackages(comment, allImports);
 
 			sb.append(comment);
 			sb.append("\n");
@@ -3787,7 +3794,7 @@ public class ServiceBuilder {
 		for (DocletTag tag : tags) {
 			String tagValue = tag.getValue();
 
-			tagValue = _getJavadocPackages(tagValue, imports);
+			tagValue = _getJavadocPackages(tagValue, allImports);
 
 			sb.append(indentation);
 			sb.append(" * @");
@@ -4349,6 +4356,24 @@ public class ServiceBuilder {
 		}
 
 		return methods;
+	}
+
+	private JavaClass _getParentJavaClass(JavaClass javaClass) throws IOException {
+		String parentJavaClassString = javaClass.getSuperJavaClass().toString();
+		int parentJavaClassIndex = parentJavaClassString.indexOf("com.");
+
+		String parentClassPath = parentJavaClassString.substring(parentJavaClassIndex, parentJavaClassString.length());
+		parentClassPath = parentClassPath.replaceAll("\\.", "/");
+
+		int parentOutputPathIndex = _outputPath.indexOf("com/");
+		String parentOutputPath = _outputPath.substring(parentOutputPathIndex, _outputPath.length());
+
+		String finalParentClassPath = _outputPath.replace(parentOutputPath, parentClassPath);
+		finalParentClassPath = finalParentClassPath + ".java";
+
+		JavaClass parentJavaClass = _getJavaClass(finalParentClassPath);
+
+		return parentJavaClass;
 	}
 
 	private String _getSessionTypeName(int sessionType) {
