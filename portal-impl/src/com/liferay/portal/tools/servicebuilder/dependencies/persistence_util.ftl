@@ -97,7 +97,7 @@ public class ${entity.name}Util {
 
 	<#list methods as method>
 		<#if !method.isConstructor() && method.isPublic() && serviceBuilder.isCustomMethod(method) && !serviceBuilder.isBasePersistenceMethod(method)>
-			${serviceBuilder.getJavadocComment(method, "PersistenceUtil", entity.name)}
+			${serviceBuilder.getJavadocComment(method, "PersistenceUtil", entity.name, "")}
 
 			<#if serviceBuilder.hasAnnotation(method, "Deprecated")>
 				@Deprecated
