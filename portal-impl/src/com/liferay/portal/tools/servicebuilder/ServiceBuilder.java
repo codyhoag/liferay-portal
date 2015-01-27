@@ -3751,36 +3751,11 @@ public class ServiceBuilder {
 		sb.append(indentation);
 		sb.append("/**\n");
 
-		String path = _outputPath + "/service/impl/" + entityName;
-
-		JavaClass javaClass = null;
-
-		File file1 = new File(path + "LocalServiceImpl.java");
-		File file2 = new File(path + "ServiceImpl.java");
-
-		if (file1.exists()) {
-			javaClass = _getJavaClass(path + "LocalServiceImpl.java");
-		}
-		else if (file2.exists()) {
-			javaClass = _getJavaClass(path + "ServiceImpl.java");
-		}
-		else  {
-			javaClass = _getJavaClass(_outputPath + "/model/impl/" +
-				entityName + "Impl.java");
-		}
-
-			JavaSource javaSource = javaClass.getSource();
-			String[] imports = javaSource.getImports();
-
-			JavaClass parentJavaClass = _getParentJavaClass(javaClass);
-			JavaSource parentJavaSource = parentJavaClass.getSource();
-			String[] parentImports = parentJavaSource.getImports();
-
-			String[] allImports = ArrayUtils.addAll(imports, parentImports);
+		String[] imports = _getJavadocImports(entityName);
 
 		if (Validator.isNotNull(comment)) {
 			comment = comment.replaceAll("(?m)^", indentation + " * ");
-			comment = _getJavadocPackages(comment, allImports);
+			comment = _getJavadocPackages(comment, imports);
 
 			sb.append(comment);
 			sb.append("\n");
@@ -3794,7 +3769,7 @@ public class ServiceBuilder {
 		for (DocletTag tag : tags) {
 			String tagValue = tag.getValue();
 
-			tagValue = _getJavadocPackages(tagValue, allImports);
+			tagValue = _getJavadocPackages(tagValue, imports);
 
 			sb.append(indentation);
 			sb.append(" * @");
@@ -4278,6 +4253,37 @@ public class ServiceBuilder {
 		}
 
 		return javaClass;
+	}
+
+	private String[] _getJavadocImports(String entityName) throws IOException {
+		String path = _outputPath + "/service/impl/" + entityName;
+
+		JavaClass javaClass = null;
+
+		File file1 = new File(path + "LocalServiceImpl.java");
+		File file2 = new File(path + "ServiceImpl.java");
+
+		if (file1.exists()) {
+			javaClass = _getJavaClass(path + "LocalServiceImpl.java");
+		}
+		else if (file2.exists()) {
+			javaClass = _getJavaClass(path + "ServiceImpl.java");
+		}
+		else  {
+			javaClass = _getJavaClass(_outputPath + "/model/impl/" +
+				entityName + "Impl.java");
+		}
+
+			JavaSource javaSource = javaClass.getSource();
+			String[] imports = javaSource.getImports();
+
+			JavaClass parentJavaClass = _getParentJavaClass(javaClass);
+			JavaSource parentJavaSource = parentJavaClass.getSource();
+			String[] parentImports = parentJavaSource.getImports();
+
+			String[] allImports = ArrayUtils.addAll(imports, parentImports);
+
+		return allImports;
 	}
 
 	private String _getJavadocPackages(String text, String[] imports) {
