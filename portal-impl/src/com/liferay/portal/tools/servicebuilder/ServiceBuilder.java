@@ -3775,11 +3775,12 @@ public class ServiceBuilder {
 
 				sb.append(remoteValue);
 			}
-			else if (classType.equals("ServiceSoap") &&
-					tagValue.startsWith("PrincipalException")
+			else if (classType.equals("ServiceSoap") && tagValue.startsWith(
+						"com.liferay.portal.security.auth.PrincipalException")
 					) {
 				String remoteValue = tagValue.replaceFirst(
-						"PrincipalException", "RemoteException");
+						"com.liferay.portal.security.auth.PrincipalException",
+						"RemoteException");
 
 				sb.append(remoteValue);
 			}
