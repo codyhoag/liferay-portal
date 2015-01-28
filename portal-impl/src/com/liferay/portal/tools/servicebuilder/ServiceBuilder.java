@@ -104,6 +104,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.ArrayUtils;
+
 import org.dom4j.DocumentException;
 
 /**
@@ -118,6 +119,7 @@ import org.dom4j.DocumentException;
  * @author Shuyang Zhou
  * @author James Lefeu
  * @author Miguel Pastor
+ * @author Cody Hoag
  */
 public class ServiceBuilder {
 
@@ -1222,12 +1224,18 @@ public class ServiceBuilder {
 
 	public String getJavadocComment(JavaClass javaClass) throws IOException {
 		return _formatComment(
-			javaClass.getComment(), javaClass.getTags(), null, StringPool.BLANK, null, null);
+			javaClass.getComment(), javaClass.getTags(), StringPool.BLANK,
+			StringPool.BLANK, StringPool.BLANK, StringPool.BLANK);
 	}
 
-	public String getJavadocComment(JavaMethod javaMethod, String classType, String entityName, String sessionTypeName) throws IOException {
+	public String getJavadocComment(
+			JavaMethod javaMethod, String classType, String entityName,
+			String sessionTypeName)
+		throws IOException {
+
 		return _formatComment(
-			javaMethod.getComment(), javaMethod.getTags(), entityName, StringPool.TAB, classType, sessionTypeName);
+			javaMethod.getComment(), javaMethod.getTags(), entityName,
+			StringPool.TAB, classType, sessionTypeName);
 	}
 
 	public String getListActualTypeArguments(Type type) {
@@ -3729,8 +3737,9 @@ public class ServiceBuilder {
 	}
 
 	private String _formatComment(
-		String comment, DocletTag[] tags, String entityName, String indentation,
-		String classType, String sessionTypeName) throws IOException {
+			String comment, DocletTag[] tags, String entityName,
+			String indentation, String classType, String sessionTypeName)
+		throws IOException {
 
 		StringBundler sb = new StringBundler();
 
@@ -3770,7 +3779,7 @@ public class ServiceBuilder {
 					"com.liferay.portal.kernel.exception.PortalException")) {
 
 				String remoteValue = tagValue.replaceFirst(
-						"com.liferay.portal.kernel.exception.PortalException", 
+						"com.liferay.portal.kernel.exception.PortalException",
 						"RemoteException");
 
 				sb.append(remoteValue);
@@ -3787,6 +3796,7 @@ public class ServiceBuilder {
 			else {
 				sb.append(tagValue);
 			}
+
 			sb.append("\n");
 		}
 
@@ -4246,10 +4256,12 @@ public class ServiceBuilder {
 		return javaClass;
 	}
 
-	private String[] _getJavadocImports(String entityName, String sessionTypeName) throws IOException {
-		String path = _outputPath + "/service/impl/" + entityName;
+	private String[] _getJavadocImports(
+			String entityName, String sessionTypeName)
+		throws IOException {
 
 		JavaClass javaClass = null;
+		String path = _outputPath + "/service/impl/" + entityName;
 		File serviceImplFile = new File(path + "ServiceImpl.java");
 
 		if (sessionTypeName.equals("Local")) {
@@ -4258,7 +4270,7 @@ public class ServiceBuilder {
 		else if (serviceImplFile.exists()) {
 			javaClass = _getJavaClass(path + "ServiceImpl.java");
 		}
-		else  {
+		else {
 			javaClass = _getJavaClass(_outputPath + "/model/impl/" +
 				entityName + "Impl.java");
 		}
@@ -4278,28 +4290,29 @@ public class ServiceBuilder {
 	private String _getJavadocPackages(String text, String[] imports) {
 		for (String fullImport : imports) {
 			String classImport = fullImport.substring(
-					fullImport.lastIndexOf(".") + 1);
+				fullImport.lastIndexOf(".") + 1);
 
 			if (text.contains(classImport)) {
 				int classImportIndex = text.indexOf(classImport);
-				int endOfClassImportIndex = classImportIndex + classImport.length();
+				int endOfClassImportIndex = classImportIndex +
+					classImport.length();
 
 				String begOfImport = StringPool.BLANK;
 				String endOfImport = StringPool.BLANK;
 
 				if (text.length() > endOfClassImportIndex) {
 					endOfImport = text.substring(
-							endOfClassImportIndex, endOfClassImportIndex + 1);
+						endOfClassImportIndex, endOfClassImportIndex + 1);
 				}
 
 				if (classImportIndex > 0) {
 					begOfImport = text.substring(
-							classImportIndex - 1, classImportIndex);
+						classImportIndex - 1, classImportIndex);
 				}
 
 				if (!begOfImport.matches("[a-zA-Z_0-9;\\.]") &&
-						!endOfImport.matches("[a-zA-Z_0-9\\.]") &&
-						(!endOfImport.equals(" ") || classImportIndex == 0)) {
+					!endOfImport.matches("[a-zA-Z_0-9\\.]") &&
+					(!endOfImport.equals(" ") || classImportIndex == 0)) {
 
 					text = text.replaceAll(classImport, fullImport);
 				}
@@ -4353,17 +4366,22 @@ public class ServiceBuilder {
 		return methods;
 	}
 
-	private JavaClass _getParentJavaClass(JavaClass javaClass) throws IOException {
+	private JavaClass _getParentJavaClass(JavaClass javaClass)
+		throws IOException {
+
 		String parentJavaClassString = javaClass.getSuperJavaClass().toString();
 		int parentJavaClassIndex = parentJavaClassString.indexOf("com.");
 
-		String parentClassPath = parentJavaClassString.substring(parentJavaClassIndex, parentJavaClassString.length());
+		String parentClassPath = parentJavaClassString.substring(
+				parentJavaClassIndex, parentJavaClassString.length());
 		parentClassPath = parentClassPath.replaceAll("\\.", "/");
 
 		int parentOutputPathIndex = _outputPath.indexOf("com/");
-		String parentOutputPath = _outputPath.substring(parentOutputPathIndex, _outputPath.length());
+		String parentOutputPath = _outputPath.substring(
+				parentOutputPathIndex, _outputPath.length());
 
-		String finalParentClassPath = _outputPath.replace(parentOutputPath, parentClassPath);
+		String finalParentClassPath = _outputPath.replace(
+				parentOutputPath, parentClassPath);
 		finalParentClassPath = finalParentClassPath + ".java";
 
 		JavaClass parentJavaClass = _getJavaClass(finalParentClassPath);
