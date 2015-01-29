@@ -3760,11 +3760,11 @@ public class ServiceBuilder {
 		sb.append(indentation);
 		sb.append("/**\n");
 
-		String[] imports = _getJavadocImports(entityName, sessionTypeName);
+		String[] imports = _getImports(entityName, sessionTypeName);
 
 		if (Validator.isNotNull(comment)) {
 			comment = comment.replaceAll("(?m)^", indentation + " * ");
-			comment = _getJavadocPackages(comment, imports);
+			comment = _useFullyQualifiedClassNames(comment, imports);
 
 			sb.append(comment);
 			sb.append("\n");
@@ -3778,7 +3778,7 @@ public class ServiceBuilder {
 		for (DocletTag tag : tags) {
 			String tagValue = tag.getValue();
 
-			tagValue = _getJavadocPackages(tagValue, imports);
+			tagValue = _useFullyQualifiedClassNames(tagValue, imports);
 
 			sb.append(indentation);
 			sb.append(" * @");
@@ -4230,6 +4230,41 @@ public class ServiceBuilder {
 		return dimensions;
 	}
 
+	private String[] _getImports(String entityName, String sessionTypeName)
+		throws IOException {
+
+		JavaClass javaClass = null;
+		String serviceImplPath = _outputPath + "/service/impl/" + entityName;
+
+		if (sessionTypeName.equals("Local")) {
+			javaClass = _getJavaClass(
+				serviceImplPath + "LocalServiceImpl.java");
+		}
+		else {
+			File serviceImplFile = new File(
+				serviceImplPath + "ServiceImpl.java");
+
+			if (serviceImplFile.exists()) {
+				javaClass = _getJavaClass(serviceImplPath + "ServiceImpl.java");
+			}
+			else {
+				javaClass = _getJavaClass(
+					_outputPath + "/model/impl/" + entityName + "Impl.java");
+			}
+		}
+
+		JavaSource javaSource = javaClass.getSource();
+		String[] imports = javaSource.getImports();
+
+		JavaClass parentJavaClass = javaClass.getSuperJavaClass();
+		JavaSource parentJavaSource = parentJavaClass.getSource();
+		String[] parentImports = parentJavaSource.getImports();
+
+		String[] allImports = ArrayUtils.addAll(imports, parentImports);
+
+		return allImports;
+	}
+
 	private JavaClass _getJavaClass(String fileName) throws IOException {
 		int pos = fileName.indexOf(_implDir + "/");
 
@@ -4267,74 +4302,6 @@ public class ServiceBuilder {
 		}
 
 		return javaClass;
-	}
-
-	private String[] _getJavadocImports(String entityName, String sessionTypeName)
-		throws IOException {
-
-		JavaClass javaClass = null;
-		String serviceImplPath = _outputPath + "/service/impl/" + entityName;
-
-		if (sessionTypeName.equals("Local")) {
-			javaClass = _getJavaClass(
-				serviceImplPath + "LocalServiceImpl.java");
-		}
-		else {
-			File serviceImplFile = new File(
-				serviceImplPath + "ServiceImpl.java");
-
-			if (serviceImplFile.exists()) {
-				javaClass = _getJavaClass(serviceImplPath + "ServiceImpl.java");
-			}
-			else {
-				javaClass = _getJavaClass(
-					_outputPath + "/model/impl/" + entityName + "Impl.java");
-			}
-		}
-
-		JavaSource javaSource = javaClass.getSource();
-		String[] imports = javaSource.getImports();
-
-		JavaClass parentJavaClass = javaClass.getSuperJavaClass();
-		JavaSource parentJavaSource = parentJavaClass.getSource();
-		String[] parentImports = parentJavaSource.getImports();
-
-		String[] allImports = ArrayUtils.addAll(imports, parentImports);
-
-		return allImports;
-	}
-
-	private String _getJavadocPackages(String text, String[] imports) {
-		for (String importedClass : imports) {
-			String className = importedClass.substring(
-				importedClass.lastIndexOf(StringPool.PERIOD) + 1);
-
-			if (text.contains(className)) {
-				int pos = text.indexOf(className);
-				int endPos = pos + className.length();
-
-				String charBefore = StringPool.BLANK;
-				String charAfter = StringPool.BLANK;
-
-				if (pos > 0) {
-					charBefore = text.substring(pos - 1, pos);
-				}
-
-				if (text.length() > endPos) {
-					charAfter = text.substring(endPos, endPos + 1);
-				}
-
-				if (!charBefore.matches("[a-zA-Z_0-9;\\.]") &&
-					!charAfter.matches("[a-zA-Z_0-9\\.]") &&
-					(!charAfter.equals(StringPool.BLANK) ||
-						(pos == 0)))
-				{
-					text = text.replaceAll(className, importedClass);
-				}
-			}
-		}
-
-		return text;
 	}
 
 	private String _getMethodKey(JavaMethod javaMethod) {
@@ -5269,6 +5236,39 @@ public class ServiceBuilder {
 		if (updateSQLFile.exists()) {
 			_createSQLTables(updateSQLFile, createTableSQL, entity, false);
 		}
+	}
+
+	private String _useFullyQualifiedClassNames(String text, String[] imports) {
+		for (String importedClass : imports) {
+			String className = importedClass.substring(
+				importedClass.lastIndexOf(StringPool.PERIOD) + 1);
+
+			if (text.contains(className)) {
+				int pos = text.indexOf(className);
+				int endPos = pos + className.length();
+
+				String charBefore = StringPool.BLANK;
+				String charAfter = StringPool.BLANK;
+
+				if (pos > 0) {
+					charBefore = text.substring(pos - 1, pos);
+				}
+
+				if (text.length() > endPos) {
+					charAfter = text.substring(endPos, endPos + 1);
+				}
+
+				if (!charBefore.matches("[a-zA-Z_0-9;\\.]") &&
+					!charAfter.matches("[a-zA-Z_0-9\\.]") &&
+					(!charAfter.equals(StringPool.BLANK) ||
+						(pos == 0)))
+				{
+					text = text.replaceAll(className, importedClass);
+				}
+			}
+		}
+
+		return text;
 	}
 
 	private static final int _SESSION_TYPE_LOCAL = 1;
