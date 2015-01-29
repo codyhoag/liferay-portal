@@ -5243,16 +5243,19 @@ public class ServiceBuilder {
 			String className = importedClass.substring(
 				importedClass.lastIndexOf(StringPool.PERIOD) + 1);
 
-			if (text.contains(className)) {
-				int pos = text.indexOf(className);
-				int endPos = pos + className.length();
+			int fromIndex = 0;
+			int pos = text.indexOf(className, fromIndex);
 
+			for (; pos > -1; pos = text.indexOf(className, fromIndex))
+			{
 				String charBefore = StringPool.BLANK;
 				String charAfter = StringPool.BLANK;
 
 				if (pos > 0) {
 					charBefore = text.substring(pos - 1, pos);
 				}
+
+				int endPos = pos + className.length();
 
 				if (text.length() > endPos) {
 					charAfter = text.substring(endPos, endPos + 1);
@@ -5263,7 +5266,15 @@ public class ServiceBuilder {
 					(!charAfter.equals(StringPool.BLANK) ||
 						(pos == 0)))
 				{
-					text = text.replaceAll(className, importedClass);
+					text = StringUtil.replaceFirst(
+						text, className, importedClass, pos);
+
+					fromIndex = pos + importedClass.length();
+				}
+
+				else
+				{
+					fromIndex = endPos;
 				}
 			}
 		}
