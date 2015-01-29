@@ -3785,8 +3785,10 @@ public class ServiceBuilder {
 			sb.append(tag.getName());
 			sb.append(" ");
 
-			if (classType.equals("serviceSoap") && tagValue.startsWith(
-					"com.liferay.portal.kernel.exception.PortalException")) {
+			if (classType.equals("serviceSoap") &&
+				tagValue.startsWith(
+					"com.liferay.portal.kernel.exception.PortalException"))
+			{
 
 				String remoteValue = tagValue.replaceFirst(
 						"com.liferay.portal.kernel.exception.PortalException",
@@ -3794,12 +3796,13 @@ public class ServiceBuilder {
 
 				sb.append(remoteValue);
 			}
-			else if (classType.equals("serviceSoap") && tagValue.startsWith(
-						"com.liferay.portal.security.auth.PrincipalException")
-					) {
+			else if (classType.equals("serviceSoap") &&
+					 tagValue.startsWith(
+						"com.liferay.portal.security.auth.PrincipalException"))
+			{
 				String remoteValue = tagValue.replaceFirst(
-						"com.liferay.portal.security.auth.PrincipalException",
-						"RemoteException");
+					"com.liferay.portal.security.auth.PrincipalException",
+					"RemoteException");
 
 				sb.append(remoteValue);
 			}
@@ -4266,65 +4269,67 @@ public class ServiceBuilder {
 		return javaClass;
 	}
 
-	private String[] _getJavadocImports(
-			String entityName, String sessionTypeName)
+	private String[] _getJavadocImports(String entityName, String sessionTypeName)
 		throws IOException {
 
 		JavaClass javaClass = null;
-		String path = _outputPath + "/service/impl/" + entityName;
-		File serviceImplFile = new File(path + "ServiceImpl.java");
+		String serviceImplPath = _outputPath + "/service/impl/" + entityName;
 
 		if (sessionTypeName.equals("Local")) {
-			javaClass = _getJavaClass(path + "LocalServiceImpl.java");
-		}
-		else if (serviceImplFile.exists()) {
-			javaClass = _getJavaClass(path + "ServiceImpl.java");
+			javaClass = _getJavaClass(
+				serviceImplPath + "LocalServiceImpl.java");
 		}
 		else {
-			javaClass = _getJavaClass(_outputPath + "/model/impl/" +
-				entityName + "Impl.java");
+			File serviceImplFile = new File(
+				serviceImplPath + "ServiceImpl.java");
+
+			if (serviceImplFile.exists()) {
+				javaClass = _getJavaClass(serviceImplPath + "ServiceImpl.java");
+			}
+			else {
+				javaClass = _getJavaClass(
+					_outputPath + "/model/impl/" + entityName + "Impl.java");
+			}
 		}
 
-			JavaSource javaSource = javaClass.getSource();
-			String[] imports = javaSource.getImports();
+		JavaSource javaSource = javaClass.getSource();
+		String[] imports = javaSource.getImports();
 
-			JavaClass parentJavaClass = javaClass.getSuperJavaClass();
-			JavaSource parentJavaSource = parentJavaClass.getSource();
-			String[] parentImports = parentJavaSource.getImports();
+		JavaClass parentJavaClass = javaClass.getSuperJavaClass();
+		JavaSource parentJavaSource = parentJavaClass.getSource();
+		String[] parentImports = parentJavaSource.getImports();
 
-			String[] allImports = ArrayUtils.addAll(imports, parentImports);
+		String[] allImports = ArrayUtils.addAll(imports, parentImports);
 
 		return allImports;
 	}
 
 	private String _getJavadocPackages(String text, String[] imports) {
-		for (String fullImport : imports) {
-			String classImport = fullImport.substring(
-				fullImport.lastIndexOf(".") + 1);
+		for (String importedClass : imports) {
+			String className = importedClass.substring(
+				importedClass.lastIndexOf(StringPool.PERIOD) + 1);
 
-			if (text.contains(classImport)) {
-				int classImportIndex = text.indexOf(classImport);
-				int endOfClassImportIndex = classImportIndex +
-					classImport.length();
+			if (text.contains(className)) {
+				int pos = text.indexOf(className);
+				int endPos = pos + className.length();
 
-				String begOfImport = StringPool.BLANK;
-				String endOfImport = StringPool.BLANK;
+				String charBefore = StringPool.BLANK;
+				String charAfter = StringPool.BLANK;
 
-				if (text.length() > endOfClassImportIndex) {
-					endOfImport = text.substring(
-						endOfClassImportIndex, endOfClassImportIndex + 1);
+				if (pos > 0) {
+					charBefore = text.substring(pos - 1, pos);
 				}
 
-				if (classImportIndex > 0) {
-					begOfImport = text.substring(
-						classImportIndex - 1, classImportIndex);
+				if (text.length() > endPos) {
+					charAfter = text.substring(endPos, endPos + 1);
 				}
 
-				if (!begOfImport.matches("[a-zA-Z_0-9;\\.]") &&
-					!endOfImport.matches("[a-zA-Z_0-9\\.]") &&
-					(!endOfImport.equals(" ") || classImportIndex == 0)) {
-
-					text = text.replaceAll(classImport, fullImport);
+				if (!charBefore.matches("[a-zA-Z_0-9;\\.]") &&
+					!charAfter.matches("[a-zA-Z_0-9\\.]") &&
+					(!charAfter.equals(StringPool.BLANK) ||
+						(pos == 0)))
+				{
+					text = text.replaceAll(className, importedClass);
 				}
 			}
 		}
