@@ -326,7 +326,8 @@ public class DDLRecordLocalServiceImpl extends DDLRecordLocalServiceBaseImpl {
 
 	/**
 	 * @deprecated As of 7.0.0, replaced by {@link
-	 *             com.liferay.portlet.dynamicdatalists.service.DDLRecordVersionLocalService#getRecordVersion(long)}
+	 *             com.liferay.portlet.dynamicdatalists.service.DDLRecordVersionLocalService#getRecordVersion(
+	 *             long)}
 	 */
 	@Deprecated
 	@Override
@@ -338,8 +339,8 @@ public class DDLRecordLocalServiceImpl extends DDLRecordLocalServiceBaseImpl {
 
 	/**
 	 * @deprecated As of 7.0.0, replaced by {@link
-	 *             com.liferay.portlet.dynamicdatalists.service.DDLRecordVersionLocalService#getRecordVersion(long,
-	 *             String)}
+	 *             com.liferay.portlet.dynamicdatalists.service.DDLRecordVersionLocalService#getRecordVersion(
+	 *             long, String)}
 	 */
 	@Deprecated
 	@Override
@@ -351,8 +352,8 @@ public class DDLRecordLocalServiceImpl extends DDLRecordLocalServiceBaseImpl {
 
 	/**
 	 * @deprecated As of 7.0.0, replaced by {@link
-	 *             com.liferay.portlet.dynamicdatalists.service.DDLRecordVersionLocalService#getRecordVersions(long, int,
-	 *             int, OrderByComparator)}
+	 *             com.liferay.portlet.dynamicdatalists.service.DDLRecordVersionLocalService#getRecordVersions(
+	 *             long, int, int, OrderByComparator)}
 	 */
 	@Deprecated
 	@Override
@@ -748,7 +749,10 @@ public class DDLRecordLocalServiceImpl extends DDLRecordLocalServiceBaseImpl {
 
 	/**
 	 * @see com.liferay.portlet.documentlibrary.service.impl.DLFileEntryLocalServiceImpl#isKeepFileVersionLabel(
-	 *      com.liferay.portlet.documentlibrary.model.DLFileEntry, com.liferay.portlet.documentlibrary.model.DLFileVersion, com.liferay.portlet.documentlibrary.model.DLFileVersion, ServiceContext)
+	 *      com.liferay.portlet.documentlibrary.model.DLFileEntry,
+	 *      com.liferay.portlet.documentlibrary.model.DLFileVersion,
+	 *      com.liferay.portlet.documentlibrary.model.DLFileVersion,
+	 *      ServiceContext)
 	 */
 	protected boolean isKeepRecordVersionLabel(
 			DDLRecordVersion lastRecordVersion,
