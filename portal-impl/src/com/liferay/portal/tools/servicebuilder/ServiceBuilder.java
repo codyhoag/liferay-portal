@@ -4288,7 +4288,7 @@ public class ServiceBuilder {
 			JavaSource javaSource = javaClass.getSource();
 			String[] imports = javaSource.getImports();
 
-			JavaClass parentJavaClass = _getParentJavaClass(javaClass);
+			JavaClass parentJavaClass = javaClass.getSuperJavaClass();
 			JavaSource parentJavaSource = parentJavaClass.getSource();
 			String[] parentImports = parentJavaSource.getImports();
 
@@ -4374,29 +4374,6 @@ public class ServiceBuilder {
 		}
 
 		return methods;
-	}
-
-	private JavaClass _getParentJavaClass(JavaClass javaClass)
-		throws IOException {
-
-		String parentJavaClassString = javaClass.getSuperJavaClass().toString();
-		int parentJavaClassIndex = parentJavaClassString.indexOf("com.");
-
-		String parentClassPath = parentJavaClassString.substring(
-				parentJavaClassIndex, parentJavaClassString.length());
-		parentClassPath = parentClassPath.replaceAll("\\.", "/");
-
-		int parentOutputPathIndex = _outputPath.indexOf("com/");
-		String parentOutputPath = _outputPath.substring(
-				parentOutputPathIndex, _outputPath.length());
-
-		String finalParentClassPath = _outputPath.replace(
-				parentOutputPath, parentClassPath);
-		finalParentClassPath = finalParentClassPath + ".java";
-
-		JavaClass parentJavaClass = _getJavaClass(finalParentClassPath);
-
-		return parentJavaClass;
 	}
 
 	private String _getSessionTypeName(int sessionType) {
