@@ -3785,7 +3785,7 @@ public class ServiceBuilder {
 			sb.append(tag.getName());
 			sb.append(" ");
 
-			if (classType.equals("ServiceSoap") && tagValue.startsWith(
+			if (classType.equals("serviceSoap") && tagValue.startsWith(
 					"com.liferay.portal.kernel.exception.PortalException")) {
 
 				String remoteValue = tagValue.replaceFirst(
@@ -3794,7 +3794,7 @@ public class ServiceBuilder {
 
 				sb.append(remoteValue);
 			}
-			else if (classType.equals("ServiceSoap") && tagValue.startsWith(
+			else if (classType.equals("serviceSoap") && tagValue.startsWith(
 						"com.liferay.portal.security.auth.PrincipalException")
 					) {
 				String remoteValue = tagValue.replaceFirst(
