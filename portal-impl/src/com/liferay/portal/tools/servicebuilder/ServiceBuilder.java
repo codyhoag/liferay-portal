@@ -4260,7 +4260,8 @@ public class ServiceBuilder {
 		JavaSource parentJavaSource = parentJavaClass.getSource();
 		String[] parentImports = parentJavaSource.getImports();
 
-		String[] allImports = ArrayUtils.addAll(imports, parentImports);
+		String[] allImports = new String[imports.length + parentImports.length];
+		ArrayUtil.combine(imports, parentImports, allImports);
 
 		return allImports;
 	}
