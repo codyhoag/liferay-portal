@@ -103,8 +103,6 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang3.ArrayUtils;
-
 import org.dom4j.DocumentException;
 
 /**
@@ -4260,7 +4258,8 @@ public class ServiceBuilder {
 		JavaSource parentJavaSource = parentJavaClass.getSource();
 		String[] parentImports = parentJavaSource.getImports();
 
-		String[] allImports = ArrayUtils.addAll(imports, parentImports);
+		String[] allImports = new String[imports.length + parentImports.length];
+		ArrayUtil.combine(imports, parentImports, allImports);
 
 		return allImports;
 	}
