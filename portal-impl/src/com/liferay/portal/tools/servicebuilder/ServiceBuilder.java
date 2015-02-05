@@ -4360,15 +4360,15 @@ public class ServiceBuilder {
 		throws IOException {
 
 		String parentJavaClassString = javaClass.getSuperJavaClass().toString();
-		int parentJavaClassIndex = parentJavaClassString.indexOf("com.");
+		int pos = parentJavaClassString.indexOf("com.");
 
 		String parentClassPath = parentJavaClassString.substring(
-				parentJavaClassIndex, parentJavaClassString.length());
+				pos, parentJavaClassString.length());
 		parentClassPath = parentClassPath.replaceAll("\\.", "/");
 
-		int parentOutputPathIndex = _outputPath.indexOf("com/");
+		int outputPathPos = _outputPath.indexOf("com/");
 		String parentOutputPath = _outputPath.substring(
-				parentOutputPathIndex, _outputPath.length());
+				outputPathPos, _outputPath.length());
 
 		String finalParentClassPath = _outputPath.replace(
 				parentOutputPath, parentClassPath);
