@@ -87,8 +87,9 @@ public class ${entity.name}Wrapper implements ${entity.name}, ModelWrapper<${ent
 			</#if>
 
 			<#assign parameters = method.parameters>
+			<#assign existingImports = ["aQute.bnd.annotation.ProviderType", "com.liferay.portal.kernel.lar.StagedModelType", "com.liferay.portal.kernel.util.Validator", "com.liferay.portal.model.ModelWrapper", "com.liferay.portal.service.ServiceContext", "com.liferay.portlet.expando.model.ExpandoBridge", "com.liferay.portlet.expando.util.ExpandoBridgeFactoryUtil", "java.io.Serializable", "java.sql.Blob", "java.util.Date", "java.util.HashMap", "java.util.Map"]>
 
-			${serviceBuilder.getJavadocComment(method, "modelWrapper", entity.name, "")}
+			${serviceBuilder.getJavadocComment(method, "modelWrapper", entity.name, "", existingImports)}
 
 			<#if serviceBuilder.hasAnnotation(method, "Deprecated")>
 				@Deprecated

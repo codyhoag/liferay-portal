@@ -1223,17 +1223,18 @@ public class ServiceBuilder {
 	public String getJavadocComment(JavaClass javaClass) throws IOException {
 		return _formatComment(
 			javaClass.getComment(), javaClass.getTags(), StringPool.BLANK,
-			StringPool.BLANK, StringPool.BLANK, StringPool.BLANK);
+			StringPool.BLANK, StringPool.BLANK, StringPool.BLANK,
+			StringPool.EMPTY_ARRAY);
 	}
 
 	public String getJavadocComment(
 			JavaMethod javaMethod, String classType, String entityName,
-			String sessionTypeName)
+			String sessionTypeName, String[] existingImports)
 		throws IOException {
 
 		return _formatComment(
 			javaMethod.getComment(), javaMethod.getTags(), entityName,
-			StringPool.TAB, classType, sessionTypeName);
+			StringPool.TAB, classType, sessionTypeName, existingImports);
 	}
 
 	public String getListActualTypeArguments(Type type) {
@@ -3746,7 +3747,8 @@ public class ServiceBuilder {
 
 	private String _formatComment(
 			String comment, DocletTag[] tags, String entityName,
-			String indentation, String classType, String sessionTypeName)
+			String indentation, String classType, String sessionTypeName,
+			String[] existingImports)
 		throws IOException {
 
 		StringBundler sb = new StringBundler();
@@ -3758,7 +3760,7 @@ public class ServiceBuilder {
 		sb.append(indentation);
 		sb.append("/**\n");
 
-		String[] imports = _getImports(entityName, sessionTypeName);
+		String[] imports = _getImports(entityName, sessionTypeName, existingImports);
 
 		if (Validator.isNotNull(comment)) {
 			comment = comment.replaceAll("(?m)^", indentation + " * ");
@@ -4228,7 +4230,8 @@ public class ServiceBuilder {
 		return dimensions;
 	}
 
-	private String[] _getImports(String entityName, String sessionTypeName)
+	private String[] _getImports(
+			String entityName, String sessionTypeName, String[] existingImports)
 		throws IOException {
 
 		JavaClass javaClass = null;
@@ -4260,6 +4263,12 @@ public class ServiceBuilder {
 
 		String[] allImports = new String[imports.length + parentImports.length];
 		ArrayUtil.combine(imports, parentImports, allImports);
+
+		for (String existingImport : existingImports) {
+			if (ArrayUtil.contains(allImports, existingImport, false)) {
+				allImports = ArrayUtil.remove(allImports, existingImport);
+			}
+		}
 
 		return allImports;
 	}
