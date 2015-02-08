@@ -1225,16 +1225,17 @@ public class ServiceBuilder {
 
 		return _formatComment(
 			javaClass.getComment(), javaClass.getTags(), StringPool.BLANK,
-			StringPool.BLANK, StringPool.BLANK);
+			StringPool.BLANK, StringPool.EMPTY_ARRAY, StringPool.BLANK);
 	}
 
 	public String getJavadocComment(
-			JavaMethod javaMethod, String entityName, String sessionType)
+			JavaMethod javaMethod, String entityName, String sessionType,
+			String[] existingImports)
 		throws IOException {
 
 		return _formatComment(
 			javaMethod.getComment(), javaMethod.getTags(), entityName,
-			sessionType,  StringPool.TAB);
+			sessionType, existingImports, StringPool.TAB);
 	}
 
 	public String getListActualTypeArguments(Type type) {
@@ -3747,7 +3748,7 @@ public class ServiceBuilder {
 
 	private String _formatComment(
 			String comment, DocletTag[] tags, String entityName,
-			String sessionType, String indentation)
+			String sessionType, String[] existingImports, String indentation)
 		throws IOException {
 
 		StringBundler sb = new StringBundler();
@@ -3760,7 +3761,7 @@ public class ServiceBuilder {
 		sb.append("/**\n");
 
 		String[] importedClassesFromImpl = _getImportedClassesFromImpl(
-				entityName, sessionType);
+				entityName, sessionType, existingImports);
 
 		if (Validator.isNotNull(comment)) {
 			comment = comment.replaceAll("(?m)^", indentation + " * ");
@@ -4224,7 +4225,7 @@ public class ServiceBuilder {
 	}
 
 	private String[] _getImportedClassesFromImpl(
-			String entityName, String sessionType)
+			String entityName, String sessionType, String[] classesToExclude)
 		throws IOException {
 
 		JavaClass javaClass = null;
@@ -4256,6 +4257,12 @@ public class ServiceBuilder {
 
 		String[] allImports = new String[imports.length + parentImports.length];
 		ArrayUtil.combine(imports, parentImports, allImports);
+
+		for (String classToExclude : classesToExclude) {
+			if (ArrayUtil.contains(allImports, classToExclude, false)) {
+				allImports = ArrayUtil.remove(allImports, classToExclude);
+			}
+		}
 
 		return allImports;
 	}
