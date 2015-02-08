@@ -28,10 +28,12 @@ public class ${entity.name}${sessionTypeName}ServiceWrapper implements ${entity.
 
 	<#list methods as method>
 		<#if !method.isConstructor() && method.isPublic() && serviceBuilder.isCustomMethod(method)>
+			<#assign existingImports = ["aQute.bnd.annotation.ProviderType", "com.liferay.portal.service.ServiceWrapper"]>
+
 			<#if sessionTypeName == "Local">
-				${serviceBuilder.getJavadocComment(method, entity.name, localSessionType)}
+				${serviceBuilder.getJavadocComment(method, entity.name, localSessionType, existingImports)}
 			<#else>
-				${serviceBuilder.getJavadocComment(method, entity.name, remoteSessionType)}
+				${serviceBuilder.getJavadocComment(method, entity.name, remoteSessionType, existingImports)}
 			</#if>
 
 			<#if serviceBuilder.hasAnnotation(method, "Deprecated")>
