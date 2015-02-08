@@ -1220,14 +1220,21 @@ public class ServiceBuilder {
 		return idType;
 	}
 
-	public String getJavadocComment(JavaClass javaClass) {
+	public String getJavadocComment(JavaClass javaClass)
+		throws IOException {
+
 		return _formatComment(
-			javaClass.getComment(), javaClass.getTags(), StringPool.BLANK);
+			javaClass.getComment(), javaClass.getTags(), StringPool.BLANK,
+			StringPool.BLANK, StringPool.BLANK);
 	}
 
-	public String getJavadocComment(JavaMethod javaMethod) {
+	public String getJavadocComment(
+			JavaMethod javaMethod, String entityName, String sessionType)
+		throws IOException {
+
 		return _formatComment(
-			javaMethod.getComment(), javaMethod.getTags(), StringPool.TAB);
+			javaMethod.getComment(), javaMethod.getTags(), entityName,
+			sessionType,  StringPool.TAB);
 	}
 
 	public String getListActualTypeArguments(Type type) {
@@ -3739,7 +3746,9 @@ public class ServiceBuilder {
 	}
 
 	private String _formatComment(
-		String comment, DocletTag[] tags, String indentation) {
+			String comment, DocletTag[] tags, String entityName,
+			String sessionType, String indentation)
+		throws IOException {
 
 		StringBundler sb = new StringBundler();
 
@@ -3749,6 +3758,9 @@ public class ServiceBuilder {
 
 		sb.append(indentation);
 		sb.append("/**\n");
+
+		String[] importedClassesFromImpl = _getImportedClassesFromImpl(
+				entityName, sessionType);
 
 		if (Validator.isNotNull(comment)) {
 			comment = comment.replaceAll("(?m)^", indentation + " * ");
@@ -3862,6 +3874,9 @@ public class ServiceBuilder {
 		context.put("beanLocatorUtilShortName", _beanLocatorUtilShortName);
 		context.put("hbmFileName", _hbmFileName);
 		context.put("implDir", _implDir);
+		context.put(
+			"localSessionType",
+			this._getSessionTypeName(_SESSION_TYPE_LOCAL));
 		context.put("modelHintsFileName", _modelHintsFileName);
 		context.put("modelHintsUtil", ModelHintsUtil.getModelHints());
 		context.put("osgiModule", _osgiModule);
@@ -3872,6 +3887,9 @@ public class ServiceBuilder {
 		context.put("portletPackageName", _portletPackageName);
 		context.put("portletShortName", _portletShortName);
 		context.put("propsUtil", _propsUtil);
+		context.put(
+			"remoteSessionType",
+			this._getSessionTypeName(_SESSION_TYPE_REMOTE));
 		context.put(
 			"resourceActionsUtil", ResourceActionsUtil.getResourceActions());
 		context.put("serviceBuilder", this);
@@ -4205,6 +4223,43 @@ public class ServiceBuilder {
 		return dimensions;
 	}
 
+	private String[] _getImportedClassesFromImpl(
+			String entityName, String sessionType)
+		throws IOException {
+
+		JavaClass javaClass = null;
+		String serviceImplPath = _outputPath + "/service/impl/" + entityName;
+
+		if (sessionType.equals("Local")) {
+			javaClass = _getJavaClass(
+				serviceImplPath + "LocalServiceImpl.java");
+		}
+		else {
+			File serviceImplFile = new File(
+				serviceImplPath + "ServiceImpl.java");
+
+			if (serviceImplFile.exists()) {
+				javaClass = _getJavaClass(serviceImplPath + "ServiceImpl.java");
+			}
+			else {
+				javaClass = _getJavaClass(
+					_outputPath + "/model/impl/" + entityName + "Impl.java");
+			}
+		}
+
+		JavaSource javaSource = javaClass.getSource();
+		String[] imports = javaSource.getImports();
+
+		JavaClass parentJavaClass = _getParentJavaClass(javaClass);
+		JavaSource parentJavaSource = parentJavaClass.getSource();
+		String[] parentImports = parentJavaSource.getImports();
+
+		String[] allImports = new String[imports.length + parentImports.length];
+		ArrayUtil.combine(imports, parentImports, allImports);
+
+		return allImports;
+	}
+
 	private JavaClass _getJavaClass(String fileName) throws IOException {
 		int pos = fileName.indexOf(_implDir + "/");
 
@@ -4287,6 +4342,29 @@ public class ServiceBuilder {
 
 		return methods;
 	}
+
+	private JavaClass _getParentJavaClass(JavaClass javaClass)
+			throws IOException {
+
+			String parentJavaClassString = javaClass.getSuperJavaClass().toString();
+			int pos = parentJavaClassString.indexOf("com.");
+
+			String parentClassPath = parentJavaClassString.substring(
+					pos, parentJavaClassString.length());
+			parentClassPath = parentClassPath.replaceAll("\\.", "/");
+
+			int outputPathPos = _outputPath.indexOf("com/");
+			String parentOutputPath = _outputPath.substring(
+					outputPathPos, _outputPath.length());
+
+			String finalParentClassPath = _outputPath.replace(
+					parentOutputPath, parentClassPath);
+			finalParentClassPath = finalParentClassPath + ".java";
+
+			JavaClass parentJavaClass = _getJavaClass(finalParentClassPath);
+
+			return parentJavaClass;
+		}
 
 	private String _getSessionTypeName(int sessionType) {
 		if (sessionType == _SESSION_TYPE_LOCAL) {
