@@ -64,7 +64,11 @@ public class ${entity.name}${sessionTypeName}ServiceUtil {
 
 	<#list methods as method>
 		<#if !method.isConstructor() && !method.isStatic() && method.isPublic() && serviceBuilder.isCustomMethod(method)>
-			${serviceBuilder.getJavadocComment(method)}
+			<#if sessionTypeName == "Local">
+				${serviceBuilder.getJavadocComment(method, entity.name, localSessionType)}
+			<#else>
+				${serviceBuilder.getJavadocComment(method, entity.name, remoteSessionType)}
+			</#if>
 
 			<#if serviceBuilder.hasAnnotation(method, "Deprecated")>
 				@Deprecated
