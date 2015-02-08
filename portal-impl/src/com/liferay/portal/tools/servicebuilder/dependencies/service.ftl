@@ -97,10 +97,12 @@ public interface ${entity.name}${sessionTypeName}Service
 
 	<#list methods as method>
 		<#if !method.isConstructor() && !method.isStatic() && method.isPublic() && serviceBuilder.isCustomMethod(method)>
+			<#assign existingImports = ["aQute.bnd.annotation.ProviderType", "com.liferay.portal.kernel.exception.PortalException", "com.liferay.portal.kernel.exception.SystemException", "com.liferay.portal.kernel.jsonwebservice.JSONWebService", "com.liferay.portal.kernel.transaction.Isolation", "com.liferay.portal.kernel.transaction.Propagation", "com.liferay.portal.kernel.transaction.Transactional", "com.liferay.portal.security.ac.AccessControlled", "com.liferay.portal.service.Base" + sessionTypeName + "Service", "com.liferay.portal.service.Invokable" + sessionTypeName + "Service", "com.liferay.portal.service.PermissionedModelLocalService", "com.liferay.portal.service.PersistedModelLocalService"]>
+
 			<#if sessionTypeName == "Local">
-				${serviceBuilder.getJavadocComment(method, entity.name, localSessionType)}
+				${serviceBuilder.getJavadocComment(method, entity.name, localSessionType, existingImports)}
 			<#else>
-				${serviceBuilder.getJavadocComment(method, entity.name, remoteSessionType)}
+				${serviceBuilder.getJavadocComment(method, entity.name, remoteSessionType, existingImports)}
 			</#if>
 
 			<#list method.annotations as annotation>
