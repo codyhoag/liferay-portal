@@ -1220,9 +1220,7 @@ public class ServiceBuilder {
 		return idType;
 	}
 
-	public String getJavadocComment(JavaClass javaClass)
-		throws IOException {
-
+	public String getJavadocComment(JavaClass javaClass) throws IOException {
 		return _formatComment(
 			javaClass.getComment(), javaClass.getTags(), StringPool.BLANK,
 			StringPool.BLANK, StringPool.EMPTY_ARRAY, StringPool.BLANK);
@@ -3761,7 +3759,7 @@ public class ServiceBuilder {
 		sb.append("/**\n");
 
 		String[] importedClassesFromImpl = _getImportedClassesFromImpl(
-				entityName, sessionTypeName, existingImports);
+			entityName, sessionTypeName, existingImports);
 
 		if (Validator.isNotNull(comment)) {
 			comment = comment.replaceAll("(?m)^", indentation + " * ");
@@ -4347,27 +4345,27 @@ public class ServiceBuilder {
 	}
 
 	private JavaClass _getParentJavaClass(JavaClass javaClass)
-			throws IOException {
+		throws IOException {
 
-			String parentJavaClassString = javaClass.getSuperJavaClass().toString();
-			int pos = parentJavaClassString.indexOf("com.");
+		String parentJavaClassString = javaClass.getSuperJavaClass().toString();
+		int pos = parentJavaClassString.indexOf("com.");
 
-			String parentClassPath = parentJavaClassString.substring(
-					pos, parentJavaClassString.length());
-			parentClassPath = parentClassPath.replaceAll("\\.", "/");
+		String parentClassPath = parentJavaClassString.substring(
+			pos, parentJavaClassString.length());
+		parentClassPath = parentClassPath.replaceAll("\\.", "/");
 
-			int outputPathPos = _outputPath.indexOf("com/");
-			String parentOutputPath = _outputPath.substring(
-					outputPathPos, _outputPath.length());
+		int outputPathPos = _outputPath.indexOf("com/");
+		String parentOutputPath = _outputPath.substring(
+			outputPathPos, _outputPath.length());
 
-			String finalParentClassPath = _outputPath.replace(
-					parentOutputPath, parentClassPath);
-			finalParentClassPath = finalParentClassPath + ".java";
+		String finalParentClassPath = _outputPath.replace(
+			parentOutputPath, parentClassPath);
+		finalParentClassPath = finalParentClassPath + ".java";
 
-			JavaClass parentJavaClass = _getJavaClass(finalParentClassPath);
+		JavaClass parentJavaClass = _getJavaClass(finalParentClassPath);
 
-			return parentJavaClass;
-		}
+		return parentJavaClass;
+	}
 
 	private String _getSessionTypeName(int sessionType) {
 		if (sessionType == _SESSION_TYPE_LOCAL) {
