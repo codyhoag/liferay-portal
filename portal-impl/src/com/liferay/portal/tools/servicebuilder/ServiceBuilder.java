@@ -1229,13 +1229,13 @@ public class ServiceBuilder {
 	}
 
 	public String getJavadocComment(
-			JavaMethod javaMethod, String entityName, String sessionType,
+			JavaMethod javaMethod, String entityName, String sessionTypeName,
 			String[] existingImports)
 		throws IOException {
 
 		return _formatComment(
 			javaMethod.getComment(), javaMethod.getTags(), entityName,
-			sessionType, existingImports, StringPool.TAB);
+			sessionTypeName, existingImports, StringPool.TAB);
 	}
 
 	public String getListActualTypeArguments(Type type) {
@@ -3748,7 +3748,7 @@ public class ServiceBuilder {
 
 	private String _formatComment(
 			String comment, DocletTag[] tags, String entityName,
-			String sessionType, String[] existingImports, String indentation)
+			String sessionTypeName, String[] existingImports, String indentation)
 		throws IOException {
 
 		StringBundler sb = new StringBundler();
@@ -3761,7 +3761,7 @@ public class ServiceBuilder {
 		sb.append("/**\n");
 
 		String[] importedClassesFromImpl = _getImportedClassesFromImpl(
-				entityName, sessionType, existingImports);
+				entityName, sessionTypeName, existingImports);
 
 		if (Validator.isNotNull(comment)) {
 			comment = comment.replaceAll("(?m)^", indentation + " * ");
@@ -3875,9 +3875,6 @@ public class ServiceBuilder {
 		context.put("beanLocatorUtilShortName", _beanLocatorUtilShortName);
 		context.put("hbmFileName", _hbmFileName);
 		context.put("implDir", _implDir);
-		context.put(
-			"localSessionType",
-			this._getSessionTypeName(_SESSION_TYPE_LOCAL));
 		context.put("modelHintsFileName", _modelHintsFileName);
 		context.put("modelHintsUtil", ModelHintsUtil.getModelHints());
 		context.put("osgiModule", _osgiModule);
@@ -3888,9 +3885,6 @@ public class ServiceBuilder {
 		context.put("portletPackageName", _portletPackageName);
 		context.put("portletShortName", _portletShortName);
 		context.put("propsUtil", _propsUtil);
-		context.put(
-			"remoteSessionType",
-			this._getSessionTypeName(_SESSION_TYPE_REMOTE));
 		context.put(
 			"resourceActionsUtil", ResourceActionsUtil.getResourceActions());
 		context.put("serviceBuilder", this);
@@ -4225,13 +4219,15 @@ public class ServiceBuilder {
 	}
 
 	private String[] _getImportedClassesFromImpl(
-			String entityName, String sessionType, String[] classesToExclude)
+			String entityName, String sessionTypeName, String[] classesToExclude)
 		throws IOException {
 
 		JavaClass javaClass = null;
 		String serviceImplPath = _outputPath + "/service/impl/" + entityName;
 
-		if (sessionType.equals("Local")) {
+		if (Validator.isNotNull(sessionTypeName) &&
+			sessionTypeName.equals("Local")) {
+
 			javaClass = _getJavaClass(
 				serviceImplPath + "LocalServiceImpl.java");
 		}

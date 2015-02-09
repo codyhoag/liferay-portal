@@ -66,11 +66,7 @@ public class ${entity.name}${sessionTypeName}ServiceUtil {
 		<#if !method.isConstructor() && !method.isStatic() && method.isPublic() && serviceBuilder.isCustomMethod(method)>
 			<#assign existingImports = ["aQute.bnd.annotation.ProviderType", "com.liferay.portal.kernel.bean.PortalBeanLocatorUtil", "com.liferay.portal.kernel.bean.PortletBeanLocatorUtil", "com.liferay.portal.kernel.util.ReferenceRegistry", "com.liferay.portal.service.Invokable" + sessionTypeName + "Service", "org.osgi.framework.Bundle", "org.osgi.framework.FrameworkUtil", "org.osgi.util.tracker.ServiceTracker"]>
 
-			<#if sessionTypeName == "Local">
-				${serviceBuilder.getJavadocComment(method, entity.name, localSessionType, existingImports)}
-			<#else>
-				${serviceBuilder.getJavadocComment(method, entity.name, remoteSessionType, existingImports)}
-			</#if>
+			${serviceBuilder.getJavadocComment(method, entity.name, sessionTypeName, existingImports)}
 
 			<#if serviceBuilder.hasAnnotation(method, "Deprecated")>
 				@Deprecated
