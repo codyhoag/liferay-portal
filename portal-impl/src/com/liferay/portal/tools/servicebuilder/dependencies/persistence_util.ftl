@@ -99,7 +99,7 @@ public class ${entity.name}Util {
 		<#if !method.isConstructor() && method.isPublic() && serviceBuilder.isCustomMethod(method) && !serviceBuilder.isBasePersistenceMethod(method)>
 			<#assign existingImports = [packagePath + ".model." + entity.name, "aQute.bnd.annotation.ProviderType", "com.liferay.portal.kernel.bean.PortalBeanLocatorUtil", "com.liferay.portal.kernel.bean.PortletBeanLocatorUtil", "com.liferay.portal.kernel.dao.orm.DynamicQuery", "com.liferay.portal.kernel.util.OrderByComparator", "com.liferay.portal.kernel.util.ReferenceRegistry", "com.liferay.portal.service.ServiceContext", "java.util.Date", "java.util.List", "org.osgi.framework.Bundle", "org.osgi.framework.FrameworkUtil", "org.osgi.util.tracker.ServiceTracker"]>
 
-			${serviceBuilder.getJavadocComment(method, entity.name, remoteSessionType, existingImports)}
+			${serviceBuilder.getJavadocComment(method, entity.name, "", existingImports)}
 
 			<#if serviceBuilder.hasAnnotation(method, "Deprecated")>
 				@Deprecated

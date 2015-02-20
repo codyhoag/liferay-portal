@@ -99,7 +99,7 @@ public interface ${entity.name} extends
 		<#if !method.isConstructor() && !method.isStatic() && method.isPublic()>
 			<#assign existingImports = ["aQute.bnd.annotation.ProviderType", "com.liferay.portal.kernel.util.Accessor", "com.liferay.portal.kernel.util.LocaleThreadLocal", "com.liferay.portal.model.NestedSetsTreeNodeModel", "com.liferay.portal.model.PermissionedModel", "com.liferay.portal.model.PersistedModel", "com.liferay.portal.model.TreeModel"]>
 
-			${serviceBuilder.getJavadocComment(method, entity.name, remoteSessionType, existingImports)}
+			${serviceBuilder.getJavadocComment(method, entity.name, "", existingImports)}
 
 			<#assign parameters = method.parameters>
 
