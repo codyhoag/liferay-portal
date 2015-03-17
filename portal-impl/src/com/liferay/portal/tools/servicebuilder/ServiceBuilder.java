@@ -113,7 +113,7 @@ import org.dom4j.DocumentException;
  * @author Harry Mark
  * @author Tariq Dweik
  * @author Glenn Powell
- * @author Raymond AugÃ©
+ * @author Raymond Augé
  * @author Prashant Dighe
  * @author Shuyang Zhou
  * @author James Lefeu
@@ -1220,9 +1220,13 @@ public class ServiceBuilder {
 		return idType;
 	}
 
-	public String getJavadocComment(JavaMethod javaMethod) {
+	public String getJavadocComment(
+			JavaMethod javaMethod, String entityName, String sessionTypeName)
+		throws IOException {
+
 		return _formatComment(
-			javaMethod.getComment(), javaMethod.getTags(), StringPool.TAB);
+			javaMethod.getComment(), javaMethod.getTags(), entityName,
+			sessionTypeName, StringPool.TAB);
 	}
 
 	public String getListActualTypeArguments(Type type) {
@@ -3734,7 +3738,9 @@ public class ServiceBuilder {
 	}
 
 	private String _formatComment(
-		String comment, DocletTag[] tags, String indentation) {
+			String comment, DocletTag[] tags, String entityName,
+			String sessionTypeName, String indentation)
+		throws IOException {
 
 		StringBundler sb = new StringBundler();
 
@@ -3744,6 +3750,9 @@ public class ServiceBuilder {
 
 		sb.append(indentation);
 		sb.append("/**\n");
+
+		String[] importedClassesFromImpl = _getImportedClassesFromImpl(
+			entityName, sessionTypeName);
 
 		if (Validator.isNotNull(comment)) {
 			comment = comment.replaceAll("(?m)^", indentation + " * ");
@@ -4200,6 +4209,45 @@ public class ServiceBuilder {
 		return dimensions;
 	}
 
+	private String[] _getImportedClassesFromImpl(
+			String entityName, String sessionTypeName)
+		throws IOException {
+
+		JavaClass implJavaClass = null;
+		String serviceImplPath = _outputPath + "/service/impl/" + entityName;
+
+		if (Validator.isNotNull(sessionTypeName) &&
+			sessionTypeName.equals("Local")) {
+
+			implJavaClass = _getJavaClass(
+				serviceImplPath + "LocalServiceImpl.java");
+		}
+		else {
+			File serviceImplFile = new File(
+				serviceImplPath + "ServiceImpl.java");
+
+			if (serviceImplFile.exists()) {
+				implJavaClass = _getJavaClass(serviceImplPath + "ServiceImpl.java");
+			}
+			else {
+				implJavaClass = _getJavaClass(
+					_outputPath + "/model/impl/" + entityName + "Impl.java");
+			}
+		}
+
+		JavaSource implJavaSource = implJavaClass.getSource();
+		String[] implImports = implJavaSource.getImports();
+
+		JavaClass implParentJavaClass = _getParentJavaClass(implJavaClass);
+		JavaSource implParentJavaSource = implParentJavaClass.getSource();
+		String[] implParentImports = implParentJavaSource.getImports();
+
+		String[] allImports = new String[implImports.length + implParentImports.length];
+		ArrayUtil.combine(implImports, implParentImports, allImports);
+
+		return allImports;
+	}
+
 	private JavaClass _getJavaClass(String fileName) throws IOException {
 		int pos = fileName.indexOf(_implDir + "/");
 
@@ -4282,6 +4330,29 @@ public class ServiceBuilder {
 
 		return methods;
 	}
+
+	private JavaClass _getParentJavaClass(JavaClass javaClass)
+			throws IOException {
+
+			String parentJavaClassString = javaClass.getSuperJavaClass().toString();
+			int pos = parentJavaClassString.indexOf("com.");
+
+			String parentClassPath = parentJavaClassString.substring(
+					pos, parentJavaClassString.length());
+			parentClassPath = parentClassPath.replaceAll("\\.", "/");
+
+			int outputPathPos = _outputPath.indexOf("com/");
+			String parentOutputPath = _outputPath.substring(
+					outputPathPos, _outputPath.length());
+
+			String finalParentClassPath = _outputPath.replace(
+					parentOutputPath, parentClassPath);
+			finalParentClassPath = finalParentClassPath + ".java";
+
+			JavaClass parentJavaClass = _getJavaClass(finalParentClassPath);
+
+			return parentJavaClass;
+		}
 
 	private String _getSessionTypeName(int sessionType) {
 		if (sessionType == _SESSION_TYPE_LOCAL) {
