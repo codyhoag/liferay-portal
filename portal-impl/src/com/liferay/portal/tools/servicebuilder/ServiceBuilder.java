@@ -1220,11 +1220,6 @@ public class ServiceBuilder {
 		return idType;
 	}
 
-	public String getJavadocComment(JavaClass javaClass) {
-		return _formatComment(
-			javaClass.getComment(), javaClass.getTags(), StringPool.BLANK);
-	}
-
 	public String getJavadocComment(JavaMethod javaMethod) {
 		return _formatComment(
 			javaMethod.getComment(), javaMethod.getTags(), StringPool.TAB);
