@@ -113,7 +113,7 @@ import org.dom4j.DocumentException;
  * @author Harry Mark
  * @author Tariq Dweik
  * @author Glenn Powell
- * @author Raymond Augé
+ * @author Raymond AugÃ©
  * @author Prashant Dighe
  * @author Shuyang Zhou
  * @author James Lefeu
@@ -4294,7 +4294,8 @@ public class ServiceBuilder {
 				serviceImplPath + "ServiceImpl.java");
 
 			if (serviceImplFile.exists()) {
-				implJavaClass = _getJavaClass(serviceImplPath + "ServiceImpl.java");
+				implJavaClass = _getJavaClass(serviceImplPath +
+					"ServiceImpl.java");
 			}
 			else {
 				implJavaClass = _getJavaClass(
@@ -4305,12 +4306,14 @@ public class ServiceBuilder {
 		JavaSource implJavaSource = implJavaClass.getSource();
 		String[] implImports = implJavaSource.getImports();
 
-		JavaClass implParentJavaClass = _getParentJavaClass(implJavaClass);
-		JavaSource implParentJavaSource = implParentJavaClass.getSource();
-		String[] implParentImports = implParentJavaSource.getImports();
+		JavaClass parentImplJavaClass = _getParentJavaClass(implJavaClass);
+		JavaSource parentImplJavaSource = parentImplJavaClass.getSource();
+		String[] parentImplImports = parentImplJavaSource.getImports();
 
-		String[] allImports = new String[implImports.length + implParentImports.length];
-		ArrayUtil.combine(implImports, implParentImports, allImports);
+		String[] allImports = new String[implImports.length +
+			parentImplImports.length];
+
+		ArrayUtil.combine(implImports, parentImplImports, allImports);
 
 		return allImports;
 	}
@@ -5290,18 +5293,23 @@ public class ServiceBuilder {
 			int fromIndex = 0;
 			int pos = content.indexOf(importToExclude, fromIndex);
 
-			for (; pos > -1; pos = content.indexOf(importToExclude, fromIndex)) {
+			for (; pos > -1;
+				pos = content.indexOf(importToExclude, fromIndex)) {
+
 				int endPos = pos + importToExclude.length();
 				String charAfter = content.substring(endPos, endPos + 1);
 
-				if (content.length() > endPos && !charAfter.matches("[a-zA-Z;]")) {
+				if (content.length() > endPos &&
+					!charAfter.matches("[a-zA-Z;]")) {
+
 					String className = importToExclude.substring(
 						importToExclude.lastIndexOf(StringPool.PERIOD) + 1);
 
 					content = StringUtil.replaceFirst(
 						content, importToExclude, className, pos);
 				}
-					fromIndex = pos + importToExclude.length();
+
+				fromIndex = pos + importToExclude.length();
 			}
 		}
 
