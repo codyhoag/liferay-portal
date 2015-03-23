@@ -4205,10 +4205,9 @@ public class ServiceBuilder {
 	private JavaClass _getJavaClass(String filePath) throws IOException {
 		filePath = StringUtil.replace(filePath, "\\", "/");
 
-		filePath = filePath.substring(filePath.lastIndexOf("/src/") + 5);
-
+		String srcFile = filePath.substring(filePath.lastIndexOf("/src/") + 5);
 		String fullyQualifiedClassName = StringUtil.replace(
-			filePath.substring(0, filePath.length() - 5), "/", ".");
+			srcFile.substring(0, srcFile.length() - 5), "/", ".");
 
 		JavaClass javaClass = _javaClasses.get(fullyQualifiedClassName);
 
