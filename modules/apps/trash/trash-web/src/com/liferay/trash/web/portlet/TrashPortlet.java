@@ -56,9 +56,9 @@ import org.osgi.service.component.annotations.Reference;
 @Component(
 	immediate = true,
 	property = {
-		"com.liferay.portlet.css-class-wrapper=portlet-trash",
 		"com.liferay.portlet.control-panel-entry-category=site_administration.content",
 		"com.liferay.portlet.control-panel-entry-weight=30.0",
+		"com.liferay.portlet.css-class-wrapper=portlet-trash",
 		"com.liferay.portlet.display-category=category.hidden",
 		"com.liferay.portlet.header-portlet-css=/css/main.css",
 		"com.liferay.portlet.icon=/icons/trash.png",
@@ -73,7 +73,7 @@ import org.osgi.service.component.annotations.Reference;
 		"javax.portlet.security-role-ref=administrator",
 		"javax.portlet.supports.mime-type=text/html"
 	},
-	service = Portlet.class
+	service = {Portlet.class, TrashPortlet.class}
 )
 public class TrashPortlet extends MVCPortlet {
 

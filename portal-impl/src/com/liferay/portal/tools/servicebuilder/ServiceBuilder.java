@@ -118,6 +118,9 @@ import org.dom4j.DocumentException;
  * @author Shuyang Zhou
  * @author James Lefeu
  * @author Miguel Pastor
+ * @author Cody Hoag
+ * @author James Hinkey
+ * @author Hugo Huijser
  */
 public class ServiceBuilder {
 
@@ -408,8 +411,7 @@ public class ServiceBuilder {
 		content = JavaSourceProcessor.stripJavaImports(
 			content, packagePath, className);
 
-		content = JavaSourceProcessor.stripFullyQualifiedClassNames(
-			content, file);
+		content = _stripFullyQualifiedClassNames(content);
 
 		File tempFile = new File("ServiceBuilder.temp");
 
@@ -1847,6 +1849,61 @@ public class ServiceBuilder {
 			throw new RuntimeException(
 				"Unable to load jalopy.xml from the class loader", e);
 		}
+	}
+
+	private static String _stripFullyQualifiedClassNames(String content)
+		throws IOException {
+
+		String imports = JavaSourceProcessor.getImports(content);
+
+		if (Validator.isNull(imports)) {
+			return content;
+		}
+
+		UnsyncBufferedReader unsyncBufferedReader = new UnsyncBufferedReader(
+			new UnsyncStringReader(imports));
+
+		String line = null;
+
+		while ((line = unsyncBufferedReader.readLine()) != null) {
+			int x = line.indexOf("import ");
+
+			if (x == -1) {
+				continue;
+			}
+
+			String importPackageAndClassName = line.substring(
+				x + 7, line.lastIndexOf(StringPool.SEMICOLON));
+
+			for (x = -1;;) {
+				x = content.indexOf(importPackageAndClassName, x + 1);
+
+				if (x == -1) {
+					break;
+				}
+
+				char nextChar = content.charAt(
+					x + importPackageAndClassName.length());
+				char previousChar = content.charAt(x - 1);
+
+				if (Character.isAlphabetic(nextChar) ||
+					(nextChar == CharPool.QUOTE) ||
+					(nextChar == CharPool.SEMICOLON) ||
+					(previousChar == CharPool.QUOTE)) {
+
+					continue;
+				}
+
+				String importClassName = importPackageAndClassName.substring(
+					importPackageAndClassName.lastIndexOf(StringPool.PERIOD) +
+						1);
+
+				content = StringUtil.replaceFirst(
+					content, importPackageAndClassName, importClassName, x);
+			}
+		}
+
+		return content;
 	}
 
 	private void _addIndexMetadata(
@@ -4202,13 +4259,15 @@ public class ServiceBuilder {
 		return dimensions;
 	}
 
-	private JavaClass _getJavaClass(String filePath) throws IOException {
-		filePath = StringUtil.replace(filePath, "\\", "/");
+	private JavaClass _getJavaClass(String fileName) throws IOException {
+		fileName = StringUtil.replace(
+			fileName, CharPool.BACK_SLASH, CharPool.SLASH);
 
-		String srcFile = filePath.substring(filePath.lastIndexOf("/src/") + 5);
+		int pos = fileName.lastIndexOf("/src/") + 5;
 
 		String fullyQualifiedClassName = StringUtil.replace(
-			srcFile.substring(0, srcFile.length() - 5), "/", ".");
+			fileName.substring(pos, fileName.length() - 5), CharPool.SLASH,
+			CharPool.PERIOD);
 
 		JavaClass javaClass = _javaClasses.get(fullyQualifiedClassName);
 

@@ -729,7 +729,7 @@ public class LiferaySeleniumHelper {
 				return true;
 			}
 
-			if (line.matches(".*[TrueZIP InputStream Reader].*")) {
+			if (line.matches(".*\\[TrueZIP InputStream Reader\\].*")) {
 				return true;
 			}
 		}
@@ -1030,6 +1030,15 @@ public class LiferaySeleniumHelper {
 
 				return true;
 			}
+		}
+
+		// LPS-54662, temporary workaround while Albert Lee investigates it
+
+		if (line.matches(
+				".*The web application \\[\\] appears to have started a " +
+					"thread named \\[jscompiler].*")) {
+
+			return true;
 		}
 
 		// LRQA-14442, temporary workaround until Kiyoshi Lee fixes it

@@ -841,8 +841,6 @@ public interface PropsKeys {
 
 	public static final String EHCACHE_CACHE_MANAGER_PEER_PROVIDER_FACTORY = "ehcache.cache.manager.peer.provider.factory";
 
-	public static final String EHCACHE_CACHE_MANAGER_STATISTICS_THREAD_POOL_SIZE = "ehcache.cache.manager.statistics.thread.pool.size";
-
 	public static final String EHCACHE_CLUSTER_LINK_REPLICATION_ENABLED = "ehcache.cluster.link.replication.enabled";
 
 	public static final String EHCACHE_MULTI_VM_CONFIG_LOCATION = "ehcache.multi.vm.config.location";
@@ -1123,14 +1121,6 @@ public interface PropsKeys {
 
 	public static final String JOURNAL_ARTICLE_EXPIRE_ALL_VERSIONS = "journal.article.expire.all.versions";
 
-	public static final String JOURNAL_ARTICLE_FORCE_AUTOGENERATE_ID = "journal.article.force.autogenerate.id";
-
-	public static final String JOURNAL_ARTICLE_FORM_ADD = "journal.article.form.add";
-
-	public static final String JOURNAL_ARTICLE_FORM_DEFAULT_VALUES = "journal.article.form.default.values";
-
-	public static final String JOURNAL_ARTICLE_FORM_UPDATE = "journal.article.form.update";
-
 	public static final String JOURNAL_ARTICLE_INDEX_ALL_VERSIONS = "journal.articles.index.all.versions";
 
 	public static final String JOURNAL_ARTICLE_STORAGE_TYPE = "journal.article.storage.type";
@@ -1139,13 +1129,7 @@ public interface PropsKeys {
 
 	public static final String JOURNAL_ARTICLE_VIEW_PERMISSION_CHECK_ENABLED = "journal.article.view.permission.check.enabled";
 
-	public static final String JOURNAL_ARTICLES_SEARCH_WITH_INDEX = "journal.articles.search.with.index";
-
 	public static final String JOURNAL_CHAR_BLACKLIST = "journal.char.blacklist";
-
-	public static final String JOURNAL_DEFAULT_DISPLAY_VIEW = "journal.default.display.view";
-
-	public static final String JOURNAL_DISPLAY_VIEWS = "journal.display.views";
 
 	public static final String JOURNAL_EMAIL_ARTICLE_ADDED_BODY = "journal.email.article.added.body";
 
@@ -1201,8 +1185,6 @@ public interface PropsKeys {
 
 	public static final String JOURNAL_ERROR_TEMPLATE = "journal.error.template";
 
-	public static final String JOURNAL_FEED_FORCE_AUTOGENERATE_ID = "journal.feed.force.autogenerate.id";
-
 	public static final String JOURNAL_FOLDER_ICON_CHECK_COUNT = "journal.folder.icon.check.count";
 
 	public static final String JOURNAL_IMAGE_EXTENSIONS = "journal.image.extensions";
@@ -1211,13 +1193,7 @@ public interface PropsKeys {
 
 	public static final String JOURNAL_LAR_CREATION_STRATEGY = "journal.lar.creation.strategy";
 
-	public static final String JOURNAL_PUBLISH_TO_LIVE_BY_DEFAULT = "journal.publish.to.live.by.default";
-
-	public static final String JOURNAL_PUBLISH_VERSION_HISTORY_BY_DEFAULT = "journal.publish.version.history.by.default";
-
 	public static final String JOURNAL_SYNC_CONTENT_SEARCH_ON_STARTUP = "journal.sync.content.search.on.startup";
-
-	public static final String JOURNAL_TEMPLATE_LANGUAGE_CONTENT = "journal.template.language.content";
 
 	public static final String JOURNAL_TRANSFORMER_LISTENER = "journal.transformer.listener";
 
@@ -1242,10 +1218,6 @@ public interface PropsKeys {
 	public static final String JSONWS_WEB_SERVICE_STRICT_HTTP_METHOD = "jsonws.web.service.strict.http.method";
 
 	public static final String JSP_WRITER_BUFFER_SIZE = "jsp.writer.buffer.size";
-
-	public static final String LANGUAGE_DISPLAY_STYLE_DEFAULT = "language.display.style.default";
-
-	public static final String LANGUAGE_DISPLAY_STYLE_OPTIONS = "language.display.style.options";
 
 	public static final String LAYOUT_AJAX_RENDER_ENABLE = "layout.ajax.render.enable";
 
@@ -2302,6 +2274,8 @@ public interface PropsKeys {
 	public static final String SETUP_LIFERAY_POOL_PROVIDER_JAR_NAME = "setup.liferay.pool.provider.jar.name";
 
 	public static final String SETUP_LIFERAY_POOL_PROVIDER_JAR_URL = "setup.liferay.pool.provider.jar.url";
+
+	public static final String SETUP_WIZARD_ADD_SAMPLE_DATA = "setup.wizard.add.sample.data";
 
 	public static final String SETUP_WIZARD_ENABLED = "setup.wizard.enabled";
 

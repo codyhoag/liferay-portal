@@ -64,22 +64,11 @@ public class EhcachePortalCacheManager<K extends Serializable, V>
 	}
 
 	@Override
-	public String getName() {
-		return _name;
-	}
-
-	@Override
 	public void reconfigureCaches(URL configurationURL) {
 		_configurationPair = EhcacheConfigurationHelperUtil.getConfiguration(
 			configurationURL, clusterAware, _usingDefault);
 
-		Configuration ehcacheConfiguration = _configurationPair.getKey();
-
-		if (!_name.equals(ehcacheConfiguration.getName())) {
-			return;
-		}
-
-		reconfigEhcache(ehcacheConfiguration);
+		reconfigEhcache(_configurationPair.getKey());
 
 		reconfigPortalCache(_configurationPair.getValue());
 	}
@@ -126,16 +115,11 @@ public class EhcachePortalCacheManager<K extends Serializable, V>
 
 	@Override
 	protected void doDestroy() {
-		try {
-			_cacheManager.shutdown();
-		}
-		finally {
-			if (_managementService != null) {
-				_managementService.dispose();
-			}
+		if (_serviceTracker != null) {
+			_serviceTracker.close();
 		}
 
-		_serviceTracker.close();
+		_cacheManager.shutdown();
 	}
 
 	@Override
@@ -164,10 +148,9 @@ public class EhcachePortalCacheManager<K extends Serializable, V>
 		_configurationPair = EhcacheConfigurationHelperUtil.getConfiguration(
 			configurationPath, clusterAware, _usingDefault);
 
-		_cacheManager = CacheManagerUtil.createCacheManager(
-			_configurationPair.getKey());
+		_cacheManager = new CacheManager(_configurationPair.getKey());
 
-		_name = _cacheManager.getName();
+		_cacheManager.setName(name);
 
 		FailSafeTimer failSafeTimer = _cacheManager.getTimer();
 
@@ -190,12 +173,14 @@ public class EhcachePortalCacheManager<K extends Serializable, V>
 			new PortalCacheManagerEventListener(
 				aggregatedCacheManagerListener));
 
-		Registry registry = RegistryUtil.getRegistry();
+		if (PropsValues.EHCACHE_PORTAL_CACHE_MANAGER_JMX_ENABLED) {
+			Registry registry = RegistryUtil.getRegistry();
 
-		_serviceTracker = registry.trackServices(
-			MBeanServer.class, new MBeanServerServiceTrackerCustomizer());
+			_serviceTracker = registry.trackServices(
+				MBeanServer.class, new MBeanServerServiceTrackerCustomizer());
 
-		_serviceTracker.open();
+			_serviceTracker.open();
+		}
 	}
 
 	protected void reconfigEhcache(Configuration configuration) {
@@ -268,48 +253,50 @@ public class EhcachePortalCacheManager<K extends Serializable, V>
 	private String _configPropertyKey;
 	private ObjectValuePair<Configuration, PortalCacheManagerConfiguration>
 		_configurationPair;
-	private ManagementService _managementService;
-	private String _name;
 	private boolean _registerCacheConfigurations = true;
 	private boolean _registerCacheManager = true;
 	private boolean _registerCaches = true;
 	private boolean _registerCacheStatistics = true;
-	private ServiceTracker <MBeanServer, MBeanServer> _serviceTracker;
+	private ServiceTracker <MBeanServer, ManagementService> _serviceTracker;
 	private boolean _usingDefault;
 
 	private class MBeanServerServiceTrackerCustomizer
-		implements ServiceTrackerCustomizer<MBeanServer, MBeanServer> {
+		implements ServiceTrackerCustomizer<MBeanServer, ManagementService> {
 
 		@Override
-		public MBeanServer addingService(
+		public ManagementService addingService(
 			ServiceReference<MBeanServer> serviceReference) {
 
 			Registry registry = RegistryUtil.getRegistry();
 
 			MBeanServer mBeanServer = registry.getService(serviceReference);
 
-			if (PropsValues.EHCACHE_PORTAL_CACHE_MANAGER_JMX_ENABLED) {
-				_managementService = new ManagementService(
-					_cacheManager, mBeanServer, _registerCacheManager,
-					_registerCaches, _registerCacheConfigurations,
-					_registerCacheStatistics);
+			ManagementService managementService = new ManagementService(
+				_cacheManager, mBeanServer, _registerCacheManager,
+				_registerCaches, _registerCacheConfigurations,
+				_registerCacheStatistics);
 
-				_managementService.init();
-			}
+			managementService.init();
 
-			return mBeanServer;
+			return managementService;
 		}
 
 		@Override
 		public void modifiedService(
 			ServiceReference<MBeanServer> serviceReference,
-			MBeanServer mBeanServer) {
+			ManagementService managementService) {
 		}
 
 		@Override
 		public void removedService(
 			ServiceReference<MBeanServer> serviceReference,
-			MBeanServer mBeanServer) {
+			ManagementService managementService) {
+
+			Registry registry = RegistryUtil.getRegistry();
+
+			registry.ungetService(serviceReference);
+
+			managementService.dispose();
 		}
 
 	}

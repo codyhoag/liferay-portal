@@ -11,7 +11,7 @@
 				<execute function="AssertClick" locator1="PGCalendar#MY_CALENDARS_MENULIST_ADD_CALENDAR" value1="Add Calendar" />
 
 				<execute function="SelectFrame" locator1="PGCalendarAddcalendar#ADD_CALENDAR_IFRAME" />
-				<execute function="Type#type" locator1="PGCalendarAddcalendar#NAME_FIELD" value1="${calendarName}" />
+				<execute function="Type#mouseOverFocusType" locator1="PGCalendarAddcalendar#NAME_FIELD" value1="${calendarName}" />
 				<execute function="AssertClick" locator1="PGCalendarAddcalendar#SAVE_BUTTON" value1="Save" />
 				<execute function="Click" locator1="PGCalendarAddcalendar#SAVE_BUTTON" />
 				<execute function="AssertTextEquals" locator1="PGCalendarAddcalendar#SUCCESS_MESSAGE" value1="Your request completed successfully." />
@@ -23,7 +23,7 @@
 					<execute function="AssertClick" locator1="PGCalendar#CURRENT_SITE_CALENDARS_MENULIST_ADD_CALENDAR" value1="Add Calendar" />
 
 					<execute function="SelectFrame" locator1="PGCalendarAddcalendar#ADD_CALENDAR_IFRAME" />
-					<execute function="Type#type" locator1="PGCalendarAddcalendar#NAME_FIELD" value1="${calendarName}" />
+					<execute function="Type#mouseOverFocusType" locator1="PGCalendarAddcalendar#NAME_FIELD" value1="${calendarName}" />
 					<execute function="AssertClick" locator1="PGCalendarAddcalendar#SAVE_BUTTON" value1="Save" />
 					<execute function="Click" locator1="PGCalendarAddcalendar#SAVE_BUTTON" />
 					<execute function="AssertTextEquals" locator1="PGCalendarAddcalendar#SUCCESS_MESSAGE" value1="Your request completed successfully." />
@@ -90,7 +90,7 @@
 				<execute function="AssertTextEquals" locator1="PGCalendar#MY_CALENDARS_CALENDAR_ADDITIONAL" value1="${user} - ${calendarName}" />
 				<execute function="Click" locator1="PGCalendar#MY_CALENDARS_CALENDAR_ADDITIONAL_MENULIST_ARROW" />
 				<execute function="AssertClickNoError" locator1="PGCalendar#MY_CALENDARS_CALENDAR_MENULIST_DELETE" value1="Delete" />
-				<execute function="Confirm#waitForConfirmation" locator1="PGCalendar#CONFIRMATION" value1="Are you sure you want to delete this? It will be deleted immediately." />
+				<execute function="Confirm#waitForConfirmation" value1="Are you sure you want to delete this? It will be deleted immediately." />
 				<execute function="AssertTextEquals" locator1="PGCalendar#DELETED_CALENDAR_SUCCESS_MESSAGE" value1="The calendar was deleted successfully." />
 			</then>
 			<elseif>
@@ -102,7 +102,7 @@
 					<execute function="AssertTextEquals" locator1="PGCalendar#CURRENT_SITE_CALENDARS_CALENDAR_ADDITIONAL" value1="${site} - ${calendarName}" />
 					<execute function="Click" locator1="PGCalendar#CURRENT_SITE_CALENDARS_CALENDAR_ADDITIONAL_MENULIST_ARROW" />
 					<execute function="AssertClickNoError" locator1="PGCalendar#CURRENT_SITE_CALENDARS_CALENDAR_MENULIST_DELETE" value1="Delete" />
-					<execute function="Confirm#waitForConfirmation" locator1="PGCalendar#CONFIRMATION" value1="Are you sure you want to delete this? It will be deleted immediately." />
+					<execute function="Confirm#waitForConfirmation" value1="Are you sure you want to delete this? It will be deleted immediately." />
 					<execute function="AssertTextEquals" locator1="PGCalendar#DELETED_CALENDAR_SUCCESS_MESSAGE" value1="The calendar was deleted successfully." />
 				</then>
 			</elseif>
@@ -251,7 +251,7 @@
 				<execute function="AssertClick" locator1="PGCalendar#MY_CALENDARS_CALENDAR_MENULIST_CALENDAR_SETTINGS" value1="Calendar Settings" />
 
 				<execute function="SelectFrame" locator1="PGCalendarCalendarSettings#CALENDAR_SETTING_IFRAME" />
-				<execute function="Type" locator1="PGCalendarCalendarSettings#NAME_FIELD" value1="${calendarNameEdit}" />
+				<execute function="Type#mouseOverFocusType" locator1="PGCalendarCalendarSettings#NAME_FIELD" value1="${calendarNameEdit}" />
 				<execute function="AssertClick" locator1="PGCalendarCalendarSettings#SAVE_BUTTON" value1="Save" />
 				<execute function="AssertTextEquals" locator1="PGCalendarCalendarSettings#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 
@@ -267,7 +267,7 @@
 					<execute function="AssertClick" locator1="PGCalendar#CURRENT_SITE_CALENDARS_CALENDAR_MENULIST_CALENDAR_SETTINGS" value1="Calendar Settings" />
 
 					<execute function="SelectFrame" locator1="PGCalendarCalendarSettings#CALENDAR_SETTING_IFRAME" />
-					<execute function="Type" locator1="PGCalendarCalendarSettings#NAME_FIELD" value1="${calendarNameEdit}" />
+					<execute function="Type#mouseOverFocusType" locator1="PGCalendarCalendarSettings#NAME_FIELD" value1="${calendarNameEdit}" />
 					<execute function="AssertClick" locator1="PGCalendarCalendarSettings#SAVE_BUTTON" value1="Save" />
 					<execute function="AssertTextEquals" locator1="PGCalendarCalendarSettings#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 
@@ -285,7 +285,7 @@
 					<execute function="AssertClick" locator1="PGCalendar#OTHER_CALENDARS_CALENDAR_MENULIST_CALENDAR_SETTINGS" value1="Calendar Settings" />
 
 					<execute function="SelectFrame" locator1="PGCalendarCalendarSettings#CALENDAR_SETTING_IFRAME" />
-					<execute function="Type" locator1="PGCalendarCalendarSettings#NAME_FIELD" value1="${calendarNameEdit}" />
+					<execute function="Type#mouseOverFocusType" locator1="PGCalendarCalendarSettings#NAME_FIELD" value1="${calendarNameEdit}" />
 					<execute function="AssertClick" locator1="PGCalendarCalendarSettings#SAVE_BUTTON" value1="Save" />
 					<execute function="AssertTextEquals" locator1="PGCalendarCalendarSettings#SUCCESS_MESSAGE" value1="Your request completed successfully." />
 
@@ -513,7 +513,7 @@
 			<then>
 				<execute function="Click" locator1="PGCalendar#MY_CALENDARS_CALENDAR_ADDITIONAL_GENERIC_MENULIST_ARROW" />
 				<execute function="AssertClickNoError" locator1="PGCalendar#MY_CALENDARS_CALENDAR_MENULIST_DELETE" value1="Delete" />
-				<execute function="Confirm#waitForConfirmation" locator1="PGCalendar#CONFIRMATION" value1="Are you sure you want to delete this? It will be deleted immediately." />
+				<execute function="Confirm#waitForConfirmation" value1="Are you sure you want to delete this? It will be deleted immediately." />
 				<execute function="AssertTextEquals" locator1="PGCalendar#DELETED_CALENDAR_SUCCESS_MESSAGE" value1="The calendar was deleted successfully." />
 			</then>
 		</while>
@@ -523,7 +523,7 @@
 			<then>
 				<execute function="Click" locator1="PGCalendar#CURRENT_SITE_CALENDARS_CALENDAR_ADDITIONAL_GENERIC_MENULIST_ARROW" />
 				<execute function="AssertClickNoError" locator1="PGCalendar#CURRENT_SITE_CALENDARS_CALENDAR_MENULIST_DELETE" value1="Delete" />
-				<execute function="Confirm#waitForConfirmation" locator1="PGCalendar#CONFIRMATION" value1="Are you sure you want to delete this? It will be deleted immediately." />
+				<execute function="Confirm#waitForConfirmation" value1="Are you sure you want to delete this? It will be deleted immediately." />
 				<execute function="AssertTextEquals" locator1="PGCalendar#DELETED_CALENDAR_SUCCESS_MESSAGE" value1="The calendar was deleted successfully." />
 			</then>
 		</while>

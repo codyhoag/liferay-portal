@@ -558,17 +558,83 @@ public class VerifyProperties extends VerifyProcess {
 		// Journal
 
 		new String[] {
+			"journal.article.check.interval", "check.interval",
+			"com.liferay.journal.web"
+		},
+		new String[] {
+			"journal.article.force.autogenerate.id",
+			"journal.article.force.autogenerate.id", "com.liferay.journal.web"
+		},
+		new String[] {
+			"journal.article.form.add", "journal.article.form.add",
+			"com.liferay.journal.web"
+		},
+		new String[] {
+			"journal.article.form.default.values",
+			"journal.article.form.default.values", "com.liferay.journal.web"
+		},
+		new String[] {
+			"journal.article.form.update", "journal.article.form.update",
+			"com.liferay.journal.web"
+		},
+		new String[] {
+			"journal.articles.search.with.index",
+			"journal.articles.search.with.index", "com.liferay.journal.web"
+		},
+		new String[] {
 			"journal.content.publish.to.live.by.default",
 			"publish.to.live.by.default", "com.liferay.journal.content.web"
 		},
-
 		new String[] {
 			"journal.content.search.show.listed", "show.listed",
 			"com.liferay.journal.content.search.web"
 		},
+		new String[] {
+			"journal.default.display.view", "default.display.view",
+			"com.liferay.journal.web"
+		},
+		new String[] {
+			"journal.display.views", "display.views", "com.liferay.journal.web"
+		},
+		new String[] {
+			"journal.feed.force.autogenerate.id",
+			"journal.feed.force.autogenerate.id", "com.liferay.journal.web"
+		},
+		new String[] {
+			"journal.publish.to.live.by.default", "publish.to.live.by.defaul",
+			"com.liferay.journal.web"
+		},
+		new String[] {
+			"journal.publish.version.history.by.default",
+			"publish.version.history.by.default", "com.liferay.journal.web"
+		},
+		new String[] {
+			"journal.template.language.content[css]",
+			"journal.article.template.language.content[css]",
+			"com.liferay.journal.web"
+		},
+		new String[] {
+			"journal.template.language.content[ftl]",
+			"journal.article.template.language.content[ftl]",
+			"com.liferay.journal.web"
+		},
+		new String[] {
+			"journal.template.language.content[vm]",
+			"journal.article.template.language.content[vm]",
+			"com.liferay.journal.web"
+		},
+		new String[] {
+			"journal.template.language.content[xsl]",
+			"journal.article.template.language.content[xsl]",
+			"com.liferay.journal.web"
+		},
 
 		// Language
 
+		new String[] {
+			"language.display.style.default", "ddm.template.key.default",
+			"com.liferay.site.navigation.language.web"
+		},
 		new String[] {
 			"language.display.templates.config", "display.templates.config",
 			"com.liferay.site.navigation.language.web"
@@ -985,6 +1051,7 @@ public class VerifyProperties extends VerifyProcess {
 			"configuration.jsp",
 		"editor.wysiwyg.portal-web.docroot.html.portlet.portal_settings." +
 			"email_notifications.jsp",
+		"ehcache.cache.manager.statistics.thread.pool.size",
 		"ehcache.statistics.enabled", "index.filter.search.limit",
 		"invitation.email.max.recipients", "invitation.email.message.body",
 		"invitation.email.message.subject", "javax.persistence.validation.mode",
@@ -1000,8 +1067,8 @@ public class VerifyProperties extends VerifyProcess {
 		"jpa.provider", "jpa.provider.property.eclipselink.allow-zero-id",
 		"jpa.provider.property.eclipselink.logging.level",
 		"jpa.provider.property.eclipselink.logging.timestamp",
-		"layout.reset.portlet.ids", "layout.types", "lucene.analyzer",
-		"lucene.store.jdbc.auto.clean.up",
+		"language.display.style.options", "layout.reset.portlet.ids",
+		"layout.types", "lucene.analyzer", "lucene.store.jdbc.auto.clean.up",
 		"lucene.store.jdbc.auto.clean.up.enabled",
 		"lucene.store.jdbc.auto.clean.up.interval",
 		"lucene.store.jdbc.dialect.db2", "lucene.store.jdbc.dialect.derby",
