@@ -2,6 +2,7 @@
 **/.gradle
 **/.settings
 **/.sonar
+**/checkstyle_report.*
 **/pmd-reports
 *.bak
 *.iml
