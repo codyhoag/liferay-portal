@@ -19,6 +19,8 @@
 
 	<property name="test.properties" value="com/liferay/portal/tools/dependencies/portal-tools.properties" />
 
+	<property name="javadoc.metrics.config" value="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xml" />
+
 	<property environment="env" />
 
 	<property file="${project.dir}/app.server.${user.name}.properties" />
