@@ -1430,6 +1430,105 @@ rerun your task.
 		</sequential>
 	</macrodef>
 
+	<target name="checkstyle">
+		<mkdir dir="javadoc-metrics/business-productivity" />
+		<mkdir dir="javadoc-metrics/collaboration-dm" />
+		<mkdir dir="javadoc-metrics/core" />
+		<mkdir dir="javadoc-metrics/marketplace" />
+		<mkdir dir="javadoc-metrics/staging" />
+		<mkdir dir="javadoc-metrics/user-management-portal-config" />
+		<mkdir dir="javadoc-metrics/wcm" />
+
+		<checkstyle config="${javadoc.metrics.config}"
+			failureProperty="checkstyle.failure"
+			failOnViolation="false">
+
+			<formatter type="xml" tofile="javadoc-metrics/business-productivity/checkstyle_report.xml"/>
+			<fileset dir="modules/apps" includes="${javadoc.business.productivity}"/>
+		</checkstyle>
+
+		<checkstyle config="${javadoc.metrics.config}"
+			failureProperty="checkstyle.failure"
+			failOnViolation="false">
+
+			<formatter type="xml" tofile="javadoc-metrics/collaboration-dm/checkstyle_report.xml"/>
+			<fileset dir="modules/apps" includes="${javadoc.collaboration.dm}"/>
+		</checkstyle>
+		
+		<checkstyle config="${javadoc.metrics.config}"
+			failureProperty="checkstyle.failure"
+			failOnViolation="false">
+
+			<formatter type="xml" tofile="javadoc-metrics/core/checkstyle_report.xml"/>
+			<fileset dir="modules/apps" includes="${javadoc.core}"/>
+		</checkstyle>
+		
+		<checkstyle config="${javadoc.metrics.config}"
+			failureProperty="checkstyle.failure"
+			failOnViolation="false">
+
+			<formatter type="xml" tofile="javadoc-metrics/marketplace/checkstyle_report.xml"/>
+			<fileset dir="modules/apps" includes="${javadoc.marketplace}"/>
+		</checkstyle>
+
+		<checkstyle config="${javadoc.metrics.config}"
+			failureProperty="checkstyle.failure"
+			failOnViolation="false">
+
+			<formatter type="xml" tofile="javadoc-metrics/staging/checkstyle_report.xml"/>
+			<fileset dir="modules/apps" includes="${javadoc.staging}"/>
+		</checkstyle>
+		
+		<checkstyle config="${javadoc.metrics.config}"
+			failureProperty="checkstyle.failure"
+			failOnViolation="false">
+
+			<formatter type="xml" tofile="javadoc-metrics/user-management-portal-config/checkstyle_report.xml"/>
+			<fileset dir="modules/apps" includes="${javadoc.user.management.portal.config}"/>
+		</checkstyle>
+		
+		<checkstyle config="${javadoc.metrics.config}"
+			failureProperty="checkstyle.failure"
+			failOnViolation="false">
+
+			<formatter type="xml" tofile="javadoc-metrics/wcm/checkstyle_report.xml"/>
+			<fileset dir="modules/apps" includes="${javadoc.wcm}"/>
+		</checkstyle>
+
+		<antcall target="checkstyle-html" />
+	</target>
+
+	<target name="checkstyle-html">
+
+		<xslt in="javadoc-metrics/business-productivity/checkstyle_report.xml" out="javadoc-metrics/business-productivity/checkstyle_report.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
+		<param name="team-name" expression="Business Productivity"/>
+		</xslt>
+
+		<xslt in="javadoc-metrics/collaboration-dm/checkstyle_report.xml" out="javadoc-metrics/collaboration-dm/checkstyle_report.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
+		<param name="team-name" expression="Collaboration &amp; Document Management"/>
+		</xslt>
+
+		<xslt in="javadoc-metrics/core/checkstyle_report.xml" out="javadoc-metrics/core/checkstyle_report.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
+		<param name="team-name" expression="Core Infrastructure"/>
+		</xslt>
+
+		<xslt in="javadoc-metrics/marketplace/checkstyle_report.xml" out="javadoc-metrics/marketplace/checkstyle_report.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
+		<param name="team-name" expression="Marketplace &amp; App Manager"/>
+		</xslt>
+
+		<xslt in="javadoc-metrics/staging/checkstyle_report.xml" out="javadoc-metrics/staging/checkstyle_report.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
+		<param name="team-name" expression="Staging"/>
+		</xslt>
+
+		<xslt in="javadoc-metrics/user-management-portal-config/checkstyle_report.xml" out="javadoc-metrics/user-management-portal-config/checkstyle_report.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
+		<param name="team-name" expression="User Management &amp; Portal Configuration"/>
+		</xslt>
+
+		<xslt in="javadoc-metrics/wcm/checkstyle_report.xml" out="javadoc-metrics/wcm/checkstyle_report.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
+		<param name="team-name" expression="WCM"/>
+		</xslt>
+	</target>
+
 	<target name="compile">
 	</target>
 
