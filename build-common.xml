@@ -35,6 +35,8 @@
 	<property file="${project.dir}/build.${env.HOSTNAME}.properties" />
 	<property file="${project.dir}/build.properties" />
 
+	<property file="${project.dir}/portal-impl/src/com/liferay/portal/tools/dependencies/javadoc.properties" />
+
 	<property file="${project.dir}/release.${user.name}.properties" />
 	<property file="${project.dir}/release.${env.COMPUTERNAME}.properties" />
 	<property file="${project.dir}/release.${env.HOST}.properties" />
