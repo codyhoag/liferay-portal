@@ -1454,7 +1454,7 @@ rerun your task.
 			<formatter type="xml" tofile="javadoc-metrics/forms-and-workflow/checkstyle_report.xml"/>
 			<fileset dir="modules/apps" includes="${javadoc.forms.workflow}"/>
 		</checkstyle>
-		
+
 		<checkstyle config="${javadoc.metrics.config}"
 			failureProperty="checkstyle.failure"
 			failOnViolation="false">
@@ -1462,7 +1462,7 @@ rerun your task.
 			<formatter type="xml" tofile="javadoc-metrics/foundation/checkstyle_report.xml"/>
 			<fileset dir="modules/apps" includes="${javadoc.foundation}"/>
 		</checkstyle>
-		
+
 		<checkstyle config="${javadoc.metrics.config}"
 			failureProperty="checkstyle.failure"
 			failOnViolation="false">
@@ -1478,7 +1478,7 @@ rerun your task.
 			<formatter type="xml" tofile="javadoc-metrics/screens/checkstyle_report.xml"/>
 			<fileset dir="modules/apps" includes="${javadoc.screens}"/>
 		</checkstyle>
-		
+
 		<checkstyle config="${javadoc.metrics.config}"
 			failureProperty="checkstyle.failure"
 			failOnViolation="false">
@@ -1486,7 +1486,7 @@ rerun your task.
 			<formatter type="xml" tofile="javadoc-metrics/sync/checkstyle_report.xml"/>
 			<fileset dir="modules/apps" includes="${javadoc.sync}"/>
 		</checkstyle>
-		
+
 		<checkstyle config="${javadoc.metrics.config}"
 			failureProperty="checkstyle.failure"
 			failOnViolation="false">
