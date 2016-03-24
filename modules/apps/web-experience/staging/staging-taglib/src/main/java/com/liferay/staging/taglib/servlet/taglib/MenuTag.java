@@ -33,10 +33,6 @@ public class MenuTag extends IncludeTag {
 		_layoutSetBranchId = layoutSetBranchId;
 	}
 
-	public void setMessage(String message) {
-		_message = message;
-	}
-
 	public void setOnlyActions(boolean onlyActions) {
 		_onlyActions = onlyActions;
 	}
@@ -60,7 +56,6 @@ public class MenuTag extends IncludeTag {
 	protected void cleanUp() {
 		_cssClass = null;
 		_layoutSetBranchId = 0;
-		_message = "staging";
 		_onlyActions = false;
 		_selPlid = 0;
 		_showManageBranches = false;
@@ -77,7 +72,6 @@ public class MenuTag extends IncludeTag {
 		request.setAttribute(
 			"liferay-staging:menu:layoutSetBranchId",
 			String.valueOf(_layoutSetBranchId));
-		request.setAttribute("liferay-staging:menu:message", _message);
 		request.setAttribute(
 			"liferay-staging:menu:onlyActions", String.valueOf(_onlyActions));
 		request.setAttribute(
@@ -91,7 +85,6 @@ public class MenuTag extends IncludeTag {
 
 	private String _cssClass;
 	private long _layoutSetBranchId;
-	private String _message = "staging";
 	private boolean _onlyActions;
 	private long _selPlid;
 	private boolean _showManageBranches;
