@@ -65,6 +65,10 @@ body {
 					margin-bottom: 0;
 				}
 			}
+
+			li.open > a:focus {
+				@include tab-focus;
+			}
 		}
 
 		.navbar-blank > li {
@@ -210,7 +214,12 @@ body {
 		top: 50%;
 
 		@include sm {
-			display: none;
+			padding: 0 0 0 8px;
+			position: relative;
+
+			.lexicon-icon {
+				width: 8px;
+			}
 		}
 	}
 

@@ -140,6 +140,7 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat;
 import org.gradle.api.tasks.testing.logging.TestLogEvent;
 import org.gradle.api.tasks.testing.logging.TestLoggingContainer;
 import org.gradle.execution.ProjectConfigurer;
+import org.gradle.external.javadoc.CoreJavadocOptions;
 import org.gradle.external.javadoc.MinimalJavadocOptions;
 import org.gradle.internal.service.ServiceRegistry;
 import org.gradle.plugins.ide.eclipse.EclipsePlugin;
@@ -896,6 +897,24 @@ public class LiferayDefaultsPlugin extends BaseDefaultsPlugin<LiferayPlugin> {
 		};
 
 		task.doLast(action);
+
+		task.onlyIf(
+			new Spec<Task>() {
+
+				@Override
+				public boolean isSatisfiedBy(Task task) {
+					Project project = task.getProject();
+
+					String version = String.valueOf(project.getVersion());
+
+					if (version.contains("LIFERAY-PATCHED-")) {
+						return false;
+					}
+
+					return true;
+				}
+
+			});
 
 		task.setDescription(
 			"Updates the project version in the " + Constants.BUNDLE_VERSION +
@@ -1772,6 +1791,15 @@ public class LiferayDefaultsPlugin extends BaseDefaultsPlugin<LiferayPlugin> {
 
 		configureTaskJavadocFilter(javadoc);
 		configureTaskJavadocOptions(javadoc);
+
+		JavaVersion javaVersion = JavaVersion.current();
+
+		if (javaVersion.isJava8Compatible()) {
+			CoreJavadocOptions coreJavadocOptions =
+				(CoreJavadocOptions)javadoc.getOptions();
+
+			coreJavadocOptions.addStringOption("Xdoclint:none", "-quiet");
+		}
 	}
 
 	protected void configureTaskJavadocFilter(Javadoc javadoc) {

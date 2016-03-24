@@ -28,7 +28,7 @@ Portlet selPortlet = PortletLocalServiceUtil.getPortletById(company.getCompanyId
 	Liferay.fire(
 		'closeWindow',
 		{
-			id: '_<%= HtmlUtil.escapeJS(selPortlet.getPortletId()) %>_editAsset',
+			id: '<%= HtmlUtil.escapeJS(selPortlet.getPortletId()) %>_editAsset',
 			portletAjaxable: <%= selPortlet.isAjaxable() %>,
 			refresh: '<%= HtmlUtil.escapeJS(selPortlet.getPortletId()) %>'
 		}

@@ -106,13 +106,13 @@ LayoutsTreeDisplayContext layoutsTreeDisplayContext = new LayoutsTreeDisplayCont
 									%>
 
 									<li>
-										<a data-qa-id="editPublicPages" href="<%= editLayoutURL.toString() %>"><liferay-ui:message arguments="<%= layoutsTreeDisplayContext.getRootNodeName(false) %>" key="edit-x" /></a>
+										<a data-qa-id="editPublicPages" href="<%= editLayoutURL.toString() %>"><liferay-ui:message key="configuration" /></a>
 									</li>
 								</c:if>
 
 								<c:if test="<%= layoutsTreeDisplayContext.isShowExpandLayoutSetButton(false) %>">
 									<li>
-										<a href="javascript:;" id="<portlet:namespace/>expandPagesLink"><liferay-ui:message key="expand" /></a>
+										<a href="javascript:;" id="<portlet:namespace/>expandPagesLink"><liferay-ui:message key="expand-area" /></a>
 									</li>
 								</c:if>
 
@@ -179,13 +179,13 @@ LayoutsTreeDisplayContext layoutsTreeDisplayContext = new LayoutsTreeDisplayCont
 									%>
 
 									<li>
-										<a data-qa-id="editPrivatePages" href="<%= editLayoutURL.toString() %>"><liferay-ui:message arguments="<%= layoutsTreeDisplayContext.getRootNodeName(true) %>" key="edit-x" /></a>
+										<a data-qa-id="editPrivatePages" href="<%= editLayoutURL.toString() %>"><liferay-ui:message key="configuration" /></a>
 									</li>
 								</c:if>
 
 								<c:if test="<%= layoutsTreeDisplayContext.isShowExpandLayoutSetButton(false) %>">
 									<li>
-										<a href="javascript:;" id="<portlet:namespace/>expandPagesLink"><liferay-ui:message key="expand" /></a>
+										<a href="javascript:;" id="<portlet:namespace/>expandPagesLink"><liferay-ui:message key="expand-area" /></a>
 									</li>
 								</c:if>
 
