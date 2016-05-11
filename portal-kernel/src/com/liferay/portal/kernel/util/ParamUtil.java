@@ -38,18 +38,18 @@ import javax.servlet.http.HttpServletRequest;
 public class ParamUtil {
 
 	/**
-	 * Returns the boolean parameter from the request. If the parameter is
+	 * Returns the request parameter value as a boolean. If the parameter is
 	 * missing, the default value is returned.
 	 *
 	 * <p>
-	 * If the value is not convertible to boolean, <code>false</code> is
+	 * If the value is not convertible to a boolean, <code>false</code> is
 	 * returned.
 	 * </p>
 	 *
 	 * @param  request the servlet request from which to read the parameter
 	 * @param  param the name of the parameter to return
-	 * @param  defaultValue the default value
-	 * @return the boolean parameter from the request
+	 * @param  defaultValue a default value
+	 * @return the request parameter value as a boolean
 	 */
 	public static boolean get(
 		HttpServletRequest request, String param, boolean defaultValue) {
@@ -58,14 +58,14 @@ public class ParamUtil {
 	}
 
 	/**
-	 * Returns the date parameter from the request. If the parameter is missing
-	 * or not convertible to Date, the default value is returned.
+	 * Returns the request parameter value as a Date. If the parameter is missing
+	 * or not convertible to a Date, the default value is returned.
 	 *
 	 * @param  request the servlet request from which to read the parameter
 	 * @param  param the name of the parameter to return
 	 * @param  dateFormat the format used to parse date
-	 * @param  defaultValue the default value
-	 * @return the date parameter from the request
+	 * @param  defaultValue a default value
+	 * @return the request parameter value as a Date
 	 */
 	public static Date get(
 		HttpServletRequest request, String param, DateFormat dateFormat,
@@ -76,13 +76,13 @@ public class ParamUtil {
 	}
 
 	/**
-	 * Returns the double parameter from the request. If the parameter is
-	 * missing or not convertible to double, the default value is returned.
+	 * Returns the request parameter value as a double. If the parameter is
+	 * missing or not convertible to a double, the default value is returned.
 	 *
 	 * @param  request the servlet request from which to read the parameter
 	 * @param  param the name of the parameter to return
-	 * @param  defaultValue the default value
-	 * @return the double parameter from the request
+	 * @param  defaultValue a default value
+	 * @return the request parameter value as a double
 	 */
 	public static double get(
 		HttpServletRequest request, String param, double defaultValue) {
@@ -91,13 +91,13 @@ public class ParamUtil {
 	}
 
 	/**
-	 * Returns the float parameter from the request. If the parameter is missing
-	 * or not convertible to float, the default value is returned.
+	 * Returns the request parameter value as a float. If the parameter is missing
+	 * or not convertible to a float, the default value is returned.
 	 *
 	 * @param  request the servlet request from which to read the parameter
 	 * @param  param the name of the parameter to return
-	 * @param  defaultValue the default value
-	 * @return the float parameter from the request
+	 * @param  defaultValue a default value
+	 * @return the request parameter value as a float
 	 */
 	public static float get(
 		HttpServletRequest request, String param, float defaultValue) {
@@ -106,13 +106,13 @@ public class ParamUtil {
 	}
 
 	/**
-	 * Returns the int parameter from the request. If the parameter is missing
-	 * or not convertible to int, the default value is returned.
+	 * Returns the request parameter value as an integer. If the parameter is missing
+	 * or not convertible to an integer, the default value is returned.
 	 *
 	 * @param  request the servlet request from which to read the parameter
 	 * @param  param the name of the parameter to return
-	 * @param  defaultValue the default value
-	 * @return the int parameter from the request
+	 * @param  defaultValue a default value
+	 * @return the request parameter value as an integer
 	 */
 	public static int get(
 		HttpServletRequest request, String param, int defaultValue) {
@@ -166,13 +166,13 @@ public class ParamUtil {
 	}
 
 	/**
-	 * Returns the string parameter from the request. If the parameter is
-	 * missing or not convertible to String, the default value is returned.
+	 * Returns the request parameter as a String. If the parameter is
+	 * missing or not convertible to a String, the default value is returned.
 	 *
 	 * @param  request the servlet request from which to read the parameter
 	 * @param  param the name of the parameter to return
-	 * @param  defaultValue the default value
-	 * @return the string parameter from the request
+	 * @param  defaultValue a default value
+	 * @return the request parameter as a String
 	 */
 	public static String get(
 		HttpServletRequest request, String param, String defaultValue) {
@@ -188,19 +188,19 @@ public class ParamUtil {
 	}
 
 	/**
-	 * Returns the boolean parameter from the portlet request. If the parameter
+	 * Returns the portlet request parameter value as a boolean. If the parameter
 	 * is missing, the default value is returned.
 	 *
 	 * <p>
-	 * If the value is not convertible to boolean, <code>false</code> is
+	 * If the value is not convertible to a boolean, <code>false</code> is
 	 * returned.
 	 * </p>
 	 *
 	 * @param  portletRequest the portlet request from which to read the
 	 *         parameter
 	 * @param  param the name of the parameter to return
-	 * @param  defaultValue the default value
-	 * @return the boolean parameter from the portlet request
+	 * @param  defaultValue a default value
+	 * @return the portlet request parameter value as a boolean
 	 */
 	public static boolean get(
 		PortletRequest portletRequest, String param, boolean defaultValue) {
@@ -347,19 +347,19 @@ public class ParamUtil {
 	}
 
 	/**
-	 * Returns the boolean parameter from the service context. If the parameter
+	 * Returns the service context parameter value as a boolean. If the parameter
 	 * is missing, the default value is returned.
 	 *
 	 * <p>
-	 * If the value is not convertible to boolean, <code>false</code> is
+	 * If the value is not convertible to a boolean, <code>false</code> is
 	 * returned.
 	 * </p>
 	 *
 	 * @param  serviceContext the service context from which to read the
 	 *         parameter
 	 * @param  param the name of the parameter to return
-	 * @param  defaultValue the default value
-	 * @return the boolean parameter from the service context
+	 * @param  defaultValue a default value
+	 * @return the service context parameter value as a boolean
 	 */
 	public static boolean get(
 		ServiceContext serviceContext, String param, boolean defaultValue) {
