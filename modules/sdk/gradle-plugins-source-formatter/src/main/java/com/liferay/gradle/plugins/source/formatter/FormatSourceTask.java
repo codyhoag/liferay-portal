@@ -28,6 +28,7 @@ import java.util.List;
 import org.gradle.api.Project;
 import org.gradle.api.file.FileCollection;
 import org.gradle.api.tasks.JavaExec;
+import org.gradle.util.CollectionUtils;
 
 /**
  * @author Raymond Augé
@@ -108,16 +109,33 @@ public class FormatSourceTask extends JavaExec {
 		_sourceFormatterArgs.setAutoFix(autoFix);
 	}
 
+	public String getBaseDirName() {
+		return _sourceFormatterArgs.getBaseDirName();
+	}
+
 	public void setBaseDirName(String baseDirName) {
 		_sourceFormatterArgs.setBaseDirName(baseDirName);
+	}
+
+	public String getCopyrightFileName() {
+		return _sourceFormatterArgs.getCopyrightFileName();
 	}
 
 	public void setCopyrightFileName(String copyrightFileName) {
 		_sourceFormatterArgs.setCopyrightFileName(copyrightFileName);
 	}
 
-	public void setFileNames(String[] fileNames) {
-		_sourceFormatterArgs.setFileNames(Arrays.asList(fileNames));
+	public List<String> getFileNames() {
+		return _sourceFormatterArgs.getFileNames();
+	}
+
+	public void setFileNames(Iterable<String> fileNames) {
+		_sourceFormatterArgs.setFileNames(
+			CollectionUtils.toStringList(fileNames));
+	}
+
+	public void setFileNames(String... fileNames) {
+		setFileNames(Arrays.asList(fileNames));
 	}
 
 	public void setFormatCurrentBranch(boolean formatCurrentBranch) {
