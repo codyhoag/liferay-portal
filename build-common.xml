@@ -137,110 +137,6 @@
 		</then>
 	</if>
 
-	<propertyselector
-		casesensitive="false"
-		delimiter="," match="app\.(.+)\.dir"
-		property="app.server.dir.property.list"
-		select="\1"
-	/>
-
-	<for list="${app.server.dir.property.list}" param="app.server.dir.property">
-		<sequential>
-
-			<!-- Original -->
-
-			<propertycopy
-				from="app.@{app.server.dir.property}.dir"
-				name="temp.app.server.dir.location"
-			/>
-
-			<!-- Absolute -->
-
-			<property
-				location="${temp.app.server.dir.location}"
-				name="temp.app.server.dir.location.absolute"
-			/>
-
-			<!-- Unix -->
-
-			<pathconvert property="temp.app.server.dir.location.unix" targetos="unix">
-				<path location="${temp.app.server.dir.location.absolute}" />
-			</pathconvert>
-
-			<propertycopy
-				from="temp.app.server.dir.location.unix"
-				name="app.@{app.server.dir.property}.dir.unix"
-				override="true"
-			/>
-
-			<!-- Windows -->
-
-			<pathconvert property="temp.app.server.dir.location.windows" targetos="windows">
-				<path location="${temp.app.server.dir.location.absolute}" />
-			</pathconvert>
-
-			<propertycopy
-				from="temp.app.server.dir.location.windows"
-				name="app.@{app.server.dir.property}.dir.windows"
-				override="true"
-			/>
-
-			<!-- Override -->
-
-			<propertycopy
-				from="temp.app.server.dir.location.unix"
-				name="app.@{app.server.dir.property}.dir"
-				override="true"
-			/>
-
-			<!-- Reset -->
-
-			<var name="temp.app.server.dir.location" unset="true" />
-			<var name="temp.app.server.dir.location.absolute" unset="true" />
-			<var name="temp.app.server.dir.location.unix" unset="true" />
-			<var name="temp.app.server.dir.location.windows" unset="true" />
-		</sequential>
-	</for>
-
-	<propertyselector
-		casesensitive="false"
-		delimiter="," match="app\.(.+)\.version"
-		property="app.server.version.property.list"
-		select="\1"
-	/>
-
-	<for list="${app.server.version.property.list}" param="app.server.version.property">
-		<sequential>
-
-			<!-- Version -->
-
-			<propertycopy
-				from="app.@{app.server.version.property}.version"
-				name="temp.app.server.version"
-			/>
-
-			<antelope:stringutil property="temp.app.server.major.version.endindex" string="${temp.app.server.version}">
-				<antelope:indexof string="." />
-			</antelope:stringutil>
-
-			<antelope:stringutil property="temp.app.server.major.version" string="${temp.app.server.version}">
-				<antelope:substring beginindex="0" endindex="${temp.app.server.major.version.endindex}" />
-			</antelope:stringutil>
-
-			<!-- Major version -->
-
-			<propertycopy
-				from="temp.app.server.major.version"
-				name="app.@{app.server.version.property}.major.version"
-			/>
-
-			<!-- Reset -->
-
-			<var name="temp.app.server.major.version" unset="true" />
-			<var name="temp.app.server.version" unset="true" />
-		</sequential>
-	</for>
-
 	<property name="liferay.home" value="${app.server.parent.dir}" />
 
 	<basename file="${basedir}" property="basedir.name" />
@@ -415,14 +311,13 @@
 		<antversion atleast="1.7.0" />
 	</condition>
 
-	<if>
-		<not>
-			<equals arg1="${correct.ant.version}" arg2="true" />
-		</not>
-		<then>
-			<fail>Please use Ant 1.7.0 or above.</fail>
-		</then>
-	</if>
+	<fail message="Please use Ant 1.7.0 or above.">
+		<condition>
+			<not>
+				<istrue value="${correct.ant.version}" />
+			</not>
+		</condition>
+	</fail>
 
 	<whichresource property="google.errorprone.compiler" resource="/com/google/errorprone/ErrorProneAntCompilerAdapter.class" />
 
@@ -991,6 +886,7 @@ Please set the environment variable ANT_OPTS to the recommended value of
 				<jvmarg value="-Dliferay.log.dir=${liferay.home}/logs" />
 				<jvmarg value="-Dliferay.mode=test" />
 				<jvmarg value="-Dosgi.state.dir=${liferay.home}/osgi/state" />
+				<jvmarg value="-Drelease.versions.test.other.dir=${release.versions.test.other.dir}" />
 				<misc />
 				<jvmarg value="-Duser.timezone=GMT" />
 				<classpath location="test-coverage" />
@@ -1493,6 +1389,8 @@ rerun your task.
 			<property file="test.properties" />
 
 			<property location="${basedir}/.gradle/gradle.properties" name="gradle.properties.file" />
+
+			<mkdir dir="${basedir}/.gradle" />
 
 			<delete file="${gradle.properties.file}" />
 

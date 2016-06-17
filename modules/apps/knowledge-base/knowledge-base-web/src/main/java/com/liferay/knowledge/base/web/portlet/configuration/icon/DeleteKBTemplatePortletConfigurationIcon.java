@@ -24,7 +24,6 @@ import com.liferay.portal.kernel.portlet.configuration.icon.BasePortletConfigura
 import com.liferay.portal.kernel.portlet.configuration.icon.PortletConfigurationIcon;
 import com.liferay.portal.kernel.security.permission.PermissionChecker;
 import com.liferay.portal.kernel.theme.ThemeDisplay;
-import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.kernel.util.PortalUtil;
 import com.liferay.portal.kernel.util.WebKeys;
 
@@ -63,29 +62,17 @@ public class DeleteKBTemplatePortletConfigurationIcon
 			portletRequest, KBPortletKeys.KNOWLEDGE_BASE_ADMIN,
 			PortletRequest.ACTION_PHASE);
 
-		portletURL.setParameter("mvcPath", "/admin/view_template.jsp");
-
 		portletURL.setParameter(ActionRequest.ACTION_NAME, "deleteKBTemplate");
-
-		ThemeDisplay themeDisplay = (ThemeDisplay)portletRequest.getAttribute(
-			WebKeys.THEME_DISPLAY);
-
-		String redirect = themeDisplay.getURLCurrent();
+		portletURL.setParameter("mvcPath", "/admin/view_template.jsp");
 
 		KBTemplate kbTemplate = (KBTemplate)portletRequest.getAttribute(
 			KBWebKeys.KNOWLEDGE_BASE_KB_TEMPLATE);
 
-		long kbTemplateId = ParamUtil.getLong(portletRequest, "kbTemplateId");
+		PortletURL redirectURL = PortalUtil.getControlPanelPortletURL(
+			portletRequest, KBPortletKeys.KNOWLEDGE_BASE_ADMIN,
+			PortletRequest.RENDER_PHASE);
 
-		if (kbTemplate.getKbTemplateId() == kbTemplateId) {
-			PortletURL homeURL = PortalUtil.getControlPanelPortletURL(
-				portletRequest, KBPortletKeys.KNOWLEDGE_BASE_ADMIN,
-				PortletRequest.RENDER_PHASE);
-
-			redirect = homeURL.toString();
-		}
-
-		portletURL.setParameter("redirect", redirect);
+		portletURL.setParameter("redirect", redirectURL.toString());
 
 		portletURL.setParameter(
 			"kbTemplateId", String.valueOf(kbTemplate.getKbTemplateId()));

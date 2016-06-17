@@ -188,7 +188,7 @@ public class LiferayThemeDefaultsPlugin implements Plugin<Project> {
 		copy.eachFile(new StripPathSegmentsAction(2));
 
 		copy.from(
-			new Closure<Void>(null) {
+			new Closure<Void>(project) {
 
 				@SuppressWarnings("unused")
 				public FileTree doCall() {
@@ -228,7 +228,9 @@ public class LiferayThemeDefaultsPlugin implements Plugin<Project> {
 
 		task.dependsOn(taskDependency);
 
-		taskCache.skipTaskDependency(taskDependency);
+		if (taskCache != null) {
+			taskCache.skipTaskDependency(taskDependency);
+		}
 	}
 
 	protected ReplaceRegexTask addTaskUpdateVersion(final Project project) {
@@ -264,7 +266,7 @@ public class LiferayThemeDefaultsPlugin implements Plugin<Project> {
 
 		return cacheExtension.task(
 			LiferayThemePlugin.GULP_BUILD_TASK_NAME,
-			new Closure<Void>(null) {
+			new Closure<Void>(project) {
 
 				@SuppressWarnings("unused")
 				public void doCall(TaskCache taskCache) {
@@ -364,12 +366,17 @@ public class LiferayThemeDefaultsPlugin implements Plugin<Project> {
 		addTaskSkippedDependency(
 			executeGulpTask, taskCache,
 			themeProject.getPath() + ":" + JavaPlugin.CLASSES_TASK_NAME);
+
+		if (taskCache != null) {
+			taskCache.testFile(themeProject.getBuildFile(), dir);
+		}
 	}
 
 	protected void configureTasksExecuteGulp(
 		Project project, final Copy expandFrontendCSSCommonTask,
 		final Project frontendThemeStyledProject,
-		final Project frontendThemeUnstyledProject, final TaskCache taskCache) {
+		final Project frontendThemeUnstyledProject,
+		final TaskCache... taskCaches) {
 
 		TaskContainer taskContainer = project.getTasks();
 
@@ -379,10 +386,20 @@ public class LiferayThemeDefaultsPlugin implements Plugin<Project> {
 
 				@Override
 				public void execute(ExecuteGulpTask executeGulpTask) {
+					TaskCache executeGulpTaskCache = null;
+
+					for (TaskCache taskCache : taskCaches) {
+						if (executeGulpTask.equals(taskCache.getTask())) {
+							executeGulpTaskCache = taskCache;
+
+							break;
+						}
+					}
+
 					configureTaskExecuteGulp(
 						executeGulpTask, expandFrontendCSSCommonTask,
 						frontendThemeStyledProject,
-						frontendThemeUnstyledProject, taskCache);
+						frontendThemeUnstyledProject, executeGulpTaskCache);
 				}
 
 			});

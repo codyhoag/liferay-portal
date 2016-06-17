@@ -164,6 +164,9 @@ public class LiferayOSGiDefaultsPlugin implements Plugin<Project> {
 		"https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/" +
 			"public";
 
+	public static final String DEPLOY_APP_SERVER_LIB_TASK_NAME =
+		"deployAppServerLib";
+
 	public static final String DEPLOY_TOOL_TASK_NAME = "deployTool";
 
 	public static final String INSTALL_CACHE_TASK_NAME = "installCache";
@@ -193,7 +196,16 @@ public class LiferayOSGiDefaultsPlugin implements Plugin<Project> {
 			project.getRootProject(), "portal-impl");
 		final boolean publishing = isPublishing(project);
 		boolean testProject = isTestProject(project);
-		boolean deployToTools = isDeployToTools(project);
+
+		boolean deployToAppServerLibs = false;
+		boolean deployToTools = false;
+
+		if (FileUtil.exists(project, ".lfrbuild-app-server-lib")) {
+			deployToAppServerLibs = true;
+		}
+		else if (FileUtil.exists(project, ".lfrbuild-tool")) {
+			deployToTools = true;
+		}
 
 		applyPlugins(project);
 
@@ -240,8 +252,15 @@ public class LiferayOSGiDefaultsPlugin implements Plugin<Project> {
 
 		addTaskCopyLibs(project);
 
-		if (isDeployToTools(project)) {
-			addTaskDeployTool(project);
+		if (deployToAppServerLibs) {
+			addTaskAlias(
+				project, DEPLOY_APP_SERVER_LIB_TASK_NAME,
+				LiferayBasePlugin.DEPLOY_TASK_NAME);
+		}
+		else if (deployToTools) {
+			addTaskAlias(
+				project, DEPLOY_TOOL_TASK_NAME,
+				LiferayBasePlugin.DEPLOY_TASK_NAME);
 		}
 
 		final Jar jarJavadocTask = addTaskJarJavadoc(project);
@@ -256,7 +275,7 @@ public class LiferayOSGiDefaultsPlugin implements Plugin<Project> {
 		configureBasePlugin(project, portalRootDir);
 		configureBundleDefaultInstructions(project, portalRootDir, publishing);
 		configureConfigurations(project);
-		configureDeployDir(project, deployToTools);
+		configureDeployDir(project, deployToAppServerLibs, deployToTools);
 		configureJavaPlugin(project);
 		configureProject(project);
 		configureRepositories(project);
@@ -326,7 +345,7 @@ public class LiferayOSGiDefaultsPlugin implements Plugin<Project> {
 		TaskExecutionGraph taskExecutionGraph = gradle.getTaskGraph();
 
 		taskExecutionGraph.whenReady(
-			new Closure<Void>(null) {
+			new Closure<Void>(project) {
 
 				@SuppressWarnings("unused")
 				public void doCall(TaskExecutionGraph taskExecutionGraph) {
@@ -498,6 +517,20 @@ public class LiferayOSGiDefaultsPlugin implements Plugin<Project> {
 		GradleUtil.addDependency(
 			project, JavaPlugin.TEST_COMPILE_CONFIGURATION_NAME,
 			"org.springframework", "spring-test", "3.2.15.RELEASE");
+	}
+
+	protected Task addTaskAlias(
+		Project project, String taskName, String originalTaskName) {
+
+		Task task = project.task(taskName);
+
+		Task originalTask = GradleUtil.getTask(project, originalTaskName);
+
+		task.dependsOn(originalTask);
+		task.setDescription("Alias for " + originalTask);
+		task.setGroup(originalTask.getGroup());
+
+		return task;
 	}
 
 	protected Task addTaskBaseline(
@@ -728,12 +761,8 @@ public class LiferayOSGiDefaultsPlugin implements Plugin<Project> {
 
 		copy.from(configuration);
 		copy.into(libDir);
-
-		Closure<String> closure = new RenameDependencyClosure(
-			project, configuration.getName());
-
-		copy.rename(closure);
-
+		copy.rename(
+			new RenameDependencyClosure(project, configuration.getName()));
 		copy.setEnabled(false);
 
 		Task classesTask = GradleUtil.getTask(
@@ -742,19 +771,6 @@ public class LiferayOSGiDefaultsPlugin implements Plugin<Project> {
 		classesTask.dependsOn(copy);
 
 		return copy;
-	}
-
-	protected Task addTaskDeployTool(Project project) {
-		Task task = project.task(DEPLOY_TOOL_TASK_NAME);
-
-		Task deployTask = GradleUtil.getTask(
-			project, LiferayBasePlugin.DEPLOY_TASK_NAME);
-
-		task.dependsOn(deployTask);
-		task.setDescription("Alias for " + deployTask);
-		task.setGroup(BasePlugin.BUILD_GROUP);
-
-		return task;
 	}
 
 	protected InstallCacheTask addTaskInstallCache(final Project project) {
@@ -902,7 +918,7 @@ public class LiferayOSGiDefaultsPlugin implements Plugin<Project> {
 			project, UPDATE_FILE_VERSIONS_TASK_NAME, ReplaceRegexTask.class);
 
 		replaceRegexTask.pre(
-			new Closure<String>(null) {
+			new Closure<String>(project) {
 
 				@SuppressWarnings("unused")
 				public String doCall(String content, File file) {
@@ -921,7 +937,7 @@ public class LiferayOSGiDefaultsPlugin implements Plugin<Project> {
 			});
 
 		replaceRegexTask.replaceOnlyIf(
-			new Closure<Boolean>(null) {
+			new Closure<Boolean>(project) {
 
 				@SuppressWarnings("unused")
 				public Boolean doCall(
@@ -1324,7 +1340,8 @@ public class LiferayOSGiDefaultsPlugin implements Plugin<Project> {
 	}
 
 	protected void configureDeployDir(
-		final Project project, final boolean deployToTools) {
+		final Project project, final boolean deployToAppServerLibs,
+		final boolean deployToTools) {
 
 		final LiferayExtension liferayExtension = GradleUtil.getExtension(
 			project, LiferayExtension.class);
@@ -1334,6 +1351,12 @@ public class LiferayOSGiDefaultsPlugin implements Plugin<Project> {
 
 				@Override
 				public File call() throws Exception {
+					if (deployToAppServerLibs) {
+						return new File(
+							liferayExtension.getAppServerPortalDir(),
+							"WEB-INF/lib");
+					}
+
 					if (deployToTools) {
 						return new File(
 							liferayExtension.getLiferayHome(),
@@ -1596,7 +1619,7 @@ public class LiferayOSGiDefaultsPlugin implements Plugin<Project> {
 	}
 
 	protected void configureTaskJarSources(final Jar jarSourcesTask) {
-		Project project = jarSourcesTask.getProject();
+		final Project project = jarSourcesTask.getProject();
 
 		TaskContainer taskContainer = project.getTasks();
 
@@ -1611,14 +1634,12 @@ public class LiferayOSGiDefaultsPlugin implements Plugin<Project> {
 
 							@Override
 							public FileCollection call() throws Exception {
-								Project project = patchTask.getProject();
-
 								return project.zipTree(
 									patchTask.getOriginalLibSrcFile());
 							}
 
 						},
-						new Closure<Void>(null) {
+						new Closure<Void>(project) {
 
 							@SuppressWarnings("unused")
 							public void doCall(CopySpec copySpec) {
@@ -1654,7 +1675,7 @@ public class LiferayOSGiDefaultsPlugin implements Plugin<Project> {
 							}
 
 						},
-						new Closure<Void>(null) {
+						new Closure<Void>(project) {
 
 							@SuppressWarnings("unused")
 							public void doCall(CopySpec copySpec) {
@@ -2188,14 +2209,6 @@ public class LiferayOSGiDefaultsPlugin implements Plugin<Project> {
 		sourceDirectorySet = sourceSet.getAllSource();
 
 		if (!sourceDirectorySet.isEmpty()) {
-			return true;
-		}
-
-		return false;
-	}
-
-	protected boolean isDeployToTools(Project project) {
-		if (FileUtil.exists(project, ".lfrbuild-tool")) {
 			return true;
 		}
 
