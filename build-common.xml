@@ -1500,31 +1500,31 @@ rerun your task.
 
 	<target name="checkstyle-html">
 
-		<xslt in="javadoc-metrics/forms-and-workflow/checkstyle_report.xml" out="javadoc-metrics/forms-and-workflow/checkstyle_report.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
+		<xslt in="javadoc-metrics/forms-and-workflow/checkstyle_report.xml" out="javadoc-metrics/Forms-Workflow.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
 		<param name="team-name" expression="Forms and Workflow"/>
 		</xslt>
 
-		<xslt in="javadoc-metrics/collaboration/checkstyle_report.xml" out="javadoc-metrics/collaboration/checkstyle_report.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
+		<xslt in="javadoc-metrics/collaboration/checkstyle_report.xml" out="javadoc-metrics/Collaboration.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
 		<param name="team-name" expression="Collaboration"/>
 		</xslt>
 
-		<xslt in="javadoc-metrics/foundation/checkstyle_report.xml" out="javadoc-metrics/foundation/checkstyle_report.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
+		<xslt in="javadoc-metrics/foundation/checkstyle_report.xml" out="javadoc-metrics/Foundation.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
 		<param name="team-name" expression="Foundation"/>
 		</xslt>
 
-		<xslt in="javadoc-metrics/marketplace/checkstyle_report.xml" out="javadoc-metrics/marketplace/checkstyle_report.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
+		<xslt in="javadoc-metrics/marketplace/checkstyle_report.xml" out="javadoc-metrics/Marketplace.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
 		<param name="team-name" expression="Marketplace"/>
 		</xslt>
 
-		<xslt in="javadoc-metrics/screens/checkstyle_report.xml" out="javadoc-metrics/screens/checkstyle_report.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
+		<xslt in="javadoc-metrics/screens/checkstyle_report.xml" out="javadoc-metrics/Screens.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
 		<param name="team-name" expression="Screens"/>
 		</xslt>
 
-		<xslt in="javadoc-metrics/sync/checkstyle_report.xml" out="javadoc-metrics/sync/checkstyle_report.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
+		<xslt in="javadoc-metrics/sync/checkstyle_report.xml" out="javadoc-metrics/Sync.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
 		<param name="team-name" expression="Sync"/>
 		</xslt>
 
-		<xslt in="javadoc-metrics/web-experience/checkstyle_report.xml" out="javadoc-metrics/web-experience/checkstyle_report.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
+		<xslt in="javadoc-metrics/web-experience/checkstyle_report.xml" out="javadoc-metrics/Web-Experience.html" style="portal-impl/src/com/liferay/portal/tools/dependencies/checkstyle.xsl">
 		<param name="team-name" expression="Web Experience"/>
 		</xslt>
 	</target>
