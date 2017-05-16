@@ -20,6 +20,12 @@ import com.liferay.portal.kernel.search.query.QueryVisitor;
 import com.liferay.portal.kernel.util.StringBundler;
 
 /**
+ * Provides support for parsing raw, human readable query syntax. No
+ * transformation is made on the user input. <br> <br> Note: the actual query
+ * syntax and any further processing are dependent on your search engine's
+ * implementation details. Consult your search provider's documentation for more
+ * information.
+ *
  * @author Bruno Farache
  */
 public class StringQuery extends BaseQueryImpl implements Query {
