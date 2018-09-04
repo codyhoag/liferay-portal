@@ -10,7 +10,7 @@ import ImageEditorLoading from './ImageEditorLoading.es';
 import templates from './ImageEditor.soy';
 
 /**
- * ImageEditor
+ * Creates an ImageEditor Component
  *
  * This class bootstraps all the necessary parts of an image editor. It only controls
  * the state and history of the editing process, orchestrating how the different parts
@@ -18,34 +18,30 @@ import templates from './ImageEditor.soy';
  *
  * All image processing is delegated to the different image editor capability implementations. The
  * editor provides:
- * - A common way of exposing the functionality.
+ * - A common way of exposing the functionality
  * - Some registration points which can be used by the image editor capability implementors
- * to provide UI controls.
- * @review
+ * to provide UI controls
  */
 class ImageEditor extends PortletBase {
 	/**
 	 * @inheritDoc
-	 * @review
 	 */
 	attached() {
 		/**
-		 * This index points to the current state in the history.
+		 * This index points to the current state in the history
 		 * @protected
-		 * @review
 		 * @type {Number}
 		 */
 		this.historyIndex_ = 0;
 
 		/**
-		 * History of the different image states during edition. Every
-		 * entry entry represents a change to the image on top of the
+		 * History of the different image states during editing. Every
+		 * entry represents a change to the image on top of the
 		 * previous one.
-		 * - History entries are objects with
-		 *     - url (optional): the url representing the image
+		 * History entries are objects with the following attributes:
+		 *     - url (optional): the URL representing the image
 		 *     - data: the ImageData object of the image
 		 * @protected
-		 * @review
 		 * @type {Array.<Object>}
 		 */
 		this.history_ = [
@@ -77,9 +73,7 @@ class ImageEditor extends PortletBase {
 
 	/**
 	 * Accepts the current changes applied by the active control and creates
-	 * a new entry in the history stack. Doing this will wipe out any
-	 * stale redo states.
-	 * @review
+	 * a new entry in the history stack. This wipes out any stale redo states.
 	 */
 	accept() {
 		let selectedControl = this.components[this.id + '_selected_control_' + this.selectedControl.variant];
@@ -98,17 +92,15 @@ class ImageEditor extends PortletBase {
 	 * Notifies the opener app that the user wants to close the
 	 * editor without saving the changes
 	 * @protected
-	 * @review
 	 */
 	close_() {
 		Liferay.Util.getWindow().hide();
 	}
 
 	/**
-	 * Creates a new history entry state.
-	 * @param  {ImageData} imageData The ImageData of the new image.
+	 * Creates a new history entry state
+	 * @param  {ImageData} imageData The ImageData of the new image
 	 * @protected
-	 * @review
 	 */
 	createHistoryEntry_(imageData) {
 		// Push new state and discard stale redo states
@@ -121,8 +113,7 @@ class ImageEditor extends PortletBase {
 
 	/**
 	 * Discards the current changes applied by the active control and reverts
-	 * the image to its state before the control activation.
-	 * @review
+	 * the image to its state before the control activation
 	 */
 	discard() {
 		this.selectedControl = null;
@@ -131,18 +122,16 @@ class ImageEditor extends PortletBase {
 	}
 
 	/**
-	 * Retrieves the editor canvas DOM node.
-	 * @return {Element} The canvas element.
-	 * @review
+	 * Retrieves the editor canvas DOM node
+	 * @return {Element} The canvas element
 	 */
 	getImageEditorCanvas() {
 		return this.element.querySelector('.lfr-image-editor-image-container canvas');
 	}
 
 	/**
-	 * Retrieves the Blob representation of the current image.
-	 * @return {CancellablePromise} A promise that will resolve with the image blob.
-	 * @review
+	 * Retrieves the Blob representation of the current image
+	 * @return {CancellablePromise} A promise that resolves with the image blob
 	 */
 	getImageEditorImageBlob() {
 		return new CancellablePromise((resolve, reject) => {
@@ -173,9 +162,8 @@ class ImageEditor extends PortletBase {
 	}
 
 	/**
-	 * Retrieves the ImageData representation of the current image.
-	 * @return {CancellablePromise} A promise that will resolve with the image data.
-	 * @review
+	 * Retrieves the ImageData representation of the current image
+	 * @return {CancellablePromise} A promise that resolves with the image data
 	 */
 	getImageEditorImageData() {
 		return this.history_[this.historyIndex_].getImageData();
@@ -183,10 +171,9 @@ class ImageEditor extends PortletBase {
 
 	/**
 	 * Normalizes different mime types to the most similar mime type
-	 * available to canvas implementations.
+	 * available to canvas implementations
 	 * @param  {String} mimeType Original mime type
 	 * @return {String} The normalized mime type
-	 * @review
 	 * @see http://kangax.github.io/jstests/toDataUrl_mime_type_test/
 	 */
 	normalizeCanvasMimeType_(mimeType) {
@@ -197,7 +184,6 @@ class ImageEditor extends PortletBase {
 	 * Notifies the opener app of the result of the save action
 	 * @param  {Object} result The server response to the save action
 	 * @protected
-	 * @review
 	 */
 	notifySaveResult_(result) {
 		this.components.loading.show = false;
@@ -221,7 +207,6 @@ class ImageEditor extends PortletBase {
 	 * Updates the image back to a previously undone state in the history.
 	 * Redoing an action recovers the undone image changes and enables the
 	 * undo stack in case the user wants to undo the changes again.
-	 * @review
 	 */
 	redo() {
 		this.historyIndex_++;
@@ -229,9 +214,8 @@ class ImageEditor extends PortletBase {
 	}
 
 	/**
-	 * Selects a control and starts the edition phase for it.
+	 * Selects a control and starts its editing phase
 	 * @param  {MouseEvent} event
-	 * @review
 	 */
 	requestImageEditorEdit(event) {
 		let controls = this.imageEditorCapabilities.tools.reduce(
@@ -250,8 +234,7 @@ class ImageEditor extends PortletBase {
 
 	/**
 	 * Queues a request for a preview process of the current image by the
-	 * currently selected control.
-	 * @review
+	 * currently selected control
 	 */
 	requestImageEditorPreview() {
 		let selectedControl = this.components[this.id + '_selected_control_' + this.selectedControl.variant];
@@ -265,8 +248,8 @@ class ImageEditor extends PortletBase {
 
 	/**
 	 * Discards all changes and restores the original state of the image.
-	 * Unlike the undo/redo methods, reset will wipe out all the history.
-	 * @review
+	 * Unlike the {@link ImageEditor#undo|undo} and 
+	 * {@link ImageEditor#redo|redo} methods, reset wipes out the entire history.
 	 */
 	reset() {
 		this.historyIndex_ = 0;
@@ -275,10 +258,9 @@ class ImageEditor extends PortletBase {
 	}
 
 	/**
-	 * Tries to save the current image using the provided save url.
-	 * @param {MouseEvent} event The MouseEvent that triggered the save action
+	 * Tries to save the current image using the provided save URL
+	 * @param {MouseEvent} event The MouseEvent that triggers the save action
 	 * @protected
-	 * @review
 	 */
 	save_(event) {
 		if (!event.delegateTarget.disabled) {
@@ -294,7 +276,6 @@ class ImageEditor extends PortletBase {
 	 * @param  {!String} saveMimeType The optional passed value for the attribute
 	 * @protected
 	 * @return {String} The computed value for the attribute
-	 * @review
 	 */
 	setterSaveMimeTypeFn_(saveMimeType) {
 		if (!saveMimeType) {
@@ -308,10 +289,9 @@ class ImageEditor extends PortletBase {
 	}
 
 	/**
-	 * Shows an error message in the editor
-	 * @param  {String} message The error message to show
+	 * Displays an error message in the editor
+	 * @param  {String} message The error message to display
 	 * @protected
-	 * @review
 	 */
 	showError_(message) {
 		this.components.loading.show = false;
@@ -334,11 +314,10 @@ class ImageEditor extends PortletBase {
 
 	/**
 	 * Sends a given image blob to the server for processing
-	 * and storing.
+	 * and storing
 	 * @param  {Blob} imageBlob The image blob to send to the server
 	 * @protected
 	 * @return {CancellablePromise} A promise that follows the xhr submission process
-	 * @review
 	 */
 	submitBlob_(imageBlob) {
 		let saveFileName = this.saveFileName;
@@ -362,9 +341,8 @@ class ImageEditor extends PortletBase {
 
 	/**
 	 * Syncs the image and history values after changes to the
-	 * history stack.
+	 * history stack
 	 * @protected
-	 * @review
 	 */
 	syncHistory_() {
 		return new CancellablePromise((resolve, reject) => {
@@ -384,10 +362,9 @@ class ImageEditor extends PortletBase {
 	}
 
 	/**
-	 * Updates the image data showed in the editable area
-	 * @param  {ImageData} imageData The new ImageData value to show on the editor
+	 * Updates the image data displayed in the editable area
+	 * @param  {ImageData} imageData The new ImageData value to display in the editor
 	 * @protected
-	 * @review
 	 */
 	syncImageData_(imageData) {
 		let width = imageData.width;
@@ -440,7 +417,6 @@ class ImageEditor extends PortletBase {
 	 * Reverts the image to the previous state in the history. Undoing
 	 * an action brings back the previous version of the image and enables
 	 * the redo stack in case the user wants to reapply the change again.
-	 * @review
 	 */
 	undo() {
 		this.historyIndex_--;
@@ -456,8 +432,7 @@ class ImageEditor extends PortletBase {
  */
 ImageEditor.STATE = {
 	/**
-	 * Indicates that the editor is ready for user interaction
-	 * @review
+	 * Whether the editor is ready for user interaction
 	 * @type {Object}
 	 */
 	imageEditorReady: {
@@ -466,8 +441,7 @@ ImageEditor.STATE = {
 	},
 
 	/**
-	 * Event to dispatch when the edition has been completed
-	 * @review
+	 * Event to dispatch when the editing is complete
 	 * @type {String}
 	 */
 	saveEventName: {
@@ -475,9 +449,7 @@ ImageEditor.STATE = {
 	},
 
 	/**
-	 * Name of the saved image that should be sent
-	 * to the server for the save action
-	 * @review
+	 * Name of the saved image to send to the server for the save action
 	 * @type {String}
 	 */
 	saveFileName: {
@@ -485,9 +457,8 @@ ImageEditor.STATE = {
 	},
 
 	/**
-	 * Mime type of the saved image. If not explicitly set,
-	 * the image mime type will be infered from the image url.
-	 * @review
+	 * MIME type of the saved image. If not explicitly set,
+	 * the image MIME type is inferred from the image URL.
 	 * @type {String}
 	 */
 	saveMimeType: {
@@ -496,9 +467,8 @@ ImageEditor.STATE = {
 	},
 
 	/**
-	 * Name of the param where the image should be sent
+	 * Name of the param that specifies where to send the image
 	 * to the server for the save action
-	 * @review
 	 * @type {String}
 	 */
 	saveParamName: {
@@ -506,8 +476,7 @@ ImageEditor.STATE = {
 	},
 
 	/**
-	 * Url to save the image changes
-	 * @review
+	 * URL to save the image changes
 	 * @type {String}
 	 */
 	saveURL: {

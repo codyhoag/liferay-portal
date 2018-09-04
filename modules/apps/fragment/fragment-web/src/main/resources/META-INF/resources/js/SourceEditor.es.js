@@ -8,17 +8,16 @@ import templates from './SourceEditor.soy';
 import './SourceEditorToolbar.es';
 
 /**
- * Component that creates an instance of Ace editor
- * to allow code editing.
- * @review
+ * Creates a Source Editor Component
+ *
+ * Lets you use an instance of Source editor to edit code
  */
 class SourceEditor extends Component {
 
 	/**
-	 * Callback executed when the internal Ace editor has been
-	 * modified. It simply propagates the event.
+	 * Callback that propagates the `contentChanged` event when 
+	 * the internal Ace editor is modified
 	 * @param {!Event} event
-	 * @review
 	 */
 	_handleContentChanged(event) {
 		this.emit(
@@ -33,7 +32,6 @@ class SourceEditor extends Component {
 
 /**
  * State definition.
- * @review
  * @static
  * @type {!Object}
  */
@@ -61,29 +59,25 @@ SourceEditor.STATE = {
 	 * @default undefined
 	 * @instance
 	 * @memberOf SourceEditor
-	 * @review
 	 * @type {!string}
 	 */
 	initialContent: Config.string().required(),
 
 	/**
-	 * Path to images.
+	 * Path of the available icons
 	 * @default undefined
 	 * @instance
 	 * @memberOf SourceEditor
-	 * @review
 	 * @type {!string}
 	 */
 	spritemap: Config.string().required(),
 
 	/**
-	 * Syntax used for the editor.
-	 * It will be used for Ace and rendered on the interface.
+	 * Syntax used for the Ace editor that is rendered on the interface
 	 * @default undefined
 	 * @instance
 	 * @memberOf SourceEditor
-	 * @review
-	 * @see AceEditor.SYNTAX
+	 * @see {@link AceEditor.SYNTAX|SYNTAX}
 	 * @type {!string}
 	 */
 	syntax: Config.oneOf(Object.values(AceEditor.SYNTAX)).required()

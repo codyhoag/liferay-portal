@@ -7,17 +7,15 @@ import componentTemplates from './CropComponent.soy';
 import controlsTemplates from './CropControls.soy';
 
 /**
- * Crop Component
- * @review
+ * Creates a Crop Component
  */
 class CropComponent extends Component {
 	/**
 	 * Applies the brighntess filter to generate a final
-	 * version of the image.
-	 * @param  {Object} imageData An object with several image representations.
-	 * @return {CancellablePromise} A promise that will resolve when the webworker
-	 * finishes processing the image for preview.
-	 * @review
+	 * version of the image
+	 * @param  {Object} imageData An object with several image representations
+	 * @return {CancellablePromise} A promise that resolves when the webworker
+	 * finishes processing the image for preview
 	 */
 	process(imageData) {
 		let imageCanvas = this.getImageEditorCanvas();
@@ -59,14 +57,12 @@ class CropComponent extends Component {
 
 /**
  * State definition.
- * @review
  * @static
  * @type {!Object}
  */
 CropComponent.STATE = {
 	/**
-	 * Injected helper to get the editor canvas
-	 * @review
+	 * Injected helper that retrieves the editor canvas
 	 * @type {Function}
 	 */
 	getImageEditorCanvas: {

@@ -9,13 +9,11 @@ import componentTemplates from './ContrastComponent.soy';
 import controlsTemplates from './ContrastControls.soy';
 
 /**
- * Contrast Component
- * @review
+ * Creates a Contrast Component
  */
 class ContrastComponent extends Component {
 	/**
 	 * @inheritDoc
-	 * @review
 	 */
 	attached() {
 		// Debounced version of requestImageEditorPreview
@@ -26,29 +24,26 @@ class ContrastComponent extends Component {
 
 	/**
 	 * @inheritDoc
-	 * @review
 	 */
 	detached() {
 		this.cache_ = {};
 	}
 
 	/**
-	 * Applies a contrast filter to the image.
-	 * @param  {ImageData} imageData ImageData representation of the image.
-	 * @return {CancellablePromise} A promise that will resolve when the webworker
-	 * finishes processing the image.
-	 * @review
+	 * Applies a contrast filter to the image
+	 * @param  {ImageData} imageData ImageData representation of the image
+	 * @return {CancellablePromise} A promise that resolves when the webworker
+	 * finishes processing the image
 	 */
 	preview(imageData) {
 		return this.process(imageData);
 	}
 
 	/**
-	 * Applies a contrast filter to the image.
-	 * @param  {ImageData} imageData ImageData representation of the image.
-	 * @return {CancellablePromise} A promise that will resolve when the webworker
-	 * finishes processing the image.
-	 * @review
+	 * Applies a contrast filter to the image
+	 * @param  {ImageData} imageData ImageData representation of the image
+	 * @return {CancellablePromise} A promise that resolves when the webworker
+	 * finishes processing the image
 	 */
 	process(imageData) {
 		let contrastValue = this.components.slider.value;
@@ -69,19 +64,17 @@ class ContrastComponent extends Component {
 	/**
 	 * Notifies the editor that this component wants to generate
 	 * a different preview version of the current image. It debounces
-	 * the calls
-	 * @review
+	 * the calls.
 	 */
 	requestPreview() {
 		this.requestImageEditorPreview_();
 	}
 
 	/**
-	 * Spawns the a webworker to do the image processing in a different thread.
-	 * @param  {Object} message An object with the image and contrast value.
-	 * @return {CancellablePromise} A promise that will resolve when the webworker
-	 * finishes processing the image.
-	 * @review
+	 * Spawns a webworker to process the image in a different thread
+	 * @param  {Object} message An object with the image and contrast value
+	 * @return {CancellablePromise} A promise that resolves when the webworker
+	 * finishes processing the image
 	 */
 	spawnWorker_(message) {
 		return new CancellablePromise((resolve, reject) => {
@@ -96,7 +89,6 @@ class ContrastComponent extends Component {
 
 /**
  * State definition.
- * @review
  * @static
  * @type {!Object}
  */
@@ -110,9 +102,8 @@ ContrastComponent.STATE = {
 	},
 
 	/**
-	 * Injected method to notify the editor this component
-	 * wants to generate a preview version of the image.
-	 * @review
+	 * Injected method that notifies the editor that this component
+	 * wants to generate a preview version of the image
 	 * @type {Function}
 	 */
 	requestImageEditorPreview: {

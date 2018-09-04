@@ -33,8 +33,8 @@ const SIZE_RATIO = {
 const PREVIEW_SIZES = Object.keys(SIZE_RATIO);
 
 /**
- * Component that renders the preview of a Fragment.
- * It allows modifying the preview with an update method.
+ * Component that renders the preview of a Fragment and allows modifications to 
+ * the preview.
  */
 
 class FragmentPreview extends PortletBase {
@@ -89,9 +89,8 @@ class FragmentPreview extends PortletBase {
 	}
 
 	/**
-	 * Event sent when the preview frame content has been loaded
+	 * Callback executed when the preview frame content is loaded
 	 * @private
-	 * @review
 	 */
 
 	_handlePreviewLoaded() {
@@ -123,7 +122,7 @@ class FragmentPreview extends PortletBase {
 
 	/**
 	 * Updates the rendered preview with the given content.
-	 * Encapsulates the given code inside a frame and renders it.
+	 * It encapsulates the given code inside a frame and renders it.
 	 * @protected
 	 */
 
@@ -248,7 +247,7 @@ FragmentPreview.STATE = {
 
 	/**
 	 * Ratio of the preview being rendered.
-	 * This property is modified internally with the ui buttons
+	 * This property is modified internally with the UI buttons
 	 * presented to the user, but it can be safely altered externally.
 	 * @default 'full'
 	 * @instance
@@ -263,7 +262,7 @@ FragmentPreview.STATE = {
 		.setter('_setPreviewSize'),
 
 	/**
-	 * Flag for checking if the preview content is being loaded
+	 * Flag that checks if the preview content is loading
 	 * @default false
 	 * @instance
 	 * @memberOf FragmentPreview

@@ -7,13 +7,11 @@ import componentTemplates from './ResizeComponent.soy';
 import controlsTemplates from './ResizeControls.soy';
 
 /**
- * Resize Component
- * @review
+ * Creates a Resize Component
  */
 class ResizeComponent extends Component {
 	/**
 	 * @inheritDoc
-	 * @review
 	 */
 	attached() {
 		this.getImageEditorImageData()
@@ -31,22 +29,20 @@ class ResizeComponent extends Component {
 	}
 
 	/**
-	 * Executes the resize operation to get the final version of the image.
-	 * @param  {ImageData} imageData ImageData representation of the image.
-	 * @return {CancellablePromise} A promise that will resolve with the
-	 * resized image data representation.
-	 * @review
+	 * Executes the resize operation to get the final version of the image
+	 * @param  {ImageData} imageData ImageData representation of the image
+	 * @return {CancellablePromise} A promise that resolves with the
+	 * resized image data representation
 	 */
 	process(imageData) {
 		return CancellablePromise.resolve(this.resizeImageData_(imageData));
 	}
 
 	/**
-	 * Resizes a given ImageData to the user selected width and height values.
+	 * Resizes a given ImageData to the user selected width and height values
 	 * @param  {ImageData} imageData The original ImageData
-	 * @return {ImageData} Resized ImageData to the component width and
-	 * height user selected values.
-	 * @review
+	 * @return {ImageData} Resized ImageData with the component width and
+	 * height values specified by the user
 	 */
 	resizeImageData_(imageData) {
 		let rawCanvas = document.createElement('canvas');
@@ -66,9 +62,8 @@ class ResizeComponent extends Component {
 	}
 
 	/**
-	 * Keeps the width/height ratio when the lockProportions is set to true.
+	 * Keeps the width/height ratio in sync when `lockProportions` is True
 	 * @param  {InputEvent} event
-	 * @review
 	 */
 	syncDimensions(event) {
 		let newValue = parseInt(event.delegateTarget.value, 10);
@@ -91,11 +86,10 @@ class ResizeComponent extends Component {
 	}
 
 	/**
-	 * Toggles the value of the lockProportions attribute. When enabled, changes
-	 * in one of the dimensions will cascade changes to the other in order to keep
-	 * the original image ratio.
+	 * Toggles the value of the `lockProportions` attribute. When enabled, changes
+	 * in one of the dimensions cascade changes to the other to keep to keep the 
+	 * original image ratio.
 	 * @param  {MouseEvent} event
-	 * @review
 	 */
 	toggleLockProportions(event) {
 		this.lockProportions = !this.lockProportions;
@@ -104,14 +98,12 @@ class ResizeComponent extends Component {
 
 /**
  * State definition.
- * @review
  * @static
  * @type {!Object}
  */
 ResizeComponent.STATE = {
 	/**
-	 * Injected helper to get the editor image data
-	 * @review
+	 * Injected helper that retrieves the editor image data
 	 * @type {Function}
 	 */
 	getImageEditorImageData: {

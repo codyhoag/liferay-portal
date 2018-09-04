@@ -8,14 +8,12 @@ import { async, core } from 'metal';
 import handlesTemplates from './CropHandles.soy';
 
 /**
- * Crop Handles
- * @review
+ * Creates a Crop Handles Component
  */
 class CropHandles extends Component {
 
 	/**
 	 * @inheritDoc
-	 * @review
 	 */
 	attached() {
 		this.parentNode_ = this.element.parentNode;
@@ -42,7 +40,6 @@ class CropHandles extends Component {
 
 	/**
 	 * @inheritDoc
-	 * @review
 	 */
 	detached() {
 		let canvas = this.getImageEditorCanvas();
@@ -51,9 +48,8 @@ class CropHandles extends Component {
 	}
 
 	/**
-	 * Bind actions for the mover and the size handler.
+	 * Bind actions for the mover and the size handler
 	 * @protected
-	 * @review
 	 */
 	bindDrags_() {
 		this.resizer.addEventListener('mousedown', (event) => event.stopPropagation());
@@ -63,9 +59,8 @@ class CropHandles extends Component {
 	}
 
 	/**
-	 * Bind actions for the mover.
+	 * Bind actions for the mover
 	 * @protected
-	 * @review
 	 */
 	bindSelectionDrag_() {
 		let canvas = this.getImageEditorCanvas();
@@ -92,9 +87,8 @@ class CropHandles extends Component {
 	}
 
 	/**
-	 * Bind actions for the size handler.
+	 * Bind actions for the size handler
 	 * @protected
-	 * @review
 	 */
 	bindSizeDrag_() {
 		let canvas = this.getImageEditorCanvas();
@@ -126,9 +120,8 @@ class CropHandles extends Component {
 	}
 
 	/**
-	 * Calculates the constrain region for the selection drag and resize.
+	 * Calculates the constrain region for the selection drag and resize
 	 * @protected
-	 * @review
 	 */
 	getSizeDragConstrain_(region) {
 		let canvas = this.getImageEditorCanvas();
@@ -163,9 +156,8 @@ class CropHandles extends Component {
 	}
 
 	/**
-	 * Initializes the mover and the size handler.
+	 * Initializes the mover and the size handler
 	 * @protected
-	 * @review
 	 */
 	initializeDrags_() {
 		let canvas = this.getImageEditorCanvas();
@@ -190,9 +182,8 @@ class CropHandles extends Component {
 	}
 
 	/**
-	 * Sets the initial style for the selection and preview.
+	 * Sets the initial style for the selection and preview
 	 * @protected
-	 * @review
 	 */
 	setSelectionInitialStyle_() {
 		let canvas = this.getImageEditorCanvas();
@@ -226,14 +217,12 @@ class CropHandles extends Component {
 
 /**
  * State definition.
- * @review
  * @static
  * @type {!Object}
  */
 CropHandles.STATE = {
 	/**
-	 * Injected helper to get the editor canvas element
-	 * @review
+	 * Injected helper that retrieves the editor canvas element
 	 * @type {Function}
 	 */
 	getImageEditorCanvas: {
