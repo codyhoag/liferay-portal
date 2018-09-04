@@ -221,7 +221,7 @@ FragmentPreview.STATE = {
 	js: Config.string().required(),
 
 	/**
-	 * Path of the available icons.
+	 * Path of the available icons
 	 * @instance
 	 * @memberOf FragmentEditor
 	 * @type {!string}
@@ -230,10 +230,9 @@ FragmentPreview.STATE = {
 	spritemap: Config.string().required(),
 
 	/**
-	 * URLs used for communicating with backend
+	 * URLs used for communicating with the back-end
 	 * @instance
 	 * @memberOf FragmentPreview
-	 * @review
 	 * @type {{
 	 *  render: !string
 	 * }}

@@ -30,7 +30,7 @@ class SourceEditorToolbar extends Component {
 	}
 
 	/**
-	 * Updates _syntaxLabel attribute mapping the given syntax
+	 * Updates `_syntaxLabel` attribute mapping with the given syntax
 	 * @param {!string} syntax
 	 * @private
 	 */
