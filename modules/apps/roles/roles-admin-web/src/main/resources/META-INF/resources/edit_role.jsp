@@ -140,13 +140,17 @@ renderResponse.setTitle((role == null) ? LanguageUtil.get(request, "new-role") :
 				</c:if>
 			</c:if>
 
+			<%
+			String nameLabel = LanguageUtil.get(request, "role-key");
+			%>
+
 			<liferay-ui:error exception="<%= RoleNameException.class %>">
 				<p>
-					<liferay-ui:message arguments="<%= new String[] {RoleConstants.NAME_LABEL, RoleConstants.getNameGeneralRestrictions(locale, PropsValues.ROLES_NAME_ALLOW_NUMERIC), RoleConstants.NAME_RESERVED_WORDS} %>" key="the-x-cannot-be-x-or-a-reserved-word-such-as-x" />
+					<liferay-ui:message arguments="<%= new String[] {nameLabel, RoleConstants.getNameGeneralRestrictions(locale, PropsValues.ROLES_NAME_ALLOW_NUMERIC), RoleConstants.NAME_RESERVED_WORDS} %>" key="the-x-cannot-be-x-or-a-reserved-word-such-as-x" />
 				</p>
 
 				<p>
-					<liferay-ui:message arguments="<%= new String[] {RoleConstants.NAME_LABEL, RoleConstants.NAME_INVALID_CHARACTERS} %>" key="the-x-cannot-contain-the-following-invalid-characters-x" />
+					<liferay-ui:message arguments="<%= new String[] {nameLabel, RoleConstants.NAME_INVALID_CHARACTERS} %>" key="the-x-cannot-contain-the-following-invalid-characters-x" />
 				</p>
 			</liferay-ui:error>
 

@@ -1128,7 +1128,8 @@ public class PoshiRunnerContext {
 				sb.append("' \n");
 				sb.append(filePath);
 				sb.append(": ");
-				sb.append(locatorKeyElement.attributeValue("line-number"));
+				sb.append(
+					PoshiRunnerGetterUtil.getLineNumber(locatorKeyElement));
 
 				_duplicateLocatorMessages.add(sb.toString());
 			}
@@ -1211,7 +1212,8 @@ public class PoshiRunnerContext {
 					sb.append("'\n");
 					sb.append(filePath);
 					sb.append(": ");
-					sb.append(commandElement.attributeValue("line-number"));
+					sb.append(
+						PoshiRunnerGetterUtil.getLineNumber(commandElement));
 					sb.append("\n");
 
 					String duplicateElementFilePath = getFilePathFromFileName(
@@ -1228,7 +1230,8 @@ public class PoshiRunnerContext {
 					Element duplicateElement = _commandElements.get(
 						classType + "#" + namespace + "." + classCommandName);
 
-					sb.append(duplicateElement.attributeValue("line-number"));
+					sb.append(
+						PoshiRunnerGetterUtil.getLineNumber(duplicateElement));
 
 					_duplicateLocatorMessages.add(sb.toString());
 

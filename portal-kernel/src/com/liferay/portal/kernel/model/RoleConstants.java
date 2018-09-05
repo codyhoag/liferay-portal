@@ -35,7 +35,7 @@ public class RoleConstants {
 	public static final String NAME_INVALID_CHARACTERS =
 		StringPool.COMMA + StringPool.SPACE + StringPool.STAR;
 
-	public static final String NAME_LABEL = "role-key";
+	public static final String NAME_LABEL = "role-name";
 
 	public static final String NAME_RESERVED_WORDS = StringPool.NULL;
 
@@ -122,9 +122,8 @@ public class RoleConstants {
 		else if (type == TYPE_SITE) {
 			return TYPE_SITE_LABEL;
 		}
-		else {
-			return TYPE_REGULAR_LABEL;
-		}
+
+		return TYPE_REGULAR_LABEL;
 	}
 
 }

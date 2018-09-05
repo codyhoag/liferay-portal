@@ -48,6 +48,11 @@ public class CommandPoshiElement extends PoshiElement {
 	}
 
 	@Override
+	public String getPoshiLogDescriptor() {
+		return getBlockName();
+	}
+
+	@Override
 	public void parsePoshiScript(String poshiScript) {
 		String blockName = getBlockName(poshiScript);
 
