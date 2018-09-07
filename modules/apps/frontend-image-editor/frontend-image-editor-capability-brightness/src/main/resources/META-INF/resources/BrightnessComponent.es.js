@@ -9,7 +9,7 @@ import componentTemplates from './BrightnessComponent.soy';
 import controlsTemplates from './BrightnessControls.soy';
 
 /**
- * Creates a Brightness Component
+ * Creates a Brightness component.
  */
 class BrightnessComponent extends Component {
 	/**
@@ -30,10 +30,10 @@ class BrightnessComponent extends Component {
 	}
 
 	/**
-	 * Applies a brightness filter to the image
-	 * @param  {ImageData} imageData ImageData representation of the image
+	 * Applies a brightness filter to the image.
+	 * @param  {ImageData} imageData The image data representation of the image.
 	 * @return {CancellablePromise} A promise that resolves when the webworker
-	 * finishes processing the image
+	 * finishes processing the image.
 	 */
 	preview(imageData) {
 		return this.process(imageData);
@@ -41,9 +41,9 @@ class BrightnessComponent extends Component {
 
 	/**
 	 * Applies a brightness filter to the image
-	 * @param  {ImageData} imageData ImageData representation of the image
+	 * @param  {ImageData} imageData The image data representation of the image.
 	 * @return {CancellablePromise} A promise that resolves when the webworker
-	 * finishes processing the image
+	 * finishes processing the image.
 	 */
 	process(imageData) {
 		let brightnessValue = this.components.slider.value;
@@ -71,10 +71,10 @@ class BrightnessComponent extends Component {
 	}
 
 	/**
-	 * Spawns a webworker to process the image in a different thread
-	 * @param  {Object} message An object with the image and brightness value
+	 * Spawns a webworker to process the image in a different thread.
+	 * @param  {Object} message The image and brightness value.
 	 * @return {CancellablePromise} A promise that resolves when the webworker
-	 * finishes processing the image
+	 * finishes processing the image.
 	 */
 	spawnWorker_(message) {
 		return new CancellablePromise((resolve, reject) => {
@@ -94,7 +94,7 @@ class BrightnessComponent extends Component {
  */
 BrightnessComponent.STATE = {
 	/**
-	 * Path of this module
+	 * Path of this module.
 	 * @type {String}
 	 */
 	modulePath: {
@@ -102,8 +102,8 @@ BrightnessComponent.STATE = {
 	},
 
 	/**
-	 * Injected method that notifies the editor that this component
-	 * wants to generate a preview version of the image
+	 * Injected method that notifies the editor that the component wants to
+	 * generate a preview version of the image.
 	 * @type {Function}
 	 */
 	requestImageEditorPreview: {

@@ -48,7 +48,7 @@ class CropHandles extends Component {
 	}
 
 	/**
-	 * Bind actions for the mover and the size handler
+	 * Binds actions for the mover and size handler.
 	 * @protected
 	 */
 	bindDrags_() {
@@ -59,7 +59,7 @@ class CropHandles extends Component {
 	}
 
 	/**
-	 * Bind actions for the mover
+	 * Binds actions for the mover.
 	 * @protected
 	 */
 	bindSelectionDrag_() {
@@ -87,7 +87,7 @@ class CropHandles extends Component {
 	}
 
 	/**
-	 * Bind actions for the size handler
+	 * Binds actions for the size handler.
 	 * @protected
 	 */
 	bindSizeDrag_() {
@@ -120,7 +120,7 @@ class CropHandles extends Component {
 	}
 
 	/**
-	 * Calculates the constrain region for the selection drag and resize
+	 * Calculates the constrain region for the selection drag and resize.
 	 * @protected
 	 */
 	getSizeDragConstrain_(region) {
@@ -156,7 +156,7 @@ class CropHandles extends Component {
 	}
 
 	/**
-	 * Initializes the mover and the size handler
+	 * Initializes the mover and the size handler.
 	 * @protected
 	 */
 	initializeDrags_() {
@@ -182,7 +182,7 @@ class CropHandles extends Component {
 	}
 
 	/**
-	 * Sets the initial style for the selection and preview
+	 * Sets the initial style for the selection and preview.
 	 * @protected
 	 */
 	setSelectionInitialStyle_() {
@@ -222,7 +222,7 @@ class CropHandles extends Component {
  */
 CropHandles.STATE = {
 	/**
-	 * Injected helper that retrieves the editor canvas element
+	 * Injected helper that retrieves the editor canvas element.
 	 * @type {Function}
 	 */
 	getImageEditorCanvas: {

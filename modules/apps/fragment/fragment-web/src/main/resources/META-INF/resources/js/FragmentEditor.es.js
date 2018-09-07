@@ -8,9 +8,10 @@ import './FragmentPreview.es';
 import './SourceEditor.es';
 
 /**
- * Creates a Fragment Editor Component that lets you edit an existing fragment 
- * or a new Fragment. It integrates three `<SourceEditor />` components for each 
- * part of the fragment and a `<FragmentPreview />` component for the preview.
+ * Creates a Fragment Editor component that lets you create a new fragment or
+ * edit an existing fragment. This component integrates three
+ * <code><pre><SourceEditor /></pre></code> components for each part of the fragment and
+ * a <code>&lt;FragmentPreview /></code> component for the preview.
  */
 class FragmentEditor extends PortletBase {
 
@@ -25,14 +26,13 @@ class FragmentEditor extends PortletBase {
 	}
 
 	/**
-	 * Returns content
+	 * Returns content.
 	 * @public
 	 * @return {{
 	 *   css: string,
 	 *   html: string,
 	 *   js: string,
 	 * }}
-	 * @review
 	 */
 	getContent() {
 		return ({
@@ -43,7 +43,7 @@ class FragmentEditor extends PortletBase {
 	}
 
 	/**
-	 * Returns true when HTML content is valid, false otherwise.
+	 * Returns <code>true</code> when HTML content is valid.
 	 * @public
 	 * @return {boolean} Whether the HTML is valid.
 	 */
@@ -52,8 +52,8 @@ class FragmentEditor extends PortletBase {
 	}
 
 	/**
-	* Callback that propagates the `contentChanged` event when 
-	* content is modified
+	* Callback that propagates the <code>contentChanged</code> event when
+	* content is modified.
 	 * @private
 	 */
 	_handleContentChanged() {
@@ -64,7 +64,7 @@ class FragmentEditor extends PortletBase {
 	}
 
 	/**
-	 * Callback executed when the CSS editor changes
+	 * Callback executed when the CSS editor changes.
 	 * @param {!Event} event
 	 * @private
 	 */
@@ -74,7 +74,7 @@ class FragmentEditor extends PortletBase {
 	}
 
 	/**
-	 * Callback executed when the HTML editor changes
+	 * Callback executed when the HTML editor changes.
 	 * @param {!Event} event
 	 * @private
 	 */
@@ -86,7 +86,7 @@ class FragmentEditor extends PortletBase {
 	}
 
 	/**
-	 * Callback executed when the JS editor changes
+	 * Callback executed when the JS editor changes.
 	 * @param {!Event} event
 	 * @private
 	 */
@@ -96,10 +96,9 @@ class FragmentEditor extends PortletBase {
 	}
 
 	/**
-	 * Save the fragment content
+	 * Saves the fragment content.
 	 * @param {!Event} event
 	 * @private
-	 * @review
 	 */
 	_handleSaveButtonClick(event) {
 		const content = this.getContent();
@@ -164,7 +163,6 @@ class FragmentEditor extends PortletBase {
 
 /**
  * State definition.
- * @review
  * @static
  * @type {!Object}
  */
@@ -188,7 +186,7 @@ FragmentEditor.STATE = {
 	),
 
 	/**
-	 * Fragment collection id
+	 * Fragment collection ID.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentEditor
@@ -197,7 +195,7 @@ FragmentEditor.STATE = {
 	fragmentCollectionId: Config.string().required(),
 
 	/**
-	 * Fragment entry id
+	 * Fragment entry ID.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentEditor
@@ -206,7 +204,7 @@ FragmentEditor.STATE = {
 	fragmentEntryId: Config.string().required(),
 
 	/**
-	 * Fragment name
+	 * Fragment name.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentEditor
@@ -216,10 +214,9 @@ FragmentEditor.STATE = {
 	name: Config.string().required(),
 
 	/**
-	 * URLs used for communicating with backend
+	 * URLs used for communicating with back-end logic.
 	 * @instance
 	 * @memberOf FragmentEditor
-	 * @review
 	 * @type {{
 	 *  edit: !string,
 	 *	redirect: !string
@@ -234,8 +231,8 @@ FragmentEditor.STATE = {
 	).required(),
 
 	/**
-	 * Updated CSS content of the editor. 
-	 * This value is propagated to the preview.
+	 * Updated CSS content of the editor. This value is propagated to the
+	 * preview.
 	 * @default ''
 	 * @instance
 	 * @memberOf FragmentEditor
@@ -247,8 +244,8 @@ FragmentEditor.STATE = {
 		.value(''),
 
 	/**
-	 * Updated HTML content of the editor.
-	 * This value is propagated to the preview.
+	 * Updated HTML content of the editor. This value is propagated to the
+	 * preview.
 	 * @default ''
 	 * @instance
 	 * @memberOf FragmentEditor
@@ -261,8 +258,7 @@ FragmentEditor.STATE = {
 		.value(''),
 
 	/**
-	 * Flag to specify if updated HTML content of
-	 * the editor is valid
+	 * Flag to specify if the editor's updated HTML content is valid.
 	 * @default true
 	 * @instance
 	 * @memberOf FragmentEditor
@@ -275,8 +271,7 @@ FragmentEditor.STATE = {
 		.value(true),
 
 	/**
-	 * Updated JS content of the editor.
-	 * This value is propagated to the preview.
+	 * Updated JS content of the editor. This value is propagated to the preview.
 	 * @default ''
 	 * @instance
 	 * @memberOf FragmentEditor
@@ -289,7 +284,7 @@ FragmentEditor.STATE = {
 		.value(''),
 
 	/**
-	 * If true, the fragment is being saved
+	 * If <code>true</code>, the fragment is saved.
 	 * @default false
 	 * @instance
 	 * @memberOf FragmentEditor

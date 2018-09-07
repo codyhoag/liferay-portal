@@ -7,15 +7,14 @@ import componentTemplates from './CropComponent.soy';
 import controlsTemplates from './CropControls.soy';
 
 /**
- * Creates a Crop Component
+ * Creates a Crop component.
  */
 class CropComponent extends Component {
 	/**
-	 * Applies the brighntess filter to generate a final
-	 * version of the image
-	 * @param  {Object} imageData An object with several image representations
+	 * Applies the brightness filter to generate a final version of the image.
+	 * @param  {Object} imageData The image representations.
 	 * @return {CancellablePromise} A promise that resolves when the webworker
-	 * finishes processing the image for preview
+	 * finishes processing the image for preview.
 	 */
 	process(imageData) {
 		let imageCanvas = this.getImageEditorCanvas();
@@ -62,7 +61,7 @@ class CropComponent extends Component {
  */
 CropComponent.STATE = {
 	/**
-	 * Injected helper that retrieves the editor canvas
+	 * Injected helper that retrieves the editor canvas.
 	 * @type {Function}
 	 */
 	getImageEditorCanvas: {

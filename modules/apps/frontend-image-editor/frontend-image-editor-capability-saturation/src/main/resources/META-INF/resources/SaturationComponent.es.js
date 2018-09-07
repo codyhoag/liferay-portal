@@ -9,7 +9,7 @@ import componentTemplates from './SaturationComponent.soy';
 import controlsTemplates from './SaturationControls.soy';
 
 /**
- * Creates a Saturation Component
+ * Creates a Saturation component.
  */
 class SaturationComponent extends Component {
 	/**
@@ -30,20 +30,20 @@ class SaturationComponent extends Component {
 	}
 
 	/**
-	 * Applies a saturation filter to the image
-	 * @param  {ImageData} imageData ImageData representation of the image
+	 * Applies a saturation filter to the image.
+	 * @param  {ImageData} imageData The image data representation of the image.
 	 * @return {CancellablePromise} A promise that resolves when the webworker
-	 * finishes processing the image
+	 * finishes processing the image.
 	 */
 	preview(imageData) {
 		return this.process(imageData);
 	}
 
 	/**
-	 * Applies a saturation filter to the image
-	 * @param  {ImageData} imageData ImageData representation of the image
+	 * Applies a saturation filter to the image.
+	 * @param  {ImageData} imageData The image data representation of the image.
 	 * @return {CancellablePromise} A promise that resolves when the webworker
-	 * finishes processing the image
+	 * finishes processing the image.
 	 */
 	process(imageData) {
 		let saturationValue = this.components.slider.value;
@@ -62,19 +62,18 @@ class SaturationComponent extends Component {
 	}
 
 	/**
-	 * Notifies the editor that this component wants to generate
-	 * a different preview version of the current image. It debounces
-	 * the calls.
+	 * Notifies the editor that this component wants to generate a different
+	 * preview version of the current image. It debounces the calls.
 	 */
 	requestPreview() {
 		this.requestImageEditorPreview_();
 	}
 
 	/**
-	 * Spawns a webworker to process the image in a different thread
-	 * @param  {Object} message An object with the image and saturation value
+	 * Spawns a webworker to process the image in a different thread.
+	 * @param  {Object} message The image and saturation value.
 	 * @return {CancellablePromise} A promise that resolves when the webworker
-	 * finishes processing the image
+	 * finishes processing the image.
 	 */
 	spawnWorker_(message) {
 		return new CancellablePromise((resolve, reject) => {
@@ -94,7 +93,7 @@ class SaturationComponent extends Component {
  */
 SaturationComponent.STATE = {
 	/**
-	 * Path of this module
+	 * Path of this module.
 	 * @type {String}
 	 */
 	modulePath: {
@@ -102,8 +101,8 @@ SaturationComponent.STATE = {
 	},
 
 	/**
-	 * Injected method that notifies the editor that this component
-	 * wants to generate a preview version of the image
+	 * Injected method that notifies the editor that this component wants to
+	 * generate a preview version of the image.
 	 * @type {Function}
 	 */
 	requestImageEditorPreview: {

@@ -12,9 +12,7 @@ const FragmentAutocompleteProcessor = function(...args) {
 };
 
 /**
- * Creates a Ace Editor Component
- *
- * Lets you use an instance of Ace editor to edit code
+ * Creates an Ace Editor component to use for code editing.
  */
 class AceEditor extends Component {
 
@@ -154,8 +152,8 @@ class AceEditor extends Component {
 	}
 
 	/**
-	 * Callback that propagates the `contentChanged` event when 
-	 * the internal Ace editor is modified
+	 * Callback that propagates the <code>contentChanged</code> event when the
+	 * internal Ace Editor is modified.
 	 * @private
 	 */
 	_handleDocumentChanged() {
@@ -178,8 +176,8 @@ class AceEditor extends Component {
 	}
 
 	/**
-	 * Overrides AceEditor's session `setAnnotations` method to avoid showing
-	 * misleading messages
+	 * Overrides Ace Editor's session <code>setAnnotations</code> method to avoid
+	 * showing misleading messages.
 	 * @param {Object} session AceEditor session
 	 * @private
 	 */
@@ -196,7 +194,7 @@ class AceEditor extends Component {
 }
 
 /**
- * Available AceEditor syntax
+ * Available Ace Editor syntax.
  * @static
  * @type {Object}
  */
@@ -234,7 +232,7 @@ AceEditor.STATE = {
 	),
 
 	/**
-	 * Initial content sent to the editor
+	 * Initial content sent to the editor.
 	 * @default ''
 	 * @instance
 	 * @memberOf AceEditor
@@ -244,7 +242,7 @@ AceEditor.STATE = {
 	initialContent: Config.string().value(''),
 
 	/**
-	 * Syntax used for the Ace editor that is rendered on the interface
+	 * Syntax used for the Ace Editor that is rendered on the interface.
 	 * @default undefined
 	 * @instance
 	 * @memberOf AceEditor

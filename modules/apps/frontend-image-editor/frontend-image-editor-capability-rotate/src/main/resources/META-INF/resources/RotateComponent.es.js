@@ -7,7 +7,7 @@ import componentTemplates from './RotateComponent.soy';
 import controlsTemplates from './RotateControls.soy';
 
 /**
- * Creates a Rotate Component
+ * Creates a Rotate component.
  */
 class RotateComponent extends Component {
 	/**
@@ -26,20 +26,20 @@ class RotateComponent extends Component {
 	}
 
 	/**
-	 * Rotates the image to the current selected rotation angle
-	 * @param  {ImageData} imageData ImageData representation of the image
-	 * @return {CancellablePromise} A promise that resolves when the processing is 
-	 * complete
+	 * Rotates the image to the current selected rotation angle.
+	 * @param  {ImageData} imageData The image data representation of the image.
+	 * @return {CancellablePromise} A promise that resolves when processing is
+	 * complete.
 	 */
 	preview(imageData) {
 		return this.process(imageData);
 	}
 
 	/**
-	 * Rotates the image to the current selected rotation angle
-	 * @param  {ImageData} imageData ImageData representation of the image
-	 * @return {CancellablePromise} A promise that resolves when the processing is 
-	 * complete
+	 * Rotates the image to the current selected rotation angle.
+	 * @param  {ImageData} imageData The image data representation of the image.
+	 * @return {CancellablePromise} A promise that resolves when processing is 
+	 * complete.
 	 */
 	process(imageData) {
 		let promise = this.cache_[this.rotationAngle_];
@@ -54,11 +54,13 @@ class RotateComponent extends Component {
 	}
 
 	/**
-	 * Rotates the passed ImageData to the current rotation angle
-	 * @param  {ImageData} imageData The ImageData to rotate
-	 * @param  {number} rotationAngle Normalized rotation angle in degrees in the range [0-360)
+	 * Rotates the passed image data to the current rotation angle.
+	 * @param  {ImageData} imageData The image data to rotate.
+	 * @param  {number} rotationAngle The normalized rotation angle (in degrees)
+	 * in the range [0-360).
 	 * @protected
-	 * @return {CancellablePromise} A promise that fullfills when the image is rotated
+	 * @return {CancellablePromise} A promise that resolves when the image is
+	 * rotated.
 	 */
 	rotate_(imageData, rotationAngle) {
 		let cancellablePromise = new CancellablePromise((resolve, reject) => {
@@ -90,7 +92,7 @@ class RotateComponent extends Component {
 	}
 
 	/**
-	 * Rotates the image 90º counter-clockwise
+	 * Rotates the image 90º counter-clockwise.
 	 */
 	rotateLeft() {
 		this.rotationAngle_ = (this.rotationAngle_ - 90) % 360;
@@ -98,7 +100,7 @@ class RotateComponent extends Component {
 	}
 
 	/**
-	 * Rotates the image 90º clockwise
+	 * Rotates the image 90º clockwise.
 	 */
 	rotateRight() {
 		this.rotationAngle_ = (this.rotationAngle_ + 90) % 360;
@@ -113,7 +115,7 @@ class RotateComponent extends Component {
  */
 RotateComponent.STATE = {
 	/**
-	 * Path of this module
+	 * Path of this module.
 	 * @type {Function}
 	 */
 	modulePath: {
@@ -121,8 +123,8 @@ RotateComponent.STATE = {
 	},
 
 	/**
-	 * Injected method that notifies the editor that this component
-	 * wants to generate a preview version of the image
+	 * Injected method that notifies the editor that this component wants to
+	 * generate a preview version of the image.
 	 * @type {Function}
 	 */
 	requestImageEditorPreview: {

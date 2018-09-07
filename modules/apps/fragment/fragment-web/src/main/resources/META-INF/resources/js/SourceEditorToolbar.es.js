@@ -6,7 +6,7 @@ import AceEditor from './AceEditor.es';
 import templates from './SourceEditorToolbar.soy';
 
 /**
- * Creates a Source Editor toolbar Component
+ * Creates a Source Editor Toolbar component.
  */
 
 class SourceEditorToolbar extends Component {
@@ -30,7 +30,7 @@ class SourceEditorToolbar extends Component {
 	}
 
 	/**
-	 * Updates `_syntaxLabel` attribute mapping with the given syntax
+	 * Updates the <code>_syntaxLabel</code> attribute mapping with the given syntax.
 	 * @param {!string} syntax
 	 * @private
 	 */
@@ -41,7 +41,7 @@ class SourceEditorToolbar extends Component {
 }
 
 /**
- * Editor labels to display to the user
+ * Editor labels to display to the user.
  */
 
 SourceEditorToolbar.SYNTAX_LABEL = {
@@ -70,7 +70,7 @@ SourceEditorToolbar.STATE = {
 	syntax: Config.oneOf(Object.values(AceEditor.SYNTAX)).required(),
 
 	/**
-	 * Syntax label shown in the toolbar markup
+	 * Syntax label shown in the toolbar markup.
 	 * @default ''
 	 * @instance
 	 * @memberOf SourceEditorToolbar

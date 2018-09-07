@@ -8,15 +8,13 @@ import templates from './SourceEditor.soy';
 import './SourceEditorToolbar.es';
 
 /**
- * Creates a Source Editor Component
- *
- * Lets you use an instance of Source editor to edit code
+ * Creates a Source Editor component to use for source code editing.
  */
 class SourceEditor extends Component {
 
 	/**
-	 * Callback that propagates the `contentChanged` event when 
-	 * the internal Ace editor is modified
+	 * Callback that propagates the <code>contentChanged</code> event when the
+	 * internal Ace Editor is modified.
 	 * @param {!Event} event
 	 */
 	_handleContentChanged(event) {
@@ -55,7 +53,7 @@ SourceEditor.STATE = {
 	),
 
 	/**
-	 * Initial content sent to the editor
+	 * Initial content sent to the editor.
 	 * @default undefined
 	 * @instance
 	 * @memberOf SourceEditor
@@ -64,7 +62,7 @@ SourceEditor.STATE = {
 	initialContent: Config.string().required(),
 
 	/**
-	 * Path of the available icons
+	 * Path of the available icons.
 	 * @default undefined
 	 * @instance
 	 * @memberOf SourceEditor
@@ -73,7 +71,7 @@ SourceEditor.STATE = {
 	spritemap: Config.string().required(),
 
 	/**
-	 * Syntax used for the Ace editor that is rendered on the interface
+	 * Syntax used for the Ace Editor that is rendered on the interface.
 	 * @default undefined
 	 * @instance
 	 * @memberOf SourceEditor
