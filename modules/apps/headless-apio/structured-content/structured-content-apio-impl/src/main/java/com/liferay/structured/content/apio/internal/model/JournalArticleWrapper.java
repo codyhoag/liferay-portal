@@ -18,20 +18,18 @@ import com.liferay.journal.model.JournalArticle;
 import com.liferay.portal.kernel.theme.ThemeDisplay;
 
 /**
- * JournalArticle wrapper that includes a {@code ThemeDisplay} object.
+ * Wraps a {@code JournalArticle} and includes a {@code ThemeDisplay} object.
  *
  * @author Eduardo Perez
- * @review
  */
 public class JournalArticleWrapper
 	extends com.liferay.journal.model.JournalArticleWrapper {
 
 	/**
-	 * Creates a new {@link JournalArticleWrapper}.
+	 * Creates a new {@code JournalArticleWrapper}.
 	 *
-	 * @param  journalArticle the journalArticle being wrapped
-	 * @param  themeDisplay the {@link ThemeDisplay} of the current request
-	 * @review
+	 * @param journalArticle the {@code JournalArticle} to wrap
+	 * @param themeDisplay the current request's {@code ThemeDisplay}
 	 */
 	public JournalArticleWrapper(
 		JournalArticle journalArticle, ThemeDisplay themeDisplay) {
