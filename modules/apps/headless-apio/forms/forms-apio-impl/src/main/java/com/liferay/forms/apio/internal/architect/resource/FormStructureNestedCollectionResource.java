@@ -35,9 +35,10 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 /**
- * Provides the information necessary to expose through a web API structure
- * resources associated with a {@code DDMStructure}. The resources are mapped
- * from the internal model {@code DDMStructure}.
+ * Provides the information necessary to expose structure resources through a
+ * web API associated with a {@code DDMStructure}. The resources are mapped from
+ * the internal model {@code
+ * com.liferay.dynamic.data.mapping.kernel.DDMStructure}.
  *
  * @author Paulo Cruz
  */

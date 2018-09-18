@@ -29,7 +29,7 @@ import java.util.Map;
 public class NestedCategoryForm {
 
 	/**
-	 * Builds a {@code Form} that generates {@code NestedCategoryForm} that
+	 * Builds a {@code Form} that generates a {@code NestedCategoryForm} that
 	 * depends on the HTTP body.
 	 *
 	 * @param  builder the {@code Form} builder

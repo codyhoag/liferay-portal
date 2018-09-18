@@ -70,9 +70,9 @@ public class MediaObjectCreatorForm {
 	}
 
 	/**
-	 * Returns the media object's change log.
+	 * Returns the media object's changelog.
 	 *
-	 * @return the change log
+	 * @return the changelog
 	 */
 	public String getChangelog() {
 		return _changelog;

@@ -24,7 +24,7 @@ import com.liferay.apio.architect.identifier.Identifier;
  *
  * <p>
  * The methods that this interface exposes are intended to be used only in the
- * {@code Routes.Builder} methods that need to check permissions. And since the
+ * {@code Routes.Builder} methods that need to check permissions. Since the
  * signatures of this interface's methods apply exactly, the methods can be used
  * as method references (e.g., {@code _hasPermission::forAdding}).
  * </p>

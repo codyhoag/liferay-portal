@@ -22,7 +22,7 @@ import com.liferay.portal.kernel.model.Group;
 import java.util.Locale;
 
 /**
- * Calculates the name of the content space based on the existing {@code Group}.
+ * Calculates the content space's name based on the existing {@code Group}.
  *
  * @author Javier Gamarra
  */

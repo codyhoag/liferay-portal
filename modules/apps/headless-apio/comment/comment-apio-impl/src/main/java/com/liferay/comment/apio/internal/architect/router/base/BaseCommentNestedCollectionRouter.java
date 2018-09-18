@@ -70,9 +70,9 @@ public abstract class BaseCommentNestedCollectionRouter
 	protected abstract CommentManager getCommentManager();
 
 	/**
-	 * Transforms a {@code classPK} into its {@code GroupedModel}.
+	 * Transforms a class primary key into its {@code GroupedModel}.
 	 *
-	 * @param  classPK the class PK
+	 * @param  classPK the class primary key
 	 * @return the grouped model
 	 * @throws PortalException if getting the grouped model fails
 	 */

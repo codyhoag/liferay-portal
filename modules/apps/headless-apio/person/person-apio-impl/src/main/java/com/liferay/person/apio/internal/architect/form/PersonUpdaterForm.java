@@ -28,7 +28,7 @@ import java.util.Optional;
 public class PersonUpdaterForm {
 
 	/**
-	 * Builds a {@code Form} that generates {@code PersonUpdaterForm} that
+	 * Builds a {@code Form} that generates a {@code PersonUpdaterForm} that
 	 * depends on the HTTP body.
 	 *
 	 * @param  formBuilder the {@code Form} builder

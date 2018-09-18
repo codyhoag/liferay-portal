@@ -36,9 +36,9 @@ import org.osgi.service.component.annotations.Reference;
 
 /**
  * Provides the information necessary to expose the <a
- * href="http://schema.org/Person">Person </a> resources of a <a
- * href="http://schema.org/WebSite">WebSite </a> through a web API. The
- * resources are mapped from the internal model {@link UserWrapper}.
+ * href="http://schema.org/Person">Person</a> resources of a <a
+ * href="http://schema.org/WebSite">WebSite</a> through a web API. The resources
+ * are mapped from the internal model {@link UserWrapper}.
  *
  * @author Eduardo Perez
  */

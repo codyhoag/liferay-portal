@@ -29,8 +29,8 @@ import org.osgi.service.component.annotations.Reference;
 
 /**
  * Provides the information necessary to expose the <a
- * href="http://schema.org/Comment">Comment </a> resources of a <a
- * href="http://schema.org/BlogPosting">BlogPosting </a> through a web API. The
+ * href="http://schema.org/Comment">Comment</a> resources of a <a
+ * href="http://schema.org/BlogPosting">BlogPosting</a> through a web API. The
  * resources are mapped from the internal model {@code Comment} and {@code
  * com.liferay.blogs.model.BlogsEntry}.
  *
