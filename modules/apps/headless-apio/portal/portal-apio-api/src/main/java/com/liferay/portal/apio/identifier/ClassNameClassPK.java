@@ -19,10 +19,9 @@ import aQute.bnd.annotation.ProviderType;
 import com.liferay.portal.kernel.model.ClassedModel;
 
 /**
- * Represents an identifier for entities with a className and classPK
+ * Represents an identifier for entities with a class name and class PK.
  *
  * @author Alejandro Hernández
- * @review
  */
 @ProviderType
 public interface ClassNameClassPK {

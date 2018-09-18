@@ -40,7 +40,6 @@ import org.osgi.service.component.annotations.Reference;
  * resources are mapped from the internal model {@code Role}.
  *
  * @author Javier
- * @review
  */
 @Component(immediate = true)
 public class RoleCollectionResource
