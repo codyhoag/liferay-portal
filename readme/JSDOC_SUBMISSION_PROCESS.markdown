@@ -62,26 +62,6 @@ published:
 
 The tech writer will review the JSDoc as soon as possible.
 
-<!-- Not certain this is applicable as Chema requires that developers document 
-their code moving forward from 7.1 and up
-
-## Community Members
-
-Community submissions for JSDoc are welcome and promoted! If a community
-member finds undocumented code on [docs.liferay.com](https://docs.liferay.com/),
-and is knowledgeable enough in this area to submit JSDoc, follow the steps
-below to contribute:
-
-1.  Write JSDoc for code areas that you have deep knowledge on. Be sure to
-    follow the [JSDoc Guidelines](JSDoc_GUIDELINES.markdown) when
-    writing JSDoc to ensure comprehensive descriptions and consistent style.
-
-2.  Send a pull request containing the new JSDoc to
-    [`codyhoag`](https://github.com/codyhoag).
-
-The pull request will be reviewed by a subject matter expert for accuracy and
-published.
--->
 ## KM Members
 
 KM members are restricted to only **review** JSDoc. Developers are responsible

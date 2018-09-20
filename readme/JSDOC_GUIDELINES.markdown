@@ -9,9 +9,7 @@ describing the
 [most important tips](#top-tips) for writing Javadoc,
 [formatting and building JSDoc](#formatting-and-building-jsdoc), and
 [submitting your contributions](#submitting-jsdoc). This article covers the
-main points and most important rules to follow. If you're interested in an
-extensive amount of examples and more advanced information, visit the
-[Advanced Javadoc Guidelines](ADVANCED_JAVADOC_GUIDELINES.markdown).
+main points and most important rules to follow. 
 
 ## Class Comments
 
@@ -28,20 +26,14 @@ comment:
 		 role. For some classes (simple utility classes for instance) this
 		 additional information is not necessary if the initial paragraph provides
 		 an adequate description.
-    - Usage examples or `@link` tags to where the class can be seen in use.<!-- Not sure about this -->
+    - Usage examples or `@link` tags to where the class can be seen in use.
 - [@see tags](http://usejsdoc.org/tags-see.html) to other closely
   related classes whose JSDocs gives the reader a clearer picture of the
   purpose of this class.
-- [@since tags](http://usejsdoc.org/tags-since.html). (as applicable)<!-- No examples of this in Portal -->
 - [@deprecated tags](http://usejsdoc.org/tags-deprecated.html).
   (as applicable)
 
-For more detailed information and examples for writing class descriptions, see
-the
-[Class Descriptions](ADVANCED_JAVADOC_GUIDELINES.markdown#class-descriptions)
-section. A simple example class comment is provided below:
-
-Example (class comment):
+A simple example class comment is provided below:
 
 ```JS
 /**
@@ -76,37 +68,64 @@ method:
 	method is used.
 - If the method is only used in one or two places, *@link* to the methods it is
   called from. This helps later developers to understand its role in Liferay.
-- No need to mention matching a company ID parameter. It should be understood
-  and is not worth cluttering the description.
 
-The following information should always be present in the following order in the 
-JSDoc tags for the method:
+The following information should be present in the JSDoc tags for the method:
 
+- [@memberOf](http://usejsdoc.org/tags-memberof.html) - Marks the property as a 
+  member of the parent. (as applicable)
 - [@param](http://usejsdoc.org/tags-param.html) - The method parameters, in 
   order, with descriptions.
 - [@return](http://usejsdoc.org/tags-returns.html) - All possible
   return values, including `null`. If the method is void, do not include this.
 - [@inheritdoc](http://usejsdoc.org/tags-inheritdoc.html) - (as applicable)<!-- Not working -->
-- [@throws](http://usejsdoc.org/tags-throws.html) - The
-  exceptions the method can throw, in order, with explanations of what would
-  trigger them. <!-- No examples of this in Portal -->
+- [@throws](http://usejsdoc.org/tags-throws.html) - The exceptions the method 
+  can throw, in order, with explanations of what would trigger them. (as applicable)
 - [@see](http://usejsdoc.org/tags-see.html) - (as applicable)
 - [@since](http://usejsdoc.org/tags-since.html) - (as applicable)<!-- No examples of this in Portal -->
 - [@deprecated](http://usejsdoc.org/tags-deprecated.html) - (as applicable)
 
-For more detailed information and examples for writing method descriptions, see
-the
-[Method Descriptions](ADVANCED_JAVADOC_GUIDELINES.markdown#method-descriptions)
-section. A simple method description is provided below:
+An example method description is provided below:
 
-Example (method comments):
+```JS  
+/**
+ * Dispatches a client event.
+ * @memberof PortletInit
+ * @param {string} type The type of listener
+ * @param {any} payload The payload to be delivered
+ * @return {number} The number of events queued for delivery
+ * @throws {TypeError} Thrown if the type was a system event type
+ */
+
+dispatchClientEvent(type, payload) {
+  validateArguments(arguments, 2, 2, ['string']);
+
+  if (type.match(new RegExp(portletRegex))) {
+    throw new TypeError('The event type is invalid: ' + type);
+  }
+
+  return Object.keys(eventListeners).reduce(
+    (amount, key) => {
+      const listener = eventListeners[key];
+
+      if (type.match(listener.type)) {
+        listener.handler(type, payload);
+        amount++;
+      }
+      return amount;
+    },
+    0
+  );
+}
+```
+
+Here is another method example:
 
 ```JS
 /**
  * Spawns a webworker to process the image in a different thread.
- * @param  {Object} message The image and brightness value.
+ * @param  {Object} message The image and brightness value
  * @return {CancellablePromise} A promise that resolves when the webworker
- * finishes processing the image.
+ * finishes processing the image
  */
 
 spawnWorker_(message) {
@@ -178,23 +197,26 @@ property comments, using the JSDoc Formatter, and submitting your contributions.
 ## State Object Comments
 
 Each class may contain STATE objects that contain properties related to the 
-component's render. The following information should be present in the JSDoc 
-comment on each STATE object:
+instance. The following information should be present in the JSDoc comment on 
+each STATE object:
 
 - A short, one sentence description of the STATE object.
 
 The following information should always be present in the JSDoc tags for the 
-STATE object:
+STATE properties:
 
 - [@type](http://usejsdoc.org/tags-type.html) - Specifies the type that the 
-STATE object contains.
+  STATE object contains.
 - [@static](http://usejsdoc.org/tags-static.html) - Specifies that the STATE 
-object is contained within the parent and can be accessed without instantiating 
-the parent.
+  object is contained within the parent and can be accessed without 
+  instantiating the parent.
+
+Below are example comments for a STATE object:
 
 ```JS
 /**
  * State definition.
+ *
  * @type {!Object}
  * @static
  */
@@ -205,30 +227,35 @@ FragmentPreview.STATE = {
 
 ### STATE Properties
 
-Each STATE Object contains properties that define settings for the STATE object. 
-The following information should always be present:
+Each STATE Object contains properties that define settings for the instance. The 
+following information should be present:
 
 - A short, one sentence description of the STATE property.
 
-The following information should always be present in the JSDoc tags for the 
-STATE property:
+The following information should be present in the JSDoc tags for the STATE 
+property:
 
-- [@default](ADVANCED_JAVADOC_GUIDELINES.markdown#param-tags) - The default 
-value for the property. If not applicable, set it as `undefined`.
+- [@default](http://usejsdoc.org/tags-default.html) - The default 
+  value for the property.
 - [@instance](http://usejsdoc.org/tags-instance.html) - Marks the property as an 
-instance member of the parent.
+  instance member of the parent.
 - [@memberOf](http://usejsdoc.org/tags-memberof.html) - Marks the property as a 
-member of the parent.
+  member of the parent.
+- [@type](http://usejsdoc.org/tags-type.html) - Specifies the property type.
+
+The following information can be present in the JSDoc tags for the STATE 
+property:
+
+- [@private](http://usejsdoc.org/tags-private.html). (as applicable)
 - [@protected](http://usejsdoc.org/tags-protected.html) - Marks the property as 
-protected, meaning it should only be used with the current module.
-- [@type](http://usejsdoc.org/tags-type.html) - Specifies the type that the 
-property may contain.
+  protected, meaning it should only be used with the current module.
 
 Example (STATE property comments):
 
 ```JS
 /**
  * Flag that checks if the preview content is loading.
+ *
  * @default false
  * @instance
  * @memberOf FragmentPreview
@@ -241,71 +268,68 @@ _loading: Config.bool()
   .value(false),
 ```
 
+If the type is an Array or Object that contains elements you would also like to 
+document, you can use the 
+[Closure Compiler's syntax](http://usejsdoc.org/tags-type.html) 
+to specify their type. Below is an example configuration. Note that the types 
+**must** be documented on the same line:
+
+```JS
+/**
+ * URLs used for communicating with the back-end
+ * @instance
+ * @memberOf FragmentEditor
+ * @type {{edit: !string, redirect: !string}}
+ */
+
+urls: Config.shapeOf(
+  {
+    edit: Config.string().required(),
+    redirect: Config.string().required()
+  }
+).required(),
+```
 
 ## Formatting and Building JSDoc
 
-Before committing any new or modified JSDocs, run `../gradlew npmRunFormat` on 
-your code first! This will automatically wrap your comments to the proper width,
-format html tags, and line up JSDoc tags. 
+Before committing any new or modified JSDocs, run 
+`../../../gradlew npmRunFormat` on your code first! This will automatically wrap 
+your comments to the proper width format html tags, and line up JSDoc tags. 
 
 1. Run the JSDoc Formatter.
 
-    To format JSDoc in a module under `liferay-portal/modules/apps`, execute 
-    this in the module's root folder:
+    To format JSDoc in a module under `liferay-portal/modules/apps/app-name`, 
+    execute this in the module's root folder:
 
-        gradlew npmRunFormat
+        ../../../../gradlew npmRunFormat
 
-    The optional arguments you can pass are:<!-- Are there optional settings? -->
+    Alternatively, you can run the formatter from the `liferay-portal/modules` 
+    folder to format all the modules:
+    
+        ../gradlew npmRunFormat
 
-    - `-DformatJavadoc.limit="SomeClassName1,SomeClassName2,com.liferay.portal.**` -
-    Runs the formatter on more than one class/package. Limits must be wrapped in
-    double quotes. This can be combined with the following two options, or
-    completely removed (which runs the formatter on the entire code base).
-    - `-DformatJavadoc.init=true` - Inserts place holders for all comment
-		elements.
-    - `-DformatJavadoc.update=true` - Inserts place holders for comment elements
-    that are not up to date with the current method signatures. For example, the
-    formatter will add comment placeholders for parameters that are in method
-    signatures but not present in the Javadoc comments for those methods.
-    - `-DformatJavadoc.generate.xml` - Generates an XML document of the Javadoc
-		that shows for a module's web services API page.
-
-    To format Javadoc in a class you've edited in a Liferay Portal Core module
-    (e.g., in `portal-kernel`, `portal-impl`, etc), run:
-
-		    ant format-javadoc -Dlimit=SomeClassName
-
-    There are several other alternative options for invoking basic Javadoc
-    formatting and updates.
-
-    - `-Dlimit="SomeClassName1,SomeClassName2,com.liferay.portal.**"` - Runs the
-    formatter on more than one class/package. Limits must be wrapped in double
-	  quotes. This can be combined with the following two options, or completely
-	  removed (which runs the formatter on the entire code base).
-    - `-Dinit=true` - Inserts place holders for all comment elements.
-    - `-Dupdate=true`- Inserts place holders for comment elements that are not
-    up to date with the current method signatures. For example, the formatter
-    will add comment placeholders for parameters that are in method signatures
-    but not present in the Javadoc comments for those methods.
-
-3. Building JSDoc (optional)
+2. Building JSDoc (optional)
 
     To optionally build a module's JSDoc HTML to the module's 
     `build/docs/jsdoc/module-name/version` folder to see what it looks like, 
     execute this:
 
-        gradle jsdoc
+        ../../../../gradlew jsdoc
+        
+    Alternatively, you can run `gradlew appJSDoc` to generate the JSDoc for an 
+    entire app suite, from its root folder:
+    
+        ../../../gradlew appJSDoc
 
-    Open the generated `index.html` file to view the module's JSDoc.
+    Open the generated `index.html` file to view the generated JSDoc.
     
     +$$$
     
-    **Note:** This task can take a few minutes to generate the JSDoc as it 
+    **Note:** JSDoc HTML is only generated for modules that use the `.es.js` 
+    extension. This task can take a few minutes to generate the JSDoc as it 
     downloads Node as part of the process.
     
-    $$$
-     
-    JSDoc HTML is only generated for modules that use the `.es.js` extension. 
+    $$$ 
 
 ## Submitting JSDoc
 
