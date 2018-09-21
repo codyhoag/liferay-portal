@@ -56,7 +56,7 @@ A simple example class comment is provided below:
  *
  * @see BigExample
  */
-public class Example {
+class Example {
     ...
 }
 ```
@@ -85,11 +85,14 @@ popular ones used in Liferay Portal's JavaScript files:
 - [@memberOf](http://usejsdoc.org/tags-memberof.html) - Marks the property as a 
   member of the parent.
 - [@param](http://usejsdoc.org/tags-param.html) - The method parameters,
-  alphabetically ordered, with descriptions.
+  alphabetically ordered, with descriptions. The descriptions should begin with
+  *The* and end with a period.
 - [@return](http://usejsdoc.org/tags-returns.html) - All possible
   return values, including `null`. If the method is void, do not include this.
+  The return values should begin with *The* or *A* (unless it's a boolean; in
+  that case, use *Whether*) and end with a period.
 - [@inheritdoc](http://usejsdoc.org/tags-inheritdoc.html) - The method's parent
-  documentation is inherited and displayed when generated. <!-- Not working -->
+  documentation is inherited and displayed when generated.
 - [@throws](http://usejsdoc.org/tags-throws.html) - The exceptions the method 
   can throw, alphabetically ordered, with explanations of what would trigger
   them.
@@ -163,7 +166,7 @@ spawnWorker_(message) {
     and [method](#method-comments) does.
 3.  Avoid just restating the class or method name (e.g., avoid
     *updateLocalization(...)* &rarr; *Updates the localization* **OR** *@param
-    key the key*).
+    {string} key the key*).
 4.  Describe the most important details in the first sentence.
 5.  Include all relevant tags
     ([@param](http://usejsdoc.org/tags-param.html),
@@ -195,9 +198,7 @@ spawnWorker_(message) {
     wrap subsequent paragraphs with paragraph tags.
 13. Wrap JSDoc at 80 columns.
 
-Terrific! You're off to a great start to writing JSDoc. The following sections
-describe the most important aspects of writing STATE object comments and STATE 
-property comments, using the JSDoc Formatter, and submitting your contributions.
+Terrific! You're off to a great start to writing JSDoc.
 
 ## JSDoc Linking
 
@@ -269,7 +270,7 @@ how to format your text:
 - Unordered and ordered lists must not be nested within paragraph (`<p></p>`)
   tags.
 
-## State Object Comments
+## STATE Object Comments
 
 Each class may contain STATE objects that contain properties related to the 
 instance. These should resemble [method comments](#method-comments), except
@@ -364,16 +365,19 @@ urls: Config.shapeOf(
 
 ## Formatting and Building JSDoc
 
-Before committing any new or modified JSDocs, run 
-`./gradlew npmRunFormat` on your code first! This will automatically wrap 
-your comments to the proper width format html tags, and line up JSDoc tags. 
+Before committing any new or modified JSDocs, you should format your JS files
+first! This will automatically wrap 
+your comments to the proper width format HTML tags, and line up JSDoc tags. Be
+sure to install Liferay's
+[Frontend Source Formatter](https://github.com/liferay/liferay-frontend-source-formatter)
+before proceeding.
 
 1. Run the JSDoc Formatter.
 
     To format JSDoc in a module under `liferay-portal/modules/apps/app-name`, 
     execute this in the module's root folder:
 
-        ../../../../gradlew npmRunFormat
+        npm run csf -i
 
     Alternatively, you can run the formatter from the `liferay-portal/modules` 
     folder to format all the modules:
@@ -382,14 +386,14 @@ your comments to the proper width format html tags, and line up JSDoc tags.
 
 2. Building JSDoc (optional)
 
-    To optionally build a module's JSDoc HTML to the module's 
+    To build a module's JSDoc HTML to the module's 
     `build/docs/jsdoc/module-name/version` folder to see what it looks like, 
-    execute this:
+    execute this from the module's root folder:
 
         ../../../../gradlew jsdoc
 
-    Alternatively, you can run `gradlew appJSDoc` to generate the JSDoc for an 
-    entire app suite, from its root folder:
+    Alternatively, you can generate the JSDoc for an entire app suite by
+    executing this from the app suite's root folder:
 
         ../../../gradlew appJSDoc
 
