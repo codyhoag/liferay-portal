@@ -10,8 +10,8 @@ Developers are responsible for creating JSDoc when writing/maintaining its
 related code. This ensures that the documentation is correct and useful. There
 are two paths you can take for providing JSDoc for your area of expertise:
 
-- [Write JSDoc during the code creation/modification process.](#write-JSDoc-during-code-creation)
-- [Write JSDoc for completed code that's already merged and available.](#write-JSDoc-for-mergedavailable-code)
+- [Write JSDoc during the code creation/modification process.](#write-jsdoc-during-code-creation)
+- [Write JSDoc for completed code that's already merged and available.](#write-jsdoc-for-mergedavailable-code)
 
 Follow the path corresponding to your current workflow.
 
@@ -21,8 +21,8 @@ Developers can submit JSDoc **with** code if certain precautions are followed
 (outlined below). Follow the below process for submitting JSDoc this way:
 
 1.  Write JSDoc for code areas that you have deep knowledge for. Be sure to
-    follow the [JSDoc Guidelines](JSDOC_GUIDELINES.markdown) when
-    writing JSDoc to ensure comprehensive descriptions and consistent style.
+    follow the [JSDoc Guidelines](JSDOC_GUIDELINES.markdown) when writing JSDoc
+    to ensure comprehensive descriptions and consistent style.
 
 2.  Insert an `@review` tag below each new JSDoc entry. This will be searched
     for by the Knowledge Management (KM) team after it's merged to ensure that
@@ -30,13 +30,15 @@ Developers can submit JSDoc **with** code if certain precautions are followed
     should look like this:
 
         /**
-         * Returns the something.
-         *
-         * @return the something
-         *
-         * @review
-         */
-        public int getSomething();
+        * Initial content sent to the editor.
+        * 
+        * @default ''
+        * @instance
+        * @memberOf AceEditor
+        * @review
+        * @type {string}
+        */
+        initialContent: Config.string().value(''),
 
     Submit your JSDoc following your typical code review process.
 
@@ -73,26 +75,9 @@ to complete to ensure JSDoc is properly formatted and ready for submission:
 - Format JSDoc using the JSDoc Formatter. See
   [here](JSDOC_GUIDELINES.markdown#formatting-and-building-jsdoc)
   for more information.
-- Ensure no source formatting violations were introduced while editing. To check
-  this, run Source Formatter on your local changes. The steps below
-  can be used when reviewing a submission in `liferay-portal`:
-    1. Navigate to `liferay-portal/portal-impl` using a command line tool.
-    2. Run `ant format-source-local-changes`.
 - Ensure all commit descriptions start with a ticket number (e.g., *LPS-12345
   JSDoc*). If the JSDoc is also associated with an LRDOCS ticket, include
   that in the commit description too (e.g., *LPS-12345 LRDOCS-9876 JSDoc*).
 
-When finished reviewing, send your edits in a pull request to the repository
-gate keeper. If you're editing JSDoc for `liferay-portal`, send your edits to
+When finished reviewing, send your edits in a pull request to
 [`codyhoag`](https://github.com/codyhoag).
-<!-- Not sure this is applicable
-**Note:** Sending reference documentation updates in a project managed in a
-Github subrepo should be sent to the subrepo, not `liferay-portal`. For example,
-although the APIO architect project is available in `liferay-portal`
-[here](https://github.com/liferay/liferay-portal/blob/master/modules/apps/apio-architect),
-any changes should be sent to its subrepo
-[here](https://github.com/liferay/com-liferay-apio-architect). You can check
-whether a module project is managed in an external subrepo by checking if it
-contains a `.gitrepo` file. If the file exists and contains the `mode = pull`
-declaration, changes should be submitted to the subrepo.
--->
