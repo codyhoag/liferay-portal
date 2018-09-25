@@ -3,7 +3,7 @@
 We welcome you to contribute JSDoc for Liferay's JavaScript classes. Following
 these guidelines helps to ensure that JavaScript classes are documented
 sufficiently and consistently. The guidelines also explain how to leverage
-Liferay's JSDoc tools. Refer to the table of content below for easier
+Liferay's JSDoc tools. Refer to the table of contents below for easier
 navigation.
 
 1. [Class Comments](#class-comments)
@@ -366,9 +366,8 @@ urls: Config.shapeOf(
 ## Formatting and Building JSDoc
 
 Before committing any new or modified JSDocs, you should format your JS files
-first! This will automatically wrap 
-your comments to the proper width format HTML tags, and line up JSDoc tags. Be
-sure to install Liferay's
+first! This will automatically wrap your comments to the proper width, format 
+HTML tags, and line up JSDoc tags. Be sure to install Liferay's 
 [Frontend Source Formatter](https://github.com/liferay/liferay-frontend-source-formatter)
 before proceeding.
 
