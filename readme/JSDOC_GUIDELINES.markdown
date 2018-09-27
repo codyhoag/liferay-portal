@@ -24,10 +24,10 @@ The following information should be present in the following order in the class
 comment:
 
 - Initial class description (paragraph/sentence)
-    - **First sentence** - Should describe the class clearly and concisely.
-		(required)
+    - **First sentence** - Should describe the class clearly and concisely
+		(required).
     - **Followup sentences** - Support the first sentence with important points
-	  about the class. (optional)
+	  about the class (optional).
 - Detailed class description (additional paragraph(s))
     - Provide more information on the class's purpose, abilities, and general
 		 role. For some classes (simple utility classes for instance), this
@@ -82,6 +82,8 @@ method:
 Some method JSDoc tags are more popular than others. Listed below are the most
 popular ones used in Liferay Portal's JavaScript files:
 
+- [@inheritdoc](http://usejsdoc.org/tags-inheritdoc.html) - The method's parent
+  documentation is inherited and displayed when generated.
 - [@memberOf](http://usejsdoc.org/tags-memberof.html) - Marks the property as a 
   member of the parent.
 - [@param](http://usejsdoc.org/tags-param.html) - The method parameters,
@@ -91,15 +93,13 @@ popular ones used in Liferay Portal's JavaScript files:
   return values, including `null`. If the method is void, do not include this.
   The return values should begin with *The* or *A* (unless it's a boolean; in
   that case, use *Whether*) and end with a period.
-- [@inheritdoc](http://usejsdoc.org/tags-inheritdoc.html) - The method's parent
-  documentation is inherited and displayed when generated.
 - [@throws](http://usejsdoc.org/tags-throws.html) - The exceptions the method 
   can throw, alphabetically ordered, with explanations of what would trigger
   them.
 - [@see](http://usejsdoc.org/tags-see.html) - Links to another JSDoc area
   if more important details can be gleaned from that description. See the
   [JSDoc Linking](#jsdoc-linking) section for more details.
-- [@deprecated](http://usejsdoc.org/tags-deprecated.html) - a short description
+- [@deprecated](http://usejsdoc.org/tags-deprecated.html) - A short description
   that includes the release/version of initial deprecation, why the method was
   deprecated, and a link to what should be used in its place.
 
@@ -180,7 +180,7 @@ spawnWorker_(message) {
 
     ```JS
     /**
-     * @param {boolean} renderData whether to render the data
+     * @param {boolean} renderData Whether to render the data.
      */ 
     ```
 
@@ -191,12 +191,13 @@ spawnWorker_(message) {
     [@return](http://usejsdoc.org/tags-returns.html), and
     [@throws](http://usejsdoc.org/tags-throws.html)) with a period. Write
     follow-up text in complete sentences.
-11. Describe exceptions (i.e.,
+11. Capitalize the first world for all tag descriptions.
+12. Describe exceptions (i.e.,
 	  [@throws](http://usejsdoc.org/tags-throws.html)) in past
     tense.
-12. Don't wrap the first paragraph of a JSDoc comment with paragraph tags. Do
+13. Don't wrap the first paragraph of a JSDoc comment with paragraph tags. Do
     wrap subsequent paragraphs with paragraph tags.
-13. Wrap JSDoc at 80 columns.
+14. Wrap JSDoc at 80 columns.
 
 Terrific! You're off to a great start to writing JSDoc.
 
@@ -257,7 +258,7 @@ how to format your text:
 
 - All HTML tags (except for `<b>`, `<i>`, `<code>`, etc.) should be on a line by
   themselves.
-- When including multiple paragraphs for a description wrap the additional
+- When including multiple paragraphs for a description, wrap the additional
   paragraphs in `<p>` tags. The first paragraph should not be wrapped this way.
 - Format all keywords, special constants (`true`, `false`, `null`), and file
   names (`portal-ext.properties`) as code using the HTML `<code>` tag (e.g.,
@@ -267,7 +268,7 @@ how to format your text:
   each be on a line of their own. List items should each be placed on their own
   line, and the `<li>` and `</li>` tags should be on their own line immediately
   before and after the item text.
-- Unordered and ordered lists must not be nested within paragraph (`<p></p>`)
+- Unordered and ordered lists should not be nested within paragraph (`<p></p>`)
   tags.
 
 ## STATE Object Comments
@@ -301,7 +302,7 @@ FragmentPreview.STATE = {
 
 ### STATE Properties
 
-Each STATE Object contains properties that define settings for the instance.
+Each STATE object contains properties that define settings for the instance.
 These resemble [method comments](#method-comments), except they're typically
 shorter and don't begin with an action word.
 
@@ -319,8 +320,8 @@ property:
 The following information can be present in the JSDoc tags for the STATE 
 property:
 
-- [@private](http://usejsdoc.org/tags-private.html). Marks the property as
-  private. This means HTML for the property will not be generated.
+- [@private](http://usejsdoc.org/tags-private.html) - Marks the property as
+  private, meaning HTML for the property will not be generated.
 - [@protected](http://usejsdoc.org/tags-protected.html) - Marks the property as 
   protected, meaning it should only be used with the current module.
 
@@ -413,6 +414,6 @@ please open an [LRDOCS](https://issues.liferay.com/browse/LRDOCS) JIRA ticket:
 - **Issue Type:** API
 - **Summary:** Re-add JSDoc for .... (name or prefix of class/file)
 - **Component:** Area the JSDoc pertains to
-- **Affected Release:** 7.1.x, 7.0.x, 6.2.x, 6.1.x
+- **Affected Release:** 7.2.x, 7.1.x, 7.0.x, 6.2.x, 6.1.x
 - **Description:** Include the *commit number* of the original JSDoc commit
   and/or the JSDoc removal commit
