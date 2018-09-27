@@ -2,7 +2,7 @@
 
 Documenting your code with JSDoc is essential for anyone developing for
 Liferay products. Please follow the submission processes outlined here to ensure
-an effective review process. 
+an effective review process.
 
 ## Liferay Internal Developers
 
@@ -31,7 +31,7 @@ Developers can submit JSDoc **with** code if certain precautions are followed
 
         /**
         * Initial content sent to the editor.
-        * 
+        *
         * @default ''
         * @instance
         * @memberOf AceEditor
@@ -57,8 +57,8 @@ published:
     follow the [JSDoc Guidelines](JSDOC_GUIDELINES.markdown) when
     writing JSDoc to ensure comprehensive descriptions and consistent style.
 
-2.  Send a pull request containing the new JSDoc to your team's tech writer 
-    (a KM team member). If you're unsure who should receive the pull request, 
+2.  Send a pull request containing the new JSDoc to your team's tech writer
+    (a KM team member). If you're unsure who should receive the pull request,
     send it to Cody Hoag (Github handle:
     [`codyhoag`](https://github.com/codyhoag)).
 
