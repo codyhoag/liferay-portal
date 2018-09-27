@@ -84,7 +84,7 @@ popular ones used in Liferay Portal's JavaScript files:
 
 - [@inheritdoc](http://usejsdoc.org/tags-inheritdoc.html) - The method's parent
   documentation is inherited and displayed when generated.
-- [@memberOf](http://usejsdoc.org/tags-memberof.html) - Marks the property as a 
+- [@memberOf](http://usejsdoc.org/tags-memberof.html) - Marks the property as a
   member of the parent.
 - [@param](http://usejsdoc.org/tags-param.html) - The method parameters,
   alphabetically ordered, with descriptions. The descriptions should begin with
@@ -93,7 +93,7 @@ popular ones used in Liferay Portal's JavaScript files:
   return values, including `null`. If the method is void, do not include this.
   The return values should begin with *The* or *A* (unless it's a boolean; in
   that case, use *Whether*) and end with a period.
-- [@throws](http://usejsdoc.org/tags-throws.html) - The exceptions the method 
+- [@throws](http://usejsdoc.org/tags-throws.html) - The exceptions the method
   can throw, alphabetically ordered, with explanations of what would trigger
   them.
 - [@see](http://usejsdoc.org/tags-see.html) - Links to another JSDoc area
@@ -105,7 +105,7 @@ popular ones used in Liferay Portal's JavaScript files:
 
 An example method description is provided below:
 
-```JS  
+`JS
 /**
  * Dispatches a client event.
  *
@@ -172,7 +172,7 @@ spawnWorker_(message) {
     ([@param](http://usejsdoc.org/tags-param.html),
     [@return](http://usejsdoc.org/tags-returns.html), etc.) for
     each method; without them, the method JSDoc is incomplete.
-6.  Start a method description with *Returns*, if the method returns a value. 
+6.  Start a method description with *Returns*, if the method returns a value.
 7.  Avoid referring explicitly to parameters by name; instead, refer to them in
     general terms (e.g., *class name ID* instead of
     *&lt;code>classNameId&lt;/code>*).
@@ -181,7 +181,7 @@ spawnWorker_(message) {
     ```JS
     /**
      * @param {boolean} renderData Whether to render the data.
-     */ 
+     */
     ```
 
 9. Punctuate every class and method description (sentence or phrase) with a
@@ -273,17 +273,17 @@ how to format your text:
 
 ## STATE Object Comments
 
-Each class may contain STATE objects that contain properties related to the 
+Each class may contain STATE objects that contain properties related to the
 instance. These should resemble [method comments](#method-comments), except
 they're typically shorter and don't begin with an action word.
 
-The following information should always be present in the JSDoc tags for the 
+The following information should always be present in the JSDoc tags for the
 STATE properties:
 
-- [@type](http://usejsdoc.org/tags-type.html) - Specifies the type that the 
+- [@type](http://usejsdoc.org/tags-type.html) - Specifies the type that the
   STATE object contains.
-- [@static](http://usejsdoc.org/tags-static.html) - Specifies that the STATE 
-  object is contained within the parent and can be accessed without 
+- [@static](http://usejsdoc.org/tags-static.html) - Specifies that the STATE
+  object is contained within the parent and can be accessed without
   instantiating the parent.
 
 Below are example comments for a STATE object:
@@ -306,23 +306,23 @@ Each STATE object contains properties that define settings for the instance.
 These resemble [method comments](#method-comments), except they're typically
 shorter and don't begin with an action word.
 
-The following information should be present in the JSDoc tags for the STATE 
+The following information should be present in the JSDoc tags for the STATE
 property:
 
-- [@default](http://usejsdoc.org/tags-default.html) - The default 
+- [@default](http://usejsdoc.org/tags-default.html) - The default
   value for the property.
-- [@instance](http://usejsdoc.org/tags-instance.html) - Marks the property as an 
+- [@instance](http://usejsdoc.org/tags-instance.html) - Marks the property as an
   instance member of the parent.
-- [@memberOf](http://usejsdoc.org/tags-memberof.html) - Marks the property as a 
+- [@memberOf](http://usejsdoc.org/tags-memberof.html) - Marks the property as a
   member of the parent.
 - [@type](http://usejsdoc.org/tags-type.html) - Specifies the property type.
 
-The following information can be present in the JSDoc tags for the STATE 
+The following information can be present in the JSDoc tags for the STATE
 property:
 
 - [@private](http://usejsdoc.org/tags-private.html) - Marks the property as
   private, meaning HTML for the property will not be generated.
-- [@protected](http://usejsdoc.org/tags-protected.html) - Marks the property as 
+- [@protected](http://usejsdoc.org/tags-protected.html) - Marks the property as
   protected, meaning it should only be used with the current module.
 
 Example STATE property comments:
@@ -342,10 +342,10 @@ _loading: Config.bool()
   .value(false),
 ```
 
-If the type is an Array or Object that contains elements you would also like to 
-document, you can use the 
-[Closure Compiler's syntax](http://usejsdoc.org/tags-type.html) 
-to specify their type. Below is an example configuration. Note that the types 
+If the type is an Array or Object that contains elements you would also like to
+document, you can use the
+[Closure Compiler's syntax](http://usejsdoc.org/tags-type.html)
+to specify their type. Below is an example configuration. Note that the types
 **must** be documented on the same line:
 
 ```JS
@@ -367,27 +367,27 @@ urls: Config.shapeOf(
 ## Formatting and Building JSDoc
 
 Before committing any new or modified JSDocs, you should format your JS files
-first! This will automatically wrap your comments to the proper width, format 
-HTML tags, and line up JSDoc tags. Be sure to install Liferay's 
+first! This will automatically wrap your comments to the proper width, format
+HTML tags, and line up JSDoc tags. Be sure to install Liferay's
 [Frontend Source Formatter](https://github.com/liferay/liferay-frontend-source-formatter)
 before proceeding.
 
 1. Run the JSDoc Formatter.
 
-    To format JSDoc in a module under `liferay-portal/modules/apps/app-name`, 
+    To format JSDoc in a module under `liferay-portal/modules/apps/app-name`,
     execute this in the module's root folder:
 
         npm run csf -i
 
-    Alternatively, you can run the formatter from the `liferay-portal/modules` 
+    Alternatively, you can run the formatter from the `liferay-portal/modules`
     folder to format all the modules:
 
         ../gradlew npmRunFormat
 
 2. Building JSDoc (optional)
 
-    To build a module's JSDoc HTML to the module's 
-    `build/docs/jsdoc/module-name/version` folder to see what it looks like, 
+    To build a module's JSDoc HTML to the module's
+    `build/docs/jsdoc/module-name/version` folder to see what it looks like,
     execute this from the module's root folder:
 
         ../../../../gradlew jsdoc
@@ -399,8 +399,8 @@ before proceeding.
 
     Open the generated `index.html` file to view the generated JSDoc.
 
-    **Note:** JSDoc HTML is only generated for modules that use the `.es.js` 
-    extension. This task can take a few minutes to generate the JSDoc as it 
+    **Note:** JSDoc HTML is only generated for modules that use the `.es.js`
+    extension. This task can take a few minutes to generate the JSDoc as it
     downloads Node as part of the process.
 
 ## Submitting JSDoc
