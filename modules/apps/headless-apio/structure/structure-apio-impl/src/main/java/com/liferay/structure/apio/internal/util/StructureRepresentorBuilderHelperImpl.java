@@ -29,6 +29,7 @@ import com.liferay.dynamic.data.mapping.model.DDMFormLayoutRow;
 import com.liferay.dynamic.data.mapping.model.DDMStructure;
 import com.liferay.dynamic.data.mapping.model.LocalizedValue;
 import com.liferay.person.apio.architect.identifier.PersonIdentifier;
+import com.liferay.portal.kernel.util.LocaleUtil;
 import com.liferay.structure.apio.architect.model.FormLayoutPage;
 import com.liferay.structure.apio.architect.util.StructureRepresentorBuilderHelper;
 import com.liferay.structure.apio.internal.model.FormLayoutPageImpl;
@@ -48,7 +49,7 @@ import java.util.stream.Stream;
 import org.osgi.service.component.annotations.Component;
 
 /**
- * Provides the information necessary to expose Structure resources through a
+ * Provides the information necessary to expose structure resources through a
  * web API. The resources are mapped from the internal model {@code
  * DDMStructure}.
  *
@@ -144,7 +145,8 @@ public class StructureRepresentorBuilderHelperImpl
 		).addStringList(
 			"availableLanguages",
 			ddmStructure -> Arrays.asList(
-				ddmStructure.getAvailableLanguageIds())
+				LocaleUtil.toW3cLanguageIds(
+					ddmStructure.getAvailableLanguageIds()))
 		);
 	}
 

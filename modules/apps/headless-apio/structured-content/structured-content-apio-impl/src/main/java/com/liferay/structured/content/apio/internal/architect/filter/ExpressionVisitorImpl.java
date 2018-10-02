@@ -24,6 +24,7 @@ import com.liferay.portal.kernel.search.filter.RangeTermFilter;
 import com.liferay.portal.kernel.search.filter.TermFilter;
 import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.structured.content.apio.architect.entity.EntityField;
+import com.liferay.structured.content.apio.architect.entity.EntityModel;
 import com.liferay.structured.content.apio.architect.filter.InvalidFilterException;
 import com.liferay.structured.content.apio.architect.filter.expression.BinaryExpression;
 import com.liferay.structured.content.apio.architect.filter.expression.ExpressionVisitor;
@@ -47,14 +48,11 @@ import java.util.Optional;
 public class ExpressionVisitorImpl implements ExpressionVisitor<Object> {
 
 	public ExpressionVisitorImpl(
-		Format format, Locale locale,
-		StructuredContentSingleEntitySchemaBasedEdmProvider
-			structuredContentSingleEntitySchemaBasedEdmProvider) {
+		Format format, Locale locale, EntityModel entityModel) {
 
 		_format = format;
 		_locale = locale;
-		_structuredContentSingleEntitySchemaBasedEdmProvider =
-			structuredContentSingleEntitySchemaBasedEdmProvider;
+		_entityModel = entityModel;
 	}
 
 	@Override
@@ -92,8 +90,7 @@ public class ExpressionVisitorImpl implements ExpressionVisitor<Object> {
 		List<String> resourcePath = memberExpression.getResourcePath();
 
 		Map<String, EntityField> entityFieldsMap =
-			_structuredContentSingleEntitySchemaBasedEdmProvider.
-				getEntityFieldsMap();
+			_entityModel.getEntityFieldsMap();
 
 		return entityFieldsMap.get(resourcePath.get(0));
 	}
@@ -129,8 +126,14 @@ public class ExpressionVisitorImpl implements ExpressionVisitor<Object> {
 		else if (Objects.equals(BinaryExpression.Operation.GE, operation)) {
 			filter = _getGEFilter((EntityField)left, right, locale);
 		}
+		else if (Objects.equals(BinaryExpression.Operation.GT, operation)) {
+			filter = _getGTFilter((EntityField)left, right, locale);
+		}
 		else if (Objects.equals(BinaryExpression.Operation.LE, operation)) {
 			filter = _getLEFilter((EntityField)left, right, locale);
+		}
+		else if (Objects.equals(BinaryExpression.Operation.LT, operation)) {
+			filter = _getLTFilter((EntityField)left, right, locale);
 		}
 		else if (Objects.equals(BinaryExpression.Operation.OR, operation)) {
 			filter = _getORFilter((Filter)left, (Filter)right);
@@ -154,7 +157,23 @@ public class ExpressionVisitorImpl implements ExpressionVisitor<Object> {
 		}
 
 		throw new UnsupportedOperationException(
-			"Unsupported method _getGEQuery with entity field type " +
+			"Unsupported method _getGEFilter with entity field type " +
+				entityField.getType());
+	}
+
+	private Filter _getGTFilter(
+		EntityField entityField, Object fieldValue, Locale locale) {
+
+		if (Objects.equals(entityField.getType(), EntityField.Type.DATE) ||
+			Objects.equals(entityField.getType(), EntityField.Type.STRING)) {
+
+			return new RangeTermFilter(
+				entityField.getFilterableName(locale), false, true,
+				String.valueOf(fieldValue), null);
+		}
+
+		throw new UnsupportedOperationException(
+			"Unsupported method _getGTFilter with entity field type " +
 				entityField.getType());
 	}
 
@@ -170,7 +189,23 @@ public class ExpressionVisitorImpl implements ExpressionVisitor<Object> {
 		}
 
 		throw new UnsupportedOperationException(
-			"Unsupported method _getGEQuery with entity field type " +
+			"Unsupported method _getLEFilter with entity field type " +
+				entityField.getType());
+	}
+
+	private Filter _getLTFilter(
+		EntityField entityField, Object fieldValue, Locale locale) {
+
+		if (Objects.equals(entityField.getType(), EntityField.Type.DATE) ||
+			Objects.equals(entityField.getType(), EntityField.Type.STRING)) {
+
+			return new RangeTermFilter(
+				entityField.getFilterableName(locale), false, false, null,
+				String.valueOf(fieldValue));
+		}
+
+		throw new UnsupportedOperationException(
+			"Unsupported method _getLTFilter with entity field type " +
 				entityField.getType());
 	}
 
@@ -204,9 +239,8 @@ public class ExpressionVisitorImpl implements ExpressionVisitor<Object> {
 			literal, StringPool.DOUBLE_APOSTROPHE, StringPool.APOSTROPHE);
 	}
 
+	private final EntityModel _entityModel;
 	private final Format _format;
 	private final Locale _locale;
-	private final StructuredContentSingleEntitySchemaBasedEdmProvider
-		_structuredContentSingleEntitySchemaBasedEdmProvider;
 
 }

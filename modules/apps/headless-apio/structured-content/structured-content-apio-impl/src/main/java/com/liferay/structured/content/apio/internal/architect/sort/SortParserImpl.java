@@ -17,10 +17,10 @@ package com.liferay.structured.content.apio.internal.architect.sort;
 import com.liferay.petra.string.StringUtil;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.structured.content.apio.architect.entity.EntityField;
+import com.liferay.structured.content.apio.architect.entity.EntityModel;
 import com.liferay.structured.content.apio.architect.sort.InvalidSortException;
 import com.liferay.structured.content.apio.architect.sort.SortField;
 import com.liferay.structured.content.apio.architect.sort.SortParser;
-import com.liferay.structured.content.apio.internal.architect.filter.StructuredContentSingleEntitySchemaBasedEdmProvider;
 
 import java.util.Collections;
 import java.util.List;
@@ -29,36 +29,29 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
-
 /**
- * Utility for parsing Sort strings. It uses a model to create a list of {@link
- * SortField}.
+ * Parses {@code Sort} strings. This class uses a model to create a {@code
+ * SortField} list.
  *
  * @author Cristina González
- * @review
  */
-@Component(immediate = true, service = SortParser.class)
 public class SortParserImpl implements SortParser {
 
+	public SortParserImpl(EntityModel entityModel) {
+		_entityModel = entityModel;
+	}
+
 	/**
-	 * Returns a List of {@link SortField} obtained from a comma-separated list
-	 * of field names and sort directions.
+	 * Returns a {@code SortField} list from a comma-separated list of field
+	 * names and sort directions.
 	 *
-	 * Sort directions supported are desc and asc and can be appended to each
-	 * sort field, separated by the ':' character.
+	 * Sort directions {@code desc} and {@code asc} can be appended to each sort
+	 * field, separated by the {@code :} character (e.g., {@code
+	 * field1:dsc,field2,field3:asc}). If a sort direction isn't provided, the
+	 * sort field will be {@code asc}.
 	 *
-	 * If a sort direction is not provided, the sort field will be 'asc'.
-	 *
-	 * For example:
-	 * - field1,field2,field3
-	 * - field1:asc,field2:desc,field3
-	 * - field1:asc,field2,field3:desc
-	 *
-	 * @param  sortString - String to be parsed
-	 * @return a  {@link List<SortField>}
-	 * @review
+	 * @param  sortString the string to parse
+	 * @return the sort field list
 	 */
 	public List<SortField> parse(String sortString) {
 		if (Validator.isNull(sortString)) {
@@ -82,15 +75,6 @@ public class SortParserImpl implements SortParser {
 		);
 	}
 
-	@Reference(unbind = "-")
-	public void setStructuredContentSingleEntitySchemaBasedEdmProvider(
-		StructuredContentSingleEntitySchemaBasedEdmProvider
-			structuredContentSingleEntitySchemaBasedEdmProvider) {
-
-		_structuredContentSingleEntitySchemaBasedEdmProvider =
-			structuredContentSingleEntitySchemaBasedEdmProvider;
-	}
-
 	protected Optional<SortField> getSortFieldOptional(String sortString) {
 		List<String> list = StringUtil.split(sortString, ':');
 
@@ -112,8 +96,7 @@ public class SortParserImpl implements SortParser {
 		}
 
 		Map<String, EntityField> entityFieldsMap =
-			_structuredContentSingleEntitySchemaBasedEdmProvider.
-				getEntityFieldsMap();
+			_entityModel.getEntityFieldsMap();
 
 		EntityField entityField = entityFieldsMap.get(fieldName);
 
@@ -153,7 +136,6 @@ public class SortParserImpl implements SortParser {
 
 	private static final String _ORDER_BY_DESC = "desc";
 
-	private StructuredContentSingleEntitySchemaBasedEdmProvider
-		_structuredContentSingleEntitySchemaBasedEdmProvider;
+	private final EntityModel _entityModel;
 
 }

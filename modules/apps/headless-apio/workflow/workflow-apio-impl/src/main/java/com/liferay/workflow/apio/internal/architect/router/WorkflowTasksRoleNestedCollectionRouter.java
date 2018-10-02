@@ -31,12 +31,11 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 /**
- * Provides the information necessary to expose user WorkflowTask resources
- * through a web API. The resources are mapped from the internal model {@link
- * WorkflowTask}.
+ * Provides the information necessary to expose through a web API the {@code
+ * WorkflowTask} resources assigned to a user's role. The resources are mapped
+ * from the internal model {@code WorkflowTask}.
  *
  * @author Sarai Díaz
- * @review
  */
 @Component(immediate = true, service = NestedCollectionRouter.class)
 public class WorkflowTasksRoleNestedCollectionRouter

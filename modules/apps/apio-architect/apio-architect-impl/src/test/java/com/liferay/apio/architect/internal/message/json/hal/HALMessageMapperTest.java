@@ -59,6 +59,8 @@ public class HALMessageMapperTest implements RepresentableManager {
 			Paths.get("src", "test", "resources", "hal")
 		).mediaType(
 			"application/hal+json"
+		).validateErrorMessageMapper(
+			new HALErrorMessageMapper()
 		).validateEntryPointMessageMapper(
 			new HALEntryPointMessageMapper()
 		).validatePageMessageMapper(
