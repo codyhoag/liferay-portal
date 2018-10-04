@@ -20,145 +20,134 @@ import com.liferay.portal.kernel.repository.model.FileEntry;
 import java.io.IOException;
 
 /**
- * This interface is responsible of performing operations on a Google Drive
- * file that is related (linked) to a local FileEntry.
+ * Performs operations on a Google Drive file that is related (linked) to a
+ * local {@code FileEntry}.
  *
- * For a file entry to be linked to a Google Drive file means that both
- * represent the same contents. The file entry will keep some state regarding
- * its sister Google Drive file. This linking -- as well as the unlinking -- is
- * performed automatically by the methods in this interface.
- *
- * Under the hood, these links are represented by the {@link
- * DLOpenerGoogleDriveFileReference} model.
+ * When a file entry is linked to a Google Drive file, both represent the same
+ * contents. The file entry keeps some state regarding its linked Google Drive
+ * file. The methods in this interface automatically perform this linking and
+ * unlinking. The links are represented by {@link
+ * DLOpenerGoogleDriveFileReference}.
  *
  * @author Adolfo Pérez
- * @review
  */
 public interface DLOpenerGoogleDriveManager {
 
 	/**
-	 * Check out the contents of the fileEntry to Google Drive. To check out
-	 * in this context means creating a copy of the contents of fileEntry,
-	 * linking this fileEntry to the Google Drive file, and returning a
-	 * reference to the Google Drive file.
+	 * Creates a new file in Google Drive with the same content as a file entry,
+	 * and returns a reference to that Google Drive file. The Google Drive
+	 * file's ID is stored alongside the file entry's ID.
 	 *
-	 * This method will <em>not</em> checkout the file entry in Liferay. To do
-	 * that, see {@link
-	 * com.liferay.document.library.kernel.service.DLAppService#checkOutFileEntry(long, ServiceContext)}
+	 * Note that this method does not check out the file entry in the portal. To
+	 * do so, see {@code
+	 * com.liferay.document.library.kernel.service.DLAppService#checkOutFileEntry(
 	 *
-	 * @param userId the primary key of the user performing the checkout
-	 * @param fileEntry the file entry to check out
-	 * @return a reference to the Google Drive file
+	 * long, ServiceContext)}.
+	 *
+	 * @param  userId the primary key of the user performing the operation
+	 * @param  fileEntry the file entry
+	 * @return the reference to the Google Drive file
 	 * @throws PortalException if an error occurs while performing the operation
-	 * @review
 	 */
 	public DLOpenerGoogleDriveFileReference checkOut(
 			long userId, FileEntry fileEntry)
 		throws PortalException;
 
 	/**
-	 * Create a new (empty) Google Drive file, which will be linked to the
-	 * given fileEntry, returning a reference to the new Google Drive file.
+	 * Creates a new empty Google Drive file that is linked to a file entry, and
+	 * returns a reference to that Google Drive file.
 	 *
-	 * This operation is similar to {@link #checkOut(long, FileEntry)}; the main
-	 * difference is that this method will not copy the contents of the file
-	 * entry to Google Drive. When you know the file entry is empty (e.g. you're
-	 * creating a new one), this operation will be substantially cheaper than
-	 * {@link #checkOut(long, FileEntry)}.
+	 * This operation is similar to {@link #checkOut(long, FileEntry)}, but
+	 * doesn't copy the file entry's content to Google Drive. When you know the
+	 * file entry is empty (e.g., you're creating a new one), this operation is
+	 * much more efficient than {@link #checkOut(long, FileEntry)}.
 	 *
-	 * @param userId the primary key of the user performing the operation
-	 * @param fileEntry the file entry to link the Google Drive file to
-	 * @return a reference to the new Google Drive file
-	 * @review
+	 * @param  userId the primary key of the user performing the operation
+	 * @param  fileEntry the file entry
+	 * @return the reference to the new Google Drive file
 	 */
 	public DLOpenerGoogleDriveFileReference create(
 			long userId, FileEntry fileEntry)
 		throws PortalException;
 
 	/**
-	 * Delete the Google Drive file linked to the given fileEntry.
+	 * Deletes the Google Drive file linked to a file entry. Note that this
+	 * method doesn't delete the file entry; it only deletes the file in Google
+	 * Drive.
 	 *
-	 * This method will <em>not</em> delete the fileEntry, only the contents in
-	 * Google Drive.
-	 *
-	 * @param userId the primary key of the user performing the operation.
-	 * @param fileEntry the fileEntry
+	 * @param  userId the primary key of the user performing the operation
+	 * @param  fileEntry the file entry
 	 * @throws PortalException
-	 * @review
 	 */
 	public void delete(long userId, FileEntry fileEntry) throws PortalException;
 
 	/**
-	 * Ask Google Drive for the authorization URL to use during the OAuth2 flow.
+	 * Returns the Google Drive authorization URL for use with OAuth 2.
 	 *
-	 * @param state the current state of the user interaction
-	 * @param redirectUri the url to redirect back to when the flow finishes
-	 * @return the authorization URL to use in the OAuth2 flow
-	 * @review
+	 * @param  state the user interaction's current state
+	 * @param  redirectUri the URL to redirect to when authorization completes
+	 * @return the authorization URL
 	 */
 	public String getAuthorizationURL(String state, String redirectUri);
 
 	/**
-	 * Test whether the given userId has a valid credential available. The
-	 * credential is stored as part of the OAuth2 flow.
-	 * @param userId the primary key of the user
-	 * @return <code>true</code> is the user has a valid credential; <code>false
-	 * </code> otherwise
-	 * @throws IOException if an error occurs while checking the existence of
-	 * the credential
-	 * @review
+	 * Returns {@code true} if the user has a valid credential. The credential
+	 * is stored as part of the OAuth 2 authorization flow.
+	 *
+	 * @param  userId the primary key of the user
+	 * @return {@code true} if the user has a valid credential; {@code false}
+	 *         otherwise
+	 * @throws IOException if an error occurs while checking for the credential
 	 */
 	public boolean hasValidCredential(long userId) throws IOException;
 
 	/**
-	 * Test whether the Google Drive connection is configured or not. If this
-	 * method returns <code>false</code>, the behaviour of the rest of method
-	 * is undefined.
+	 * Returns {@code true} if the Google Drive connection is configured. If
+	 * this method returns {@code false}, the rest of the method's behavior is
+	 * undefined.
 	 *
-	 * @return <code>true</code> if the Google Drive connection is configured;
-	 * <code>false</code> otherwise
-	 * @review
+	 * @return {@code true} if the Google Drive connection is configured; {@code
+	 *         false} otherwise
 	 */
 	public boolean isConfigured();
 
 	/**
-	 * Test whether the given fileEntry is linked to a Google Drive file.
+	 * Returns {@code true} if a file entry is linked to a Google Drive file.
 	 *
-	 * @param fileEntry the file entry to test
-	 * @return <code>true</code> if the file entry is linked to a Google Drive
-	 * file; <code>false</code> otherwise
-	 * @review
+	 * @param  fileEntry the file entry
+	 * @return {@code true} if the file entry is linked to a Google Drive file;
+	 *         {@code false} otherwise
 	 */
 	public boolean isGoogleDriveFile(FileEntry fileEntry);
 
 	/**
-	 * Request an authorization token; this method should be used only as part
-	 * of the OAuth2 flow with Google Drive.
+	 * Requests an authorization token. This method should be used only as part
+	 * of the OAuth 2 authorization flow with Google Drive.
 	 *
-	 * @param userId the primary key of the user doing the OAuth2 flow
-	 * @param code the code received as part of the OAuth2 flow
-	 * @param redirectUri the redirect URI
-	 * @throws IOException if an error occurs during the OAuth2 flow
-	 * @review
+	 * @param  userId the primary key of the user in the OAuth 2 authorization
+	 *         flow
+	 * @param  code the code received as part of the OAuth 2 authorization flow
+	 * @param  redirectUri the redirect URI
+	 * @throws IOException if an error occurs during the OAuth 2 authorization
+	 *         flow
 	 */
 	public void requestAuthorizationToken(
 			long userId, String code, String redirectUri)
 		throws IOException;
 
 	/**
-	 * Request Google Drive permissions to edit the give file entry. If the
-	 * request is sucessfull, a reference to the Google Drive file will be
-	 * returned.
+	 * Requests Google Drive permissions to edit a file entry. If this request
+	 * is sucessful, this method returns a reference to the Google Drive file.
 	 *
-	 * For this method to succeed, the user must have completed the OAuth2 flow
-	 * and have a valid credential (see {@link #hasValidCredential(long)}).
+	 * For this method to succeed, the user must have completed the OAuth 2
+	 * authorization flow and have a valid credential (see {@link
+	 * #hasValidCredential(long)}).
 	 *
-	 * @param userId the primary key of the user requesting edit access
-	 * @param fileEntry the file entry the user wants to edit
-	 * @return a reference to the Google Drive file
+	 * @param  userId the primary key of the user requesting edit access
+	 * @param  fileEntry the file entry
+	 * @return the Google Drive file reference
 	 * @throws PortalException if the user doesn't have permission to edit the
-	 * file
-	 * @review
+	 *         file
 	 */
 	public DLOpenerGoogleDriveFileReference requestEditAccess(
 			long userId, FileEntry fileEntry)

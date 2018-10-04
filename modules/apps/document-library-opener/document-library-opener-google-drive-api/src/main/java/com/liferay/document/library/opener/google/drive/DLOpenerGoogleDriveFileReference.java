@@ -19,28 +19,25 @@ import java.io.File;
 import java.util.function.Supplier;
 
 /**
- * Represents a link between a Documents and Media FileEntry and a Google Drive
- * file. You should never create instances of this class directly; they'll be
- * returned to you by the methods in the {@link DLOpenerGoogleDriveManager}
- * interface.
+ * Represents a link between a Documents and Media {@code FileEntry} and a
+ * Google Drive file. The methods in {@link DLOpenerGoogleDriveManager} return
+ * instances of this class, which you should never create directly.
  *
  * @author Adolfo Pérez
- * @review
  */
 public class DLOpenerGoogleDriveFileReference {
 
 	/**
-	 * Create a new instance of {@link DLOpenerGoogleDriveFileReference}.
+	 * Creates a new {@code DLOpenerGoogleDriveFileReference}.
 	 *
 	 * @param fileEntryId the primary key of the file entry
-	 * @param titleSupplier a supplier that will provide the title of the
-	 *                      document when invoked.
-	 * @param fileSupplier a supplier that will provide the contents of the
-	 *                     document when invoked.
-	 * @param backgroundTaskId the primary key of the background process
-	 *                         responsible of uploading the original file
-	 *                         contents to Google Drive. If zero, no upload
-	 *                         task is in progress.
+	 * @param titleSupplier the supplier that provides the document's title when
+	 *        invoked
+	 * @param fileSupplier the supplier that provides the document's contents
+	 *        when invoked
+	 * @param backgroundTaskId the primary key of the background process that
+	 *        uploads the original file contents to Google Drive. If zero, no
+	 *        upload task is in progress.
 	 */
 	public DLOpenerGoogleDriveFileReference(
 		long fileEntryId, Supplier<String> titleSupplier,
@@ -53,42 +50,37 @@ public class DLOpenerGoogleDriveFileReference {
 	}
 
 	/**
-	 * Return the primary key of the background task responsible of uploading
-	 * the original file contents to Google Drive. If zero, no upload task is in
-	 * progress.
+	 * Returns the primary key of the background task that uploads the original
+	 * file contents to Google Drive. If zero, no upload task is in progress.
 	 *
 	 * @return the primary key of the background task, or 0 if there is none
-	 * @review
 	 */
 	public long getBackgroundTaskId() {
 		return _backgroundTaskId;
 	}
 
 	/**
-	 * Return a file with the contents of this Google Drive file reference.
+	 * Returns a file with this Google Drive file reference's content.
 	 *
-	 * @return a reference to a file with the contents of this reference
-	 * @review
+	 * @return the file
 	 */
 	public File getContentFile() {
 		return _fileSupplier.get();
 	}
 
 	/**
-	 * Return the primary key of the file entry linked with this reference.
+	 * Returns the primary key of the file entry linked to this reference.
 	 *
 	 * @return the primary key of the file entry
-	 * @review
 	 */
 	public long getFileEntryId() {
 		return _fileEntryId;
 	}
 
 	/**
-	 * Return the title of this Google Drive file reference.
+	 * Returns this Google Drive file reference's title.
 	 *
-	 * @return the title of this Google Drive file reference
-	 * @review
+	 * @return the title
 	 */
 	public String getTitle() {
 		return _titleSupplier.get();

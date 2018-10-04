@@ -22,70 +22,63 @@ import com.liferay.portal.kernel.util.MapUtil;
 import java.util.Map;
 
 /**
- * This util class offers a set of constants and util methods to work with
- * the mime types supported both by Liferay and Google Docs/Slides/Spreadsheets.
+ * Provides a set of constants and methods for working with the MIME types
+ * supported by Liferay and Google Drive.
  *
  * @author Adolfo Pérez
- * @review
  */
 public class DLOpenerGoogleDriveMimeTypes {
 
 	/**
-	 * The mime type for MS Word (docx) documents.
-	 * @review
+	 * The MIME type for Microsoft Word (docx) documents.
 	 */
 	public static final String APPLICATION_VND_DOCX =
 		"application/vnd.openxmlformats-officedocument.wordprocessingml." +
 			"document";
 
 	/**
-	 * The mime type for Google Documents.
-	 * @review
+	 * The MIME type for Google Docs.
 	 */
 	public static final String APPLICATION_VND_GOOGLE_APPS_DOCUMENT =
 		"application/vnd.google-apps.document";
 
 	/**
-	 * The mime type for Google Slides
-	 * @review
+	 * The MIME type for Google Slides.
 	 */
 	public static final String APPLICATION_VND_GOOGLE_APPS_PRESENTATION =
 		"application/vnd.google-apps.presentation";
 
 	/**
-	 * The mime type for Google Spreadsheets.
-	 * @review
+	 * The MIME type for Google Spreadsheets.
 	 */
 	public static final String APPLICATION_VND_GOOGLE_APPS_SPREADSHEET =
 		"application/vnd.google-apps.spreadsheet";
 
 	/**
-	 * The mime type for MS PowerPoint (pptx) presentations.
-	 * @review
+	 * The MIME type for Microsoft PowerPoint (pptx) presentations.
 	 */
 	public static final String APPLICATION_VND_PPTX =
 		"application/vnd.openxmlformats-officedocument.presentationml." +
 			"presentation";
 
 	/**
-	 * The mime type for MS Excel (xslx) spreadsheets.
-	 * @review
+	 * The MIME type for Microsoft Excel (xslx) spreadsheets.
 	 */
 	public static final String APPLICATION_VND_XSLX =
 		"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
 	/**
-	 * Return the Google Docs equivalent mime type to the one received. This
-	 * method will map MS Word documents and plain text files to Google
-	 * Documents, MS PowerPoint presentations to Google Slides, and so on.
+	 * Returns the Google Drive MIME type equivalent to the one received. For
+	 * example, this method maps Microsoft Word documents and plain text files
+	 * to Google Docs, Microsoft PowerPoint presentations to Google Slides, and
+	 * and so on.
 	 *
-	 * Only mime types for which the {@link #isMimeTypeSupported(String)}
-	 * returns <code>true</code> return a valid Google document type. For the
-	 * rest, an exception will be thrown.
+	 * This method returns a valid Google document type only for MIME types for
+	 * which {@link #isMimeTypeSupported(String)} returns {@code true}. An
+	 * exception is thrown for any others.
 	 *
-	 * @param mimeType the mime type to translate
-	 * @return the equivalent Google mime type
-	 * @review
+	 * @param  mimeType the MIME type to map to Google Drive
+	 * @return the equivalent Google Drive MIME type
 	 */
 	public static String getGoogleDocsMimeType(String mimeType) {
 		if (!isMimeTypeSupported(mimeType)) {
@@ -99,34 +92,32 @@ public class DLOpenerGoogleDriveMimeTypes {
 	}
 
 	/**
-	 * Return the canonical file extension associated with the mimeType. The
+	 * Returns the canonical file extension associated with the MIME type. The
 	 * canonical file extension is the most common one used for documents of
-	 * this type; e.g. if the mime type indicates this is a MS Docx document,
-	 * the return value will be ".docx".
+	 * this type (e.g., if the MIME type indicates this is a Microsoft docx
+	 * document, the return value is {@code ".docx"}.
 	 *
-	 * The returned value will always include a dot ('.') as the first
-	 * character of the extension.
+	 * The return value always includes a dot ({@code .}) as the extension's
+	 * first character.
 	 *
-	 * Only mime types for which the {@link #isMimeTypeSupported(String)}
-	 * returns <code>true</code> return an extension. For the rest, the empty
-	 * string will be returned.
+	 * Only MIME types for which the {@link #isMimeTypeSupported(String)} method
+	 * returns {@code true} return an extension. Any empty string is returned
+	 * for any others.
 	 *
-	 * @param mimeType the mime type
-	 * @return the canonical extension or the empty string if none could be
-	 * determined
-	 * @review
+	 * @param  mimeType the MIME type
+	 * @return the canonical extension, or an empty string if none could be
+	 *         determined
 	 */
 	public static String getMimeTypeExtension(String mimeType) {
 		return _extensions.getOrDefault(mimeType, StringPool.BLANK);
 	}
 
 	/**
-	 * Test whether the given mimeType is supported or not.
+	 * Returns {@code true} if a MIME type is supported.
 	 *
-	 * @param mimeType the mime type to test
-	 * @return <code>true</code> if mimeType is supported; <code>false</code>
-	 * otherwise
-	 * @review
+	 * @param  mimeType the MIME type
+	 * @return {@code true} if the MIME type is supported; {@code false}
+	 *         otherwise
 	 */
 	public static boolean isMimeTypeSupported(String mimeType) {
 		return _googleDocsMimeTypes.containsKey(mimeType);
