@@ -41,7 +41,11 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 /**
+ * This service wrapper is responsible of uploading, updating or deleting the
+ * Google Drive file linked to a D&M file entry.
+ *
  * @author Adolfo Pérez
+ * @review
  */
 @Component(immediate = true, service = ServiceWrapper.class)
 public class DLOpenerGoogleDriveDLAppServiceWrapper
