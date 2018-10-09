@@ -30,7 +30,8 @@ public interface ExpressionVisitor<T> {
 	 * @param  left the return value of the left subtree
 	 * @param  right the return value of the right subtree
 	 * @return T
-	 * @throws ExpressionVisitException
+	 * @throws ExpressionVisitException if an expression visit exception
+	 *         occurred
 	 */
 	public T visitBinaryExpressionOperation(
 			BinaryExpression.Operation operation, T left, T right)
@@ -41,7 +42,8 @@ public interface ExpressionVisitor<T> {
 	 *
 	 * @param  literalExpression the literal expression
 	 * @return T
-	 * @throws ExpressionVisitException
+	 * @throws ExpressionVisitException if an expression visit exception
+	 *         occurred
 	 */
 	public T visitLiteralExpression(LiteralExpression literalExpression)
 		throws ExpressionVisitException;
@@ -51,7 +53,8 @@ public interface ExpressionVisitor<T> {
 	 *
 	 * @param  memberExpression the member expression
 	 * @return T
-	 * @throws ExpressionVisitException
+	 * @throws ExpressionVisitException if an expression visit exception
+	 *         occurred
 	 */
 	public T visitMemberExpression(MemberExpression memberExpression)
 		throws ExpressionVisitException;

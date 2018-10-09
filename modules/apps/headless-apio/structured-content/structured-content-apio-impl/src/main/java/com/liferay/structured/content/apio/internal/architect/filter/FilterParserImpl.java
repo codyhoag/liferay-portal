@@ -32,7 +32,7 @@ import org.apache.olingo.server.api.uri.queryoption.FilterOption;
 import org.apache.olingo.server.core.uri.parser.Parser;
 
 /**
- * Transforms a string containing an {@code oData} filter into a manageable
+ * Transforms a string containing an OData filter into a manageable
  * {@code Expression}.
  *
  * @author David Arques

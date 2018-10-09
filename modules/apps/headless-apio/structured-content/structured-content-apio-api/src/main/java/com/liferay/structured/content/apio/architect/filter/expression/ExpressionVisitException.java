@@ -23,11 +23,9 @@ package com.liferay.structured.content.apio.architect.filter.expression;
 public class ExpressionVisitException extends Exception {
 
 	/**
-	 * Creates a new <code>ExpressionVisitException</code> with a message and a
-	 * cause
+	 * Creates a new {@code ExpressionVisitException} with a message.
 	 *
-	 * @param  msg - message of the Exception
-	 * @review
+	 * @param  msg the exception's message
 	 */
 	public ExpressionVisitException(String msg) {
 		super(msg);
@@ -37,8 +35,8 @@ public class ExpressionVisitException extends Exception {
 	 * Creates a new {@code ExpressionVisitException} with a message and the
 	 * cause of the exception.
 	 *
-	 * @param msg the message
-	 * @param cause the cause
+	 * @param msg the exception's message
+	 * @param cause the exception's cause
 	 */
 	public ExpressionVisitException(String msg, Throwable cause) {
 		super(msg, cause);

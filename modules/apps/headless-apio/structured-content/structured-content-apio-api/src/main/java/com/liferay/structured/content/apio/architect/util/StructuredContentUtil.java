@@ -25,7 +25,7 @@ import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.repository.model.FileEntry;
 
 /**
- * Calculates the structured content's {@code FileEntry}.
+ * Calculates the structured content's file entry.
  *
  * @author Javier Gamarra
  */

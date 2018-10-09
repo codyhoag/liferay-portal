@@ -38,7 +38,7 @@ public class Filter {
 	}
 
 	/**
-	 * Creates a new filter, given an OData {@link Expression}.
+	 * Creates a new filter, given an OData {@code Expression}.
 	 *
 	 * @param expression the OData expression
 	 */
@@ -51,7 +51,7 @@ public class Filter {
 	}
 
 	/**
-	 * Returns the OData {@link Expression}.
+	 * Returns the OData {@code Expression}.
 	 *
 	 * @return the OData expression
 	 */

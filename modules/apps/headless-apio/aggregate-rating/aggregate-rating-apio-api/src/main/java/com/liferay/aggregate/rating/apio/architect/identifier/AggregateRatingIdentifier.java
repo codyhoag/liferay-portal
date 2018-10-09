@@ -19,7 +19,7 @@ import com.liferay.portal.apio.identifier.ClassNameClassPK;
 
 /**
  * Holds information about an {@code AggregateRating} identifier. A {@code
- * ClassNameClassPK} identifies the {@code AggregateRating}. The {@code
+ * ClassNameClassPK} identifies the aggregate rating. The {@code
  * ClassNameClassPK} instance can be created with {@code
  * ClassNameClassPK#create(com.liferay.portal.kernel.model.ClassedModel)} or
  * {@code ClassNameClassPK#create(String, long)}.

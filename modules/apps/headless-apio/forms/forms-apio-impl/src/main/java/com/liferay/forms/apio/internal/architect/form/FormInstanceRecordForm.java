@@ -28,7 +28,7 @@ public class FormInstanceRecordForm {
 	 * that depends on the HTTP body.
 	 *
 	 * @param  formBuilder the {@code Form} builder
-	 * @return the form instance record form
+	 * @return a form instance record form
 	 */
 	public static Form<FormInstanceRecordForm> buildForm(
 		Form.Builder<FormInstanceRecordForm> formBuilder) {

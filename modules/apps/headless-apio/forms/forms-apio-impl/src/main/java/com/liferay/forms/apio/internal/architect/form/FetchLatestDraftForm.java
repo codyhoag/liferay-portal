@@ -26,7 +26,7 @@ public class FetchLatestDraftForm {
 	 * depends on the HTTP body.
 	 *
 	 * @param  formBuilder the {@code Form} builder
-	 * @return the fetch latest draft form
+	 * @return a context form instance
 	 */
 	public static Form<FetchLatestDraftForm> buildForm(
 		Form.Builder<FetchLatestDraftForm> formBuilder) {

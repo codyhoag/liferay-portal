@@ -39,9 +39,9 @@ public class Sort {
 	}
 
 	/**
-	 * Creates a new sort from a list of sort fields.
+	 * Creates a new sort from the sort fields.
 	 *
-	 * @param sortFields the list of sort fields
+	 * @param sortFields the sort fields
 	 */
 	public Sort(List<SortField> sortFields) {
 		if (ListUtil.isEmpty(sortFields)) {
@@ -52,9 +52,9 @@ public class Sort {
 	}
 
 	/**
-	 * Returns the list of sort fields.
+	 * Returns the sort fields.
 	 *
-	 * @return the list of sort fields
+	 * @return the sort fields
 	 */
 	public List<SortField> getSortFields() {
 		return _sortFields;

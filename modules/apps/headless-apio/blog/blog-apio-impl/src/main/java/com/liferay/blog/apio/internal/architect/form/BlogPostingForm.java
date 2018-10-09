@@ -86,7 +86,7 @@ public class BlogPostingForm {
 	}
 
 	/**
-	 * Returns the blog posting's alternative headline, if present; otherwise
+	 * Returns the blog posting's alternative headline, if present; otherwise,
 	 * returns an empty string.
 	 *
 	 * @return the alternative headline, if present; an empty string otherwise
@@ -109,7 +109,7 @@ public class BlogPostingForm {
 	}
 
 	/**
-	 * Returns the blog post's creator ID, if present; otherwise returns the
+	 * Returns the blog post's creator ID, if present; otherwise, returns the
 	 * provided default ID.
 	 *
 	 * @param  defaultCreatorId the default creator ID
@@ -124,7 +124,7 @@ public class BlogPostingForm {
 	}
 
 	/**
-	 * Returns the blog post's description, if present; otherwise returns an
+	 * Returns the blog post's description, if present; otherwise, returns an
 	 * empty string.
 	 *
 	 * @return the description, if present; an empty string otherwise
@@ -138,7 +138,7 @@ public class BlogPostingForm {
 	}
 
 	/**
-	 * Returns the blog post's display date, if present; otherwise returns
+	 * Returns the blog post's display date, if present; otherwise, returns
 	 * today's date.
 	 *
 	 * @return the display date, if present; today's date otherwise
@@ -152,7 +152,7 @@ public class BlogPostingForm {
 	}
 
 	/**
-	 * Returns the blog post's friendly URL, if present; otherwise returns an
+	 * Returns the blog post's friendly URL, if present; otherwise, returns an
 	 * empty string.
 	 *
 	 * @return the friendly URL if present; an empty string otherwise
@@ -175,7 +175,7 @@ public class BlogPostingForm {
 	}
 
 	/**
-	 * Returns the blog post's image caption, if present; otherwise returns an
+	 * Returns the blog post's image caption, if present; otherwise, returns an
 	 * empty string.
 	 *
 	 * @return the image caption, if present; an empty string otherwise
@@ -190,7 +190,7 @@ public class BlogPostingForm {
 
 	/**
 	 * Returns the {@code ImageSelector} for the blog post's image, if an image
-	 * ID is present; otherwise returns {@code null}.
+	 * ID is present; otherwise, returns {@code null}.
 	 *
 	 * @param  function a function that transforms a file entry ID into a {@code
 	 *         FileEntry}

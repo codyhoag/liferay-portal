@@ -24,7 +24,7 @@ import org.osgi.service.component.annotations.Component;
 
 /**
  * Provides the information necessary to expose the <a
- * href="http://schema.org/Telephone">Telephone </a> resources of a {@code
+ * href="http://schema.org/telephone">Telephone</a> resources of a {@code
  * MyUserAccount} through a web API. The resources are mapped from the internal
  * model {@code Phone}.
  *

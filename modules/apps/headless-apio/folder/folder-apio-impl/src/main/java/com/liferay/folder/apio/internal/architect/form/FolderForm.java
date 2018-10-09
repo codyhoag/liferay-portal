@@ -24,7 +24,7 @@ import com.liferay.apio.architect.form.Form;
 public class FolderForm {
 
 	/**
-	 * Builds a {@code Form} that generates {@code FolderForm} that depends on
+	 * Builds a {@code Form} that generates a {@code FolderForm} that depends on
 	 * the HTTP body.
 	 *
 	 * @param  formBuilder the form builder

@@ -86,7 +86,7 @@ public class EntityField {
 	/**
 	 * Returns the entity field's filterable name.
 	 *
-	 * @param  locale
+	 * @param  locale the locale
 	 * @return the filterable name
 	 */
 	public String getFilterableName(Locale locale) {

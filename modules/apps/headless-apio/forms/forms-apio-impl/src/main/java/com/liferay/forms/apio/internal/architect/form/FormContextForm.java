@@ -28,7 +28,7 @@ public class FormContextForm {
 	 * depends on the HTTP body.
 	 *
 	 * @param  formBuilder the {@code Form} builder
-	 * @return the form context form
+	 * @return a context form instance
 	 */
 	public static Form<FormContextForm> buildForm(
 		Form.Builder<FormContextForm> formBuilder) {

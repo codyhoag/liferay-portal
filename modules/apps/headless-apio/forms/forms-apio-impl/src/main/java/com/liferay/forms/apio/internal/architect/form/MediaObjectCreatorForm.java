@@ -32,7 +32,7 @@ public class MediaObjectCreatorForm {
 	 * that depends on the HTTP body.
 	 *
 	 * @param  formBuilder the {@code Form} builder
-	 * @return the media object creator form
+	 * @return a media object creator form
 	 */
 	public static Form<MediaObjectCreatorForm> buildForm(
 		Form.Builder<MediaObjectCreatorForm> formBuilder) {
