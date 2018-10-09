@@ -45,10 +45,25 @@ public class SortParserImpl implements SortParser {
 	 * Returns a {@code SortField} list from a comma-separated list of field
 	 * names and sort directions.
 	 *
+	 * <p>
 	 * Sort directions {@code desc} and {@code asc} can be appended to each sort
-	 * field, separated by the {@code :} character (e.g., {@code
-	 * field1:dsc,field2,field3:asc}). If a sort direction isn't provided, the
-	 * sort field will be {@code asc}.
+	 * field, separated by the {@code :} character. If a sort direction isn't
+	 * provided, ascending order is used by default.
+	 * </p>
+	 *
+	 * <p>
+	 * For example,
+	 * </p>
+	 *
+	 * <p>
+	 * <pre>
+	 * <code>
+	 * field1,field2,field3
+	 * field1:asc,field2:desc,field3
+	 * field1:asc,field2,field3:desc
+	 * </code>
+	 * </pre>
+	 * </p>
 	 *
 	 * @param  sortString the string to parse
 	 * @return the sort field list

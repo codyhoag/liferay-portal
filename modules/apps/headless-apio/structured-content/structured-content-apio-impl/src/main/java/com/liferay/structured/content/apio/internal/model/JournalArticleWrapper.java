@@ -26,10 +26,10 @@ public class JournalArticleWrapper
 	extends com.liferay.journal.model.JournalArticleWrapper {
 
 	/**
-	 * Creates a new {@code JournalArticleWrapper}.
+	 * Creates a new journal article wrapper.
 	 *
-	 * @param journalArticle the {@code JournalArticle} to wrap
-	 * @param themeDisplay the current request's {@code ThemeDisplay}
+	 * @param journalArticle the journal article to wrap
+	 * @param themeDisplay the current request's theme display
 	 */
 	public JournalArticleWrapper(
 		JournalArticle journalArticle, ThemeDisplay themeDisplay) {
