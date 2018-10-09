@@ -24,8 +24,8 @@ import org.osgi.service.component.annotations.Component;
 
 /**
  * Provides the information necessary to expose the <a
- * href="http://schema.org/Address">address</a> resources of a <a
- * href="http://schema.org/Person">Person </a> through a web API. The resources
+ * href="http://schema.org/address">Address</a> resources of a <a
+ * href="http://schema.org/Person">Person</a> through a web API. The resources
  * are mapped from the internal model {@code Address}.
  *
  * @author Javier Gamarra

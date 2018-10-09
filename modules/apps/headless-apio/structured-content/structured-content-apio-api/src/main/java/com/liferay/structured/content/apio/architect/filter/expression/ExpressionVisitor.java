@@ -29,7 +29,7 @@ public interface ExpressionVisitor<T> {
 	 * @param  operation the binary expression's operation
 	 * @param  left the return value of the left subtree
 	 * @param  right the return value of the right subtree
-	 * @return T the T type
+	 * @return T the object of type {@code T}
 	 * @throws ExpressionVisitException if an expression visit exception
 	 *         occurred
 	 */
@@ -41,7 +41,7 @@ public interface ExpressionVisitor<T> {
 	 * Called for each {@link LiteralExpression}.
 	 *
 	 * @param  literalExpression the literal expression
-	 * @return T the T type
+	 * @return T the object of type {@code T}
 	 * @throws ExpressionVisitException if an expression visit exception
 	 *         occurred
 	 */
@@ -52,7 +52,7 @@ public interface ExpressionVisitor<T> {
 	 * Called for each {@link MemberExpression}.
 	 *
 	 * @param  memberExpression the member expression
-	 * @return T the T type
+	 * @return T the object of type {@code T}
 	 * @throws ExpressionVisitException if an expression visit exception
 	 *         occurred
 	 */
