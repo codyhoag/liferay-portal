@@ -62,8 +62,7 @@ public class SortParserImpl implements SortParser {
 	 * field1:asc,field2:desc,field3
 	 * field1:asc,field2,field3:desc
 	 * </code>
-	 * </pre>
-	 * </p>
+	 * </pre></p>
 	 *
 	 * @param  sortString the string to parse
 	 * @return the sort field list

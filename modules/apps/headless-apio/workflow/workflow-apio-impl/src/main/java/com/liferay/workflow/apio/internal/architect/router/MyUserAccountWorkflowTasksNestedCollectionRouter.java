@@ -32,8 +32,8 @@ import org.osgi.service.component.annotations.Reference;
 
 /**
  * Provides the information necessary to expose the {@code WorkflowTask}
- * resources assigned to a user through a web API. The resources are mapped
- * from the internal model {@code WorkflowTask}.
+ * resources assigned to a user through a web API. The resources are mapped from
+ * the internal model {@code WorkflowTask}.
  *
  * @author Eduardo Perez
  */

@@ -25,7 +25,7 @@ public class ExpressionVisitException extends Exception {
 	/**
 	 * Creates a new {@code ExpressionVisitException} with a message.
 	 *
-	 * @param  msg the exception's message
+	 * @param msg the exception's message
 	 */
 	public ExpressionVisitException(String msg) {
 		super(msg);
