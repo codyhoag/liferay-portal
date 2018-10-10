@@ -52,6 +52,7 @@ import org.osgi.framework.FrameworkUtil;
  * </p>
  *
  * @author Sergio González
+ * @review
  */
 public class SharingEntryServiceImpl extends SharingEntryServiceBaseImpl {
 

@@ -66,7 +66,7 @@ public class SharingEntryLocalServiceImpl
 	 * @param fromUserId the ID of the user sharing the resource
 	 * @param toUserId the ID of the user the resource is shared with
 	 * @param classNameId the resource's class name ID
-	 * @param classPK the primary key of the resource
+	 * @param classPK the class primary key of the resource
 	 * @param groupId the primary key of the resource's group
 	 * @param shareable whether the user specified by {@code toUserId} can
 	 *        share the resource
@@ -107,7 +107,7 @@ public class SharingEntryLocalServiceImpl
 	 * @param fromUserId the ID of the user sharing the resource
 	 * @param toUserId the ID of the user the resource is shared with
 	 * @param classNameId the resource's class name ID
-	 * @param classPK the primary key of the resource
+	 * @param classPK the class primary key of the resource
 	 * @param groupId the primary key of the resource's group
 	 * @param shareable whether the user specified by {@code toUserId} can
 	 *        share the resource
@@ -180,7 +180,7 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Deletes all sharing entries whose expiration date is before the current
+	 * Deletes the sharing entries whose expiration date is before the current
 	 * date.
 	 */
 	@Override
@@ -189,7 +189,9 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Deletes all sharing entries that belong to a group.
+	 * Deletes the group's sharing entries.
+	 *
+	 * @param  groupId the group's ID
 	 */
 	@Override
 	public void deleteGroupSharingEntries(long groupId) {
@@ -202,10 +204,11 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Deletes all sharing entries of a resource.
+	 * Deletes the resource's sharing entries. The class name ID and class
+	 * primary key identify the resource's type and instance, respectively.
 	 *
 	 * @param  classNameId the resource's class name ID
-	 * @param  classPK the primary key of the resource
+	 * @param  classPK the class primary key of the resource
 	 */
 	@Override
 	public void deleteSharingEntries(long classNameId, long classPK) {
@@ -233,12 +236,14 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Deletes the sharing entry for the specified resource and users.
+	 * Deletes the sharing entry for the resource and users. The class name ID
+	 * and class primary key identify the resource's type and instance,
+	 * respectively.
 	 *
 	 * @param fromUserId the ID of the user sharing the resource
 	 * @param toUserId the ID of the user the resource is shared with
 	 * @param classNameId the resource's class name ID
-	 * @param classPK the primary key of the resource
+	 * @param classPK the class primary key of the resource
 	 * @return the deleted sharing entry
 	 */
 	@Override
@@ -288,9 +293,9 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Deletes all sharing entries shared with a user.
+	 * Deletes the sharing entries for resources shared with the user.
 	 *
-	 * @param  toUserId the ID of the user the resource is shared with
+	 * @param  toUserId the user's ID
 	 */
 	@Override
 	public void deleteToUserSharingEntries(long toUserId) {
@@ -303,8 +308,7 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns a list of all the sharing entries that have been shared by a
-	 * user.
+	 * Returns the list of sharing entries for resources shared by the user.
 	 *
 	 * @param  fromUserId the user's ID
 	 * @return the list of sharing entries
@@ -315,8 +319,9 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns a list of a resource's sharing entries that have been shared by a
-	 * user.
+	 * Returns the list of sharing entries for the resource shared by the user.
+	 * The class name ID and class primary key identify the resource's type and
+	 * instance, respectively.
 	 *
 	 * @param fromUserId the user's ID
 	 * @param classNameId the resource's class name ID
@@ -332,14 +337,15 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns a range of a resource's sharing entries that have been shared by
-	 * a user.
+	 * Returns the range of sharing entries for the resource shared by the user.
+	 * The class name ID and class primary key identify the resource's type and
+	 * instance, respectively.
 	 *
 	 * @param fromUserId the user's ID
 	 * @param classNameId the resource's class name ID
 	 * @param classPK the primary key of the resource
-	 * @param start the lower bound of the result range
-	 * @param end the upper bound of the result range (not inclusive)
+	 * @param start the range's lower bound
+	 * @param end the range's upper bound (not inclusive)
 	 * @return the range of sharing entries
 	 */
 	@Override
@@ -351,7 +357,7 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns the number of sharing entries that have been shared by a user.
+	 * Returns the number of sharing entries for resources shared by the user.
 	 *
 	 * @param fromUserId the user's ID
 	 * @return the number of sharing entries
@@ -362,12 +368,13 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns the number of a resource's sharing entries that have been shared
-	 * by a user.
+	 * Returns the number of sharing entries for the resource shared by the
+	 * user. The class name ID and class primary key identify the resource's
+	 * type and instance, respectively.
 	 *
 	 * @param fromUserId the user's ID
 	 * @param classNameId the resource's class name ID
-	 * @param classPK the primary key of the resource
+	 * @param classPK the class primary key of the resource
 	 * @return the number of sharing entries
 	 */
 	@Override
@@ -379,7 +386,7 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns a list of a group's sharing entries.
+	 * Returns the list of the group's sharing entries.
 	 *
 	 * @param  groupId the primary key of the group
 	 * @return the list of sharing entries
@@ -390,10 +397,12 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns a list of a resource's sharing entries.
+	 * Returns the list of the resource's sharing entries. The class name ID and
+	 * class primary key identify the resource's type and instance,
+	 * respectively.
 	 *
 	 * @param classNameId the resource's class name ID
-	 * @param classPK the primary key of the resource
+	 * @param classPK the class primary key of the resource
 	 * @return the list of sharing entries
 	 */
 	@Override
@@ -404,12 +413,13 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns a list of the sharing entries of a resource that has been shared
-	 * with a specific user.
+	 * Returns the list of sharing entries for the resource shared with the
+	 * user. The class name ID and class primary key identify the resource's
+	 * type and instance, respectively.
 	 *
 	 * @param toUserId the user's ID
 	 * @param classNameId the resource's class name ID
-	 * @param classPK the primary key of the resource
+	 * @param classPK the class primary key of the resource
 	 * @return the list of sharing entries
 	 */
 	@Override
@@ -421,8 +431,9 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns a list of sharing entries for a resource shared with a specific
-	 * user and matching a given class name ID and class PK.
+	 * Returns the list of sharing entries for the resource shared with the
+	 * user. The class name ID and class primary key identify the resource's
+	 * type and instance, respectively.
 	 *
 	 * @param toUserId the user's ID
 	 * @param classNameId the resource's class name ID
@@ -438,8 +449,7 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns a list of sharing entries for a resource shared with a specific
-	 * user.
+	 * Returns the list of sharing entries for resources shared with the user.
 	 *
 	 * @param toUserId the user's ID
 	 * @return the list of sharing entries
@@ -450,12 +460,11 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns a range of sharing entries for a resource shared with a specific
-	 * user.
+	 * Returns the range of sharing entries for resources shared with the user.
 	 *
 	 * @param toUserId the user's ID
-	 * @param start the lower bound of sharing entries
-	 * @param end the upper bound of sharing entries (not inclusive)
+	 * @param start the range's lower bound
+	 * @param end the range's upper bound (not inclusive)
 	 * @return the range of sharing entries
 	 */
 	@Override
@@ -466,11 +475,11 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns a list of sharing entries for a resource shared with a specific
-	 * user and matching a given class name ID.
+	 * Returns the list of sharing entries for the type of resource shared with
+	 * the user. The class name ID identifies the resource type.
 	 *
 	 * @param toUserId the user's ID
-	 * @param classNameId the resource's class name ID
+	 * @param classNameId the class name ID of the resources
 	 * @return the list of sharing entries
 	 */
 	@Override
@@ -481,8 +490,7 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns the number of sharing entries for a resource shared with a
-	 * specific user.
+	 * Returns the number of sharing entries for resources shared with the user.
 	 *
 	 * @param toUserId the user's ID
 	 * @return the number of sharing entries
@@ -493,19 +501,17 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns an ordered range of sharing entries for resources of a specific
-	 * type shared with a specific user. Because it's possible for several users
-	 * to share the same resource with the specified user, this method returns
-	 * only one sharing entry per resource.
+	 * Returns the ordered range of sharing entries for the type of resource
+	 * shared with the user. Because it's possible for several users to share
+	 * the same resource with the user, this method returns only one sharing
+	 * entry per resource. The class name ID identifies the resource type.
 	 *
 	 * @param toUserId the user's ID
-	 * @param classNameId the class name ID of the resources. This identifies
-	 *        the resource type.
-	 * @param start the lower bound of the ordered range
-	 * @param end the upper bound of the ordered range
+	 * @param classNameId the class name ID of the resources
+	 * @param start the ordered range's lower bound
+	 * @param end the ordered range's upper bound (not inclusive)
 	 * @param orderByComparator the comparator that orders the sharing entries
 	 * @return the ordered range of sharing entries
-	 * @review
 	 */
 	@Override
 	public List<SharingEntry> getUniqueToUserSharingEntries(
@@ -517,17 +523,14 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns the number of sharing entries for resources of a specific type
-	 * shared with a specific user. Because it's possible for several users to
-	 * share the same resource with the specified user, this method counts only
-	 * one sharing entry per resource.
-	 *
+	 * Returns the number of sharing entries for the type of resource shared
+	 * with the user. Because it's possible for several users to share the same
+	 * resource with the user, this method counts only one sharing entry per
+	 * resource. The class name ID identifies the resource type.
 	 *
 	 * @param toUserId the user's ID
-	 * @param classNameId the class name ID of the resources. This identifies
-	 *        the resource type.
+	 * @param classNameId the class name ID of the resources
 	 * @return the number of sharing entries
-	 * @review
 	 */
 	@Override
 	public int getUniqueToUserSharingEntriesCount(
@@ -537,15 +540,17 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns {@code true} if a resource with a sharing entry action has been
-	 * shared with a specific user who can also share that resource.
+	 * Returns {@code true} if the resource with the sharing entry action has
+	 * been shared with a user who can also share that resource. The class name
+	 * ID and class primary key identify the resource's type and instance,
+	 * respectively.
 	 *
 	 * @param toUserId the user's ID
 	 * @param classNameId the resource's class name ID
-	 * @param classPK the primary key of the shared resource
+	 * @param classPK the class primary key of the shared resource
 	 * @param sharingEntryAction the sharing entry action
-	 * @return {@code true} if a resource with a sharing entry action has been
-	 *         shared with a user who can also share that resource; {@code
+	 * @return {@code true} if the resource with the sharing entry action has
+	 *         been shared with a user who can also share that resource; {@code
 	 *         false} otherwise
 	 */
 	@Override
@@ -571,15 +576,16 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns {@code true} if a resource with a sharing entry action has been
-	 * shared with a specific user.
+	 * Returns {@code true} if the resource with the sharing entry action has
+	 * been shared with the user. The class name ID and class primary key
+	 * identify the resource's type and instance, respectively.
 	 *
 	 * @param toUserId the user's ID
 	 * @param classNameId the resource's class name ID
-	 * @param classPK the primary key of the shared resource
+	 * @param classPK the class primary key of the shared resource
 	 * @param sharingEntryAction the sharing entry action
-	 * @return {@code true} if a resource with a sharing entry action has been
-	 *         shared with a specific user; {@code false} otherwise
+	 * @return {@code true} if the resource with the sharing entry action has
+	 *         been shared with the user; {@code false} otherwise
 	 */
 	@Override
 	public boolean hasSharingPermission(
@@ -600,8 +606,7 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns {@code true} if the sharing entry has a specific sharing entry
-	 * action.
+	 * Returns {@code true} if the sharing entry has the sharing entry action.
 	 *
 	 * @param sharingEntry the sharing entry
 	 * @param sharingEntryAction the sharing entry action
@@ -622,7 +627,7 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Updates a sharing entry in the database.
+	 * Updates the sharing entry in the database.
 	 *
 	 * @param sharingEntryId the primary key of the sharing entry
 	 * @param sharingEntryActions the sharing entry actions
