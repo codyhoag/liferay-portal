@@ -30,12 +30,12 @@ import org.osgi.service.component.annotations.Reference;
 /**
  * Indexes a new field in the search document to include all the users the
  * resource has been shared with. This information is used to do permission
- * checks when returning search results via
- * {@link SharingEntrySearchPermissionFilterContributor}.
+ * checks when returning search results via {@link
+ * SharingEntrySearchPermissionFilterContributor}.
  *
  * Each time a resource is shared, the associated search document is reindexed
  * and this {@code
- * com.liferay.portal.search.spi.model.permission.SearchPermissionFieldContributor}
+ * SearchPermissionFieldContributor}
  * ensures that the user the resource is shared with is added to the search
  * field.
  *

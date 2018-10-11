@@ -47,12 +47,10 @@ import org.osgi.framework.FrameworkUtil;
  * with other users. If the permission check is successful, this service invokes
  * the local service {@link SharingEntryLocalServiceImpl} to perform the
  * operation in the database. The permission check is done using the interface
- * {@code com.liferay.sharing.security.permission.SharingPermissionChecker} for
- * the respective class name ID.
+ * {@code SharingPermissionChecker} for the respective class name ID.
  * </p>
  *
  * @author Sergio González
- * @review
  */
 public class SharingEntryServiceImpl extends SharingEntryServiceBaseImpl {
 
@@ -60,7 +58,7 @@ public class SharingEntryServiceImpl extends SharingEntryServiceBaseImpl {
 	 * Adds a new sharing entry in the database or updates an existing one.
 	 *
 	 * @param  toUserId the ID of the user the resource is shared with
-	 * @param  classNameId the class name ID of the resource
+	 * @param  classNameId the resource's class name ID
 	 * @param  classPK the primary key of the resource
 	 * @param  groupId the primary key of the resource's group
 	 * @param  shareable whether the user specified by {@code toUserId} can
@@ -71,9 +69,9 @@ public class SharingEntryServiceImpl extends SharingEntryServiceBaseImpl {
 	 * @return the sharing entry
 	 * @throws PortalException if the user does not have permission to share the
 	 *         resource, if the sharing entry actions are invalid (e.g., empty
-	 *         don't contain {@code SharingEntryAction#VIEW}, or contain a null
-	 *         value), if the to/from user IDs are the same, or if the
-	 *         expiration date is a past value
+	 *         don't contain {@code SharingEntryAction#VIEW}, or contain a
+	 *         <code>null</code> value), if the to/from user IDs are the same,
+	 *         or if the expiration date is a past value
 	 */
 	@Override
 	public SharingEntry addOrUpdateSharingEntry(
@@ -107,9 +105,9 @@ public class SharingEntryServiceImpl extends SharingEntryServiceBaseImpl {
 	 * @throws PortalException if the user does not have permission to share the
 	 *         resource, if a sharing entry already exists for the to/from user
 	 *         IDs, if the sharing entry actions are invalid (e.g., empty, do
-	 *         not contain {@code SharingEntryAction#VIEW}, or contain a null
-	 *         value), if the to/from user IDs are the same, or if the
-	 *         expiration date is a past value
+	 *         not contain {@code SharingEntryAction#VIEW}, or contain a
+	 *         <code>null</code> value), if the to/from user IDs are the same,
+	 *         or if the expiration date is a past value
 	 */
 	@Override
 	public SharingEntry addSharingEntry(
@@ -173,19 +171,19 @@ public class SharingEntryServiceImpl extends SharingEntryServiceBaseImpl {
 	}
 
 	/**
-	 * Updates a sharing entry in the database.
+	 * Updates the sharing entry in the database.
 	 *
-	 * @param sharingEntryId the primary key of the sharing entry
-	 * @param sharingEntryActions the sharing entry actions
-	 * @param shareable whether the user the resource is shared with can also
-	 *        share it
-	 * @param expirationDate the date when the sharing entry expires
-	 * @param serviceContext the service context
+	 * @param  sharingEntryId the primary key of the sharing entry
+	 * @param  sharingEntryActions the sharing entry actions
+	 * @param  shareable whether the user the resource is shared with can also
+	 *         share it
+	 * @param  expirationDate the date when the sharing entry expires
+	 * @param  serviceContext the service context
 	 * @return the sharing entry
 	 * @throws PortalException if the sharing entry does not exist, if the
 	 *         sharing entry actions are invalid (e.g., empty, don't contain
-	 *         {@code SharingEntryAction#VIEW}, or contain a null value), or if
-	 *         the expiration date is a past value
+	 *         {@code SharingEntryAction#VIEW}, or contain a <code>null</code>
+	 *         value), or if the expiration date is a past value
 	 */
 	@Override
 	public SharingEntry updateSharingEntry(

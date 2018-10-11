@@ -34,7 +34,6 @@ public interface SharingConfiguration {
 	 * Sets the interval in minutes of how often {@link
 	 * com.liferay.sharing.internal.messaging.DeleteExpiredSharingEntriesMessageListener}
 	 * checks for expired sharing entries.
-	 *
 	 */
 	@Meta.AD(
 		deflt = "60",

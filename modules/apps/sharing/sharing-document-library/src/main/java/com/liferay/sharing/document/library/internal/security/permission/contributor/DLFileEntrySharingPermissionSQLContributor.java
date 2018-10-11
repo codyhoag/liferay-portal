@@ -25,8 +25,8 @@ import org.osgi.service.component.annotations.Reference;
 
 /**
  * Extends inline permission SQL queries to also consider sharing entries when
- * returning results for
- * {@code com.liferay.document.library.kernel.model.DLFileEntry}.
+ * returning results for {@code
+ * com.liferay.document.library.kernel.model.DLFileEntry}.
  *
  * @author Sergio González
  */

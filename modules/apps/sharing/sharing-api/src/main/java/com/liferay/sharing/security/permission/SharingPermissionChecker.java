@@ -41,18 +41,17 @@ import java.util.Collection;
 public interface SharingPermissionChecker {
 
 	/**
-	 * Returns {@code true} if the user has permission to share a resource with
-	 * another user via sharing entry actions.
+	 * Returns {@code true} if the user has permission to share the resource
+	 * with another user via sharing entry actions.
 	 *
 	 * @param  permissionChecker the permission checker of the user sharing the
 	 *         resource
-	 * @param  classPK the primary key of the shared resource
+	 * @param  classPK the class primary key of the shared resource
 	 * @param  groupId the primary key of the shared resource's group
-	 * @param  sharingEntryActions a collection of sharing entry actions to
+	 * @param  sharingEntryActions the collection of sharing entry actions to
 	 *         check for permission
 	 * @return {@code true} if the user has permission to share the resource via
 	 *         sharing entry actions; {@code false} otherwise
-	 * @review
 	 */
 	public boolean hasPermission(
 			PermissionChecker permissionChecker, long classPK, long groupId,

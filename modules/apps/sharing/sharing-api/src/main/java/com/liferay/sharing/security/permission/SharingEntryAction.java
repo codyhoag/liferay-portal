@@ -68,7 +68,7 @@ public enum SharingEntryAction {
 	}
 
 	/**
-	 * Returns a sharing entry action parsed from the bitwise value.
+	 * Returns the sharing entry action parsed from the bitwise value.
 	 *
 	 * @param  bitwiseValue the bitwise value
 	 * @return the sharing entry action
