@@ -31,7 +31,7 @@ public class GoogleDriveBackgroundTaskConstants {
 
 	/**
 	 * Indicates to the background task which operation is being performed by
-	 * Documents and Media. Possible values are:
+	 * Documents and Media. Possible values are
 	 *
 	 * <ul>
 	 * <li>

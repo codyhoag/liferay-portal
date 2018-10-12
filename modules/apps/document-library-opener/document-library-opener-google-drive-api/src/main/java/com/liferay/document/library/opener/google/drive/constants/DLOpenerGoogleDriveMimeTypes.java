@@ -73,9 +73,11 @@ public class DLOpenerGoogleDriveMimeTypes {
 	 * to Google Docs, Microsoft PowerPoint presentations to Google Slides, and
 	 * and so on.
 	 *
+	 * <p>
 	 * This method returns a valid Google document type only for MIME types for
 	 * which {@link #isMimeTypeSupported(String)} returns {@code true}. An
 	 * exception is thrown for any others.
+	 * </p>
 	 *
 	 * @param  mimeType the MIME type to map to Google Drive
 	 * @return the equivalent Google Drive MIME type
@@ -97,12 +99,16 @@ public class DLOpenerGoogleDriveMimeTypes {
 	 * this type (e.g., if the MIME type indicates this is a Microsoft docx
 	 * document, the return value is {@code ".docx"}.
 	 *
+	 * <p>
 	 * The return value always includes a dot ({@code .}) as the extension's
 	 * first character.
+	 * </p>
 	 *
+	 * <p>
 	 * Only MIME types for which the {@link #isMimeTypeSupported(String)} method
 	 * returns {@code true} return an extension. Any empty string is returned
 	 * for any others.
+	 * </p>
 	 *
 	 * @param  mimeType the MIME type
 	 * @return the canonical extension, or an empty string if none could be

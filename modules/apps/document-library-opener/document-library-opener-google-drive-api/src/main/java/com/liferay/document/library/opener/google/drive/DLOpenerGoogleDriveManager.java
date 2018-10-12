@@ -23,11 +23,13 @@ import java.io.IOException;
  * Performs operations on a Google Drive file that is related (linked) to a
  * local {@code FileEntry}.
  *
+ * <p>
  * When a file entry is linked to a Google Drive file, both represent the same
  * contents. The file entry keeps some state regarding its linked Google Drive
  * file. The methods in this interface automatically perform this linking and
  * unlinking. The links are represented by {@link
  * DLOpenerGoogleDriveFileReference}.
+ * </p>
  *
  * @author Adolfo Pérez
  */
@@ -38,11 +40,12 @@ public interface DLOpenerGoogleDriveManager {
 	 * and returns a reference to that Google Drive file. The Google Drive
 	 * file's ID is stored alongside the file entry's ID.
 	 *
+	 * <p>
 	 * Note that this method does not check out the file entry in the portal. To
 	 * do so, see {@code
 	 * com.liferay.document.library.kernel.service.DLAppService#checkOutFileEntry(
-	 *
 	 * long, ServiceContext)}.
+	 * </p>
 	 *
 	 * @param  userId the primary key of the user performing the operation
 	 * @param  fileEntry the file entry
@@ -57,10 +60,12 @@ public interface DLOpenerGoogleDriveManager {
 	 * Creates a new empty Google Drive file that is linked to a file entry, and
 	 * returns a reference to that Google Drive file.
 	 *
+	 * <p>
 	 * This operation is similar to {@link #checkOut(long, FileEntry)}, but
 	 * doesn't copy the file entry's content to Google Drive. When you know the
 	 * file entry is empty (e.g., you're creating a new one), this operation is
 	 * much more efficient than {@link #checkOut(long, FileEntry)}.
+	 * </p>
 	 *
 	 * @param  userId the primary key of the user performing the operation
 	 * @param  fileEntry the file entry
@@ -77,7 +82,7 @@ public interface DLOpenerGoogleDriveManager {
 	 *
 	 * @param  userId the primary key of the user performing the operation
 	 * @param  fileEntry the file entry
-	 * @throws PortalException
+	 * @throws PortalException if a portal exception occurred
 	 */
 	public void delete(long userId, FileEntry fileEntry) throws PortalException;
 
@@ -139,9 +144,11 @@ public interface DLOpenerGoogleDriveManager {
 	 * Requests Google Drive permissions to edit a file entry. If this request
 	 * is sucessful, this method returns a reference to the Google Drive file.
 	 *
+	 * <p>
 	 * For this method to succeed, the user must have completed the OAuth 2
 	 * authorization flow and have a valid credential (see {@link
 	 * #hasValidCredential(long)}).
+	 * </p>
 	 *
 	 * @param  userId the primary key of the user requesting edit access
 	 * @param  fileEntry the file entry

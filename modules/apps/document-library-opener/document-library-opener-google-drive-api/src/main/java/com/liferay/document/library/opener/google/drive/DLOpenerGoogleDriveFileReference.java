@@ -36,8 +36,8 @@ public class DLOpenerGoogleDriveFileReference {
 	 * @param fileSupplier the supplier that provides the document's contents
 	 *        when invoked
 	 * @param backgroundTaskId the primary key of the background process that
-	 *        uploads the original file contents to Google Drive. If zero, no
-	 *        upload task is in progress.
+	 *        uploads the original file contents to Google Drive. If {@code 0},
+	 *        no upload task is in progress.
 	 */
 	public DLOpenerGoogleDriveFileReference(
 		long fileEntryId, Supplier<String> titleSupplier,
@@ -51,9 +51,10 @@ public class DLOpenerGoogleDriveFileReference {
 
 	/**
 	 * Returns the primary key of the background task that uploads the original
-	 * file contents to Google Drive. If zero, no upload task is in progress.
+	 * file contents to Google Drive. If this method returns {@code 0}, no
+	 * upload task is in progress.
 	 *
-	 * @return the primary key of the background task, or 0 if there is none
+	 * @return the primary key of the background task
 	 */
 	public long getBackgroundTaskId() {
 		return _backgroundTaskId;

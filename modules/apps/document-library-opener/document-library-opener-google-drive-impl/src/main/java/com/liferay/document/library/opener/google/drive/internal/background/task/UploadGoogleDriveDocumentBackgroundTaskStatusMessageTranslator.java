@@ -24,9 +24,7 @@ import com.liferay.portal.kernel.util.GetterUtil;
 
 /**
  * Translates message bus messages and updates the background task status
- * accordingly.
- *
- * This class understands a payload with two fields:
+ * accordingly. This class understands a payload with two fields:
  *
  * <ul>
  * <li>
