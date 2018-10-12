@@ -56,6 +56,8 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 /**
+ * Uploads content to Google Drive in a background task.
+ *
  * @author Sergio González
  */
 @Component(
