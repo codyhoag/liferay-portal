@@ -76,8 +76,8 @@ public class SharingEntryLocalServiceImpl
 	 * @return the sharing entry
 	 * @throws PortalException if the sharing entry actions are invalid (e.g.,
 	 *         empty, don't contain {@code SharingEntryAction#VIEW}, or contain
-	 *         a <code>null</code> value), if the to/from user IDs are the same,
-	 *         or if the expiration date is a past value
+	 *         a {@code null} value), if the to/from user IDs are the same, or
+	 *         if the expiration date is a past value
 	 */
 	@Override
 	public SharingEntry addOrUpdateSharingEntry(
@@ -118,8 +118,8 @@ public class SharingEntryLocalServiceImpl
 	 * @throws PortalException if a sharing entry already exists for the to/from
 	 *         user IDs, if the sharing entry actions are invalid (e.g., empty,
 	 *         don't contain {@code SharingEntryAction#VIEW}, or contain a
-	 *         <code>null</code> value), if the to/from user IDs are the same,
-	 *         or if the expiration date is a past value
+	 *         {@code null} value), if the to/from user IDs are the same, or if
+	 *         the expiration date is a past value
 	 */
 	@Override
 	public SharingEntry addSharingEntry(
@@ -386,10 +386,10 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns the list of the group's sharing entries.
+	 * Returns the the group's sharing entries.
 	 *
 	 * @param  groupId the primary key of the group
-	 * @return the list of sharing entries
+	 * @return the sharing entries
 	 */
 	@Override
 	public List<SharingEntry> getGroupSharingEntries(long groupId) {
@@ -397,13 +397,12 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns the list of the resource's sharing entries. The class name ID and
-	 * class primary key identify the resource's type and instance,
-	 * respectively.
+	 * Returns the resource's sharing entries. The class name ID and class
+	 * primary key identify the resource's type and instance, respectively.
 	 *
 	 * @param  classNameId the resource's class name ID
 	 * @param  classPK the class primary key of the resource
-	 * @return the list of sharing entries
+	 * @return the sharing entries
 	 */
 	@Override
 	public List<SharingEntry> getSharingEntries(
@@ -413,14 +412,14 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns the list of sharing entries for the resource shared with the
-	 * user. The class name ID and class primary key identify the resource's
-	 * type and instance, respectively.
+	 * Returns the sharing entries for the resource shared with the user. The
+	 * class name ID and class primary key identify the resource's type and
+	 * instance, respectively.
 	 *
 	 * @param  toUserId the user's ID
 	 * @param  classNameId the resource's class name ID
 	 * @param  classPK the class primary key of the resource
-	 * @return the list of sharing entries
+	 * @return the sharing entries
 	 */
 	@Override
 	public List<SharingEntry> getSharingEntries(
@@ -431,14 +430,14 @@ public class SharingEntryLocalServiceImpl
 	}
 
 	/**
-	 * Returns the list of sharing entries for the resource shared with the
-	 * user. The class name ID and class primary key identify the resource's
-	 * type and instance, respectively.
+	 * Returns the sharing entries for the resource shared with the user. The
+	 * class name ID and class primary key identify the resource's type and
+	 * instance, respectively.
 	 *
 	 * @param  toUserId the user's ID
 	 * @param  classNameId the resource's class name ID
 	 * @param  classPK the class primary key of the resource
-	 * @return the list of sharing entries
+	 * @return the sharing entries
 	 */
 	@Override
 	public List<SharingEntry> getToUserClassPKSharingEntries(
@@ -638,7 +637,7 @@ public class SharingEntryLocalServiceImpl
 	 * @return the sharing entry
 	 * @throws PortalException if the sharing entry does not exist, if the
 	 *         sharing entry actions are invalid (e.g., empty, don't contain
-	 *         {@code SharingEntryAction#VIEW}, or contain a <code>null</code>
+	 *         {@code SharingEntryAction#VIEW}, or contain a {@code null}
 	 *         value), or if the expiration date is a past value
 	 */
 	@Override

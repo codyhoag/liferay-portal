@@ -17,13 +17,10 @@ package com.liferay.sharing.filter;
 import java.util.Locale;
 
 /**
- * Filters the shared items by the Shared With Me portlet.
- *
- * <p>
+ * Filters the shared items provided by the Shared With Me portlet.
  * Implementations of this interface must be registered as OSGi components using
  * the service {@code SharedWithMeFilterItem}. The {@code navigation.item.order}
  * property defines the order in which the filter appears in the user interface.
- * </p>
  *
  * @author Sergio González
  */

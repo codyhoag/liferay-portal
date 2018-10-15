@@ -18,7 +18,7 @@ import java.util.Objects;
 
 /**
  * Provides the actions that users can perform on resources shared with them.
- * Each sharing entry action is composed of an ID, and a bitwise value used to
+ * Each sharing entry action is composed of an ID and a bitwise value used to
  * check permissions.
  *
  * @author Sergio González
@@ -28,12 +28,12 @@ public enum SharingEntryAction {
 	ADD_DISCUSSION("ADD_DISCUSSION", 4), UPDATE("UPDATE", 2), VIEW("VIEW", 1);
 
 	/**
-	 * Returns {@code true} if the sharing entry action's ID matches that of a
-	 * valid sharing entry action.
+	 * Returns {@code true} if the sharing entry action's ID matches a valid
+	 * sharing entry action.
 	 *
 	 * @param  actionId the sharing entry action's ID
-	 * @return {@code true} if the sharing entry action's ID matches that of a
-	 *         valid sharing entry action; {@code false} otherwise
+	 * @return {@code true} if the sharing entry action's ID matches a valid
+	 *         sharing entry action; {@code false} otherwise
 	 */
 	public static boolean isSupportedActionId(String actionId) {
 		for (SharingEntryAction sharingEntryAction :

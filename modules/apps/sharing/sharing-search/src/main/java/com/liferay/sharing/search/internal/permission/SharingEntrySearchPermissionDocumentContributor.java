@@ -28,16 +28,16 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 /**
- * Indexes a new field in the search document to include all the users the
- * resource has been shared with. This information is used to do permission
- * checks when returning search results via {@link
+ * Indexes a new field in the search document to include all users the resource
+ * has been shared with. This information is used to do permission checks when
+ * returning search results via {@link
  * SharingEntrySearchPermissionFilterContributor}.
  *
+ * <p>
  * Each time a resource is shared, the associated search document is reindexed
- * and this {@code
- * SearchPermissionFieldContributor}
- * ensures that the user the resource is shared with is added to the search
- * field.
+ * and this {@code SearchPermissionFieldContributor} ensures that the user the
+ * resource is shared with is added to the search field.
+ * </p>
  *
  * @author Sergio González
  */

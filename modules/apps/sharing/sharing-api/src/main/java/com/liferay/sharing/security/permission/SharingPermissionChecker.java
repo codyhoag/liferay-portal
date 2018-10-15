@@ -21,7 +21,7 @@ import java.util.Collection;
 
 /**
  * Defines whether the user has permission to share a resource with another user
- * via sharing entry actions ({@link SharingEntryAction}).
+ * via {@link SharingEntryAction}s.
  *
  * <p>
  * Implementations of this interface typically map the sharing entry actions

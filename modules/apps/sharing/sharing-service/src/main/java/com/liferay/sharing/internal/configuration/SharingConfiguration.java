@@ -31,7 +31,7 @@ import com.liferay.portal.configuration.metatype.annotations.ExtendedObjectClass
 public interface SharingConfiguration {
 
 	/**
-	 * Sets the interval in minutes of how often {@link
+	 * Sets the interval in minutes of how often {@code
 	 * com.liferay.sharing.internal.messaging.DeleteExpiredSharingEntriesMessageListener}
 	 * checks for expired sharing entries.
 	 */
