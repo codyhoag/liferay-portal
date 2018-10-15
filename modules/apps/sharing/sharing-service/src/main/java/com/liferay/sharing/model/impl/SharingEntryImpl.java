@@ -17,14 +17,14 @@ package com.liferay.sharing.model.impl;
 import aQute.bnd.annotation.ProviderType;
 
 /**
- * The extended model implementation for the SharingEntry service. Represents a
- * row in the &quot;SharingEntry&quot; database table, with each column mapped
- * to a property of this class.
+ * The extended model implementation for the {@code SharingEntry} service.
+ * Represents a row in the {@code SharingEntry} database table, with each column
+ * mapped to a property of this class.
  *
  * <p>
  * Helper methods and all application logic should be put in this class.
- * Whenever methods are added, rerun ServiceBuilder to copy their definitions
- * into the {@link com.liferay.sharing.model.SharingEntry} interface.
+ * Whenever methods are added, rerun Service Builder to copy their definitions
+ * into the {@code com.liferay.sharing.model.SharingEntry} interface.
  * </p>
  *
  * @author Brian Wing Shun Chan
