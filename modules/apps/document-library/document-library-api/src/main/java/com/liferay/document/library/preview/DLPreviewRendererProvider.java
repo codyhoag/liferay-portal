@@ -23,44 +23,34 @@ import java.util.Optional;
  *
  * <p>
  * Implementations must specify at least one value for the OSGi property {@code
- * content.type} so they can be called only for the content types they can
- * handle.
- *
- * For example, an {@code DLPreviewRendererProvider} that can provide previews
- * for PDF files would have these OSGi property settings:
- * </p>
- *
- * <p>
- * {@code
- * content.type=application/pdf
- * content.type=application/x-pdf}
+ * content.type}, and can be called only for those supported content types. For
+ * example, a {@code DLPreviewRendererProvider} that can provide previews for
+ * PDF files would have the content type settings {@code
+ * content.type=application/pdf} and {@code content.type=application/x-pdf}.
  * </p>
  *
  * @author Alejandro Tardín
- * @review
  */
 public interface DLPreviewRendererProvider {
 
 	/**
-	 * Returns the {@link DLPreviewRenderer} responsible for rendering the
-	 * preview of the file. If the value is empty, the default preview will be
-	 * rendered.
+	 * Returns the {@link DLPreviewRenderer} responsible for rendering the file
+	 * preview. If no such {@code DLPreviewRenderer} exists, the default preview
+	 * is rendered.
 	 *
 	 * @param  fileVersion the file version to preview
-	 * @return an optional of {@link DLPreviewRenderer}
-	 * @review
+	 * @return the optional {@code DLPreviewRenderer}
 	 */
 	public Optional<DLPreviewRenderer> getPreviewDLPreviewRendererOptional(
 		FileVersion fileVersion);
 
 	/**
-	 * Returns the {@link DLPreviewRenderer} responsible for rendering the
-	 * thumbnail of the file in the card view. If the value is empty, the
-	 * default thumbnail will be rendered.
+	 * Returns the {@link DLPreviewRenderer} responsible for rendering the file
+	 * thumbnail in the card view. If no such {@code DLPreviewRenderer} exists,
+	 * the default thumbnail is rendered.
 	 *
 	 * @param  fileVersion the file version to preview
-	 * @return an optional of {@link DLPreviewRenderer}
-	 * @review
+	 * @return the optional {@code DLPreviewRenderer}
 	 */
 	public Optional<DLPreviewRenderer> getThumbnailDLPreviewRendererOptional(
 		FileVersion fileVersion);
