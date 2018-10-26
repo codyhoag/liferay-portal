@@ -30,14 +30,14 @@ import javax.servlet.http.HttpServletResponse;
 public interface DLPreviewRenderer {
 
 	/**
-	 * Renders content to the response. See {@link
-	 * DLPreviewRendererProvider#getPreviewDLPreviewRendererOptional(
-	 * FileVersion)} and {@link
-	 * DLPreviewRendererProvider#getThumbnailDLPreviewRendererOptional(
-	 * FileVersion)}.
+	 * Renders content to the response.
 	 *
 	 * @param request the request
 	 * @param response the response
+	 * @see   DLPreviewRendererProvider#getPreviewDLPreviewRendererOptional(
+	 *        FileVersion)
+	 * @see   DLPreviewRendererProvider#getThumbnailDLPreviewRendererOptional(
+	 *        FileVersion)
 	 */
 	public void render(HttpServletRequest request, HttpServletResponse response)
 		throws IOException, PortalException, ServletException;

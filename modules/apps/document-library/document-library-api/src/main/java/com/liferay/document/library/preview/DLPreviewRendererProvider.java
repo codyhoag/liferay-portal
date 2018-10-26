@@ -34,23 +34,22 @@ import java.util.Optional;
 public interface DLPreviewRendererProvider {
 
 	/**
-	 * Returns the {@link DLPreviewRenderer} responsible for rendering the file
-	 * preview. If no such {@code DLPreviewRenderer} exists, the default preview
-	 * is rendered.
+	 * Returns the DL preview renderer responsible for rendering the file
+	 * preview. If no such provider exists, the default preview is rendered.
 	 *
 	 * @param  fileVersion the file version to preview
-	 * @return the optional {@code DLPreviewRenderer}
+	 * @return the optional DL preview renderer
 	 */
 	public Optional<DLPreviewRenderer> getPreviewDLPreviewRendererOptional(
 		FileVersion fileVersion);
 
 	/**
-	 * Returns the {@link DLPreviewRenderer} responsible for rendering the file
-	 * thumbnail in the card view. If no such {@code DLPreviewRenderer} exists,
-	 * the default thumbnail is rendered.
+	 * Returns the DL preview renderer responsible for rendering the file
+	 * thumbnail in the card view. If no such provider exists, the default
+	 * thumbnail is rendered.
 	 *
 	 * @param  fileVersion the file version to preview
-	 * @return the optional {@code DLPreviewRenderer}
+	 * @return the optional DL preview renderer
 	 */
 	public Optional<DLPreviewRenderer> getThumbnailDLPreviewRendererOptional(
 		FileVersion fileVersion);
