@@ -19,11 +19,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Holds information about a reusable {@code WorkflowTask} identifier. It's
- * identified by the source of the task, by user or by role.
+ * Holds information about a reusable {@code
+ * com.liferay.portal.kernel.workflow.WorkflowTask} identifier. The workflow
+ * task is identified by user, by role, or by the source of the task.
  *
  * @author Victor Galan
- * @review
  */
 public interface ReusableWorkflowTaskIdentifier {
 

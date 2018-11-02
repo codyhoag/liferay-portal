@@ -17,21 +17,19 @@ package com.liferay.structured.content.apio.architect.entity;
 import java.util.Map;
 
 /**
- * Models a <code>EntityModel</code>.
+ * Models an entity.
  *
  * @author     Cristina González
- * @deprecated As of Judson (7.1.x), replaced by {@link
+ * @deprecated As of Judson (7.1.x), replaced by {@code
  *             com.liferay.portal.odata.entity.EntityModel}
- * @review
  */
 @Deprecated
 public interface EntityModel {
 
 	/**
-	 * Returns a Map with all the entity fields used to create the EDM.
+	 * Returns a map with all the entity fields used to create the EDM.
 	 *
 	 * @return the entity field map
-	 * @review
 	 */
 	public Map<String, EntityField> getEntityFieldsMap();
 
@@ -39,7 +37,6 @@ public interface EntityModel {
 	 * Returns the name of the single entity type used to create the EDM.
 	 *
 	 * @return the entity type name
-	 * @review
 	 */
 	public String getName();
 

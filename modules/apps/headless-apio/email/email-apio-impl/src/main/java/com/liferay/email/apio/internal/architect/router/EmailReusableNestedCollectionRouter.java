@@ -35,12 +35,11 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 /**
- * Provides the information necessary to expose the <a
- * href="http://schema.org/email">Email</a> resources through a web API. The
+ * Provides the information necessary to expose <a
+ * href="http://schema.org/email">Email </a> resources through a web API. The
  * resources are mapped from the internal model {@code EmailAddress}.
  *
  * @author Javier Gamarra
- * @review
  */
 @Component(immediate = true, service = ReusableNestedCollectionRouter.class)
 public class EmailReusableNestedCollectionRouter

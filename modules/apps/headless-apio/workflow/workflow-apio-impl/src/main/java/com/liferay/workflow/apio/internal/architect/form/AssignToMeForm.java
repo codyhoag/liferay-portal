@@ -24,12 +24,11 @@ import java.util.Date;
 public class AssignToMeForm {
 
 	/**
-	 * Builds a {@code Form} that generates {@code AssignToMeForm} depending on
+	 * Builds a form that generates an {@code AssignToMeForm} that depends on
 	 * the HTTP body.
 	 *
-	 * @param  formBuilder the {@code Form} builder
-	 * @return a context form instance
-	 * @review
+	 * @param  formBuilder the form builder
+	 * @return the form
 	 */
 	public static Form<AssignToMeForm> buildForm(
 		Form.Builder<AssignToMeForm> formBuilder) {

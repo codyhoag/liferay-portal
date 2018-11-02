@@ -20,9 +20,8 @@ package com.liferay.structured.content.apio.architect.filter.expression;
  * traversed.
  *
  * @author     Cristina González
- * @deprecated As of Judson (7.1.x), replaced by {@link
+ * @deprecated As of Judson (7.1.x), replaced by {@code
  *             com.liferay.portal.odata.filter.expression.ExpressionVisitor}
- * @review
  */
 @Deprecated
 public interface ExpressionVisitor<T> {

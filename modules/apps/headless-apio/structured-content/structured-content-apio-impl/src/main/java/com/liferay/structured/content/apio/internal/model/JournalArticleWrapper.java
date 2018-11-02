@@ -44,16 +44,18 @@ public class JournalArticleWrapper
 	}
 
 	/**
-	 * @return locale the {@link Locale}
-	 * @review
+	 * Returns the {@code Locale}.
+	 *
+	 * @return the locale
 	 */
 	public Locale getLocale() {
 		return _locale;
 	}
 
 	/**
-	 * @return themeDisplay the {@link ThemeDisplay}
-	 * @review
+	 * Returns the {@code ThemeDisplay}.
+	 *
+	 * @return the theme display
 	 */
 	public ThemeDisplay getThemeDisplay() {
 		return _themeDisplay;

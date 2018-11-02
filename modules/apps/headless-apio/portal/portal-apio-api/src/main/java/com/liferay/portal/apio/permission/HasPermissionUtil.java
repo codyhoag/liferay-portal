@@ -21,22 +21,22 @@ import com.liferay.apio.architect.functional.Try;
 import java.util.function.BiFunction;
 
 /**
- * Provides utility functions for APIs permission checkers.
+ * Provides utility functions for API permission checkers.
  *
  * <p>
  * This class shouldn't be instantiated.
  * </p>
  *
  * @author Sarai Díaz
- * @review
  */
 public class HasPermissionUtil {
 
 	/**
-	 * Execute the received function and transforms any occurred exception into
-	 * a {@code false}
+	 * Executes the received function and turns any exception that occurs into
+	 * {@code false}.
 	 *
-	 * @review
+	 * @param  throwableBiFunction the function
+	 * @return the function's results, or {@code false} if an exception occurs
 	 */
 	public static BiFunction<Credentials, Long, Boolean> failOnException(
 		ThrowableBiFunction<Credentials, Long, Boolean> throwableBiFunction) {
