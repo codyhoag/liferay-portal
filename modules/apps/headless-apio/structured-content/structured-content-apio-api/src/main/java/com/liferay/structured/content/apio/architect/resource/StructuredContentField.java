@@ -29,16 +29,14 @@ public interface StructuredContentField {
 	 * Returns the dataType of the structured content field.
 	 *
 	 * @return the data type.
-	 *
 	 * @review
-	*/
+	 */
 	public String getDataType();
 
 	/**
 	 * Returns the filter and sort identifier of the structured content field.
 	 *
 	 * @return the filter and sort identifier.
-	 *
 	 * @review
 	 */
 	public String getFilterAndSortIdentifier();
@@ -47,16 +45,15 @@ public interface StructuredContentField {
 	 * Returns the input control of the structured content field.
 	 *
 	 * @return the input control.
-	 *
 	 * @review
 	 */
 	public String getInputControl();
 
 	/**
 	 * Returns the label of the structured content given a locale.
+	 *
 	 * @param  locale the locale.
 	 * @return the input control.
-	 *
 	 * @review
 	 */
 	public String getLocalizedLabel(Locale locale);
@@ -66,7 +63,6 @@ public interface StructuredContentField {
 	 *
 	 * @param  locale the locale.
 	 * @return the vale.
-	 *
 	 * @review
 	 */
 	public String getLocalizedValue(Locale locale);
@@ -75,7 +71,6 @@ public interface StructuredContentField {
 	 * Returns the name of the structured content field.
 	 *
 	 * @return the name.
-	 *
 	 * @review
 	 */
 	public String getName();
@@ -85,7 +80,6 @@ public interface StructuredContentField {
 	 * field.
 	 *
 	 * @return the nested fields.
-	 *
 	 * @review
 	 */
 	public List<StructuredContentField> getNestedStructuredContentFields();

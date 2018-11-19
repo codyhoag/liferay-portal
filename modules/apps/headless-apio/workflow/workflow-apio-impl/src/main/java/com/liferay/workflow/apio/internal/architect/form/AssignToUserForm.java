@@ -25,8 +25,8 @@ import java.util.Date;
 public class AssignToUserForm {
 
 	/**
-	 * Builds a {@code Form} that generates {@code AssignToUserForm} depending on
-	 * the HTTP body.
+	 * Builds a {@code Form} that generates {@code AssignToUserForm} depending
+	 * on the HTTP body.
 	 *
 	 * @param  formBuilder the {@code Form} builder
 	 * @return a context form instance
