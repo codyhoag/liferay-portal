@@ -25,12 +25,8 @@ import org.osgi.service.component.annotations.Component;
 
 /**
  * Converts a {@code Path} to a {@code ReusableWorkflowTaskIdentifier}, and vice
- * versa.
- *
- * <p>
- * The {@code ReusableWorkflowTaskIdentifier} can be used as a resource's
+ * versa. The reusable workflow task identifier can be used as a resource's
  * identifier.
- * </p>
  *
  * @author Victor Galan
  */

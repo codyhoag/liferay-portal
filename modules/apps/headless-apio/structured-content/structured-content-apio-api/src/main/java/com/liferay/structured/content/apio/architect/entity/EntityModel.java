@@ -27,9 +27,9 @@ import java.util.Map;
 public interface EntityModel {
 
 	/**
-	 * Returns a map with all the entity fields used to create the EDM.
+	 * Returns all the entity fields used to create the EDM.
 	 *
-	 * @return the entity field map
+	 * @return the entity fields
 	 */
 	public Map<String, EntityField> getEntityFieldsMap();
 

@@ -44,7 +44,7 @@ public class JournalArticleWrapper
 	}
 
 	/**
-	 * Returns the {@code Locale}.
+	 * Returns the locale.
 	 *
 	 * @return the locale
 	 */
@@ -53,7 +53,7 @@ public class JournalArticleWrapper
 	}
 
 	/**
-	 * Returns the {@code ThemeDisplay}.
+	 * Returns the theme display.
 	 *
 	 * @return the theme display
 	 */
