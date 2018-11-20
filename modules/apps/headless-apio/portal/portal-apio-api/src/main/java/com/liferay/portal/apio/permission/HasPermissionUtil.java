@@ -29,8 +29,8 @@ import java.util.function.BiFunction;
 public class HasPermissionUtil {
 
 	/**
-	 * Executes the received function; any exceptions that occur are returned as
-	 * a boolean {@code false}.
+	 * Executes the received function; if any exceptions occur, a boolean {@code
+	 * false} is returned.
 	 *
 	 * @param  throwableBiFunction the function
 	 * @return the function's results, or {@code false} if an exception occurs
