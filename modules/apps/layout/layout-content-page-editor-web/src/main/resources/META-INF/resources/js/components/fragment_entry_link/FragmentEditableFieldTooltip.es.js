@@ -75,9 +75,8 @@ class FragmentEditableFieldTooltip extends Component {
 	}
 
 	/**
-	 * Align tooltip position acording to editable field
+	 * This method aligns the tooltip position for editable fields.
 	 * @private
-	 * @review
 	 */
 	_alignTooltip() {
 		if (this.refs.tooltip) {
@@ -120,7 +119,7 @@ class FragmentEditableFieldTooltip extends Component {
 	}
 
 	/**
-	 * Handle window resize event
+	 * Aligns tooltips when the window is resized.
 	 * @private
 	 * @review
 	 */
@@ -132,18 +131,16 @@ class FragmentEditableFieldTooltip extends Component {
 
 /**
  * State definition.
- * @review
  * @static
  * @type {!Object}
  */
 FragmentEditableFieldTooltip.STATE = {
 
 	/**
-	 * Reference element used for aligning the tooltip
+	 * The reference element that tooltip alignment is based on.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentEditableFieldTooltip
-	 * @review
 	 * @type {HTMLElement}
 	 */
 	alignElement: Config.object().required(),
@@ -153,7 +150,6 @@ FragmentEditableFieldTooltip.STATE = {
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentEditableFieldTooltip
-	 * @review
 	 * @type {!Array<{
 	 *   id: !string,
 	 *   label: !string
