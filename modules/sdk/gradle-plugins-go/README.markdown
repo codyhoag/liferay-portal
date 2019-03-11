@@ -83,7 +83,7 @@ Property Name | Type | Default Value | Description
 <a name="workingdirproperty"></a>`workingDir` | `File` | `go.workingDir`](#workingdir) | The working directory to use in the Go invocation.
 
 The `File` type properties support any type that can be resolved by
-[`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.css.Object\)).
+[`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.css.Object)).
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties to defer evaluation until task execution.
 
