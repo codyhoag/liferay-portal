@@ -82,7 +82,7 @@ Property Name | Type | Default Value | Description
 `useGradleExec` | `boolean` | <p>**If running in a [Gradle Daemon](https://docs.gradle.org/current/userguide/gradle_daemon.html):** `true`</p><p>**Otherwise:** `false`</p> | Whether to invoke Go using [`project.exec`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:exec(org.gradle.api.Action)), which can solve hanging problems with the Gradle Daemon.
 <a name="workingdirproperty"></a>`workingDir` | `File` | `go.workingDir`](#workingdir) | The working directory to use in the Go invocation.
 
-The type `File` properties support any type that can be resolved by
+The `File` type properties support any type that can be resolved by
 [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.css.Object\)).
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties to defer evaluation until task execution.
