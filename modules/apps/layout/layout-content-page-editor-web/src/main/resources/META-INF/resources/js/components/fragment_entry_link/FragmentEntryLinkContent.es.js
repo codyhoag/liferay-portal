@@ -401,7 +401,6 @@ FragmentEntryLinkContent.STATE = {
 	 * @default ''
 	 * @instance
 	 * @memberOf FragmentEntryLink
-	 * @review
 	 * @type {string}
 	 */
 	content: Config.any()
