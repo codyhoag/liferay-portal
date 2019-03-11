@@ -79,10 +79,9 @@ class FragmentEntryLinkContent extends Component {
 	}
 
 	/**
-	 * Handle content changed
+	 * This method renders the content if it is changed.
 	 * @inheritDoc
 	 * @param {string} newContent
-	 * @review
 	 */
 	syncContent(newContent) {
 		if (newContent && (newContent !== this.content)) {
@@ -91,11 +90,10 @@ class FragmentEntryLinkContent extends Component {
 	}
 
 	/**
-	 * Handle editableValues changed
+	 * This method handles changes to editableValues.
 	 * @inheritDoc
 	 * @param {object} newEditableValues
 	 * @param {object} oldEditableValues
-	 * @review
 	 */
 	syncEditableValues(newEditableValues, oldEditableValues) {
 		if (newEditableValues !== oldEditableValues) {
@@ -129,7 +127,7 @@ class FragmentEntryLinkContent extends Component {
 	}
 
 	/**
-	 * Propagate store to editables when it's loaded
+	 * This method propagates the store to editable fields when it's loaded.
 	 * @review
 	 */
 	syncStore() {
@@ -311,10 +309,9 @@ class FragmentEntryLinkContent extends Component {
 	}
 
 	/**
-	 * Renders the FragmentEntryLink content parsing with AUI
+	 * This method parses and renders the FragmentEntryLink content with AUI.
 	 * @param {string} content
 	 * @private
-	 * @review
 	 */
 	_renderContent(content) {
 		if (content && this.refs.content) {
@@ -346,14 +343,13 @@ class FragmentEntryLinkContent extends Component {
 	}
 
 	/**
-	 * Runs a set of update functions through the collection of editable values
-	 * inside this fragment entry link.
+	 *  This method runs a set of update functions through the collection of
+     * editable values inside this fragment entry link.
 	 * @param {string} languageId The current language id
 	 * @param {string} defaultLanguageId The default language id
 	 * @param {Array<Function>} updateFunctions The set of update functions to execute for each
 	 * 	editable value
 	 * @private
-	 * @review
 	 */
 	_update(
 		{
@@ -395,14 +391,13 @@ class FragmentEntryLinkContent extends Component {
 
 /**
  * State definition.
- * @review
  * @static
  * @type {!Object}
  */
 FragmentEntryLinkContent.STATE = {
 
 	/**
-	 * Fragment content to be rendered
+	 * The fragment content to be rendered.
 	 * @default ''
 	 * @instance
 	 * @memberOf FragmentEntryLink
@@ -422,27 +417,24 @@ FragmentEntryLinkContent.STATE = {
 	 * @default {}
 	 * @instance
 	 * @memberOf FragmentEntryLink
-	 * @review
 	 * @type {object}
 	 */
 	defaultEditorConfigurations: Config.object().value({}),
 
 	/**
-	 * Default language id.
+	 * Default language for the editor.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentsEditor
-	 * @review
 	 * @type {!string}
 	 */
 	defaultLanguageId: Config.string().required(),
 
 	/**
-	 * Default segment id.
+	 * Default segments for the editor.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentsEditor
-	 * @review
 	 * @type {!string}
 	 */
 	defaultSegmentsExperienceId: Config.string(),
@@ -453,53 +445,48 @@ FragmentEntryLinkContent.STATE = {
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentEntryLink
-	 * @review
 	 * @type {!Object}
 	 */
 	editableValues: Config.object().required(),
 
 	/**
-	 * FragmentEntryLink id
+	 * The ID for the FragmentEntryLink
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentEntryLinkContent
-	 * @review
 	 * @type {!string}
 	 */
 	fragmentEntryLinkId: Config.string().required(),
 
 	/**
-	 * Image selector url
+	 * The URL for the Image selector.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentEntryLink
-	 * @review
 	 * @type {!string}
 	 */
 	imageSelectorURL: Config.string().required(),
 
 	/**
-	 * Currently selected language id.
+	 * Currently selected language ID.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentsEditor
-	 * @review
 	 * @type {!string}
 	 */
 	languageId: Config.string().required(),
 
 	/**
-	 * Currently selected segment id.
+	 * Currently selected segment ID.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentsEditor
-	 * @review
 	 * @type {!string}
 	 */
 	segmentsExperienceId: Config.string(),
 
 	/**
-	 * Selected mapping type label
+	 * Currently selected mapping type label.
 	 * @default {}
 	 * @instance
 	 * @memberOf FragmentEntryLink
@@ -535,11 +522,10 @@ FragmentEntryLinkContent.STATE = {
 		.value({}),
 
 	/**
-	 * If true, asset mapping is enabled
+	 * If the value is true, then asset mapping is enabled.
 	 * @default false
 	 * @instance
 	 * @memberOf FragmentEntryLink
-	 * @review
 	 * @type {bool}
 	 */
 	showMapping: Config.bool().value(false),
@@ -549,17 +535,15 @@ FragmentEntryLinkContent.STATE = {
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentEntryLink
-	 * @review
 	 * @type {MetalStore}
 	 */
 	store: Config.instanceOf(MetalStore),
 
 	/**
-	 * Portlet namespace needed for prefixing Alloy Editor instances
+	 * The portlet namespace needed for prefixing Alloy Editor instances
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentEntryLink
-	 * @review
 	 * @type {!string}
 	 */
 	portletNamespace: Config.string().required()
