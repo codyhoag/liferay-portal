@@ -83,7 +83,7 @@ class FragmentPreview extends PortletBase {
 	}
 
 	/**
-	 * Callback executed when the preview frame content is loaded.
+	 * This event is triggered when the preview frame content has been loaded.
 	 * @private
 	 */
 	_handlePreviewLoaded() {
@@ -100,7 +100,7 @@ class FragmentPreview extends PortletBase {
 	}
 
 	/**
-	 * Sets the <code>previewSize</code> property and queues an update.
+	 * Sets the previewSize property and queues an update.
 	 * @param {string} previewSize
 	 * @protected
 	 * @return {string}
