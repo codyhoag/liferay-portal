@@ -177,7 +177,6 @@ FragmentEditor.STATE = {
 	 * @default []
 	 * @instance
 	 * @memberOf FragmentEditor
-	 * @review
 	 * @type Array
 	 */
 	autocompleteTags: Config.arrayOf(
