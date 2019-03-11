@@ -121,7 +121,6 @@ class FragmentEditableFieldTooltip extends Component {
 	/**
 	 * Aligns tooltips when the window is resized.
 	 * @private
-	 * @review
 	 */
 	_handleWindowResize() {
 		this._alignTooltip();
