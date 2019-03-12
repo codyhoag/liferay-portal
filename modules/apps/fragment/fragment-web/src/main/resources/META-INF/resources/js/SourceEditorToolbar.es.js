@@ -61,7 +61,6 @@ SourceEditorToolbar.STATE = {
 	/**
 	 * Syntax used for the editor toolbar.
 	 * @default undefined
-	 * @default undefined
 	 * @instance
 	 * @memberOf SourceEditorToolbar
 	 * @type {!string}

@@ -189,10 +189,10 @@ class ImageEditor extends PortletBase {
 	}
 
 	/**
-	 * Normalizes different mime types to the most similar mime type available
+	 * Normalizes different MIME types to the most similar MIME type available
 	 * to canvas implementations.
-	 * @param  {String} mimeType The original mime type.
-	 * @return {String} The normalized mime type.
+	 * @param  {String} mimeType The original MIME type.
+	 * @return {String} The normalized MIME type.
 	 * @see http://kangax.github.io/jstests/toDataUrl_mime_type_test/
 	 */
 	normalizeCanvasMimeType_(mimeType) {

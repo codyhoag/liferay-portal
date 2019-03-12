@@ -8,7 +8,7 @@ import { async, core } from 'metal';
 import handlesTemplates from './CropHandles.soy';
 
 /**
- * Creates a Crop Handles Component
+ * Creates a Crop Handles Component.
  */
 class CropHandles extends Component {
 
@@ -156,7 +156,7 @@ class CropHandles extends Component {
 	}
 
 	/**
-	 * Initializes the mover and the size handler.
+	 * Initializes the mover and size handler.
 	 * @protected
 	 */
 	initializeDrags_() {

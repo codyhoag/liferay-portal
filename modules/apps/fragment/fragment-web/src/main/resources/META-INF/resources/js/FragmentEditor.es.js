@@ -10,7 +10,7 @@ import './SourceEditor.es';
 /**
  * Creates a Fragment Editor component that lets you create a new fragment or
  * edit an existing fragment. This component integrates three
- * <code><pre><SourceEditor /></pre></code> components for each part of the fragment and
+ * <code>&lt;SourceEditor /></code> components for each part of the fragment and
  * a <code>&lt;FragmentPreview /></code> component for the preview.
  */
 class FragmentEditor extends PortletBase {
@@ -31,7 +31,7 @@ class FragmentEditor extends PortletBase {
 	 * @return {{
 	 *   css: string,
 	 *   html: string,
-	 *   js: string,
+	 *   js: string
 	 * }}
 	 */
 	getContent() {
@@ -289,7 +289,6 @@ FragmentEditor.STATE = {
 	 * @instance
 	 * @memberOf FragmentEditor
 	 * @private
-	 * @review
 	 * @type {bool}
 	 */
 

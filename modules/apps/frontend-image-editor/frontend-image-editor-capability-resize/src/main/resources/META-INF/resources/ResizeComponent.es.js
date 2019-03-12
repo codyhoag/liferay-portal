@@ -88,7 +88,7 @@ class ResizeComponent extends Component {
 
 	/**
 	 * Toggles the value of the <code>lockProportions</code> attribute. When
-	 * enabled, changes in one of the dimensions cascade changes to the other
+	 * enabled, changes in one of the dimensions cascades changes to the other
 	 * to keep the original image ratio.
 	 * @param  {MouseEvent} event
 	 */

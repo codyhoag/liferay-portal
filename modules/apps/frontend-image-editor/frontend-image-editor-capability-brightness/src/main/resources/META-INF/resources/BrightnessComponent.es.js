@@ -40,7 +40,7 @@ class BrightnessComponent extends Component {
 	}
 
 	/**
-	 * Applies a brightness filter to the image
+	 * Applies a brightness filter to the image.
 	 * @param  {ImageData} imageData The image data representation of the image.
 	 * @return {CancellablePromise} A promise that resolves when the webworker
 	 * finishes processing the image.
