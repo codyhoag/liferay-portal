@@ -2,8 +2,8 @@ import Component from 'metal-component';
 import Slider from 'frontend-js-web/liferay/compat/slider/Slider.es';
 import Soy from 'metal-soy';
 import debounce from 'metal-debounce';
-import { CancellablePromise } from 'metal-promise';
-import { core } from 'metal';
+import {CancellablePromise} from 'metal-promise';
+import {core} from 'metal';
 
 import componentTemplates from './BrightnessComponent.soy';
 import controlsTemplates from './BrightnessControls.soy';
@@ -12,11 +12,14 @@ import controlsTemplates from './BrightnessControls.soy';
  * Creates a Brightness component.
  */
 class BrightnessComponent extends Component {
+
 	/**
 	 * @inheritDoc
 	 */
 	attached() {
+
 		// Debounced version of requestImageEditorPreview
+
 		this.requestImageEditorPreview_ = debounce(this.requestImageEditorPreview, 50);
 
 		this.cache_ = {};
@@ -93,6 +96,7 @@ class BrightnessComponent extends Component {
  * @type {!Object}
  */
 BrightnessComponent.STATE = {
+
 	/**
 	 * Path of this module.
 	 * @type {String}

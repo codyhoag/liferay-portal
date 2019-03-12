@@ -2,8 +2,8 @@ import Component from 'metal-component';
 import Position from 'metal-position';
 import Soy from 'metal-soy';
 import dom from 'metal-dom';
-import { Drag } from 'metal-drag-drop';
-import { async, core } from 'metal';
+import {Drag} from 'metal-drag-drop';
+import {async, core} from 'metal';
 
 import handlesTemplates from './CropHandles.soy';
 
@@ -221,6 +221,7 @@ class CropHandles extends Component {
  * @type {!Object}
  */
 CropHandles.STATE = {
+
 	/**
 	 * Injected helper that retrieves the editor canvas element.
 	 * @type {Function}

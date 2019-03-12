@@ -1,7 +1,7 @@
 import Soy from 'metal-soy';
 import dom from 'metal-dom';
-import { CancellablePromise } from 'metal-promise';
-import { async, core } from 'metal';
+import {CancellablePromise} from 'metal-promise';
+import {async, core} from 'metal';
 import PortletBase from 'frontend-js-web/liferay/PortletBase.es';
 
 import 'frontend-js-web/liferay/compat/dropdown/Dropdown.es';
@@ -72,6 +72,7 @@ class ImageEditor extends PortletBase {
 		];
 
 		// Polyfill svg usage for lexicon icons
+
 		svg4everybody(
 			{
 				attributeName: 'data-href',
@@ -80,6 +81,7 @@ class ImageEditor extends PortletBase {
 		);
 
 		// Load the first entry imageData and render it on the app.
+
 		this.history_[0].getImageData()
 			.then((imageData) => {
 				async.nextTick(() => {
@@ -267,7 +269,7 @@ class ImageEditor extends PortletBase {
 
 	/**
 	 * Discards all changes and restores the original state of the image.
-	 * Unlike the {@link ImageEditor#undo|undo} and 
+	 * Unlike the {@link ImageEditor#undo|undo} and
 	 * {@link ImageEditor#redo|redo} methods, this method wipes out the entire
 	 * history.
 	 */
@@ -418,7 +420,8 @@ class ImageEditor extends PortletBase {
 		if (availableAspectRatio > 1) {
 			canvas.height = availableHeight;
 			canvas.width = aspectRatio * availableHeight;
-		} else {
+		}
+		else {
 			canvas.width = availableWidth;
 			canvas.height = availableWidth / aspectRatio;
 		}
@@ -450,6 +453,7 @@ class ImageEditor extends PortletBase {
  * @type {!Object}
  */
 ImageEditor.STATE = {
+
 	/**
 	 * Whether the editor is ready for user interaction.
 	 * @type {Object}

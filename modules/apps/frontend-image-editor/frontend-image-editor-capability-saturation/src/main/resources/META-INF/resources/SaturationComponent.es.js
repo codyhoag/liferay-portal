@@ -2,8 +2,8 @@ import Component from 'metal-component';
 import Slider from 'frontend-js-web/liferay/compat/slider/Slider.es';
 import Soy from 'metal-soy';
 import debounce from 'metal-debounce';
-import { CancellablePromise } from 'metal-promise';
-import { core } from 'metal';
+import {CancellablePromise} from 'metal-promise';
+import {core} from 'metal';
 
 import componentTemplates from './SaturationComponent.soy';
 import controlsTemplates from './SaturationControls.soy';
@@ -12,11 +12,14 @@ import controlsTemplates from './SaturationControls.soy';
  * Creates a Saturation component.
  */
 class SaturationComponent extends Component {
+
 	/**
 	 * @inheritDoc
 	 */
 	attached() {
+
 		// Debounced version of requestImageEditorPreview
+
 		this.requestImageEditorPreview_ = debounce(this.requestImageEditorPreview, 50);
 
 		this.cache_ = {};
@@ -92,6 +95,7 @@ class SaturationComponent extends Component {
  * @type {!Object}
  */
 SaturationComponent.STATE = {
+
 	/**
 	 * Path of this module.
 	 * @type {String}

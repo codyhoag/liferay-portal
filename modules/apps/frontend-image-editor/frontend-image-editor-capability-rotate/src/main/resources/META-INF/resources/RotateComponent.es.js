@@ -1,7 +1,7 @@
 import Component from 'metal-component';
 import Soy from 'metal-soy';
-import { CancellablePromise } from 'metal-promise';
-import { core } from 'metal';
+import {CancellablePromise} from 'metal-promise';
+import {core} from 'metal';
 
 import componentTemplates from './RotateComponent.soy';
 import controlsTemplates from './RotateControls.soy';
@@ -10,6 +10,7 @@ import controlsTemplates from './RotateControls.soy';
  * Creates a Rotate component.
  */
 class RotateComponent extends Component {
+
 	/**
 	 * @inheritDoc
 	 */
@@ -38,7 +39,7 @@ class RotateComponent extends Component {
 	/**
 	 * Rotates the image to the current selected rotation angle.
 	 * @param  {ImageData} imageData The image data representation of the image.
-	 * @return {CancellablePromise} A promise that resolves when processing is 
+	 * @return {CancellablePromise} A promise that resolves when processing is
 	 * complete.
 	 */
 	process(imageData) {
@@ -63,11 +64,11 @@ class RotateComponent extends Component {
 	 * rotated.
 	 */
 	rotate_(imageData, rotationAngle) {
-		let cancellablePromise = new CancellablePromise((resolve, reject) => {
+		let cancellablePromise = new CancellablePromise((resolve, reject) => {
 			let imageWidth = imageData.width;
 			let imageHeight = imageData.height;
 
-			let swapDimensions  = (rotationAngle / 90) % 2;
+			let swapDimensions = (rotationAngle / 90) % 2;
 
 			let imageCanvas = document.createElement('canvas');
 			imageCanvas.width = imageWidth;
@@ -114,6 +115,7 @@ class RotateComponent extends Component {
  * @type {!Object}
  */
 RotateComponent.STATE = {
+
 	/**
 	 * Path of this module.
 	 * @type {Function}

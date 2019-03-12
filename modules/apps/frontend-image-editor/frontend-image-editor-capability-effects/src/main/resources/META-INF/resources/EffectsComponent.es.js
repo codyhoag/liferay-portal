@@ -1,7 +1,7 @@
 import Component from 'metal-component';
 import Soy from 'metal-soy';
-import { CancellablePromise } from 'metal-promise';
-import { async, core } from 'metal';
+import {CancellablePromise} from 'metal-promise';
+import {async, core} from 'metal';
 
 import componentTemplates from './EffectsComponent.soy';
 import controlsTemplates from './EffectsControls.soy';
@@ -10,6 +10,7 @@ import controlsTemplates from './EffectsControls.soy';
  * Creates an Effects component.
  */
 class EffectsComponent extends Component {
+
 	/**
 	 * @inheritDoc
 	 */
@@ -120,7 +121,8 @@ class EffectsComponent extends Component {
 
 				if (!missingEffects.length) {
 					resolve();
-				} else {
+				}
+				else {
 					this.getImageEditorImageData()
 						.then((imageData) => this.process(imageData, missingEffects[0]))
 						.then(() => this.prefetchEffects_());
@@ -184,7 +186,7 @@ class EffectsComponent extends Component {
 		if (marginLeft < 0) {
 			const newMarginValue = Math.min(marginLeft + itemWidth, 0);
 
-			this.carouselOffset =  newMarginValue + 'px';
+			this.carouselOffset = newMarginValue + 'px';
 		}
 	}
 
@@ -225,6 +227,7 @@ class EffectsComponent extends Component {
  * @type {!Object}
  */
 EffectsComponent.STATE = {
+
 	/**
 	 * Offset in pixels (<code>px</code> postfix) for the carousel item.
 	 * @type {String}

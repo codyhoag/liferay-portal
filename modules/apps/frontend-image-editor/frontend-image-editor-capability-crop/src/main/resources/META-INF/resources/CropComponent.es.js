@@ -1,7 +1,7 @@
 import Component from 'metal-component';
 import Soy from 'metal-soy';
-import { CancellablePromise } from 'metal-promise';
-import { core } from 'metal';
+import {CancellablePromise} from 'metal-promise';
+import {core} from 'metal';
 
 import componentTemplates from './CropComponent.soy';
 import controlsTemplates from './CropControls.soy';
@@ -10,6 +10,7 @@ import controlsTemplates from './CropControls.soy';
  * Creates a Crop component.
  */
 class CropComponent extends Component {
+
 	/**
 	 * Applies the brightness filter to generate a final version of the image.
 	 * @param  {Object} imageData The image representations.
@@ -60,6 +61,7 @@ class CropComponent extends Component {
  * @type {!Object}
  */
 CropComponent.STATE = {
+
 	/**
 	 * Injected helper that retrieves the editor canvas.
 	 * @type {Function}

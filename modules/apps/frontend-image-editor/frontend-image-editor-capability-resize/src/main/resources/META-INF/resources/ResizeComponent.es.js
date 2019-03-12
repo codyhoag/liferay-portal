@@ -1,7 +1,7 @@
 import Component from 'metal-component';
 import Soy from 'metal-soy';
-import { CancellablePromise } from 'metal-promise';
-import { core } from 'metal';
+import {CancellablePromise} from 'metal-promise';
+import {core} from 'metal';
 
 import componentTemplates from './ResizeComponent.soy';
 import controlsTemplates from './ResizeControls.soy';
@@ -10,6 +10,7 @@ import controlsTemplates from './ResizeControls.soy';
  * Creates a Resize component.
  */
 class ResizeComponent extends Component {
+
 	/**
 	 * @inheritDoc
 	 */
@@ -76,7 +77,8 @@ class ResizeComponent extends Component {
 				this.imageHeight = parseInt((newValue / this.imageRatio_), 10);
 				this.imageHeightInput_.value = this.imageHeight;
 			}
-		} else {
+		}
+		else {
 			this.imageHeight = newValue;
 
 			if (this.lockProportions) {
@@ -103,6 +105,7 @@ class ResizeComponent extends Component {
  * @type {!Object}
  */
 ResizeComponent.STATE = {
+
 	/**
 	 * Injected helper that retrieves the editor image data.
 	 * @type {Function}
