@@ -52,8 +52,8 @@ public interface SearchResponseBuilder {
 	/**
 	 * Sets the request string submitted to the search engine.
 	 *
-	 * @param  requestString the request string, after transformation by the
-	 *         search engine
+	 * @param  requestString the request string, as returned by the search
+	 *         engine
 	 * @return the same builder
 	 */
 	public SearchResponseBuilder requestString(String requestString);

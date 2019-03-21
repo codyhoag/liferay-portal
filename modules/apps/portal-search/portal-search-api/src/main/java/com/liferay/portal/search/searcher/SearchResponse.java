@@ -54,9 +54,10 @@ public interface SearchResponse {
 	public SearchRequest getRequest();
 
 	/**
-	 * Returns the request string that was submitted to the search engine.
+	 * Returns the request string that was submitted to the search engine. The
+	 * format of the string is dependent on the search engine.
 	 *
-	 * @return the full request string, after translation by the search engine
+	 * @return the full request string, as returned by the search engine
 	 */
 	public String getRequestString();
 
@@ -65,7 +66,8 @@ public interface SearchResponse {
 	 * large depending on the number of results. Must be enabled with {@link
 	 * SearchRequest#isIncludeResponseString()}.
 	 *
-	 * @return the response string in search engine form, or blank if disabled
+	 * @return the response string as returned by the search engine, or blank if
+	 *         disabled
 	 */
 	public String getResponseString();
 
