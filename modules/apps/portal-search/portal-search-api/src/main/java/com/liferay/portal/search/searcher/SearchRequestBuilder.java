@@ -30,7 +30,6 @@ import java.util.function.Function;
  * Builds a search request that can be used for executing a search.
  *
  * @author André de Oliveira
- * 
  */
 @ProviderType
 public interface SearchRequestBuilder {
@@ -44,7 +43,6 @@ public interface SearchRequestBuilder {
 	 *
 	 * @param  selectedFieldNames the names of the fields to return
 	 * @return the same builder
-	 * 
 	 */
 	public SearchRequestBuilder addSelectedFieldNames(
 		String... selectedFieldNames);
@@ -53,7 +51,6 @@ public interface SearchRequestBuilder {
 	 * Builds the search request.
 	 *
 	 * @return the search request
-	 * 
 	 */
 	public SearchRequest build();
 
@@ -64,16 +61,15 @@ public interface SearchRequestBuilder {
 	 *
 	 * @param  explain whether to explain scores
 	 * @return the same builder
-	 * 
 	 */
 	public SearchRequestBuilder explain(boolean explain);
 
 	/**
-	 * Enables inclusion of the search engine's response string with the returned results.
+	 * Enables inclusion of the search engine's response string with the
+	 * returned results.
 	 *
 	 * @param  includeResponseString whether to include the response string
 	 * @return the same builder
-	 * 
 	 */
 	public SearchRequestBuilder includeResponseString(
 		boolean includeResponseString);
@@ -87,19 +83,16 @@ public interface SearchRequestBuilder {
 	 *
 	 * @param  rescoreQuery the rescore query
 	 * @return the same builder
-	 * 
 	 */
 	public SearchRequestBuilder rescoreQuery(Query rescoreQuery);
 
 	public SearchRequestBuilder sorts(Sort... sorts);
 
 	/**
-	 * Provides the metric aggregations to be
-	 * computed for each field.
+	 * Provides the metric aggregations to be computed for each field.
 	 *
 	 * @param  statsRequests the stats that are enabled for each field
 	 * @return the same builder
-	 * 
 	 */
 	public SearchRequestBuilder statsRequests(StatsRequest... statsRequests);
 

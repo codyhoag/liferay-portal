@@ -28,12 +28,11 @@ import java.util.Map;
 /**
  * Holds the parameters used when performing a search.
  *
- <p>
- * Build the search request with the {@link com.liferay.portal.search.searcher.SearchRequestBuilder}  
- </p>
+ * <p>
+ * Build the search request with the {@link SearchRequestBuilder}
+ * </p>
  *
  * @author André de Oliveira
- *
  */
 @ProviderType
 public interface SearchRequest {
@@ -52,7 +51,6 @@ public interface SearchRequest {
 	 * Provides a secondary query to reorder the top documents returned.
 	 *
 	 * @return the rescore query
-     *
 	 */
 	public Query getRescoreQuery();
 
@@ -62,7 +60,6 @@ public interface SearchRequest {
 	 * Provides the metric aggregations to be computed for each field.
 	 *
 	 * @return the stats that are enabled for each field.
-     *
 	 */
 	public List<StatsRequest> getStatsRequests();
 
@@ -70,15 +67,14 @@ public interface SearchRequest {
 	 * Enables explanation of how each hit's score was computed.
 	 *
 	 * @return whether to explain scores
-     *
 	 */
 	public boolean isExplain();
 
 	/**
-	 * Enables inclusion of the search engine's response string with the returned results.
+	 * Enables inclusion of the search engine's response string with the
+	 * returned results.
 	 *
 	 * @return whether to include the response string
-     *
 	 */
 	public boolean isIncludeResponseString();
 

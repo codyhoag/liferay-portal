@@ -59,9 +59,8 @@ public interface SearchResponse {
 	public List<String> getRelatedQueriesSuggestions();
 
 	/**
-     *
-     * Returns the search response.
-     *
+	 * Returns the search response.
+	 *
 	 * @return the search response as processed by the Liferay Search Framework
 	 */
 	public com.liferay.portal.search.searcher.SearchResponse

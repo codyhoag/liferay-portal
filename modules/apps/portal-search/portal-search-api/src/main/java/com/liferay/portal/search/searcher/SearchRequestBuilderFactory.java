@@ -21,7 +21,6 @@ import aQute.bnd.annotation.ProviderType;
  * can be sent to the search engine when when performing a search.
  *
  * @author André de Oliveira
- *
  */
 @ProviderType
 public interface SearchRequestBuilderFactory {
@@ -30,7 +29,6 @@ public interface SearchRequestBuilderFactory {
 	 * Instantiates a new search request builder.
 	 *
 	 * @return the search request builder
-     *
 	 */
 	public SearchRequestBuilder getSearchRequestBuilder();
 

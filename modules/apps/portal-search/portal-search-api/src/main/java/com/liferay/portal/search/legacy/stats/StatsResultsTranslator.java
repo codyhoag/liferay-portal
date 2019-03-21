@@ -30,7 +30,6 @@ public interface StatsResultsTranslator {
 	 *
 	 * @param  statsResponse the StatsResponse object to be converted
 	 * @return the converted legacy StatsResults object
-     *
 	 */
 	public StatsResults translate(StatsResponse statsResponse);
 

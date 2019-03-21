@@ -25,17 +25,15 @@ import com.liferay.portal.search.searcher.SearchRequestBuilder;
  * com.liferay.portal.search.searcher.SearchRequestBuilderFactory}.
  *
  * @author André de Oliveira
- *
  */
 @ProviderType
 public interface SearchRequestBuilderFactory {
 
 	/**
-     * Creates a search request builder from a legacy search context.
+	 * Creates a search request builder from a legacy search context.
 	 *
 	 * @param  searchContext the search context
 	 * @return the search request builder
-     *
 	 */
 	public SearchRequestBuilder getSearchRequestBuilder(
 		SearchContext searchContext);

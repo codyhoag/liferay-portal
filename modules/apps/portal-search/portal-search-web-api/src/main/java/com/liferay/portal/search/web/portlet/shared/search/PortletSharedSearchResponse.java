@@ -63,7 +63,6 @@ public interface PortletSharedSearchResponse {
 	 * @deprecated As of Judson (7.1.x), replaced by {@link
 	 *             #getSearchResponse()} and {@link
 	 *             SearchResponse#getRequestString()}
-     *
 	 */
 	@Deprecated
 	public String getQueryString();
@@ -71,10 +70,9 @@ public interface PortletSharedSearchResponse {
 	public List<String> getRelatedQueriesSuggestions();
 
 	/**
-     * Returns the search response shared by the portlets.
-     *
+	 * Returns the search response shared by the portlets.
+	 *
 	 * @return the search response as processed by the Liferay Search Framework
-     *
 	 */
 	public SearchResponse getSearchResponse();
 
