@@ -26,11 +26,14 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Holds parameters to be used when performing a search.
+ * Holds the parameters used when performing a search.
+ *
+ <p>
+ * Build the search request with the {@link com.liferay.portal.search.searcher.SearchRequestBuilder}  
+ </p>
  *
  * @author André de Oliveira
  *
- * @review
  */
 @ProviderType
 public interface SearchRequest {
@@ -49,37 +52,33 @@ public interface SearchRequest {
 	 * Provides a secondary query to reorder the top documents returned.
 	 *
 	 * @return the rescore query
-	 *
-	 * @review
+     *
 	 */
 	public Query getRescoreQuery();
 
 	public List<Sort> getSorts();
 
 	/**
-	 * Provides the metric aggregations that are to be computed for each field.
+	 * Provides the metric aggregations to be computed for each field.
 	 *
 	 * @return the stats that are enabled for each field.
-	 *
-	 * @review
+     *
 	 */
 	public List<StatsRequest> getStatsRequests();
 
 	/**
-	 * Enables explanation for each hit on how its score was computed.
+	 * Enables explanation of how each hit's score was computed.
 	 *
 	 * @return whether to explain scores
-	 *
-	 * @review
+     *
 	 */
 	public boolean isExplain();
 
 	/**
-	 * Enables inclusion of the search engine's response string with results.
+	 * Enables inclusion of the search engine's response string with the returned results.
 	 *
 	 * @return whether to include the response string
-	 *
-	 * @review
+     *
 	 */
 	public boolean isIncludeResponseString();
 
