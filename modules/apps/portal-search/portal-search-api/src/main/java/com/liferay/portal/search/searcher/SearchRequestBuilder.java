@@ -27,11 +27,10 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 /**
- * Builds a search request to be used when performing a search.
+ * Builds a search request that can be used for executing a search.
  *
  * @author André de Oliveira
- *
- * @review
+ * 
  */
 @ProviderType
 public interface SearchRequestBuilder {
@@ -41,12 +40,11 @@ public interface SearchRequestBuilder {
 	public void addPipelineAggregation(PipelineAggregation pipelineAggregation);
 
 	/**
-	 * Adds fields to include in search results as a map of keys and values.
+	 * Adds fields to include in the search results as a map of keys and values.
 	 *
-	 * @param selectedFieldNames the fields to return
+	 * @param  selectedFieldNames the names of the fields to return
 	 * @return the same builder
-	 *
-	 * @review
+	 * 
 	 */
 	public SearchRequestBuilder addSelectedFieldNames(
 		String... selectedFieldNames);
@@ -55,30 +53,27 @@ public interface SearchRequestBuilder {
 	 * Builds the search request.
 	 *
 	 * @return the search request
-	 *
-	 * @review
+	 * 
 	 */
 	public SearchRequest build();
 
 	public SearchRequestBuilder entryClassNames(String... entryClassNames);
 
 	/**
-	 * Enables explanation for each hit on how its score was computed.
+	 * Enables explanation of how each hit's score was computed.
 	 *
-	 * @param explain whether to explain scores
+	 * @param  explain whether to explain scores
 	 * @return the same builder
-	 *
-	 * @review
+	 * 
 	 */
 	public SearchRequestBuilder explain(boolean explain);
 
 	/**
-	 * Enables inclusion of the search engine's response string with results.
+	 * Enables inclusion of the search engine's response string with the returned results.
 	 *
-	 * @param includeResponseString whether to include the response string
+	 * @param  includeResponseString whether to include the response string
 	 * @return the same builder
-	 *
-	 * @review
+	 * 
 	 */
 	public SearchRequestBuilder includeResponseString(
 		boolean includeResponseString);
@@ -90,24 +85,21 @@ public interface SearchRequestBuilder {
 	/**
 	 * Provides a secondary query to reorder the top documents returned.
 	 *
-	 * @param rescoreQuery the rescore query
+	 * @param  rescoreQuery the rescore query
 	 * @return the same builder
-	 *
-	 * @review
+	 * 
 	 */
 	public SearchRequestBuilder rescoreQuery(Query rescoreQuery);
 
 	public SearchRequestBuilder sorts(Sort... sorts);
 
 	/**
-	 * Provides a map of field names and the metric aggregations that are to be
+	 * Provides the metric aggregations to be
 	 * computed for each field.
 	 *
-	 * @param statsMap the map containing the stats that are enabled for each
-	 *        field.
+	 * @param  statsRequests the stats that are enabled for each field
 	 * @return the same builder
-	 *
-	 * @review
+	 * 
 	 */
 	public SearchRequestBuilder statsRequests(StatsRequest... statsRequests);
 

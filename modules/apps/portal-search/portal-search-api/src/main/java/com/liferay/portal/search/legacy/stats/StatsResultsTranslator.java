@@ -26,12 +26,11 @@ import com.liferay.portal.search.stats.StatsResponse;
 public interface StatsResultsTranslator {
 
 	/**
-	 * Provides a legacy StatsResults object based off a StatsResponse object.
+	 * Creates a legacy StatsResults object from a StatsResponse object.
 	 *
-	 * @param statsResponse the StatsResponse object to be converted
+	 * @param  statsResponse the StatsResponse object to be converted
 	 * @return the converted legacy StatsResults object
-	 *
-	 * @review
+     *
 	 */
 	public StatsResults translate(StatsResponse statsResponse);
 

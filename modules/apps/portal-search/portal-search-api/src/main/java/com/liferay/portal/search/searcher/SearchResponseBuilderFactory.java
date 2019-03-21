@@ -17,26 +17,24 @@ package com.liferay.portal.search.searcher;
 import aQute.bnd.annotation.ProviderType;
 
 /**
- * Provides a search response builder that can build a search response from
- * various outcomes returned when a search is performed.
+ * Creates a search response builder for building a search response object
+ * from the search engine's response to an executed search request.
  *
- * <p/>
- *
+ <p>
  * Use is intended for the Liferay Search Framework only.
+ </p>
  *
  * @author André de Oliveira
  *
- * @review
  */
 @ProviderType
 public interface SearchResponseBuilderFactory {
 
 	/**
-	 * Provides a search response builder.
+	 * Instantiates a new search response builder.
 	 *
 	 * @return the search response builder
-	 *
-	 * @review
+     * 
 	 */
 	public SearchResponseBuilder getSearchResponseBuilder();
 

@@ -30,11 +30,16 @@ import java.util.function.Function;
 import java.util.stream.Stream;
 
 /**
- * Holds various outcomes returned when a search is performed.
+ * Contains the full response of an executed search, as returned from the
+ * search engine. 
+ *
+ * <p>i
+ * The exact response format and the contents of the response depends on the
+ * search engine and the search request that was executed.
+ * </p>
  *
  * @author André de Oliveira
- *
- * @review
+ * 
  */
 @ProviderType
 public interface SearchResponse {
@@ -50,22 +55,20 @@ public interface SearchResponse {
 	public SearchRequest getRequest();
 
 	/**
-	 * Returns the request string submitted to the search engine.
+     * Returns the request string that was submitted to the search engine.
 	 *
-	 * @return the request string in search engine form
-	 *
-	 * @review
+     * @return the full request string, after translation by the search engine
+	 * 
 	 */
 	public String getRequestString();
 
 	/**
-	 * Returns the response string returned by the search engine. Can be large
-	 * depending on number of results. Must be enabled with
-	 * {@link SearchRequest#isIncludeResponseString()}.
+	 * Returns the response string as returned by the search engine. Can be large
+	 * depending on the number of results. Must be enabled with {@link
+	 * SearchRequest#isIncludeResponseString()}.
 	 *
 	 * @return the response string in search engine form, or blank if disabled
-	 *
-	 * @review
+	 * 
 	 */
 	public String getResponseString();
 
@@ -76,8 +79,7 @@ public interface SearchResponse {
 	 * search engine.
 	 *
 	 * @return the map containing the metrics aggregations per field
-	 *
-	 * @review
+	 * 
 	 */
 	public Map<String, StatsResponse> getStatsResponseMap();
 

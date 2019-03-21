@@ -17,22 +17,20 @@ package com.liferay.portal.search.searcher;
 import aQute.bnd.annotation.ProviderType;
 
 /**
- * Provides a search request builder that can build a search request to be used
- * when performing a search.
+ * Creates a search request builder for building a search request object that
+ * can be sent to the search engine when when performing a search.
  *
  * @author André de Oliveira
  *
- * @review
  */
 @ProviderType
 public interface SearchRequestBuilderFactory {
 
 	/**
-	 * Provides a search request builder.
+	 * Instantiates a new search request builder.
 	 *
 	 * @return the search request builder
-	 *
-	 * @review
+     *
 	 */
 	public SearchRequestBuilder getSearchRequestBuilder();
 
