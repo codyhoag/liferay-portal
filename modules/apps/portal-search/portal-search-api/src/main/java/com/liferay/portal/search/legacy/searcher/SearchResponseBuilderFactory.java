@@ -25,7 +25,6 @@ import com.liferay.portal.search.searcher.SearchResponseBuilder;
  * {@link com.liferay.portal.search.searcher.SearchResponseBuilderFactory}.
  *
  * @author André de Oliveira
- *
  */
 @ProviderType
 public interface SearchResponseBuilderFactory {
@@ -35,7 +34,6 @@ public interface SearchResponseBuilderFactory {
 	 *
 	 * @param  searchContext the search context
 	 * @return the search response builder
-     *
 	 */
 	public SearchResponseBuilder getSearchResponseBuilder(
 		SearchContext searchContext);

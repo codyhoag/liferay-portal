@@ -31,7 +31,6 @@ import java.util.Map;
  * </p>
  *
  * @author André de Oliveira
- *
  */
 @ProviderType
 public interface SearchResponseBuilder {
@@ -43,7 +42,6 @@ public interface SearchResponseBuilder {
 	 * Builds the search response.
 	 *
 	 * @return the search response
-	 * 
 	 */
 	public SearchResponse build();
 
@@ -54,18 +52,18 @@ public interface SearchResponseBuilder {
 	/**
 	 * Sets the request string submitted to the search engine.
 	 *
-	 * @param  requestString the request string, after transformation by the search engine
+	 * @param  requestString the request string, after transformation by the
+	 *         search engine
 	 * @return the same builder
-     *
 	 */
 	public SearchResponseBuilder requestString(String requestString);
 
 	/**
 	 * Returns the response string from the search engine.
 	 *
-	 * @param  responseString the response string, formatted by the search engine
+	 * @param  responseString the response string, formatted by the search
+	 *         engine
 	 * @return the same builder
-     *
 	 */
 	public SearchResponseBuilder responseString(String responseString);
 
@@ -76,9 +74,8 @@ public interface SearchResponseBuilder {
 	 * engine.
 	 *
 	 * @param  statsResponseMap the map containing the metrics aggregations per
-	 *        field
+	 *         field
 	 * @return the same builder
-     *
 	 */
 	public SearchResponseBuilder statsResponseMap(
 		Map<String, StatsResponse> statsResponseMap);

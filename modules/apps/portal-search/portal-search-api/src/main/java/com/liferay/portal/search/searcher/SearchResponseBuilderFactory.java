@@ -17,15 +17,14 @@ package com.liferay.portal.search.searcher;
 import aQute.bnd.annotation.ProviderType;
 
 /**
- * Creates a search response builder for building a search response object
- * from the search engine's response to an executed search request.
+ * Creates a search response builder for building a search response object from
+ * the search engine's response to an executed search request.
  *
- <p>
+ * <p>
  * Use is intended for the Liferay Search Framework only.
- </p>
+ * </p>
  *
  * @author André de Oliveira
- *
  */
 @ProviderType
 public interface SearchResponseBuilderFactory {
@@ -34,7 +33,6 @@ public interface SearchResponseBuilderFactory {
 	 * Instantiates a new search response builder.
 	 *
 	 * @return the search response builder
-     * 
 	 */
 	public SearchResponseBuilder getSearchResponseBuilder();
 
