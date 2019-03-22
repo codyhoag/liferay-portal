@@ -30,7 +30,6 @@ import java.util.Map;
  * allow an admin to edit the an entity.
  *
  * @author William Newbury
- * @review
  */
 public interface UADDisplay<T> extends UADComponent<T> {
 
@@ -40,7 +39,6 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 *
 	 * @param userId the primary key of the user whose data to count
 	 * @return the number of entities associated with the user
-	 * @review
 	 */
 	public long count(long userId);
 
@@ -59,7 +57,6 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 * list of entities of type {@code T}.
 	 *
 	 * @return field names used for column headers
-	 * @review
 	 */
 	public default String[] getColumnFieldNames() {
 		return getDisplayFieldNames();
@@ -70,7 +67,6 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 * of type {@code T}.
 	 *
 	 * @return field names identifying which information to display
-	 * @review
 	 */
 	public String[] getDisplayFieldNames();
 
@@ -101,7 +97,6 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 * @param fieldNames the field names for getting values from the entity
 	 * @param locale the current locale
 	 * @return a map of values to be displayed in the UI
-	 * @review
 	 */
 	public Map<String, Object> getFieldValues(
 		T t, String[] fieldNames, Locale locale);
@@ -125,9 +120,8 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 * required for hierarchy display to function correctly, but not for
 	 * normal usage.
 	 *
-	 * @param t the entity to retrieve the parent container primary key for
+     * @param t the entity whose parent container's primary key to retreive
 	 * @return the primary key of the parent container of the given entity.
-	 * @review
 	 * @see UADHierarchyDeclaration
 	 */
 	public default Serializable getParentContainerId(T t) {
@@ -137,9 +131,8 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	/**
 	 * Returns the primary key of the entity of type {@code T}.
 	 *
-	 * @param t the entity to retrieve the primary key for
+	 * @param t the entity whose primary key to retrieve
 	 * @return the primary key of the entity
-	 * @review
 	 */
 	public Serializable getPrimaryKey(T t);
 
@@ -150,7 +143,6 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 * @param start the starting index of the result set, for pagination
 	 * @param end the ending index of the result set, for pagination
 	 * @return paginated entities related to the user ID
-	 * @review
 	 */
 	public List<T> getRange(long userId, int start, int end);
 
@@ -159,7 +151,6 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 * list of entities of type {@code T}
 	 *
 	 * @return field names used for column headers when sorting
-	 * @review
 	 */
 	public String[] getSortingFieldNames();
 
@@ -179,12 +170,13 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 * required for hierarchy display to function correctly, but not for
 	 * normal usage.
 	 *
-	 * @param parentContainerClass
-	 * @param parentContainerId
-	 * @param childObject
+	 * @param parentContainerClass the class identifying the returned entity's
+     *                             parent container
+	 * @param parentContainerId the primary key of the returned entity's parent
+     *                          container
+	 * @param childObject child of the returned entity
 	 * @return the highest level parent of childObject that is also a child of
 	 *         the given container type and primary key
-	 * @review
 	 * @see UADHierarchyDeclaration
 	 */
 	public default T getTopLevelContainer(
@@ -199,7 +191,6 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 *
 	 * @param locale the current locale
 	 * @return a localized string representing type {@code T}
-	 * @review
 	 */
 	public String getTypeName(Locale locale);
 
@@ -232,7 +223,6 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 * @param start the starting index of the result set
 	 * @param end the ending index of the result set
 	 * @return paginated sorted filtered entities associated with a user
-	 * @review
 	 */
 	public List<T> search(
 		long userId, long[] groupIds, String keywords, String orderByField,
@@ -247,7 +237,6 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 *                 associated with
 	 * @param keywords the keywords which may occur in the entity's fields
 	 * @return the number of filtered entities associated with a user
-	 * @review
 	 */
 	public long searchCount(long userId, long[] groupIds, String keywords);
 

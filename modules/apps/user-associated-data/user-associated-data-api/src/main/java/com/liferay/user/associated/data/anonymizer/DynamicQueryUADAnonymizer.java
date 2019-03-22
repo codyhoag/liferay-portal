@@ -27,7 +27,6 @@ import com.liferay.user.associated.data.util.UADDynamicQueryUtil;
  * entity of type {@code T}.
  *
  * @author William Newbury
- * @review
  */
 public abstract class DynamicQueryUADAnonymizer<T extends BaseModel>
 	implements UADAnonymizer<T> {
@@ -69,7 +68,6 @@ public abstract class DynamicQueryUADAnonymizer<T extends BaseModel>
 	 * retrieved from the service.
 	 *
 	 * @return an {@link ActionableDynamicQuery} for type {@code T}
-	 * @review
 	 */
 	protected abstract ActionableDynamicQuery doGetActionableDynamicQuery();
 
@@ -78,18 +76,16 @@ public abstract class DynamicQueryUADAnonymizer<T extends BaseModel>
 	 * contain the primary key of a user.
 	 *
 	 * @return fields that may contain the primary key of a user
-	 * @review
 	 */
 	protected abstract String[] doGetUserIdFieldNames();
 
 	/**
 	 * Returns an {@link ActionableDynamicQuery} for type {@code T}. It should
-	 * be populated with criterion and ready for use by the service.
+	 * be populated with criteria and ready for use by the service.
 	 *
-	 * @param userId the primary key of the user to pre-filter the
-	 * 				 {@link ActionableDynamicQuery}
+	 * @param  userId the primary key of the user to pre-filter the
+	 * 		   {@link ActionableDynamicQuery}
 	 * @return a pre-filtered {@link ActionableDynamicQuery}
-	 * @review
 	 */
 	protected ActionableDynamicQuery getActionableDynamicQuery(long userId) {
 		return UADDynamicQueryUtil.addActionableDynamicQueryCriteria(

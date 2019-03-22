@@ -50,7 +50,6 @@ import java.util.Set;
  *
  * @author Pei-Jung Lan
  * @author Drew Brokke
- * @review
  */
 public abstract class BaseModelUADDisplay<T extends BaseModel>
 	implements UADDisplay<T> {
@@ -126,7 +125,6 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 	 *
 	 * @param dynamicQuery the dynamicQuery to be passed to the service layer
 	 * @return
-	 * @review
 	 */
 	protected abstract long doCount(DynamicQuery dynamicQuery);
 
@@ -135,7 +133,6 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 	 * {@code T}.
 	 *
 	 * @return a new {@link DynamicQuery} to be used by the service layer
-	 * @review
 	 */
 	protected abstract DynamicQuery doGetDynamicQuery();
 
@@ -146,8 +143,7 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 	 * @param dynamicQuery the dynamicQuery to be passed to the service layer
 	 * @param start the starting index of the result set, for pagination
 	 * @param end the ending index of the result set, for pagination
-	 * @return a paginated list of entities of entities of type {@code T}
-	 * @review
+	 * @return a paginated list of entities of type {@code T}
 	 */
 	protected abstract List<T> doGetRange(
 		DynamicQuery dynamicQuery, int start, int end);
@@ -157,18 +153,16 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 	 * that contain the primary key of a user.
 	 *
 	 * @return fields that may contain the primary key of a user
-	 * @review
 	 */
 	protected abstract String[] doGetUserIdFieldNames();
 
 	/**
 	 * Returns a {@link DynamicQuery} for type {@code T}. It should be populated
-	 * with criterion and ready for use by the service.
+	 * with criteria and ready for use by the service.
 	 *
 	 * @param userId the the primary key of a user used to pre-filter the
 	 * 				 {@link DynamicQuery}
 	 * @return a pre-filtered {@link DynamicQuery}
-	 * @review
 	 */
 	protected DynamicQuery getDynamicQuery(long userId) {
 		return UADDynamicQueryUtil.addDynamicQueryCriteria(
@@ -182,7 +176,6 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 	 * @param orderByField
 	 * @param orderByType
 	 * @return an {@link OrderByComparator} for type {@code T}
-	 * @review
 	 */
 	protected OrderByComparator<T> getOrderByComparator(
 		String orderByField, String orderByType) {
@@ -195,7 +188,6 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 	 * searchCount methods.
 	 *
 	 * @return field names to be queried
-	 * @review
 	 */
 	protected String[] getSearchableFields() {
 		return getDisplayFieldNames();
@@ -212,7 +204,6 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 	 * @param orderByType the type of ordering
 	 * @return a {@link DynamicQuery} to be used by the doGetRange and doCount
 	 *         methods
-	 * @review
 	 */
 	protected DynamicQuery getSearchDynamicQuery(
 		long userId, long[] groupIds, String keywords, String orderByField,

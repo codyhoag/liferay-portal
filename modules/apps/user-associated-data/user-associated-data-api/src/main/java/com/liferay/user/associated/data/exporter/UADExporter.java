@@ -26,7 +26,6 @@ import java.io.File;
  * format that can be written to a file and downloaded.
  *
  * @author William Newbury
- * @review
  */
 @ProviderType
 public interface UADExporter<T> extends UADComponent<T> {
@@ -36,7 +35,6 @@ public interface UADExporter<T> extends UADComponent<T> {
 	 *
 	 * @param userId the primary key of the user whose data to count
 	 * @return the number of entities associated with the user
-	 * @review
 	 */
 	public long count(long userId) throws PortalException;
 

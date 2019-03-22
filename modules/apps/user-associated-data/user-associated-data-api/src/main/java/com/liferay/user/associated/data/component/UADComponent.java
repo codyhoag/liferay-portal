@@ -25,7 +25,6 @@ package com.liferay.user.associated.data.component;
  * @see com.liferay.user.associated.data.anonymizer.UADAnonymizer
  * @see com.liferay.user.associated.data.display.UADDisplay
  * @see com.liferay.user.associated.data.exporter.UADExporter
- * @review
  */
 public interface UADComponent<T> {
 
@@ -34,7 +33,6 @@ public interface UADComponent<T> {
 	 * are concerned with.
 	 *
 	 * @return the identifying class of type {@code T}
-	 * @review
 	 */
 	public Class<T> getTypeClass();
 

@@ -36,7 +36,6 @@ public interface UADHierarchyDeclaration {
 	 * correlating to the folder type would be returned).
 	 *
 	 * @return an array of UADDisplays that correspond to a container type.
-	 * @review
 	 */
 	public UADDisplay<?>[] getContainerUADDisplays();
 
@@ -52,14 +51,14 @@ public interface UADHierarchyDeclaration {
 
 	/**
 	 * Returns an array of field names to be rendered as columns in the
-	 * hierarchy view of the UADPortlet.  The corresponding data for each field
+	 * UADPortlet's hierarchy view. The corresponding data for each field
 	 * name should be retrievable inside the
 	 * {@link UADDisplay#getFieldValues(Object, String[])} method of each
 	 * UADDisplay returned from {@link #getContainerUADDisplays()} and
 	 * {@link #getNoncontainerUADDisplays()}.
 	 *
-	 * @return
-	 * @review
+	 * @return an array of field names to be rendered as columns in the
+     *         UADPortlet's hierarchy view
 	 */
 	public default String[] getExtraColumnNames() {
 		return new String[0];
@@ -73,7 +72,6 @@ public interface UADHierarchyDeclaration {
 	 * structure, this would return the UADDisplay related to files.
 	 *
 	 * @return an array of UADDisplays that correspond to a non-container type.
-	 * @review
 	 */
 	public UADDisplay<?>[] getNoncontainerUADDisplays();
 
