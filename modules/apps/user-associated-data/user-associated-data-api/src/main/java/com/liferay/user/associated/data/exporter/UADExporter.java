@@ -44,8 +44,7 @@ public interface UADExporter<T> extends UADComponent<T> {
 	 *
 	 * @param t the entity of type {@code T} to convert into a byte array
 	 * @return a byte array representing the given entity
-	 * @throws PortalException
-	 * @review
+	 * @throws PortalException if a PortalException was thrown
 	 */
 	public byte[] export(T t) throws PortalException;
 
@@ -55,8 +54,7 @@ public interface UADExporter<T> extends UADComponent<T> {
 	 *
 	 * @param userId the primary key of the user whose data to export
 	 * @return a {@link File} object containing the exported data
-	 * @throws PortalException
-	 * @review
+	 * @throws PortalException if a PortalException was thrown
 	 */
 	public File exportAll(long userId) throws PortalException;
 

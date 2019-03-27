@@ -47,8 +47,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 *
 	 * @param primaryKey the primary key of the entity to retrieve
 	 * @return an entity of type {@code T}
-	 * @throws Exception
-	 * @review
+	 * @throws Exception if an exception was thrown
 	 */
 	public T get(Serializable primaryKey) throws Exception;
 
@@ -79,8 +78,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 * @param liferayPortletRequest the current portlet request
 	 * @param liferayPortletResponse the current portlet response
 	 * @return a string URL, or {@code null}
-	 * @throws Exception
-	 * @review
+	 * @throws Exception if an exception was thrown
 	 */
 	public default String getEditURL(
 			T t, LiferayPortletRequest liferayPortletRequest,

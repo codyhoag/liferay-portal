@@ -173,8 +173,7 @@ public abstract class DynamicQueryUADExporter<T extends BaseModel>
 	 *
 	 * @param baseModel the baseModel to be written to the zip
 	 * @param zipWriter the {@link ZipWriter} to write to
-	 * @throws Exception
-	 * @review
+	 * @throws Exception if an exception was thrown
 	 */
 	protected void writeToZip(T baseModel, ZipWriter zipWriter)
 		throws Exception {
