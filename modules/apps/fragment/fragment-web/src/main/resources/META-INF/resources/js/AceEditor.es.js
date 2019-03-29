@@ -150,8 +150,8 @@ class AceEditor extends Component {
 	}
 
 	/**
-	 * Callback the propagates the <code>contentChanged</code> event when the
-	 * internal Ace Editor is modified.
+	 * Callback executed when the internal Ace Editor is modified; this
+	 * propagates the <code>contentChanged</code> event.
 	 * @private
 	 */
 	_handleDocumentChanged() {

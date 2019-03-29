@@ -43,9 +43,10 @@ class FragmentEditor extends PortletBase {
 	}
 
 	/**
-	 * Returns true when HTML content is valid, false otherwise.
+	 * Returns <code>true</code> when HTML content is valid.
 	 * @public
-	 * @return {boolean} True if HTML is valid
+	 * @return {boolean} <code>true</code> when HTML is valid; <code>false</code>
+	 * otherwise.
 	 */
 	isHtmlValid() {
 		return this._htmlValid;
@@ -174,7 +175,7 @@ class FragmentEditor extends PortletBase {
 FragmentEditor.STATE = {
 
 	/**
-	 * List of tags for custom autocomplete in the HTML editor.
+	 * List of tags for custom autocompletion in the HTML editor.
 	 * @default []
 	 * @instance
 	 * @memberOf FragmentEditor

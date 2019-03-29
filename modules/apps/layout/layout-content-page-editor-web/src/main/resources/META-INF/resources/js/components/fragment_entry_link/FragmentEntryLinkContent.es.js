@@ -186,7 +186,7 @@ class FragmentEntryLinkContent extends Component {
 	}
 
 	/**
-	 * Creates instances of a Fragment Editable Field for each editable.
+	 * Creates instances of a fragment editable field for each editable.
 	 */
 	_createEditables() {
 		this._destroyEditables();
@@ -258,7 +258,7 @@ class FragmentEntryLinkContent extends Component {
 	}
 
 	/**
-	 * Destroys existing Fragment Editable Field instances.
+	 * Destroys existing fragment editable field instances.
 	 */
 	_destroyEditables() {
 		if (this._editables) {

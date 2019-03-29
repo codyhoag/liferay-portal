@@ -36,7 +36,7 @@ class SourceEditor extends Component {
 SourceEditor.STATE = {
 
 	/**
-	 * List of tags for custom autocomplete in the HTML editor.
+	 * List of tags for custom autocompletion in the HTML editor.
 	 * @default []
 	 * @instance
 	 * @memberOf SourceEditor
