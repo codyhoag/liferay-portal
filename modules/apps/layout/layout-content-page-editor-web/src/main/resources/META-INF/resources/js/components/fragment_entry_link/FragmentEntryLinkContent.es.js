@@ -16,14 +16,13 @@ import {UPDATE_EDITABLE_VALUE} from '../../actions/actions.es';
 const EDITABLE_FRAGMENT_ENTRY_PROCESSOR = 'com.liferay.fragment.entry.processor.editable.EditableFragmentEntryProcessor';
 
 /**
- * FragmentEntryLinkContent
+ * Creates a Fragment Entry Link Content component.
  * @review
  */
 class FragmentEntryLinkContent extends Component {
 
 	/**
 	 * @inheritDoc
-	 * @review
 	 */
 	created() {
 		this._handleOpenStyleTooltip = this._handleOpenStyleTooltip.bind(this);
@@ -32,7 +31,6 @@ class FragmentEntryLinkContent extends Component {
 
 	/**
 	 * @inheritDoc
-	 * @review
 	 */
 	disposed() {
 		this._destroyEditables();
@@ -40,7 +38,6 @@ class FragmentEntryLinkContent extends Component {
 
 	/**
 	 * @inheritDoc
-	 * @review
 	 */
 	prepareStateForRender(state) {
 		return setIn(
@@ -52,7 +49,6 @@ class FragmentEntryLinkContent extends Component {
 
 	/**
 	 * @inheritDoc
-	 * @review
 	 */
 	rendered() {
 		if (this.content) {
@@ -79,9 +75,9 @@ class FragmentEntryLinkContent extends Component {
 	}
 
 	/**
-	 * This method renders the content if it is changed.
+	 * Renders the content if it is changed.
 	 * @inheritDoc
-	 * @param {string} newContent
+	 * @param {string} newContent The new content to render.
 	 */
 	syncContent(newContent) {
 		if (newContent && (newContent !== this.content)) {
@@ -90,10 +86,10 @@ class FragmentEntryLinkContent extends Component {
 	}
 
 	/**
-	 * This method handles changes to editableValues.
+	 * Handles changes to editable values.
 	 * @inheritDoc
-	 * @param {object} newEditableValues
-	 * @param {object} oldEditableValues
+	 * @param {object} newEditableValues The updated values.
+	 * @param {object} oldEditableValues The original values.
 	 */
 	syncEditableValues(newEditableValues, oldEditableValues) {
 		if (newEditableValues !== oldEditableValues) {
@@ -127,8 +123,7 @@ class FragmentEntryLinkContent extends Component {
 	}
 
 	/**
-	 * This method propagates the store to editable fields when it's loaded.
-	 * @review
+	 * Propagates the store to editable fields when it's loaded.
 	 */
 	syncStore() {
 		if (this._editables) {
@@ -141,8 +136,8 @@ class FragmentEntryLinkContent extends Component {
 	}
 
 	/**
-	 * Create instantes of FragmentStyleEditor for each element styled with
-	 * background image.
+	 * Create instances of a Fragment Style Editor for each element styled with
+	 * a background image.
 	 */
 	_createBackgroundImageStyleEditors() {
 		if (this._backgroundImageStyleEditors) {
@@ -191,7 +186,7 @@ class FragmentEntryLinkContent extends Component {
 	}
 
 	/**
-	 * Create instances of FragmentEditableField for each editable.
+	 * Creates instances of a Fragment Editable Field for each editable.
 	 */
 	_createEditables() {
 		this._destroyEditables();
@@ -233,8 +228,6 @@ class FragmentEntryLinkContent extends Component {
 		);
 	}
 
-	/**
-	 */
 	_createStyles() {
 		const elements = [];
 
@@ -265,7 +258,7 @@ class FragmentEntryLinkContent extends Component {
 	}
 
 	/**
-	 * Destroy existing FragmentEditableField instances.
+	 * Destroys existing Fragment Editable Field instances.
 	 */
 	_destroyEditables() {
 		if (this._editables) {
@@ -309,7 +302,7 @@ class FragmentEntryLinkContent extends Component {
 	}
 
 	/**
-	 * This method parses and renders the FragmentEntryLink content with AUI.
+	 * Parses and renders the fragment entry link content with AUI.
 	 * @param {string} content
 	 * @private
 	 */
@@ -343,12 +336,12 @@ class FragmentEntryLinkContent extends Component {
 	}
 
 	/**
-	 *  This method runs a set of update functions through the collection of
-     * editable values inside this fragment entry link.
-	 * @param {string} languageId The current language id
-	 * @param {string} defaultLanguageId The default language id
-	 * @param {Array<Function>} updateFunctions The set of update functions to execute for each
-	 * 	editable value
+	 * Runs a set of update functions through the editable values inside this
+	 * fragment entry link.
+	 * @param {string} languageId The current language ID.
+	 * @param {string} defaultLanguageId The default language ID.
+	 * @param {Array<Function>} updateFunctions The set of update functions to
+	 * execute for each editable value.
 	 * @private
 	 */
 	_update(
@@ -397,7 +390,7 @@ class FragmentEntryLinkContent extends Component {
 FragmentEntryLinkContent.STATE = {
 
 	/**
-	 * The fragment content to be rendered.
+	 * Fragment content to be rendered.
 	 * @default ''
 	 * @instance
 	 * @memberOf FragmentEntryLink
@@ -421,7 +414,7 @@ FragmentEntryLinkContent.STATE = {
 	defaultEditorConfigurations: Config.object().value({}),
 
 	/**
-	 * Default language for the editor.
+	 * Default language ID for the editor.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentsEditor
@@ -430,7 +423,7 @@ FragmentEntryLinkContent.STATE = {
 	defaultLanguageId: Config.string().required(),
 
 	/**
-	 * Default segments for the editor.
+	 * Default segment ID for the editor.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentsEditor
@@ -439,8 +432,8 @@ FragmentEntryLinkContent.STATE = {
 	defaultSegmentsExperienceId: Config.string(),
 
 	/**
-	 * Editable values that should be used instead of the default ones
-	 * inside editable fields.
+	 * Editable values that should be used instead of the default ones inside
+	 * editable fields.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentEntryLink
@@ -449,7 +442,7 @@ FragmentEntryLinkContent.STATE = {
 	editableValues: Config.object().required(),
 
 	/**
-	 * The ID for the FragmentEntryLink
+	 * Fragment entry link ID.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentEntryLinkContent
@@ -458,7 +451,7 @@ FragmentEntryLinkContent.STATE = {
 	fragmentEntryLinkId: Config.string().required(),
 
 	/**
-	 * The URL for the Image selector.
+	 * URL for the image selector.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentEntryLink
@@ -521,7 +514,7 @@ FragmentEntryLinkContent.STATE = {
 		.value({}),
 
 	/**
-	 * If the value is true, then asset mapping is enabled.
+	 * If <code>true</code>, the asset mapping is enabled.
 	 * @default false
 	 * @instance
 	 * @memberOf FragmentEntryLink
@@ -530,7 +523,7 @@ FragmentEntryLinkContent.STATE = {
 	showMapping: Config.bool().value(false),
 
 	/**
-	 * Store instance
+	 * Store instance.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentEntryLink
@@ -539,7 +532,7 @@ FragmentEntryLinkContent.STATE = {
 	store: Config.instanceOf(MetalStore),
 
 	/**
-	 * The portlet namespace needed for prefixing Alloy Editor instances
+	 * Portlet namespace required for prefixing AlloyEditor instances.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentEntryLink

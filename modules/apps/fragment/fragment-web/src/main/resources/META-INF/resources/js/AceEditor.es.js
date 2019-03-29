@@ -12,8 +12,7 @@ const FragmentAutocompleteProcessor = function(...args) {
 };
 
 /**
- * This Component creates an instance of Ace editor
- * to allow code editing.
+ * Creates an Ace Editor component to use for code editing.
  */
 class AceEditor extends Component {
 
@@ -106,11 +105,11 @@ class AceEditor extends Component {
 	}
 
 	/**
-	 * This method returns a match object (if any) for "lfr-" tags
-	 * inside the given content.
-	 * @param {string} content
+	 * Returns a match object (if any) for <code>lfr-</code> tags inside the
+	 * given content.
+	 * @param {string} content The given content.
 	 * @private
-	 * @return {object} Match result
+	 * @return {object} The matching result.
 	 */
 	_getAutocompleteMatch(content) {
 		let match = null;
@@ -135,12 +134,12 @@ class AceEditor extends Component {
 	}
 
 	/**
-	 * This method returns a tag completion suggestion for the given
-	 * match and selectedSuggestion.
-	 * @param {object} match
-	 * @param {string} selectedSuggestion
+	 * Returns a tag completion suggestion for the given match and selected
+	 * suggestion.
+	 * @param {object} match The match.
+	 * @param {string} selectedSuggestion The selected suggestion.
 	 * @private
-	 * @return {string}
+	 * @return {string} The suggested tag autocompletion.
 	 */
 	_getAutocompleteSuggestion(match, selectedSuggestion) {
 		const tag = this.autocompleteTags.find(
@@ -151,8 +150,8 @@ class AceEditor extends Component {
 	}
 
 	/**
-	 * This Callback is executed when the internal Ace editor has been
-	 * modified. It simply propagates the event.
+	 * Callback the propagates the <code>contentChanged</code> event when the
+	 * internal Ace Editor is modified.
 	 * @private
 	 */
 	_handleDocumentChanged() {
@@ -175,7 +174,7 @@ class AceEditor extends Component {
 	}
 
 	/**
-	 * This overrides the AceEditor's session setAnnotations method to avoid 
+	 * Overrides Ace Editor's session <code>setAnnotations</code> method to avoid
 	 * showing misleading messages.
 	 * @param {Object} session AceEditor session
 	 * @private
@@ -193,11 +192,10 @@ class AceEditor extends Component {
 }
 
 /**
- * Defines the available AceEditor syntax.
+ * Available Ace Editor syntax.
  * @static
  * @type {Object}
  */
-
 AceEditor.SYNTAX = {
 	css: 'css',
 	html: 'html',
@@ -209,17 +207,15 @@ AceEditor.SYNTAX = {
  * @static
  * @type {!Object}
  */
-
 AceEditor.STATE = {
 
 	/**
-	 * Provide the list of tags for custom autocomplete in the HTML editor.
+	 * List of tags for custom autocompletion in the HTML editor.
 	 * @default []
 	 * @instance
 	 * @memberOf AceEditor
 	 * @type Array
 	 */
-
 	autocompleteTags: Config.arrayOf(
 		Config.shapeOf(
 			{
@@ -230,13 +226,12 @@ AceEditor.STATE = {
 	),
 
 	/**
-	 * Defines the initial content sent to the editor.
+	 * Initial content sent to the editor.
 	 * @default ''
 	 * @instance
 	 * @memberOf AceEditor
 	 * @type {string}
 	 */
-
 	initialContent: Config.string().value(''),
 
 	/**
@@ -244,10 +239,9 @@ AceEditor.STATE = {
 	 * @default undefined
 	 * @instance
 	 * @memberOf AceEditor
-	 * @see AceEditor.SYNTAX
+	 * @see {@link AceEditor.SYNTAX|SYNTAX}
 	 * @type {!string}
 	 */
-
 	syntax: Config.oneOf(Object.values(AceEditor.SYNTAX)).required()
 };
 

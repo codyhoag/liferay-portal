@@ -17,7 +17,7 @@ import getConnectedComponent from '../../store/ConnectedComponent.es';
 import templates from './FragmentEntryLinkListSection.soy';
 
 /**
- * This method defines the list of available panels.
+ * Defines the list of available panels.
  * @type {object[]}
  */
 const SECTION_FLOATING_TOOLBAR_BUTTONS = [
@@ -27,7 +27,7 @@ const SECTION_FLOATING_TOOLBAR_BUTTONS = [
 ];
 
 /**
- * FragmentEntryLinkListSection
+ * Creates a Fragment Entry Link List Section component.
  */
 class FragmentEntryLinkListSection extends Component {
 
@@ -42,7 +42,6 @@ class FragmentEntryLinkListSection extends Component {
 
 	/**
 	 * @inheritdoc
-	 * @review
 	 */
 	disposed() {
 		this._disposeFloatingToolbar();
@@ -79,7 +78,6 @@ class FragmentEntryLinkListSection extends Component {
 
 	/**
 	 * @inheritdoc
-	 * @review
 	 */
 	rendered() {
 		if (
@@ -108,9 +106,8 @@ class FragmentEntryLinkListSection extends Component {
 	}
 
 	/**
-	 * Clear resizing properties
+	 * Clears resizing properties.
 	 * @private
-	 * @review
 	 */
 	_clearResizing() {
 		document.body.removeEventListener('mousemove', this._handleBodyMouseMove);
@@ -123,7 +120,7 @@ class FragmentEntryLinkListSection extends Component {
 	}
 
 	/**
-	 * This method creates a new instance of FloatingToolbar
+	 * Creates a new instance of the floating toolbar.
 	 * @private
 	 */
 	_createFloatingToolbar() {
@@ -146,7 +143,7 @@ class FragmentEntryLinkListSection extends Component {
 	}
 
 	/**
-	 * This method disposes of an existing instance of FloatingToolbar
+	 * Disposes of an existing floating toolbar instance.
 	 * @private
 	 */
 	_disposeFloatingToolbar() {
@@ -158,7 +155,7 @@ class FragmentEntryLinkListSection extends Component {
 	}
 
 	/**
-	 * This Callback is executed when a section loses the focus.
+	 * Callback executed when a section loses focus.
 	 * @private
 	 * @review
 	 */
@@ -169,7 +166,7 @@ class FragmentEntryLinkListSection extends Component {
 	}
 
 	/**
-	 * This Callback is executed when a section is clicked.
+	 * Callback executed when a section is clicked.
 	 * @param {Event} event
 	 * @private
 	 */
@@ -212,7 +209,7 @@ class FragmentEntryLinkListSection extends Component {
 	}
 
 	/**
-	 * This Callback is executed when the mouse hovers over a section.
+	 * Callback executed when the mouse hovers over a section.
 	 * @param {Event} event
 	 * @private
 	 */
@@ -226,7 +223,6 @@ class FragmentEntryLinkListSection extends Component {
 
 	/**
 	 * @private
-	 * @review
 	 */
 	_handleResizerMouseDown(event) {
 		this._resizeColumnIndex = this.row.columns.findIndex(
@@ -241,7 +237,7 @@ class FragmentEntryLinkListSection extends Component {
 	}
 
 	/**
-	 * This Callback is executed when a key is pressed on the focused section.
+	 * Callback executed when a key is pressed on the focused section.
 	 * @private
 	 * @param {Event} event
 	 */
@@ -268,7 +264,7 @@ class FragmentEntryLinkListSection extends Component {
 	}
 
 	/**
-	 * Callback executed when the remove section button is clicked
+	 * Callback executed when the remove section button is clicked.
 	 * @param {Event} event
 	 * @private
 	 */
@@ -285,10 +281,9 @@ class FragmentEntryLinkListSection extends Component {
 	}
 
 	/**
-	 * Updates section columns
-	 * @param {array} columns Section columns
+	 * Updates section columns.
+	 * @param {array} columns The section columns to update.
 	 * @private
-	 * @review
 	 */
 	_updateSectionColumns(columns) {
 		updateSection(
@@ -310,7 +305,7 @@ class FragmentEntryLinkListSection extends Component {
 FragmentEntryLinkListSection.STATE = {
 
 	/**
-	 * FloatingToolbar instance for internal use.
+	 * Floating toolbar instance for internal use.
 	 * @default null
 	 * @instance
 	 * @memberOf FragmentEntryLinkListSection
@@ -319,60 +314,56 @@ FragmentEntryLinkListSection.STATE = {
 	_floatingToolbar: Config.internal().value(null),
 
 	/**
-	 * Index of the column being resized
+	 * Index of the column being resized.
 	 * @default 0
 	 * @instance
 	 * @memberOf FragmentEntryLinkListSection
 	 * @private
-	 * @review
 	 * @type {number}
 	 */
 	_resizeColumnIndex: Config.internal().number().value(0),
 
 	/**
-	 * Index of the column that should be highlighted on resize
+	 * Index of the column that should be highlighted when resized.
 	 * @default null
 	 * @instance
 	 * @memberOf FragmentEntryLinkListSection
 	 * @private
-	 * @review
 	 * @type {number}
 	 */
 	_resizeHighlightedColumn: Config.internal().number().value(null),
 
 	/**
-	 * Position of the mouse when the resize started
+	 * Mouse position when the resize is started.
 	 * @default 0
 	 * @instance
 	 * @memberOf FragmentEntryLinkListSection
 	 * @private
-	 * @review
 	 * @type {number}
 	 */
 	_resizeInitialPosition: Config.internal().number().value(0),
 
 	/**
-	 * Copy of section columns for resizing
+	 * Copy of section columns for resizing.
 	 * @default null
 	 * @instance
 	 * @memberOf FragmentEntryLinkListSection
-	 * @review
 	 * @type {array}
 	 */
 	_resizeSectionColumns: Config.internal().array().value(null),
 
 	/**
-	 * True when user is resizing a column.
+	 * If <code>true</code>, the user is resizing a column.
 	 * @default false
 	 * @instance
 	 * @memberOf FragmentEntryLinkListSection
-	 * @review
+
 	 * @type {boolean}
 	 */
 	_resizing: Config.internal().bool().value(false),
 
 	/**
-	 * Defines the section row
+	 * Section row.
 	 * @default undefined
 	 * @instance
 	 * @memberof FragmentEntryLinkListSection
@@ -382,7 +373,7 @@ FragmentEntryLinkListSection.STATE = {
 		.required(),
 
 	/**
-	 * Defines the section row ID
+	 * Section row ID.
 	 * @default undefined
 	 * @instance
 	 * @memberof FragmentEntryLinkListSection

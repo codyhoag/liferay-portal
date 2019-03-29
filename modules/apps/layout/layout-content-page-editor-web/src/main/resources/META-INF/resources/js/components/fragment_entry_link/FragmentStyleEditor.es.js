@@ -7,7 +7,7 @@ import FragmentStyleEditors from '../fragment_processors/FragmentStyleEditors.es
 import {OPEN_MAPPING_FIELDS_DIALOG} from '../../actions/actions.es';
 
 /**
- * FragmentStyleEditor
+ * Creates a Fragment Style Editor component.
  */
 class FragmentStyleEditor extends State {
 
@@ -28,15 +28,16 @@ class FragmentStyleEditor extends State {
 	}
 
 	/**
-	 * This Callback updates the styleEditor being used any time the type property is changed.
+	 * Callback executed when a type property changes. This updates the fragment
+	 * style editor being used.
 	 */
 	syncType() {
 		this._styleEditor = FragmentStyleEditors[this.type];
 	}
 
 	/**
-	 * This method handles click events for styled nodes.
-	 * @param {Event} event
+	 * Handles click events for styled nodes.
+	 * @param {Event} event The node click.
 	 * @private
 	 */
 	_handleNodeClick(event) {
@@ -63,8 +64,8 @@ class FragmentStyleEditor extends State {
 	}
 
 	/**
-	 * This method handles click events for tooltip buttons.
-	 * @param {MouseEvent} event
+	 * Handles click events for tooltip buttons.
+	 * @param {MouseEvent} event The tooltip button click.
 	 */
 	_handleButtonClick(event) {
 		if (this._styleEditor) {
@@ -80,7 +81,7 @@ class FragmentStyleEditor extends State {
 	}
 
 	/**
-	 * This method handles a change style event.
+	 * Handles a change style event.
 	 * @param {Object} event
 	 * @param {string} event.eventType
 	 */
@@ -111,7 +112,7 @@ class FragmentStyleEditor extends State {
 	}
 
 	/**
-	 * This method disposes of the style tooltip if it exists.
+	 * Disposes of the style tooltip if it exists.
 	 */
 	disposeStyleTooltip() {
 		if (this._tooltip) {
@@ -124,14 +125,14 @@ class FragmentStyleEditor extends State {
 }
 
 /**
- * This defines the state for the FragmentStyleEditor.
+ * State definition.
  * @static
  * @type {!Object}
  */
 FragmentStyleEditor.STATE = {
 
 	/**
-	 * Sets the CSS rules text
+	 * CSS rules text.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentStyleEditor
@@ -140,7 +141,7 @@ FragmentStyleEditor.STATE = {
 	cssText: Config.string().required(),
 
 	/**
-	 * Defines the options that are sent to the editors.
+	 * Options that are sent to the editors.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentStyleEditor
@@ -149,7 +150,7 @@ FragmentStyleEditor.STATE = {
 	editorsOptions: Config.object().required(),
 
 	/**
-	 * Sets the FragmentEntryLink ID
+	 * Fragment entry link ID.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentStyleEditor
@@ -158,8 +159,7 @@ FragmentStyleEditor.STATE = {
 	fragmentEntryLinkId: Config.string().required(),
 
 	/**
-	 * Sets the node to instantiate style editor on
-	 * @default undefined
+	 * Node to instantiate the style editor on.
 	 * @instance
 	 * @memberOf FragmentStyleEditor
 	 * @type {HTMLElement}
@@ -167,7 +167,7 @@ FragmentStyleEditor.STATE = {
 	node: Config.internal().object(),
 
 	/**
-	 * Sets the portlet namespace
+	 * Portlet namespace.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentStyleEditor
@@ -176,7 +176,7 @@ FragmentStyleEditor.STATE = {
 	portletNamespace: Config.string().required(),
 
 	/**
-	 * Sets the CSS selector text
+	 * CSS selector text.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentStyleEditor
@@ -185,7 +185,7 @@ FragmentStyleEditor.STATE = {
 	selectorText: Config.string().required(),
 
 	/**
-	 * If set to True then mapping is activated
+	 * If <code>true</code>, the mapping is activated.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentStyleEditor
@@ -194,7 +194,7 @@ FragmentStyleEditor.STATE = {
 	showMapping: Config.bool().required(),
 
 	/**
-	 * Sets the store instance
+	 * Store instance.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentStyleEditor
@@ -203,7 +203,7 @@ FragmentStyleEditor.STATE = {
 	store: Config.instanceOf(Store),
 
 	/**
-	 * Sets the type for the style editor
+	 * Style editor type.
 	 * @default undefined
 	 * @instance
 	 * @memberOf FragmentStyleEditor
@@ -212,7 +212,7 @@ FragmentStyleEditor.STATE = {
 	type: Config.string().required(),
 
 	/**
-	 * Sets the instance of the style editor being used.
+	 * Style editor instance being used.
 	 * @default null
 	 * @instance
 	 * @memberOf FragmentStyleEditor

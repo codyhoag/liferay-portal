@@ -6,7 +6,7 @@ import AceEditor from './AceEditor.es';
 import templates from './SourceEditorToolbar.soy';
 
 /**
- * This component creates an instance of Source Editor toolbar.
+ * Creates a Source Editor Toolbar component.
  */
 
 class SourceEditorToolbar extends Component {
@@ -14,7 +14,6 @@ class SourceEditorToolbar extends Component {
 	/**
 	 * @inheritDoc
 	 */
-
 	created() {
 		this._updateSyntaxLabel(this.syntax);
 	}
@@ -22,7 +21,6 @@ class SourceEditorToolbar extends Component {
 	/**
 	 * @inheritDoc
 	 */
-
 	willReceiveState(changes) {
 		if (changes.syntax) {
 			this._updateSyntaxLabel(changes.syntax);
@@ -34,7 +32,6 @@ class SourceEditorToolbar extends Component {
 	 * @param {!string} syntax
 	 * @private
 	 */
-
 	_updateSyntaxLabel(syntax) {
 		this._syntaxLabel = SourceEditorToolbar.SYNTAX_LABEL[syntax] || syntax;
 	}
@@ -43,7 +40,6 @@ class SourceEditorToolbar extends Component {
 /**
  * Editor labels to display to the user.
  */
-
 SourceEditorToolbar.SYNTAX_LABEL = {
 	[AceEditor.SYNTAX.css]: 'CSS',
 	[AceEditor.SYNTAX.html]: 'HTML',
@@ -55,28 +51,25 @@ SourceEditorToolbar.SYNTAX_LABEL = {
  * @static
  * @type {!Object}
  */
-
 SourceEditorToolbar.STATE = {
 
 	/**
-	 * The syntax used for the editor toolbar.
+	 * Syntax used for the editor toolbar.
 	 * @default undefined
 	 * @instance
 	 * @memberOf SourceEditorToolbar
 	 * @type {!string}
 	 */
-
 	syntax: Config.oneOf(Object.values(AceEditor.SYNTAX)).required(),
 
 	/**
-	 * The syntax label shown in the toolbar markup.
+	 * Syntax label shown in the toolbar markup.
 	 * @default ''
 	 * @instance
 	 * @memberOf SourceEditorToolbar
 	 * @private
 	 * @type {string}
 	 */
-
 	_syntaxLabel: Config.string()
 		.internal()
 		.value('')
