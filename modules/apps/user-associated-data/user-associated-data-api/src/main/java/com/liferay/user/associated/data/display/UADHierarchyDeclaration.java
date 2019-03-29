@@ -20,8 +20,8 @@ import java.util.Locale;
  * Declares a hierarchical relationship between multiple UAD displays.
  *
  * @author Drew Brokke
- * @see UADDisplay#getParentContainerId(Object)
- * @see UADDisplay#getTopLevelContainer(Class, Serializable, Object)
+ * @see    UADDisplay#getParentContainerId(Object)
+ * @see    UADDisplay#getTopLevelContainer(Class, Serializable, Object)
  */
 public interface UADHierarchyDeclaration {
 
@@ -29,9 +29,9 @@ public interface UADHierarchyDeclaration {
 	 * Returns an array of UAD displays that correspond to a container type.
 	 * Order is significant here. The first item should represent the top-most
 	 * type in the hierarchy, and each subsequent item should step down the
-	 * hierarchy. The items retrieved using these UAD displays are shown
-	 * before the items retrieved using the UAD displays from
-	 * {@link #getNoncontainerUADDisplays()}. Often, an array of just one item is
+	 * hierarchy. The items retrieved using these UAD displays are shown before
+	 * the items retrieved using the UAD displays from {@link
+	 * #getNoncontainerUADDisplays()}. Often, an array of just one item is
 	 * sufficient (in the case of folders and files, only a UAD display
 	 * correlating to the folder type is returned).
 	 *
@@ -43,21 +43,20 @@ public interface UADHierarchyDeclaration {
 	 * Returns the translated label describing the entity types of the
 	 * hierarchy.
 	 *
-	 * @param locale the current locale
+	 * @param  locale the current locale
 	 * @return the label describing the entity types of the hierarchy
 	 */
 	public String getEntitiesTypeLabel(Locale locale);
 
 	/**
-	 * Returns an array of field names to be rendered as columns in the
-	 * UAD portlet's hierarchy view. The corresponding data for each field
-	 * name should be retrievable inside the
-	 * {@link UADDisplay#getFieldValues(Object, String[])} method of each
-	 * UAD display returned from {@link #getContainerUADDisplays()} and
-	 * {@link #getNoncontainerUADDisplays()}.
+	 * Returns an array of field names to be rendered as columns in the UAD
+	 * portlet's hierarchy view. The corresponding data for each field name
+	 * should be retrievable inside the {@link UADDisplay#getFieldValues(Object,
+	 * String[])} method of each UAD display returned from {@link
+	 * #getContainerUADDisplays()} and {@link #getNoncontainerUADDisplays()}.
 	 *
-	 * @return an array of field names to be rendered as columns in the
-     *         UAD portlet's hierarchy view
+	 * @return an array of field names to be rendered as columns in the UAD
+	 *         portlet's hierarchy view
 	 */
 	public default String[] getExtraColumnNames() {
 		return new String[0];
@@ -66,9 +65,9 @@ public interface UADHierarchyDeclaration {
 	/**
 	 * Returns an array of UAD displays that correspond to a non-container type.
 	 * The item types retrieved from these UAD displays are displayed in the
-	 * same order as the array, and after the item types retrieved from
-	 * {@link #getContainerUADDisplays()}. For example, in a folder and file
-	 * structure, this returns the UAD display related to files.
+	 * same order as the array, and after the item types retrieved from {@link
+	 * #getContainerUADDisplays()}. For example, in a folder and file structure,
+	 * this returns the UAD display related to files.
 	 *
 	 * @return an array of UAD displays that correspond to a non-container type
 	 */

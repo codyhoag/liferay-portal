@@ -21,13 +21,13 @@ import com.liferay.portal.kernel.model.User;
 import com.liferay.user.associated.data.component.UADComponent;
 
 /**
- * Provides a way to retrieve, count, anonymize, and delete type
- * {@code T} entities for a user. The anonymous user used in the
- * {@link #autoAnonymize} and {@link #autoAnonymizeAll} methods is the anonymous
- * user defined for a particular company by {@code AnonymousUserConfiguration}.
+ * Provides a way to retrieve, count, anonymize, and delete type {@code T}
+ * entities for a user. The anonymous user used in the {@link #autoAnonymize}
+ * and {@link #autoAnonymizeAll} methods is the anonymous user defined for a
+ * particular company by {@code AnonymousUserConfiguration}.
  *
  * @author William Newbury
- * @param <T> the entity type to be anonymized or deleted
+ * @param  <T> the entity type to be anonymized or deleted
  */
 @ProviderType
 public interface UADAnonymizer<T> extends UADComponent<T> {
@@ -38,21 +38,21 @@ public interface UADAnonymizer<T> extends UADComponent<T> {
 	 * given entity. The anonymous user is given to provide replacement
 	 * user-related data, if needed.
 	 *
-	 * @param t the entity to be anonymized
-	 * @param userId the primary key of the user associated with type {@code T}
-	 * @param anonymousUser the company's anonymous user
+	 * @param  t the entity to be anonymized
+	 * @param  userId the primary key of the user associated with type {@code T}
+	 * @param  anonymousUser the company's anonymous user
 	 * @throws PortalException if the persistence threw an exception
 	 */
 	public void autoAnonymize(T t, long userId, User anonymousUser)
 		throws PortalException;
 
 	/**
-	 * Performs anonymization on all entities of type {@code T} related
-	 * to the user. This method is responsible for retrieving the relevant
-	 * entities, performing anonymization, and persisting the changes.
+	 * Performs anonymization on all entities of type {@code T} related to the
+	 * user. This method is responsible for retrieving the relevant entities,
+	 * performing anonymization, and persisting the changes.
 	 *
-	 * @param userId the primary key of the user whose data is being anonymized
-	 * @param anonymousUser the company's anonymous user
+	 * @param  userId the primary key of the user whose data is being anonymized
+	 * @param  anonymousUser the company's anonymous user
 	 * @throws PortalException if the persistence threw an exception
 	 */
 	public void autoAnonymizeAll(long userId, User anonymousUser)
@@ -61,7 +61,7 @@ public interface UADAnonymizer<T> extends UADComponent<T> {
 	/**
 	 * Returns the number of type {@code T} entities associated with the user.
 	 *
-	 * @param userId the primary key of the user whose data to count
+	 * @param  userId the primary key of the user whose data to count
 	 * @return the number of entities associated with the user
 	 */
 	public long count(long userId) throws PortalException;
@@ -69,15 +69,16 @@ public interface UADAnonymizer<T> extends UADComponent<T> {
 	/**
 	 * Deletes the entity from the database.
 	 *
-	 * @param t the entity to be deleted
+	 * @param  t the entity to be deleted
 	 * @throws PortalException if a portal exception occurred
 	 */
 	public void delete(T t) throws PortalException;
 
 	/**
-	 * Deletes all type {@code T} entities related to the user from the database.
+	 * Deletes all type {@code T} entities related to the user from the
+	 * database.
 	 *
-	 * @param userId the primary key of the user whose data to delete
+	 * @param  userId the primary key of the user whose data to delete
 	 * @throws PortalException if a portal exception occurred
 	 */
 	public void deleteAll(long userId) throws PortalException;

@@ -21,8 +21,8 @@ import com.liferay.portal.kernel.model.User;
 import com.liferay.user.associated.data.util.UADDynamicQueryUtil;
 
 /**
- * Provides the base implementation of {@link UADAnonymizer} for entities created using
- * Service Builder. The count and batch actions are based on
+ * Provides the base implementation of {@link UADAnonymizer} for entities
+ * created using Service Builder. The count and batch actions are based on
  * {@link ActionableDynamicQuery}, which is available in the service for the
  * type {@code T} entity.
  *
@@ -83,8 +83,8 @@ public abstract class DynamicQueryUADAnonymizer<T extends BaseModel>
 	 * Returns an {@code ActionableDynamicQuery} for type {@code T}. It should
 	 * be populated with criteria and ready for use by the service.
 	 *
-	 * @param  userId the primary key of the user to pre-filter the
-	 * 		   {@code ActionableDynamicQuery}
+	 * @param  userId the primary key of the user to pre-filter the {@code
+	 *         ActionableDynamicQuery}
 	 * @return a pre-filtered {@code ActionableDynamicQuery}
 	 */
 	protected ActionableDynamicQuery getActionableDynamicQuery(long userId) {
