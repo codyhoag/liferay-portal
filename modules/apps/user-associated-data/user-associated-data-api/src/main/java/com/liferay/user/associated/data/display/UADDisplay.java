@@ -25,17 +25,17 @@ import java.util.Locale;
 import java.util.Map;
 
 /**
- * Provides the necessary methods to count, retrieve, and display information
- * about entities of type {@code T} related to a user. Can also provide a URL to
- * allow an admin to edit the an entity.
+ * Provides the methods to count, retrieve, and display information
+ * about type {@code T} entities related to a user. This interface can also provide a URL to
+ * allow an admin to edit an entity.
  *
  * @author William Newbury
  */
 public interface UADDisplay<T> extends UADComponent<T> {
 
 	/**
-	 * Returns the number of entities of type {@code T} associated with the
-	 * a user.
+	 * Returns the number of type {@code T} entities associated with the
+	 * the user.
 	 *
 	 * @param userId the primary key of the user whose data to count
 	 * @return the number of entities associated with the user
@@ -43,42 +43,42 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	public long count(long userId);
 
 	/**
-	 * Retrieves an entity of type {@code T}.
+	 * Retrieves a type {@code T} entity.
 	 *
 	 * @param primaryKey the primary key of the entity to retrieve
 	 * @return an entity of type {@code T}
-	 * @throws Exception if an exception was thrown
+	 * @throws Exception if an exception occurred
 	 */
 	public T get(Serializable primaryKey) throws Exception;
 
 	/**
 	 * Returns field names to be used as table column headers when displaying a
-	 * list of entities of type {@code T}.
+	 * list of type {@code T} entities.
 	 *
-	 * @return field names used for column headers
+	 * @return the field names used for column headers
 	 */
 	public default String[] getColumnFieldNames() {
 		return getDisplayFieldNames();
 	}
 
 	/**
-	 * Returns names of fields to display when showing details about an entity
-	 * of type {@code T}.
+	 * Returns field names to display when showing details about a
+	 * type {@code T} entity.
 	 *
-	 * @return field names identifying which information to display
+	 * @return the field names identifying which information to display
 	 */
 	public String[] getDisplayFieldNames();
 
 	/**
 	 * Returns a string URL that allows the admin user to edit the entity. If
-	 * {@code null} is returned then no edit option will be presented to the
+	 * {@code null} is returned, no edit option is presented to the
 	 * admin user.
 	 *
-	 * @param t the entity of type {@code T}
+	 * @param t the type {@code T} entity
 	 * @param liferayPortletRequest the current portlet request
 	 * @param liferayPortletResponse the current portlet response
 	 * @return a string URL, or {@code null}
-	 * @throws Exception if an exception was thrown
+	 * @throws Exception if an exception occurred
 	 */
 	public default String getEditURL(
 			T t, LiferayPortletRequest liferayPortletRequest,
@@ -89,12 +89,12 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	}
 
 	/**
-	 * Returns a map of field names and values to be displayed in the UI.
+	 * Returns a map of field names and values to display in the UI.
 	 *
-	 * @param t the entity of type {@code T}
+	 * @param t the type {@code T} entity
 	 * @param fieldNames the field names for getting values from the entity
 	 * @param locale the current locale
-	 * @return a map of values to be displayed in the UI
+	 * @return a map of values to display in the UI
 	 */
 	public Map<String, Object> getFieldValues(
 		T t, String[] fieldNames, Locale locale);
@@ -111,15 +111,17 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 * Returns the primary key of the parent container for the given
 	 * entity.
 	 *
+	 * <p>
 	 * This method is optional and only applies when the implementation
 	 * is returned from
 	 * {@link UADHierarchyDeclaration#getContainerUADDisplays()} or
 	 * {@link UADHierarchyDeclaration#getNoncontainerUADDisplays()}. It is
 	 * required for hierarchy display to function correctly, but not for
 	 * normal usage.
+	 * </p>
 	 *
      * @param t the entity whose parent container's primary key to retreive
-	 * @return the primary key of the parent container of the given entity.
+	 * @return the primary key of the parent container of the given entity
 	 * @see UADHierarchyDeclaration
 	 */
 	public default Serializable getParentContainerId(T t) {
@@ -127,7 +129,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	}
 
 	/**
-	 * Returns the primary key of the entity of type {@code T}.
+	 * Returns the primary key of the type {@code T} entity.
 	 *
 	 * @param t the entity whose primary key to retrieve
 	 * @return the primary key of the entity
@@ -135,45 +137,55 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	public Serializable getPrimaryKey(T t);
 
 	/**
-	 * Returns entities of type {@code T} in the given range associated with a
+	 * Returns type {@code T} entities in the given range associated with a
 	 * user.
 	 *
 	 * @param start the starting index of the result set, for pagination
 	 * @param end the ending index of the result set, for pagination
-	 * @return paginated entities related to the user ID
+	 * @return the paginated entities related to the user ID
 	 */
 	public List<T> getRange(long userId, int start, int end);
 
 	/**
-	 * Returns the field names to be used as table column headers when sorting a
-	 * list of entities of type {@code T}
+	 * Returns the field names to be used as table column headers when sorting
+	 * type {@code T} entities.
 	 *
-	 * @return field names used for column headers when sorting
+	 * @return the field names used for column headers when sorting
 	 */
 	public String[] getSortingFieldNames();
 
 	/**
-	 * Returns the entity of type {@code T} that satisfies two conditions:
+	 * Returns the type {@code T} entity that satisfies two conditions:
 	 *
-	 * 1. It is an immediate child of the container identified by
-	 * {@code parentContainerClass} and {@code parentContainerId}.
-	 * 2. It is an ancestor of the childObject. It does not have to be an
+	 * <ol>
+	 * <li>
+	 * It is an immediate child of the container identified by the parent
+	 * container class and parent container ID.
+	 * </li>
+	 * <li>
+	 * It is an ancestor of the child object. It does not have to be an
 	 * immediate ancestor.
+	 * </li>
+	 * </ol>
 	 *
-	 * If neither of these conditions are met, this method should return null.
+	 * <p>
+	 * If neither of these conditions are met, this method should return {@code null}.
+	 * </p>
 	 *
+	 * <p>
 	 * This method is optional and only applies when the implementation
 	 * is returned from
 	 * {@link UADHierarchyDeclaration#getContainerUADDisplays()}. It is
 	 * required for hierarchy display to function correctly, but not for
 	 * normal usage.
+	 * </p>
 	 *
 	 * @param parentContainerClass the class identifying the returned entity's
      *                             parent container
 	 * @param parentContainerId the primary key of the returned entity's parent
      *                          container
-	 * @param childObject child of the returned entity
-	 * @return the highest level parent of childObject that is also a child of
+	 * @param childObject the returned entity's child
+	 * @return the highest level parent of the child object that is also a child of
 	 *         the given container type and primary key
 	 * @see UADHierarchyDeclaration
 	 */
@@ -185,18 +197,18 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	}
 
 	/**
-	 * Returns a localized string representing type {@code T}.
+	 * Returns the localized string representing type {@code T}.
 	 *
 	 * @param locale the current locale
-	 * @return a localized string representing type {@code T}
+	 * @return the localized string representing type {@code T}
 	 */
 	public String getTypeName(Locale locale);
 
 	/**
-	 * Returns <code>true</code> if entities of type {@code T} are scoped by
+	 * Returns <code>true</code> if type {@code T} entities are scoped by
 	 * site.
 	 *
-	 * @return <code>true</code> if entities of type {@code T} are scoped by
+	 * @return <code>true</code> if type {@code T} entities are scoped by
 	 * 		   site; <code>false</code> otherwise
 	 */
 	public default boolean isSiteScoped() {
@@ -208,7 +220,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	}
 
 	/**
-	 * Returns paginated sorted entities of type {@code T} related to a user,
+	 * Returns paginated sorted type {@code T} entities related to the user,
 	 * optionally filtered by groups and/or keywords.
 	 *
 	 * @param userId the primary key of the user
@@ -216,25 +228,25 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 *                 associated with
 	 * @param keywords the keywords which may occur in the entity's fields
 	 * @param orderByField the field to sort the entities by
-	 * @param orderByType the direction to sort the entities by, ascending or
-	 *                    descending
-	 * @param start the starting index of the result set
-	 * @param end the ending index of the result set
-	 * @return paginated sorted filtered entities associated with a user
+	 * @param orderByType the direction to sort the entities by (ascending or
+	 *                    descending)
+	 * @param start the result set's starting index
+	 * @param end the result set's ending index
+	 * @return the paginated, sorted, and filtered entities associated with the user
 	 */
 	public List<T> search(
 		long userId, long[] groupIds, String keywords, String orderByField,
 		String orderByType, int start, int end);
 
 	/**
-	 * Returns a count of the number of entities of type {@code T} related to a
-	 * user, optionally filtered by groups and/or keywords
+	 * Returns the number of type {@code T} entities related to the
+	 * user, optionally filtered by groups and/or keywords.
 	 *
 	 * @param userId the primary key of the user
 	 * @param groupIds the primary keys of the groups that the entities are
 	 *                 associated with
 	 * @param keywords the keywords which may occur in the entity's fields
-	 * @return the number of filtered entities associated with a user
+	 * @return the number of filtered entities associated with the user
 	 */
 	public long searchCount(long userId, long[] groupIds, String keywords);
 
