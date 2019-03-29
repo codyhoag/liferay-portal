@@ -11,7 +11,7 @@
 	<short-name>liferay-document-library</short-name>
 	<uri>http://liferay.com/tld/document-library</uri>
 	<tag>
-		<description>Renders the mime type sticker for a given file version.</description>
+		<description>Renders the MIME type sticker for the file version.</description>
 		<name>mime-type-sticker</name>
 		<tag-class>com.liferay.document.library.taglib.servlet.taglib.MimeTypeStickerTag</tag-class>
 		<body-content>empty</body-content>
