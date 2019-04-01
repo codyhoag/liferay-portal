@@ -17,36 +17,31 @@ package com.liferay.oauth2.provider.scope.liferay;
 import org.osgi.framework.Bundle;
 
 /**
- * Represents the whole information about an application exported scope into
- * OAuth2 provider framework Liferay environment.
+ * Represents an application exported scope for Liferay's OAuth2 provider framework.
  *
  * @author Carlos Sierra Andrés
- * @review
  */
 public interface LiferayOAuth2Scope {
 
 	/**
-	 * Name of the application that provides the scope.<br /> Usually refers to
+	 * Returns the name of the application that provides the scope. Usually refers to
 	 * JAX-RS application name.
 	 *
 	 * @return non-<code>null</code> application name
-	 * @review
 	 */
 	public String getApplicationName();
 
 	/**
-	 * OSGi bundle context from which the application and scope is published.
+	 * Returns the OSGi bundle context where the application and scope are published.
 	 *
 	 * @return non-<code>null</code> OSGi bundle
-	 * @review
 	 */
 	public Bundle getBundle();
 
 	/**
-	 * Scope name as registered into OAuth2 Provider framework.
+	 * Returns the scope name as registered in the OAuth2 Provider framework.
 	 *
 	 * @return non-<code>null</code> scope name
-	 * @review
 	 */
 	public String getScope();
 
