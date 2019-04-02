@@ -38,13 +38,14 @@ public interface ScopeContext {
 	/**
 	 * Inserts the application name into the context.
 	 *
-	 * @param  applicationName the application name
+	 * @param applicationName the application name
 	 */
 	public void setApplicationName(String applicationName);
 
 	/**
 	 * Inserts the OSGi bundle into the context.
-	 * @param  bundle the OSGi bundle
+	 *
+	 * @param bundle the OSGi bundle
 	 */
 	public void setBundle(Bundle bundle);
 

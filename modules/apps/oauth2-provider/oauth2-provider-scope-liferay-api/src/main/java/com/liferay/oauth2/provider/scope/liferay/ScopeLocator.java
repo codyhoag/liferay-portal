@@ -19,8 +19,8 @@ import java.util.Collection;
 /**
  * Lists scope aliases and matching {@link LiferayOAuth2Scope}s based on a
  * portal instance configuration of the OAuth2 framework. Scope aliases can
- * match multiple {@link LiferayOAuth2Scope}s
- * from OAuth2 frameworks in different portal instances.
+ * match multiple {@link LiferayOAuth2Scope}s from OAuth2 frameworks in
+ * different portal instances.
  *
  * @author Carlos Sierra Andrés
  */
@@ -52,7 +52,8 @@ public interface ScopeLocator {
 	/**
 	 * Returns the scope aliases available for the given portal instance.
 	 *
-	 * @param  companyId the ID of the portal instance containing the scope aliases
+	 * @param  companyId the ID of the portal instance containing the scope
+	 *         aliases
 	 * @return the non-<code>null</code> scope aliases
 	 */
 	public Collection<String> getScopeAliases(long companyId);
@@ -61,10 +62,11 @@ public interface ScopeLocator {
 	 * Returns the scope aliases available for the given portal instance,
 	 * filtered by application name.
 	 *
-	 * @param  companyId the ID of the portal instance containing the scope aliases
+	 * @param  companyId the ID of the portal instance containing the scope
+	 *         aliases
 	 * @param  applicationName the application exporting the scopes
 	 * @return the non-<code>null</code> scope aliases, filtered by application
-	 * name
+	 *         name
 	 */
 	public Collection<String> getScopeAliases(
 		long companyId, String applicationName);

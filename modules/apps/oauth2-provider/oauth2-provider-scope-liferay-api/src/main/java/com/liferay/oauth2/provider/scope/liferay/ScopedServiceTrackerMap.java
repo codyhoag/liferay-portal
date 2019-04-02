@@ -17,9 +17,9 @@ package com.liferay.oauth2.provider.scope.liferay;
 /**
  * Represents a {@code ServiceTrackerMap} that also checks for portal instance
  * specialization. A best match is registered for both the portal instance and
- * the key. If no such service exists, the next best matches only the key. If
- * no service is registered for the key, a service registered for the
- * portal instance matches.
+ * the key. If no such service exists, the next best matches only the key. If no
+ * service is registered for the key, a service registered for the portal
+ * instance matches.
  *
  * @author Carlos Sierra Andrés
  * @see    com.liferay.osgi.service.tracker.collections.map.ServiceTrackerMap
