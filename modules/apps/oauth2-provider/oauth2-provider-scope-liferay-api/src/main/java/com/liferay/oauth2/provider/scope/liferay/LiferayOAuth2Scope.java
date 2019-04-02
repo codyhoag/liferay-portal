@@ -17,7 +17,7 @@ package com.liferay.oauth2.provider.scope.liferay;
 import org.osgi.framework.Bundle;
 
 /**
- * Represents an application exported scope for Liferay's OAuth2 provider
+ * Represents an application exported scope for Liferay's OAuth2 Provider
  * framework.
  *
  * @author Carlos Sierra Andrés

@@ -32,8 +32,8 @@ import java.lang.annotation.RetentionPolicy;
 public @interface RequiresScope {
 
 	/**
-	 * Returns whether the returned scopes in {@link #value()} must all be
-	 * authorized. This defaults to <code>true</code>.
+	 * Returns <code>true</code> if the returned scopes in {@link #value()} must
+	 * all be authorized. This defaults to <code>true</code>.
 	 *
 	 * @return <code>true</code> if all specified scopes must be authorized;
 	 *         <code>false</code> otherwise
