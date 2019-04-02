@@ -20,17 +20,16 @@ import java.lang.annotation.RetentionPolicy;
 
 /**
  * Declares that a method on a JAX-RS resource does not need a scope to be
- * authorized. When used on JAX-RS resource class, all methods without the
+ * authorized. When used on a JAX-RS resource class, all methods without the
  * annotation inherit the resource class annotation.
  *
  * <p>
  * If scope annotation checking is enabled and a method has no {@link
- * RequiresScope} or {@link RequiresNoScope} annotation, the request isn't
+ * RequiresScope} or {@code RequiresNoScope} annotation, the request isn't
  * authorized to execute that method as security precaution.
  * </p>
  *
  * @author Tomas Polesovsky
- * @see    RequiresScope
  */
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)

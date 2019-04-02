@@ -24,35 +24,34 @@ import org.osgi.framework.Bundle;
 public interface ScopeContext {
 
 	/**
-	 * Resets the state context's state
-	 *
+	 * Resets the state context's state.
 	 */
 	public void clear();
 
 	/**
 	 * Inserts the access token string into the context.
 	 *
-	 * @param accessToken
+	 * @param accessToken the access token
 	 */
 	public void setAccessToken(String accessToken);
 
 	/**
 	 * Inserts the application name into the context.
 	 *
-	 * @param  applicationName
+	 * @param  applicationName the application name
 	 */
 	public void setApplicationName(String applicationName);
 
 	/**
 	 * Inserts the OSGi bundle into the context.
-	 * @param  bundle
+	 * @param  bundle the OSGi bundle
 	 */
 	public void setBundle(Bundle bundle);
 
 	/**
 	 * Inserts the portal instance's ID into the context.
 	 *
-	 * @param companyId
+	 * @param companyId the portal instance's ID
 	 */
 	public void setCompanyId(long companyId);
 

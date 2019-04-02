@@ -26,11 +26,11 @@ import aQute.bnd.annotation.ProviderType;
 public interface ScopeChecker {
 
 	/**
-	 * Checks if the current request has been authorized for all given scopes.
+	 * Returns <code>true</code> if the current request has been authorized for all given scopes.
 	 *
 	 * @param  scopes the scopes to check the request for authorization
 	 * @return <code>true</code> if the request has been authorized for all given
-	 *         scopes, <code>false</code> otherwise.
+	 *         scopes; <code>false</code> otherwise
 	 */
 	public default boolean checkAllScopes(String... scopes) {
 		for (String scope : scopes) {
@@ -43,12 +43,12 @@ public interface ScopeChecker {
 	}
 
 	/**
-	 * Checks if the current request has been authorized for any of the given
+	 * Returns <code>true</code> if the current request has been authorized for any of the given
 	 * scopes.
 	 *
 	 * @param  scopes the scopes to check the request for authorization
 	 * @return <code>true</code> if the request has been authorized for any of
-	 *         the given scopes, <code>false</code> otherwise.
+	 *         the given scopes; <code>false</code> otherwise
 	 */
 	public default boolean checkAnyScope(String... scopes) {
 		for (String scope : scopes) {
@@ -61,11 +61,11 @@ public interface ScopeChecker {
 	}
 
 	/**
-	 * Checks if the current request has been authorized for the given scope.
+	 * Returns <code>true</code> if the current request has been authorized for the given scope.
 	 *
-	 * @param  scope the scope to check the request for authorization.
+	 * @param  scope the scope to check the request for authorization
 	 * @return <code>true</code> if the request has been authorized for the
-	 *         given scope, <code>false</code> otherwise.
+	 *         given scope; <code>false</code> otherwise
 	 */
 	public boolean checkScope(String scope);
 
