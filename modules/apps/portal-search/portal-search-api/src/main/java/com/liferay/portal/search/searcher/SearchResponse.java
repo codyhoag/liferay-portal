@@ -34,7 +34,7 @@ import java.util.stream.Stream;
  * engine.
  *
  * <p>
- * i The exact response format and the contents of the response depends on the
+ * The exact response format and the contents of the response depends on the
  * search engine and the search request that was executed.
  * </p>
  *
