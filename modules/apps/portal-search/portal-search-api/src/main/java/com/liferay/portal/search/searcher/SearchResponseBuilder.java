@@ -58,8 +58,7 @@ public interface SearchResponseBuilder {
 	/**
 	 * Returns the response string from the search engine.
 	 *
-	 * @param  responseString the response string formatted by the search
-	 *         engine
+	 * @param  responseString the response string formatted by the search engine
 	 * @return the search response builder
 	 */
 	public SearchResponseBuilder responseString(String responseString);

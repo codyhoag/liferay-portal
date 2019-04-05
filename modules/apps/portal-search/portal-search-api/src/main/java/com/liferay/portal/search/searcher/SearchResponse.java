@@ -31,8 +31,8 @@ import java.util.stream.Stream;
 
 /**
  * Contains the full response of an executed search, as returned from the search
- * engine. The exact response format and the contents of the response depends on the
- * search engine and the search request that was executed.
+ * engine. The exact response format and the contents of the response depends on
+ * the search engine and the search request that was executed.
  *
  * @author André de Oliveira
  */

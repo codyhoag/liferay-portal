@@ -62,7 +62,7 @@ public interface PortletSharedSearchResponse {
 	/**
 	 * @deprecated As of Judson (7.1.x), replaced by {@link
 	 *             #getSearchResponse()} and {@link
-	 *             com.liferay.portal.search.searcher.SearchResponse#getRequestString()}
+	 *             SearchResponse#getRequestString()}
 	 */
 	@Deprecated
 	public String getQueryString();

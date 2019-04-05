@@ -110,8 +110,7 @@ public class SearchSearchRequest
 	}
 
 	/**
-	 * @deprecated As of Mueller (7.2.x), replaced by
-	 * 		Sort
+	 * @deprecated As of Mueller (7.2.x), replaced by Sort
 	 */
 	@Deprecated
 	public com.liferay.portal.kernel.search.Sort[] getSorts71() {
@@ -124,7 +123,7 @@ public class SearchSearchRequest
 
 	/**
 	 * @deprecated As of Mueller (7.2.x), replaced by
-	 * 		com.liferay.portal.search.stats.StatsRequest
+	 *             com.liferay.portal.search.stats.StatsRequest
 	 */
 	@Deprecated
 	public Map<String, Stats> getStats() {
@@ -230,8 +229,7 @@ public class SearchSearchRequest
 	}
 
 	/**
-	 * @deprecated As of Mueller (7.2.x), replaced by
-	 * 		Sort
+	 * @deprecated As of Mueller (7.2.x), replaced by Sort
 	 */
 	@Deprecated
 	public void setSorts(com.liferay.portal.kernel.search.Sort[] sorts) {
@@ -244,7 +242,7 @@ public class SearchSearchRequest
 
 	/**
 	 * @deprecated As of Mueller (7.2.x), replaced by
-	 * 		com.liferay.portal.search.stats.StatsRequest
+	 *             com.liferay.portal.search.stats.StatsRequest
 	 */
 	@Deprecated
 	public void setStats(Map<String, Stats> stats) {
