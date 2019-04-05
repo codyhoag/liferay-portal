@@ -31,12 +31,8 @@ import java.util.stream.Stream;
 
 /**
  * Contains the full response of an executed search, as returned from the search
- * engine.
- *
- * <p>
- * The exact response format and the contents of the response depends on the
+ * engine. The exact response format and the contents of the response depends on the
  * search engine and the search request that was executed.
- * </p>
  *
  * @author André de Oliveira
  */
@@ -62,8 +58,8 @@ public interface SearchResponse {
 	public String getRequestString();
 
 	/**
-	 * Returns the response string as returned by the search engine. Can be
-	 * large depending on the number of results. Must be enabled with {@link
+	 * Returns the response string as returned by the search engine. This can be
+	 * large depending on the number of results; it must be enabled with {@link
 	 * SearchRequest#isIncludeResponseString()}.
 	 *
 	 * @return the response string as returned by the search engine, or blank if

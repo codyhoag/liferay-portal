@@ -26,11 +26,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Holds the parameters used when performing a search.
- *
- * <p>
- * Build the search request with the {@link SearchRequestBuilder}
- * </p>
+ * Holds the parameters used when performing a search. Build the search request
+ * with the {@link SearchRequestBuilder}.
  *
  * @author André de Oliveira
  */
@@ -59,22 +56,25 @@ public interface SearchRequest {
 	/**
 	 * Provides the metric aggregations to be computed for each field.
 	 *
-	 * @return the stats that are enabled for each field.
+	 * @return the stats that are enabled for each field
 	 */
 	public List<StatsRequest> getStatsRequests();
 
 	/**
-	 * Enables explanation of how each hit's score was computed.
+	 * Returns <code>true</code> if the explanation for how each hit's score is
+	 * computed.
 	 *
-	 * @return whether to explain scores
+	 * @return <code>true</code> if the scores are explained; <code>false</code>
+	 *         otherwise
 	 */
 	public boolean isExplain();
 
 	/**
-	 * Enables inclusion of the search engine's response string with the
-	 * returned results.
+	 * Returns <code>true</code> if the search engine's response string is
+	 * included with the returned results.
 	 *
-	 * @return whether to include the response string
+	 * @return <code>true</code> if the response string is included;
+	 *         <code>false</code> otherwise
 	 */
 	public boolean isIncludeResponseString();
 

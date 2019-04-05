@@ -21,7 +21,7 @@ import com.liferay.portal.search.searcher.SearchRequestBuilder;
 
 /**
  * Creates a search request builder for building a search request from a legacy
- * search context. For backward compatibility only. New code should use {@link
+ * search context. This is for backward compatibility only; new code should use {@link
  * com.liferay.portal.search.searcher.SearchRequestBuilderFactory}.
  *
  * @author André de Oliveira

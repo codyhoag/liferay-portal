@@ -18,7 +18,7 @@ import aQute.bnd.annotation.ProviderType;
 
 /**
  * Creates a search request builder for building a search request object that
- * can be sent to the search engine when when performing a search.
+ * can be sent to the search engine when performing a search.
  *
  * @author André de Oliveira
  */

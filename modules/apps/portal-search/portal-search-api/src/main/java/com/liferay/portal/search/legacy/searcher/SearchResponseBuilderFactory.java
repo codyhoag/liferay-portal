@@ -21,7 +21,7 @@ import com.liferay.portal.search.searcher.SearchResponseBuilder;
 
 /**
  * Creates a search response builder for building a search response from a
- * legacy search context. For backward compatibility only. New code should use
+ * legacy search context. This is for backward compatibility only; new code should use
  * {@link com.liferay.portal.search.searcher.SearchResponseBuilderFactory}.
  *
  * @author André de Oliveira

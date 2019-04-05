@@ -26,10 +26,10 @@ import com.liferay.portal.search.stats.StatsRequestBuilder;
 public interface StatsRequestBuilderFactory {
 
 	/**
-	 * Creates a new StatsRequestBuilder object from a legacy Stats object.
+	 * Creates a new stats request builder from a legacy {@code Stats} object.
 	 *
-	 * @param  stats the legacy Stats object to be converted
-	 * @return the converted StatsRequestBuilder object
+	 * @param  stats the legacy {@code Stats} object to be converted
+	 * @return the converted stats request builder
 	 */
 	public StatsRequestBuilder getStatsRequestBuilder(Stats stats);
 

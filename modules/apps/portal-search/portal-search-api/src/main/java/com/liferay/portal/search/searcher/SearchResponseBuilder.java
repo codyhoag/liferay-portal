@@ -24,11 +24,8 @@ import com.liferay.portal.search.stats.StatsResponse;
 import java.util.Map;
 
 /**
- * Builds a search response with the results of a search.
- *
- * <p>
- * Use is intended for the Liferay Search Framework only.
- * </p>
+ * Builds a search response with the results of a search. This interface's usage
+ * is intended for the Liferay Search Framework only.
  *
  * @author André de Oliveira
  */
@@ -54,16 +51,16 @@ public interface SearchResponseBuilder {
 	 *
 	 * @param  requestString the request string, as returned by the search
 	 *         engine
-	 * @return the same builder
+	 * @return the search response builder
 	 */
 	public SearchResponseBuilder requestString(String requestString);
 
 	/**
 	 * Returns the response string from the search engine.
 	 *
-	 * @param  responseString the response string, formatted by the search
+	 * @param  responseString the response string formatted by the search
 	 *         engine
-	 * @return the same builder
+	 * @return the search response builder
 	 */
 	public SearchResponseBuilder responseString(String responseString);
 
@@ -75,7 +72,7 @@ public interface SearchResponseBuilder {
 	 *
 	 * @param  statsResponseMap the map containing the metrics aggregations per
 	 *         field
-	 * @return the same builder
+	 * @return the search response builder
 	 */
 	public SearchResponseBuilder statsResponseMap(
 		Map<String, StatsResponse> statsResponseMap);

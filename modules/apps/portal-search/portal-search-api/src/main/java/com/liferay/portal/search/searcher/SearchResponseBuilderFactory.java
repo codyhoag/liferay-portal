@@ -18,11 +18,8 @@ import aQute.bnd.annotation.ProviderType;
 
 /**
  * Creates a search response builder for building a search response object from
- * the search engine's response to an executed search request.
- *
- * <p>
- * Use is intended for the Liferay Search Framework only.
- * </p>
+ * the search engine's response to an executed search request. This interface's
+ * usage is intended for the Liferay Search Framework only.
  *
  * @author André de Oliveira
  */

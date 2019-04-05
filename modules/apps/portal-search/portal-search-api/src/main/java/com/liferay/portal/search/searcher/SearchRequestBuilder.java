@@ -42,7 +42,7 @@ public interface SearchRequestBuilder {
 	 * Adds fields to include in the search results as a map of keys and values.
 	 *
 	 * @param  selectedFieldNames the names of the fields to return
-	 * @return the same builder
+	 * @return the search request builder
 	 */
 	public SearchRequestBuilder addSelectedFieldNames(
 		String... selectedFieldNames);
@@ -60,7 +60,7 @@ public interface SearchRequestBuilder {
 	 * Enables explanation of how each hit's score was computed.
 	 *
 	 * @param  explain whether to explain scores
-	 * @return the same builder
+	 * @return the search request builder
 	 */
 	public SearchRequestBuilder explain(boolean explain);
 
@@ -69,7 +69,7 @@ public interface SearchRequestBuilder {
 	 * returned results.
 	 *
 	 * @param  includeResponseString whether to include the response string
-	 * @return the same builder
+	 * @return the search request builder
 	 */
 	public SearchRequestBuilder includeResponseString(
 		boolean includeResponseString);
@@ -82,7 +82,7 @@ public interface SearchRequestBuilder {
 	 * Provides a secondary query to reorder the top documents returned.
 	 *
 	 * @param  rescoreQuery the rescore query
-	 * @return the same builder
+	 * @return the search request builder
 	 */
 	public SearchRequestBuilder rescoreQuery(Query rescoreQuery);
 
@@ -92,7 +92,7 @@ public interface SearchRequestBuilder {
 	 * Provides the metric aggregations to be computed for each field.
 	 *
 	 * @param  statsRequests the stats that are enabled for each field
-	 * @return the same builder
+	 * @return the search request builder
 	 */
 	public SearchRequestBuilder statsRequests(StatsRequest... statsRequests);
 
