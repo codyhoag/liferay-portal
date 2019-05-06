@@ -67,8 +67,8 @@ Property Name | Default Value
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
-[`copyrightFile`](#copyrightfile) | `File` | `null` | The file that contains the copyright header.
-[`restConfigDir`](#restconfigdir) | `File` |`${project.projectDir}` | The directory that contains the `rest-config.yaml` and `rest-openapi.yaml` files.
+`copyrightFile` | `File` | `null` | The file that contains the copyright header.
+`restConfigDir` | `File` |`${project.projectDir}` | The directory that contains the `rest-config.yaml` and `rest-openapi.yaml` files.
 
 In the typical scenario, the `rest-config.yaml` and `rest-openapi.yaml` files
 are contained in the project directory of `my-rest-app-impl`. In the
