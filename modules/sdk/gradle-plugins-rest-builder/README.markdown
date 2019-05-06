@@ -70,11 +70,12 @@ Property Name | Type | Default Value | Description
 [`copyrightFile`](#copyrightfile) | `File` | `null` | The file that contains the copyright header.
 [`restConfigDir`](#restconfigdir) | `File` |`${project.projectDir}` | The directory that contains the `rest-config.yaml` and `rest-openapi.yaml` files.
 
-In the typical scenario the `rest-config.yaml` and `rest-openapi.yaml` files are
-contained in the project directory of `my-rest-app-impl`. In the `build.gradle`
-of the same module, simply apply the `com.liferay.rest.builder` plugin.
+In the typical scenario, the `rest-config.yaml` and `rest-openapi.yaml` files
+are contained in the project directory of `my-rest-app-impl`. In the
+`build.gradle` of the same module, apply the `com.liferay.rest.builder` plugin.
 
-The properties of type `File` supports any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.lang.Object)).
+The properties of type `File` supports any type that can be resolved by
+[`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.lang.Object)).
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties, to defer evaluation until task execution.
 
