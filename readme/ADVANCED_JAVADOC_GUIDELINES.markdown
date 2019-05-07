@@ -153,11 +153,15 @@ document.
 The parameter type name should keep its syntax when defined. For example, this
 interface:
 
-    public interface BinaryFunction<T> extends Function<T, BinaryFile> {
+    public interface StagedModelRepository<T extends StagedModel> {
 
 should define the generic type parameter like this:
 
     @param <T> the model's type
+
+See the	
+[`StagedModelRepository`](https://github.com/liferay/liferay-portal/blob/7.2.0-rc2/modules/apps/export-import/export-import-api/src/main/java/com/liferay/exportimport/staged/model/repository/StagedModelRepository.java#L49)	
+interface for the full example.
 
 ### @see tags
 
