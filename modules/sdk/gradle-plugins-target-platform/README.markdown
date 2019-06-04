@@ -24,7 +24,9 @@ buildscript {
 }
 ```
 
-There are two Target Platform Gradle plugins you can apply to your project:
+There are two Target Platform Gradle plugins you can apply to your project. If
+you have a multi-module Gradle project, you only need to apply these plugins to
+the root project.
 
 - The [*Target Platform Plugin*](#target-platform-plugin) helps to configure
 your projects to build against an established set of platform artifacts,
