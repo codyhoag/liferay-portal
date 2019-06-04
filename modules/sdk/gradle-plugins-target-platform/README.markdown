@@ -67,7 +67,7 @@ The plugin adds a series of configurations to your project:
 
 Name | Description
 ---- | -----------
-`targetPlatformBOMs` | Configures all the BOMs to import as managed dependencies.
+`targetPlatformBoms` | Configures all the BOMs to import as managed dependencies.
 `targetPlatformBundles` | Configures all the bundles in addition to the distro to resolve against.
 `targetPlatformDistro` | Configures the distro JAR file to use as base for resolving against.
 `targetPlatformRequirements` | Configures the list of JAR files to use as run requirements for resolving.
@@ -151,14 +151,14 @@ platform.
 
 ### Target Platform BOMs Dependency
 
-The plugin creates a configuration called `targetPlatformBOMs` with no defaults.
+The plugin creates a configuration called `targetPlatformBoms` with no defaults.
 You can use this dependency to set which BOMs to import to configure your target
 platform.
 
 ```gradle
 dependencies {
-	targetPlatformBOMs group: "com.liferay", name: "com.liferay.ce.portal.bom", version: "7.1.0"
-	targetPlatformBOMs group: "com.liferay", name: "com.liferay.ce.portal.compile.only", version: "7.1.0"
+	targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom", version: "7.2.0"
+	targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom.compile.only", version: "7.2.0"
 }
 ```
 
@@ -185,7 +185,7 @@ to resolve against.
 
 ```gradle
 dependencies {
-	targetPlatformDistro group: "com.liferay", name: "com.liferay.ce.portal.distro", version: "7.1.0"
+	targetPlatformDistro group: "com.liferay.portal", name: "release.portal.distro", version: "7.2.0"
 }
 ```
 
