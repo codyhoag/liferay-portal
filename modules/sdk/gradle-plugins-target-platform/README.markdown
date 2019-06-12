@@ -70,19 +70,13 @@ The plugin adds a series of configurations to your project:
 Name | Description
 ---- | -----------
 `targetPlatformBoms` | Configures all the BOMs to import as managed dependencies.
-`targetPlatformBundles` | Configures all the bundles in addition to the distro to resolve against.
 `targetPlatformDistro` | Configures the distro JAR file to use as base for resolving against.
-`targetPlatformRequirements` | Configures the list of JAR files to use as run requirements for resolving.
 
-The plugin adds a task `resolve` of type [`ResolveTask`](#resolvetask) to your
-project that performs an OSGi resolve operation using the
-`targetPlatformRequirements` configuration as the basis of the requirements. The
-`targetPlatformBundles` configuration is used as a repository for the resolver
-to resolve requirements. Lastly, the `targetPlatformDistro` configuration is
-used to provide the *distro* artifact for the resolve process. The *distro* is
-the artifact that provides all the OSGi capabilities of the target platform. All
-of these parameters are used to create a `bndrun` file that can be used as input
-into the Bndrun resolve operation.
+The `targetPlatformDistro` configuration is used to provide the *distro*
+artifact for the resolve process. The *distro* is the artifact that provides all
+the OSGi capabilities of the target platform. All of these parameters are used
+to create a `bndrun` file that can be used as input into the Bndrun resolve
+operation.
 
 ## Target Platform IDE Plugin
 
@@ -161,21 +155,7 @@ platform.
 dependencies {
 	targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom", version: "7.2.0"
 	targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom.compile.only", version: "7.2.0"
-}
-```
-
-### Target Platform Bundles Dependency
-
-The plugin creates a configuration called `targetPlatformBundles`. It is
-configured with default dependencies to all resolvable bundles in a
-multi-project build (e.g., all projects in multi-project build that have a `jar`
-task). This can be used to specify additional bundles that should be added to
-the set of bundles given to `resolve` task to resolve against when checking for
-OSGi requirements.
-
-```gradle
-dependencies {
-	targetPlatformBundles group: "com.google.guava", name: "guava", version: "23.0"
+	targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom.third.party", version: "7.2.0"
 }
 ```
 
@@ -197,20 +177,5 @@ can use the `files` method to add it to the configuration.
 ```gradle
 dependencies {
 	targetPlatformDistro files("custom-distro.jar")
-}
-```
-
-### Target Platform Requirements Dependency
-
-The plugin creates a configuration called `targetPlatformRequirements`. It is
-configured with default dependencies to all resolvable bundles in a
-multi-project build (e.g., all projects in multi-project build that have a `jar`
-task). This is can be used to specify additional bundles that should be added to
-the set of bundles given to the `resolve` task to set as `osgi.identity`
-requirements.
-
-```gradle
-dependencies {
-	targetPlatformRequirements group: "com.liferay", name: "com.liferay.other.bundle", version: "1.0"
 }
 ```
