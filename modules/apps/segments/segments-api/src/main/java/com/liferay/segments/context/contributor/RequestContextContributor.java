@@ -29,8 +29,8 @@ public interface RequestContextContributor {
 	/**
 	 * Contributes additional information to the context.
 	 *
-	 * @param  context the context that segments users
-	 * @param  httpServletRequest the current request
+	 * @param context the context that segments users
+	 * @param httpServletRequest the current request
 	 */
 	public void contribute(
 		Context context, HttpServletRequest httpServletRequest);

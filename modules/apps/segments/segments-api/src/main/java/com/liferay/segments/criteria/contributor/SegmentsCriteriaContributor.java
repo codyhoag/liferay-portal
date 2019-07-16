@@ -37,9 +37,9 @@ public interface SegmentsCriteriaContributor {
 	/**
 	 * Contributes the criterion to a segment's criteria.
 	 *
-	 * @param  criteria the segment's criteria
-	 * @param  filterString the criterion's filter as a string
-	 * @param  conjunction the criterion's conjunction
+	 * @param criteria the segment's criteria
+	 * @param filterString the criterion's filter as a string
+	 * @param conjunction the criterion's conjunction
 	 */
 	public default void contribute(
 		Criteria criteria, String filterString,

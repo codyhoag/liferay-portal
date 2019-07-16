@@ -21,8 +21,8 @@ import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * Provides methods for obtaining {@link
- * com.liferay.segments.model.SegmentsEntry SegmentsEntry}s and their
- * related entities.
+ * com.liferay.segments.model.SegmentsEntry SegmentsEntry}s and their related
+ * entities.
  *
  * @author Eduardo García
  */

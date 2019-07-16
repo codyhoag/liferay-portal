@@ -36,9 +36,7 @@ public interface AsahFaroBackendClient {
 	public String getDataSourceId();
 
 	/**
-	 * Returns the {@link
-	 * com.liferay.segments.asah.connector.internal.client.model.Individual
-	 * Individual} matching the primary key for the data source {@link
+	 * Returns the individual matching the primary key for the data source {@link
 	 * #getDataSourceId()}.
 	 *
 	 * @param  individualPK the primary key of the individual
