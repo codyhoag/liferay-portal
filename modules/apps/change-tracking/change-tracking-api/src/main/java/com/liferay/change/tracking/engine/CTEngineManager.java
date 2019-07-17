@@ -141,8 +141,8 @@ public interface CTEngineManager {
 		QueryDefinition<CTEntry> queryDefinition);
 
 	/**
-	 * Returns all the change tracking entries associated with the given
-	 * change collection, keywords, and query definition.
+	 * Returns all the change tracking entries associated with the given change
+	 * collection, keywords, and query definition.
 	 *
 	 * @param  ctCollection the change collection
 	 * @param  keywords the keywords

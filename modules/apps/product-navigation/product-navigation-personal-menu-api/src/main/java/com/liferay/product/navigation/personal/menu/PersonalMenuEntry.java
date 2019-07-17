@@ -30,8 +30,8 @@ import javax.servlet.http.HttpServletRequest;
  * user personal menu entry.
  *
  * <p>
- * Implementations must be registered in the OSGi Registry. The
- * user personal menu entry order is determined by the {@code
+ * Implementations must be registered in the OSGi Registry. The user personal
+ * menu entry order is determined by the {@code
  * product.navigation.personal.menu.entry.order} property value. The entry's
  * section placement in the menu is determined by the {@code
  * product.navigation.personal.menu.group} property value.

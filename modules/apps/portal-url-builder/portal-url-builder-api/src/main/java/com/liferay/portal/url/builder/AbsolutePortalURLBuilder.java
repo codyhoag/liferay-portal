@@ -74,8 +74,8 @@ public interface AbsolutePortalURLBuilder {
 	 * Returns URLs for arbitrary resources. Arbitrary resources live in the
 	 * portal's root path (that can be {@code /} or {@code /something} if the
 	 * portal has not been installed as the ROOT webapp). See {@code
-	 * com.liferay.portal.spring.context.PortalContextLoaderListener#getPortalServletContextPath()}
-	 * for more details.
+	 * com.liferay.portal.spring.context.PortalContextLoaderListener#getPortalServletContextPath(
+	 * )} for more details.
 	 *
 	 * <p>
 	 * <b>Warning:</b> Do not use this method unless none of the others serve
@@ -102,8 +102,8 @@ public interface AbsolutePortalURLBuilder {
 
 	/**
 	 * Returns absolute URLs without the CDN part. See {@code
-	 * com.liferay.portal.kernel.util.Portal#getCDNHost(javax.servlet.http.HttpServletRequest)}
-	 * for details.
+	 * com.liferay.portal.kernel.util.Portal#getCDNHost(
+	 * javax.servlet.http.HttpServletRequest)} for details.
 	 *
 	 * @return the same builder
 	 */

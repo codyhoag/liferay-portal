@@ -69,9 +69,9 @@ public interface EditableElementParser {
 	 * Replaces the editable element value with a new one and applies the
 	 * configuration values.
 	 *
-	 * @param  element the editable element to replace
-	 * @param  value the new element value
-	 * @param  configJSONObject the configuration values
+	 * @param element the editable element to replace
+	 * @param value the new element value
+	 * @param configJSONObject the configuration values
 	 */
 	public default void replace(
 		Element element, String value, JSONObject configJSONObject) {
