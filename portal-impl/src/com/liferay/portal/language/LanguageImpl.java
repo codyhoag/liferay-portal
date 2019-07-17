@@ -1089,11 +1089,10 @@ public class LanguageImpl implements Language, Serializable {
 	}
 
 	/**
-	 * Returns the last time in milliseconds when there was any change in the
-	 * languages list company or group
+	 * Returns the last time (in milliseconds) there was a change in the
+	 * language's list, company, or group.
 	 *
 	 * @return the last moodified time in milliseconds
-	 * @review
 	 */
 	@Override
 	public long getLastModified() {
