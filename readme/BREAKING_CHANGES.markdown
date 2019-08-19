@@ -514,7 +514,7 @@ implementation for authentication.
 
 ---------------------------------------
 
-### AlloyEditor v2.0 updated to a major new version of React
+### Updated AlloyEditor v2.0 Includes New Major Version of React
 - **Date:** 2019-Feb-04
 - **JIRA Ticket:** [LPS-90079](https://issues.liferay.com/browse/LPS-90079)
 
@@ -523,7 +523,7 @@ implementation for authentication.
 AlloyEditor was upgraded to version 2.0.0, which includes a major upgrade from
 React v15 to v16.
 
-`React.createClass` was
+The `React.createClass` was
 [deprecated in React v15.5.0](https://reactjs.org/blog/2017/04/07/react-v15.5.0.html)
 (April 2017) and
 [removed in React v16.0.0](https://reactjs.org/blog/2017/09/26/react-v16.0.html)
@@ -532,30 +532,33 @@ updated to use the ES6 class syntax instead of `React.createClass`.
 
 #### Who is affected?
 
-Developers who have built their own buttons using `React.createClass`
-will find that the `createClass` function is no longer available and
-attempts to access it at runtime will trigger an error.
+This affects anyone who built their own buttons using `React.createClass`. The
+`createClass` function is no longer available and attempts to access it at
+runtime will trigger an error.
 
 #### How should I update my code?
 
-1. Custom buttons can be ported from the `React.createClass` API to use
-the ES6 `class` API described in
-[the React documentation](https://reactjs.org/docs/react-component.html)
-(for example, see the changes made in moving to an
-[ES6 class-based button](https://github.com/liferay/alloy-editor/blob/b082c312179ae6626cb2ddcc04ad3ebc5b355e1b/src/components/buttons/button-ol.jsx),
-from
-[the previous `createClass`-based implementation](https://github.com/liferay/alloy-editor/blob/2826ab9ceabe17c6ba0d38985baf8a787c23db43/src/ui/react/src/components/buttons/button-ol.jsx));
-or:
-2. A compatibility adapter — the
-[create-react-class package](https://www.npmjs.com/package/create-react-class)
-which is described [here](https://reactjs.org/docs/react-without-es6.html) —
-can be injected into the page to restore the `createClass` API.
+You should update your code in one of two ways:
+
+1. Port custom buttons from the `React.createClass` API to use the ES6 `class`
+   API as described in
+   [the React documentation](https://reactjs.org/docs/react-component.html). For
+   example, see the changes made in moving to an
+   [ES6 class-based button](https://github.com/liferay/alloy-editor/blob/b082c312179ae6626cb2ddcc04ad3ebc5b355e1b/src/components/buttons/button-ol.jsx),
+   from
+   [the previous `createClass`-based implementation](https://github.com/liferay/alloy-editor/blob/2826ab9ceabe17c6ba0d38985baf8a787c23db43/src/ui/react/src/components/buttons/button-ol.jsx).
+
+2. Provide a compatibility adapter. The
+   [create-react-class package](https://www.npmjs.com/package/create-react-class)
+   (described [here](https://reactjs.org/docs/react-without-es6.html)) can be
+   injected into the page to restore the `createClass` API.
 
 #### Why was this change made?
 
-Moving to a newer major version of React brings performance and
-compatibility improvements, as well as reducing the bundle size due to
-the removal of deprecated APIs.
+Moving to a newer major version of React
+
+- brings performance and compatibility improvements
+- reduces the bundle size due to the removal of deprecated APIs
 
 ---------------------------------------
 
